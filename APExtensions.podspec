@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
   s.version          = '1.0.0'
-  s.summary          = 'A short description of APExtensions.'
+  s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A helpful collection of extensions, controllers and protocols. See documentation for details.
                        DESC
 
   s.homepage         = 'https://github.com/APUtils/APExtensions'
@@ -37,6 +37,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+s.frameworks = 'Foundation', 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -5,11 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 
+TODO
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## GIF animation
+
+TODO
 
 ## Installation
 
@@ -23,6 +27,12 @@ pod 'APExtensions'
 ```
 
 ## Usage
+
+Call `Extensions.prepare()` before any extentions is used. Usually in application delegate method `didFinishLaunchingWithOptions`:
+
+```
+
+```
 
 See example project for more details.
 
