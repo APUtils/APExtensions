@@ -1,6 +1,6 @@
 //
 //  UIViewController+Swizzling.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 5/19/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

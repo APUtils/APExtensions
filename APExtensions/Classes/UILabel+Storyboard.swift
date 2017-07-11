@@ -1,6 +1,6 @@
 //
 //  UILabel+Storyboard.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 22.02.16.
 //  Copyright © 2016 Anton Plebanovich. All rights reserved.

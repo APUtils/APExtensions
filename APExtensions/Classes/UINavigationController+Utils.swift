@@ -1,6 +1,6 @@
 //
 //  UINavigationController+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 6/6/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

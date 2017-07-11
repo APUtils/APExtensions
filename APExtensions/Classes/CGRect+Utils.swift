@@ -1,6 +1,6 @@
 //
 //  CGRect+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 5/25/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

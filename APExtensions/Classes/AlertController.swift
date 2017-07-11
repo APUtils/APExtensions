@@ -1,6 +1,6 @@
 //
 //  AlertController.swift
-//  OnTheList
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 4/26/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

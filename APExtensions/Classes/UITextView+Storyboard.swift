@@ -1,6 +1,6 @@
 //
 //  UITextView+Storyboard.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 6/27/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  UIView+Storyboard.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 19.02.16.
 //  Copyright © 2016 Anton Plebanovich. All rights reserved.

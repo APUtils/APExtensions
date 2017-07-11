@@ -1,6 +1,6 @@
 //
 //  Utils.swift
-//  Extensions
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 07/10/2017.
 //  Copyright (c) 2017 Anton Plebanovich. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-// TODO: Add description for methods
+// TODO: Add description for functions
 
 //-----------------------------------------------------------------------------
 // MARK: - Typealiases

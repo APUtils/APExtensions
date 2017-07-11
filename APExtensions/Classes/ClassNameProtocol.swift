@@ -1,9 +1,9 @@
 //
 //  ClassNameProtocol.swift
-//  OnTheList
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 6/8/17.
-//  Copyright © 2017 OnTheList. All rights reserved.
+//  Copyright © 2017 APExtensions. All rights reserved.
 //
 
 import Foundation

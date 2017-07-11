@@ -1,6 +1,6 @@
 //
 //  UIViewController+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 28/05/16.
 //  Copyright © 2016 Anton Plebanovich. All rights reserved.

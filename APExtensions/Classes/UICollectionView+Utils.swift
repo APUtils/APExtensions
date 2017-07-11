@@ -1,6 +1,6 @@
 //
 //  UICollectionView+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by jean baptiste Bichon on 01/02/2017.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

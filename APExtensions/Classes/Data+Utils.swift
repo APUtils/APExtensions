@@ -1,6 +1,6 @@
 //
 //  Data+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 6/12/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.

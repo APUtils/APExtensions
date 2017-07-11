@@ -1,6 +1,6 @@
 //
 //  UITableView+Utils.swift
-//  Anton Plebanovich
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 12/23/16.
 //  Copyright © 2016 Anton Plebanovich. All rights reserved.
