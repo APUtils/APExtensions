@@ -9,8 +9,8 @@
 import Foundation
 
 
-extension NSCoder {
-    func decodeString(forKey key: String, defaultValue: String) -> String {
+public extension NSCoder {
+    public func decodeString(forKey key: String, defaultValue: String) -> String {
         return (decodeObject(forKey: key) as? String) ?? defaultValue
     }
 }
