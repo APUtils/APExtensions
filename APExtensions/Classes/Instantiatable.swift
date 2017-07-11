@@ -1,9 +1,9 @@
 //
 //  Instantiatable.swift
-//  Direct Booking
+//  APExtensions
 //
 //  Created by mac-246 on 6/19/17.
-//  Copyright © 2017 Convene. All rights reserved.
+//  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
