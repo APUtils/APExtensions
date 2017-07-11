@@ -2,7 +2,14 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.0.1](https://github.com/APUtils/APExtensions/releases/tag/1.0.0)
+## [1.0.2](https://github.com/APUtils/APExtensions/releases/tag/1.0.2)
+Released on 07/11/2017.
+
+#### Added
+- NSCoder+Utils
+  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
+
+## [1.0.1](https://github.com/APUtils/APExtensions/releases/tag/1.0.1)
 Released on 07/11/2017.
 
 #### Added
