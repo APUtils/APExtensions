@@ -131,7 +131,6 @@
 		B06689851F14DBE300A02878 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689741F14DBE300A02878 /* Data+Utils.swift */; };
 		B06689861F14DBE300A02878 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689751F14DBE300A02878 /* Date+Utils.swift */; };
 		B06689871F14DBE300A02878 /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689761F14DBE300A02878 /* Dictionary+Utils.swift */; };
-		B06689881F14DBE300A02878 /* NSDate+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689771F14DBE300A02878 /* NSDate+Utils.swift */; };
 		B06689891F14DBE300A02878 /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689781F14DBE300A02878 /* Optional+Utils.swift */; };
 		B066898A1F14DBE300A02878 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689791F14DBE300A02878 /* String+Utils.swift */; };
 		B066898B1F14DBE300A02878 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066897A1F14DBE300A02878 /* UICollectionView+Utils.swift */; };
@@ -396,7 +395,6 @@
 		B06689741F14DBE300A02878 /* Data+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
 		B06689751F14DBE300A02878 /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		B06689761F14DBE300A02878 /* Dictionary+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
-		B06689771F14DBE300A02878 /* NSDate+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utils.swift"; sourceTree = "<group>"; };
 		B06689781F14DBE300A02878 /* Optional+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Utils.swift"; sourceTree = "<group>"; };
 		B06689791F14DBE300A02878 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		B066897A1F14DBE300A02878 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
@@ -804,7 +802,6 @@
 				B06689751F14DBE300A02878 /* Date+Utils.swift */,
 				B06689761F14DBE300A02878 /* Dictionary+Utils.swift */,
 				B06689A61F14ECB300A02878 /* NSCoder+Utils.swift */,
-				B06689771F14DBE300A02878 /* NSDate+Utils.swift */,
 				B06689781F14DBE300A02878 /* Optional+Utils.swift */,
 				B06689791F14DBE300A02878 /* String+Utils.swift */,
 				B066897A1F14DBE300A02878 /* UICollectionView+Utils.swift */,
@@ -1420,7 +1417,6 @@
 				B066898C1F14DBE300A02878 /* UIColor+Utils.swift in Sources */,
 				B066896A1F14DBC300A02878 /* UILabel+Storyboard.swift in Sources */,
 				B066899E1F14DC0300A02878 /* Describable.swift in Sources */,
-				B06689881F14DBE300A02878 /* NSDate+Utils.swift in Sources */,
 				B06689A21F14DC0900A02878 /* APExtensions.swift in Sources */,
 				B06689691F14DBC300A02878 /* UIImageView+Storyboard.swift in Sources */,
 				B06689871F14DBE300A02878 /* Dictionary+Utils.swift in Sources */,

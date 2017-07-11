@@ -33,3 +33,17 @@ public extension Date {
         return selfComponents.year == otherComponents.year && selfComponents.month == otherComponents.month && selfComponents.day == otherComponents.day
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - String Representation
+//-----------------------------------------------------------------------------
+
+public extension Date {
+    public func getString(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = dateStyle
+        formatter.timeStyle = timeStyle
+        
+        return formatter.string(from: self)
+    }
+}
