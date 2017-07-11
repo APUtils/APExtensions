@@ -39,10 +39,11 @@ public extension Date {
 //-----------------------------------------------------------------------------
 
 public extension Date {
-    public func getString(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
+    public func getString(dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short, doesRelativeDateFormatting: Bool = false) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = dateStyle
         formatter.timeStyle = timeStyle
+        formatter.doesRelativeDateFormatting = doesRelativeDateFormatting
         
         return formatter.string(from: self)
     }
