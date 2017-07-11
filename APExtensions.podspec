@@ -37,6 +37,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-s.frameworks = 'Foundation', 'UIKit'
+  s.frameworks = 'Foundation', 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
