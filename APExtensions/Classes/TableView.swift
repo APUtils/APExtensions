@@ -10,7 +10,7 @@ import UIKit
 
 
 /// TableView with decreased button touch delay
-public class TableView: UITableView {
+open class TableView: UITableView {
     
     //-----------------------------------------------------------------------------
     // MARK: - Initialization, Setup and Configuration
@@ -37,7 +37,7 @@ public class TableView: UITableView {
     // MARK: - UIScrollView Methods
     //-----------------------------------------------------------------------------
     
-    override public func touchesShouldCancel(in view: UIView) -> Bool {
+    override open func touchesShouldCancel(in view: UIView) -> Bool {
         if view is UIButton {
             return true
         }

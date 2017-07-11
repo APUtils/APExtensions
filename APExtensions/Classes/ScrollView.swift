@@ -10,7 +10,7 @@ import UIKit
 
 
 /// ScrollView with decreased button touch delay
-public class ScrollView: UIScrollView {
+open class ScrollView: UIScrollView {
     
     //-----------------------------------------------------------------------------
     // MARK: - Initialization, Setup and Configuration
@@ -36,7 +36,7 @@ public class ScrollView: UIScrollView {
     // MARK: - UIScrollView Methods
     //-----------------------------------------------------------------------------
     
-    override public func touchesShouldCancel(in view: UIView) -> Bool {
+    override open func touchesShouldCancel(in view: UIView) -> Bool {
         if view is UIButton {
             return  true
         }

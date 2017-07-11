@@ -9,14 +9,14 @@
 import UIKit
 
 
-public class TableViewCell: UITableViewCell {
+open class TableViewCell: UITableViewCell {
     
     //-----------------------------------------------------------------------------
     // MARK: - UITableViewCell Methods
     //-----------------------------------------------------------------------------
     
     // Preventing backgroundColor change
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         let viewsBackgrounds: [UIView: UIColor?] = getViewsBackgrounds()
         
         super.setSelected(selected, animated: animated)
@@ -29,7 +29,7 @@ public class TableViewCell: UITableViewCell {
     }
     
     // Preventing backgroundColor change
-    override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    override open func setHighlighted(_ highlighted: Bool, animated: Bool) {
         let viewsBackgrounds: [UIView: UIColor?] = getViewsBackgrounds()
         
         super.setHighlighted(highlighted, animated: animated)
