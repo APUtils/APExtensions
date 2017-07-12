@@ -33,13 +33,13 @@ public extension Instantiatable where Self: NSObject {
 //-----------------------------------------------------------------------------
 
 public protocol InstantiatableContentView {
-    static func instantiateContentView() -> UIView
+    func instantiateContentView() -> UIView
 }
 
 public extension InstantiatableContentView where Self: NSObject {
     /// Instantiates contentView from xib file and making instantiator it's owner.
     /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
-    public final static func instantiateContentView() -> UIView {
-        return UINib(nibName: "\(className)ContentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
+    public final func instantiateContentView() -> UIView {
+        return UINib(nibName: "\(type(of: self).className)ContentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
