@@ -9,17 +9,35 @@
 import UIKit
 
 
+private var defaultFontAssociationKey = 0
+
+
 public extension UILabel {
-    /// Scale title font for screen
-    @IBInspectable var fitSize: Bool {
+    private var defaultFont: UIFont? {
         get {
-            // TODO: Add associated value to store old value
-            return false
+            return objc_getAssociatedObject(self, &defaultFontAssociationKey) as? UIFont
         }
         set {
-            guard newValue else { return; }
-            
-            font = font.screenFitFont
+            objc_setAssociatedObject(self, &defaultFontAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    /// Scale title font for screen
+    @IBInspectable var fitScreenSize: Bool {
+        get {
+            return defaultFont != nil
+        }
+        set {
+            if newValue {
+                defaultFont = font
+                font = font.screenFitFont
+            } else {
+                // Restore
+                if let defaultFont = defaultFont {
+                    font = defaultFont
+                    self.defaultFont = nil
+                }
+            }
         }
     }
 }

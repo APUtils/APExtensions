@@ -10,26 +10,47 @@ import Foundation
 
 
 private let roundConstantSize = false
+private var defaultConstantAssociationKey = 0
 
 
 public extension NSLayoutConstraint {
-    
-    /// Scale constraint constant to fit screen. Assuming source font is for 2208x1242 screen.
-    @IBInspectable public var fitScreenSize: Bool {
+    private var defaultConstant: CGFloat? {
         get {
-            // TODO: Add associated value to store old value
-            return false
+            return objc_getAssociatedObject(self, &defaultConstantAssociationKey) as? CGFloat
         }
         set {
-            let baseScreenSize: CGFloat = 414 // iPhone 6+
-            let currentScreenSize = UIScreen.main.bounds.width
-            let resizeCoef = currentScreenSize / baseScreenSize
-            var newConstant = constant * resizeCoef
-            if roundConstantSize {
-                newConstant = newConstant.rounded(.toNearestOrEven)
+            objc_setAssociatedObject(self, &defaultConstantAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    /// Scale constraint constant to fit screen. Assuming source font is for 2208x1242 screen.
+    /// In case you need to change constant value programmatically - reset this flag to false first.
+    @IBInspectable public var fitScreenSize: Bool {
+        get {
+            return defaultConstant != nil
+        }
+        set {
+            if newValue {
+                // Scale if isn't yet
+                guard defaultConstant == nil else { return }
+                
+                let baseScreenSize: CGFloat = 414 // iPhone 6+
+                let currentScreenSize = UIScreen.main.bounds.width
+                let resizeCoef = currentScreenSize / baseScreenSize
+                var newConstant = constant * resizeCoef
+                if roundConstantSize {
+                    newConstant = newConstant.rounded(.toNearestOrEven)
+                }
+                
+                defaultConstant = constant
+                constant = newConstant
+            } else {
+                // Restore
+                if let defaultConstant = defaultConstant {
+                    constant = defaultConstant
+                    self.defaultConstant = nil
+                }
             }
-            
-            constant = newConstant
         }
     }
 }
