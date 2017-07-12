@@ -2,7 +2,7 @@
 //  Instantiatable.swift
 //  APExtensions
 //
-//  Created by mac-246 on 6/19/17.
+//  Created by Anton Plebanovich on 6/19/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 

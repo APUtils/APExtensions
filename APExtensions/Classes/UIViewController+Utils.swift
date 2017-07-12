@@ -9,33 +9,6 @@
 import UIKit
 
 //-----------------------------------------------------------------------------
-// MARK: - Creation
-//-----------------------------------------------------------------------------
-
-public protocol Creatable: class {
-    static func create() -> Self
-    static func createWithNavigationController() -> UINavigationController
-}
-
-public extension Creatable where Self: UIViewController {
-    private final static func controllerFromStoryboard<T>() -> T {
-        let storyboardName = className.replacingOccurrences(of: "ViewController", with: "")
-        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as! T
-    }
-    
-    public final static func create() -> Self {
-        return controllerFromStoryboard()
-    }
-    
-    public final static func createWithNavigationController() -> UINavigationController {
-        let vc = create()
-        let navigationVc = UINavigationController(rootViewController: vc)
-        
-        return navigationVc
-    }
-}
-
-//-----------------------------------------------------------------------------
 // MARK: - Navigation
 //-----------------------------------------------------------------------------
 
