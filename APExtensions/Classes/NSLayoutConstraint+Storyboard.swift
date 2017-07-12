@@ -8,10 +8,12 @@
 
 import Foundation
 
+//-----------------------------------------------------------------------------
+// MARK: - Fit Screen
+//-----------------------------------------------------------------------------
 
 private let roundConstantSize = false
 private var defaultConstantAssociationKey = 0
-
 
 public extension NSLayoutConstraint {
     private var defaultConstant: CGFloat? {
@@ -51,6 +53,21 @@ public extension NSLayoutConstraint {
                     self.defaultConstant = nil
                 }
             }
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - One Pixel Width
+//-----------------------------------------------------------------------------
+
+public extension NSLayoutConstraint {
+    @IBInspectable public var onePixelSize: Bool {
+        get {
+            return constant == g_pixelSize
+        }
+        set {
+            constant = g_pixelSize
         }
     }
 }
