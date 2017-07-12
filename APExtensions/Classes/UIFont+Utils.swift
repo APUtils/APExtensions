@@ -18,9 +18,9 @@ public extension UIFont {
         let baseScreenSize: CGFloat = 414 // iPhone 6+
         let currentScreenSize = UIScreen.main.bounds.width
         let fontResizeCoef = currentScreenSize / baseScreenSize
-        var newFontSize = (pointSize * fontResizeCoef)
+        var newFontSize = pointSize * fontResizeCoef
         if roundFontSize {
-            newFontSize = newFontSize.rounded(.down)
+            newFontSize = newFontSize.rounded(.toNearestOrEven)
         }
         
         return UIFont(descriptor: fontDescriptor, size: newFontSize)

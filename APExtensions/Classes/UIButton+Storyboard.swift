@@ -13,6 +13,7 @@ public extension UIButton {
     /// Scale button title font for screen
     @IBInspectable var fitSize: Bool {
         get {
+            // TODO: Add associated value to store old value
             return false
         }
         set {

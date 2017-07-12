@@ -13,6 +13,7 @@ public extension UITextView {
     /// Scale font for screen
     @IBInspectable var fitSize: Bool {
         get {
+            // TODO: Add associated value to store old value
             return false
         }
         set {
