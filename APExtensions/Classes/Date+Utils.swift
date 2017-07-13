@@ -32,6 +32,10 @@ public extension Date {
         
         return selfComponents.year == otherComponents.year && selfComponents.month == otherComponents.month && selfComponents.day == otherComponents.day
     }
+    
+    public func isToday() -> Bool {
+        return self.isSameDay(withDate: Date.today)
+    }
 }
 
 //-----------------------------------------------------------------------------

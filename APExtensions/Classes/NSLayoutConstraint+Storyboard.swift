@@ -62,6 +62,7 @@ public extension NSLayoutConstraint {
 //-----------------------------------------------------------------------------
 
 public extension NSLayoutConstraint {
+    /// Make one pixel size constraint
     @IBInspectable public var onePixelSize: Bool {
         get {
             return constant == g_pixelSize
