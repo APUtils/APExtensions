@@ -26,15 +26,15 @@ public extension Date {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
     }
     
+    public var isToday: Bool {
+        return self.isSameDay(withDate: Date.today)
+    }
+    
     public func isSameDay(withDate date: Date) -> Bool {
         let selfComponents = components
         let otherComponents = date.components
         
         return selfComponents.year == otherComponents.year && selfComponents.month == otherComponents.month && selfComponents.day == otherComponents.day
-    }
-    
-    public func isToday() -> Bool {
-        return self.isSameDay(withDate: Date.today)
     }
 }
 
