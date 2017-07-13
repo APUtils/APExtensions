@@ -14,12 +14,7 @@ import Foundation
 
 public extension Date {
     public static var today: Date {
-        var components = Date().components
-        components.hour = 0
-        components.minute = 0
-        components.second = 0
-        
-        return Calendar.current.date(from: components)!
+        return Calendar.current.startOfDay(for: Date())
     }
     
     public var components: DateComponents {
@@ -27,14 +22,15 @@ public extension Date {
     }
     
     public var isToday: Bool {
-        return self.isSameDay(withDate: Date.today)
+        return Calendar.current.isDateInToday(self)
+    }
+    
+    public var isTomorrow: Bool {
+        return Calendar.current.isDateInTomorrow(self)
     }
     
     public func isSameDay(withDate date: Date) -> Bool {
-        let selfComponents = components
-        let otherComponents = date.components
-        
-        return selfComponents.year == otherComponents.year && selfComponents.month == otherComponents.month && selfComponents.day == otherComponents.day
+        return Calendar.current.isDate(self, inSameDayAs: date)
     }
 }
 
