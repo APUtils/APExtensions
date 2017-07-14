@@ -13,11 +13,12 @@ import MessageUI
 //-----------------------------------------------------------------------------
 
 public extension MFMailComposeViewController {
-    public static func create(subject: String? = nil, to: [String]? = nil) -> MFMailComposeViewController {
+    public static func create(to: [String]) -> MFMailComposeViewController? {
+        guard MFMailComposeViewController.canSendMail() else { return nil }
+            
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = vc
-        if let subject = subject { vc.setSubject(subject) }
-        if let to = to { vc.setToRecipients(to) }
+        vc.setToRecipients(to)
         
         return vc
     }
