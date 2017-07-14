@@ -9,8 +9,8 @@
 import UIKit
 
 
-extension UINavigationBar {
-    func setTransparent(_ isTransparent: Bool) {
+public extension UINavigationBar {
+    public func setTransparent(_ isTransparent: Bool) {
         if isTransparent {
             isTranslucent = true
             setBackgroundImage(UIImage(), for: .default)
