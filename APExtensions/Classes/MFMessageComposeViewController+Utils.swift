@@ -12,8 +12,8 @@ import MessageUI
 // MARK: - Creation
 //-----------------------------------------------------------------------------
 
-extension MFMessageComposeViewController {
-    static func create(phone: String) -> MFMessageComposeViewController {
+public extension MFMessageComposeViewController {
+    public static func create(phone: String) -> MFMessageComposeViewController {
         let vc = MFMessageComposeViewController()
         vc.messageComposeDelegate = vc
         vc.recipients = [phone]

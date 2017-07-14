@@ -12,8 +12,8 @@ import MessageUI
 // MARK: - Creation
 //-----------------------------------------------------------------------------
 
-extension MFMailComposeViewController {
-    static func create(subject: String? = nil, to: [String]? = nil) -> MFMailComposeViewController {
+public extension MFMailComposeViewController {
+    public static func create(subject: String? = nil, to: [String]? = nil) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = vc
         if let subject = subject { vc.setSubject(subject) }
