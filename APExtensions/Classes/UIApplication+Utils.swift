@@ -1,9 +1,9 @@
 //
 //  UIApplication+Utils.swift
-//  Pods
+//  APExtensions
 //
-//  Created by mac-246 on 7/14/17.
-//
+//  Created by Anton Plebanovich on 7/14/17.
+//  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit

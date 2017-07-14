@@ -156,6 +156,7 @@
 		B0C7804A1F18D78000B8E5DD /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C780491F18D78000B8E5DD /* UIApplication+Utils.swift */; };
 		B0C7804C1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7804B1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift */; };
 		B0C7804E1F18E14800B8E5DD /* MFMessageComposeViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7804D1F18E14800B8E5DD /* MFMessageComposeViewController+Utils.swift */; };
+		B0C780501F18E1FA00B8E5DD /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7804F1F18E1FA00B8E5DD /* Error+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EEEA6E480B661AE6D375672436A15 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21267FD47DF4606165864334B2A3BBB /* QuartzCore.framework */; };
 		B2C151B20635A480E1937E3D2B509BB4 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F519027C542475CE4DA518899534F /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -425,6 +426,7 @@
 		B0C780491F18D78000B8E5DD /* UIApplication+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
 		B0C7804B1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MFMailComposeViewController+Utils.swift"; sourceTree = "<group>"; };
 		B0C7804D1F18E14800B8E5DD /* MFMessageComposeViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MFMessageComposeViewController+Utils.swift"; sourceTree = "<group>"; };
+		B0C7804F1F18E1FA00B8E5DD /* Error+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B168CAB5483892B41FC690DDA2C385E2 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1AA4EB0D4E7F45CF4558722592A5057 /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 				B06689731F14DBE300A02878 /* CGRect+Utils.swift */,
 				B06689741F14DBE300A02878 /* Data+Utils.swift */,
 				B06689751F14DBE300A02878 /* Date+Utils.swift */,
+				B0C7804F1F18E1FA00B8E5DD /* Error+Utils.swift */,
 				B06689761F14DBE300A02878 /* Dictionary+Utils.swift */,
 				B0C7804B1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift */,
 				B0C7804D1F18E14800B8E5DD /* MFMessageComposeViewController+Utils.swift */,
@@ -1444,6 +1447,7 @@
 				B066896C1F14DBC300A02878 /* UITextView+Storyboard.swift in Sources */,
 				B066899F1F14DC0300A02878 /* Instantiatable.swift in Sources */,
 				B066896B1F14DBC300A02878 /* UIScrollView+Storyboard.swift in Sources */,
+				B0C780501F18E1FA00B8E5DD /* Error+Utils.swift in Sources */,
 				B06689911F14DBE300A02878 /* UITableView+Utils.swift in Sources */,
 				B06689931F14DBE300A02878 /* UIViewController+Utils.swift in Sources */,
 			);
