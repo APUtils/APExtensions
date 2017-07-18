@@ -119,6 +119,8 @@
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = D81DE72B8908E397DB13868960F3FB84 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		B06397301F1DD7930014C36A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B063972F1F1DD7930014C36A /* Manager.swift */; };
+		B06397321F1DD8D60014C36A /* SetupOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06397311F1DD8D60014C36A /* SetupOnce.swift */; };
 		B06689681F14DBC300A02878 /* UIButton+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */; };
 		B06689691F14DBC300A02878 /* UIImageView+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689631F14DBC300A02878 /* UIImageView+Storyboard.swift */; };
 		B066896A1F14DBC300A02878 /* UILabel+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689641F14DBC300A02878 /* UILabel+Storyboard.swift */; };
@@ -144,7 +146,7 @@
 		B06689931F14DBE300A02878 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689821F14DBE300A02878 /* UIViewController+Utils.swift */; };
 		B06689971F14DBF600A02878 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689951F14DBF600A02878 /* AlertController.swift */; };
 		B06689981F14DBF600A02878 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689961F14DBF600A02878 /* PickerViewController.swift */; };
-		B066899D1F14DC0300A02878 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066899A1F14DC0300A02878 /* ClassNameProtocol.swift */; };
+		B066899D1F14DC0300A02878 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066899A1F14DC0300A02878 /* ClassName.swift */; };
 		B066899E1F14DC0300A02878 /* Describable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066899B1F14DC0300A02878 /* Describable.swift */; };
 		B066899F1F14DC0300A02878 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066899C1F14DC0300A02878 /* Instantiatable.swift */; };
 		B06689A21F14DC0900A02878 /* APExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689A01F14DC0900A02878 /* APExtensions.swift */; };
@@ -389,6 +391,8 @@
 		AD11F4279442D689C9DF48C23623D7F2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		AF11943C33369B2227B7C0589C17284F /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		B063972F1F1DD7930014C36A /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		B06397311F1DD8D60014C36A /* SetupOnce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnce.swift; sourceTree = "<group>"; };
 		B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Storyboard.swift"; sourceTree = "<group>"; };
 		B06689631F14DBC300A02878 /* UIImageView+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Storyboard.swift"; sourceTree = "<group>"; };
 		B06689641F14DBC300A02878 /* UILabel+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Storyboard.swift"; sourceTree = "<group>"; };
@@ -414,7 +418,7 @@
 		B06689821F14DBE300A02878 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		B06689951F14DBF600A02878 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		B06689961F14DBF600A02878 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
-		B066899A1F14DC0300A02878 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		B066899A1F14DC0300A02878 /* ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
 		B066899B1F14DC0300A02878 /* Describable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Describable.swift; sourceTree = "<group>"; };
 		B066899C1F14DC0300A02878 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		B06689A01F14DC0900A02878 /* APExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APExtensions.swift; sourceTree = "<group>"; };
@@ -847,10 +851,12 @@
 		B06689991F14DBFC00A02878 /* _Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B066899A1F14DC0300A02878 /* ClassNameProtocol.swift */,
+				B066899A1F14DC0300A02878 /* ClassName.swift */,
 				B06689A91F14F1C100A02878 /* Configurable.swift */,
 				B066899B1F14DC0300A02878 /* Describable.swift */,
 				B066899C1F14DC0300A02878 /* Instantiatable.swift */,
+				B063972F1F1DD7930014C36A /* Manager.swift */,
+				B06397311F1DD8D60014C36A /* SetupOnce.swift */,
 			);
 			name = _Protocols;
 			sourceTree = "<group>";
@@ -1418,7 +1424,8 @@
 				B066898A1F14DBE300A02878 /* String+Utils.swift in Sources */,
 				B06689701F14DBD000A02878 /* UIViewController+Swizzling.swift in Sources */,
 				B0C7804C1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift in Sources */,
-				B066899D1F14DC0300A02878 /* ClassNameProtocol.swift in Sources */,
+				B06397321F1DD8D60014C36A /* SetupOnce.swift in Sources */,
+				B066899D1F14DC0300A02878 /* ClassName.swift in Sources */,
 				B0C780541F18F4C000B8E5DD /* UINavigationBar+Utils.swift in Sources */,
 				B06689981F14DBF600A02878 /* PickerViewController.swift in Sources */,
 				B06689861F14DBE300A02878 /* Date+Utils.swift in Sources */,
@@ -1443,6 +1450,7 @@
 				B06689691F14DBC300A02878 /* UIImageView+Storyboard.swift in Sources */,
 				B06689871F14DBE300A02878 /* Dictionary+Utils.swift in Sources */,
 				AC502DDF7C08CF963D27B10B8531DE71 /* APExtensions-dummy.m in Sources */,
+				B06397301F1DD7930014C36A /* Manager.swift in Sources */,
 				B06689A31F14DC0900A02878 /* Utils.swift in Sources */,
 				B066898D1F14DBE300A02878 /* UIFont+Utils.swift in Sources */,
 				B06689901F14DBE300A02878 /* UIStoryboard+Utils.swift in Sources */,

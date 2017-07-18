@@ -10,6 +10,7 @@ import Foundation
 
 
 extension Error {
+    /// Checks if error is related to connection problems. Usual flow is to retry on those errors.
     var isConnectError: Bool {
         guard _domain == NSURLErrorDomain else { return false }
         
