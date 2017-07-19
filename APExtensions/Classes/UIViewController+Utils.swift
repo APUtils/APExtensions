@@ -25,6 +25,10 @@ public extension UIViewController {
         }
     }
     
+    var isBeingRemoved: Bool {
+        return isMovingFromParentViewController || isBeingDismissed || (navigationController?.isBeingDismissed ?? false)
+    }
+    
     /// Remove view controller animated action. Removes using pop if it was pushed or using dismiss if it was presented.
     @IBAction func removeViewController(sender: Any) {
         removeViewController(animated: true)
