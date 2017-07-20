@@ -68,6 +68,20 @@ public extension UIView {
         cornerRadius = min(width, height) / 2
     }
     
+    /// Returns view's UIViewController.
+    public var viewController: UIViewController? {
+        var nextResponder: UIResponder? = self
+        while nextResponder != nil {
+            nextResponder = nextResponder?.next
+            
+            if let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+        }
+        
+        return nil
+    }
+    
     /// Gets view's top most superview
     public var rootView: UIView {
         return superview?.rootView ?? self
