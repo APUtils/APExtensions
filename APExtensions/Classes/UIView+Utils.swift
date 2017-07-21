@@ -50,10 +50,14 @@ public extension UIView {
 
 public extension UIView {
     public func fadeInAnimated() {
+        guard alpha != 1 else { return }
+        
         g_animate { self.alpha = 1 }
     }
     
     public func fadeOutAnimated() {
+        guard alpha != 0 else { return }
+        
         g_animate { self.alpha = 0 }
     }
 }
