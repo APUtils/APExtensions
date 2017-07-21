@@ -9,10 +9,11 @@
 import Foundation
 
 //-----------------------------------------------------------------------------
-// MARK: - isNilOrEmpty CollectionType
+// MARK: - isNilOrEmpty
 //-----------------------------------------------------------------------------
 
-public extension Optional where Wrapped: Collection {
+// Collection
+public extension Optional where Wrapped == Collection {
     /// Check if object is nil or empty
     public var isNilOrEmpty: Bool {
         if let value = self, !value.isEmpty {
@@ -23,17 +24,20 @@ public extension Optional where Wrapped: Collection {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - isNilOrEmpty String
-//-----------------------------------------------------------------------------
-
-public protocol EmptyString {
-    var isEmpty: Bool { get }
+// Strings
+public extension Optional where Wrapped == String {
+    /// Check if object is nil or empty
+    public var isNilOrEmpty: Bool {
+        if let value = self, !value.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
 }
 
-extension String: EmptyString {}
-
-public extension Optional where Wrapped: EmptyString {
+// Data
+public extension Optional where Wrapped == Data {
     /// Check if object is nil or empty
     public var isNilOrEmpty: Bool {
         if let value = self, !value.isEmpty {

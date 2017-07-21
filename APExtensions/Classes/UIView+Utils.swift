@@ -68,7 +68,7 @@ public extension UIView {
         cornerRadius = min(width, height) / 2
     }
     
-    /// Returns view's UIViewController.
+    /// Returns closest UIViewController from responders chain.
     public var viewController: UIViewController? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
