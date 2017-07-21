@@ -28,6 +28,11 @@ public extension Date {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
     }
     
+    /// Checks if date is in yesterday's range. Uses user's time zone.
+    public var isYesterday: Bool {
+        return Calendar.current.isDateInYesterday(self)
+    }
+    
     /// Checks if date is in today's range. Uses user's time zone.
     public var isToday: Bool {
         return Calendar.current.isDateInToday(self)
@@ -36,6 +41,11 @@ public extension Date {
     /// Checks if date is in tomorrow's range. Uses user's time zone.
     public var isTomorrow: Bool {
         return Calendar.current.isDateInTomorrow(self)
+    }
+    
+    /// Checks if date is in weekend's range. Uses user's time zone.
+    public var isWeekend: Bool {
+        return Calendar.current.isDateInWeekend(self)
     }
     
     /// Converts date to GMT time zone day start.
