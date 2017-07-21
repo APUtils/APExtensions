@@ -52,7 +52,7 @@ public extension UIImageView {
                     defaultImage = oldImage
                 }
                 
-                image = newImage
+                image = newImage?.withRenderingMode(oldImage.renderingMode)
             } else {
                 // Restore
                 if let defaultImage = defaultImage {
