@@ -9,9 +9,9 @@
 import UIKit
 
 
-extension UIButton {
+public extension UIButton {
     /// Sets button's title for control state normal without animations
-    func setTitle(_ title: String?) {
+    public func setTitle(_ title: String?) {
         UIView.performWithoutAnimation {
             setTitle(title, for: .normal)
             layoutIfNeeded()
