@@ -28,6 +28,11 @@ public extension Date {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
     }
     
+    /// Returns beginning of the next day
+    public var nextDay: Date {
+        return Calendar.current.date(byAdding: DateComponents(day: 1), to: self)!.startOfDay
+    }
+    
     /// Checks if date is in yesterday's range. Uses user's time zone.
     public var isYesterday: Bool {
         return Calendar.current.isDateInYesterday(self)
