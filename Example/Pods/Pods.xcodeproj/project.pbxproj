@@ -119,6 +119,7 @@
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = D81DE72B8908E397DB13868960F3FB84 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		B00238B51F278D9100F71A6E /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00238B41F278D9100F71A6E /* UIButton+Utils.swift */; };
 		B06397301F1DD7930014C36A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B063972F1F1DD7930014C36A /* Manager.swift */; };
 		B06397321F1DD8D60014C36A /* SetupOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06397311F1DD8D60014C36A /* SetupOnce.swift */; };
 		B06689681F14DBC300A02878 /* UIButton+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */; };
@@ -391,6 +392,7 @@
 		AD11F4279442D689C9DF48C23623D7F2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		AF11943C33369B2227B7C0589C17284F /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		B00238B41F278D9100F71A6E /* UIButton+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Utils.swift"; sourceTree = "<group>"; };
 		B063972F1F1DD7930014C36A /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		B06397311F1DD8D60014C36A /* SetupOnce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnce.swift; sourceTree = "<group>"; };
 		B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Storyboard.swift"; sourceTree = "<group>"; };
@@ -825,6 +827,7 @@
 				B06689781F14DBE300A02878 /* Optional+Utils.swift */,
 				B06689791F14DBE300A02878 /* String+Utils.swift */,
 				B0C780491F18D78000B8E5DD /* UIApplication+Utils.swift */,
+				B00238B41F278D9100F71A6E /* UIButton+Utils.swift */,
 				B066897A1F14DBE300A02878 /* UICollectionView+Utils.swift */,
 				B066897B1F14DBE300A02878 /* UIColor+Utils.swift */,
 				B066897C1F14DBE300A02878 /* UIFont+Utils.swift */,
@@ -1422,6 +1425,7 @@
 			files = (
 				B06689971F14DBF600A02878 /* AlertController.swift in Sources */,
 				B066898A1F14DBE300A02878 /* String+Utils.swift in Sources */,
+				B00238B51F278D9100F71A6E /* UIButton+Utils.swift in Sources */,
 				B06689701F14DBD000A02878 /* UIViewController+Swizzling.swift in Sources */,
 				B0C7804C1F18DC6C00B8E5DD /* MFMailComposeViewController+Utils.swift in Sources */,
 				B06397321F1DD8D60014C36A /* SetupOnce.swift in Sources */,

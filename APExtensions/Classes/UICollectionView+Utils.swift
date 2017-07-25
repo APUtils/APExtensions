@@ -2,7 +2,7 @@
 //  UICollectionView+Utils.swift
 //  APExtensions
 //
-//  Created by jean baptiste Bichon on 01/02/2017.
+//  Created by Anton Plebanovich on 01/02/2017.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 
