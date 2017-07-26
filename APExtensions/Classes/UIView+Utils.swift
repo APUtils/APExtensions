@@ -142,7 +142,7 @@ public extension UIView {
 
 public extension UIView {
     /// Ends editing on view and all of it's subviews
-    public func endEditing() {
+    @IBAction public func endEditing() {
         endEditing(true)
     }
     

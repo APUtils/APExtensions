@@ -120,6 +120,7 @@
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B00238B51F278D9100F71A6E /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00238B41F278D9100F71A6E /* UIButton+Utils.swift */; };
+		B00238BB1F2903E200F71A6E /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00238BA1F2903E200F71A6E /* UIViewController+Storyboard.swift */; };
 		B06397301F1DD7930014C36A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B063972F1F1DD7930014C36A /* Manager.swift */; };
 		B06397321F1DD8D60014C36A /* SetupOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06397311F1DD8D60014C36A /* SetupOnce.swift */; };
 		B06689681F14DBC300A02878 /* UIButton+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */; };
@@ -393,6 +394,7 @@
 		AF11943C33369B2227B7C0589C17284F /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		B00238B41F278D9100F71A6E /* UIButton+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Utils.swift"; sourceTree = "<group>"; };
+		B00238BA1F2903E200F71A6E /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		B063972F1F1DD7930014C36A /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		B06397311F1DD8D60014C36A /* SetupOnce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnce.swift; sourceTree = "<group>"; };
 		B06689621F14DBC300A02878 /* UIButton+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Storyboard.swift"; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 				B06689651F14DBC300A02878 /* UIScrollView+Storyboard.swift */,
 				B06689661F14DBC300A02878 /* UITextView+Storyboard.swift */,
 				B06689671F14DBC300A02878 /* UIView+Storyboard.swift */,
+				B00238BA1F2903E200F71A6E /* UIViewController+Storyboard.swift */,
 			);
 			name = _Storyboard;
 			sourceTree = "<group>";
@@ -1450,6 +1453,7 @@
 				B066898C1F14DBE300A02878 /* UIColor+Utils.swift in Sources */,
 				B066896A1F14DBC300A02878 /* UILabel+Storyboard.swift in Sources */,
 				B066899E1F14DC0300A02878 /* Describable.swift in Sources */,
+				B00238BB1F2903E200F71A6E /* UIViewController+Storyboard.swift in Sources */,
 				B06689A21F14DC0900A02878 /* APExtensions.swift in Sources */,
 				B06689691F14DBC300A02878 /* UIImageView+Storyboard.swift in Sources */,
 				B06689871F14DBE300A02878 /* Dictionary+Utils.swift in Sources */,
