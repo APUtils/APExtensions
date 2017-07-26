@@ -87,3 +87,14 @@ public extension UIViewController {
         }
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - Editing
+//-----------------------------------------------------------------------------
+
+public extension UIViewController {
+    /// End editing in viewController's view
+    @IBAction func endEditing(_ sender: Any) {
+        view.endEditing()
+    }
+}

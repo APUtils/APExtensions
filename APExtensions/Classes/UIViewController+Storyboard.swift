@@ -24,6 +24,7 @@ public extension UIViewController {
         }
     }
     
+    /// Allows to hide keyboard when touch outside
     @IBInspectable public var hideKeyboardOnTouch: Bool {
         get {
             return hideRecognizer != nil
@@ -31,10 +32,22 @@ public extension UIViewController {
         set {
             if newValue {
                 if hideRecognizer == nil {
-                    let hideRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing as (UIView) -> () -> ()))
+                    let hideRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.endEditing))
                     hideRecognizer.cancelsTouchesInView = false
                     self.hideRecognizer = hideRecognizer
-                    view.addGestureRecognizer(hideRecognizer)
+                    
+                    if isViewLoaded {
+                        view.addGestureRecognizer(hideRecognizer)
+                    } else {
+                        var notificationToken: NSObjectProtocol!
+                        notificationToken = g_sharedNotificationCenter.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
+                            g_sharedNotificationCenter.removeObserver(notificationToken)
+                            
+                            if let hideRecognizer = self?.hideRecognizer {
+                                self?.view.addGestureRecognizer(hideRecognizer)
+                            }
+                        })
+                    }
                 }
             } else {
                 if let hideRecognizer = hideRecognizer {
