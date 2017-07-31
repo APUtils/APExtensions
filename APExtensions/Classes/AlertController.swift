@@ -37,7 +37,7 @@ public class AlertController: UIAlertController {
     
     private lazy var rootVC: AlertRootViewController = {
         let rootVC = AlertRootViewController()
-        let topVc = g_topViewController
+        let topVc = g_statusBarStyleTopViewController
         
         rootVC.customPrefersStatusBarHidden = topVc?.prefersStatusBarHidden ?? false
         
