@@ -8,9 +8,11 @@
 
 import UIKit
 
+//-----------------------------------------------------------------------------
+// MARK: - Screen Fit
+//-----------------------------------------------------------------------------
 
 private var defaultFontAssociationKey = 0
-
 
 public extension UIButton {
     private var defaultFont: UIFont? {
@@ -41,6 +43,24 @@ public extension UIButton {
                     self.defaultFont = nil
                 }
             }
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - Label
+//-----------------------------------------------------------------------------
+
+public extension UIButton {
+    /// Underlying label number of lines
+    @IBInspectable var lines: Int? {
+        get {
+            return titleLabel?.numberOfLines
+        }
+        set {
+            guard let numberOfLines = newValue else { return }
+            
+            titleLabel?.numberOfLines = numberOfLines
         }
     }
 }

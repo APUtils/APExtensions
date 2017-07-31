@@ -20,6 +20,7 @@ public extension UIApplication {
     }
     
     /// Tries to send email with MFMailComposeViewController first. If can't uses mailto: url scheme
+    /// - parameter to: Addressee's email
     public static func sendEmail(to: String) {
         if let vc = MFMailComposeViewController.create(to: [to]) {
             g_rootViewController.present(vc, animated: true, completion: nil)

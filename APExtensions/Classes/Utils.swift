@@ -238,6 +238,10 @@ public func g_showErrorAlert(
     alertVC.present(animated: true)
 }
 
+/// Shows enter text alert with title and message
+/// - parameter title: Alert title
+/// - parameter message: Alert message
+/// - parameter completion: Closure that takes user entered text as parameter
 public func g_showEnterTextAlert(title: String?, message: String?, completion: @escaping (_ text: String?) -> ()) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
@@ -254,6 +258,37 @@ public func g_showEnterTextAlert(title: String?, message: String?, completion: @
     alertVC.addAction(cancelAction)
     
     alertVC.present(animated: true)
+}
+
+/// Shows picker alert with title and message.
+/// - parameter title: Alert title
+/// - parameter buttons: Button titles
+/// - parameter buttonsStyles: Button styles
+/// - parameter enabledButtons: Enabled buttons
+/// - parameter completion: Closure that takes button title and button index as its parameters
+public func g_showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertActionStyle]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
+    if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
+    if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
+    
+    let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
+    
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    vc.addAction(cancel)
+    
+    for (index, button) in buttons.enumerated() {
+        let buttonStyle = buttonsStyles?[index] ?? .default
+        let action = UIAlertAction(title: button, style: buttonStyle, handler: { _ in
+            completion(button, index)
+        })
+        
+        if let enabledButtons = enabledButtons, enabledButtons.count == buttons.count {
+            action.isEnabled = enabledButtons[index]
+        }
+        
+        vc.addAction(action)
+    }
+    
+    vc.present(animated: true)
 }
 
 //-----------------------------------------------------------------------------

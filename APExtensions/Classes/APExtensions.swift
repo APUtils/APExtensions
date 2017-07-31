@@ -12,6 +12,6 @@ import Foundation
 public class APExtensions {
     /// Prepare extensions. Should be called before any extentions is used. Usually in application delegate method `didFinishLaunchingWithOptions`.
     public static func prepare() {
-        _ = UIViewController._setupOnce
+        _ = UIViewController.setupOnce
     }
 }
