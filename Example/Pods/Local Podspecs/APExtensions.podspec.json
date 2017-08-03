@@ -19,6 +19,7 @@
     "ios": "8.0"
   },
   "source_files": "APExtensions/Classes/**/*",
+  "private_header_files": "APExtensions/Classes/APExtensionsLoader.h",
   "frameworks": [
     "Foundation",
     "UIKit",

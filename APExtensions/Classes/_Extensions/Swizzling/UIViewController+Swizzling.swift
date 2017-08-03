@@ -21,7 +21,7 @@ public extension Notification.Name {
 }
 
 
-public extension UIViewController {
+extension UIViewController: SetupOnce {
     public enum ViewState {
         case notLoaded
         case didLoad
@@ -31,13 +31,15 @@ public extension UIViewController {
         case didDisappear
     }
     
-    public static var setupOnce: () = _setupOnce()
-    private static func _setupOnce() {
+    public static var setupOnce: Int = _setupOnce()
+    private static func _setupOnce() -> Int {
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillDisappear(_:)), swizzledSelector: #selector(swizzled_viewWillDisappear(_:)))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
+        
+        return 0
     }
     
     /// UIViewController view state

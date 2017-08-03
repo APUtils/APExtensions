@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '3.1.0'
+  s.version          = '3.2.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   #   'APExtensions' => ['APExtensions/Assets/*.png']
   # }
 
+  s.private_header_files = "APExtensions/Classes/APExtensionsLoader.h"
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
