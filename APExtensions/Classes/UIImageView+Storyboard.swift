@@ -34,25 +34,14 @@ public extension UIImageView {
         set {
             if newValue {
                 guard let oldImage = image else { return }
-                guard UIScreen.main.scale == 2 else { return } // Ignore 1x and 3x screens
                 
-                // Assuming we don't have 2x image in assets folder. 6+ size is 1242x2208.
-                let resizeCoef = UIScreen.main.bounds.width * UIScreen.main.scale / 1242
-                let newImageSize = CGSize(width: oldImage.size.width * resizeCoef, height: oldImage.size.height * resizeCoef)
-                
-                // Resizing image
-                UIGraphicsBeginImageContextWithOptions(newImageSize, false, 0); // 0 == device main screen scale
-                let context = UIGraphicsGetCurrentContext()
-                context?.interpolationQuality = .high
-                oldImage.draw(in: CGRect(x: 0, y: 0, width: newImageSize.width, height: newImageSize.height))
-                let newImage = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
+                let newImage = oldImage.screenFitImage
                 
                 if keepPreviousImage {
                     defaultImage = oldImage
                 }
                 
-                image = newImage?.withRenderingMode(oldImage.renderingMode)
+                image = newImage.withRenderingMode(oldImage.renderingMode)
             } else {
                 // Restore
                 if let defaultImage = defaultImage {
