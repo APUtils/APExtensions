@@ -147,6 +147,10 @@ public extension String {
         
         return result
     }
+    
+    public func splitByCapitals() -> [String] {
+        return characters.splitBefore(separator: { $0.isUpperCase }).map({ String($0) })
+    }
 }
 
 //-----------------------------------------------------------------------------
