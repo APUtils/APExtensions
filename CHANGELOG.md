@@ -2,6 +2,38 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.2.0](https://github.com/APUtils/APExtensions/releases/tag/3.2.0)
+Released on 08/03/2017.
+
+#### Added
+- UIImage+Utils .screenFitImage
+- No need to call APExtensions.prepare() anymore
+- SetupOnce classes called automatically
+  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
+
+## [3.1.0](https://github.com/APUtils/APExtensions/releases/tag/3.1.0)
+Released on 07/31/2017.
+
+#### Added
+- Data? .isNilOrEmpty
+- Date .isWeekend, .isYesterday
+- UIButton .setTitle
+- Date .nextDay
+- UIViewController+Storyboard .hideKeyboardOnTouch
+- UIButton .lines
+- Utils .g_showPickerAlert(...)
+- Utils .g_statusBarStyleTopViewController
+  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
+
+#### Changed
+- UIView made .endEditing @IBAction
+  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
+
+#### Fixed
+- UIImage resize rendering mode fix
+- AlerController status bar style fix
+  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
+
 ## [3.0.0](https://github.com/APUtils/APExtensions/releases/tag/3.0.0)
 Released on 07/20/2017.
 

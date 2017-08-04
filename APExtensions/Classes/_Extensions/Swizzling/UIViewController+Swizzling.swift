@@ -20,19 +20,8 @@ public extension Notification.Name {
     static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
 }
 
-
 extension UIViewController: SetupOnce {
-    public enum ViewState {
-        case notLoaded
-        case didLoad
-        case willAppear
-        case didAppear
-        case willDisappear
-        case didDisappear
-    }
-    
-    public static var setupOnce: Int = _setupOnce()
-    private static func _setupOnce() -> Int {
+    public static var setupOnce: Int = {
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
@@ -40,6 +29,17 @@ extension UIViewController: SetupOnce {
         g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
         
         return 0
+    }()
+}
+
+extension UIViewController {
+    public enum ViewState {
+        case notLoaded
+        case didLoad
+        case willAppear
+        case didAppear
+        case willDisappear
+        case didDisappear
     }
     
     /// UIViewController view state
@@ -57,35 +57,35 @@ extension UIViewController: SetupOnce {
         }
     }
     
-    @objc private func swizzled_viewDidLoad() {
+    @objc fileprivate func swizzled_viewDidLoad() {
         viewState = .didLoad
         NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self)
         
         self.swizzled_viewDidLoad()
     }
     
-    @objc private func swizzled_viewWillAppear(_ animated: Bool) {
+    @objc fileprivate func swizzled_viewWillAppear(_ animated: Bool) {
         viewState = .willAppear
         NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self)
         
         self.swizzled_viewWillAppear(animated)
     }
     
-    @objc private func swizzled_viewDidAppear(_ animated: Bool) {
+    @objc fileprivate func swizzled_viewDidAppear(_ animated: Bool) {
         viewState = .didAppear
         NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self)
         
         self.swizzled_viewDidAppear(animated)
     }
     
-    @objc private func swizzled_viewWillDisappear(_ animated: Bool) {
+    @objc fileprivate func swizzled_viewWillDisappear(_ animated: Bool) {
         viewState = .willDisappear
         NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self)
         
         self.swizzled_viewWillDisappear(animated)
     }
     
-    @objc private func swizzled_viewDidDisappear(_ animated: Bool) {
+    @objc fileprivate func swizzled_viewDidDisappear(_ animated: Bool) {
         viewState = .didDisappear
         NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self)
         

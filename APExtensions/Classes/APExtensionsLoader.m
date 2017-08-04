@@ -12,8 +12,22 @@
 
 @implementation APExtensionsLoader
 
+// TODO: Measure on device. 0.1 - 0.15 on simulator.
 + (void)load {
-    [APExtensions prepare];
+    Protocol *setupOnce = @protocol(SetupOnce);
+    
+    int numberOfClasses = objc_getClassList(NULL, 0);
+    Class *classList = (Class *) malloc(numberOfClasses * sizeof(Class));
+    numberOfClasses = objc_getClassList(classList, numberOfClasses);
+    
+    for (int idx = 0; idx < numberOfClasses; idx++) {
+        Class class = classList[idx];
+        // Trigger SetupOnceProperty and SetupOnceMethod classes
+        if (class_conformsToProtocol(class, setupOnce)) {
+            NSInteger result __unused = [class setupOnce];
+        }
+    }
+    free(classList);
 }
 
 @end
