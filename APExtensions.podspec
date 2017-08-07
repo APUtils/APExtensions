@@ -36,7 +36,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   #   'APExtensions' => ['APExtensions/Assets/*.png']
   # }
 
-  s.private_header_files = 'APExtensions/Classes/_Protocols/SetupOnceLoader.h'
+  s.private_header_files = 'APExtensions/Classes/_Protocols/SetupOnceLoader.h', 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
