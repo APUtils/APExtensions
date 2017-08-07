@@ -1,5 +1,7 @@
 PODS:
-  - APExtensions (3.1.0)
+  - APExtensions (3.3.1):
+    - APExtensions/UIViewController+Swizzling (= 3.3.1)
+  - APExtensions/UIViewController+Swizzling (3.3.1)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -25,7 +27,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  APExtensions: 26532be9e4fa3fa91aad4e44d8262e37d3c8b609
+  APExtensions: 784764b45543b6902f7827b701f1c1b831a5b7c2
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Nimble-Snapshots: 31c8ef7fcebf0e68b4dff83f6e2160813a4a116b
@@ -33,4 +35,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 32a00ad59d1a17fe381338ae635e5a9765b1addb
 
-COCOAPODS: 1.3.0
+COCOAPODS: 1.3.1

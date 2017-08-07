@@ -1,6 +1,6 @@
 {
   "name": "APExtensions",
-  "version": "3.1.0",
+  "version": "3.3.1",
   "summary": "A helpful collection of extensions, controllers and protocols.",
   "description": "A helpful collection of extensions, controllers and protocols. See documentation for details.",
   "homepage": "https://github.com/APUtils/APExtensions",
@@ -13,16 +13,23 @@
   },
   "source": {
     "git": "https://github.com/APUtils/APExtensions.git",
-    "tag": "3.1.0"
+    "tag": "3.3.1"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "APExtensions/Classes/**/*",
-  "private_header_files": "APExtensions/Classes/APExtensionsLoader.h",
+  "private_header_files": "APExtensions/Classes/_Protocols/SetupOnceLoader.h",
   "frameworks": [
     "Foundation",
     "UIKit",
     "MessageUI"
+  ],
+  "subspecs": [
+    {
+      "name": "UIViewController+Swizzling",
+      "source_files": "APExtensions/Classes/_Extensions/Swizzling/**/*",
+      "private_header_files": "APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h"
+    }
   ]
 }

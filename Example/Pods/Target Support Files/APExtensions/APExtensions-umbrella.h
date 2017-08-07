@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SwizzlingLoader.h"
 
 FOUNDATION_EXPORT double APExtensionsVersionNumber;
 FOUNDATION_EXPORT const unsigned char APExtensionsVersionString[];

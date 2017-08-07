@@ -1,5 +1,5 @@
 //
-//  APExtensionsLoader.h
+//  SwizzlingLoader.h
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/3/17.
@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 
-@interface APExtensionsLoader: NSObject
+@interface SwizzlingLoader: NSObject
 @end

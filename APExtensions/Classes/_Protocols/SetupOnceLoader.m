@@ -1,5 +1,5 @@
 //
-//  APExtensionsLoader.m
+//  SetupOnceLoader.m
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/3/17.
@@ -7,10 +7,10 @@
 //
 
 #import <APExtensions/APExtensions-Swift.h>
-#import "APExtensionsLoader.h"
+#import "SetupOnceLoader.h"
 
 
-@implementation APExtensionsLoader
+@implementation SetupOnceLoader
 
 // TODO: Measure on device. 0.1 - 0.15 on simulator.
 + (void)load {
