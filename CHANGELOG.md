@@ -2,6 +2,33 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.0](https://github.com/APUtils/APExtensions/releases/tag/3.4.0)
+Released on 08/08/2017.
+
+#### Added
+- Carthage support
+
+#### Changed
+- String .splitByCapitals() -> .splitByCapitals
+
+## [3.3.1](https://github.com/APUtils/APExtensions/releases/tag/3.3.1)
+Released on 08/08/2017.
+
+#### Added
+- ViewState subspec
+
+## [3.3.0](https://github.com/APUtils/APExtensions/releases/tag/3.3.0)
+Released on 08/04/2017.
+
+#### Added
+- Character .isUpperCase
+- Sequence .splitBefore(...)
+- String .splitByCapitals()
+
+#### Removed
+- APExtensions class. Made private loader.
+
+
 ## [3.2.0](https://github.com/APUtils/APExtensions/releases/tag/3.2.0)
 Released on 08/03/2017.
 
@@ -9,7 +36,6 @@ Released on 08/03/2017.
 - UIImage+Utils .screenFitImage
 - No need to call APExtensions.prepare() anymore
 - SetupOnce classes called automatically
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [3.1.0](https://github.com/APUtils/APExtensions/releases/tag/3.1.0)
 Released on 07/31/2017.
@@ -23,16 +49,13 @@ Released on 07/31/2017.
 - UIButton .lines
 - Utils .g_showPickerAlert(...)
 - Utils .g_statusBarStyleTopViewController
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 #### Changed
 - UIView made .endEditing @IBAction
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 #### Fixed
 - UIImage resize rendering mode fix
 - AlerController status bar style fix
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [3.0.0](https://github.com/APUtils/APExtensions/releases/tag/3.0.0)
 Released on 07/20/2017.
@@ -45,7 +68,6 @@ Released on 07/20/2017.
 - UIView animations
 - UIViewController .isBeingRemoved
 - UIView .viewController
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [2.0.0](https://github.com/APUtils/APExtensions/releases/tag/2.0.0)
 Released on 07/18/2017.
@@ -62,26 +84,22 @@ Released on 07/18/2017.
 - UIApplication+Utils makeCall(phone:), sendEmail(to:)
 - Error+Utils .isConnectError
 - UINavigationBar+Utils setTransparent(_:)
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 #### Renamed
 - .fitSize -> .fitScreenSize
 - Creatable -> InstantiatableFromStoryboard
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [1.0.2](https://github.com/APUtils/APExtensions/releases/tag/1.0.2)
 Released on 07/11/2017.
 
 #### Added
 - NSCoder+Utils
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [1.0.1](https://github.com/APUtils/APExtensions/releases/tag/1.0.1)
 Released on 07/11/2017.
 
 #### Added
 - Debug logs
-  - Added by [Anton Plebanovich](https://github.com/anton-plebanovich).
 
 ## [1.0.0](https://github.com/APUtils/APExtensions/releases/tag/1.0.0)
 Released on 07/11/2017.

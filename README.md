@@ -5,17 +5,23 @@
 [![License](https://img.shields.io/cocoapods/l/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 
-TODO
+A helpful collection of extensions, controllers and protocols
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## GIF animation
-
-TODO
-
 ## Installation
+
+#### Carthage
+
+Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
+
+Cartfile:
+
+```
+github "APUtils/APExtensions"
+```
 
 #### CocoaPods
 
@@ -26,7 +32,19 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions'
 ```
 
+Available subspecs: ViewState. Example Podfile for subspec:
+
+```ruby
+pod 'APExtensions/ViewState'
+```
+
 ## Usage
+
+#### ViewState
+
+Extends UIViewController with .viewState enum property. Possible cases: `.notLoaded`, `.didLoad`, `.willAppear`, `.didAppear`, `.willDisappear`, `.didDisappear`.
+
+Also every UIViewController starts to send notifications about its state change. Available notifications to observe: `.UIViewControllerViewDidLoad`, `.UIViewControllerViewWillAppear`, `.UIViewControllerViewDidAppear`, `.UIViewControllerViewWillDisappear`, `.UIViewControllerViewDidDisappear`
 
 See example project for more details.
 
