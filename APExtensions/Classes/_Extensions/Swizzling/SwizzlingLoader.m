@@ -10,11 +10,18 @@
 #import "SwizzlingLoader.h"
 
 
+@interface UIViewController (Private)
+
++ (NSInteger)setupOnce;
+
+@end
+
+
 @implementation SwizzlingLoader
 
 + (void)load {
     if ([UIViewController respondsToSelector:@selector(setupOnce)]) {
-        [UIViewController setupOnce];
+        NSInteger result __unused = [UIViewController setupOnce];
     }
 }
 

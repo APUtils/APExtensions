@@ -41,8 +41,8 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  s.subspec 'UIViewController+Swizzling' do |swizzling|
-    swizzling.source_files = 'APExtensions/Classes/_Extensions/Swizzling/**/*'
-    swizzling.private_header_files = 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
+  s.subspec 'ViewState' do |viewState|
+    viewState.source_files = 'APExtensions/Classes/_Extensions/Swizzling/**/*'
+    viewState.private_header_files = 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
   end
 end

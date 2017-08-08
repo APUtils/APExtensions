@@ -8,6 +8,63 @@
 
 import UIKit
 
+//-----------------------------------------------------------------------------
+// MARK: - Swizzle Functions
+//-----------------------------------------------------------------------------
+
+private func swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+    guard class_isMetaClass(`class`) else { return }
+    
+    let originalMethod = class_getClassMethod(`class`, originalSelector)!
+    let swizzledMethod = class_getClassMethod(`class`, swizzledSelector)!
+    
+    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+}
+
+private func swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+    guard !class_isMetaClass(`class`) else { return }
+    
+    let originalMethod = class_getInstanceMethod(`class`, originalSelector)!
+    let swizzledMethod = class_getInstanceMethod(`class`, swizzledSelector)!
+    
+    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+}
+
+private func swizzleMethods(class: AnyClass, originalSelector: Selector, originalMethod: Method, swizzledSelector: Selector, swizzledMethod: Method) {
+    let didAddMethod = class_addMethod(`class`, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+    
+    if didAddMethod {
+        class_replaceMethod(`class`, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod)
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - Load
+//-----------------------------------------------------------------------------
+
+private extension UIViewController {
+    @objc private static var setupOnce: Int {
+        struct Private {
+            static var setupOnce: Int = {
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillDisappear(_:)), swizzledSelector: #selector(swizzled_viewWillDisappear(_:)))
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
+                
+                return 0
+            }()
+        }
+        
+        return Private.setupOnce
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - ViewState and Notifications
+//-----------------------------------------------------------------------------
 
 private var associatedStateKey = 0
 
@@ -20,17 +77,6 @@ public extension Notification.Name {
     static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
 }
 
-extension UIViewController: SetupOnce {
-    public static var setupOnce: Int = {
-        g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
-        g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
-        g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
-        g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillDisappear(_:)), swizzledSelector: #selector(swizzled_viewWillDisappear(_:)))
-        g_swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
-        
-        return 0
-    }()
-}
 
 extension UIViewController {
     public enum ViewState {

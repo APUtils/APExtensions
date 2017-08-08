@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Helper Class
 //-----------------------------------------------------------------------------
 
-private class AlertRootViewController: UIViewController {
+private final class AlertRootViewController: UIViewController {
     fileprivate var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
     fileprivate var customPrefersStatusBarHidden = false
     
@@ -29,7 +29,7 @@ private class AlertRootViewController: UIViewController {
 // MARK: - Class Implementation
 //-----------------------------------------------------------------------------
 
-public class AlertController: UIAlertController {
+public final class AlertController: UIAlertController {
     
     //-----------------------------------------------------------------------------
     // MARK: - Private Properties
