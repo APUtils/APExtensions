@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![License](https://img.shields.io/cocoapods/l/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
-[![CI Status](http://img.shields.io/travis/anton-plebanovich/APExtensions.svg?style=flat)](https://travis-ci.org/anton-plebanovich/APExtensions)
+[![CI Status](http://img.shields.io/travis/APUtils/APExtensions.svg?style=flat)](https://travis-ci.org/APUtils/APExtensions)
 
 A helpful collection of extensions, controllers and protocols
 
