@@ -33,10 +33,11 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions'
 ```
 
-Available subspecs: ViewState. Example Podfile for subspec:
+Available subspecs: ViewState, Storyboard. Example Podfile for subspec:
 
 ```ruby
 pod 'APExtensions/ViewState'
+pod 'APExtensions/Storyboard'
 ```
 
 ## Usage
