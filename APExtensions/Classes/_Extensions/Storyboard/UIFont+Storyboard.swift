@@ -1,5 +1,5 @@
 //
-//  UIFont+Utils.swift
+//  UIFont+Storyboard.swift
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 6/20/17.

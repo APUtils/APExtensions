@@ -77,7 +77,7 @@ public extension UIImageView {
         }
         set {
             if let newValue = newValue {
-                let localizedImageName = newValue + g_Translate("_en")
+                let localizedImageName = newValue + NSLocalizedString("_en", comment: "")
                 self.localizedImageName = localizedImageName
                 
                 image = UIImage(named: localizedImageName)

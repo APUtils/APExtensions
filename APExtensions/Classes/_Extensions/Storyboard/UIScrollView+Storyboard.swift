@@ -16,7 +16,7 @@ public extension UIScrollView {
             return contentInset.top == 64
         }
         set {
-            setTopNavigationBarsInset()
+            contentInset.top = 64
         }
     }
     
@@ -26,7 +26,7 @@ public extension UIScrollView {
             return contentInset.top == 49
         }
         set {
-            setBottomTabBarInset()
+            contentInset.bottom = 49
         }
     }
 }

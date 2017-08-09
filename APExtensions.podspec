@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '3.4.1'
+  s.version          = '3.4.2'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -42,8 +42,12 @@ A helpful collection of extensions, controllers and protocols. See documentation
   # s.dependency 'AFNetworking', '~> 2.3'
 
   s.subspec 'ViewState' do |viewState|
-    viewState.ios.deployment_target = '8.0'
     viewState.source_files = 'APExtensions/Classes/_Extensions/Swizzling/**/*'
     viewState.private_header_files = 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
+  end
+
+  s.subspec 'Storyboard' do |storyboard|
+    storyboard.source_files = 'APExtensions/Classes/_Extensions/Storyboard/**/*'
+    storyboard.dependency 'APExtensions/ViewState', '>= 3.3.1'
   end
 end
