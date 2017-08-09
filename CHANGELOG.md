@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.2](https://github.com/APUtils/APExtensions/releases/tag/3.4.2)
+Released on 08/09/2017.
+
+#### Added
+- Storyboard subspec
+
 ## [3.4.1](https://github.com/APUtils/APExtensions/releases/tag/3.4.1)
 Released on 08/09/2017.
 
