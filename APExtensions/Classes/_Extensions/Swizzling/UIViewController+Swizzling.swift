@@ -48,6 +48,7 @@ private extension UIViewController {
     @objc private static var setupOnce: Int {
         struct Private {
             static var setupOnce: Int = {
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParentViewController:)), swizzledSelector: #selector(swizzled_willMove(toParentViewController:)))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
