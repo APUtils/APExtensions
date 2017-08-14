@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.4](https://github.com/APUtils/APExtensions/releases/tag/3.4.4)
+Released on 08/14/2017.
+
+#### Added
+- UIViewControllerWillMoveToParentViewController notification
+
+#### Fixed
+- Name typo fix splitedByCapitals -> splittedByCapitals
+
 ## [3.4.3](https://github.com/APUtils/APExtensions/releases/tag/3.4.3)
 Released on 08/09/2017.
 
