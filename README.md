@@ -33,7 +33,7 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions'
 ```
 
-Available subspecs: ViewState, Storyboard. Example Podfile for subspec:
+Available subspecs: `ViewState`, `Storyboard`. Example Podfile for subspec:
 
 ```ruby
 pod 'APExtensions/ViewState'
@@ -42,11 +42,15 @@ pod 'APExtensions/Storyboard'
 
 ## Usage
 
+### Core
+
+TODO
+
 ### ViewState
 
 Extends UIViewController with .viewState enum property. Possible cases: `.notLoaded`, `.didLoad`, `.willAppear`, `.didAppear`, `.willDisappear`, `.didDisappear`.
 
-Also every UIViewController starts to send notifications about its state change. Available notifications to observe: `.UIViewControllerViewDidLoad`, `.UIViewControllerViewWillAppear`, `.UIViewControllerViewDidAppear`, `.UIViewControllerViewWillDisappear`, `.UIViewControllerViewDidDisappear`
+Also every UIViewController starts to send notifications about its state change. Available notifications to observe: `.UIViewControllerWillMoveToParentViewController`, `.UIViewControllerViewDidLoad`, `.UIViewControllerViewWillAppear`, `.UIViewControllerViewDidAppear`, `.UIViewControllerViewWillDisappear`, `.UIViewControllerViewDidDisappear`. You could check `userInfo` notification's dictionary for parameters if needed.
 
 See example project for more details.
 

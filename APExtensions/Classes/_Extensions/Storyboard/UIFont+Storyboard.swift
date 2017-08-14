@@ -25,4 +25,7 @@ public extension UIFont {
         
         return UIFont(descriptor: fontDescriptor, size: newFontSize)
     }
+    
+    
+    // TODO: Add Dynamic Type with UIFontMetrics for iOS 11
 }

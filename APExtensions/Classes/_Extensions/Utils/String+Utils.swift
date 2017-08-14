@@ -123,7 +123,7 @@ public extension String {
 
 public extension String {
     /// Splits string by capital letters without stripping them
-    public var splitedByCapitals: [String] {
+    public var splittedByCapitals: [String] {
         return characters.splitBefore(separator: { $0.isUpperCase }).map({ String($0) })
     }
     
