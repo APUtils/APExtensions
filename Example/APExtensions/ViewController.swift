@@ -7,5 +7,23 @@
 //
 
 import UIKit
+import APExtensions
 
-class ViewController: UIViewController {}
+
+class ViewController: UIViewController {
+
+    //-----------------------------------------------------------------------------
+    // MARK: - UIViewController Overrides
+    //-----------------------------------------------------------------------------
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        g_sharedNotificationCenter.startDayNotifications()
+    }
+}

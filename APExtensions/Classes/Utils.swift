@@ -21,10 +21,10 @@ public typealias SimpleClosure = () -> ()
 //-----------------------------------------------------------------------------
 
 public struct g_screenSize {
-    @nonobjc static let width = UIScreen.main.bounds.size.width
-    @nonobjc static let height = UIScreen.main.bounds.size.height
-    @nonobjc static let maxSide = max(g_screenSize.width, g_screenSize.height)
-    @nonobjc static let minSide = min(g_screenSize.width, g_screenSize.height)
+    @nonobjc public static let width = UIScreen.main.bounds.size.width
+    @nonobjc public static let height = UIScreen.main.bounds.size.height
+    @nonobjc public static let maxSide = max(g_screenSize.width, g_screenSize.height)
+    @nonobjc public static let minSide = min(g_screenSize.width, g_screenSize.height)
 }
 
 //-----------------------------------------------------------------------------

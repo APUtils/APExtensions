@@ -159,6 +159,7 @@
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = D81DE72B8908E397DB13868960F3FB84 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		B086B4E71F42EED300D7B4B7 /* NotificationCenter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086B4E61F42EED300D7B4B7 /* NotificationCenter+Utils.swift */; };
 		B0A073C01F3B70F7001B8CC6 /* UIImage+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A073BF1F3B70F7001B8CC6 /* UIImage+Storyboard.swift */; };
 		B1015F74899746C118A4DFF68FA11C9B /* Sequence+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF47215868A0913FCD7FA0C7156FFE1 /* Sequence+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EEEA6E480B661AE6D375672436A15 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -443,6 +444,7 @@
 		AD11F4279442D689C9DF48C23623D7F2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		AF11943C33369B2227B7C0589C17284F /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		B086B4E61F42EED300D7B4B7 /* NotificationCenter+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Utils.swift"; sourceTree = "<group>"; };
 		B0A073BF1F3B70F7001B8CC6 /* UIImage+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Storyboard.swift"; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 				18A5B88E2A37992068A07487D4003BF0 /* Error+Utils.swift */,
 				1344EAC21908F0060C2820C02078C230 /* MFMailComposeViewController+Utils.swift */,
 				E5209D6650FB9978A78EB79F5A949BF6 /* MFMessageComposeViewController+Utils.swift */,
+				B086B4E61F42EED300D7B4B7 /* NotificationCenter+Utils.swift */,
 				EF532B8DD7D183035F55882E5C646596 /* NSCoder+Utils.swift */,
 				9E1921B5938DF2814C9641EA58D8C8C6 /* Optional+Utils.swift */,
 				5DF47215868A0913FCD7FA0C7156FFE1 /* Sequence+Utils.swift */,
@@ -1508,6 +1511,7 @@
 				CE124F8A78211B13A73ABDC2400CB63B /* UITextView+Storyboard.swift in Sources */,
 				532A92DFED7B3E432ACAE64BDFC5A307 /* UIView+Storyboard.swift in Sources */,
 				C3A49F8FB974A1E10C8E21FB104447DC /* UIView+Utils.swift in Sources */,
+				B086B4E71F42EED300D7B4B7 /* NotificationCenter+Utils.swift in Sources */,
 				7B18FFCDD45B6B451F1296BD77546A32 /* UIViewController+Storyboard.swift in Sources */,
 				3DB4969ACE82A3BE8D0C5872BDE3B68C /* UIViewController+Swizzling.swift in Sources */,
 				39F2668AC70E4F9EBB125004703304B8 /* UIViewController+Utils.swift in Sources */,

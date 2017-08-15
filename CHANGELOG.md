@@ -2,11 +2,20 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [3.4.6](https://github.com/APUtils/APExtensions/releases/tag/3.4.6)
+Released on 08/15/2017.
+
+#### Added
+- NotificationCenter .startDayNotifications() and .stopDayNotifications()
+
+
 ## [3.4.5](https://github.com/APUtils/APExtensions/releases/tag/3.4.5)
 Released on 08/14/2017.
 
 #### Fixed
 - UIViewControllerWillMoveToParentViewController fix
+
 
 ## [3.4.4](https://github.com/APUtils/APExtensions/releases/tag/3.4.4)
 Released on 08/14/2017.
@@ -17,11 +26,13 @@ Released on 08/14/2017.
 #### Fixed
 - Name typo fix splitedByCapitals -> splittedByCapitals
 
+
 ## [3.4.3](https://github.com/APUtils/APExtensions/releases/tag/3.4.3)
 Released on 08/09/2017.
 
 #### Added
 - Storyboard README section
+
 
 ## [3.4.2](https://github.com/APUtils/APExtensions/releases/tag/3.4.2)
 Released on 08/09/2017.
@@ -29,11 +40,13 @@ Released on 08/09/2017.
 #### Added
 - Storyboard subspec
 
+
 ## [3.4.1](https://github.com/APUtils/APExtensions/releases/tag/3.4.1)
 Released on 08/09/2017.
 
 #### Fixed
 - Public attributes fix
+
 
 ## [3.4.0](https://github.com/APUtils/APExtensions/releases/tag/3.4.0)
 Released on 08/08/2017.
@@ -44,11 +57,13 @@ Released on 08/08/2017.
 #### Changed
 - String .splitByCapitals() -> .splitByCapitals
 
+
 ## [3.3.1](https://github.com/APUtils/APExtensions/releases/tag/3.3.1)
 Released on 08/08/2017.
 
 #### Added
 - ViewState subspec
+
 
 ## [3.3.0](https://github.com/APUtils/APExtensions/releases/tag/3.3.0)
 Released on 08/04/2017.
@@ -70,6 +85,7 @@ Released on 08/03/2017.
 - No need to call APExtensions.prepare() anymore
 - SetupOnce classes called automatically
 
+
 ## [3.1.0](https://github.com/APUtils/APExtensions/releases/tag/3.1.0)
 Released on 07/31/2017.
 
@@ -90,6 +106,7 @@ Released on 07/31/2017.
 - UIImage resize rendering mode fix
 - AlerController status bar style fix
 
+
 ## [3.0.0](https://github.com/APUtils/APExtensions/releases/tag/3.0.0)
 Released on 07/20/2017.
 
@@ -101,6 +118,7 @@ Released on 07/20/2017.
 - UIView animations
 - UIViewController .isBeingRemoved
 - UIView .viewController
+
 
 ## [2.0.0](https://github.com/APUtils/APExtensions/releases/tag/2.0.0)
 Released on 07/18/2017.
@@ -122,17 +140,20 @@ Released on 07/18/2017.
 - .fitSize -> .fitScreenSize
 - Creatable -> InstantiatableFromStoryboard
 
+
 ## [1.0.2](https://github.com/APUtils/APExtensions/releases/tag/1.0.2)
 Released on 07/11/2017.
 
 #### Added
 - NSCoder+Utils
 
+
 ## [1.0.1](https://github.com/APUtils/APExtensions/releases/tag/1.0.1)
 Released on 07/11/2017.
 
 #### Added
 - Debug logs
+
 
 ## [1.0.0](https://github.com/APUtils/APExtensions/releases/tag/1.0.0)
 Released on 07/11/2017.

@@ -609,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 694EDDC8CC6DE26D228C04C4 /* Pods-APExtensions_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -627,6 +628,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE5DFB90DA99C6B1782DA7A7 /* Pods-APExtensions_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
