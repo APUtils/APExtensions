@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [3.4.7](https://github.com/APUtils/APExtensions/releases/tag/3.4.7)
+Released on 08/15/2017.
+
+#### Added
+- g_getClassesConformToProtocol(_:)
+
+
 ## [3.4.6](https://github.com/APUtils/APExtensions/releases/tag/3.4.6)
 Released on 08/15/2017.
 

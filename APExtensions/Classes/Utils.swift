@@ -359,6 +359,13 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
 // MARK: - Other Global Functions
 //-----------------------------------------------------------------------------
 
+/// Takes 0.003s - 0.02s on 5s device. Usage example:
+///
+///     let setupOnes: [SetupOnce.Type] = g_getClassesConformToProtocol(SetupOnce.self)
+public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
+    return APExtensionsLoader.getClassesConform(to: `protocol`).flatMap({ $0 as? T })
+}
+
 public func g_Translate(_ string: String) -> String {
     return NSLocalizedString(string, comment: "")
 }

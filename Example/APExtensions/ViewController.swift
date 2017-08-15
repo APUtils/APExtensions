@@ -19,11 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        g_sharedNotificationCenter.startDayNotifications()
+        // Get all classes that conform to SetupOnce protocol
+        let setupOnces: [SetupOnce.Type] = g_getClassesConformToProtocol(SetupOnce.self)
+        print("Classes conform to SetupOnce: \(setupOnces)")
     }
 }

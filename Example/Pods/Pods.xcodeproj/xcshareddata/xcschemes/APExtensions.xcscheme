@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D8471C850FD84C7F38D68D2D84030041'
+               BlueprintIdentifier = '8540E69D68A3647E124AA3C2B3C4E2CC'
                BlueprintName = 'APExtensions'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'APExtensions.framework'>

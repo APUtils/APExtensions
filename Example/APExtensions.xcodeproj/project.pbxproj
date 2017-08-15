@@ -16,6 +16,7 @@
 		80A92A74A767696EA54A2DA9 /* Pods_APExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */; };
 		8374A77656BB94E1D7977739 /* Pods_APExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395BB6683ADC88370A9C1FD3 /* Pods_APExtensions_Tests.framework */; };
 		B02A385C1F3332E6002E29F0 /* podInstall.command in Resources */ = {isa = PBXBuildFile; fileRef = B02A385B1F3332E6002E29F0 /* podInstall.command */; };
+		B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */; };
 		B0A073C21F3B741B001B8CC6 /* uiview.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C11F3B741B001B8CC6 /* uiview.png */; };
 		B0A073C41F3B7563001B8CC6 /* nslayoutconstraint.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */; };
 		B0A073C61F3B7708001B8CC6 /* uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C51F3B7707001B8CC6 /* uibutton.png */; };
@@ -56,6 +57,7 @@
 		8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APExtensions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57474C800BA2A652ED8F4FB /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		B02A385B1F3332E6002E29F0 /* podInstall.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = podInstall.command; sourceTree = "<group>"; };
+		B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnceProtocolExample.swift; sourceTree = "<group>"; };
 		B0A073C11F3B741B001B8CC6 /* uiview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiview.png; sourceTree = "<group>"; };
 		B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nslayoutconstraint.png; sourceTree = "<group>"; };
 		B0A073C51F3B7707001B8CC6 /* uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uibutton.png; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */,
 			);
 			name = "Example for APExtensions";
 			path = APExtensions;
@@ -270,10 +273,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = XVJ8T9UW9V;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = XVJ8T9UW9V;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -444,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,7 +584,7 @@
 			baseConfigurationReference = 6BCF9756A45C4D4C058B3B72 /* Pods-APExtensions_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				INFOPLIST_FILE = APExtensions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -594,7 +600,7 @@
 			baseConfigurationReference = 1C3CB983CAFCAC76FA697699 /* Pods-APExtensions_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				INFOPLIST_FILE = APExtensions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,7 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 694EDDC8CC6DE26D228C04C4 /* Pods-APExtensions_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -628,7 +634,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE5DFB90DA99C6B1782DA7A7 /* Pods-APExtensions_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -6,7 +6,11 @@
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 
+
 /// Simplifies work with classes that need some routine to be performed once on app load.
+///
+/// It's behaviour is close to `[NSObject load]` but since overriding `[NSObject load]` method can't be used in Swift you may use this protocol instead.
+///
 /// Using property assures code will never be executed twice.
 ///
 ///     static var setupOnce: Int = {

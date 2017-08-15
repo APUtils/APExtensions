@@ -1,5 +1,5 @@
 //
-//  SetupOnceLoader.h
+//  APExtensionsLoader.h
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/3/17.
@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SetupOnceLoader: NSObject
+@interface APExtensionsLoader: NSObject
++ (NSArray<Class> * _Nonnull)getClassesConformToProtocol:(Protocol * _Nonnull)protocol;
 @end
