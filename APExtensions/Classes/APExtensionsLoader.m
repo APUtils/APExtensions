@@ -32,26 +32,6 @@ static int _count = 0;
             NSInteger result __unused = [class setupOnce];
         }
     }
-    
-        for (NSInteger i = 0; i < 100; i++) {
-            NSDate *date = [NSDate new];
-            
-            _count = objc_getClassList(NULL, 0);
-            _allClasses = (Class *)malloc(_count * sizeof(Class));
-            _count = objc_getClassList(_allClasses, _count);
-            
-            
-            Protocol *setupOnce = @protocol(SetupOnce);
-            for (int index = 0; index < _count; index++) {
-                Class class = _allClasses[index];
-                
-                if (class_conformsToProtocol(class, setupOnce)) {
-                    NSInteger result __unused = [class setupOnce];
-                }
-            }
-            
-            NSLog(@"******* %f", [[NSDate new] timeIntervalSinceDate:date]);
-        }
 }
     
 // 0.007 - 0.02 on 5s

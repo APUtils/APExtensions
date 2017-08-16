@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [3.4.10](https://github.com/APUtils/APExtensions/releases/tag/3.4.10)
+Released on 08/16/2017.
+
+#### Fixed
+- Debug log spam
+
+
 ## [3.4.9](https://github.com/APUtils/APExtensions/releases/tag/3.4.9)
 Released on 08/16/2017.
 
