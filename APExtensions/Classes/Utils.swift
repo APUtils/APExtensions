@@ -359,7 +359,7 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
 // MARK: - Other Global Functions
 //-----------------------------------------------------------------------------
 
-/// Takes 0.003s - 0.02s on 5s device. Usage example:
+/// Takes 0.003s - 0.02s on 5s device. Example usage:
 ///
 ///     let setupOnes: [SetupOnce.Type] = g_getClassesConformToProtocol(SetupOnce.self)
 public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {

@@ -8,7 +8,13 @@
 
 
 /// Simplifies Managers start and reset routine. All managers could be then started/reseted on apropriate point in app, e.g. on user login/logout.
-public protocol Manager {
+///
+/// To get all Managers in some place (e.g. ApplicationManager) you could use following construction:
+///
+///      private var managers: [Manager.Type] = {
+///          return g_getClassesConformToProtocol(Manager.self)
+///      }()
+@objc public protocol Manager {
     /// Start manager. Usually on app start or user login.
     static func start()
     
