@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [3.4.9](https://github.com/APUtils/APExtensions/releases/tag/3.4.9)
+Released on 08/16/2017.
+
+#### Fixed
+- Day start notification name public access
+
+
 ## [3.4.8](https://github.com/APUtils/APExtensions/releases/tag/3.4.8)
 Released on 08/16/2017.
 

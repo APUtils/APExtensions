@@ -12,9 +12,9 @@ import Foundation
 // MARK: - Day Start Notifications
 //-----------------------------------------------------------------------------
 
-extension Notification.Name {
+public extension Notification.Name {
     /// Post on 0:00:00 every day so app can refresh it's data. For example change `Today` to `Yesterday` date formatter string.
-    static let DayDidStart = Notification.Name("DayDidStart")
+    public static let DayDidStart = Notification.Name("DayDidStart")
 }
 
 
