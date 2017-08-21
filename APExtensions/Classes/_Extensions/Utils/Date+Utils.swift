@@ -23,6 +23,16 @@ public extension Date {
         return Calendar.current.date(byAdding: DateComponents(day: 1), to: Date())!.startOfDay
     }
     
+    /// Returns next work day excluding today. It just exludes weekends. Does not exclude holidays.
+    public static var nextWorkDay: Date {
+        var currentDate = Date.tomorrow
+        
+        // Skipping weekends
+        while currentDate.isWeekend { currentDate = currentDate.nextDay }
+        
+        return currentDate
+    }
+    
     /// Get day start. Uses user's time zone.
     public var startOfDay: Date {
         return Calendar.current.startOfDay(for: self)
@@ -33,7 +43,7 @@ public extension Date {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
     }
     
-    /// Returns beginning of the next day
+    /// Returns beginning of the next day.
     public var nextDay: Date {
         return Calendar.current.date(byAdding: DateComponents(day: 1), to: self)!.startOfDay
     }
