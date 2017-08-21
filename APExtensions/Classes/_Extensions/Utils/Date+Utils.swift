@@ -13,6 +13,11 @@ import Foundation
 //-----------------------------------------------------------------------------
 
 public extension Date {
+    /// Get yesterday's day start date. Uses user's time zone.
+    public static var yesterday: Date {
+        return Calendar.current.date(byAdding: DateComponents(day: -1), to: Date())!.startOfDay
+    }
+    
     /// Get today's day start date. Uses user's time zone.
     public static var today: Date {
         return Calendar.current.startOfDay(for: Date())
