@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Date.yesterday)
+        print(Date().previousWorkDay)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -38,6 +38,21 @@ public extension Date {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
     }
     
+    /// Returns beginning of the previous day.
+    public var previousDay: Date {
+        return Calendar.current.date(byAdding: DateComponents(day: -1), to: self)!.startOfDay
+    }
+    
+    /// Returns beginning of the next work day excluding today. It just exludes weekends. Does not exclude holidays.
+    public var previousWorkDay: Date {
+        var currentDate = previousDay
+        
+        // Skipping weekends
+        while currentDate.isWeekend { currentDate = currentDate.previousDay }
+        
+        return currentDate
+    }
+    
     /// Returns beginning of the next day.
     public var nextDay: Date {
         return Calendar.current.date(byAdding: DateComponents(day: 1), to: self)!.startOfDay
