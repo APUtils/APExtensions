@@ -1,6 +1,6 @@
 {
   "name": "APExtensions",
-  "version": "3.4.6",
+  "version": "3.6.0",
   "summary": "A helpful collection of extensions, controllers and protocols.",
   "description": "A helpful collection of extensions, controllers and protocols. See documentation for details.",
   "homepage": "https://github.com/APUtils/APExtensions",
@@ -13,13 +13,13 @@
   },
   "source": {
     "git": "https://github.com/APUtils/APExtensions.git",
-    "tag": "3.4.6"
+    "tag": "3.6.0"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "APExtensions/Classes/**/*",
-  "private_header_files": "APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h",
+  "private_header_files": "APExtensions/Classes/ViewState/ViewStateLoader.h",
   "frameworks": [
     "Foundation",
     "UIKit",
@@ -27,18 +27,17 @@
   ],
   "subspecs": [
     {
+      "name": "Core",
+      "source_files": "APExtensions/Classes/Core/**/*"
+    },
+    {
       "name": "ViewState",
-      "source_files": "APExtensions/Classes/_Extensions/Swizzling/**/*",
-      "private_header_files": "APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h"
+      "source_files": "APExtensions/Classes/ViewState/**/*",
+      "private_header_files": "APExtensions/Classes/ViewState/ViewStateLoader.h"
     },
     {
       "name": "Storyboard",
-      "source_files": "APExtensions/Classes/_Extensions/Storyboard/**/*",
-      "dependencies": {
-        "APExtensions/ViewState": [
-          ">= 3.3.1"
-        ]
-      }
+      "source_files": "APExtensions/Classes/Storyboard/**/*"
     }
   ]
 }

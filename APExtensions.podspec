@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '3.5.1'
+  s.version          = '3.6.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -36,18 +36,21 @@ A helpful collection of extensions, controllers and protocols. See documentation
   #   'APExtensions' => ['APExtensions/Assets/*.png']
   # }
 
-  s.private_header_files = 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
+  s.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
 
+  s.subspec 'Core' do |core|
+    core.source_files = 'APExtensions/Classes/Core/**/*'
+  end
+
   s.subspec 'ViewState' do |viewState|
-    viewState.source_files = 'APExtensions/Classes/_Extensions/Swizzling/**/*'
-    viewState.private_header_files = 'APExtensions/Classes/_Extensions/Swizzling/SwizzlingLoader.h'
+    viewState.source_files = 'APExtensions/Classes/ViewState/**/*'
+    viewState.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
   end
 
   s.subspec 'Storyboard' do |storyboard|
-    storyboard.source_files = 'APExtensions/Classes/_Extensions/Storyboard/**/*'
-    storyboard.dependency 'APExtensions/ViewState', '>= 3.3.1'
+    storyboard.source_files = 'APExtensions/Classes/Storyboard/**/*'
   end
 end

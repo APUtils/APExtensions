@@ -1,5 +1,5 @@
 //
-//  SwizzlingLoader.m
+//  ViewStateLoader.m
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/3/17.
@@ -7,7 +7,7 @@
 //
 
 #import <APExtensions/APExtensions-Swift.h>
-#import "SwizzlingLoader.h"
+#import "ViewStateLoader.h"
 
 
 @interface UIViewController (Private)
@@ -17,7 +17,7 @@
 @end
 
 
-@implementation SwizzlingLoader
+@implementation ViewStateLoader
 
 + (void)load {
     if ([UIViewController respondsToSelector:@selector(setupOnce)]) {

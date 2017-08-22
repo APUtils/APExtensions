@@ -69,7 +69,7 @@ public extension UIView {
 public extension UIView {
     /// Makes corner radius euqal to half of width or height
     public func makeRound() {
-        cornerRadius = min(width, height) / 2
+        layer.cornerRadius = min(width, height) / 2
     }
     
     /// Returns closest UIViewController from responders chain.
@@ -144,22 +144,5 @@ public extension UIView {
     /// Ends editing on view and all of it's subviews
     @IBAction public func endEditing() {
         endEditing(true)
-    }
-    
-    /// Tells view to become first responder only after view did appear for provided controller. Might be useful to prevent broken push animation.
-    public func becomeFirstResponderOnViewDidAppear(controller: UIViewController) {
-        guard controller.viewState != .didAppear else {
-            becomeFirstResponder()
-            return
-        }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onViewDidAppear(notification:)), name: .UIViewControllerViewDidAppear, object: controller)
-    }
-    
-    @objc private func onViewDidAppear(notification: Notification) {
-        NotificationCenter.default.removeObserver(self, name: .UIViewControllerViewDidAppear, object: nil)
-        DispatchQueue.main.async {
-            self.becomeFirstResponder()
-        }
     }
 }

@@ -26,10 +26,15 @@ end
 post_install do |installer|
     # Carthage support.
     # It puts swift files into public headers so @IBInspectable won't be stripped out.
-    additionHeaders = installer.pods_project.development_pods['APExtensions/_Extensions/Storyboard']
     headersBuildPhase = installer.pods_project.targets.select{ |x| x.name == 'APExtensions' }[0].headers_build_phase
-    additionHeaders.files.each { |additionHeader|
+    
+    storyboardHeaders = installer.pods_project.development_pods['APExtensions/Storyboard']
+    storyboardHeaders.files.each { |additionHeader|
         buildFile = headersBuildPhase.add_file_reference(additionHeader)
         buildFile.settings = { 'ATTRIBUTES' => ['Public']}
     }
+    
+    viewStateHeader = installer.pods_project.development_pods['APExtensions/ViewState/UIViewController+ViewState.swift']
+    buildFile = headersBuildPhase.add_file_reference(viewStateHeader)
+    buildFile.settings = { 'ATTRIBUTES' => ['Public']}
 end

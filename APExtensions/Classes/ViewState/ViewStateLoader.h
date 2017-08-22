@@ -1,5 +1,5 @@
 //
-//  SwizzlingLoader.h
+//  ViewStateLoader.h
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/3/17.
@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SwizzlingLoader: NSObject
+@interface ViewStateLoader: NSObject
 @end
