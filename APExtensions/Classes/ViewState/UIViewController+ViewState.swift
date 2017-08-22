@@ -181,7 +181,6 @@ public extension UIViewController {
         }
     }
     
-    /// End editing in viewController's view
     @objc private func _endEditing(_ sender: Any) {
         view.endEditing(true)
     }

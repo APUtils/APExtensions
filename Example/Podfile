@@ -34,7 +34,12 @@ post_install do |installer|
         buildFile.settings = { 'ATTRIBUTES' => ['Public']}
     }
     
-    viewStateHeader = installer.pods_project.development_pods['APExtensions/ViewState/UIViewController+ViewState.swift']
-    buildFile = headersBuildPhase.add_file_reference(viewStateHeader)
-    buildFile.settings = { 'ATTRIBUTES' => ['Public']}
+    viewStatePublicHeaders = ['UIView+ViewState.swift', 'UIViewController+ViewState.swift']
+    viewStateHeaders = installer.pods_project.development_pods['APExtensions/ViewState']
+    viewStateHeaders.files.each { |additionHeader|
+        next if not viewStatePublicHeaders.include? additionHeader.path
+        
+        buildFile = headersBuildPhase.add_file_reference(additionHeader)
+        buildFile.settings = { 'ATTRIBUTES' => ['Public']}
+    }
 end

@@ -59,7 +59,7 @@ TODO
 
 #### View
 
-Adds `.becomeFirstResponderOnViewDidAppear()` method to become first responser on `viewDidAppear`.
+Adds `.becomeFirstResponderOnViewDidAppear` @IBInspectable property to become first responser on `viewDidAppear`.
 
 ### Storyboard
 
