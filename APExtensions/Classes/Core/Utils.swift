@@ -14,12 +14,17 @@ import UIKit
 // MARK: - Typealiases
 //-----------------------------------------------------------------------------
 
+/// Closure that takes Void and returns Void.
 public typealias SimpleClosure = () -> ()
+
+/// Closure that takes Bool and returns Void.
+public typealias SuccessClosure = (_ success: Bool) -> ()
 
 //-----------------------------------------------------------------------------
 // MARK: - Global Structs
 //-----------------------------------------------------------------------------
 
+/// Structure containing screen sizes. Available constants: `width`, `height`, `maxSide`, `minSide`
 public struct g_screenSize {
     @nonobjc public static let width = UIScreen.main.bounds.size.width
     @nonobjc public static let height = UIScreen.main.bounds.size.height
