@@ -139,4 +139,12 @@ public extension Dictionary {
             return nil
         }
     }
+    
+    public func array(forKey key: Key) -> [AnyObject]? {
+        if let array = self[key] as? [AnyObject] {
+            return array
+        } else {
+            return nil
+        }
+    }
 }
