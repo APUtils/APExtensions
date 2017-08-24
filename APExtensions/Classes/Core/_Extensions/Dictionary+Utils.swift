@@ -140,11 +140,31 @@ public extension Dictionary {
         }
     }
     
-    public func array<T>(ofType type: T, forKey key: Key) -> [T]? {
+    private func array<T>(forKey key: Key) -> [T]? {
         if let array = self[key] as? [T] {
             return array
         } else {
             return nil
         }
+    }
+    
+    public func arrayOfInts(forKey key: Key) -> [Int]? {
+        return array(forKey: key)
+    }
+    
+    public func arrayOfDoubles(forKey key: Key) -> [Double]? {
+        return array(forKey: key)
+    }
+    
+    public func arrayOfBools(forKey key: Key) -> [Bool]? {
+        return array(forKey: key)
+    }
+    
+    public func arrayOfStrings(forKey key: Key) -> [String]? {
+        return array(forKey: key)
+    }
+    
+    public func arrayOfDictionaries(forKey key: Key) -> [[String: Any]]? {
+        return array(forKey: key)
     }
 }
