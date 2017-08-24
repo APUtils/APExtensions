@@ -140,8 +140,8 @@ public extension Dictionary {
         }
     }
     
-    public func array(forKey key: Key) -> [AnyObject]? {
-        if let array = self[key] as? [AnyObject] {
+    public func array<T>(ofType type: T, forKey key: Key) -> [T]? {
+        if let array = self[key] as? [T] {
             return array
         } else {
             return nil
