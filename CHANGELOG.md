@@ -4,11 +4,18 @@ All notable changes to this project will be documented in this file.
 
 
 ## [3.7.0](https://github.com/APUtils/APExtensions/releases/tag/3.7.0)
-TODO
+Released on 08/28/2017.
+
+#### Added
+- SuccessClosure
+- Dictionary .arrayOfInts(forKey:), .arrayOfDoubles(forKey:), .arrayOfBools(forKey:), .arrayOfStrings(forKey:), .arrayOfDictionaries(forKey:)
+
+#### Changed
+- UIView .becomeFirstResponderOnViewDidAppear is @IBInspectable now
 
 
 ## [3.6.0](https://github.com/APUtils/APExtensions/releases/tag/3.6.0)
-Released on 08/2/2017.
+Released on 08/02/2017.
 
 #### Added
 - `Core` podspec
