@@ -77,7 +77,9 @@ public final class AlertController: UIAlertController {
     //-----------------------------------------------------------------------------
     
     public func present(animated: Bool) {
-        alertWindow?.makeKeyAndVisible()
-        alertWindow?.rootViewController?.present(self, animated: animated, completion: nil)
+        g_performInMain {
+            self.alertWindow?.makeKeyAndVisible()
+            self.alertWindow?.rootViewController?.present(self, animated: animated, completion: nil)
+        }
     }
 }

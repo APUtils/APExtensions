@@ -36,7 +36,8 @@ public struct g_screenSize {
 // MARK: - Comparison
 //-----------------------------------------------------------------------------
 
-public func g_isCGSizeEqual(first: CGSize, second: CGSize) -> Bool {
+/// Compares two `CGSize`s with 0.0001 tolerance
+public func g_isCGSizesEqual(first: CGSize, second: CGSize) -> Bool {
     if abs(first.width - second.width) < 0.0001 && abs(first.height - second.height) < 0.0001 {
         return true
     } else {
@@ -44,6 +45,7 @@ public func g_isCGSizeEqual(first: CGSize, second: CGSize) -> Bool {
     }
 }
 
+/// Compares two `CGFloat`s with 0.0001 tolerance
 public func g_isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
     if abs(first - second) < 0.0001 {
         return true
@@ -56,32 +58,47 @@ public func g_isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
 // MARK: - Global Vars
 //-----------------------------------------------------------------------------
 
+/// Shared application
 public let g_sharedApplication = UIApplication.shared
+
+/// Standart user defaults
 public let g_sharedUserDefaults = UserDefaults.standard
+
+/// Default notification center
 public let g_sharedNotificationCenter = NotificationCenter.default
+
+/// Is running on simulator?
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0
+
+/// Screen pixel size
 public let g_pixelSize: CGFloat = 1 / UIScreen.main.scale
 
+/// User documents directory URL
 public var g_documentsDirectoryUrl: URL {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
 }
 
+/// User cache directory URL
 public var g_cacheDirectoryUrl: URL {
     return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
 }
 
+/// Application delegate
 public var g_appDelegate: UIApplicationDelegate {
     return g_sharedApplication.delegate!
 }
 
+/// Application key window
 public var g_keyWindow: UIWindow? {
     return g_sharedApplication.keyWindow
 }
 
+/// Application root view controller
 public var g_rootViewController: UIViewController {
     return g_appDelegate.window!!.rootViewController!
 }
 
+/// Is application in `active` state?
 public var g_isActive: Bool {
     return g_sharedApplication.applicationState == .active
 }
