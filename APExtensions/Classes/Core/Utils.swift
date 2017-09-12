@@ -254,14 +254,7 @@ public func g_performInMain(_ closure: @escaping SimpleClosure) {
 /// - parameter isDestructAction: Is action button destructive style or no
 /// - parameter cancelTitle: Cancel button title
 /// - parameter handler: Action button click closure
-public func g_showErrorAlert(
-    title: String? = nil,
-    message: String? = nil,
-    actionTitle: String = "Dismiss",
-    isDestructAction: Bool = false,
-    cancelTitle: String? = nil,
-    handler: ((UIAlertAction) -> Void)? = nil) {
-    
+public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", isDestructAction: Bool = false, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     alertVC.addAction(UIAlertAction(title: actionTitle, style: isDestructAction ? .destructive : .default, handler: handler))
     if let cancelTitle = cancelTitle {
@@ -275,7 +268,7 @@ public func g_showErrorAlert(
 /// - parameter title: Alert title
 /// - parameter message: Alert message
 /// - parameter completion: Closure that takes user entered text as parameter
-public func g_showEnterTextAlert(title: String?, message: String?, completion: @escaping (_ text: String?) -> ()) {
+public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, completion: @escaping (_ text: String?) -> ()) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
         let text = alertVC.textFields![0].text
