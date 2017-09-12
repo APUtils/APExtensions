@@ -268,10 +268,10 @@ public func g_showErrorAlert(title: String? = nil, message: String? = nil, actio
 /// - parameter title: Alert title
 /// - parameter message: Alert message
 /// - parameter completion: Closure that takes user entered text as parameter
-public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, completion: @escaping (_ text: String?) -> ()) {
+public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, completion: @escaping (_ text: String) -> ()) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
-        let text = alertVC.textFields![0].text
+        let text = alertVC.textFields?.first?.text ?? ""
         completion(text)
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
