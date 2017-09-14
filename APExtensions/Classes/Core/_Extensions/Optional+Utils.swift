@@ -12,6 +12,17 @@ import Foundation
 // MARK: - isNilOrEmpty
 //-----------------------------------------------------------------------------
 
+// Array
+// TODO: Is it possible to make it instance method somehow?
+/// Check if array is nil or empty.
+public func isNilOrEmpty<T>(_ array: [T]?) -> Bool {
+    if let array = array, !array.isEmpty {
+        return false
+    } else {
+        return true
+    }
+}
+
 // Collection
 public extension Optional where Wrapped == Collection {
     /// Check if object is nil or empty
