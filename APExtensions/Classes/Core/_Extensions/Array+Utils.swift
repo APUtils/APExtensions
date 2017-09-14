@@ -52,6 +52,12 @@ public extension Array {
         
         return results
     }
+    
+    public func enumerateForEach(_ body: (_ index: Index, _ element: Element) -> ()) {
+        for index in indices {
+            body(index, self[index])
+        }
+    }
 }
 
 //-----------------------------------------------------------------------------
