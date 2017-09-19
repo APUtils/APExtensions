@@ -17,7 +17,7 @@ public protocol Configurable {
 
 // TODO: Remove in Swift 4 because it'll be possible to use types like UITableView & Configurable
 extension UITableViewCell: Configurable {
-    public func configure(model: Any) {
+    open func configure(model: Any) {
         assertionFailure("Method must be overriden in subclass")
     }
 }
