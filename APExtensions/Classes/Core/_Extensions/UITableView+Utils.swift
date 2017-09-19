@@ -19,7 +19,7 @@ public extension UITableView {
     //-----------------------------------------------------------------------------
     
     /// Simplifies cell registration. Xib name must be the same as class name.
-    public func registerNib(cellClass: ClassName.Type) {
+    public func registerNib(cellClass: UITableViewCell.Type) {
         register(UINib(nibName: cellClass.className, bundle: nil), forCellReuseIdentifier: cellClass.className)
     }
     
@@ -28,7 +28,16 @@ public extension UITableView {
     /// Example:
     ///
     ///     let cell: MyCell = tableView.dequeue(indexPath)
-    public func dequeue<T: ClassName>(_ indexPath: IndexPath) -> T {
+    public func dequeue<T: UITableViewCell>(_ indexPath: IndexPath) -> T {
+        return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    /// Simplifies configurable cell dequeue.
+    ///
+    /// Example:
+    ///
+    ///     let cell = tableView.dequeue(indexPath)
+    public func dequeueConfigurable<T: UITableViewCell>(cellClass: T.Type, indexPath: IndexPath) -> T where T: Configurable {
         return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
@@ -37,7 +46,7 @@ public extension UITableView {
     //-----------------------------------------------------------------------------
     
     /// Simplifies header/footer registration. Xib name must be the same as class name.
-    public func registerNib(headerFooterClass: ClassName.Type) {
+    public func registerNib(headerFooterClass: UITableViewHeaderFooterView.Type) {
         register(UINib(nibName: headerFooterClass.className, bundle: nil), forHeaderFooterViewReuseIdentifier: headerFooterClass.className)
     }
     
@@ -45,7 +54,7 @@ public extension UITableView {
     /// Example:
     ///
     ///     let view: MyHeaderFooter = tableView.dequeueReusableHeaderFooter()
-    public func dequeueReusableHeaderFooter<T: ClassName>() -> T {
+    public func dequeueReusableHeaderFooter<T: UITableViewHeaderFooterView>() -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
     }
 }
