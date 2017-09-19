@@ -12,5 +12,5 @@ import Foundation
 /// Minimum information required to display cell in table view
 public protocol TableViewCellInformation {
     var cellClass: UITableViewCell.Type { get }
-    var height: CGFloat { get }
+    var cellHeight: CGFloat { get }
 }
