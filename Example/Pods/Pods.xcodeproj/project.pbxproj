@@ -168,6 +168,7 @@
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B03821F11F726B3D00B9F7CC /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F01F726B3D00B9F7CC /* UIImage+Utils.swift */; };
 		B03821F31F72771700B9F7CC /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */; };
+		B03821F51F72794A00B9F7CC /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F41F72794A00B9F7CC /* UIImageView+Utils.swift */; };
 		B03B3D191F7166C200189D8C /* TableViewCellInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B3D181F7166C200189D8C /* TableViewCellInformation.swift */; };
 		B0CC28B43D9D0A4B6968B8DCFF1F3C64 /* Character+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7415BA99AA48AA2988627CE453D39 /* Character+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EEEA6E480B661AE6D375672436A15 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -453,6 +454,7 @@
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		B03821F01F726B3D00B9F7CC /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		B03821F41F72794A00B9F7CC /* UIImageView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		B03B3D181F7166C200189D8C /* TableViewCellInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellInformation.swift; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -993,6 +995,7 @@
 			isa = PBXGroup;
 			children = (
 				E367EEF7E661862D9ACE4D3ADFFD770A /* Array+Utils.swift */,
+				B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */,
 				A7111B43D5FA66C4C93A46DFF2097851 /* CGRect+Utils.swift */,
 				E9C7415BA99AA48AA2988627CE453D39 /* Character+Utils.swift */,
 				A8ECB36F3B9BD4FFBF8359D5F6FE136F /* Data+Utils.swift */,
@@ -1011,6 +1014,7 @@
 				8DCF23729A465A67E5B4661435750365 /* UICollectionView+Utils.swift */,
 				B56B824289CE2B9B9C70F86D8E16D2A7 /* UIColor+Utils.swift */,
 				B03821F01F726B3D00B9F7CC /* UIImage+Utils.swift */,
+				B03821F41F72794A00B9F7CC /* UIImageView+Utils.swift */,
 				1D6861CA9364F95C395EDC782A612AAC /* UINavigationBar+Utils.swift */,
 				E88BB86C547F03C36D2B8620F9C699E5 /* UINavigationController+Utils.swift */,
 				73A251A3E1C4B0DFE3B33FED8FFFF091 /* UIScrollView+Utils.swift */,
@@ -1018,7 +1022,6 @@
 				5F39110E52C9DB1DED8F9B76EA2112B6 /* UITableView+Utils.swift */,
 				FFB3A7B5FB7363ABE6A33D5B6C0DBBD4 /* UIView+Utils.swift */,
 				64B536F2AE7A3E1DB45A2CDA4C25B029 /* UIViewController+Utils.swift */,
-				B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -1411,6 +1414,7 @@
 				B03821F31F72771700B9F7CC /* CGPoint+Utils.swift in Sources */,
 				846F861A76680F0D3A88D270575E55CB /* UILabel+Storyboard.swift in Sources */,
 				03C9641D4F3AC68E9E6EED1D5506953E /* UINavigationBar+Utils.swift in Sources */,
+				B03821F51F72794A00B9F7CC /* UIImageView+Utils.swift in Sources */,
 				D28EABD2C67A5CC925607411DDE162DB /* UINavigationController+Utils.swift in Sources */,
 				3D377EC3625BAAE2A309D145EDF7EE15 /* UIScrollView+Storyboard.swift in Sources */,
 				0C25FFEE926B8FF1EC7E51957391F965 /* UIScrollView+Utils.swift in Sources */,
