@@ -167,6 +167,7 @@
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B03821F11F726B3D00B9F7CC /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F01F726B3D00B9F7CC /* UIImage+Utils.swift */; };
+		B03821F31F72771700B9F7CC /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */; };
 		B03B3D191F7166C200189D8C /* TableViewCellInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B3D181F7166C200189D8C /* TableViewCellInformation.swift */; };
 		B0CC28B43D9D0A4B6968B8DCFF1F3C64 /* Character+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7415BA99AA48AA2988627CE453D39 /* Character+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EEEA6E480B661AE6D375672436A15 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -451,6 +452,7 @@
 		AFAC605FD0F3CB9B992DE22A60DA51D6 /* UIView+Storyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Storyboard.swift"; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		B03821F01F726B3D00B9F7CC /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
 		B03B3D181F7166C200189D8C /* TableViewCellInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellInformation.swift; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1016,6 +1018,7 @@
 				5F39110E52C9DB1DED8F9B76EA2112B6 /* UITableView+Utils.swift */,
 				FFB3A7B5FB7363ABE6A33D5B6C0DBBD4 /* UIView+Utils.swift */,
 				64B536F2AE7A3E1DB45A2CDA4C25B029 /* UIViewController+Utils.swift */,
+				B03821F21F72771700B9F7CC /* CGPoint+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -1405,6 +1408,7 @@
 				B03B3D191F7166C200189D8C /* TableViewCellInformation.swift in Sources */,
 				8DE508792DFED5FDC0F0B0B29418DC8C /* UIImage+Storyboard.swift in Sources */,
 				6DCB03AC8D13ABF88B0BB60918457B25 /* UIImageView+Storyboard.swift in Sources */,
+				B03821F31F72771700B9F7CC /* CGPoint+Utils.swift in Sources */,
 				846F861A76680F0D3A88D270575E55CB /* UILabel+Storyboard.swift in Sources */,
 				03C9641D4F3AC68E9E6EED1D5506953E /* UINavigationBar+Utils.swift in Sources */,
 				D28EABD2C67A5CC925607411DDE162DB /* UINavigationController+Utils.swift in Sources */,
