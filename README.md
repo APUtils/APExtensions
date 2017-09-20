@@ -49,6 +49,26 @@ See [documentation](http://cocoadocs.org/docsets/APExtensions) for more details.
 
 TODO
 
+### Abstractions
+
+Various abstractions that simplyfies working.
+
+#### DelayedValue
+
+Simple abstraction that simplifies working with values that needs some time to be fetched. Kind of promise. Good to use in view models to simplify view configuration.
+
+```swift
+DelayedValue<UIImage> { completion in
+    // Getting image async. It takes some time.
+    
+    // Return image
+    completion(image)
+}.onValueAvailable { image in
+    // Will be called when image is available
+    self.imageView.image = image
+}
+```
+
 ### ViewState
 
 #### ViewController

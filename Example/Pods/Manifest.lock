@@ -1,11 +1,13 @@
 PODS:
-  - APExtensions (3.6.0):
-    - APExtensions/Core (= 3.6.0)
-    - APExtensions/Storyboard (= 3.6.0)
-    - APExtensions/ViewState (= 3.6.0)
-  - APExtensions/Core (3.6.0)
-  - APExtensions/Storyboard (3.6.0)
-  - APExtensions/ViewState (3.6.0)
+  - APExtensions (3.8.0):
+    - APExtensions/Abstractions (= 3.8.0)
+    - APExtensions/Core (= 3.8.0)
+    - APExtensions/Storyboard (= 3.8.0)
+    - APExtensions/ViewState (= 3.8.0)
+  - APExtensions/Abstractions (3.8.0)
+  - APExtensions/Core (3.8.0)
+  - APExtensions/Storyboard (3.8.0)
+  - APExtensions/ViewState (3.8.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -31,7 +33,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  APExtensions: 3bba28c12796f5b7966c62f62aa434e97f13f8dd
+  APExtensions: be93e2b63731ece137c3cd5ed89c639b1ae9d961
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Nimble-Snapshots: 31c8ef7fcebf0e68b4dff83f6e2160813a4a116b

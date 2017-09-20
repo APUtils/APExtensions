@@ -45,6 +45,10 @@ A helpful collection of extensions, controllers and protocols. See documentation
     core.source_files = 'APExtensions/Classes/Core/**/*'
   end
 
+  s.subspec 'Abstractions' do |abstraction|
+    abstraction.source_files = 'APExtensions/Classes/Abstractions/**/*'
+  end
+
   s.subspec 'ViewState' do |viewState|
     viewState.source_files = 'APExtensions/Classes/ViewState/**/*'
     viewState.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
