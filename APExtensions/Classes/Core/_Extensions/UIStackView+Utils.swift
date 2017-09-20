@@ -11,12 +11,14 @@ import UIKit
 
 @available(iOS 9.0, *)
 public extension UIStackView {
-    public func removeAllSubviews() {
-        subviews.forEach({ $0.removeFromSuperview() })
+    /// Removes all arranged subviews
+    public func removeAllArrangedSubviews() {
+        arrangedSubviews.forEach({ $0.removeFromSuperview() })
     }
     
-    public func setArrangedSubviews(views: [UIView]) {
-        removeAllSubviews()
+    /// Replaces arranged subviews with new ones
+    public func replaceArrangedSubviews(_ views: [UIView]) {
+        removeAllArrangedSubviews()
         views.forEach(addSubview(_:))
     }
 }
