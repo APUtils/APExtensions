@@ -9,8 +9,8 @@
 import UIKit
 
 
-extension UIImage {
-    func image(withOverlayImage overlayImage: UIImage, inRect rect: CGRect) -> UIImage {
+public extension UIImage {
+    public func image(withOverlayImage overlayImage: UIImage, inRect rect: CGRect) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         defer { UIGraphicsEndImageContext() }
         
