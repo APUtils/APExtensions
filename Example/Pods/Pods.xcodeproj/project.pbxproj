@@ -862,11 +862,11 @@
 				57215DAD41A7274C372BE7E4C3176822 /* UINavigationBar+Utils.swift */,
 				20241216F2B5108ECA5A4C572C30E947 /* UINavigationController+Utils.swift */,
 				67EB2153FC020D67DBE764343FD71D04 /* UIScrollView+Utils.swift */,
+				B03821F71F72888B00B9F7CC /* UIStackView+Utils.swift */,
 				41EA3D69CD9377608D2D728AAE249C23 /* UIStoryboard+Utils.swift */,
 				B9E9A8DDEB9174A30AE51DC57FC55025 /* UITableView+Utils.swift */,
 				1E17CC985AF255DC60A3FCFA49BACF17 /* UIView+Utils.swift */,
 				28804059E7044DECD040530B4029FDDF /* UIViewController+Utils.swift */,
-				B03821F71F72888B00B9F7CC /* UIStackView+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";

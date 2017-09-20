@@ -19,6 +19,6 @@ public extension UIStackView {
     /// Replaces arranged subviews with new ones
     public func replaceArrangedSubviews(_ views: [UIView]) {
         removeAllArrangedSubviews()
-        views.forEach(addSubview(_:))
+        views.forEach(addArrangedSubview(_:))
     }
 }
