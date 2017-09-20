@@ -146,3 +146,45 @@ public extension UIView {
         endEditing(true)
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - Activity Indicator
+//-----------------------------------------------------------------------------
+
+private var showCounterKey = 0
+
+public extension UIView {
+    private var showCounter: Int {
+        get {
+            return (objc_getAssociatedObject(self, &showCounterKey) as? Int) ?? 0
+        }
+        set {
+            objc_setAssociatedObject(self, &showCounterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    public func showActivityIndicator() {
+        showCounter += 1
+        
+        var activityIndicator: UIActivityIndicatorView! = subviews.flatMap({ $0 as? UIActivityIndicatorView }).last
+        if activityIndicator == nil { activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray) }
+        
+        addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        
+        if !activityIndicator.isAnimating {
+            activityIndicator.startAnimating()
+        }
+    }
+    
+    public func hideActivityIndicator() {
+        showCounter -= 1
+        
+        if showCounter <= 0 {
+            let activityIndicator = subviews.flatMap({ $0 as? UIActivityIndicatorView }).first
+            activityIndicator?.stopAnimating()
+            activityIndicator?.removeFromSuperview()
+        }
+    }
+}
