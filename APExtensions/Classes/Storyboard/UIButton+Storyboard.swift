@@ -53,14 +53,12 @@ public extension UIButton {
 
 public extension UIButton {
     /// Underlying label number of lines
-    @IBInspectable public var lines: Int? {
+    @IBInspectable public var lines: Int {
         get {
-            return titleLabel?.numberOfLines
+            return titleLabel?.numberOfLines ?? 1
         }
         set {
-            guard let numberOfLines = newValue else { return }
-            
-            titleLabel?.numberOfLines = numberOfLines
+            titleLabel?.numberOfLines = newValue
         }
     }
 }

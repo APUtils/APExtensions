@@ -2,6 +2,27 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.0.0](https://github.com/APUtils/APExtensions/releases/tag/4.0.0)
+Released on 09/21/2017.
+
+#### Added
+- Default param for enter text alert
+- Array .enumerateForEach to enumerate objects and indexes
+- TableViewCellInformation protocol
+- UIImage .image(withOverlayImage:)
+- CGPoint +=, -=
+- UIImageView .setImageAnimated(_:)
+- DelayedValue abstraction
+- UIStackView .removeAllArrangedSubviews(), replaceArrangedSubviews(_:)
+- String .height(font:width:), .height(attributes:width:)
+- NSAttributedString .height(width:)
+
+#### Changed
+- Swift 4 migration
+- Moved activity indicator logic to UIView from UIViewController
+
+#### Fixed
+- Assure presenting alert on main thread only
 
 ## [3.7.0](https://github.com/APUtils/APExtensions/releases/tag/3.7.0)
 Released on 08/28/2017.
