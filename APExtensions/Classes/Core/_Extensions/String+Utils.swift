@@ -166,4 +166,17 @@ public extension String {
         
         return boundingBox.width
     }
+    
+    /// Width of a string for specified font and width.
+    public func height(font: UIFont, width: CGFloat) -> CGFloat {
+        return height(attributes: [NSFontAttributeName: font], width: width)
+    }
+    
+    /// Width of a string for specified attributes and width.
+    public func height(attributes: [String: Any], width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height.rounded(.up)
+        
+        return height
+    }
 }
