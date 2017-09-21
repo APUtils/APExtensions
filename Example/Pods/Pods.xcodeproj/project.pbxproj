@@ -166,6 +166,7 @@
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = D81DE72B8908E397DB13868960F3FB84 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF3643F8770AAF2FF637E8DD6BAEB9 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D144D5E74D6986BC57DD90673FCD0 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		B01B61491F741BFC000FFCD5 /* NSMutableString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01B61481F741BFC000FFCD5 /* NSMutableString+Utils.swift */; };
 		B02F9841CB02DE333AE66891169D219E /* UIButton+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4F0F6CBDC82CD229398FC9E617EB1 /* UIButton+Storyboard.swift */; };
 		B03821F81F72888B00B9F7CC /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03821F71F72888B00B9F7CC /* UIStackView+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EEEA6E480B661AE6D375672436A15 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -459,6 +460,7 @@
 		AD11F4279442D689C9DF48C23623D7F2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		AF11943C33369B2227B7C0589C17284F /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		AFC6DEE05C822C2D76C4480902B26BA4 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		B01B61481F741BFC000FFCD5 /* NSMutableString+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableString+Utils.swift"; sourceTree = "<group>"; };
 		B03821F71F72888B00B9F7CC /* UIStackView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -850,6 +852,7 @@
 				94DAEDD6193CE676B6E3BEB8367C18FE /* MFMessageComposeViewController+Utils.swift */,
 				356961EB60387B3949F8FB46524CD80A /* NotificationCenter+Utils.swift */,
 				432FF2FCEAC2CDC33E7E588D40C6299E /* NSCoder+Utils.swift */,
+				B01B61481F741BFC000FFCD5 /* NSMutableString+Utils.swift */,
 				E5F5D21839753BB4BB86109092927C86 /* Optional+Utils.swift */,
 				35B9004C3C32536E9A322D36765AD014 /* Sequence+Utils.swift */,
 				40E8E3B66F0FC2AAC20C32322B677E9D /* String+Utils.swift */,
@@ -1507,6 +1510,7 @@
 				122FAA49E51E627FF756979E1AB09D8F /* UIApplication+Utils.swift in Sources */,
 				B02F9841CB02DE333AE66891169D219E /* UIButton+Storyboard.swift in Sources */,
 				FF6E79BFBB5C376BCDCBCDBEEE81A933 /* UIButton+Utils.swift in Sources */,
+				B01B61491F741BFC000FFCD5 /* NSMutableString+Utils.swift in Sources */,
 				E8680BE774B250FA6293BB4D40286E3C /* UICollectionView+Utils.swift in Sources */,
 				C9A12E8F76D180940AC711C45A2CAA71 /* UIColor+Utils.swift in Sources */,
 				9E5E779459D1260BCAA871848E08FEE5 /* UIFont+Storyboard.swift in Sources */,
