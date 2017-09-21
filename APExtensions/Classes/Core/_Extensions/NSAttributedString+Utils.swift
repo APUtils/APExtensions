@@ -1,5 +1,5 @@
 //
-//  NSMutableString+Utils.swift
+//  NSAttributedString+Utils.swift
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 9/21/17.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension NSMutableString {
+public extension NSAttributedString {
     /// Height of a string for specified width.
     public func height(width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
