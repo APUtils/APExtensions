@@ -13,11 +13,3 @@ public protocol Configurable {
     /// Usually cells might conform to this protocol so we just can pass view model without typecasting.
     func configure(model: Any)
 }
-
-
-// TODO: Remove in Swift 4 because it'll be possible to use types like UITableView & Configurable
-extension UITableViewCell: Configurable {
-    open func configure(model: Any) {
-        assertionFailure("Method must be overriden in subclass")
-    }
-}

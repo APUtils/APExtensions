@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.0.2](https://github.com/APUtils/APExtensions/releases/tag/4.0.0)
+Released on 09/22/2017.
+
+#### Fixed
+- UITableView .dequeueConfigurable(_:) fix for Swift 4
+
+
 ## [4.0.0](https://github.com/APUtils/APExtensions/releases/tag/4.0.0)
 Released on 09/21/2017.
 
@@ -23,6 +30,7 @@ Released on 09/21/2017.
 
 #### Fixed
 - Assure presenting alert on main thread only
+
 
 ## [3.7.0](https://github.com/APUtils/APExtensions/releases/tag/3.7.0)
 Released on 08/28/2017.

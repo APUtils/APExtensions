@@ -36,9 +36,9 @@ public extension UITableView {
     ///
     /// Example:
     ///
-    ///     let cell = tableView.dequeue(indexPath)
-    public func dequeueConfigurable(cellClass: UITableViewCell.Type, indexPath: IndexPath) -> UITableViewCell /* UITableViewCell & Configurable TODO: Fix return type in Swift 4 */ {
-        return self.dequeueReusableCell(withIdentifier: cellClass.className, for: indexPath)
+    ///     let cell = tableView.dequeueConfigurable(indexPath)
+    public func dequeueConfigurable<T: UITableViewCell & Configurable>(_ indexPath: IndexPath) -> T {
+        return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
     //-----------------------------------------------------------------------------
