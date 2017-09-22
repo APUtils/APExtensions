@@ -11,7 +11,7 @@
 		018A097E924BDC0A41BA13FC4E9D1D39 /* NotificationCenter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B23ED473BDE695A5FC871C97653947 /* NotificationCenter+Utils.swift */; };
 		051A816D6DD0CAE13496DDCFE0829167 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1BCADBE865EEFF925BE466DFFD8DE0 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		051B2AF789E6D4E648C099830025DED9 /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B2D2CB39F99CA4B933568A9EB93E2 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		060A7ABA04DBC3F3A7709DA5800BFAEE /* TableViewCellInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C132A641B6004DBDE4E2073883E790 /* TableViewCellInformation.swift */; };
+		060A7ABA04DBC3F3A7709DA5800BFAEE /* CellInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C132A641B6004DBDE4E2073883E790 /* CellInformation.swift */; };
 		094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F27615A9B22DFB69BA8E4D8ACD4F7F /* UIApplication+StrictKeyWindow.m */; };
 		0A1A3DC52B83AA8A153A008710FCBFFA /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E67510FA1E514C0F856B2FB92FCED2 /* NBSMockedApplication.m */; };
 		0A2CA8B0DD7E300ABFCF1956E6B58248 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = 3381E07245E54891E0BAD56D129A1AA2 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -420,7 +420,7 @@
 		859E33F6FF8DC4509F4291F6D9327F53 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
 		86AD4F69CDEC18814F8438DCC4A7DE4B /* Pods-APExtensions_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-APExtensions_Tests-resources.sh"; sourceTree = "<group>"; };
 		88A1EA8921FD6C48B66BBE93F955C6CD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		88C132A641B6004DBDE4E2073883E790 /* TableViewCellInformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableViewCellInformation.swift; sourceTree = "<group>"; };
+		88C132A641B6004DBDE4E2073883E790 /* CellInformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellInformation.swift; sourceTree = "<group>"; };
 		8A71951088358F1FF7351DDF0CD8E846 /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
 		8A82CA1ADC6CB5291EB31A18CCA3ADB8 /* Pods-APExtensions_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-APExtensions_Example.modulemap"; sourceTree = "<group>"; };
 		8AD659FB8AF35A8085CF979BBDBA182B /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
@@ -839,7 +839,7 @@
 				81AD4E4989981A83D7BBCE42DCC20046 /* Instantiatable.swift */,
 				26C47B830D90601BE0FB9470248A15B3 /* Manager.swift */,
 				E0EFB3ADA16328424951C4B658A8ED2D /* SetupOnce.swift */,
-				88C132A641B6004DBDE4E2073883E790 /* TableViewCellInformation.swift */,
+				88C132A641B6004DBDE4E2073883E790 /* CellInformation.swift */,
 			);
 			path = _Protocols;
 			sourceTree = "<group>";
@@ -1414,7 +1414,7 @@
 				C1CB60991708A5D6E030835BA0E00766 /* Sequence+Utils.swift in Sources */,
 				77AD7C62EFD50C747D2D31365595BAF2 /* SetupOnce.swift in Sources */,
 				85A61C0C6906BFF35D2EEB4AA36D51BF /* String+Utils.swift in Sources */,
-				060A7ABA04DBC3F3A7709DA5800BFAEE /* TableViewCellInformation.swift in Sources */,
+				060A7ABA04DBC3F3A7709DA5800BFAEE /* CellInformation.swift in Sources */,
 				7B3FEC3581669A0E5310263CA10F0A19 /* UIApplication+Utils.swift in Sources */,
 				D2489A6D10D809DAD0E591A8B49E040F /* UIButton+Storyboard.swift in Sources */,
 				4FF3FD5F109E13B234504FE5B6881D9B /* UIButton+Utils.swift in Sources */,

@@ -14,3 +14,9 @@ public protocol TableViewCellInformation {
     var cellClass: UITableViewCell.Type { get }
     var cellHeight: CGFloat { get }
 }
+
+/// Minimum information required to display cell in table view
+public protocol TableViewConfigurableCellInformation {
+    var cellClass: (UITableViewCell & Configurable).Type { get }
+    var cellHeight: CGFloat { get }
+}

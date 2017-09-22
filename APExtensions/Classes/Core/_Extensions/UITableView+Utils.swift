@@ -37,8 +37,8 @@ public extension UITableView {
     /// Example:
     ///
     ///     let cell = tableView.dequeueConfigurable(indexPath)
-    public func dequeueConfigurable<T: UITableViewCell & Configurable>(_ indexPath: IndexPath) -> T {
-        return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+    public func dequeueConfigurable(cellClass: (UITableViewCell & Configurable).Type, indexPath: IndexPath) -> UITableViewCell & Configurable {
+        return self.dequeueReusableCell(withIdentifier: cellClass.className, for: indexPath) as! UITableViewCell & Configurable
     }
     
     //-----------------------------------------------------------------------------
@@ -72,3 +72,4 @@ public extension UITableView {
         contentOffset.y = contentSize.height - (bottomOffset + bounds.height)
     }
 }
+

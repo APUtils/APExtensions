@@ -2,7 +2,14 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.0.2](https://github.com/APUtils/APExtensions/releases/tag/4.0.0)
+## [4.0.3](https://github.com/APUtils/APExtensions/releases/tag/4.0.3)
+Released on 09/22/2017.
+
+#### Changed
+- UITableView .dequeueConfigurable(_:) -> .dequeueConfigurable(cellClass:indexPath:)
+
+
+## [4.0.2](https://github.com/APUtils/APExtensions/releases/tag/4.0.2)
 Released on 09/22/2017.
 
 #### Fixed
