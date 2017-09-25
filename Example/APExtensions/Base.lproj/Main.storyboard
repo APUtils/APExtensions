@@ -51,10 +51,6 @@
                                     <constraint firstItem="OvH-mB-6OR" firstAttribute="leading" secondItem="8O6-5M-fm9" secondAttribute="leading" id="qAr-pV-ray"/>
                                     <constraint firstItem="OvH-mB-6OR" firstAttribute="top" secondItem="8O6-5M-fm9" secondAttribute="top" id="qWd-XD-m6f"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="avoidNavigationBar" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="avoidTabBar" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

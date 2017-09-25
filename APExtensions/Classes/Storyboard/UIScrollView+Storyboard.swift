@@ -116,7 +116,7 @@ public extension UIScrollView {
                     }
                     
                 case .automatic:
-                    if let _ = _viewController?.navigationController {
+                    if let _ = _viewController?.tabBarController {
                         return adjustedContentInset.bottom == 49
                     } else {
                         return contentInset.bottom == 49

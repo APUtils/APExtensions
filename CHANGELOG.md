@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 ## [4.1.0](https://github.com/APUtils/APExtensions/releases/tag/4.1.0)
 Released on 09/25/2017.
 
+#### Fixed
+- Avoid tab bar getter fix
+
+
+## [4.1.0](https://github.com/APUtils/APExtensions/releases/tag/4.1.0)
+Released on 09/25/2017.
+
 #### Added
 - UIScrollView .avoidNavigationBar and .disableAutomaticContentAdjustment
 
