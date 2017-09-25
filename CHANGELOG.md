@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.1.0](https://github.com/APUtils/APExtensions/releases/tag/4.1.0)
+Released on 09/25/2017.
+
+#### Added
+- UIScrollView .avoidNavigationBar and .disableAutomaticContentAdjustment
+
+#### Deprecated
+- UIScrollView .avoidTopBars
+
+
 ## [4.0.3](https://github.com/APUtils/APExtensions/releases/tag/4.0.3)
 Released on 09/22/2017.
 
