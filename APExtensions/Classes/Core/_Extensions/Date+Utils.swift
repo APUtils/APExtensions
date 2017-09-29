@@ -92,7 +92,7 @@ public extension Date {
     public var gmtDayBeginningDate: Date {
         let toGmtTimeInterval = TimeInterval(TimeZone.current.secondsFromGMT(for: self))
         
-        return Date(timeInterval: toGmtTimeInterval, since: self)
+        return Date(timeInterval: toGmtTimeInterval, since: startOfDay)
     }
     
     /// Checks if dates are on same day. Uses user's time zone.

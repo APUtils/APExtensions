@@ -1,6 +1,6 @@
 {
   "name": "APExtensions",
-  "version": "4.0.0",
+  "version": "4.1.1",
   "summary": "A helpful collection of extensions, controllers and protocols.",
   "description": "A helpful collection of extensions, controllers and protocols. See documentation for details.",
   "homepage": "https://github.com/APUtils/APExtensions",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/APUtils/APExtensions.git",
-    "tag": "4.0.0"
+    "tag": "4.1.1"
   },
   "platforms": {
     "ios": "8.0"

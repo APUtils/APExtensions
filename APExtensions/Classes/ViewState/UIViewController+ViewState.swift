@@ -122,42 +122,42 @@ extension UIViewController {
         }
     }
     
-    @objc fileprivate func swizzled_willMove(toParentViewController parent: UIViewController?) {
+    @objc private func swizzled_willMove(toParentViewController parent: UIViewController?) {
         let userInfo: [String: Any]? = parent == nil ? nil : ["parent": parent!]
         NotificationCenter.default.post(name: .UIViewControllerWillMoveToParentViewController, object: self, userInfo: userInfo)
         
         self.swizzled_willMove(toParentViewController: parent)
     }
     
-    @objc fileprivate func swizzled_viewDidLoad() {
+    @objc private func swizzled_viewDidLoad() {
         viewState = .didLoad
         NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self)
         
         self.swizzled_viewDidLoad()
     }
     
-    @objc fileprivate func swizzled_viewWillAppear(_ animated: Bool) {
+    @objc private func swizzled_viewWillAppear(_ animated: Bool) {
         viewState = .willAppear
         NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self, userInfo: ["animated": animated])
         
         self.swizzled_viewWillAppear(animated)
     }
     
-    @objc fileprivate func swizzled_viewDidAppear(_ animated: Bool) {
+    @objc private func swizzled_viewDidAppear(_ animated: Bool) {
         viewState = .didAppear
         NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: ["animated": animated])
         
         self.swizzled_viewDidAppear(animated)
     }
     
-    @objc fileprivate func swizzled_viewWillDisappear(_ animated: Bool) {
+    @objc private func swizzled_viewWillDisappear(_ animated: Bool) {
         viewState = .willDisappear
         NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self, userInfo: ["animated": animated])
         
         self.swizzled_viewWillDisappear(animated)
     }
     
-    @objc fileprivate func swizzled_viewDidDisappear(_ animated: Bool) {
+    @objc private func swizzled_viewDidDisappear(_ animated: Bool) {
         viewState = .didDisappear
         NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self, userInfo: ["animated": animated])
         

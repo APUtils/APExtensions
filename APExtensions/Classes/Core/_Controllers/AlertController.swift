@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Helper Class
 //-----------------------------------------------------------------------------
 
-private final class AlertRootViewController: UIViewController {
+fileprivate final class AlertRootViewController: UIViewController {
     fileprivate var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
     fileprivate var customPrefersStatusBarHidden = false
     
@@ -48,7 +48,6 @@ public final class AlertController: UIAlertController {
                 rootVC.customPreferredStatusBarStyle = barStyle == .black ? .lightContent : .default
             }
         }
-        
         
         return rootVC
     }()
