@@ -78,3 +78,22 @@ public func !=<T>(lhs: [T]?, rhs: [T]?) -> Bool where T: Equatable {
     default: return true
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - CustomStringConvertible
+//-----------------------------------------------------------------------------
+
+extension Optional: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .some(let value):
+            if let description = (value as? CustomStringConvertible)?.description {
+                return description
+            } else {
+                return String(describing: value)
+            }
+            
+        case .none: return "nil"
+        }
+    }
+}
