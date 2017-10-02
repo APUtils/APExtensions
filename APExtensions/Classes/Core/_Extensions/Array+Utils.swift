@@ -58,6 +58,15 @@ public extension Array {
             body(index, self[index])
         }
     }
+    
+    public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) -> T) -> [T] {
+        var map: [T] = []
+        for index in indices {
+            map.append(body(index, self[index]))
+        }
+        
+        return map
+    }
 }
 
 //-----------------------------------------------------------------------------
