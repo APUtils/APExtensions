@@ -54,6 +54,10 @@ A helpful collection of extensions, controllers and protocols. See documentation
     viewState.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
   end
 
+  s.subspec 'ViewConfiguration' do |viewConfiguration|
+    viewConfiguration.source_files = 'APExtensions/Classes/ViewConfiguration/**/*'
+  end
+
   s.subspec 'Storyboard' do |storyboard|
     storyboard.source_files = 'APExtensions/Classes/Storyboard/**/*'
   end

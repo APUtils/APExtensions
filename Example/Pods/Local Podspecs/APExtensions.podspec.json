@@ -40,6 +40,10 @@
       "private_header_files": "APExtensions/Classes/ViewState/ViewStateLoader.h"
     },
     {
+      "name": "ViewConfiguration",
+      "source_files": "APExtensions/Classes/ViewConfiguration/**/*"
+    },
+    {
       "name": "Storyboard",
       "source_files": "APExtensions/Classes/Storyboard/**/*"
     }

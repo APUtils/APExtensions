@@ -69,6 +69,19 @@ DelayedValue<UIImage> { completion in
 }
 ```
 
+### ViewConfiguration
+
+Adds `State` enum and `.configure(_:)` method to views so it's easy and robust to configure them.
+
+```swift
+// Creating UIImageView.State and store it in view model
+let imageViewState: UIImageView.State = .shown(image: UIImage(named: "ic_done_resizeable"))
+viewModel.imageViewState = imageViewState
+
+// Configure UIImageView with view model
+imageView.configure(viewModel.imageViewState)
+```
+
 ### ViewState
 
 #### ViewController

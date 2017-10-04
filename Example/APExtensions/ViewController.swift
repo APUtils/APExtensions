@@ -26,6 +26,13 @@ class ViewController: UIViewController {
         print("Classes conform to SetupOnce: \(setupOnces)")
         
         print(Date().previousWorkDay)
+        
+        // View configuration
+        let label = UILabel()
+        let showState = UILabel.LabelState.shown(text: "label")
+        let hideState = UILabel.LabelState.transparent
+        label.configure(showState)
+        label.configure(hideState)
     }
     
     override func viewWillAppear(_ animated: Bool) {
