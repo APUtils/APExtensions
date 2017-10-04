@@ -30,8 +30,8 @@ public extension UITextField {
         }
     }
     
-    public func configure(_ state: TextFieldState) {
-        switch state {
+    public func configure(textFieldState: TextFieldState) {
+        switch textFieldState {
         case .hidden:
             isHidden = true
             

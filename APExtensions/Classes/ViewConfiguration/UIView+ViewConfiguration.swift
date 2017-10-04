@@ -16,8 +16,8 @@ public extension UIView {
         case transparent
     }
     
-    public func configure(_ state: ViewState) {
-        switch state {
+    public func configure(viewState: ViewState) {
+        switch viewState {
         case .hidden:
             isHidden = true
             

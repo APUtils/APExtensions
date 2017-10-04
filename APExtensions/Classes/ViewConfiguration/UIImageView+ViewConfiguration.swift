@@ -23,8 +23,8 @@ public extension UIImageView {
         }
     }
     
-    public func configure(_ state: ImageViewState) {
-        switch state {
+    public func configure(imageViewState: ImageViewState) {
+        switch imageViewState {
         case .hidden:
             isHidden = true
             

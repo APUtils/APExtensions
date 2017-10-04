@@ -23,8 +23,8 @@ public extension UITextView {
         }
     }
     
-    public func configure(_ state: TextViewState) {
-        switch state {
+    public func configure(textViewState: TextViewState) {
+        switch textViewState {
         case .hidden:
             isHidden = true
             

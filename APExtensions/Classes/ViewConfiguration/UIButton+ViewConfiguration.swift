@@ -23,8 +23,8 @@ public extension UIButton {
         }
     }
     
-    public func configure(_ state: ButtonState) {
-        switch state {
+    public func configure(buttonState: ButtonState) {
+        switch buttonState {
         case .hidden:
             isHidden = true
             

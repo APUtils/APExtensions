@@ -23,8 +23,8 @@ public extension UILabel {
         }
     }
     
-    public func configure(_ state: LabelState) {
-        switch state {
+    public func configure(labelState: LabelState) {
+        switch labelState {
         case .hidden:
             isHidden = true
             

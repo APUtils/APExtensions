@@ -29,10 +29,8 @@ class ViewController: UIViewController {
         
         // View configuration
         let label = UILabel()
-        let showState = UILabel.LabelState.shown(text: "label")
-        let hideState = UILabel.LabelState.transparent
-        label.configure(showState)
-        label.configure(hideState)
+        label.configure(labelState: .shown(text: "label"))
+        label.configure(viewState: .transparent)
     }
     
     override func viewWillAppear(_ animated: Bool) {
