@@ -36,6 +36,10 @@ public extension UIViewController {
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     public func removeViewController(animated: Bool) {
+        if isViewLoaded {
+            view.endEditing()
+        }
+        
         if navigationController?.viewControllers.first == self {
             dismiss(animated: animated, completion: nil)
         } else if navigationController?.viewControllers.last == self {
