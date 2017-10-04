@@ -267,8 +267,9 @@ public func g_showErrorAlert(title: String? = nil, message: String? = nil, actio
 /// Shows enter text alert with title and message
 /// - parameter title: Alert title
 /// - parameter message: Alert message
+/// - parameter placeholder: Text field placeholder
 /// - parameter completion: Closure that takes user entered text as parameter
-public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, completion: @escaping (_ text: String) -> ()) {
+public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, placeholder: String? = nil, completion: @escaping (_ text: String) -> ()) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
         let text = alertVC.textFields?.first?.text ?? ""
@@ -277,7 +278,7 @@ public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, c
     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
     
     alertVC.addTextField { (textField) in
-        textField.placeholder = "List name"
+        textField.placeholder = placeholder
     }
     
     alertVC.addAction(confirmAction)
