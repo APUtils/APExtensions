@@ -14,12 +14,12 @@ import UIKit
 
 public extension UIViewController {
     /// Previous view controller in navigation stack
-    public var previousViewController: UIViewController? {
-        guard let navigationViewControllers = navigationController?.viewControllers, let currentVcIndex = navigationViewControllers.index(of: self) else { return nil }
+    public var previous: UIViewController? {
+        guard let navigationVcs = navigationController?.viewControllers, let currentVcIndex = navigationVcs.index(of: self) else { return nil }
         
-        let previousViewControllerIndex = currentVcIndex - 1
-        if previousViewControllerIndex >= 0 {
-            return navigationViewControllers[previousViewControllerIndex]
+        let previousIndex = currentVcIndex - 1
+        if previousIndex >= 0 {
+            return navigationVcs[previousIndex]
         } else {
             return nil
         }
@@ -30,12 +30,12 @@ public extension UIViewController {
     }
     
     /// Remove view controller animated action. Removes using pop if it was pushed or using dismiss if it was presented.
-    @IBAction func removeViewController(sender: Any) {
-        removeViewController(animated: true)
+    @IBAction func remove(sender: Any) {
+        remove(animated: true)
     }
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
-    public func removeViewController(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if isViewLoaded {
             view.endEditing()
         }
