@@ -179,15 +179,15 @@ public func g_animate(animations: @escaping SimpleClosure) {
     g_animate(animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: Double, animations: @escaping SimpleClosure) {
+public func g_animate(_ duration: TimeInterval, animations: @escaping SimpleClosure) {
     g_animate(duration, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: Double, options: UIViewAnimationOptions, animations: @escaping SimpleClosure) {
+public func g_animate(_ duration: TimeInterval, options: UIViewAnimationOptions, animations: @escaping SimpleClosure) {
     g_animate(duration, options: options, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: Double = 0.3, delay: Double = 0, options: UIViewAnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
+public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIViewAnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
     UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
 }
 
@@ -199,7 +199,7 @@ public func g_animate(_ duration: Double = 0.3, delay: Double = 0, options: UIVi
 /// - parameters:
 ///   - delay: number of seconds to delay
 ///   - closure: the closure to be executed
-public func g_asyncBg(_ delay: Double = 0, closure: @escaping SimpleClosure) {
+public func g_asyncBg(_ delay: TimeInterval = 0, closure: @escaping SimpleClosure) {
     let delayTime: DispatchTime = .now() + delay
     DispatchQueue.global(qos: .default).asyncAfter(deadline: delayTime, execute: {
         closure()
@@ -223,7 +223,7 @@ public func g_performInBackground(_ closure: @escaping SimpleClosure) {
 /// - parameters:
 ///   - delay: number of seconds to delay
 ///   - closure: the closure to be executed
-public func g_asyncMain(_ delay: Double = 0, closure: @escaping SimpleClosure) {
+public func g_asyncMain(_ delay: TimeInterval = 0, closure: @escaping SimpleClosure) {
     let delayTime: DispatchTime = .now() + delay
     DispatchQueue.main.asyncAfter(deadline: delayTime) {
         closure()
