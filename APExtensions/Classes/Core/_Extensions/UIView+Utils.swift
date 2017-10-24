@@ -163,6 +163,13 @@ public extension UIView {
         }
     }
     
+    /// Is activity indicator showing?
+    public var isShowingActivityIndicator: Bool {
+        return showCounter > 0
+    }
+    
+    /// Shows activity indicator.
+    /// Calls to -showActivityIndicator and -hideActivityIndicator must be balanced.
     public func showActivityIndicator() {
         showCounter += 1
         
@@ -178,6 +185,8 @@ public extension UIView {
         }
     }
     
+    /// Hides activity indicator.
+    /// Calls to -showActivityIndicator and -hideActivityIndicator must be balanced.
     public func hideActivityIndicator() {
         showCounter -= 1
         
