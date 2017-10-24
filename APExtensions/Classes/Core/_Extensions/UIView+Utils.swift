@@ -169,7 +169,7 @@ public extension UIView {
     }
     
     /// Shows activity indicator.
-    /// Calls to -showActivityIndicator and -hideActivityIndicator must be balanced.
+    /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
     public func showActivityIndicator() {
         showCounter += 1
         
@@ -186,14 +186,22 @@ public extension UIView {
     }
     
     /// Hides activity indicator.
-    /// Calls to -showActivityIndicator and -hideActivityIndicator must be balanced.
-    public func hideActivityIndicator() {
-        showCounter -= 1
+    /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
+    /// - parameters:
+    ///   - force: Force activity indicator hide
+    public func hideActivityIndicator(force: Bool = false) {
+        if force {
+            showCounter = 0
+        } else {
+            showCounter -= 1
+        }
         
         if showCounter <= 0 {
             let activityIndicator = subviews.flatMap({ $0 as? UIActivityIndicatorView }).first
             activityIndicator?.stopAnimating()
             activityIndicator?.removeFromSuperview()
+            
+            showCounter = 0
         }
     }
 }
