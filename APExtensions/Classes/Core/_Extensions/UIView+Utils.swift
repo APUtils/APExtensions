@@ -169,16 +169,19 @@ public extension UIView {
     }
     
     /// Shows activity indicator.
+    /// It uses existing one if found in subviews.
     /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
     public func showActivityIndicator() {
         showCounter += 1
         
         var activityIndicator: UIActivityIndicatorView! = subviews.flatMap({ $0 as? UIActivityIndicatorView }).last
-        if activityIndicator == nil { activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray) }
-        
-        addSubview(activityIndicator)
-        activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
-        activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        if activityIndicator == nil {
+            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            addSubview(activityIndicator)
+            activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
+            activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        }
+        activityIndicator.superview?.bringSubview(toFront: activityIndicator)
         
         if !activityIndicator.isAnimating {
             activityIndicator.startAnimating()
@@ -199,7 +202,6 @@ public extension UIView {
         if showCounter <= 0 {
             let activityIndicator = subviews.flatMap({ $0 as? UIActivityIndicatorView }).first
             activityIndicator?.stopAnimating()
-            activityIndicator?.removeFromSuperview()
             
             showCounter = 0
         }
