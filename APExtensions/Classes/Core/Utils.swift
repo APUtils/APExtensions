@@ -70,6 +70,9 @@ public let g_sharedNotificationCenter = NotificationCenter.default
 /// Is running on simulator?
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0
 
+/// Screen scale factor
+public let g_screenScale: CGFloat = UIScreen.main.scale
+
 /// Screen pixel size
 public let g_pixelSize: CGFloat = 1 / UIScreen.main.scale
 
