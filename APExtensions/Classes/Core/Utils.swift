@@ -81,6 +81,11 @@ public var g_documentsDirectoryUrl: URL {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
 }
 
+/// User temporary directory URL
+public var g_tempDirectoryUrl: URL {
+    return URL(fileURLWithPath: NSTemporaryDirectory())
+}
+
 /// User cache directory URL
 public var g_cacheDirectoryUrl: URL {
     return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
