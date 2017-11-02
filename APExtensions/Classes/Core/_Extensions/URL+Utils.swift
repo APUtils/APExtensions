@@ -19,7 +19,7 @@ public extension URL {
     }
     
     /// Appends path component and prevents double slashes if URL has trailing slash and path component has leading slash.
-    public func smartAppendingPathComponent(_ pathComponent: String) -> URL {
+    public func smartAppendingPathComponent(_ pathComponent: String, isDirectory: Bool = false) -> URL {
         guard !pathComponent.isEmpty else { return self }
         
         var pathComponent = pathComponent
@@ -27,6 +27,6 @@ public extension URL {
             pathComponent = String(pathComponent.dropFirst())
         }
         
-        return appendingPathComponent(pathComponent)
+        return appendingPathComponent(pathComponent, isDirectory: isDirectory)
     }
 }
