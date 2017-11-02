@@ -25,7 +25,7 @@ public typealias SuccessClosure = (_ success: Bool) -> ()
 //-----------------------------------------------------------------------------
 
 /// Error stub to use for simplification
-enum GeneralError: Error {}
+struct GeneralError: Error {}
 
 //-----------------------------------------------------------------------------
 // MARK: - Global Structs
