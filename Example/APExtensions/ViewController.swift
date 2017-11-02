@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.configure(labelState: .shown(text: "label"))
         label.configure(viewState: .transparent)
+        
+        _ = g_documentsDirectoryUrl.smartAppendingPathComponent("/asd")
     }
     
     override func viewWillAppear(_ animated: Bool) {

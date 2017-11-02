@@ -14,7 +14,7 @@ import UIKit
 
 public extension String {
     public subscript(i: Int) -> Character {
-        let index: Index = self.characters.index(self.startIndex, offsetBy: i)
+        let index: Index = self.index(self.startIndex, offsetBy: i)
         return self[index]
     }
     
@@ -24,8 +24,8 @@ public extension String {
     }
     
     public subscript(range: Range<Int>) -> String {
-        let start: Index = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end: Index = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
+        let start: Index = index(startIndex, offsetBy: range.lowerBound)
+        let end: Index = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[Range(start ..< end)])
     }
     
@@ -41,7 +41,7 @@ public extension String {
 public extension String {
     /// Returns random symbol from string
     public func randomSymbol() -> String {
-        let count: UInt32 = UInt32(characters.count)
+        let count: UInt32 = UInt32(self.count)
         let random: Int = Int(arc4random_uniform(count))
         return self[random]
     }
@@ -124,7 +124,7 @@ public extension String {
 public extension String {
     /// Splits string by capital letters without stripping them
     public var splittedByCapitals: [String] {
-        return characters.splitBefore(separator: { $0.isUpperCase }).map({ String($0) })
+        return splitBefore(separator: { $0.isUpperCase }).map({ String($0) })
     }
     
     /// Split string into slices of specified length
@@ -134,7 +134,7 @@ public extension String {
         collectedCharacters.reserveCapacity(length)
         var count = 0
         
-        for character in self.characters {
+        for character in self {
             collectedCharacters.append(character)
             count += 1
             if (count == length) {

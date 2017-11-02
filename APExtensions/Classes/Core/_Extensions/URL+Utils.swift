@@ -17,4 +17,16 @@ public extension URL {
         
         return String(lastPathComponent.split(separator: ".")[0])
     }
+    
+    /// Appends path component and prevents double slashes if URL has trailing slash and path component has leading slash.
+    public func smartAppendingPathComponent(_ pathComponent: String) -> URL {
+        guard !pathComponent.isEmpty else { return self }
+        
+        var pathComponent = pathComponent
+        if pathComponent[0] == "/" {
+            pathComponent = String(pathComponent.dropFirst())
+        }
+        
+        return appendingPathComponent(pathComponent)
+    }
 }
