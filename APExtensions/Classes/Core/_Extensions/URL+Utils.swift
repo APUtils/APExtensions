@@ -10,7 +10,7 @@ import Foundation
 
 
 public extension URL {
-    /// File name without extension
+    /// File name without extension. Nil if it's directory.
     @available(iOS 9.0, *)
     public var fileName: String? {
         guard !hasDirectoryPath else { return nil }
