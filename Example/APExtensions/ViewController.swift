@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         label.configure(viewState: .transparent)
         
         _ = g_documentsDirectoryUrl.smartAppendingPathComponent("/asd")
+        
+        // Exception handling
+        _ = g_perform {
+            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
