@@ -48,20 +48,6 @@ public extension UIScrollView {
 //-----------------------------------------------------------------------------
 
 public extension UIScrollView {
-    @available(iOS, deprecated: 11.0, obsoleted: 12.0, message: "avoidTopBars was deprecated, please use avoidNavigationBar")
-    @IBInspectable public var avoidTopBars: Bool {
-        get {
-            NSLog("avoidTopBars was deprecated, please use avoidNavigationBar")
-            
-            return avoidNavigationBar
-        }
-        set {
-            NSLog("avoidTopBars was deprecated, please use avoidNavigationBar")
-            
-            avoidNavigationBar = newValue
-        }
-    }
-    
     /// Sets 64 or 0 for top content inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids top bars. Takes into account `contentInsetAdjustmentBehavior`.
     @IBInspectable public var avoidNavigationBar: Bool {
@@ -96,6 +82,7 @@ public extension UIScrollView {
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
             contentInset.top = newValue ? 64 : 0
+            scrollIndicatorInsets.top = newValue ? 64 : 0
         }
     }
     
@@ -133,6 +120,7 @@ public extension UIScrollView {
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
             contentInset.bottom = newValue ? 49 : 0
+            scrollIndicatorInsets.bottom = newValue ? 49 : 0
         }
     }
 }

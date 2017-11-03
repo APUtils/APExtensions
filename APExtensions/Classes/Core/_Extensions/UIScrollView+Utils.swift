@@ -13,18 +13,24 @@ import UIKit
 //-----------------------------------------------------------------------------
 
 public extension UIScrollView {
+    /// Set value for top `contentInset` and `scrollIndicatorInsets`
     public func setTopInset(_ topInset: CGFloat) {
         contentInset.top = topInset
+        scrollIndicatorInsets.top = topInset
     }
     
+    /// Set 64 for top `contentInset` and `scrollIndicatorInsets`
     public func setTopNavigationBarsInset() {
         setTopInset(64)
     }
     
+    /// Set value for top `contentInset` and `scrollIndicatorInsets`
     public func setBottomInset(_ bottomInset: CGFloat) {
         contentInset.bottom = bottomInset
+        scrollIndicatorInsets.bottom = bottomInset
     }
     
+    /// Set 49 for top `contentInset` and `scrollIndicatorInsets`
     public func setBottomTabBarInset() {
         setBottomInset(49)
     }
