@@ -23,7 +23,7 @@
 		16409C737271C4F1D7FEEFB91E317D5A /* CwlPreconditionTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = E2761C9F8CE8FE243E97D2F8CF8F995A /* CwlPreconditionTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17C8EE7DF3F57C8F99EAF63C6E61EA99 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B1B511E39E9B7B70B55FED1754B00 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		184937E0E575328F14BA51F2B20F742B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C4FFDF503E93F191711F39AF2A84B3 /* MessageUI.framework */; };
-		185B064ACB508CFA4199ECE2CD5B9702 /* APUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.m */; };
+		185B064ACB508CFA4199ECE2CD5B9702 /* APUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.mm */; };
 		192EB7695C1457F4EC48322A2088BF39 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A505EA37252ABA7F979E6544C8C857AA /* QuickConfiguration.m */; };
 		1A2BD35D351C89F5DE8653546E79EC01 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BEAADD3D502C3823DD093E5EE7E265 /* ExampleHooks.swift */; };
 		1A3E19B9F5EEB773C3BB61CA42F8BF62 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC07A5EB678BFB6F4C632A7C1D446CB /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -463,7 +463,7 @@
 		99D35ADF83518BA68B4A4E1843B519CC /* Pods_APExtensions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APExtensions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B613F01D7F7B75AFBAB4DD7A621E24B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BED90996366D3D217591D2121A03038 /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
-		9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = APUtils.m; sourceTree = "<group>"; };
+		9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = APUtils.mm; sourceTree = "<group>"; };
 		9DDEC9BBB7227F94010E1AC0E01CC4F5 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE96DDA3B804E18E7681812EF5F4026 /* UIButton+Storyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+Storyboard.swift"; sourceTree = "<group>"; };
 		A0A6C7C83C41CA604AF51E2EA0B65D57 /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
@@ -960,7 +960,7 @@
 				5694C25A1B81A455A1D6FE3F782068F1 /* APExtensionsLoader.h */,
 				D01D2E6D8645A1DC922DA3A48585A2B0 /* APExtensionsLoader.m */,
 				AFB0817935FA40B76610D22CE64EFF63 /* APUtils.h */,
-				9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.m */,
+				9C3F81387DE63CA648B78E8D7962DE6C /* APUtils.mm */,
 				4C8973BFBE051B38DCCAD559B8CA60F3 /* Debug.swift */,
 				571DEB2C282F9B400634160E006296CF /* Utils.swift */,
 				C2930D68C99E809FBDC3B5EAEADBA8F6 /* _Controllers */,
@@ -1489,7 +1489,7 @@
 				A8D2D688FDC7DA79BE3835E2E60452E0 /* AlertController.swift in Sources */,
 				CCF3AF570DEC1CCB8AB71E7CEB30AD41 /* APExtensions-dummy.m in Sources */,
 				0CE7F44459FDACDFC911154518D291A5 /* APExtensionsLoader.m in Sources */,
-				185B064ACB508CFA4199ECE2CD5B9702 /* APUtils.m in Sources */,
+				185B064ACB508CFA4199ECE2CD5B9702 /* APUtils.mm in Sources */,
 				FA2B35121DEE9F58D01F71B2F3FFAA7B /* Array+Utils.swift in Sources */,
 				CCB7E943ABEB89F518D56894D1420EBC /* CellInformation.swift in Sources */,
 				B7F076A569AD2450D06BF7B70667260F /* CGPoint+Utils.swift in Sources */,
