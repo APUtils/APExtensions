@@ -42,7 +42,9 @@ public class DelayedValue<T> {
     }
     
     private func setup() {
-        getValue { value in
+        getValue { [weak self] value in
+            guard let `self` = self else { return }
+            
             self.value = value
             self.onValueAvaliable?(value)
         }
