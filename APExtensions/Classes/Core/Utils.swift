@@ -20,6 +20,9 @@ public typealias SimpleClosure = () -> ()
 /// Closure that takes Bool and returns Void.
 public typealias SuccessClosure = (_ success: Bool) -> ()
 
+/// Closure that takes Bool and returns Void.
+public typealias ErrorClosure = (_ error: Error?) -> ()
+
 //-----------------------------------------------------------------------------
 // MARK: - Error
 //-----------------------------------------------------------------------------
