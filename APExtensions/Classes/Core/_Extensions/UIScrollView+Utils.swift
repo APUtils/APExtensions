@@ -61,3 +61,25 @@ public extension UIScrollView {
         refreshControl?.endRefreshing()
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - Scroll
+//-----------------------------------------------------------------------------
+
+public extension UIScrollView {
+    public func scrollToBottom(animated: Bool) {
+        let height = bounds.size.height
+        var y: CGFloat = 0.0
+        
+        if #available(iOS 11.0, *) {
+            y += adjustedContentInset.bottom
+        } else {
+            y += contentInset.bottom
+        }
+        
+        if contentSize.height > height {
+            y += contentSize.height - height
+        }
+        setContentOffset(CGPoint(x: 0, y: y), animated: animated)
+    }
+}

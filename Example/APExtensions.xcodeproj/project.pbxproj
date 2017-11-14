@@ -25,6 +25,7 @@
 		B0A073CC1F3B79A8001B8CC6 /* UIScrollView.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073CB1F3B79A8001B8CC6 /* UIScrollView.png */; };
 		B0A073CE1F3B79EE001B8CC6 /* UITextView.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073CD1F3B79EE001B8CC6 /* UITextView.png */; };
 		B0A073D01F3B7A3F001B8CC6 /* UIViewController.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */; };
+		B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B0A073CB1F3B79A8001B8CC6 /* UIScrollView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIScrollView.png; sourceTree = "<group>"; };
 		B0A073CD1F3B79EE001B8CC6 /* UITextView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITextView.png; sourceTree = "<group>"; };
 		B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIViewController.png; sourceTree = "<group>"; };
+		B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToBottomViewController.swift; sourceTree = "<group>"; };
 		B7A07FA220F82B576CEC7EF3 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
 		BE3B1BF1D9E4EDA304E77323 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C1980566B39F5799ED4A250D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		607FACD21AFB9204008FA782 /* Example for APExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */,
 				B06688E51F13EAB800A02878 /* _Gifs */,
 				B06688E41F13EAB300A02878 /* _Images */,
 				607FACD31AFB9204008FA782 /* _Supporting Files */,
@@ -215,6 +218,14 @@
 			children = (
 			);
 			name = _Gifs;
+			sourceTree = "<group>";
+		};
+		B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */ = {
+			isa = PBXGroup;
+			children = (
+				B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */,
+			);
+			name = _ScrollToBottom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +462,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +614,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				INFOPLIST_FILE = APExtensions/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
@@ -619,7 +631,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XVJ8T9UW9V;
 				INFOPLIST_FILE = APExtensions/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
