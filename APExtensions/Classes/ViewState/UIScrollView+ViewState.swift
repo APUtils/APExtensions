@@ -15,7 +15,7 @@ import UIKit
 private var flashScrollIndicatorsOnViewDidAppearAssociationKey = 0
 
 
-extension UIScrollView {
+public extension UIScrollView {
     private var _viewController: UIViewController? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {

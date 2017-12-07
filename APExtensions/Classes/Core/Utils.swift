@@ -281,7 +281,7 @@ public func g_performInMain(_ closure: @escaping SimpleClosure) {
 /// - parameter style: Action button style
 /// - parameter cancelTitle: Cancel button title
 /// - parameter handler: Action button click closure
-public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .default, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
     if let cancelTitle = cancelTitle {
