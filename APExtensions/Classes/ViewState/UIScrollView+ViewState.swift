@@ -1,8 +1,8 @@
 //
-//  UIView+ViewState.swift
+//  UIScrollView+ViewState.swift
 //  APExtensions
 //
-//  Created by Anton Plebanovich on 8/22/17.
+//  Created by Anton Plebanovich on 12/7/17.
 //  Copyright © 2017 Anton Plebanovich. All rights reserved.
 //
 
@@ -12,9 +12,10 @@ import UIKit
 // MARK: - Responder Helpers
 //-----------------------------------------------------------------------------
 
-private var becomeFirstResponderOnViewDidAppearAssociationKey = 0
+private var flashScrollIndicatorsOnViewDidAppearAssociationKey = 0
 
-public extension UIView {
+
+extension UIScrollView {
     private var _viewController: UIViewController? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
@@ -28,36 +29,32 @@ public extension UIView {
         return nil
     }
     
-    private var _becomeFirstResponderOnViewDidAppear: Bool {
+    private var _flashScrollIndicatorsOnViewDidAppear: Bool {
         get {
-            return objc_getAssociatedObject(self, &becomeFirstResponderOnViewDidAppearAssociationKey) as? Bool ?? false
+            return objc_getAssociatedObject(self, &flashScrollIndicatorsOnViewDidAppearAssociationKey) as? Bool ?? false
         }
         set {
-            objc_setAssociatedObject(self, &becomeFirstResponderOnViewDidAppearAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &flashScrollIndicatorsOnViewDidAppearAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
-    /// Tells view to become first responder only after view did appear.
-    ///
-    /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
-    ///
-    /// Because configuration usually is made in `viewDidLoad` or `viewWillAppear` while `view` still might have `nil` `window` it's useful to delay `becomeFirstResponder` calls.
-    @IBInspectable public var becomeFirstResponderOnViewDidAppear: Bool {
+    /// Tells scroll view to flash its scroll indicators in view did appear.
+    @IBInspectable public var flashScrollIndicatorsOnViewDidAppear: Bool {
         get {
-            return _becomeFirstResponderOnViewDidAppear
+            return _flashScrollIndicatorsOnViewDidAppear
         }
         set {
-            guard newValue != becomeFirstResponderOnViewDidAppear else { return }
+            guard newValue != flashScrollIndicatorsOnViewDidAppear else { return }
             
-            _becomeFirstResponderOnViewDidAppear = newValue
+            _flashScrollIndicatorsOnViewDidAppear = newValue
             
             if newValue {
                 let becomeFirstResponderOnViewDidAppearClosure: (UIViewController?) -> () = { [weak self] viewController in
-                    guard let `self` = self, let viewController = viewController, self._becomeFirstResponderOnViewDidAppear else { return }
+                    guard let `self` = self, let viewController = viewController, self._flashScrollIndicatorsOnViewDidAppear else { return }
                     
                     if viewController.viewState == .didAppear {
                         // Already appeared
-                        self._becomeFirstResponderOnViewDidAppear = false
+                        self._flashScrollIndicatorsOnViewDidAppear = false
                         self.becomeFirstResponder()
                     } else {
                         // Wait until appeared
@@ -66,8 +63,8 @@ public extension UIView {
                             NotificationCenter.default.removeObserver(token)
                             guard let `self` = self else { return }
                             // Reset this flag so we can assign it again later if needed
-                            self._becomeFirstResponderOnViewDidAppear = false
-                            self.becomeFirstResponder()
+                            self._flashScrollIndicatorsOnViewDidAppear = false
+                            self.flashScrollIndicators()
                         }
                     }
                 }

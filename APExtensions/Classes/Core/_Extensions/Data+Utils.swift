@@ -10,8 +10,8 @@ import Foundation
 
 
 public extension Data {
-    /// Get HEX string from data. Can be for sending APNS toke to backend.
-    public var hexString : String {
+    /// Get HEX string from data. Can be used for sending APNS token to backend.
+    public var hexString: String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
     

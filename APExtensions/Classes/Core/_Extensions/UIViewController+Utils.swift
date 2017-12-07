@@ -37,7 +37,7 @@ public extension UIViewController {
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if isViewLoaded {
-            view.endEditing()
+            view.endEditing(true)
         }
         
         if navigationController?.viewControllers.first == self {
@@ -58,6 +58,6 @@ public extension UIViewController {
 public extension UIViewController {
     /// End editing in viewController's view
     @IBAction func endEditing(_ sender: Any) {
-        view.endEditing()
+        view.endEditing(true)
     }
 }

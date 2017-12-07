@@ -169,6 +169,7 @@
 		AED58B976AB8F62FBFB0DA437861E088 /* PrettyDynamicTypeSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B8D3C4E2547445883AD8CD24D0ED7 /* PrettyDynamicTypeSyntax.swift */; };
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753CDB814B8A7EE793EBA4BB1DED304 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AFEEDDD53AAF0E68FAFAD24254FCCE6E /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A23A0CFE67E073CF9BB893755CE3B7 /* Data+Utils.swift */; };
+		B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */; };
 		B074AC4D840914D479702839FF479959 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9BF7E932612419A9A51D65376301AA /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD19B5214DB21F867B1E94107B7FB761 /* QuartzCore.framework */; };
@@ -480,6 +481,7 @@
 		ACEB2127A47162166BDABA88DB4578CD /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		AF33C827C2A20723BE34F76528206B83 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		AFB0817935FA40B76610D22CE64EFF63 /* APUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = APUtils.h; sourceTree = "<group>"; };
+		B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 		7A87324F441EFFAFAF0451FBE79D48FB /* ViewState */ = {
 			isa = PBXGroup;
 			children = (
+				B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */,
 				4985B952042BE12A9121A15867AAD5BC /* UIView+ViewState.swift */,
 				2CA4038C1EFF12246D9468DDD5146BC1 /* UIViewController+ViewState.swift */,
 				51C4B378B9FE285335C3379144DBB691 /* ViewStateLoader.h */,
@@ -1494,6 +1497,7 @@
 				CCB7E943ABEB89F518D56894D1420EBC /* CellInformation.swift in Sources */,
 				B7F076A569AD2450D06BF7B70667260F /* CGPoint+Utils.swift in Sources */,
 				2F4B20694D7DDFA17146E1E746A7F4A2 /* CGRect+Utils.swift in Sources */,
+				B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */,
 				8D0702DF23D480D4006766A6C5DCB236 /* Character+Utils.swift in Sources */,
 				3235E81BE300EDCF0C92795AA00FFD1F /* ClassName.swift in Sources */,
 				FE983954BD485916EA99003701FDE055 /* Configurable.swift in Sources */,

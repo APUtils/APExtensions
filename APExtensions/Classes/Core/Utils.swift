@@ -15,13 +15,13 @@ import UIKit
 //-----------------------------------------------------------------------------
 
 /// Closure that takes Void and returns Void.
-public typealias SimpleClosure = () -> ()
+public typealias SimpleClosure = () -> Void
 
 /// Closure that takes Bool and returns Void.
-public typealias SuccessClosure = (_ success: Bool) -> ()
+public typealias SuccessClosure = (_ success: Bool) -> Void
 
 /// Closure that takes Bool and returns Void.
-public typealias ErrorClosure = (_ error: Error?) -> ()
+public typealias ErrorClosure = (_ error: Error?) -> Void
 
 //-----------------------------------------------------------------------------
 // MARK: - Error
@@ -263,12 +263,10 @@ public func g_asyncMain(_ delay: TimeInterval = 0, closure: @escaping SimpleClos
 /// - parameters:
 ///   - closure: the closure to be executed
 public func g_performInMain(_ closure: @escaping SimpleClosure) {
-    if !Thread.isMainThread {
-        DispatchQueue.main.async {
-            closure()
-        }
-    } else {
+    if Thread.isMainThread {
         closure()
+    } else {
+        DispatchQueue.main.async { closure() }
     }
 }
 
@@ -280,14 +278,14 @@ public func g_performInMain(_ closure: @escaping SimpleClosure) {
 /// - parameter title: Alert title
 /// - parameter message: Alert message
 /// - parameter actionTitle: Action button title
-/// - parameter isDestructAction: Is action button destructive style or no
+/// - parameter style: Action button style
 /// - parameter cancelTitle: Cancel button title
 /// - parameter handler: Action button click closure
-public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", isDestructAction: Bool = false, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
-    let alertVC = AlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    alertVC.addAction(UIAlertAction(title: actionTitle, style: isDestructAction ? .destructive : .default, handler: handler))
+public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .default, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+    let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
     if let cancelTitle = cancelTitle {
-        alertVC.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.default, handler: nil))
+        alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
     }
     
     alertVC.present(animated: true)
