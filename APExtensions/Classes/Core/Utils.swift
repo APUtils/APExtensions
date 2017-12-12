@@ -273,10 +273,10 @@ public func g_performInMain(_ closure: @escaping SimpleClosure) {
 // ******************************* MARK: - Thread Safety
 
 /// Helper function that mimics objc @synchronized(self) {...} behaviour and syntax
-public func g_synchronized(_ lock: AnyClass, closure: () -> ()) {
-    objc_sync_enter(lock)
-    closure()
-    objc_sync_exit(lock)
+public func g_synchronized(_ lock: Any, closure: () throws -> Void) rethrows {
+    objc_sync_enter(lock); defer { objc_sync_exit(lock) }
+    
+    try closure()
 }
 
 //-----------------------------------------------------------------------------

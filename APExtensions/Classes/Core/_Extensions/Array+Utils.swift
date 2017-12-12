@@ -24,33 +24,33 @@ public extension Array {
 
 public extension Array {
     /// Helper method to modify all value type objects in array
-    public mutating func modifyForEach(_ body: (_ index: Index, _ element: inout Element) -> ()) {
+    public mutating func modifyForEach(_ body: (_ index: Index, _ element: inout Element) throws -> ()) rethrows {
         for index in indices {
-            modifyElement(atIndex: index) { body(index, &$0) }
+            try modifyElement(atIndex: index) { try body(index, &$0) }
         }
     }
     
     /// Helper method to modify value type objects in array at specific index
-    public mutating func modifyElement(atIndex index: Index, _ modifyElement: (_ element: inout Element) -> ()) {
+    public mutating func modifyElement(atIndex index: Index, _ modifyElement: (_ element: inout Element) throws -> ()) rethrows {
         var element = self[index]
-        modifyElement(&element)
+        try modifyElement(&element)
         self[index] = element
     }
     
     /// Helper methods to remove object using closure
-    public mutating func remove(_ body: (_ element: Element) -> Bool) {
-        guard let index = index(where: body) else { return }
+    public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows {
+        guard let index = try index(where: body) else { return }
         
         remove(at: index)
     }
     
     /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
-    public func filterDuplicates(_ includeElement: (_ lhs: Element, _ rhs: Element) -> Bool) -> [Element] {
+    public func filterDuplicates(_ includeElement: (_ lhs: Element, _ rhs: Element) throws -> Bool) rethrows -> [Element] {
         var results = [Element]()
         
-        forEach { element in
-            let existingElements = results.filter {
-                return includeElement(element, $0)
+        try forEach { element in
+            let existingElements = try results.filter {
+                return try includeElement(element, $0)
             }
             if existingElements.count == 0 {
                 results.append(element)
@@ -61,17 +61,17 @@ public extension Array {
     }
     
     /// Helper method to enumerate all objects in array together with index
-    public func enumerateForEach(_ body: (_ index: Index, _ element: Element) -> ()) {
+    public func enumerateForEach(_ body: (_ index: Index, _ element: Element) throws -> ()) rethrows {
         for index in indices {
-            body(index, self[index])
+            try body(index, self[index])
         }
     }
     
     /// Helper method to map all objects in array together with index
-    public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) -> T) -> [T] {
+    public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) throws -> T) rethrows -> [T] {
         var map: [T] = []
         for index in indices {
-            map.append(body(index, self[index]))
+            map.append(try body(index, self[index]))
         }
         
         return map

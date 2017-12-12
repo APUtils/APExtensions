@@ -26,9 +26,9 @@ public func += <K, V> (left: inout [K: V], right: [K: V]?) {
 
 public extension Dictionary {
     /// Helper method to modify value at specific key
-    public mutating func modifyValue(atKey key: Key, _ modifyValue: (_ element: inout Value?) -> ()) {
+    public mutating func modifyValue(atKey key: Key, _ modifyValue: (_ element: inout Value?) throws -> ()) rethrows {
         var value = self[key]
-        modifyValue(&value)
+        try modifyValue(&value)
         self[key] = value
     }
 }
