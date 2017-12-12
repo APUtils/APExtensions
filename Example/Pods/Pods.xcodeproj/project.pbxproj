@@ -171,6 +171,7 @@
 		AFEEDDD53AAF0E68FAFAD24254FCCE6E /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A23A0CFE67E073CF9BB893755CE3B7 /* Data+Utils.swift */; };
 		B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */; };
 		B074AC4D840914D479702839FF479959 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
+		B0CE13031FE06EF200308C49 /* FileManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9BF7E932612419A9A51D65376301AA /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD19B5214DB21F867B1E94107B7FB761 /* QuartzCore.framework */; };
 		B2B672B54125E816CC675B259E396141 /* UIScrollView+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE241A645C17146DF58000777347AAC /* UIScrollView+Storyboard.swift */; };
@@ -484,6 +485,7 @@
 		B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
+		B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Utils.swift"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B168CAB5483892B41FC690DDA2C385E2 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C6D06731AEA313DD5A5EC8B9B56AF /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
@@ -855,6 +857,7 @@
 				82B860F306DC4CF480D6743DA265D870 /* Date+Utils.swift */,
 				42E73AF7DFA12CFA29872CFF91573A88 /* Dictionary+Utils.swift */,
 				1E20073A693A87F3FE549BB583EA0999 /* Error+Utils.swift */,
+				B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */,
 				817066AC5F07D08FF8954BDD8E36E15F /* MFMailComposeViewController+Utils.swift */,
 				AB4E8A5A09258CAB0165BFA25F4ECD5B /* MFMessageComposeViewController+Utils.swift */,
 				78326FE112B71B7225C4C3C646FEDA22 /* NotificationCenter+Utils.swift */,
@@ -1519,6 +1522,7 @@
 				A993B6624E2F2116DE9A83AFAB9C78F4 /* Optional+Utils.swift in Sources */,
 				EE7D776F1089EC1298E22B163F3CC7BE /* Sequence+Utils.swift in Sources */,
 				6C89E7006227D31DDC45A31BDE8E342D /* SetupOnce.swift in Sources */,
+				B0CE13031FE06EF200308C49 /* FileManager+Utils.swift in Sources */,
 				20FE3563BFEC9A8D2E5C68778382ED34 /* String+Utils.swift in Sources */,
 				22250ED47E714A37C5C4F605A578F228 /* UIApplication+Utils.swift in Sources */,
 				69A7E353FDDFF206FC631C1EEB738158 /* UIButton+Storyboard.swift in Sources */,

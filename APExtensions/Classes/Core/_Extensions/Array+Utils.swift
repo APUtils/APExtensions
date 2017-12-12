@@ -37,6 +37,23 @@ public extension Array {
         self[index] = element
     }
     
+    /// Helper method to enumerate all objects in array together with index
+    public func enumerateForEach(_ body: (_ index: Index, _ element: Element) throws -> ()) rethrows {
+        for index in indices {
+            try body(index, self[index])
+        }
+    }
+    
+    /// Helper method to map all objects in array together with index
+    public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) throws -> T) rethrows -> [T] {
+        var map: [T] = []
+        for index in indices {
+            map.append(try body(index, self[index]))
+        }
+        
+        return map
+    }
+    
     /// Helper methods to remove object using closure
     @discardableResult public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows -> Element? {
         guard let index = try index(where: body) else { return nil }
@@ -60,21 +77,9 @@ public extension Array {
         return results
     }
     
-    /// Helper method to enumerate all objects in array together with index
-    public func enumerateForEach(_ body: (_ index: Index, _ element: Element) throws -> ()) rethrows {
-        for index in indices {
-            try body(index, self[index])
-        }
-    }
-    
-    /// Helper method to map all objects in array together with index
-    public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) throws -> T) rethrows -> [T] {
-        var map: [T] = []
-        for index in indices {
-            map.append(try body(index, self[index]))
-        }
-        
-        return map
+    mutating func move(from: Index, to: Index) {
+        let element = remove(at: from)
+        insert(element, at: to)
     }
 }
 
