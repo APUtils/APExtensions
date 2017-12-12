@@ -38,10 +38,10 @@ public extension Array {
     }
     
     /// Helper methods to remove object using closure
-    public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows {
-        guard let index = try index(where: body) else { return }
+    public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows -> Element? {
+        guard let index = try index(where: body) else { return nil }
         
-        remove(at: index)
+        return remove(at: index)
     }
     
     /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
