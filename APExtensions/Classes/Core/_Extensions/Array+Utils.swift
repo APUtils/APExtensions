@@ -38,7 +38,7 @@ public extension Array {
     }
     
     /// Helper methods to remove object using closure
-    public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows -> Element? {
+    @discardableResult public mutating func remove(_ body: (_ element: Element) throws -> Bool) rethrows -> Element? {
         guard let index = try index(where: body) else { return nil }
         
         return remove(at: index)
