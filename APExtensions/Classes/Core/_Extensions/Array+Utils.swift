@@ -77,7 +77,7 @@ public extension Array {
         return results
     }
     
-    mutating func move(from: Index, to: Index) {
+    public mutating func move(from: Index, to: Index) {
         let element = remove(at: from)
         insert(element, at: to)
     }
