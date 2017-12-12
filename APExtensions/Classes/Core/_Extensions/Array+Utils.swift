@@ -37,8 +37,15 @@ public extension Array {
         self[index] = element
     }
     
+    /// Helper methods to remove object using closure
+    public mutating func remove(_ body: (_ element: Element) -> Bool) {
+        guard let index = index(where: body) else { return }
+        
+        remove(at: index)
+    }
+    
     /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
-    public func filterDuplicates(_ includeElement: @escaping (_ lhs: Element, _ rhs: Element) -> Bool) -> [Element] {
+    public func filterDuplicates(_ includeElement: (_ lhs: Element, _ rhs: Element) -> Bool) -> [Element] {
         var results = [Element]()
         
         forEach { element in
@@ -53,12 +60,14 @@ public extension Array {
         return results
     }
     
+    /// Helper method to enumerate all objects in array together with index
     public func enumerateForEach(_ body: (_ index: Index, _ element: Element) -> ()) {
         for index in indices {
             body(index, self[index])
         }
     }
     
+    /// Helper method to map all objects in array together with index
     public func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) -> T) -> [T] {
         var map: [T] = []
         for index in indices {
