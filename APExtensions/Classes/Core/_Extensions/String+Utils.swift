@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Subscript
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Subscript
 
 public extension String {
     public subscript(i: Int) -> Character {
@@ -34,9 +32,7 @@ public extension String {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Get random symbol from string
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Get random symbol from string
 
 public extension String {
     /// Returns random symbol from string
@@ -47,9 +43,7 @@ public extension String {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Trimming
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Trimming
 
 public extension String {
     /// Strips whitespace and new line characters
@@ -59,9 +53,7 @@ public extension String {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Appending
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Appending
 
 public extension String {
     public mutating func appendNewLine() {
@@ -117,9 +109,7 @@ public extension String {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Splitting
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Splitting
 
 public extension String {
     /// Splits string by capital letters without stripping them
@@ -154,9 +144,7 @@ public extension String {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Bounding Rect
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Bounding Rect
 
 public extension String {
     /// Width of a string written in one line.
@@ -175,7 +163,7 @@ public extension String {
     /// Height of a string for specified attributes and width.
     public func height(attributes: [NSAttributedStringKey: Any], width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height.rounded(.up)
+        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g_pixelSize
         
         return height
     }

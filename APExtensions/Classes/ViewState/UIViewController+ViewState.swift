@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Swizzle Functions
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Swizzle Functions
 
 private func swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard class_isMetaClass(`class`) else { return }
@@ -40,9 +38,7 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Load
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Load
 
 private extension UIViewController {
     @objc private static var setupOnce: Int {
@@ -63,9 +59,7 @@ private extension UIViewController {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - ViewState and Notifications
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - ViewState and Notifications
 
 private var associatedStateKey = 0
 
@@ -165,9 +159,7 @@ extension UIViewController {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Keyboard
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Keyboard
 
 private var hideRecognizerAssociationKey = 0
 

@@ -8,9 +8,7 @@
 
 import Foundation
 
-//-----------------------------------------------------------------------------
-// MARK: - Easy dictionary merge
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Easy dictionary merge
 
 public func += <K, V> (left: inout [K: V], right: [K: V]?) {
     guard let right = right else { return }
@@ -20,9 +18,7 @@ public func += <K, V> (left: inout [K: V], right: [K: V]?) {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Scripting
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Scripting
 
 public extension Dictionary {
     /// Helper method to modify value at specific key
@@ -33,9 +29,7 @@ public extension Dictionary {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Values for key
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Values for key
 
 public extension Dictionary {
     public func int(forKey key: Key) -> Int? {

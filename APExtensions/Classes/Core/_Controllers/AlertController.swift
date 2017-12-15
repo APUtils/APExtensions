@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Helper Class
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Helper Class
 
 fileprivate final class AlertRootViewController: UIViewController {
     fileprivate var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
@@ -25,15 +23,11 @@ fileprivate final class AlertRootViewController: UIViewController {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Class Implementation
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Class Implementation
 
 public final class AlertController: UIAlertController {
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Private Properties
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Private Properties
     
     private lazy var rootVC: AlertRootViewController = {
         let rootVC = AlertRootViewController()
@@ -60,9 +54,7 @@ public final class AlertController: UIAlertController {
         return alertWindow
     }()
     
-    //-----------------------------------------------------------------------------
-    // MARK: - UIViewController Methods
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - UIViewController Methods
     
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -71,9 +63,7 @@ public final class AlertController: UIAlertController {
         alertWindow = nil
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Public Methods
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Public Methods
     
     public func present(animated: Bool) {
         g_performInMain {

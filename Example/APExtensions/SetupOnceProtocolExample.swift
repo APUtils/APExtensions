@@ -12,9 +12,7 @@ import APExtensions
 
 class SetupOnceProtocolExample {}
 
-//-----------------------------------------------------------------------------
-// MARK: - SetupOnce
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - SetupOnce
 
 extension SetupOnceProtocolExample: SetupOnce {
     // [NSObject load] for Swift

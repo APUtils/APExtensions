@@ -1,6 +1,6 @@
 import Nimble
 
-// MARK: - Nicer syntax using == operator
+// ******************************* MARK: - Nicer syntax using == operator
 
 public struct DynamicTypeSnapshot {
     let name: String?

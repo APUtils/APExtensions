@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Responder Helpers
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Responder Helpers
 
 private var becomeFirstResponderOnViewDidAppearAssociationKey = 0
 

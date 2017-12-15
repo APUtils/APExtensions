@@ -8,9 +8,7 @@
 
 import Foundation
 
-//-----------------------------------------------------------------------------
-// MARK: - isNilOrEmpty
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - isNilOrEmpty
 
 // Array
 // TODO: Is it possible to make it instance method somehow?
@@ -59,9 +57,7 @@ public extension Optional where Wrapped == Data {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Optional Arrays Equatable
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Optional Arrays Equatable
 
 public func ==<T>(lhs: [T]?, rhs: [T]?) -> Bool where T: Equatable {
     switch (lhs, rhs) {
@@ -79,9 +75,7 @@ public func !=<T>(lhs: [T]?, rhs: [T]?) -> Bool where T: Equatable {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - CustomStringConvertible
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - CustomStringConvertible
 
 extension Optional: CustomStringConvertible {
     public var description: String {

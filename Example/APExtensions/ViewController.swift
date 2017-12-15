@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    //-----------------------------------------------------------------------------
-    // MARK: - UIViewController Overrides
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - UIViewController Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()

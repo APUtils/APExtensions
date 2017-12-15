@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - InstantiatableFromXib
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - InstantiatableFromXib
 
 /// Helps to instantiate object from xib file.
 public protocol InstantiatableFromXib {
@@ -29,9 +27,7 @@ public extension InstantiatableFromXib where Self: NSObject {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - InstantiatableFromStoryboard
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - InstantiatableFromStoryboard
 
 /// Helps to instantiate object from storyboard file.
 public protocol InstantiatableFromStoryboard: class {
@@ -61,9 +57,7 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - InstantiatableContentView
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - InstantiatableContentView
 
 /// Helps to instantiate content view from storyboard file.
 public protocol InstantiatableContentView {

@@ -1,6 +1,6 @@
 import Nimble
 
-// MARK: - Nicer syntax using == operator
+// ******************************* MARK: - Nicer syntax using == operator
 
 public struct Snapshot {
     let name: String?
@@ -41,7 +41,7 @@ public func == (lhs: Expectation<Snapshotable>, rhs: Snapshot) {
     }
 }
 
-// MARK: - Nicer syntax using emoji
+// ******************************* MARK: - Nicer syntax using emoji
 
 // swiftlint:disable:next identifier_name
 public func 📷(_ snapshottable: Snapshotable, file: FileString = #file, line: UInt = #line) {

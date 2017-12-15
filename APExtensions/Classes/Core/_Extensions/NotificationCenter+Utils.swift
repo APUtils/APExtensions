@@ -8,9 +8,7 @@
 
 import Foundation
 
-//-----------------------------------------------------------------------------
-// MARK: - Day Start Notifications
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Day Start Notifications
 
 public extension Notification.Name {
     /// Post on 0:00:00 every day so app can refresh it's data. For example change `Today` to `Yesterday` date formatter string.
@@ -47,9 +45,7 @@ public extension NotificationCenter {
         fireDate = nil
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Timer
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Timer
     
     private func startTimer() {
         g_performInMain {
@@ -81,9 +77,7 @@ public extension NotificationCenter {
         restartTimer()
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Notifications
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Notifications
     
     @objc private func onDidBecomeActive(_ notification: Notification) {
         if let fireDate = fireDate, fireDate < Date() {

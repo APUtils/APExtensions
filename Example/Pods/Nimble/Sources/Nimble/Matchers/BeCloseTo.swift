@@ -94,7 +94,7 @@ public func beCloseTo(_ expectedValues: [Double], within delta: Double = Default
     }
 }
 
-// MARK: - Operators
+// ******************************* MARK: - Operators
 
 infix operator ≈ : ComparisonPrecedence
 

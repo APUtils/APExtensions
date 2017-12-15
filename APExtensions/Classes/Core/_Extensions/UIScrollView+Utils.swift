@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Insets
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Insets
 
 public extension UIScrollView {
     /// Set value for top `contentInset` and `scrollIndicatorInsets`
@@ -38,14 +36,12 @@ public extension UIScrollView {
     /// Assures that contentOffset value is correct.
     public func clampContentOffset() {
         var newContentOffset = contentOffset
-        newContentOffset.y = min(newContentOffset.y, contentSize.height - height)
+        newContentOffset.y = min(newContentOffset.y, contentSize.height - bounds.size.height)
         newContentOffset.y = min(newContentOffset.y, -contentInset.top)
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - UIRefreshControl
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - UIRefreshControl
 
 @available(iOS 10.0, *)
 public extension UIScrollView {
@@ -62,9 +58,7 @@ public extension UIScrollView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Scroll
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Scroll
 
 public extension UIScrollView {
     public func scrollToBottom(animated: Bool) {

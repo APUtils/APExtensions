@@ -12,35 +12,25 @@ import APExtensions
 
 final class ScrollToBottomViewController: UIViewController, InstantiatableFromStoryboard {
     
-    //-----------------------------------------------------------------------------
-    // MARK: - @IBOutlets
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - @IBOutlets
     
     @IBOutlet private weak var scrollView: UIScrollView!
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Private Properties
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Private Properties
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Initialization and Setup
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Initialization and Setup
     
     private func setup() {
         
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Configuration
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Configuration
     
     private func configure() {
         tabBarController?.navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - UIViewController Overrides
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - UIViewController Overrides
     
     override func viewDidLoad() {
         setup()
@@ -54,15 +44,11 @@ final class ScrollToBottomViewController: UIViewController, InstantiatableFromSt
         configure()
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Actions
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Actions
     
     @IBAction private func onScrollToBottomTap(_ sender: Any) {
         scrollView.scrollToBottom(animated: true)
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Notifications
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Notifications
 }

@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Navigation
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Navigation
 
 public extension UIViewController {
     /// Previous view controller in navigation stack
@@ -51,9 +49,7 @@ public extension UIViewController {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Editing
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Editing
 
 public extension UIViewController {
     /// End editing in viewController's view

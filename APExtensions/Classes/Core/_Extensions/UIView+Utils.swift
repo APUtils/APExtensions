@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Sizes
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Sizes
 
 public extension UIView {
     /// View width
@@ -44,9 +42,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Animations
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Animations
 
 public extension UIView {
     public func fadeInAnimated() {
@@ -62,9 +58,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Utils
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Utils
 
 public extension UIView {
     /// Makes corner radius euqal to half of width or height
@@ -92,9 +86,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Sequence
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Sequence
 
 public extension UIView {
     /// Returns all view's subviews
@@ -112,9 +104,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Image
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Image
 
 public extension UIView {
     /// Creates image from view and adds overlay image at the center if provided
@@ -136,9 +126,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Responder Helpers
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Responder Helpers
 
 public extension UIView {
     /// Ends editing on view and all of it's subviews
@@ -147,9 +135,7 @@ public extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Activity Indicator
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Activity Indicator
 
 private var showCounterKey = 0
 

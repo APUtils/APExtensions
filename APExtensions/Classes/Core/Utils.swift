@@ -10,9 +10,7 @@ import UIKit
 
 // TODO: Add description for functions
 
-//-----------------------------------------------------------------------------
-// MARK: - Typealiases
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Typealiases
 
 /// Closure that takes Void and returns Void.
 public typealias SimpleClosure = () -> Void
@@ -23,16 +21,12 @@ public typealias SuccessClosure = (_ success: Bool) -> Void
 /// Closure that takes Bool and returns Void.
 public typealias ErrorClosure = (_ error: Error?) -> Void
 
-//-----------------------------------------------------------------------------
-// MARK: - Error
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Error
 
 /// Error stub to use for simplification
 public struct GeneralError: Error { public init() {} }
 
-//-----------------------------------------------------------------------------
-// MARK: - Global Structs
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Global Structs
 
 /// Structure containing screen sizes. Available constants: `width`, `height`, `maxSide`, `minSide`
 public struct g_screenSize {
@@ -42,9 +36,7 @@ public struct g_screenSize {
     @nonobjc public static let minSide = min(g_screenSize.width, g_screenSize.height)
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Comparison
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Comparison
 
 /// Compares two `CGSize`s with 0.0001 tolerance
 public func g_isCGSizesEqual(first: CGSize, second: CGSize) -> Bool {
@@ -64,9 +56,7 @@ public func g_isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Global Vars
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Global Vars
 
 /// Shared application
 public let g_sharedApplication = UIApplication.shared
@@ -124,17 +114,13 @@ public var g_isActive: Bool {
     return g_sharedApplication.applicationState == .active
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Swift Exception Handling
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Swift Exception Handling
 
 public func g_perform(_ closure: SimpleClosure) -> NSException? {
     return APUtils.perform(closure)
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Unwrap
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Unwrap
 
 /// Helper protocol
 private protocol _Optional {
@@ -162,9 +148,7 @@ public func g_unwrap(_ _any: Any?) -> Any? {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Top Controller
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Top Controller
 
 /// Current top most view controller
 public var g_topViewController: UIViewController? {
@@ -200,9 +184,7 @@ public var g_statusBarStyleTopViewController: UIViewController? {
     return currentVc
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Animations
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Animations
 
 public func g_animate(animations: @escaping SimpleClosure) {
     g_animate(animations: animations, completion: nil)
@@ -220,9 +202,7 @@ public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, o
     UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Dispatch
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Dispatch
 
 /// Executes a closure in a default queue after requested seconds. Uses GCD.
 /// - parameters:
@@ -279,9 +259,7 @@ public func g_synchronized(_ lock: Any, closure: () throws -> Void) rethrows {
     try closure()
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Alerts
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Alerts
 
 /// Shows error alert with title, message, action title, cancel title and handler
 /// - parameter title: Alert title
@@ -354,9 +332,7 @@ public func g_showPickerAlert(title: String? = nil, message: String? = nil, butt
     vc.present(animated: true)
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Network Activity
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Network Activity
 
 private var networkActivityCounter = 0
 
@@ -375,9 +351,7 @@ public func g_hideNetworkActivity() {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Swizzle
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Swizzle
 
 public func g_swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard class_isMetaClass(`class`) else { return }
@@ -407,9 +381,7 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Other Global Functions
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Other Global Functions
 
 /// Takes 0.003s - 0.02s on 5s device. Example usage:
 ///
@@ -420,4 +392,12 @@ public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
 
 public func g_Translate(_ string: String) -> String {
     return NSLocalizedString(string, comment: "")
+}
+
+/// Opens iOS Settings page for current application
+public func g_openAppSettings() {
+    guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
+    guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString + bundleIdentifier) else { return }
+    
+    UIApplication.shared.openURL(settingsURL)
 }

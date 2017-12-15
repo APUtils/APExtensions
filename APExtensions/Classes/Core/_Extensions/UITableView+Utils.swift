@@ -8,15 +8,11 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Cells, Header and Footer reuse
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Cells, Header and Footer reuse
 
 public extension UITableView {
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Cell
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Cell
     
     /// Simplifies cell registration. Xib name must be the same as class name.
     public func registerNib(class: UITableViewCell.Type) {
@@ -41,9 +37,7 @@ public extension UITableView {
         return self.dequeueReusableCell(withIdentifier: cellClass.className, for: indexPath) as! UITableViewCell & Configurable
     }
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Header and Footer
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Header and Footer
     
     /// Simplifies header/footer registration. Xib name must be the same as class name.
     public func registerNib(class: UITableViewHeaderFooterView.Type) {
@@ -59,9 +53,7 @@ public extension UITableView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Reload
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Reload
 
 public extension UITableView {
     /// Assures content offeset won't change after reload

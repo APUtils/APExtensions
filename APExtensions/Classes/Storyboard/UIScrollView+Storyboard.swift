@@ -8,9 +8,7 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------
-// MARK: - Helper Extension
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Helper Extension
 
 fileprivate extension UIView {
     fileprivate var _viewController: UIViewController? {
@@ -27,9 +25,7 @@ fileprivate extension UIView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Adjustment Behavior
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Adjustment Behavior
 
 @available(iOS 11.0, *)
 public extension UIScrollView {
@@ -43,9 +39,7 @@ public extension UIScrollView {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Bars Avoid
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Bars Avoid
 
 public extension UIScrollView {
     /// Sets 64 or 0 for top content inset and disables automatic mechanisms to prevent conflict.

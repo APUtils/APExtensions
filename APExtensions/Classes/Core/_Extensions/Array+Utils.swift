@@ -18,9 +18,7 @@ public extension Array {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Scripting
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Scripting
 
 public extension Array {
     /// Helper method to modify all value type objects in array
@@ -83,9 +81,7 @@ public extension Array {
     }
 }
 
-//-----------------------------------------------------------------------------
-// MARK: - Splitting
-//-----------------------------------------------------------------------------
+// ******************************* MARK: - Splitting
 
 public extension Array {
     /// Splits array into slices of specified size

@@ -11,9 +11,7 @@ import UIKit
 
 public extension UICollectionView {
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Cell Nib
-    //-----------------------------------------------------------------------------
+    // ******************************* MARK: - Cell Nib
     
     /// Simplifies cell registration. Xib name must be the same as class name.
     public func registerNib(class: UICollectionViewCell.Type) {
