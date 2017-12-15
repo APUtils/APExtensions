@@ -171,6 +171,7 @@
 		AFEEDDD53AAF0E68FAFAD24254FCCE6E /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A23A0CFE67E073CF9BB893755CE3B7 /* Data+Utils.swift */; };
 		B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */; };
 		B074AC4D840914D479702839FF479959 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
+		B0C6B7481FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */; };
 		B0CE13031FE06EF200308C49 /* FileManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */; };
 		B102ABE4E54B71B3D2C2118E2782FAB9 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9BF7E932612419A9A51D65376301AA /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD19B5214DB21F867B1E94107B7FB761 /* QuartzCore.framework */; };
@@ -485,6 +486,7 @@
 		B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
+		B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
 		B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Utils.swift"; sourceTree = "<group>"; };
 		B0DB3575D6B556543291D8CEE4B9AC41 /* Pods-APExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-APExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B168CAB5483892B41FC690DDA2C385E2 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -867,6 +869,7 @@
 				63D7223B03B92FD4C315986D03A892D3 /* Sequence+Utils.swift */,
 				BE189243A6589A7A382854C4ED54F6FB /* String+Utils.swift */,
 				B5285795FFD8CC9F831B887702D8291F /* UIApplication+Utils.swift */,
+				B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */,
 				881C7F074903A7EC3102A7E915CBE920 /* UIButton+Utils.swift */,
 				6FA3E0F4BBF660BB261313D3B61A4ACF /* UICollectionView+Utils.swift */,
 				7FF6AB443D7695B5757099D3242B423B /* UIColor+Utils.swift */,
@@ -1556,6 +1559,7 @@
 				3E8180F2AA54AD2E6A9AEEDCFFA5E1A1 /* UIViewController+ViewState.swift in Sources */,
 				6D8D5DBB434CAE70339C783C338EF45F /* URL+Utils.swift in Sources */,
 				39EBCAC2E0C97F2D92F07BB9A92425E1 /* Utils.swift in Sources */,
+				B0C6B7481FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift in Sources */,
 				8053BFB9A3AAF75F1C809F7E23DEDE3B /* ViewStateLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
