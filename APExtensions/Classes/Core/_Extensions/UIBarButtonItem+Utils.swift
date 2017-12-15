@@ -12,7 +12,7 @@ import Foundation
 private var defaultTintColorAssociationKey = 0
 
 
-extension UIBarButtonItem {
+public extension UIBarButtonItem {
     private var defaultTintColor: UIColor? {
         get {
             return objc_getAssociatedObject(self, &defaultTintColorAssociationKey) as? UIColor
@@ -22,7 +22,7 @@ extension UIBarButtonItem {
         }
     }
     
-    var isHidden: Bool {
+    public var isHidden: Bool {
         get {
             return tintColor == .clear && isEnabled == false
         }
