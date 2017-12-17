@@ -176,9 +176,9 @@ public func g_topViewController(base: UIViewController? = g_appDelegate.window??
 /// Returns top most view controller that handles status bar style.
 /// This property might be more accurate than `g_topViewController` if custom container view controllers configured properly to return their top most controllers for status bar appearance.
 public var g_statusBarStyleTopViewController: UIViewController? {
-    var currentVc = g_appDelegate.window??.rootViewController
+    var currentVc = g_topViewController
     while let newTopVc = currentVc?.childViewControllerForStatusBarStyle {
-        currentVc = newTopVc
+        currentVc = g_topViewController(base: newTopVc)
     }
     
     return currentVc
