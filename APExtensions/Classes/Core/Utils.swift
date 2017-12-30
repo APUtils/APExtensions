@@ -68,7 +68,7 @@ public let g_sharedUserDefaults = UserDefaults.standard
 public let g_sharedNotificationCenter = NotificationCenter.default
 
 /// Default file manager
-public let g_fileManager = FileManager.default
+public let g_sharedFileManager = FileManager.default
 
 /// Is running on simulator?
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0

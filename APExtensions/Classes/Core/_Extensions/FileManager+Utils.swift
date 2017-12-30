@@ -9,8 +9,8 @@
 import Foundation
 
 
-extension FileManager {
-    func fileExists(url: URL) -> Bool {
+public extension FileManager {
+    public func fileExists(at url: URL) -> Bool {
         return fileExists(atPath: url.path)
     }
 }
