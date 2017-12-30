@@ -25,16 +25,16 @@ public extension UITableView {
     ///
     ///     let cell: MyCell = tableView.dequeue(for: indexPath)
     public func dequeue<T: UITableViewCell>(for indexPath: IndexPath) -> T {
-        return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+        return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
     /// Simplifies configurable cell dequeue.
     ///
     /// Example:
     ///
-    ///     let cell = tableView.dequeueConfigurable(indexPath)
-    public func dequeueConfigurable(cellClass: (UITableViewCell & Configurable).Type, indexPath: IndexPath) -> UITableViewCell & Configurable {
-        return self.dequeueReusableCell(withIdentifier: cellClass.className, for: indexPath) as! UITableViewCell & Configurable
+    ///     let cell = tableView.dequeueConfigurable(cellClass: MyClass.self, for: indexPath)
+    public func dequeueConfigurable(class: (UITableViewCell & Configurable).Type, for indexPath: IndexPath) -> UITableViewCell & Configurable {
+        return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! UITableViewCell & Configurable
     }
     
     // ******************************* MARK: - Header and Footer

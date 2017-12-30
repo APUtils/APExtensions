@@ -170,6 +170,7 @@
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753CDB814B8A7EE793EBA4BB1DED304 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AFEEDDD53AAF0E68FAFAD24254FCCE6E /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A23A0CFE67E073CF9BB893755CE3B7 /* Data+Utils.swift */; };
 		B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */; };
+		B04FCCAB1FF7E1CD009E7827 /* URLComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */; };
 		B074AC4D840914D479702839FF479959 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
 		B0C6B7481FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */; };
 		B0CE13031FE06EF200308C49 /* FileManager+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */; };
@@ -485,6 +486,7 @@
 		AFB0817935FA40B76610D22CE64EFF63 /* APUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = APUtils.h; sourceTree = "<group>"; };
 		B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
+		B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Utils.swift"; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
 		B0CE13021FE06EF200308C49 /* FileManager+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Utils.swift"; sourceTree = "<group>"; };
@@ -884,6 +886,7 @@
 				D9BCD58EDBF256E2D5988CED4EFF6930 /* UIView+Utils.swift */,
 				332C24F5A4DDC31BD9A18FB6F530D5C7 /* UIViewController+Utils.swift */,
 				D751052E310AAB3FCADA3C273BE31DC3 /* URL+Utils.swift */,
+				B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -1557,6 +1560,7 @@
 				9EA3C3C254D2859F5E4FE2779CC9C16C /* UIView+ViewState.swift in Sources */,
 				5DC52501E2BD27068790EB290176B3AC /* UIViewController+Utils.swift in Sources */,
 				3E8180F2AA54AD2E6A9AEEDCFFA5E1A1 /* UIViewController+ViewState.swift in Sources */,
+				B04FCCAB1FF7E1CD009E7827 /* URLComponents+Utils.swift in Sources */,
 				6D8D5DBB434CAE70339C783C338EF45F /* URL+Utils.swift in Sources */,
 				39EBCAC2E0C97F2D92F07BB9A92425E1 /* Utils.swift in Sources */,
 				B0C6B7481FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift in Sources */,

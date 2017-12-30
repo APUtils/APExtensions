@@ -110,7 +110,7 @@ public var g_rootViewController: UIViewController {
 }
 
 /// Is application in `active` state?
-public var g_isActive: Bool {
+public var g_isAppActive: Bool {
     return g_sharedApplication.applicationState == .active
 }
 
@@ -155,19 +155,26 @@ public var g_topViewController: UIViewController? {
     return g_topViewController()
 }
 
-public func g_topViewController(base: UIViewController? = g_appDelegate.window??.rootViewController, isCheckPresented: Bool = true) -> UIViewController? {
+/// Returns top view controller from `base` controller.
+/// - note: In case you are using custom container controllers in your application this method won't be able to process them.
+/// - parameters:
+///   - base: Base controller from which to start. If not specified or nil then application delegate window's rootViewController will be used.
+///   - shouldCheckPresented: Should it check for presented controllers?
+public func g_topViewController(base: UIViewController? = nil, shouldCheckPresented: Bool = true) -> UIViewController? {
+    let base = base ?? g_appDelegate.window??.rootViewController
+    
     if let navigationVc = base as? UINavigationController {
-        return g_topViewController(base: navigationVc.topViewController, isCheckPresented: isCheckPresented)
+        return g_topViewController(base: navigationVc.topViewController, shouldCheckPresented: shouldCheckPresented)
     }
     
     if let tabBarVc = base as? UITabBarController {
         if let selected = tabBarVc.selectedViewController {
-            return g_topViewController(base: selected, isCheckPresented: isCheckPresented)
+            return g_topViewController(base: selected, shouldCheckPresented: shouldCheckPresented)
         }
     }
     
-    if isCheckPresented, let presented = base?.presentedViewController {
-        return g_topViewController(base: presented, isCheckPresented: isCheckPresented)
+    if shouldCheckPresented, let presented = base?.presentedViewController {
+        return g_topViewController(base: presented, shouldCheckPresented: shouldCheckPresented)
     }
     
     return base
