@@ -398,6 +398,10 @@ public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
     return APExtensionsLoader.getClassesConform(to: `protocol`).flatMap({ $0 as? T })
 }
 
+public func g_getPointer(_ any: AnyObject) -> String {
+    return Unmanaged<AnyObject>.passUnretained(any as AnyObject).toOpaque().debugDescription
+}
+
 public func g_Translate(_ string: String) -> String {
     return NSLocalizedString(string, comment: "")
 }
