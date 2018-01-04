@@ -35,9 +35,18 @@ public extension UIScrollView {
     
     /// Assures that contentOffset value is correct.
     public func clampContentOffset() {
+        let minOffsetY = -contentInset.top
+        let maxOffsetY = max(contentSize.height - bounds.size.height + contentInset.bottom, 0)
+        let minOffsetX = -contentInset.left
+        let maxOffsetX = max(contentSize.width - bounds.size.width + contentInset.right, 0)
+        
         var newContentOffset = contentOffset
-        newContentOffset.y = min(newContentOffset.y, contentSize.height - bounds.size.height)
-        newContentOffset.y = min(newContentOffset.y, -contentInset.top)
+        newContentOffset.y = min(newContentOffset.y, maxOffsetY)
+        newContentOffset.y = max(newContentOffset.y, minOffsetY)
+        newContentOffset.x = min(newContentOffset.x, maxOffsetX)
+        newContentOffset.x = max(newContentOffset.x, minOffsetX)
+        
+        contentOffset = newContentOffset
     }
 }
 
