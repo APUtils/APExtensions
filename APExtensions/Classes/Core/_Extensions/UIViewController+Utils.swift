@@ -59,7 +59,7 @@ public extension UIViewController {
     }
     
     /// Removes all presented view controllers and navigates to the root.
-    public func removeToTheRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let rootPresentingViewController = rootPresentingViewController {
             let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController
             if let navigationVc = _navigationVc {
