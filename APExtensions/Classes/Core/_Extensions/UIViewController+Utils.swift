@@ -23,6 +23,16 @@ public extension UIViewController {
         }
     }
     
+    /// Goes down presentation chain and returns root view controller that presents whole chain.
+    public var rootPresentingViewController: UIViewController? {
+        var rootPresentingViewController = presentingViewController
+        while let presentingVc = rootPresentingViewController?.presentingViewController {
+            rootPresentingViewController = presentingVc
+        }
+        
+        return rootPresentingViewController
+    }
+    
     public var isBeingRemoved: Bool {
         return isMovingFromParentViewController || isBeingDismissed || (navigationController?.isBeingDismissed ?? false)
     }
@@ -45,6 +55,52 @@ public extension UIViewController {
             completion?()
         } else if presentingViewController != nil {
             dismiss(animated: animated, completion: completion)
+        }
+    }
+    
+    /// Removes all presented view controllers and navigates to the root.
+    public func removeToTheRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+        if let rootPresentingViewController = rootPresentingViewController {
+            let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController
+            if let navigationVc = _navigationVc {
+                if animated, let window = view.window {
+                    // Dismiss and pop animations together. Create overlay and animate it instead to prevent transition warning.
+                    let imageVc = UIViewController()
+                    let overlayImage = window.getSnapshotImage()
+                    let imageView = UIImageView(image: overlayImage)
+                    imageVc.view.backgroundColor = .clear
+                    imageView.frame = imageVc.view.bounds
+                    
+                    // Place image view as window overlay first to hide controllers transitions
+                    window.addSubview(imageView)
+                    
+                    // Dismiss first
+                    rootPresentingViewController.dismiss(animated: false) {
+                        // Pop next
+                        navigationVc.popToRootViewController(animated: false)
+                        
+                        // Show overlay after
+                        imageVc.view.addSubview(imageView)
+                        window.rootViewController?.present(imageVc, animated: false) {
+                            // Dismiss overlay
+                            imageVc.dismiss(animated: true, completion: completion)
+                        }
+                    }
+                    
+                } else {
+                    rootPresentingViewController.dismiss(animated: false)
+                    navigationVc.popToRootViewController(animated: false)
+                }
+                
+            } else {
+                // Just dismiss
+                rootPresentingViewController.dismiss(animated: animated, completion: completion)
+            }
+            
+        } else {
+            // Just pop
+            navigationController?.popToRootViewController(animated: true)
+            completion?()
         }
     }
 }

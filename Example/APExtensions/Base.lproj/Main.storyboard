@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ced-F8-Tse">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ced-F8-Tse">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -99,7 +100,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bda-ft-FrP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHp-ng-nXD" userLabel="Bars avoid">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -110,9 +111,16 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-ky-to6">
                                                 <rect key="frame" x="0.0" y="30" width="375" height="30"/>
-                                                <state key="normal" title="Scroll To Bottom"/>
+                                                <state key="normal" title="Scroll to Bottom"/>
                                                 <connections>
                                                     <segue destination="6V3-hz-wOu" kind="show" id="f65-0r-qcx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zho-je-wBi">
+                                                <rect key="frame" x="0.0" y="60" width="375" height="30"/>
+                                                <state key="normal" title="Remove to the Root"/>
+                                                <connections>
+                                                    <segue destination="ffN-M3-pEJ" kind="show" id="Gev-Nr-je8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -245,6 +253,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYz-oD-Cn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-654" y="36"/>
+        </scene>
+        <!--Remove To The Root View Controller-->
+        <scene sceneID="dPX-6P-IHE">
+            <objects>
+                <viewController storyboardIdentifier="RemoveToTheRootViewController" id="ffN-M3-pEJ" customClass="RemoveToTheRootViewController" customModule="APExtensions_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YHR-aG-7B9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zge-NZ-wgm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sId-26-UnU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-PR-676">
+                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-kc-7JR">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Push"/>
+                                        <connections>
+                                            <action selector="onPushTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="4xN-aS-X10"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnI-Dm-E6J">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <state key="normal" title="Present"/>
+                                        <connections>
+                                            <action selector="onPresentTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="X8m-Tx-DLN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-xb-hsA">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <state key="normal" title="Remove to the Root"/>
+                                        <connections>
+                                            <action selector="onRemoveToTheRootTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="T56-lV-rkf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W2O-PR-676" firstAttribute="centerY" secondItem="sId-26-UnU" secondAttribute="centerY" id="KLT-iD-lvZ"/>
+                            <constraint firstAttribute="trailing" secondItem="W2O-PR-676" secondAttribute="trailing" constant="16" id="jP5-VF-6Sy"/>
+                            <constraint firstItem="W2O-PR-676" firstAttribute="leading" secondItem="sId-26-UnU" secondAttribute="leading" constant="16" id="jYh-5w-WQi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zxZ-1I-TjU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIi-pd-mpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="734"/>
         </scene>
     </scenes>
 </document>

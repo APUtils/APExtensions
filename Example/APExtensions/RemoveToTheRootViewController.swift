@@ -1,0 +1,67 @@
+//
+//  RemoveToTheRootViewController.swift
+//  APExtensions
+//
+//  Created by Anton Plebanovich on 1/8/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
+//
+
+import UIKit
+import APExtensions
+
+
+final class RemoveToTheRootViewController: UIViewController, InstantiatableFromStoryboard {
+    
+    // ******************************* MARK: - @IBOutlets
+    
+    // ******************************* MARK: - Private Properties
+    
+    // ******************************* MARK: - Initialization and Setup
+    
+    static var storyboardName: String {
+        return "Main"
+    }
+    
+    private func setup() {
+        
+    }
+    
+    // ******************************* MARK: - Configuration
+    
+    private func configure() {
+        
+    }
+    
+    // ******************************* MARK: - UIViewController Overrides
+    
+    override func viewDidLoad() {
+        setup()
+        
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configure()
+    }
+    
+    // ******************************* MARK: - Actions
+    
+    @IBAction private func onPresentTap(_ sender: Any) {
+        let navigationVc = RemoveToTheRootViewController.createWithNavigationController().0
+        present(navigationVc, animated: true, completion: nil)
+    }
+    
+    @IBAction private func onPushTap(_ sender: Any) {
+        navigationController?.pushViewController(RemoveToTheRootViewController.create(), animated: true)
+    }
+    
+    @IBAction private func onRemoveToTheRootTap(_ sender: Any) {
+        removeToTheRoot(animated: true) {
+            print("Completed")
+        }
+    }
+    
+    // ******************************* MARK: - Notifications
+}

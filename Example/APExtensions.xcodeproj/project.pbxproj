@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		80A92A74A767696EA54A2DA9 /* Pods_APExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */; };
 		8374A77656BB94E1D7977739 /* Pods_APExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395BB6683ADC88370A9C1FD3 /* Pods_APExtensions_Tests.framework */; };
+		B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */; };
 		B02A385C1F3332E6002E29F0 /* podInstall.command in Resources */ = {isa = PBXBuildFile; fileRef = B02A385B1F3332E6002E29F0 /* podInstall.command */; };
 		B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */; };
 		B0A073C21F3B741B001B8CC6 /* uiview.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C11F3B741B001B8CC6 /* uiview.png */; };
@@ -57,6 +58,7 @@
 		6BCF9756A45C4D4C058B3B72 /* Pods-APExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APExtensions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57474C800BA2A652ED8F4FB /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveToTheRootViewController.swift; sourceTree = "<group>"; };
 		B02A385B1F3332E6002E29F0 /* podInstall.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = podInstall.command; sourceTree = "<group>"; };
 		B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnceProtocolExample.swift; sourceTree = "<group>"; };
 		B0A073C11F3B741B001B8CC6 /* uiview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiview.png; sourceTree = "<group>"; };
@@ -141,16 +143,17 @@
 		607FACD21AFB9204008FA782 /* Example for APExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */,
 				B06688E51F13EAB800A02878 /* _Gifs */,
 				B06688E41F13EAB300A02878 /* _Images */,
+				B0032227200374C50020E171 /* _RemoveToTheRoot */,
+				B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */,
 				607FACD31AFB9204008FA782 /* _Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
 			);
 			name = "Example for APExtensions";
 			path = APExtensions;
@@ -196,6 +199,14 @@
 				C1980566B39F5799ED4A250D /* README.md */,
 			);
 			name = _;
+			sourceTree = "<group>";
+		};
+		B0032227200374C50020E171 /* _RemoveToTheRoot */ = {
+			isa = PBXGroup;
+			children = (
+				B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */,
+			);
+			name = _RemoveToTheRoot;
 			sourceTree = "<group>";
 		};
 		B06688E41F13EAB300A02878 /* _Images */ = {
@@ -462,6 +473,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */,
 				B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
