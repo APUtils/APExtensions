@@ -115,12 +115,13 @@ public extension UIView {
         layer.render(in: UIGraphicsGetCurrentContext()!)
         
         if let overlayImage = overlayImage {
-            var imageRect = CGRect(origin: CGPoint(), size: overlayImage.size)
-            imageRect.center = bounds.center
+            let imageWidth = overlayImage.size.width
+            let imageHeight = overlayImage.size.height
+            let imageRect = CGRect(x: bounds.midX - imageWidth / 2, y: bounds.midY - imageHeight / 2, width: imageWidth, height: imageHeight)
             overlayImage.draw(in: imageRect)
         }
         
-        let snapshotImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()!
         
         return snapshotImage
     }
