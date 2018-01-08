@@ -66,6 +66,7 @@ public extension UIViewController {
                 if animated, let window = view.window {
                     // Dismiss and pop animations together. Create overlay and animate it instead to prevent transition warning.
                     let imageVc = UIViewController()
+                    imageVc.modalPresentationStyle = .overFullScreen
                     let overlayImage = window.getSnapshotImage()
                     let imageView = UIImageView(image: overlayImage)
                     imageVc.view.backgroundColor = .clear
@@ -88,6 +89,7 @@ public extension UIViewController {
                     }
                     
                 } else {
+                    // Remove without animations
                     rootPresentingViewController.dismiss(animated: false)
                     navigationVc.popToRootViewController(animated: false)
                 }

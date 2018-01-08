@@ -267,7 +267,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-PR-676">
-                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <rect key="frame" x="16" y="273.5" width="343" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-kc-7JR">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -288,6 +288,13 @@
                                         <state key="normal" title="Remove to the Root"/>
                                         <connections>
                                             <action selector="onRemoveToTheRootTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="T56-lV-rkf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klw-1z-PPI">
+                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <state key="normal" title="Remove"/>
+                                        <connections>
+                                            <action selector="onRemoveTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="5lE-Ub-LKc"/>
                                         </connections>
                                     </button>
                                 </subviews>

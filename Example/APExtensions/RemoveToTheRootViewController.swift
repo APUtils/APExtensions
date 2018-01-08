@@ -44,6 +44,14 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
         super.viewWillAppear(animated)
         
         configure()
+        
+        print("\(g_getPointer(self)) viewWillAppear \(animated)")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("\(g_getPointer(self)) viewDidDisappear \(animated)")
     }
     
     // ******************************* MARK: - Actions
@@ -61,6 +69,10 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
         removeToTheRoot(animated: true) {
             print("Completed")
         }
+    }
+    
+    @IBAction private func onRemoveTap(_ sender: Any) {
+        remove(animated: false)
     }
     
     // ******************************* MARK: - Notifications
