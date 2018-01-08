@@ -67,23 +67,31 @@ public extension UIViewController {
                     // Dismiss and pop animations together. Create overlay and animate it instead to prevent transition warning.
                     let imageVc = UIViewController()
                     imageVc.modalPresentationStyle = .overFullScreen
-                    let overlayImage = window.getSnapshotImage()
-                    let imageView = UIImageView(image: overlayImage)
                     imageVc.view.backgroundColor = .clear
-                    imageView.frame = imageVc.view.bounds
+                    
+                    let overlayImage = window.getSnapshotImage()
                     
                     // Place image view as window overlay first to hide controllers transitions
-                    window.addSubview(imageView)
+                    let windowOverlayImageView = UIImageView(image: overlayImage)
+                    windowOverlayImageView.frame = window.bounds
+                    window.addSubview(windowOverlayImageView)
                     
-                    // Dismiss first
+                    // Create controller with overlay to animate dismiss
+                    let controllerOverlayImageView = UIImageView(image: overlayImage)
+                    controllerOverlayImageView.frame = imageVc.view.bounds
+                    imageVc.view.addSubview(controllerOverlayImageView)
+                    
+                    // Dismiss all view controller without animations first
                     rootPresentingViewController.dismiss(animated: false) {
-                        // Pop next
+                        // Pop all view controllers without animations next
                         navigationVc.popToRootViewController(animated: false)
                         
-                        // Show overlay after
-                        imageVc.view.addSubview(imageView)
+                        // Show overlay wihtout animations after
                         window.rootViewController?.present(imageVc, animated: false) {
-                            // Dismiss overlay
+                            // Remove window overlay first
+                            windowOverlayImageView.removeFromSuperview()
+                            
+                            // Dismiss controller with overlay animated
                             imageVc.dismiss(animated: true, completion: completion)
                         }
                     }
