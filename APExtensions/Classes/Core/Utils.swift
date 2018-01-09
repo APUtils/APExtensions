@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 // TODO: Add description for functions
 
@@ -338,6 +339,62 @@ public func g_showPickerAlert(title: String? = nil, message: String? = nil, butt
     }
     
     vc.present(animated: true)
+}
+
+// ******************************* MARK: - Email
+
+public typealias EmailAttachment = (data: Data, mimeType: String, fileName: String)
+
+/// Tries to send email with MFMailComposeViewController first. If can't uses mailto: url scheme.
+/// - parameter to: Addressee's email
+/// - parameter title: Optional email title
+/// - parameter body: Optional email body
+public func g_sendEmail(to: String, title: String? = nil, body: String? = nil) {
+    if !g_sendEmailUsingMailComposer(to: to, title: title, body: body, attachments: []) {
+        g_sendEmailUsingMailto(to: to, title: title, body: body)
+    }
+}
+
+/// Sends email with MFMailComposeViewController. Won't do anything if `MFMailComposeViewController.canSendMail()` returns false.
+/// - parameter to: Addressee's email
+/// - parameter title: Optional email title
+/// - parameter body: Optional email body
+/// - parameter attachments: Typles with data, mime type and file name.
+/// - returns: false if can not send email
+public func g_sendEmailUsingMailComposer(to: String, title: String? = nil, body: String? = nil, attachments: [EmailAttachment] = []) -> Bool {
+    guard let vc = MFMailComposeViewController.create(to: [to]) else { return false }
+    
+    vc.setSubject(title ?? "")
+    vc.setMessageBody(body ?? "", isHTML: false)
+    attachments.forEach({
+        vc.addAttachmentData($0.0, mimeType: $0.1, fileName: $0.2)
+    })
+    
+    g_rootViewController.present(vc, animated: true, completion: nil)
+    
+    return true
+}
+
+/// Sends email using mailto: url scheme. Won't do anything if URL can not be composed.
+/// - parameter to: Addressee's email
+/// - parameter title: Optional email title
+/// - parameter body: Optional email body
+public func g_sendEmailUsingMailto(to: String, title: String? = nil, body: String? = nil) {
+    guard var urlComponents = URLComponents(string: "mailto:\(to)") else { return }
+    
+    if let title = title {
+        let item = URLQueryItem(name: "subject", value: title)
+        urlComponents.addQueryItem(item)
+    }
+    
+    if let body = body {
+        let item = URLQueryItem(name: "body", value: body)
+        urlComponents.addQueryItem(item)
+    }
+    
+    guard let url = urlComponents.url else { return }
+    
+    g_sharedApplication.openURL(url)
 }
 
 // ******************************* MARK: - Network Activity

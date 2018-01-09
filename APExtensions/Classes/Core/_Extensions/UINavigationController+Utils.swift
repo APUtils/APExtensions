@@ -16,4 +16,28 @@ public extension UINavigationController {
             return viewControllers.first!
         }
     }
+    
+    /// Pushes view controller with completion
+    public func pushViewController(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        pushViewController(viewController, animated: animated)
+        CATransaction.commit()
+    }
+    
+    /// Pops view controller with completion
+    public func popViewController(animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        popViewController(animated: animated)
+        CATransaction.commit()
+    }
+    
+    /// Pops to root with completion
+    public func popToRootViewController(animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        popToRootViewController(animated: animated)
+        CATransaction.commit()
+    }
 }

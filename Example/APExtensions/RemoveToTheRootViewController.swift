@@ -66,7 +66,7 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
     }
     
     @IBAction private func onRemoveToTheRootTap(_ sender: Any) {
-        removeToRoot(animated: true) {
+        removeToRoot(animated: false) {
             print("Completed")
         }
     }
