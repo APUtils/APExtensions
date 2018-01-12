@@ -18,10 +18,16 @@ public extension URL {
         return String(lastPathComponent.split(separator: ".")[0])
     }
     
+    /// Check if it's URL to local directory
+    @available(iOS 9.0, *)
+    public var isLocalDirectory: Bool {
+        return isFileURL && hasDirectoryPath
+    }
+    
     /// Check if it's URL to local file
     @available(iOS 9.0, *)
     public var isLocalFile: Bool {
-        return !hasDirectoryPath && isFileURL
+        return isFileURL && !hasDirectoryPath
     }
     
     /// Appends path component and prevents double slashes if URL has trailing slash and path component has leading slash.
