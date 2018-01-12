@@ -16,9 +16,9 @@ public extension FileManager {
         guard url.isFileURL && !url.hasDirectoryPath else { return false }
         
         var isDirectory: ObjCBool = ObjCBool(false)
-        let fileExists = self.fileExists(atPath: url.path, isDirectory: &isDirectory)
+        let itemExists = self.fileExists(atPath: url.path, isDirectory: &isDirectory)
         
-        return fileExists && !isDirectory.boolValue
+        return itemExists && !isDirectory.boolValue
     }
     
     /// Checks if directory exists at URL
@@ -27,8 +27,22 @@ public extension FileManager {
         guard url.isFileURL && url.hasDirectoryPath else { return false }
         
         var isDirectory: ObjCBool = ObjCBool(false)
-        let fileExists = self.fileExists(atPath: url.path, isDirectory: &isDirectory)
+        let itemExists = self.fileExists(atPath: url.path, isDirectory: &isDirectory)
         
-        return fileExists && isDirectory.boolValue
+        return itemExists && isDirectory.boolValue
+    }
+    
+    @available(iOS 9.0, *)
+    public func itemExists(at url: URL) -> Bool {
+        let isItemDirectory = url.hasDirectoryPath
+        
+        var isDirectory: ObjCBool = ObjCBool(false)
+        let itemExists = self.fileExists(atPath: url.path, isDirectory: &isDirectory)
+        
+        if isItemDirectory {
+            return isDirectory.boolValue && itemExists
+        } else {
+            return !isDirectory.boolValue && itemExists
+        }
     }
 }
