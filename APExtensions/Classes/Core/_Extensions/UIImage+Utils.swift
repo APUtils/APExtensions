@@ -10,6 +10,15 @@ import UIKit
 
 
 public extension UIImage {
+    /// Creates image from contents of local file
+    /// - return: Returns nil if image can not be created or file can not be found.
+    @available(iOS 9.0, *)
+    public convenience init?(contentsOfFile file: URL) {
+        guard file.isFileURL && !file.hasDirectoryPath else { return nil }
+        
+        self.init(contentsOfFile: file.path)
+    }
+    
     public func image(withOverlayImage overlayImage: UIImage, inRect rect: CGRect) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         defer { UIGraphicsEndImageContext() }
