@@ -30,6 +30,14 @@ public extension URL {
         return isFileURL && !hasDirectoryPath
     }
     
+    /// Try to init UIImage from URL to check if this URL points to an image.
+    @available(iOS 9.0, *)
+    public var isImageUrl: Bool {
+        guard isFileURL && !hasDirectoryPath else { return false }
+        
+        return UIImage(contentsOfFile: path) != nil
+    }
+    
     /// Appends path component and prevents double slashes if URL has trailing slash and path component has leading slash.
     public func smartAppendingPathComponent(_ pathComponent: String, isDirectory: Bool = false) -> URL {
         guard !pathComponent.isEmpty else { return self }
