@@ -270,12 +270,12 @@ public func g_synchronized(_ lock: Any, closure: () throws -> Void) rethrows {
 // ******************************* MARK: - Alerts
 
 /// Shows error alert with title, message, action title, cancel title and handler
-/// - parameter title: Alert title
-/// - parameter message: Alert message
-/// - parameter actionTitle: Action button title
-/// - parameter style: Action button style
-/// - parameter cancelTitle: Cancel button title
-/// - parameter handler: Action button click closure
+/// - parameter title: Alert title. Default is `nil` - no title.
+/// - parameter message: Alert message. Default is `nil` - no message.
+/// - parameter actionTitle: Action button title. Default is `Dismiss`.
+/// - parameter style: Action button style. Default is `.cancel`.
+/// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
+/// - parameter handler: Action button click closure. Default is `nil` - no action.
 public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))

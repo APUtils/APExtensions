@@ -32,6 +32,15 @@ public extension String {
     }
 }
 
+// ******************************* MARK: - Convertation
+
+public extension String {
+    /// Returns base64 encoded string
+    public var base64: String? {
+        return data(using: .utf8)?.base64EncodedString()
+    }
+}
+
 // ******************************* MARK: - Get random symbol from string
 
 public extension String {
