@@ -16,6 +16,14 @@ public extension Array {
         
         return self[1]
     }
+    
+    /// Replaces last element with new element and returns replaced element.
+    public mutating func replaceLast(_ element: Element) -> Element {
+        let lastElement = removeLast()
+        append(element)
+        
+        return lastElement
+    }
 }
 
 // ******************************* MARK: - Scripting
