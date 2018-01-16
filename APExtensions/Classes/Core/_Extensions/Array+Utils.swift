@@ -18,6 +18,7 @@ public extension Array {
     }
     
     /// Replaces last element with new element and returns replaced element.
+    @discardableResult
     public mutating func replaceLast(_ element: Element) -> Element {
         let lastElement = removeLast()
         append(element)
