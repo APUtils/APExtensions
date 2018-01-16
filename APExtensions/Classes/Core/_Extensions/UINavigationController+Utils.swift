@@ -16,7 +16,11 @@ public extension UINavigationController {
             return viewControllers.first!
         }
     }
-    
+}
+
+// ******************************* MARK: - Completion
+
+public extension UINavigationController {
     /// Pushes view controller with completion
     public func pushViewController(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         CATransaction.begin()
@@ -39,5 +43,22 @@ public extension UINavigationController {
         CATransaction.setCompletionBlock(completion)
         popToRootViewController(animated: animated)
         CATransaction.commit()
+    }
+    
+    /// Replaces view controllers with completion
+    public func setViewControllers(_ vcs: [UIViewController], animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        setViewControllers(vcs, animated: animated)
+        CATransaction.commit()
+    }
+    
+    /// Replaces last view controller with completion
+    public func replaceLast(_ vc: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        var vcs = viewControllers
+        vcs.removeLast()
+        vcs.append(vc)
+        
+        setViewControllers(vcs, animated: animated, completion: completion)
     }
 }
