@@ -126,8 +126,8 @@ public extension Dictionary {
         }
     }
     
-    public func dictionary(forKey key: Key) -> [String: AnyObject]? {
-        if let dictionary = self[key] as? [String: AnyObject] {
+    public func dictionary(forKey key: Key) -> [String: Any]? {
+        if let dictionary = self[key] as? [String: Any] {
             return dictionary
         } else {
             return nil

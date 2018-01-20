@@ -16,6 +16,16 @@ public extension UINavigationController {
             return viewControllers.first!
         }
     }
+    
+    /// Pushes view controller animated
+    public func pushViewController(_ viewController: UIViewController) {
+        pushViewController(viewController, animated: true)
+    }
+    
+    /// Pops view controller animated
+    public func popViewController() {
+        popViewController(animated: true)
+    }
 }
 
 // ******************************* MARK: - Completion
