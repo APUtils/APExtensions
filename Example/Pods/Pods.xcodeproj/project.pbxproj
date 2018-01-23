@@ -170,6 +170,8 @@
 		AF1174085D9BC5D50FCE0480E9C2BE94 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753CDB814B8A7EE793EBA4BB1DED304 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AFEEDDD53AAF0E68FAFAD24254FCCE6E /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A23A0CFE67E073CF9BB893755CE3B7 /* Data+Utils.swift */; };
 		B00BC2B41FD9412600761B1D /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */; };
+		B0338F942013D47600376FB8 /* UIWebView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0338F932013D47600376FB8 /* UIWebView+Utils.swift */; };
+		B0338F962013D4A200376FB8 /* WKWebView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0338F952013D4A200376FB8 /* WKWebView+Utils.swift */; };
 		B04FCCAB1FF7E1CD009E7827 /* URLComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */; };
 		B074AC4D840914D479702839FF479959 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
 		B0C6B7481FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */; };
@@ -487,6 +489,8 @@
 		AFB0817935FA40B76610D22CE64EFF63 /* APUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = APUtils.h; sourceTree = "<group>"; };
 		B00BC2B31FD9412600761B1D /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		B02741A8FEEDDE2BA675FC363CC805BF /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
+		B0338F932013D47600376FB8 /* UIWebView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+Utils.swift"; sourceTree = "<group>"; };
+		B0338F952013D4A200376FB8 /* WKWebView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Utils.swift"; sourceTree = "<group>"; };
 		B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Utils.swift"; sourceTree = "<group>"; };
 		B0B83B0F618424D644304B0155CB8E7D /* Pods-APExtensions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-APExtensions_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0C6B7471FE3DFB3006F6555 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
@@ -888,8 +892,10 @@
 				2BD7343438A0BD39F8A694022F01A396 /* UITableView+Utils.swift */,
 				D9BCD58EDBF256E2D5988CED4EFF6930 /* UIView+Utils.swift */,
 				332C24F5A4DDC31BD9A18FB6F530D5C7 /* UIViewController+Utils.swift */,
+				B0338F932013D47600376FB8 /* UIWebView+Utils.swift */,
 				D751052E310AAB3FCADA3C273BE31DC3 /* URL+Utils.swift */,
 				B04FCCAA1FF7E1CD009E7827 /* URLComponents+Utils.swift */,
+				B0338F952013D4A200376FB8 /* WKWebView+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -1544,8 +1550,10 @@
 				3237CA9A49652DB028B2DB1D0953DF44 /* UIImage+Storyboard.swift in Sources */,
 				B356CB77B913C3C2171AAAF24752DB15 /* UIImage+Utils.swift in Sources */,
 				06CAE65B0C16EEAF40B994E6A75F3AFB /* UIImageView+Storyboard.swift in Sources */,
+				B0338F962013D4A200376FB8 /* WKWebView+Utils.swift in Sources */,
 				E8174670703E5E33B59B25217776D180 /* UIImageView+Utils.swift in Sources */,
 				F6118C4CE391565544F72112224081DE /* UIImageView+ViewConfiguration.swift in Sources */,
+				B0338F942013D47600376FB8 /* UIWebView+Utils.swift in Sources */,
 				D90BF38B652CE3DC09C7ADBF7B65B3CF /* UILabel+Storyboard.swift in Sources */,
 				9B21AB7998BD7C01226BC759BCF49024 /* UILabel+ViewConfiguration.swift in Sources */,
 				E24913ABB4A09899B97CC6C7513B17B0 /* UINavigationBar+Utils.swift in Sources */,
