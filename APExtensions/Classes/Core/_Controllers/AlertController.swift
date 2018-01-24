@@ -73,8 +73,10 @@ public final class AlertController: UIAlertController {
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        alertWindow?.isHidden = true
-        alertWindow = nil
+        if AlertController.presentationStyle == .window {
+            alertWindow?.isHidden = true
+            alertWindow = nil
+        }
     }
     
     // ******************************* MARK: - Public Methods
