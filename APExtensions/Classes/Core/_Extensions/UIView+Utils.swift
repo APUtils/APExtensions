@@ -163,7 +163,8 @@ public extension UIView {
         
         var activityIndicator: UIActivityIndicatorView! = subviews.flatMap({ $0 as? UIActivityIndicatorView }).last
         if activityIndicator == nil {
-            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            activityIndicator.color = .lightGray
             addSubview(activityIndicator)
             activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
             activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]

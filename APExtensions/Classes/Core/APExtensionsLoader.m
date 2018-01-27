@@ -48,4 +48,18 @@ static int _count = 0;
     return array;
 }
 
+// 0.015 on 5s
++ (NSArray<Class> * _Nonnull)getChildClassesForClass:(Class _Nonnull)class {
+    NSMutableArray<Class> *array = [NSMutableArray<Class> new];
+    for (int index = 0; index < _count; index++) {
+        Class currentClass = _allClasses[index];
+        
+        if (class_getSuperclass(currentClass) == class) {
+            [array addObject:currentClass];
+        }
+    }
+    
+    return array;
+}
+
 @end

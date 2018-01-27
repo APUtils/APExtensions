@@ -19,8 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.showActivityIndicator()
+        
+        print(g_getChildrenClasses(of: UIViewController.self))
+        
         // Get all classes that conform to SetupOnce protocol
-        let setupOnces: [SetupOnce.Type] = g_getClassesConformToProtocol(SetupOnce.self)
+        let setupOnces = g_getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
         print("Classes conform to SetupOnce: \(setupOnces)")
         
         print(Date().previousWorkDay)
