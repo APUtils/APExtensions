@@ -65,17 +65,16 @@ public extension UIViewController {
         
         // TODO: Check if there is overlaying presented controller and dismiss it with same logic as in -removeToRoot
         
-        if navigationController?.viewControllers.first == self {
-            dismiss(animated: animated, completion: completion)
+        if let navigationController = navigationController {
+            let viewControllers = navigationController.viewControllers
             
-        } else if let navigationController = navigationController {
-            if navigationController.viewControllers.last == self {
+            if viewControllers.first == self {
+                dismiss(animated: animated, completion: completion)
+            } else if viewControllers.last == self {
                 navigationController.popViewController(animated: true, completion: completion)
             } else {
-                let viewControllers = navigationController.viewControllers
-                let controllersToRemove = viewControllers.count - viewControllers.index(of: self)!
-                var newViewControllers = viewControllers
-                newViewControllers.removeLast(controllersToRemove)
+                let index = viewControllers.index(of: self)!
+                let newViewControllers = Array(viewControllers.prefix(upTo: index))
                 navigationController.setViewControllers(newViewControllers, animated: true)
             }
             
