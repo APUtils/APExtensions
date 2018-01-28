@@ -57,15 +57,28 @@ public extension UIViewController {
     }
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
+    /// If controller is not last in navigation stack removes also overlaying controllers.
     public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if isViewLoaded {
             view.endEditing(true)
         }
         
+        // TODO: Check if there is overlaying presented controller and dismiss it with same logic as in -removeToRoot
+        
         if navigationController?.viewControllers.first == self {
             dismiss(animated: animated, completion: completion)
-        } else if navigationController?.viewControllers.last == self {
-            navigationController?.popViewController(animated: true, completion: completion)
+            
+        } else if let navigationController = navigationController {
+            if navigationController.viewControllers.last == self {
+                navigationController.popViewController(animated: true, completion: completion)
+            } else {
+                let viewControllers = navigationController.viewControllers
+                let controllersToRemove = viewControllers.count - viewControllers.index(of: self)!
+                var newViewControllers = viewControllers
+                newViewControllers.removeLast(controllersToRemove)
+                navigationController.setViewControllers(newViewControllers, animated: true)
+            }
+            
         } else if presentingViewController != nil {
             dismiss(animated: animated, completion: completion)
         }
