@@ -84,6 +84,15 @@ public extension Array {
         return results
     }
     
+    /// Transforms an array to a dictionary using array elements as keys and transform result as values.
+    func dictionaryMap<T>(_ transform:(_ element: Iterator.Element) -> T?) -> [Iterator.Element: T] {
+        return self.reduce(into: [Iterator.Element: T]()) { dictionary, element in
+            guard let value = transform(element) else { return }
+            
+            dictionary[element] = value
+        }
+    }
+    
     public mutating func move(from: Index, to: Index) {
         let element = remove(at: from)
         insert(element, at: to)
