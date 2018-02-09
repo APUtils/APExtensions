@@ -19,7 +19,7 @@ public extension UIWebView {
     public func load(url: URL?) {
         guard let url = url else { return }
         
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         loadRequest(request)
     }
     
