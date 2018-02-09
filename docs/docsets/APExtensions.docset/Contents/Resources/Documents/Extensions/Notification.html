@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Notification Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/Notification" class="dashAnchor"></a>
+    <a title="Notification Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">APExtensions Docs</a> (65% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">APExtensions Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Notification Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AlertController.html">AlertController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AlertController/PresentationStyle.html">– PresentationStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppearanceCaptureViewController.html">AppearanceCaptureViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DelayedValue.html">DelayedValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions13g_appDelegateSo013UIApplicationC0_pv">g_appDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions19g_cacheDirectoryUrl10Foundation3URLVv">g_cacheDirectoryUrl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions23g_documentsDirectoryUrl10Foundation3URLVv">g_documentsDirectoryUrl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions13g_isAppActiveSbv">g_isAppActive</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions13g_isSimulatorSbv">g_isSimulator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions11g_keyWindowSo8UIWindowCSgv">g_keyWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions11g_pixelSize12CoreGraphics7CGFloatVv">g_pixelSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions20g_rootViewControllerSo06UIViewD0Cv">g_rootViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions13g_screenScale12CoreGraphics7CGFloatVv">g_screenScale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions19g_sharedApplicationSo13UIApplicationCv">g_sharedApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions19g_sharedFileManagerSo0cD0Cv">g_sharedFileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions26g_sharedNotificationCenterSo0cD0Cv">g_sharedNotificationCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions20g_sharedUserDefaultsSo0cD0Cv">g_sharedUserDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions33g_statusBarStyleTopViewControllerSo06UIViewG0CSgv">g_statusBarStyleTopViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions18g_tempDirectoryUrl10Foundation3URLVv">g_tempDirectoryUrl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:12APExtensions19g_topViewControllerSo06UIViewD0CSgv">g_topViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Character.html">Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/FileManager.html">FileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/MFMailComposeViewController.html">MFMailComposeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/MFMessageComposeViewController.html">MFMessageComposeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSAttributedString.html">NSAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSCoder.html">NSCoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSLayoutConstraint.html">NSLayoutConstraint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification.html">Notification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Notification/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NotificationCenter.html">NotificationCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Optional.html">Optional</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIButton.html">UIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIButton/ButtonState.html">– ButtonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIFont.html">UIFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView/ImageViewState.html">– ImageViewState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UILabel.html">UILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UILabel/LabelState.html">– LabelState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UINavigationController.html">UINavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIScrollView.html">UIScrollView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIStackView.html">UIStackView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIStoryboard.html">UIStoryboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextField.html">UITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextField/TextFieldState.html">– TextFieldState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextView.html">UITextView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextView/TextViewState.html">– TextViewState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView/ViewState.html">– ViewState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController/ViewState.html">– ViewState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWebView.html">UIWebView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/WKWebView.html">WKWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions2neoiSbSayxGSg_ADts9EquatableRzlF">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions2peoiys10DictionaryVyxq_Gz_AESgts8HashableRzr0_lF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions2eeoiSbSayxGSg_ADts9EquatableRzlF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions3LogyypSg_S2SSiSb13showDelimitertF">Log(_:_:_:_:showDelimiter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions11g_TranslateS2SF">g_Translate(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_animateySd_yyc10animationstF">g_animate(_:animations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_animateySd_Sd5delaySC22UIViewAnimationOptionsV7optionsyyc10animationsySbcSg10completiontF">g_animate(_:delay:options:animations:completion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_animateySd_SC22UIViewAnimationOptionsV7optionsyyc10animationstF">g_animate(_:options:animations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_animateyyyc10animations_tF">g_animate(animations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_asyncBgySd_yyc7closuretF">g_asyncBg(_:closure:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions11g_asyncMainySd_yyc7closuretF">g_asyncMain(_:closure:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions20g_getChildrenClassesSayxmGxm2of_tRlzClF">g_getChildrenClasses(of:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions29g_getClassesConformToProtocolSayxGSo0F0ClF">g_getClassesConformToProtocol(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions12g_getPointerSSyXlF">g_getPointer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions21g_hideNetworkActivityyyF">g_hideNetworkActivity()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions17g_isCGFloatsEqualSb12CoreGraphics7CGFloatV5first_AE6secondtF">g_isCGFloatsEqual(first:second:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions16g_isCGSizesEqualSbSC6CGSizeV5first_AD6secondtF">g_isCGSizesEqual(first:second:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions17g_openAppSettingsyyF">g_openAppSettings()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions9g_performSo11NSExceptionCSgyycF">g_perform(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions21g_performInBackgroundyyycF">g_performInBackground(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions15g_performInMainyyycF">g_performInMain(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions11g_sendEmailySS2to_SSSg5titleAD4bodytF">g_sendEmail(to:title:body:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions28g_sendEmailUsingMailComposerSbSS2to_SSSg5titleAD4bodySay10Foundation4DataV4data_SS8mimeTypeSS8fileNametG11attachmentstF">g_sendEmailUsingMailComposer(to:title:body:attachments:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions22g_sendEmailUsingMailtoySS2to_SSSg5titleAD4bodytF">g_sendEmailUsingMailto(to:title:body:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions20g_showEnterTextAlertySSSg5title_AC7messageAC4textAC11placeholderySSc10completiontF">g_showEnterTextAlert(title:message:text:placeholder:completion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions16g_showErrorAlertySSSg5title_AC7messageSS11actionTitleSC18UIAlertActionStyleO5styleAC06cancelH0ySo0iJ0CcSg7handlertF">g_showErrorAlert(title:message:actionTitle:style:cancelTitle:handler:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions21g_showNetworkActivityyyF">g_showNetworkActivity()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions17g_showPickerAlertySSSg5title_AC7messageSaySSG7buttonsSaySC18UIAlertActionStyleOGSg0G6StylesSaySbGSg14enabledButtonsySS_Sitc10completiontF">g_showPickerAlert(title:message:buttons:buttonsStyles:enabledButtons:completion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions21g_swizzleClassMethodsyyXlXp5class_10ObjectiveC8SelectorV08originalG0AF08swizzledG0tF">g_swizzleClassMethods(class:originalSelector:swizzledSelector:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions16g_swizzleMethodsyyXlXp5class_10ObjectiveC8SelectorV08originalF0AF08swizzledF0tF">g_swizzleMethods(class:originalSelector:swizzledSelector:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions14g_synchronizedyyp_yyKc7closuretKF">g_synchronized(_:closure:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions19g_topViewControllerSo06UIViewD0CSgAE4base_Sb20shouldCheckPresentedtF">g_topViewController(base:shouldCheckPresented:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions8g_unwrapypSgACF">g_unwrap(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions12isNilOrEmptySbSayxGSglF">isNilOrEmpty(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:12APExtensions10smartPrintyypSg_Sb11addNewLinesSb08useDebugC0tF">smartPrint(_:addNewLines:useDebugPrint:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ClassName.html">ClassName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Configurable.html">Configurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Describable.html">Describable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/InstantiatableFromStoryboard.html">InstantiatableFromStoryboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/InstantiatableFromXib.html">InstantiatableFromXib</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SetupOnce.html">SetupOnce</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TableViewCellInformation.html">TableViewCellInformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TableViewConfigurableCellInformation.html">TableViewConfigurableCellInformation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralError.html">GeneralError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/g_screenSize.html">g_screenSize</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12APExtensions12ErrorClosurea">ErrorClosure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12APExtensions13SimpleClosurea">SimpleClosure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12APExtensions14SuccessClosurea">SuccessClosure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Notification</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Day%20Start%20Notifications"></a>
+                <a name="//apple_ref/swift/Section/Day Start Notifications" class="dashAnchor"></a>
+                <a href="#/Day%20Start%20Notifications">
+                  <h3 class="section-name">Day Start Notifications</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation12NotificationV4Namea"></a>
+                    <a name="//apple_ref/swift/Extension/Name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation12NotificationV4Namea">Name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../Extensions/Notification/Name.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

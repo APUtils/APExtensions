@@ -16,6 +16,7 @@ Released on 02/09/2018.
 - Completion for UIViewController -remove method
 - CustomStringConvertible for Optional types
 - Delayed value ability to set getValue closure later
+- Framework Documentation
 - FileManager .directoryExists(at:)
 - FileManager .fileExists(at:)
 - FileManager .fileExists(url:)

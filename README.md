@@ -47,7 +47,7 @@ See [documentation](http://cocoadocs.org/docsets/APExtensions) for more details.
 
 ### Core
 
-TODO
+Global Utils and Debug methods, Controllers, Protocols and whole lot of default classes extensions. Read more in [DOCS](https://github.com/APUtils/APExtensions/docs/index.html).
 
 ### Abstractions
 
