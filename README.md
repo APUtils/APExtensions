@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APExtensions"
+github "APUtils/APExtensions" ~> 4.4
 ```
 
 #### CocoaPods
@@ -30,7 +30,7 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions'
+pod 'APExtensions', '~> 4.4'
 ```
 
 Available subspecs: `Core`, `ViewState`, `Storyboard`. Example Podfile for subspec:
