@@ -56,6 +56,8 @@ class ViewController: UIViewController {
     
     @IBAction private func onDebugTap(_ sender: Any) {
 //        present(RemoveToTheRootViewController.create())
-        g_showErrorAlert()
+        g_showPickerAlert(buttons: ["asd"]) { title, _ in
+            
+        }
     }
 }
