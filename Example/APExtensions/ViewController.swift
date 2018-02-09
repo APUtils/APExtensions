@@ -19,27 +19,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.showActivityIndicator()
+//        view.showActivityIndicator()
         
-        print(g_getChildrenClasses(of: UIViewController.self))
+//        print(g_getChildrenClasses(of: UIViewController.self))
         
         // Get all classes that conform to SetupOnce protocol
-        let setupOnces = g_getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
-        print("Classes conform to SetupOnce: \(setupOnces)")
+//        let setupOnces = g_getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
+//        print("Classes conform to SetupOnce: \(setupOnces)")
         
-        print(Date().previousWorkDay)
+//        print(Date().previousWorkDay)
         
         // View configuration
-        let label = UILabel()
-        label.configure(labelState: .shown(text: "label"))
-        label.configure(viewState: .transparent)
+//        let label = UILabel()
+//        label.configure(labelState: .shown(text: "label"))
+//        label.configure(viewState: .transparent)
         
-        _ = g_documentsDirectoryUrl.smartAppendingPathComponent("/asd")
+//        _ = g_documentsDirectoryUrl.smartAppendingPathComponent("/asd")
         
         // Exception handling
-        _ = g_perform {
-            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
-        }
+//        _ = g_perform {
+//            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,5 +52,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
+    }
+    
+    @IBAction private func onDebugTap(_ sender: Any) {
+//        present(RemoveToTheRootViewController.create())
+        g_showErrorAlert()
     }
 }

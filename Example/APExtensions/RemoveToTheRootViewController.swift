@@ -10,9 +10,14 @@ import UIKit
 import APExtensions
 
 
+private var g_controllerCount = 0
+
+
 final class RemoveToTheRootViewController: UIViewController, InstantiatableFromStoryboard {
     
     // ******************************* MARK: - @IBOutlets
+    
+    @IBOutlet private weak var numberLabel: UILabel!
     
     // ******************************* MARK: - Private Properties
     
@@ -23,7 +28,8 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
     }
     
     private func setup() {
-        
+        numberLabel.text = String(g_controllerCount)
+        g_controllerCount += 1
     }
     
     // ******************************* MARK: - Configuration
@@ -33,6 +39,10 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
     }
     
     // ******************************* MARK: - UIViewController Overrides
+    
+    override var description: String {
+        return numberLabel.text!
+    }
     
     override func viewDidLoad() {
         setup()
@@ -45,13 +55,13 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
         
         configure()
         
-        print("\(g_getPointer(self)) viewWillAppear \(animated)")
+        print("\(numberLabel.text!) viewWillAppear \(animated)")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        print("\(g_getPointer(self)) viewDidDisappear \(animated)")
+        print("\(numberLabel.text!) viewDidDisappear \(animated)")
     }
     
     // ******************************* MARK: - Actions
@@ -66,13 +76,16 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
     }
     
     @IBAction private func onRemoveToTheRootTap(_ sender: Any) {
-        removeToRoot(animated: false) {
+        removeToRoot(animated: true) {
             print("Completed")
         }
     }
     
     @IBAction private func onRemoveTap(_ sender: Any) {
-        remove(animated: false)
+        remove(animated: true)
+        
+//        g_showErrorAlert()
+//        ((g_rootViewController as! UINavigationController).presentedViewController as! UINavigationController).viewControllers.second!.remove(animated: true)
     }
     
     // ******************************* MARK: - Notifications

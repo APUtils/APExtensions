@@ -10,6 +10,41 @@ import UIKit
 
 // ******************************* MARK: - Navigation
 
+private class ImageOverlayViewController: UIViewController {
+    override public func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        window?.isHidden = true
+    }
+}
+
+private extension UIWindow {
+    /// Creates and shows overlay window with image of hoster window.
+    /// Call passed dismiss closure with animation param in operationsCompletion when it's time to dismiss it.
+    func performUnderOverlay(operationsCompletion: @escaping (_ dismiss: @escaping (_ animated: Bool) -> Void) -> Void, completion: SimpleClosure?) {
+        let alertWindow = UIWindow.createAlert()
+       
+        let imageVc = ImageOverlayViewController()
+        imageVc.modalPresentationStyle = .overFullScreen
+        imageVc.view.backgroundColor = .clear
+        
+        let overlayImage = getSnapshotImage()
+        
+        // Create controller with overlay to animate dismiss
+        let controllerOverlayImageView = UIImageView(image: overlayImage)
+        controllerOverlayImageView.frame = imageVc.view.bounds
+        controllerOverlayImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        imageVc.view.addSubview(controllerOverlayImageView)
+        
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(imageVc, animated: false) {
+            operationsCompletion { animated in
+                imageVc.dismiss(animated: animated, completion: completion)
+            }
+        }
+    }
+}
+
 public extension UIViewController {
     /// Previous view controller in navigation stack
     public var previous: UIViewController? {
@@ -33,11 +68,15 @@ public extension UIViewController {
         return rootPresentingViewController
     }
     
-    /// Goes down responder chain and returns window if it exists.
+    /// Try to get window that owns this view controller.
     public var window: UIWindow? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
-            nextResponder = nextResponder?.next
+            if let _nextResponder = nextResponder?.next {
+                nextResponder = _nextResponder
+            } else if let vc = nextResponder as? UIViewController {
+                nextResponder = vc.navigationController
+            }
             
             if let window = nextResponder as? UIWindow {
                 return window
@@ -47,8 +86,14 @@ public extension UIViewController {
         return nil
     }
     
+    /// Returns true if controller curently is poping or dismissing
     public var isBeingRemoved: Bool {
         return isMovingFromParentViewController || isBeingDismissed || (navigationController?.isBeingDismissed ?? false)
+    }
+    
+    /// Presents view controller animated
+    public func present(_ vc: UIViewController) {
+        present(vc, animated: true)
     }
     
     /// Remove view controller animated action. Removes using pop if it was pushed or using dismiss if it was presented.
@@ -57,92 +102,99 @@ public extension UIViewController {
     }
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
-    /// If controller is not last in navigation stack removes also overlaying controllers.
+    /// Removes also overlaying controllers if needed.
     public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+        // Dismiss keyboard
         if isViewLoaded {
             view.endEditing(true)
         }
         
-        // TODO: Check if there is overlaying presented controller and dismiss it with same logic as in -removeToRoot
-        
         if let navigationController = navigationController {
-            let viewControllers = navigationController.viewControllers
-            
-            if viewControllers.first == self {
-                dismiss(animated: animated, completion: completion)
-            } else if viewControllers.last == self {
-                navigationController.popViewController(animated: true, completion: completion)
+            // Has navigation controller
+            if navigationController.presentedViewController != nil {
+                // Has overlaying presented controllers
+                let viewControllers = navigationController.viewControllers
+                
+                if viewControllers.first == self {
+                    // First controller in navigation stack.
+                    // Dismiss together with navigation controller or just dismiss overlaying controllers if navigation can not be dismissed (e.g. it root).
+                    navigationController.presentingViewController?.dismiss(animated: animated, completion: completion)
+                    
+                } else {
+                    // Has underlaying controller(s) in stack. Dismiss all overlaying controllers and pop.
+                    if let window = window {
+                        // Has window. Remove with overlay.
+                        window.performUnderOverlay(operationsCompletion: { dismiss in
+                            navigationController.dismiss(animated: false) {
+                                navigationController.pop(viewController: self, animated: false) {
+                                    dismiss(animated)
+                                }
+                            }
+                        }, completion: completion)
+                        
+                    } else {
+                        // No window. Remove without animations and overlay.
+                        navigationController.dismiss(animated: false) {
+                            navigationController.pop(viewController: self, animated: false, completion: completion)
+                        }
+                    }
+                }
+                
             } else {
-                let index = viewControllers.index(of: self)!
-                let newViewControllers = Array(viewControllers.prefix(upTo: index))
-                navigationController.setViewControllers(newViewControllers, animated: true)
+                // No overlaying presented controllers.
+                let viewControllers = navigationController.viewControllers
+                
+                if viewControllers.first == self {
+                    // First controller in navigation stack.
+                    if let presentingViewController = navigationController.presentingViewController {
+                        // Has presentingViewController. Dismiss together with navigation controller.
+                        presentingViewController.dismiss(animated: animated, completion: completion)
+                    } else {
+                        // No presentingViewController. Just pop overlaying controllers.
+                        navigationController.popToRootViewController(animated: animated, completion: completion)
+                    }
+                } else {
+                    // Has underlaying controller(s) in stack. Pop it with overlaying controllers.
+                    navigationController.pop(viewController: self, animated: animated, completion: completion)
+                }
             }
             
         } else if presentingViewController != nil {
+            // Not in navigation stack but was presented. Dismiss.
             dismiss(animated: animated, completion: completion)
+            
+        } else {
+            // Unknown container or root. Can not do anything.
+            completion?()
         }
     }
     
     /// Removes all presented view controllers and navigates to the root.
     public func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let rootPresentingViewController = rootPresentingViewController {
+            
             let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController
             if let navigationVc = _navigationVc {
-                if animated, let window = window {
+                
+                if let window = window {
                     // Dismiss and pop animations together. Create overlay and animate it instead to prevent transition warning.
-                    let imageVc = UIViewController()
-                    imageVc.modalPresentationStyle = .overFullScreen
-                    imageVc.view.backgroundColor = .clear
-                    
-                    let overlayImage = window.getSnapshotImage()
-                    
-                    // Place image view as window overlay first to hide controllers transitions
-                    let windowOverlayImageView = UIImageView(image: overlayImage)
-                    windowOverlayImageView.frame = window.bounds
-                    window.addSubview(windowOverlayImageView)
-                    
-                    // Create controller with overlay to animate dismiss
-                    let controllerOverlayImageView = UIImageView(image: overlayImage)
-                    controllerOverlayImageView.frame = imageVc.view.bounds
-                    imageVc.view.addSubview(controllerOverlayImageView)
-                    
-                    // Dismiss all view controller without animations first
-                    rootPresentingViewController.dismiss(animated: false) {
-                        // Pop all view controllers without animations next
-                        navigationVc.popToRootViewController(animated: false) {
-                            // Show overlay wihtout animations after
-                            window.rootViewController?.present(imageVc, animated: false) {
-                                // Remove window overlay first
-                                windowOverlayImageView.removeFromSuperview()
-                                
-                                // Dismiss controller with overlay animated
-                                imageVc.dismiss(animated: true, completion: completion)
-                            }
-                        }
-                    }
-                    
-                } else {
-                    if let window = window {
-                        // Remove without animations but with overlay
-                        let overlayImage = window.getSnapshotImage()
-                        let windowOverlayImageView = UIImageView(image: overlayImage)
-                        windowOverlayImageView.frame = window.bounds
-                        window.addSubview(windowOverlayImageView)
-                        
+                    window.performUnderOverlay(operationsCompletion: { dismiss in
+                        // Dismiss all view controller without animations first
                         rootPresentingViewController.dismiss(animated: false) {
+                            // Pop all view controllers without animations next
                             navigationVc.popToRootViewController(animated: false) {
-                                windowOverlayImageView.removeFromSuperview()
-                                completion?()
+                                dismiss(animated)
                             }
                         }
-                    } else {
-                        // Remove without animations and overlay
-                        rootPresentingViewController.dismiss(animated: false) {
-                            navigationVc.popToRootViewController(animated: false, completion: completion)
-                        }
+                    }, completion: completion)
+
+                } else {
+                    // Remove without animations and overlay
+                    rootPresentingViewController.dismiss(animated: false) {
+                        navigationVc.popToRootViewController(animated: false, completion: completion)
                     }
                 }
-                
+            
             } else {
                 // Just dismiss
                 rootPresentingViewController.dismiss(animated: animated, completion: completion)
@@ -151,6 +203,7 @@ public extension UIViewController {
         } else if let navigationVc = navigationController {
             // Just pop
             navigationVc.popToRootViewController(animated: animated, completion: completion)
+            
         } else {
             // Nothing to do
             completion?()

@@ -47,6 +47,24 @@ public extension UINavigationController {
         CATransaction.commit()
     }
     
+    /// Pops view controller if it present in navigation stack and all overlaying view controllers.
+    /// Do nothing if view controller is not in navigation stack.
+    public func pop(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if viewControllers.last == viewController {
+            // Last controller in stack. Just dismiss it.
+            popViewController(animated: animated, completion: completion)
+        } else {
+            // Not last controller in stack. Pop view controller together with overlaying controllers.
+            guard let index = viewControllers.index(of: viewController) else {
+                completion?()
+                return
+            }
+            
+            let newViewControllers = Array(viewControllers.prefix(upTo: index))
+            setViewControllers(newViewControllers, animated: animated, completion: completion)
+        }
+    }
+    
     /// Pops to root with completion
     public func popToRootViewController(animated: Bool, completion: (() -> Void)?) {
         CATransaction.begin()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ced-F8-Tse">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -100,27 +100,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bda-ft-FrP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHp-ng-nXD" userLabel="Bars avoid">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                                <state key="normal" title="Bars Avoid"/>
+                                                <state key="normal" title="Bars Avoid &gt;"/>
                                                 <connections>
                                                     <segue destination="eMr-hY-T62" kind="show" id="Gnv-qd-uuU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-ky-to6">
                                                 <rect key="frame" x="0.0" y="30" width="375" height="30"/>
-                                                <state key="normal" title="Scroll to Bottom"/>
+                                                <state key="normal" title="Scroll to Bottom &gt;"/>
                                                 <connections>
                                                     <segue destination="6V3-hz-wOu" kind="show" id="f65-0r-qcx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zho-je-wBi">
                                                 <rect key="frame" x="0.0" y="60" width="375" height="30"/>
-                                                <state key="normal" title="Remove to the Root"/>
+                                                <state key="normal" title="Remove to the Root &gt;"/>
                                                 <connections>
                                                     <segue destination="ffN-M3-pEJ" kind="show" id="Gev-Nr-je8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-VV-1Ee">
+                                                <rect key="frame" x="0.0" y="90" width="375" height="30"/>
+                                                <state key="normal" title="Debug"/>
+                                                <connections>
+                                                    <action selector="onDebugTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EWm-TB-fVf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -238,22 +245,6 @@
             </objects>
             <point key="canvasLocation" x="847" y="36"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rDm-ZA-TZo">
-            <objects>
-                <navigationController id="Ced-F8-Tse" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e9o-9U-IIg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="GY6-gD-BE3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bYz-oD-Cn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-654" y="36"/>
-        </scene>
         <!--Remove To The Root View Controller-->
         <scene sceneID="dPX-6P-IHE">
             <objects>
@@ -299,15 +290,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-Vc-kKg">
+                                <rect key="frame" x="182" y="28" width="10.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W2O-PR-676" firstAttribute="centerY" secondItem="sId-26-UnU" secondAttribute="centerY" id="KLT-iD-lvZ"/>
+                            <constraint firstItem="oJG-Vc-kKg" firstAttribute="centerX" secondItem="sId-26-UnU" secondAttribute="centerX" id="ODV-Jp-tCz"/>
+                            <constraint firstItem="oJG-Vc-kKg" firstAttribute="top" secondItem="YHR-aG-7B9" secondAttribute="bottom" constant="8" id="cDe-fs-3pY"/>
                             <constraint firstAttribute="trailing" secondItem="W2O-PR-676" secondAttribute="trailing" constant="16" id="jP5-VF-6Sy"/>
                             <constraint firstItem="W2O-PR-676" firstAttribute="leading" secondItem="sId-26-UnU" secondAttribute="leading" constant="16" id="jYh-5w-WQi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zxZ-1I-TjU"/>
+                    <connections>
+                        <outlet property="numberLabel" destination="oJG-Vc-kKg" id="T1G-Rq-4qp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIi-pd-mpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

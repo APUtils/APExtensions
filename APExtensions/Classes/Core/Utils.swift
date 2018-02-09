@@ -95,7 +95,7 @@ public var g_cacheDirectoryUrl: URL {
     return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
 }
 
-/// Application delegate
+/// Application delegate. Crashes if nil.
 public var g_appDelegate: UIApplicationDelegate {
     return g_sharedApplication.delegate!
 }
@@ -105,7 +105,12 @@ public var g_keyWindow: UIWindow? {
     return g_sharedApplication.keyWindow
 }
 
-/// Application root view controller
+/// Application window. Crashes if nil.
+var g_appWindow: UIWindow {
+    return g_appDelegate.window!!
+}
+
+/// Application root view controller. Crashes if nil.
 public var g_rootViewController: UIViewController {
     return g_appDelegate.window!!.rootViewController!
 }

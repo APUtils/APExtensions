@@ -2,6 +2,117 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.0](https://github.com/APUtils/APExtensions/releases/tag/4.4.0)
+Released on 02/09/2018.
+
+#### Added
+- AlertController .present(animated:) -> present(animated:completion:)
+- AlertController.presentationStyle
+- AppearanceCapturerViewController to simplify overlapping window configuration
+- Array .dictionaryMap
+- Array .enumerateMap
+- Array .move(from:to:)
+- Array .replaceLast(_:)
+- Completion for UIViewController -remove method
+- CustomStringConvertible for Optional types
+- Delayed value ability to set getValue closure later
+- FileManager .directoryExists(at:)
+- FileManager .fileExists(at:)
+- FileManager .fileExists(url:)
+- FileManager .itemExists(at:)
+- g_appWindow
+- g_getChildrenClasses(of:)
+- g_sendEmailUsingMailComposer(to:title:body:attachments:)
+- g_sendEmailUsingMailto(to:title:body:)
+- g_showEnterTextAlert text:
+- g_synchronized(_:,closure:) functon with behaviour of @synchronized
+- Instantiatable .storyboardID
+- Instantiatable .storyboardName
+- NSAttributedString .fullRange
+- NSMutableAttributedString .set(font:, for:)
+- NSMutableAttributedString .set(font:for:)
+- NSMutableAttributedString .set(kern:)
+- NSMutableAttributedString .set(lineHeightMultiple:)
+- NSMutableAttributedString .set(lineSpacing:)
+- Placeholder param for enter text alert
+- Rethrows ability for Array and Dictionary helpers
+- String .decodedBase64
+- String .encodedBase64
+- UIBarButtonItem .isHidden
+- UIImage .image(withSize:)
+- UIImage .init?(contentsOfFile:)
+- UINavigationController .pop(viewController:animated:completion:)
+- UINavigationController .popToRootViewController(animated:completion:)
+- UINavigationController .popViewController()
+- UINavigationController .popViewController(animated:completion:)
+- UINavigationController .pushViewController(_:)
+- UINavigationController .pushViewController(_:animated:completion:)
+- UINavigationController .replaceLast(_:animated:completion:)
+- UINavigationController .setViewControllers(_:animated:completion:)
+- UIScrollView .scrollToBottom(animated:)
+- UIScrollView+ViewState .flashScrollIndicatorsOnViewDidAppear
+- UIView -hideActivityIndicator force param
+- UIView .hideActivityIndicator() do not remove activity indicator from superview
+- UIView .isShowingActivityIndicator
+- UIView .showActivityIndicator() do not reposition existing one, but brings it to front
+- UIViewController .present(_:)
+- UIViewController .removeToRoot(animated:completion:)
+- UIViewController .rootPresentingViewController
+- UIViewController .window
+- UIWebView .clear()
+- UIWebView .load(url:)
+- UIWebView .load(urlString:)
+- UIWindow .createAlert()
+- URL .fileName
+- URL .isImageUrl
+- URL .isLocalDirectory
+- URL .isLocalFile
+- URL .smartAppendingPathComponent(_:isDirectory:)
+- Utils ErrorClosure
+- Utils GeneralError struct
+- Utils g_fileManager
+- Utils g_getPointer(_:)
+- Utils g_perform(_:) to handle exceptions in Swift
+- Utils g_screenScale
+- Utils g_tempDirectoryUrl
+- ViewConfiguration subspec
+- WKWebView .clear()
+- WKWebView .load(_ string:)
+- WKWebView .load(_ url:)
+
+#### Changed
+- Array .remove(_:) -> .remove(_:) -> Element?
+- Configurable .configure(model:) -> configure(viewModel:)
+- Dequeue and register methods rename for UICollectionView and UITableView
+- Dismiss keyboard when removing view controller
+- g_fileManager -> g_sharedFileManager
+- g_isActive -> g_isAppActive
+- g_showErrorAlert - make default action bold
+- g_topViewController(base:isCheckPresented:) -> g_topViewController(base:, shouldCheckPresented:)
+- Instantiatable (createWithNavigationController() -> UINavigationController) -> (createWithNavigationController() -> (UINavigationController, Self))
+- Methods rename to be more swifty. UIViewController .previousViewController -> previous, -removeViewController -> -remove.
+- UIApplication .sendEmail(to: String) -> g_sendEmail(to:title:body:)
+- UICollectionView .dequeue(for:) -> .dequeueCell(for:)
+- UICollectionView .dequeueConfigurableCell(class:for:)
+- UICollectionView .dequeueConfigurableFooter(class:for:)
+- UICollectionView .dequeueConfigurableHeader(class:for:)
+- UICollectionView .registerNib(class:) -> .registerNib(cellClass:)
+- UICollectionView .registerNib(footerClass:)
+- UICollectionView .registerNib(headerClass:)
+- UITableView .dequeueConfigurable(cellClass:indexPath:) -> .dequeueConfigurable(class:for:)
+- UIView bigger activity indicator
+- UIViewController If controller is not last in navigation stack remove also overlaying controllers
+- URLComponents .addQueryItem(_:)
+
+#### Fixed
+- Date .gmtDayBeginningDate fix
+- DelayedValue preventing self capture in getValue. onValueAvailable won't be called if DelayedValue is deallocated.
+- g_statusBarStyleTopViewController improvement
+- InstantiatableFromStoryboard possible crash fix
+- UIScrollView .clampContentOffset() fix
+- UIScrollView also adjust scroll insets when avoiding top or bottom bars
+- Warning fixes
+
 
 ## [4.1.1](https://github.com/APUtils/APExtensions/releases/tag/4.1.1)
 Released on 09/25/2017.
