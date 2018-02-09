@@ -101,47 +101,47 @@ Extends default attributes that can be configured using storyboard.
 
 **NSLayoutConstraint**:
 
-<img src="Example/APExtensions/nslayoutconstraint.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/nslayoutconstraint.png"/>
 
 - `fitScreenSize` to adjust constraint constant according to screen size. [*](https://github.com/APUtils/APExtensions#remark)
 - `onePixelSize` to make constraint 1 pixel size
 
 **UIButton**:
 
-<img src="Example/APExtensions/uibutton.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/uibutton.png"/>
 
 - `fitScreenSize` to adjust font size according to screen size. [*](https://github.com/APUtils/APExtensions#remark)
 - `lines` to change title label max lines count
 
 **UIImageView**:
 
-<img src="Example/APExtensions/UIImageView.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/UIImageView.png"/>
 
 - `fitScreenSize` to adjust image size according to screen size. [*](https://github.com/APUtils/APExtensions#remark)
 - `localizableImageName` to use localize specific image. You name your images like `image_en`, `image_ru`, `image_fr` put `image` in `localizableImageName` field and assure you localized `_en` to be `_fr` for French localization, `_ru` for Russian and so on.
 
 **UILabel**:
 
-<img src="Example/APExtensions/UILabel.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/UILabel.png"/>
 
 - `fitScreenSize` to adjust font size according to screen size. [*](https://github.com/APUtils/APExtensions#remark)
 
 **UIScrollView**:
 
-<img src="Example/APExtensions/UIScrollView.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/UIScrollView.png"/>
 
 - `avoidTopBars` to set contentInset.top to 64
 - `avoidTabBar` to set contentInset.bottom to 49
 
 **UITextView**:
 
-<img src="Example/APExtensions/UITextView.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/UITextView.png"/>
 
 - `fitScreenSize` to adjust font size according to screen size. [*](https://github.com/APUtils/APExtensions#remark)
 
 **UIView**:
 
-<img src="Example/APExtensions/uiview.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/uiview.png"/>
 
 - `borderColor` to set border color
 - `borderWidth` to set border width
@@ -155,7 +155,7 @@ Extends default attributes that can be configured using storyboard.
 
 **UIViewController**:
 
-<img src="Example/APExtensions/UIViewController.png"/>
+<img src="https://github.com/APUtils/APExtensions/raw/master/Example/APExtensions/UIViewController.png"/>
 
 - `hideKeyboardOnTouch` to hide keyboard on touch outside it
 
