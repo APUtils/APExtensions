@@ -10,16 +10,38 @@ import UIKit
 
 
 extension NSMutableAttributedString {
-    /// Range from the start to the end
-    public var fullRange: NSRange {
-        return NSRange(location: 0, length: length)
-    }
-    
-    public func set(font: UIFont, for text: String) {
-        let range = mutableString.range(of: text)
+    /// Sets font for first occurence of text. If text is nil sets font for entire string.
+    func set(font: UIFont, for text: String? = nil) {
+        let range: NSRange
+        if let text = text {
+            range = mutableString.range(of: text)
+        } else {
+            range = fullRange
+        }
+        
         guard range.location != NSNotFound else { return }
         
-        let attributes: [NSAttributedStringKey: Any] = [.font: font]
-        addAttributes(attributes, range: range)
+        addAttribute(.font, value: font, range: range)
+    }
+    
+    /// Sets line spacing
+    func set(lineSpacing: CGFloat) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        
+        addAttribute(.paragraphStyle, value: paragraphStyle, range: fullRange)
+    }
+    
+    /// Sets line height multiple
+    func set(lineHeightMultiple: CGFloat) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+        
+        addAttribute(.paragraphStyle, value: paragraphStyle, range: fullRange)
+    }
+    
+    /// Set text kern
+    func set(kern: CGFloat) {
+        addAttribute(.kern, value: kern, range: fullRange)
     }
 }

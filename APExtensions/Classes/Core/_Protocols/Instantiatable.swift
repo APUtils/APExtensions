@@ -40,10 +40,10 @@ public protocol InstantiatableFromStoryboard: class {
 public extension InstantiatableFromStoryboard where Self: UIViewController {
     private static func controllerFromStoryboard<T>() -> T {
         let storyboardName = self.storyboardName
-        if let initialVc = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: className) as? T {
+        if let initialVc = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? T {
             return initialVc
         } else {
-            return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as! T
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: className) as! T
         }
     }
     
