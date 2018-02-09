@@ -22,6 +22,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
                        DESC
 
   s.homepage         = 'https://github.com/APUtils/APExtensions'
+  s.documentation_url = 'https://aputils.github.io/APExtensions/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Anton Plebanovich' => 'anton.plebanovich@gmail.com' }
