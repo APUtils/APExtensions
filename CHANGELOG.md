@@ -2,7 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.4.0](https://github.com/APUtils/APExtensions/releases/tag/4.4.0)
+## [4.4.2](https://github.com/APUtils/APExtensions/releases/tag/4.4.2)
+Released on 02/09/2018.
+
+#### Fixed
+- g_showPickerAlert crash on iPads
+
+## [4.4.1](https://github.com/APUtils/APExtensions/releases/tag/4.4.1)
 Released on 02/09/2018.
 
 #### Added
