@@ -22,7 +22,7 @@ private extension UIWindow {
     /// Creates and shows overlay window with image of hoster window.
     /// Call passed dismiss closure with animation param in operationsCompletion when it's time to dismiss it.
     func performUnderOverlay(operationsCompletion: @escaping (_ dismiss: @escaping (_ animated: Bool) -> Void) -> Void, completion: SimpleClosure?) {
-        let alertWindow = UIWindow.createAlert()
+        let alertWindow = UIWindow.createNormal()
        
         let imageVc = ImageOverlayViewController()
         imageVc.modalPresentationStyle = .overFullScreen
