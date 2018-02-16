@@ -1471,9 +1471,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
 					"CORE=1",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = APExtensionsCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1500,6 +1499,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"CORE=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = APExtensionsCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
