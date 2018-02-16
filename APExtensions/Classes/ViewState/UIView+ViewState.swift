@@ -35,6 +35,8 @@ public extension UIView {
         }
     }
     
+    // TODO: Become first responder when can. On UIViewController -becomeFirstResponder.
+    
     /// Tells view to become first responder only after view did appear.
     ///
     /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."

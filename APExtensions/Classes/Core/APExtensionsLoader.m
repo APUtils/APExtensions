@@ -6,7 +6,12 @@
 //  Copyright (c) 2017 Anton Plebanovich. All rights reserved.
 //
 
+#if CORE
+#import <APExtensionsCore/APExtensionsCore-Swift.h>
+#else
 #import <APExtensions/APExtensions-Swift.h>
+#endif
+
 #import "APExtensionsLoader.h"
 
 

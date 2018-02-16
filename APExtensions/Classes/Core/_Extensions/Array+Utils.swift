@@ -103,19 +103,9 @@ public extension Array {
 
 public extension Array {
     /// Splits array into slices of specified size
-    public func splittedArray(splitSize: Int) -> [[Element]] {
-        if self.count <= splitSize {
-            return [self]
-        } else {
-            return [Array<Element>(self[0..<splitSize])] + splittedArray(Array<Element>(self[splitSize..<self.count]), splitSize: splitSize)
-        }
-    }
-    
-    private func splittedArray<T>(_ s: [T], splitSize: Int) -> [[T]] {
-        if s.count <= splitSize {
-            return [s]
-        } else {
-            return [Array<T>(s[0..<splitSize])] + splittedArray(Array<T>(s[splitSize..<s.count]), splitSize: splitSize)
+    func splittedArray(splitSize: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: splitSize).map {
+            Array(self[$0..<Swift.min($0 + splitSize, count)])
         }
     }
 }

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        print([1,2,3,4,5,6,7,8,9].splittedArray(splitSize: 2))
+        
 //        view.showActivityIndicator()
         
 //        print(g_getChildrenClasses(of: UIViewController.self))
@@ -55,9 +57,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {
-//        present(RemoveToTheRootViewController.create())
-        g_showPickerAlert(buttons: ["asd"]) { title, _ in
-            
-        }
+        
     }
 }

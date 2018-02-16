@@ -24,6 +24,8 @@ Cartfile:
 github "APUtils/APExtensions" ~> 4.4
 ```
 
+If you want to add everything just attach `APExtensions.framework`, and if you need some specific part attach `APExtensionsAbstractions.framework`, `APExtensionsCore.framework`, `APExtensionsStoryboard.framework`, `APExtensionsViewConfiguration.framework` or `APExtensionsViewState.framework`.
+
 #### CocoaPods
 
 APExtensions is available through [CocoaPods](http://cocoapods.org). To install
@@ -33,12 +35,14 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions', '~> 4.4'
 ```
 
-Available subspecs: `Core`, `ViewState`, `Storyboard`. Example Podfile for subspec:
+Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`, `ViewState`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Core'
-pod 'APExtensions/ViewState'
-pod 'APExtensions/Storyboard'
+pod 'APExtensions/Abstractions', '~> 4.4'
+pod 'APExtensions/Core', '~> 4.4'
+pod 'APExtensions/Storyboard', '~> 4.4'
+pod 'APExtensions/ViewConfiguration', '~> 4.4'
+pod 'APExtensions/ViewState', '~> 4.4'
 ```
 
 ## Usage
