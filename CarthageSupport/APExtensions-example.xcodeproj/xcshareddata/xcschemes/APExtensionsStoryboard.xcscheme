@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0F82FC820375BA8004FC037"
-               BuildableName = "APExtensions.framework"
-               BlueprintName = "APExtensions"
+               BlueprintIdentifier = "B0F8309C2037612E004FC037"
+               BuildableName = "APExtensionsStoryboard.framework"
+               BlueprintName = "APExtensionsStoryboard"
                ReferencedContainer = "container:APExtensions-example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0F82FC820375BA8004FC037"
-            BuildableName = "APExtensions.framework"
-            BlueprintName = "APExtensions"
+            BlueprintIdentifier = "B0F8309C2037612E004FC037"
+            BuildableName = "APExtensionsStoryboard.framework"
+            BlueprintName = "APExtensionsStoryboard"
             ReferencedContainer = "container:APExtensions-example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0F82FC820375BA8004FC037"
-            BuildableName = "APExtensions.framework"
-            BlueprintName = "APExtensions"
+            BlueprintIdentifier = "B0F8309C2037612E004FC037"
+            BuildableName = "APExtensionsStoryboard.framework"
+            BlueprintName = "APExtensionsStoryboard"
             ReferencedContainer = "container:APExtensions-example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
