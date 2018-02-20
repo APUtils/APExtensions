@@ -86,9 +86,25 @@ public extension UIViewController {
         return nil
     }
     
-    /// Returns true if controller curently is poping or dismissing
+    /// Returns true if controller curently is pushing, presenting, poping or dismissing.
+    public var isBeingTransitioned: Bool {
+        return isBeingAdded || isBeingRemoved
+    }
+    
+    /// Returns true if controller curently is pushing or presenting.
+    public var isBeingAdded: Bool {
+        return isMovingToParentViewController
+            || isBeingPresented
+            || (navigationController?.isMovingToParentViewController ?? false)
+            || (navigationController?.isBeingPresented ?? false)
+    }
+    
+    /// Returns true if controller curently is poping or dismissing.
     public var isBeingRemoved: Bool {
-        return isMovingFromParentViewController || isBeingDismissed || (navigationController?.isBeingDismissed ?? false)
+        return isMovingFromParentViewController
+            || isBeingDismissed
+            || (navigationController?.isMovingFromParentViewController ?? false)
+            || (navigationController?.isBeingDismissed ?? false)
     }
     
     /// Presents view controller animated

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B08501B3203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
+		B08501B4203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
+		B08501B5203B6A5200E94409 /* UIResponder+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08501B6203B6A5E00E94409 /* UIResponder+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0F82FB320375B69004FC037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FB220375B69004FC037 /* AppDelegate.swift */; };
 		B0F82FB520375B69004FC037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FB420375B69004FC037 /* ViewController.swift */; };
 		B0F82FB820375B69004FC037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F82FB620375B69004FC037 /* Main.storyboard */; };
@@ -219,6 +223,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
 		B0F82FAF20375B69004FC037 /* APExtensions-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APExtensions-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F82FB220375B69004FC037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0F82FB420375B69004FC037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -457,13 +462,13 @@
 		B0F82FD920375BDB004FC037 /* _Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B0F82FDA20375BDB004FC037 /* Describable.swift */,
-				B0F82FDB20375BDB004FC037 /* SetupOnce.swift */,
-				B0F82FDC20375BDB004FC037 /* Manager.swift */,
-				B0F82FDD20375BDB004FC037 /* Configurable.swift */,
-				B0F82FDE20375BDB004FC037 /* ClassName.swift */,
-				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
 				B0F82FE020375BDB004FC037 /* CellInformation.swift */,
+				B0F82FDE20375BDB004FC037 /* ClassName.swift */,
+				B0F82FDD20375BDB004FC037 /* Configurable.swift */,
+				B0F82FDA20375BDB004FC037 /* Describable.swift */,
+				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
+				B0F82FDC20375BDB004FC037 /* Manager.swift */,
+				B0F82FDB20375BDB004FC037 /* SetupOnce.swift */,
 			);
 			path = _Protocols;
 			sourceTree = "<group>";
@@ -471,44 +476,44 @@
 		B0F82FE220375BDB004FC037 /* _Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B0F82FE320375BDB004FC037 /* UICollectionView+Utils.swift */,
-				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
-				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
-				B0F82FE620375BDB004FC037 /* UIBarButtonItem+Utils.swift */,
-				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
-				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
-				B0F82FE920375BDB004FC037 /* CGPoint+Utils.swift */,
-				B0F82FEA20375BDB004FC037 /* UIView+Utils.swift */,
-				B0F82FEB20375BDB004FC037 /* UIWebView+Utils.swift */,
-				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
-				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
-				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
-				B0F82FEF20375BDB004FC037 /* UIColor+Utils.swift */,
-				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
-				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
-				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
-				B0F82FF320375BDB004FC037 /* Character+Utils.swift */,
-				B0F82FF420375BDB004FC037 /* CGRect+Utils.swift */,
-				B0F82FF520375BDB004FC037 /* Data+Utils.swift */,
-				B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */,
-				B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */,
 				B0F82FF820375BDB004FC037 /* Array+Utils.swift */,
-				B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */,
-				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
-				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
-				B0F82FFC20375BDB004FC037 /* NotificationCenter+Utils.swift */,
-				B0F82FFD20375BDB004FC037 /* UIImage+Utils.swift */,
-				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
-				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
-				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
-				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
-				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
-				B0F8300320375BDB004FC037 /* String+Utils.swift */,
-				B0F8300420375BDB004FC037 /* NSAttributedString+Utils.swift */,
+				B0F82FE920375BDB004FC037 /* CGPoint+Utils.swift */,
+				B0F82FF420375BDB004FC037 /* CGRect+Utils.swift */,
+				B0F82FF320375BDB004FC037 /* Character+Utils.swift */,
+				B0F82FF520375BDB004FC037 /* Data+Utils.swift */,
 				B0F8300520375BDB004FC037 /* Date+Utils.swift */,
+				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
+				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
+				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
+				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
+				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
+				B0F82FFC20375BDB004FC037 /* NotificationCenter+Utils.swift */,
+				B0F8300420375BDB004FC037 /* NSAttributedString+Utils.swift */,
 				B0F8300620375BDB004FC037 /* NSCoder+Utils.swift */,
-				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
 				B0F8300820375BDB004FC037 /* NSMutableAttributedString+Utils.swift */,
+				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
+				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
+				B0F8300320375BDB004FC037 /* String+Utils.swift */,
+				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
+				B0F82FE620375BDB004FC037 /* UIBarButtonItem+Utils.swift */,
+				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
+				B0F82FE320375BDB004FC037 /* UICollectionView+Utils.swift */,
+				B0F82FEF20375BDB004FC037 /* UIColor+Utils.swift */,
+				B0F82FFD20375BDB004FC037 /* UIImage+Utils.swift */,
+				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
+				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
+				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
+				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
+				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
+				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
+				B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */,
+				B0F82FEA20375BDB004FC037 /* UIView+Utils.swift */,
+				B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */,
+				B0F82FEB20375BDB004FC037 /* UIWebView+Utils.swift */,
+				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
+				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
+				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
+				B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -516,8 +521,8 @@
 		B0F8300E20375BDB004FC037 /* _Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B0F8300F20375BDB004FC037 /* AppearanceCaptureViewController.swift */,
 				B0F8301020375BDB004FC037 /* AlertController.swift */,
+				B0F8300F20375BDB004FC037 /* AppearanceCaptureViewController.swift */,
 			);
 			path = _Controllers;
 			sourceTree = "<group>";
@@ -525,15 +530,15 @@
 		B0F8301120375BDB004FC037 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B0F8301220375BDB004FC037 /* UIImageView+Storyboard.swift */,
-				B0F8301320375BDB004FC037 /* UIButton+Storyboard.swift */,
-				B0F8301420375BDB004FC037 /* UIView+Storyboard.swift */,
-				B0F8301520375BDB004FC037 /* UIFont+Storyboard.swift */,
-				B0F8301620375BDB004FC037 /* UITextView+Storyboard.swift */,
-				B0F8301720375BDB004FC037 /* UIImage+Storyboard.swift */,
 				B0F8301820375BDB004FC037 /* NSLayoutConstraint+Storyboard.swift */,
-				B0F8301920375BDB004FC037 /* UIScrollView+Storyboard.swift */,
+				B0F8301320375BDB004FC037 /* UIButton+Storyboard.swift */,
+				B0F8301520375BDB004FC037 /* UIFont+Storyboard.swift */,
+				B0F8301720375BDB004FC037 /* UIImage+Storyboard.swift */,
+				B0F8301220375BDB004FC037 /* UIImageView+Storyboard.swift */,
 				B0F8301A20375BDB004FC037 /* UILabel+Storyboard.swift */,
+				B0F8301920375BDB004FC037 /* UIScrollView+Storyboard.swift */,
+				B0F8301620375BDB004FC037 /* UITextView+Storyboard.swift */,
+				B0F8301420375BDB004FC037 /* UIView+Storyboard.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -541,12 +546,12 @@
 		B0F8301C20375BDB004FC037 /* ViewConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				B0F8301D20375BDB004FC037 /* UITextView+ViewConfiguration.swift */,
-				B0F8301E20375BDB004FC037 /* UIImageView+ViewConfiguration.swift */,
 				B0F8301F20375BDB004FC037 /* UIButton+ViewConfiguration.swift */,
-				B0F8302020375BDB004FC037 /* UIView+ViewConfiguration.swift */,
+				B0F8301E20375BDB004FC037 /* UIImageView+ViewConfiguration.swift */,
 				B0F8302120375BDB004FC037 /* UILabel+ViewConfiguration.swift */,
 				B0F8302220375BDB004FC037 /* UITextField+ViewConfiguration.swift */,
+				B0F8301D20375BDB004FC037 /* UITextView+ViewConfiguration.swift */,
+				B0F8302020375BDB004FC037 /* UIView+ViewConfiguration.swift */,
 			);
 			path = ViewConfiguration;
 			sourceTree = "<group>";
@@ -562,11 +567,12 @@
 		B0F8302520375BDB004FC037 /* ViewState */ = {
 			isa = PBXGroup;
 			children = (
-				B0F8302620375BDB004FC037 /* ViewStateLoader.h */,
+				B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */,
 				B0F8302720375BDB004FC037 /* UIScrollView+ViewState.swift */,
-				B0F8302820375BDB004FC037 /* ViewStateLoader.m */,
-				B0F8302920375BDB004FC037 /* UIViewController+ViewState.swift */,
 				B0F8302A20375BDB004FC037 /* UIView+ViewState.swift */,
+				B0F8302920375BDB004FC037 /* UIViewController+ViewState.swift */,
+				B0F8302620375BDB004FC037 /* ViewStateLoader.h */,
+				B0F8302820375BDB004FC037 /* ViewStateLoader.m */,
 			);
 			path = ViewState;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08501B6203B6A5E00E94409 /* UIResponder+ViewState.swift in Headers */,
 				B0F8308220375CA7004FC037 /* UIScrollView+ViewState.swift in Headers */,
 				B0F8308020375C7B004FC037 /* UIViewController+ViewState.swift in Headers */,
 				B0F8308120375C7B004FC037 /* UIView+ViewState.swift in Headers */,
@@ -646,6 +653,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08501B5203B6A5200E94409 /* UIResponder+ViewState.swift in Headers */,
 				B0F8309020375CF7004FC037 /* ViewStateLoader.h in Headers */,
 				B0F8309520375E60004FC037 /* UIScrollView+ViewState.swift in Headers */,
 				B0F8309620375E60004FC037 /* UIViewController+ViewState.swift in Headers */,
@@ -973,6 +981,7 @@
 				B0F8306420375BDB004FC037 /* UITextView+Storyboard.swift in Sources */,
 				B0F8302D20375BDB004FC037 /* SetupOnce.swift in Sources */,
 				B0F8305820375BDB004FC037 /* NSMutableAttributedString+Utils.swift in Sources */,
+				B08501B3203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */,
 				B0F8303820375BDB004FC037 /* UIButton+Utils.swift in Sources */,
 				B0F8302B20375BDB004FC037 /* APExtensionsLoader.m in Sources */,
 				B0F8303F20375BDB004FC037 /* UIColor+Utils.swift in Sources */,
@@ -1040,6 +1049,7 @@
 			files = (
 				B0F8309120375CF9004FC037 /* UIScrollView+ViewState.swift in Sources */,
 				B0F8309420375D02004FC037 /* UIView+ViewState.swift in Sources */,
+				B08501B4203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */,
 				B0F8309320375CFF004FC037 /* UIViewController+ViewState.swift in Sources */,
 				B0F8309220375CFC004FC037 /* ViewStateLoader.m in Sources */,
 			);
