@@ -81,6 +81,7 @@ public extension UIResponder {
                         
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderWhenPossible = false
+                        
                         self.becomeFirstResponder()
                     }
                 }
