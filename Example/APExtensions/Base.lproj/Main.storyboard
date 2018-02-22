@@ -139,19 +139,20 @@
                                                     <segue destination="ffN-M3-pEJ" kind="show" id="Gev-Nr-je8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-VV-1Ee">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtz-9K-IkF">
                                                 <rect key="frame" x="0.0" y="90" width="375" height="30"/>
+                                                <state key="normal" title="Become First Responder &gt;"/>
+                                                <connections>
+                                                    <segue destination="bjU-9D-mS9" kind="presentation" id="2dg-Zu-mvh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-VV-1Ee">
+                                                <rect key="frame" x="0.0" y="120" width="375" height="30"/>
                                                 <state key="normal" title="Debug"/>
                                                 <connections>
                                                     <action selector="onDebugTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EWm-TB-fVf"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVH-8F-rS8">
-                                                <rect key="frame" x="0.0" y="120" width="375" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -280,7 +281,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W2O-PR-676">
-                                <rect key="frame" x="16" y="258.5" width="343" height="150"/>
+                                <rect key="frame" x="16" y="273.5" width="343" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-kc-7JR">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -310,15 +311,6 @@
                                             <action selector="onRemoveTap:" destination="ffN-M3-pEJ" eventType="touchUpInside" id="5lE-Ub-LKc"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KnV-mU-BM7">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="becomeFirstResponderWhenPossible" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-Vc-kKg">
@@ -346,5 +338,78 @@
             </objects>
             <point key="canvasLocation" x="70" y="734"/>
         </scene>
+        <!--Become First Responder View Controller-->
+        <scene sceneID="9lu-U5-iVv">
+            <objects>
+                <viewController id="l8n-fd-YYC" customClass="BecomeFirstResponderViewController" customModule="APExtensions_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xw1-eI-nGT"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Je-Lx-Gxi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sud-j7-Zbj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e3N-65-34L">
+                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-Wt-1QZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irc-eM-PRf">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <state key="normal" title="Push"/>
+                                        <connections>
+                                            <segue destination="l8n-fd-YYC" kind="show" id="8md-sh-9r1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wux-qK-tg2">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <state key="normal" title="Present"/>
+                                        <connections>
+                                            <segue destination="bjU-9D-mS9" kind="presentation" id="XiS-EI-d8l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="e3N-65-34L" secondAttribute="trailing" constant="16" id="fJw-Md-KRP"/>
+                            <constraint firstItem="e3N-65-34L" firstAttribute="leading" secondItem="sud-j7-Zbj" secondAttribute="leading" constant="16" id="tcA-s4-v1s"/>
+                            <constraint firstItem="e3N-65-34L" firstAttribute="centerY" secondItem="sud-j7-Zbj" secondAttribute="centerY" id="vin-J2-zc4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4BF-by-iLO"/>
+                    <connections>
+                        <outlet property="textField" destination="N9d-Wt-1QZ" id="rAP-bq-4PZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IrT-6E-H04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="734"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="88b-Wp-65o">
+            <objects>
+                <navigationController id="bjU-9D-mS9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sxq-J9-m3v">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="l8n-fd-YYC" kind="relationship" relationship="rootViewController" id="Wof-P4-x9D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAc-hf-gD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="734"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XiS-EI-d8l"/>
+    </inferredMetricsTieBreakers>
 </document>

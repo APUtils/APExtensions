@@ -60,33 +60,38 @@ public extension UIResponder {
             
             if newValue {
                 let vc = _viewController
-                if vc?.viewState == .didAttached || vc?.viewState == .didAppear {
+                if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
                     // Already appeared
                     self._becomeFirstResponderWhenPossible = false
                     self.becomeFirstResponder()
                 } else {
                     // Wait until appeared
-                    var token: NSObjectProtocol!
-                    token = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAttached, object: vc, queue: nil) { [weak self] notification in
+                    var didAttachedToken: NSObjectProtocol! = nil
+                    var didAppearToken: NSObjectProtocol! = nil
+                    let handleNotification: (Notification) -> Void = { [weak self] notification in
                         guard let `self` = self, self._becomeFirstResponderWhenPossible else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            NotificationCenter.default.removeObserver(token)
+                            NotificationCenter.default.removeObserver(didAttachedToken)
+                            NotificationCenter.default.removeObserver(didAppearToken)
                             return
                         }
                         guard self._viewController == notification.object as? UIViewController else { return }
                         
                         // Got our notification. Remove observer.
-                        NotificationCenter.default.removeObserver(token)
+                        NotificationCenter.default.removeObserver(didAttachedToken)
+                        NotificationCenter.default.removeObserver(didAppearToken)
                         
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderWhenPossible = false
                         
                         self.becomeFirstResponder()
                     }
+                    didAttachedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAttach, object: vc, queue: nil, using: handleNotification)
+                    didAppearToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: vc, queue: nil, using: handleNotification)
                 }
             } else {
-                _becomeFirstResponderWhenPossible = false
+                
             }
         }
     }
@@ -132,7 +137,7 @@ public extension UIResponder {
                     }
                 }
             } else {
-                _becomeFirstResponderOnViewDidAppear = false
+                
             }
         }
     }
