@@ -80,7 +80,7 @@ public extension Notification.Name {
     
     /// UIViewController becomeFirstResponder() method was called notification.
     /// Called between willAppear and didAppear when controller is attached to responders chain.
-    public static let UIViewControllerViewDidAttached = Notification.Name("UIViewControllerViewDidAttached")
+    public static let UIViewControllerViewDidAttach = Notification.Name("UIViewControllerViewDidAttach")
     
     /// UIViewController viewDidAppear(_:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` parameter if needed.
@@ -101,7 +101,7 @@ extension UIViewController {
         case notLoaded
         case didLoad
         case willAppear
-        case didAttached
+        case didAttach
         case didAppear
         case willDisappear
         case didDisappear
@@ -144,8 +144,10 @@ extension UIViewController {
     }
     
     @objc private func swizzled_becomeFirstResponder() -> Bool {
-        viewState = .didAttached
-        NotificationCenter.default.post(name: .UIViewControllerViewDidAttached, object: self)
+        if viewState == .willAppear {
+            viewState = .didAttach
+            NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self)
+        }
         
         return swizzled_becomeFirstResponder()
     }

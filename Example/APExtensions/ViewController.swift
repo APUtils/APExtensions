@@ -10,9 +10,6 @@ import UIKit
 import APExtensions
 
 
-private var c_vcCounter = 0
-
-
 class ViewController: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
@@ -20,11 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     
     // ******************************* MARK: - Private Properties
-    
-    private lazy var vcNumber: Int = {
-        c_vcCounter += 1
-        return c_vcCounter
-    }()
 
     // ******************************* MARK: - UIViewController Overrides
     
@@ -54,18 +46,6 @@ class ViewController: UIViewController {
 //        _ = g_perform {
 //            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
 //        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("\(vcNumber) - viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        print("\(vcNumber) - viewDidAppear")
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {
