@@ -120,11 +120,6 @@ public extension UIViewController {
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     /// Removes also overlaying controllers if needed.
     public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
-        // Dismiss keyboard
-        if isViewLoaded {
-            view.endEditing(true)
-        }
-        
         if let navigationController = navigationController {
             // Has navigation controller
             if navigationController.presentedViewController != nil {
@@ -182,6 +177,11 @@ public extension UIViewController {
         } else {
             // Unknown container or root. Can not do anything.
             completion?()
+        }
+        
+        // Dismiss keyboard last so transition state can be detected and animations can be adjusted if needed
+        if isViewLoaded {
+            view.endEditing(true)
         }
     }
     
