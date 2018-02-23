@@ -101,6 +101,14 @@ public extension Notification.Name {
     public static let UIViewControllerViewStateDidChange = Notification.Name("UIViewControllerViewStateDidChange")
 }
 
+// ******************************* MARK: - ViewControllerExtendedStates
+
+public protocol ViewControllerExtendedStates {
+    func viewDidAttach()
+    func viewStateDidChange()
+}
+
+// ******************************* MARK: - UIViewController Swizzling
 
 extension UIViewController {
     public enum ViewState {
@@ -134,6 +142,7 @@ extension UIViewController {
         userInfo["parent"] = parent
         NotificationCenter.default.post(name: .UIViewControllerWillMoveToParentViewController, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_willMove(toParentViewController: parent)
     }
@@ -143,6 +152,7 @@ extension UIViewController {
         let userInfo: [String: Any] = ["viewState": viewState]
         NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewDidLoad()
     }
@@ -152,6 +162,7 @@ extension UIViewController {
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewWillAppear(animated)
     }
@@ -161,7 +172,9 @@ extension UIViewController {
             viewState = .didAttach
             let userInfo: [String: Any] = ["viewState": viewState]
             NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self, userInfo: userInfo)
+            (self as? ViewControllerExtendedStates)?.viewDidAttach()
             NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+            (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         }
         
         return swizzled_becomeFirstResponder()
@@ -172,6 +185,7 @@ extension UIViewController {
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewDidAppear(animated)
     }
@@ -181,6 +195,7 @@ extension UIViewController {
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewWillDisappear(animated)
     }
@@ -190,6 +205,7 @@ extension UIViewController {
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewDidDisappear(animated)
     }
