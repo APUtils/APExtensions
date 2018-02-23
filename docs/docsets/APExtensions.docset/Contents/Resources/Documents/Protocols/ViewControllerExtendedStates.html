@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Error Extension Reference</title>
+    <title>ViewControllerExtendedStates Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/Error" class="dashAnchor"></a>
-    <a title="Error Extension Reference"></a>
+    <a name="//apple_ref/swift/Protocol/ViewControllerExtendedStates" class="dashAnchor"></a>
+    <a title="ViewControllerExtendedStates Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">APExtensions Docs</a> (66% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">APExtensions Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Error Extension Reference
+        ViewControllerExtendedStates Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -433,14 +433,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Error</h1>
+            <h1>ViewControllerExtendedStates</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">Error</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ViewControllerExtendedStates</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>You can conform to that protocol in your view controller to get .viewDidAttach() and .viewStateDidChange() calls</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -448,9 +449,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s5ErrorP12APExtensionsE09isConnectA0Sbv"></a>
-                    <a name="//apple_ref/swift/Property/isConnectError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s5ErrorP12APExtensionsE09isConnectA0Sbv">isConnectError</a>
+                    <a name="/s:12APExtensions28ViewControllerExtendedStatesP13viewDidAttachyyF"></a>
+                    <a name="//apple_ref/swift/Method/viewDidAttach()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12APExtensions28ViewControllerExtendedStatesP13viewDidAttachyyF">viewDidAttach()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -458,14 +459,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Checks if error is related to connection problems. Usual flow is to retry on those errors.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isConnectError</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewDidAttach</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12APExtensions28ViewControllerExtendedStatesP18viewStateDidChangeyyF"></a>
+                    <a name="//apple_ref/swift/Method/viewStateDidChange()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12APExtensions28ViewControllerExtendedStatesP18viewStateDidChangeyyF">viewStateDidChange()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewStateDidChange</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>

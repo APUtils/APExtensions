@@ -1780,98 +1780,126 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 95,
-      "symbol": "UIViewController.ViewState",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "line": 108,
+      "symbol": "ViewControllerExtendedStates.viewDidAttach()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 95,
-      "symbol": "UIViewController.ViewState",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "line": 108,
+      "symbol": "ViewControllerExtendedStates.viewDidAttach()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 96,
+      "line": 109,
+      "symbol": "ViewControllerExtendedStates.viewStateDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 109,
+      "symbol": "ViewControllerExtendedStates.viewStateDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 117,
       "symbol": "UIViewController.ViewState.notLoaded",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 96,
+      "line": 117,
       "symbol": "UIViewController.ViewState.notLoaded",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 97,
+      "line": 118,
       "symbol": "UIViewController.ViewState.didLoad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 97,
+      "line": 118,
       "symbol": "UIViewController.ViewState.didLoad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 98,
+      "line": 119,
       "symbol": "UIViewController.ViewState.willAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 98,
+      "line": 119,
       "symbol": "UIViewController.ViewState.willAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 99,
+      "line": 120,
+      "symbol": "UIViewController.ViewState.didAttach",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 120,
+      "symbol": "UIViewController.ViewState.didAttach",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 121,
       "symbol": "UIViewController.ViewState.didAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 99,
+      "line": 121,
       "symbol": "UIViewController.ViewState.didAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 100,
+      "line": 122,
       "symbol": "UIViewController.ViewState.willDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 100,
+      "line": 122,
       "symbol": "UIViewController.ViewState.willDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 101,
+      "line": 123,
       "symbol": "UIViewController.ViewState.didDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 101,
+      "line": 123,
       "symbol": "UIViewController.ViewState.didDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"

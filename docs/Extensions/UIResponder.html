@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Error Extension Reference</title>
+    <title>UIResponder Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/Error" class="dashAnchor"></a>
-    <a title="Error Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/UIResponder" class="dashAnchor"></a>
+    <a title="UIResponder Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">APExtensions Docs</a> (66% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">APExtensions Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Error Extension Reference
+        UIResponder Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -433,13 +433,7 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Error</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">Error</span></code></pre>
-
-                </div>
-              </div>
+            <h1>UIResponder</h1>
             
           </section>
           <section class="section task-group-section">
@@ -448,9 +442,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s5ErrorP12APExtensionsE09isConnectA0Sbv"></a>
-                    <a name="//apple_ref/swift/Property/isConnectError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s5ErrorP12APExtensionsE09isConnectA0Sbv">isConnectError</a>
+                    <a name="/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeFirstResponderWhenPossible"></a>
+                    <a name="//apple_ref/swift/Property/becomeFirstResponderWhenPossible" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeFirstResponderWhenPossible">becomeFirstResponderWhenPossible</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -458,14 +452,49 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Checks if error is related to connection problems. Usual flow is to retry on those errors.</p>
+                        <p>Tells responder to become first when view has window.</p>
+
+<p>Quote from Apple doc: <q>Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy.</q></p>
+
+<p>Because configuration usually is made in <code>viewDidLoad</code> or <code>viewWillAppear</code> while <code>view</code> still might have <code>nil</code> <code>window</code> it&rsquo;s useful to delay <code>becomeFirstResponder</code> calls.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isConnectError</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">becomeFirstResponderWhenPossible</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeFirstResponderOnViewDidAppear"></a>
+                    <a name="//apple_ref/swift/Property/becomeFirstResponderOnViewDidAppear" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeFirstResponderOnViewDidAppear">becomeFirstResponderOnViewDidAppear</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells responder to become first only after view did appear.</p>
+
+<p>Quote from Apple doc: <q>Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy.</q></p>
+
+<p>Because configuration usually is made in <code>viewDidLoad</code> or <code>viewWillAppear</code> while <code>view</code> still might have <code>nil</code> <code>window</code> it&rsquo;s useful to delay <code>becomeFirstResponder</code> calls.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">becomeFirstResponderOnViewDidAppear</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>

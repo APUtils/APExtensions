@@ -103,6 +103,7 @@ public extension Notification.Name {
 
 // ******************************* MARK: - ViewControllerExtendedStates
 
+/// You can conform to that protocol in your view controller to get .viewDidAttach() and .viewStateDidChange() calls
 public protocol ViewControllerExtendedStates {
     func viewDidAttach()
     func viewStateDidChange()
@@ -111,6 +112,7 @@ public protocol ViewControllerExtendedStates {
 // ******************************* MARK: - UIViewController Swizzling
 
 extension UIViewController {
+    /// View controller view's state enum
     public enum ViewState {
         case notLoaded
         case didLoad
@@ -121,7 +123,7 @@ extension UIViewController {
         case didDisappear
     }
     
-    /// UIViewController view state
+    /// View controller view's state
     public var viewState: ViewState {
         get {
             if let state = objc_getAssociatedObject(self, &associatedStateKey) as? ViewState {

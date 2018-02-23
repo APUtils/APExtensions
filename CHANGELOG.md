@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.5.0](https://github.com/APUtils/APExtensions/releases/tag/4.5.0)
+Released on 02/23/2018.
+
+#### Added
+- ViewState .UIViewControllerViewDidAttached
+- UIResponder .becomeFirstResponderWhenPossible
+- UIViewController .isBeingAdded
+- UIViewController .isBeingTransitioned
+- ViewState UIViewControllerViewStateDidChange notification
+- ViewState ViewControllerExtendedStates protocol
+
+#### Changed
+- UIView .becomeFirstResponderOnViewDidAppear -> UIResponder .becomeFirstResponderOnViewDidAppear
+- UIViewContorller+Utils .remove calls endEditing after calling remove methods
+- ViewState.didAttached -> didAttach
+
+
 ## [4.4.2](https://github.com/APUtils/APExtensions/releases/tag/4.4.2)
 Released on 02/09/2018.
 
