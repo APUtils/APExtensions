@@ -71,28 +71,34 @@ public extension Notification.Name {
     public static let UIViewControllerWillMoveToParentViewController = Notification.Name("UIViewControllerWillMoveToParentViewController")
     
     /// UIViewController viewDidLoad() method was called notification.
-    /// You may check `object` notification's property for UIViewController object if needed.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewDidLoad = Notification.Name("UIViewControllerViewDidLoad")
     
     /// UIViewController viewWillAppear(_:) method was called notification.
-    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` parameter if needed.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewWillAppear = Notification.Name("UIViewControllerViewWillAppear")
     
     /// UIViewController becomeFirstResponder() method was called notification.
     /// Called between willAppear and didAppear when controller is attached to responders chain.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewDidAttach = Notification.Name("UIViewControllerViewDidAttach")
     
     /// UIViewController viewDidAppear(_:) method was called notification.
-    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` parameter if needed.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewDidAppear = Notification.Name("UIViewControllerViewDidAppear")
     
     /// UIViewController viewWillDisappear(_:) method was called notification.
-    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` parameter if needed.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewWillDisappear = Notification.Name("UIViewControllerViewWillDisappear")
     
     /// UIViewController viewDidDisappear(_:) method was called notification.
-    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` parameter if needed.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
     public static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
+    
+    /// UIViewController viewState did changed notification.
+    /// You may check `object` notification's property for UIViewController object.
+    /// `userInfo` dictionary contains `viewState` param and may contain `animated` and `parent` parameters depending on case.
+    public static let UIViewControllerViewStateDidChange = Notification.Name("UIViewControllerViewStateDidChange")
 }
 
 
@@ -123,22 +129,29 @@ extension UIViewController {
     }
     
     @objc private func swizzled_willMove(toParentViewController parent: UIViewController?) {
-        let userInfo: [String: Any]? = parent == nil ? nil : ["parent": parent!]
+        var userInfo: [String: Any] = [:]
+        userInfo["viewState"] = viewState
+        userInfo["parent"] = parent
         NotificationCenter.default.post(name: .UIViewControllerWillMoveToParentViewController, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_willMove(toParentViewController: parent)
     }
     
     @objc private func swizzled_viewDidLoad() {
         viewState = .didLoad
-        NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self)
+        let userInfo: [String: Any] = ["viewState": viewState]
+        NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_viewDidLoad()
     }
     
     @objc private func swizzled_viewWillAppear(_ animated: Bool) {
         viewState = .willAppear
-        NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self, userInfo: ["animated": animated])
+        let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
+        NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_viewWillAppear(animated)
     }
@@ -146,7 +159,9 @@ extension UIViewController {
     @objc private func swizzled_becomeFirstResponder() -> Bool {
         if viewState == .willAppear {
             viewState = .didAttach
-            NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self)
+            let userInfo: [String: Any] = ["viewState": viewState]
+            NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self, userInfo: userInfo)
+            NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         }
         
         return swizzled_becomeFirstResponder()
@@ -154,21 +169,27 @@ extension UIViewController {
     
     @objc private func swizzled_viewDidAppear(_ animated: Bool) {
         viewState = .didAppear
-        NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: ["animated": animated])
+        let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
+        NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_viewDidAppear(animated)
     }
     
     @objc private func swizzled_viewWillDisappear(_ animated: Bool) {
         viewState = .willDisappear
-        NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self, userInfo: ["animated": animated])
+        let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
+        NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_viewWillDisappear(animated)
     }
     
     @objc private func swizzled_viewDidDisappear(_ animated: Bool) {
         viewState = .didDisappear
-        NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self, userInfo: ["animated": animated])
+        let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
+        NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         
         swizzled_viewDidDisappear(animated)
     }

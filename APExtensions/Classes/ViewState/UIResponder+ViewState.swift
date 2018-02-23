@@ -66,29 +66,26 @@ public extension UIResponder {
                     self.becomeFirstResponder()
                 } else {
                     // Wait until appeared
-                    var didAttachedToken: NSObjectProtocol! = nil
-                    var didAppearToken: NSObjectProtocol! = nil
+                    var stateDidChangedToken: NSObjectProtocol! = nil
                     let handleNotification: (Notification) -> Void = { [weak self] notification in
                         guard let `self` = self, self._becomeFirstResponderWhenPossible else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            NotificationCenter.default.removeObserver(didAttachedToken)
-                            NotificationCenter.default.removeObserver(didAppearToken)
+                            NotificationCenter.default.removeObserver(stateDidChangedToken)
                             return
                         }
                         guard self._viewController == notification.object as? UIViewController else { return }
+                        guard self._viewController?.isViewLoaded == true && self._viewController?.view.window != nil else { return }
                         
                         // Got our notification. Remove observer.
-                        NotificationCenter.default.removeObserver(didAttachedToken)
-                        NotificationCenter.default.removeObserver(didAppearToken)
+                        NotificationCenter.default.removeObserver(stateDidChangedToken)
                         
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderWhenPossible = false
                         
                         self.becomeFirstResponder()
                     }
-                    didAttachedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAttach, object: vc, queue: nil, using: handleNotification)
-                    didAppearToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: vc, queue: nil, using: handleNotification)
+                    stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
                 }
             } else {
                 
