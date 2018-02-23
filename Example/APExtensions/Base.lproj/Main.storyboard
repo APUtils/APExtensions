@@ -351,7 +351,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e3N-65-34L">
-                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <rect key="frame" x="16" y="72" width="343" height="120"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-Wt-1QZ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -373,14 +373,21 @@
                                             <segue destination="bjU-9D-mS9" kind="presentation" id="XiS-EI-d8l"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVc-S1-ii3">
+                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="removeWithSender:" destination="l8n-fd-YYC" eventType="touchUpInside" id="ccI-3v-vga"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="e3N-65-34L" firstAttribute="top" secondItem="xw1-eI-nGT" secondAttribute="bottom" constant="8" id="YIZ-x6-T5R"/>
                             <constraint firstAttribute="trailing" secondItem="e3N-65-34L" secondAttribute="trailing" constant="16" id="fJw-Md-KRP"/>
                             <constraint firstItem="e3N-65-34L" firstAttribute="leading" secondItem="sud-j7-Zbj" secondAttribute="leading" constant="16" id="tcA-s4-v1s"/>
-                            <constraint firstItem="e3N-65-34L" firstAttribute="centerY" secondItem="sud-j7-Zbj" secondAttribute="centerY" id="vin-J2-zc4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4BF-by-iLO"/>
