@@ -25,6 +25,7 @@ Released on 02/09/2018.
 #### Fixed
 - g_showPickerAlert crash on iPads
 
+
 ## [4.4.1](https://github.com/APUtils/APExtensions/releases/tag/4.4.1)
 Released on 02/09/2018.
 
