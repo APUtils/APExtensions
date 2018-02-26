@@ -9,8 +9,10 @@
 import UIKit
 
 
+private var c_becomeMainResponderAssociationKey = 0
 private var c_becomeFirstResponderWhenPossibleAssociationKey = 0
 private var c_becomeFirstResponderOnViewDidAppearAssociationKey = 0
+
 
 public extension UIResponder {
     private var _viewController: UIViewController? {
@@ -24,6 +26,15 @@ public extension UIResponder {
         }
         
         return nil
+    }
+    
+    private var _becomeMainResponder: Bool {
+        get {
+            return objc_getAssociatedObject(self, &c_becomeMainResponderAssociationKey) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, &c_becomeMainResponderAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
     
     private var _becomeFirstResponderWhenPossible: Bool {
@@ -41,6 +52,53 @@ public extension UIResponder {
         }
         set {
             objc_setAssociatedObject(self, &c_becomeFirstResponderOnViewDidAppearAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    /// Tells responder to become main responder. It means it'll become first when view has window and will try to restore it's state on willAppear/didAppear.
+    ///
+    /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
+    ///
+    /// Because configuration usually is made in `viewDidLoad` or `viewWillAppear` while `view` still might have `nil` `window` it's useful to delay `becomeFirstResponder` calls.
+    @IBInspectable public var becomeMainRespoder: Bool {
+        get {
+            return _becomeMainResponder
+        }
+        set {
+            guard newValue != _becomeMainResponder else { return }
+            
+            _becomeMainResponder = newValue
+            
+            if newValue {
+                let vc = _viewController
+                if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
+                    // Already appeared
+                    becomeFirstResponder()
+                } else {
+                    // Wait until appeared
+                    var stateDidChangedToken: NSObjectProtocol! = nil
+                    let handleNotification: (Notification) -> Void = { [weak self] notification in
+                        guard let `self` = self, self._becomeMainResponder else {
+                            // Object no longer exists or no longer notification no longer needed.
+                            // Remove observer.
+                            NotificationCenter.default.removeObserver(stateDidChangedToken)
+                            return
+                        }
+                        // Assure notification for proper controller
+                        guard self._viewController == notification.object as? UIViewController else { return }
+                        // Assure view is loaded and has window
+                        guard self._viewController?.isViewLoaded == true && self._viewController?.view.window != nil else { return }
+                        // Assure it's appear notification
+                        guard let viewState = notification.userInfo?["viewState"] as? UIViewController.ViewState else { return }
+                        guard viewState == .didAttach || viewState == .willAppear || viewState == .didAppear else { return }
+                        
+                        self.becomeFirstResponder()
+                    }
+                    stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
+                }
+            } else {
+                
+            }
         }
     }
     
@@ -62,8 +120,8 @@ public extension UIResponder {
                 let vc = _viewController
                 if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
                     // Already appeared
-                    self._becomeFirstResponderWhenPossible = false
-                    self.becomeFirstResponder()
+                    _becomeFirstResponderWhenPossible = false
+                    becomeFirstResponder()
                 } else {
                     // Wait until appeared
                     var stateDidChangedToken: NSObjectProtocol! = nil
@@ -74,7 +132,9 @@ public extension UIResponder {
                             NotificationCenter.default.removeObserver(stateDidChangedToken)
                             return
                         }
+                        // Assure notification for proper controller
                         guard self._viewController == notification.object as? UIViewController else { return }
+                        // Assure view is loaded and has window
                         guard self._viewController?.isViewLoaded == true && self._viewController?.view.window != nil else { return }
                         
                         // Got our notification. Remove observer.
@@ -111,8 +171,8 @@ public extension UIResponder {
                 let vc = _viewController
                 if vc?.viewState == .didAppear {
                     // Already appeared
-                    self._becomeFirstResponderOnViewDidAppear = false
-                    self.becomeFirstResponder()
+                    _becomeFirstResponderOnViewDidAppear = false
+                    becomeFirstResponder()
                 } else {
                     // Wait until appeared
                     var token: NSObjectProtocol!
@@ -123,6 +183,7 @@ public extension UIResponder {
                             NotificationCenter.default.removeObserver(token)
                             return
                         }
+                        // Assure notification for proper controller
                         guard self._viewController == notification.object as? UIViewController else { return }
                         
                         // Got our notification. Remove observer.

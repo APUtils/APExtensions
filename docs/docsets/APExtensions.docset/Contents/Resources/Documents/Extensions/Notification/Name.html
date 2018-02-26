@@ -14,7 +14,7 @@
     <a title="Name Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html">APExtensions Docs</a> (65% documented)</p>
+        <p><a href="../../index.html">APExtensions Docs</a> (66% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -201,6 +201,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Extensions/UINavigationController.html">UINavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/UIResponder.html">UIResponder</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Extensions/UIScrollView.html">UIScrollView</a>
@@ -395,6 +398,9 @@
               <li class="nav-group-task">
                 <a href="../../Protocols/TableViewConfigurableCellInformation.html">TableViewConfigurableCellInformation</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/ViewControllerExtendedStates.html">ViewControllerExtendedStates</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -506,7 +512,7 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>UIViewController viewDidLoad() method was called notification.
-You may check <code>object</code> notification&rsquo;s property for UIViewController object if needed.</p>
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
 
                       </div>
                       <div class="declaration">
@@ -534,7 +540,7 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>UIViewController viewWillAppear(_:) method was called notification.
-You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> parameter if needed.</p>
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> or <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
 
                       </div>
                       <div class="declaration">
@@ -542,6 +548,35 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">UIViewControllerViewWillAppear</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"UIViewControllerViewWillAppear"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So14NSNotificationC4NameV12APExtensionsE29UIViewControllerViewDidAttachADvZ"></a>
+                    <a name="//apple_ref/swift/Variable/UIViewControllerViewDidAttach" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So14NSNotificationC4NameV12APExtensionsE29UIViewControllerViewDidAttachADvZ">UIViewControllerViewDidAttach</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>UIViewController becomeFirstResponder() method was called notification.
+Called between willAppear and didAppear when controller is attached to responders chain.
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">UIViewControllerViewDidAttach</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"UIViewControllerViewDidAttach"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -562,7 +597,7 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>UIViewController viewDidAppear(_:) method was called notification.
-You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> parameter if needed.</p>
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> or <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
 
                       </div>
                       <div class="declaration">
@@ -590,7 +625,7 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>UIViewController viewWillDisappear(_:) method was called notification.
-You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> parameter if needed.</p>
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> or <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
 
                       </div>
                       <div class="declaration">
@@ -618,7 +653,7 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>UIViewController viewDidDisappear(_:) method was called notification.
-You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> parameter if needed.</p>
+You may check <code>object</code> notification&rsquo;s property for UIViewController object and <code>userInfo[&quot;animated&quot;]</code> or <code>userInfo[&quot;viewState&quot;]</code> parameters if needed.</p>
 
                       </div>
                       <div class="declaration">
@@ -632,12 +667,41 @@ You may check <code>object</code> notification&rsquo;s property for UIViewContro
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So14NSNotificationC4NameV12APExtensionsE34UIViewControllerViewStateDidChangeADvZ"></a>
+                    <a name="//apple_ref/swift/Variable/UIViewControllerViewStateDidChange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So14NSNotificationC4NameV12APExtensionsE34UIViewControllerViewStateDidChangeADvZ">UIViewControllerViewStateDidChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>UIViewController viewState did changed notification.
+You may check <code>object</code> notification&rsquo;s property for UIViewController object.
+<code>userInfo</code> dictionary contains <code>viewState</code> param and may contain <code>animated</code> and <code>parent</code> parameters depending on case.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">UIViewControllerViewStateDidChange</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"UIViewControllerViewStateDidChange"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-17)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

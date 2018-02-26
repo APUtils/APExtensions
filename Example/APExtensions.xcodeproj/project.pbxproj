@@ -72,6 +72,7 @@
 		B0A073CD1F3B79EE001B8CC6 /* UITextView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITextView.png; sourceTree = "<group>"; };
 		B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIViewController.png; sourceTree = "<group>"; };
 		B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToBottomViewController.swift; sourceTree = "<group>"; };
+		B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		B7A07FA220F82B576CEC7EF3 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
 		BE3B1BF1D9E4EDA304E77323 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C1980566B39F5799ED4A250D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 				E60E577FA62486502305A0F4 /* .travis.yml */,
 				32419D24EFD29E6FBBA7030A /* APExtensions.podspec */,
 				A57474C800BA2A652ED8F4FB /* CHANGELOG.md */,
+				B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */,
 				BE3B1BF1D9E4EDA304E77323 /* LICENSE */,
 				B7A07FA220F82B576CEC7EF3 /* podCheck.command */,
 				B02A385B1F3332E6002E29F0 /* podInstall.command */,
