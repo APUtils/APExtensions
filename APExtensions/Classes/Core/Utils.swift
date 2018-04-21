@@ -71,7 +71,7 @@ public var g_sharedUserDefaults: UserDefaults {
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0
 
 /// Screen size
-let g_screenSize = UIScreen.main.bounds.size
+public let g_screenSize = UIScreen.main.bounds.size
 
 /// Screen scale factor
 public var g_screenScale: CGFloat {
