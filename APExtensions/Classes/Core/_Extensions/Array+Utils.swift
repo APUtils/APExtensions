@@ -85,17 +85,40 @@ public extension Array {
     }
     
     /// Transforms an array to a dictionary using array elements as keys and transform result as values.
-    func dictionaryMap<T>(_ transform:(_ element: Iterator.Element) -> T?) -> [Iterator.Element: T] {
-        return self.reduce(into: [Iterator.Element: T]()) { dictionary, element in
-            guard let value = transform(element) else { return }
+    func dictionaryMap<T>(_ transform:(_ element: Iterator.Element) throws -> T?) rethrows -> [Iterator.Element: T] {
+        return try self.reduce(into: [Iterator.Element: T]()) { dictionary, element in
+            guard let value = try transform(element) else { return }
             
             dictionary[element] = value
         }
     }
     
+    /// Groups array elements into dictionary using provided transform to determine element's key.
+    func group<K>(_ keyTransform: (Iterator.Element) throws -> K) rethrows -> [K: [Iterator.Element]] {
+        var dictionary = [K: [Iterator.Element]]()
+        for index in indices {
+            let element = self[index]
+            let key = try keyTransform(element)
+            var array = dictionary[key] ?? []
+            array.append(element)
+            dictionary[key] = array
+        }
+        
+        return dictionary
+    }
+    
     public mutating func move(from: Index, to: Index) {
         let element = remove(at: from)
         insert(element, at: to)
+    }
+}
+
+public extension Array where Element: Equatable {
+    /// Helper methods to remove all objects that are equal to passed one.
+    public mutating func remove(_ element: Element) {
+        while let index = index(of: element) {
+            remove(at: index)
+        }
     }
 }
 

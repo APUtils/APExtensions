@@ -27,16 +27,6 @@ public typealias ErrorClosure = (_ error: Error?) -> Void
 /// Error stub to use for simplification
 public struct GeneralError: Error { public init() {} }
 
-// ******************************* MARK: - Global Structs
-
-/// Structure containing screen sizes. Available constants: `width`, `height`, `maxSide`, `minSide`
-public struct g_screenSize {
-    @nonobjc public static let width = UIScreen.main.bounds.size.width
-    @nonobjc public static let height = UIScreen.main.bounds.size.height
-    @nonobjc public static let maxSide = max(g_screenSize.width, g_screenSize.height)
-    @nonobjc public static let minSide = min(g_screenSize.width, g_screenSize.height)
-}
-
 // ******************************* MARK: - Comparison
 
 /// Compares two `CGSize`s with 0.0001 tolerance
@@ -62,23 +52,36 @@ public func g_isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
 /// Shared application
 public let g_sharedApplication = UIApplication.shared
 
-/// Standart user defaults
-public let g_sharedUserDefaults = UserDefaults.standard
+/// Default file manager
+public var g_sharedFileManager: FileManager {
+    return FileManager.default
+}
 
 /// Default notification center
-public let g_sharedNotificationCenter = NotificationCenter.default
+public var g_sharedNotificationCenter: NotificationCenter {
+    return NotificationCenter.default
+}
 
-/// Default file manager
-public let g_sharedFileManager = FileManager.default
+/// Shared user defaults
+public var g_sharedUserDefaults: UserDefaults {
+    return UserDefaults.standard
+}
 
 /// Is running on simulator?
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0
 
+/// Screen size
+let g_screenSize = UIScreen.main.bounds.size
+
 /// Screen scale factor
-public let g_screenScale: CGFloat = UIScreen.main.scale
+public var g_screenScale: CGFloat {
+    return UIScreen.main.scale
+}
 
 /// Screen pixel size
-public let g_pixelSize: CGFloat = 1 / UIScreen.main.scale
+public var g_pixelSize: CGFloat {
+    return 1 / UIScreen.main.scale
+}
 
 /// User documents directory URL
 public var g_documentsDirectoryUrl: URL {
@@ -96,9 +99,7 @@ public var g_cacheDirectoryUrl: URL {
 }
 
 /// Application delegate. Crashes if nil.
-public var g_appDelegate: UIApplicationDelegate {
-    return g_sharedApplication.delegate!
-}
+public let g_appDelegate: UIApplicationDelegate = g_sharedApplication.delegate!
 
 /// Application key window
 public var g_keyWindow: UIWindow? {
@@ -471,6 +472,7 @@ public func g_getChildrenClasses<T: AnyObject>(of `class`: T.Type) -> [T.Type] {
     return APExtensionsLoader.getChildClasses(for: `class`).flatMap({ $0 as? T.Type })
 }
 
+/// Returns string prepresentation of object's pointer
 public func g_getPointer(_ any: AnyObject) -> String {
     return Unmanaged<AnyObject>.passUnretained(any as AnyObject).toOpaque().debugDescription
 }

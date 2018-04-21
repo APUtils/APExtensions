@@ -75,10 +75,11 @@ public extension UINavigationController {
     
     /// Replaces view controllers with completion
     public func setViewControllers(_ vcs: [UIViewController], animated: Bool, completion: (() -> Void)?) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         setViewControllers(vcs, animated: animated)
-        CATransaction.commit()
+        
+        if let transitionCoordinator = transitionCoordinator {
+            transitionCoordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        }
     }
     
     /// Replaces last view controller with completion

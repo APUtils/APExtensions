@@ -45,6 +45,12 @@ public extension UIView {
 // ******************************* MARK: - Animations
 
 public extension UIView {
+    /// Checks if code runs inside animation closure
+    @available(iOS 9.0, *)
+    public static var isInAnimationClosure: Bool {
+        return inheritedAnimationDuration > 0
+    }
+    
     public func fadeInAnimated() {
         guard alpha != 1 else { return }
         
@@ -133,6 +139,13 @@ public extension UIView {
     /// Ends editing on view and all of it's subviews
     @IBAction public func endEditing() {
         endEditing(true)
+    }
+    
+    /// Checks if window is not nil before calling becomeFirstResponder()
+    public func becomeFirstResponderIfPossible() {
+        guard window != nil else { return }
+        
+        becomeFirstResponder()
     }
 }
 

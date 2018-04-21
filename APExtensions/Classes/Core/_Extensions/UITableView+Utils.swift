@@ -57,11 +57,25 @@ public extension UITableView {
 
 public extension UITableView {
     /// Assures content offeset won't change after reload
+    @available(*, renamed: "reloadDataKeepingBottomContentOffset")
     public func reloadDataKeepingContentOffset() {
+        reloadDataKeepingBottomContentOffset()
+    }
+    
+    /// Assures bottom content offeset won't change after reload
+    public func reloadDataKeepingBottomContentOffset() {
         let bottomOffset = contentSize.height - (contentOffset.y + bounds.height)
         reloadData()
         layoutIfNeeded()
         contentOffset.y = contentSize.height - (bottomOffset + bounds.height)
+    }
+    
+    /// Assures content offeset won't change after updating cells size
+    public func updateCellSizesKeepingContentOffset() {
+        let bottomOffset = contentOffset.y
+        beginUpdates()
+        endUpdates()
+        contentOffset.y = bottomOffset
     }
 }
 

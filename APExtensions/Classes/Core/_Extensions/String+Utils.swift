@@ -8,6 +8,16 @@
 
 import UIKit
 
+
+// ******************************* MARK: - Representation
+
+public extension String {
+    /// Returns string as URL
+    public var asUrl: URL? {
+        return URL(string: self)
+    }
+}
+
 // ******************************* MARK: - Subscript
 
 public extension String {
@@ -42,7 +52,15 @@ public extension String {
     
     /// Returns string decoded from base64 string
     public var decodedBase64: String? {
-        guard let data = Data(base64Encoded: self) else { return nil }
+        var encodedString = self
+        
+        // String MUST be dividable by 4. https://stackoverflow.com/questions/36364324/swift-base64-decoding-returns-nil/36366421#36366421
+        let remainder = encodedString.count % 4
+        if remainder > 0 {
+            encodedString = encodedString.padding(toLength: encodedString.count + 4 - remainder, withPad: "=", startingAt: 0)
+        }
+        
+        guard let data = Data(base64Encoded: encodedString) else { return nil }
         
         return String(data: data, encoding: .utf8)
     }

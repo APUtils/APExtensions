@@ -9,6 +9,13 @@
 import UIKit
 
 
+#if DEBUG
+    private let c_debugBecomeFirstResponder = false
+#else
+    private let c_debugBecomeFirstResponder = false
+#endif
+
+
 private var c_becomeMainResponderAssociationKey = 0
 private var c_becomeFirstResponderWhenPossibleAssociationKey = 0
 private var c_becomeFirstResponderOnViewDidAppearAssociationKey = 0
@@ -55,6 +62,7 @@ public extension UIResponder {
         }
     }
     
+    // TODO: Become first responder on container controller become first responder (e.g. navigation or tab bar if child controller is main).
     /// Tells responder to become main responder. It means it'll become first when view has window and will try to restore it's state on willAppear/didAppear.
     ///
     /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
@@ -74,6 +82,8 @@ public extension UIResponder {
                 if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
                     // Already appeared
                     becomeFirstResponder()
+                    if c_debugBecomeFirstResponder { self.log("becomeMainRespoder") }
+                    
                 } else {
                     // Wait until appeared
                     var stateDidChangedToken: NSObjectProtocol! = nil
@@ -93,6 +103,7 @@ public extension UIResponder {
                         guard viewState == .didAttach || viewState == .willAppear || viewState == .didAppear else { return }
                         
                         self.becomeFirstResponder()
+                        if c_debugBecomeFirstResponder { self.log("becomeMainRespoder") }
                     }
                     stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
                 }
@@ -122,6 +133,8 @@ public extension UIResponder {
                     // Already appeared
                     _becomeFirstResponderWhenPossible = false
                     becomeFirstResponder()
+                    if c_debugBecomeFirstResponder { self.log("becomeFirstResponderWhenPossible") }
+                    
                 } else {
                     // Wait until appeared
                     var stateDidChangedToken: NSObjectProtocol! = nil
@@ -144,6 +157,7 @@ public extension UIResponder {
                         self._becomeFirstResponderWhenPossible = false
                         
                         self.becomeFirstResponder()
+                        if c_debugBecomeFirstResponder { self.log("becomeFirstResponderWhenPossible") }
                     }
                     stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
                 }
@@ -173,6 +187,8 @@ public extension UIResponder {
                     // Already appeared
                     _becomeFirstResponderOnViewDidAppear = false
                     becomeFirstResponder()
+                    if c_debugBecomeFirstResponder { self.log("becomeFirstResponderOnViewDidAppear") }
+                    
                 } else {
                     // Wait until appeared
                     var token: NSObjectProtocol!
@@ -192,11 +208,20 @@ public extension UIResponder {
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderOnViewDidAppear = false
                         self.becomeFirstResponder()
+                        if c_debugBecomeFirstResponder { self.log("becomeFirstResponderOnViewDidAppear") }
                     }
                 }
             } else {
                 
             }
         }
+    }
+    
+    // ******************************* MARK: - Private Methods
+    
+    private func log(_ string: String) {
+        let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
+        let className = "\(type(of: self))"
+        print("\(pointer) - \(className) - \(string)")
     }
 }

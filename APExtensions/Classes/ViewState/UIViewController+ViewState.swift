@@ -8,6 +8,13 @@
 
 import UIKit
 
+
+#if DEBUG
+    private let c_debugViewState = false
+#else
+    private let c_debugViewState = false
+#endif
+
 // ******************************* MARK: - Swizzle Functions
 
 private func swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
@@ -135,6 +142,7 @@ extension UIViewController {
         }
         set {
             objc_setAssociatedObject(self, &associatedStateKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if c_debugViewState { logViewState() }
         }
     }
     
@@ -177,6 +185,8 @@ extension UIViewController {
             (self as? ViewControllerExtendedStates)?.viewDidAttach()
             NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
             (self as? ViewControllerExtendedStates)?.viewStateDidChange()
+        } else {
+            if c_debugViewState { self.log("becomeFirstResponder") }
         }
         
         return swizzled_becomeFirstResponder()
@@ -263,5 +273,17 @@ public extension UIViewController {
                 }
             }
         }
+    }
+    
+    // ******************************* MARK: - Private Methods
+    
+    private func logViewState() {
+        log("\(viewState)")
+    }
+    
+    private func log(_ string: String) {
+        let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
+        let className = "\(type(of: self))"
+        print("\(pointer) - \(className) - \(string)")
     }
 }

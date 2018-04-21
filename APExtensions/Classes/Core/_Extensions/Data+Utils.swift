@@ -10,10 +10,32 @@ import Foundation
 
 
 public extension Data {
+    
+    // ******************************* MARK: - Hex
+    
     /// Get HEX string from data. Can be used for sending APNS token to backend.
     public var hexString: String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
+    
+    /// Creates data from HEX string
+    init(hex: String) {
+        var hex = hex.replacingOccurrences(of: " ", with: "")
+        var data = Data()
+        while hex.count > 0 {
+            let subIndex = hex.index(hex.startIndex, offsetBy: 2)
+            let c = String(hex[..<subIndex])
+            hex = String(hex[subIndex...])
+            var ch: UInt32 = 0
+            Scanner(string: c).scanHexInt32(&ch)
+            var char = UInt8(ch)
+            data.append(&char, count: 1)
+        }
+        
+        self = data
+    }
+    
+    // ******************************* MARK: - Other
     
     /// Try to convert data to UTF8 string
     public var utf8String: String? {
