@@ -13,7 +13,7 @@
     <a title="Global Variables  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">APExtensions Docs</a> (66% documented)</p>
+        <p><a href="index.html">APExtensions Docs</a> (67% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -110,6 +110,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/Character.html">Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Collection.html">Collection</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/Data.html">Data</a>
@@ -357,9 +360,6 @@
                 <a href="Functions.html#/s:12APExtensions8g_unwrapypSgACF">g_unwrap(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:12APExtensions12isNilOrEmptySbSayxGSglF">isNilOrEmpty(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Functions.html#/s:12APExtensions10smartPrintyypSg_Sb11addNewLinesSb08useDebugC0tF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -407,9 +407,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/GeneralError.html">GeneralError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/g_screenSize.html">g_screenSize</a>
               </li>
             </ul>
           </li>
@@ -476,9 +473,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12APExtensions20g_sharedUserDefaultsSo0cD0Cv"></a>
-                    <a name="//apple_ref/swift/Global/g_sharedUserDefaults" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12APExtensions20g_sharedUserDefaultsSo0cD0Cv">g_sharedUserDefaults</a>
+                    <a name="/s:12APExtensions19g_sharedFileManagerSo0cD0Cv"></a>
+                    <a name="//apple_ref/swift/Global/g_sharedFileManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12APExtensions19g_sharedFileManagerSo0cD0Cv">g_sharedFileManager</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -486,14 +483,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Standart user defaults</p>
+                        <p>Default file manager</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_sharedUserDefaults</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_sharedFileManager</span><span class="p">:</span> <span class="kt">FileManager</span></code></pre>
 
                         </div>
                       </div>
@@ -520,7 +517,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_sharedNotificationCenter</span> <span class="o">=</span> <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_sharedNotificationCenter</span><span class="p">:</span> <span class="kt">NotificationCenter</span></code></pre>
 
                         </div>
                       </div>
@@ -530,9 +527,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12APExtensions19g_sharedFileManagerSo0cD0Cv"></a>
-                    <a name="//apple_ref/swift/Global/g_sharedFileManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12APExtensions19g_sharedFileManagerSo0cD0Cv">g_sharedFileManager</a>
+                    <a name="/s:12APExtensions20g_sharedUserDefaultsSo0cD0Cv"></a>
+                    <a name="//apple_ref/swift/Global/g_sharedUserDefaults" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12APExtensions20g_sharedUserDefaultsSo0cD0Cv">g_sharedUserDefaults</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -540,14 +537,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default file manager</p>
+                        <p>Shared user defaults</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_sharedFileManager</span> <span class="o">=</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_sharedUserDefaults</span><span class="p">:</span> <span class="kt">UserDefaults</span></code></pre>
 
                         </div>
                       </div>
@@ -601,7 +598,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_screenScale</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">scale</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_screenScale</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
 
                         </div>
                       </div>
@@ -628,7 +625,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_pixelSize</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">scale</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_pixelSize</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
 
                         </div>
                       </div>
@@ -736,7 +733,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">g_appDelegate</span><span class="p">:</span> <span class="kt">UIApplicationDelegate</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">g_appDelegate</span><span class="p">:</span> <span class="kt">UIApplicationDelegate</span> <span class="o">=</span> <span class="n"><a href="Global Variables.html#/s:12APExtensions19g_sharedApplicationSo13UIApplicationCv">g_sharedApplication</a></span><span class="o">.</span><span class="n">delegate</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -895,7 +892,7 @@ This property might be more accurate than <code><a href="Global Variables.html#/
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-23)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-04-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

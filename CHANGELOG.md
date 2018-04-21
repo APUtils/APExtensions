@@ -2,6 +2,30 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.5.1](https://github.com/APUtils/APExtensions/releases/tag/4.5.1)
+Released on 04/21/2018.
+
+#### Added
+- Array .group(_:)
+- Array .remove(_:)
+- ClassName .className property
+- Collection .hasElements
+- Data .init(hex:)
+- isNilOrEmpty for Optional Arrays and Dictionaries
+- String .asUrl
+- UITableView .updateCellSizesKeepingContentOffset()
+- UIView .becomeFirstResponderIfPossible()
+- UIView .isInAnimationClosure
+
+#### Changed
+- UITableView .reloadDataKeepingContentOffset() -> .reloadDataKeepingBottomContentOffset()
+- Utils g_screenSize struct -> g_screenSize size
+
+#### Fixed
+- String .decodedBase64 fix
+- UINavigationController .setViewControllers fix
+
+
 ## [4.5.0](https://github.com/APUtils/APExtensions/releases/tag/4.5.0)
 Released on 02/23/2018.
 

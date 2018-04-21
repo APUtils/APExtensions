@@ -14,7 +14,7 @@
     <a title="Array Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (66% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (67% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -111,6 +111,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Character.html">Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Collection.html">Collection</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Data.html">Data</a>
@@ -358,9 +361,6 @@
                 <a href="../Functions.html#/s:12APExtensions8g_unwrapypSgACF">g_unwrap(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions12isNilOrEmptySbSayxGSglF">isNilOrEmpty(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrintyypSg_Sb11addNewLinesSb08useDebugC0tF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -408,9 +408,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/GeneralError.html">GeneralError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/g_screenSize.html">g_screenSize</a>
               </li>
             </ul>
           </li>
@@ -668,9 +665,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:Sa12APExtensionsE13dictionaryMaps10DictionaryVyxqd__Gqd__SgxclF"></a>
+                    <a name="/s:Sa12APExtensionsE13dictionaryMaps10DictionaryVyxqd__Gqd__SgxKcKlF"></a>
                     <a name="//apple_ref/swift/Method/dictionaryMap(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sa12APExtensionsE13dictionaryMaps10DictionaryVyxqd__Gqd__SgxclF">dictionaryMap(_:)</a>
+                    <a class="token" href="#/s:Sa12APExtensionsE13dictionaryMaps10DictionaryVyxqd__Gqd__SgxKcKlF">dictionaryMap(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -685,7 +682,34 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dictionaryMap</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">T</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dictionaryMap</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">:</span> <span class="kt">T</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa12APExtensionsE5groups10DictionaryVyqd__SayxGGqd__xKcKs8HashableRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/group(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa12APExtensionsE5groups10DictionaryVyqd__SayxGGqd__xKcKs8HashableRd__lF">group(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Groups array elements into dictionary using provided transform to determine element&rsquo;s key.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">group</span><span class="o">&lt;</span><span class="kt">K</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">keyTransform</span><span class="p">:</span> <span class="p">(</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">K</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">K</span><span class="p">:</span> <span class="p">[</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">]]</span></code></pre>
 
                         </div>
                       </div>
@@ -713,6 +737,37 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">move</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">Index</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Index</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa12APExtensionss9EquatableRzlE6removeyxF"></a>
+                    <a name="//apple_ref/swift/Method/remove(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa12APExtensionss9EquatableRzlE6removeyxF">remove(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper methods to remove all objects that are equal to passed one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -755,7 +810,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-23)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-04-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

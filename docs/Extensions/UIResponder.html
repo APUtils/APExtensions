@@ -14,7 +14,7 @@
     <a title="UIResponder Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (66% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (67% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -111,6 +111,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Character.html">Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Collection.html">Collection</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Data.html">Data</a>
@@ -358,9 +361,6 @@
                 <a href="../Functions.html#/s:12APExtensions8g_unwrapypSgACF">g_unwrap(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions12isNilOrEmptySbSayxGSglF">isNilOrEmpty(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrintyypSg_Sb11addNewLinesSb08useDebugC0tF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -409,9 +409,6 @@
               <li class="nav-group-task">
                 <a href="../Structs/GeneralError.html">GeneralError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Structs/g_screenSize.html">g_screenSize</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -438,7 +435,45 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/TODO:%20Become%20first%20responder%20on%20container%20controller%20become%20first%20responder%20(e.g.%20navigation%20or%20tab%20bar%20if%20child%20controller%20is%20main)."></a>
+                <a name="//apple_ref/swift/Section/TODO: Become first responder on container controller become first responder (e.g. navigation or tab bar if child controller is main)." class="dashAnchor"></a>
+                <a href="#/TODO:%20Become%20first%20responder%20on%20container%20controller%20become%20first%20responder%20(e.g.%20navigation%20or%20tab%20bar%20if%20child%20controller%20is%20main).">
+                  <h3 class="section-name">TODO: Become first responder on container controller become first responder (e.g. navigation or tab bar if child controller is main).</h3>
+                </a>
+              </div>
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeMainRespoder"></a>
+                    <a name="//apple_ref/swift/Property/becomeMainRespoder" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@APExtensions@@objc(cs)UIResponder(py)becomeMainRespoder">becomeMainRespoder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells responder to become main responder. It means it&rsquo;ll become first when view has window and will try to restore it&rsquo;s state on willAppear/didAppear.</p>
+
+<p>Quote from Apple doc: <q>Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy.</q></p>
+
+<p>Because configuration usually is made in <code>viewDidLoad</code> or <code>viewWillAppear</code> while <code>view</code> still might have <code>nil</code> <code>window</code> it&rsquo;s useful to delay <code>becomeFirstResponder</code> calls.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">becomeMainRespoder</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -506,7 +541,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-02-23)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2018-04-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

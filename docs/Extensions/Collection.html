@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MFMessageComposeViewController Extension Reference</title>
+    <title>Collection Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/MFMessageComposeViewController" class="dashAnchor"></a>
-    <a title="MFMessageComposeViewController Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/Collection" class="dashAnchor"></a>
+    <a title="Collection Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">APExtensions Docs</a> (67% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">APExtensions Reference</a>
         <img id="carat" src="../img/carat.png" />
-        MFMessageComposeViewController Extension Reference
+        Collection Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -430,10 +430,10 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MFMessageComposeViewController</h1>
+            <h1>Collection</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MFMessageComposeViewController</span> <span class="p">:</span> <span class="kt">UINavigationController</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">Collection</span> <span class="p">:</span> <span class="kt">Sequence</span></code></pre>
 
                 </div>
               </div>
@@ -445,9 +445,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So30MFMessageComposeViewControllerC12APExtensionsE6createABSS5phone_tFZ"></a>
-                    <a name="//apple_ref/swift/Method/create(phone:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So30MFMessageComposeViewControllerC12APExtensionsE6createABSS5phone_tFZ">create(phone:)</a>
+                    <a name="/s:s10CollectionP12APExtensionsE11hasElementsSbv"></a>
+                    <a name="//apple_ref/swift/Property/hasElements" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s10CollectionP12APExtensionsE11hasElementsSbv">hasElements</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -455,45 +455,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates controller and simplifies its dismissal</p>
+                        <p>Checks if collection has elements</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">create</span><span class="p">(</span><span class="nv">phone</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MFMessageComposeViewController</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@APExtensions@@objc(cs)MFMessageComposeViewController(im)messageComposeViewController:didFinishWithResult:"></a>
-                    <a name="//apple_ref/swift/Method/messageComposeViewController(_:didFinishWith:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@APExtensions@@objc(cs)MFMessageComposeViewController(im)messageComposeViewController:didFinishWithResult:">messageComposeViewController(_:didFinishWith:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">messageComposeViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">MFMessageComposeViewController</span><span class="p">,</span> <span class="n">didFinishWith</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">MessageComposeResult</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hasElements</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
