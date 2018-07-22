@@ -35,12 +35,21 @@ public extension Data {
         self = data
     }
     
-    // ******************************* MARK: - Other
+    // ******************************* MARK: - String
     
     /// Try to convert data to UTF8 string
     public var utf8String: String? {
         return String(data: self, encoding: String.Encoding.utf8)
     }
+    
+    /// String representation for data.
+    /// Try to decode as UTF8 string first.
+    /// Uses hex representation if data can not be represented as UTF8 string.
+    public var asString: String {
+        return utf8String ?? hexString
+    }
+    
+    // ******************************* MARK: - Other
     
     /// Try to serialize JSON data
     public var jsonObject: Any? {

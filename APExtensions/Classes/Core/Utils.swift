@@ -121,6 +121,12 @@ public var g_isAppActive: Bool {
     return g_sharedApplication.applicationState == .active
 }
 
+/// Detect if the app is running unit tests.
+/// Note this only detects unit tests, not UI tests.
+public var g_isRunningUnitTests: Bool {
+    return ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
+}
+
 // ******************************* MARK: - Swift Exception Handling
 
 public func g_perform(_ closure: SimpleClosure) -> NSException? {
