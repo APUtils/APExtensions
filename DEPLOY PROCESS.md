@@ -1,4 +1,5 @@
-- Assure `CarthageSupport/APExtensions-example.xcodeproj` and `Example/APExtensions.xcworkspace` projects compile properly
+- Assure `CarthageSupport/APExtensions-example.xcodeproj` and `Example/APExtensions.xcworkspace` have all dependencies added.
+- Run `checkBuild.command`
 - Change version in podspec
 - Update CHANGELOG.md
 - Run `updateDocs.command`

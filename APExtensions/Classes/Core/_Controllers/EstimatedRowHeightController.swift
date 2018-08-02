@@ -13,27 +13,35 @@ import UIKit
 /// when cells height is dynamic on load but constant after that.
 /// - Note: You should assign tableView's `delegate` first and then create
 /// and store `EstimatedRowHeightController`. Everything else is automatic.
-public class EstimatedRowHeightController: NSObject, UITableViewDelegate {
+class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     
     // ******************************* MARK: - Private Properties
     
-    private weak var originalTableViewDelegate: UITableViewDelegate?
-    
+    private let tableView: UITableView
+    private let originalEstimatedRowHeight: CGFloat
+    private let originalTableViewDelegate: UITableViewDelegate?
     private var estimatedHeights: [IndexPath: CGFloat] = [:]
     
     // ******************************* MARK: - Initialization and Setup
     
-    private override init() { super.init() }
+    private override init() { fatalError("Use init(tableView:) instead") }
     
-    public init(tableView: UITableView) {
+    init(tableView: UITableView) {
+        self.tableView = tableView
+        self.originalEstimatedRowHeight = tableView.estimatedRowHeight
         self.originalTableViewDelegate = tableView.delegate
         super.init()
         tableView.delegate = self
     }
     
+    deinit {
+        tableView.delegate = originalTableViewDelegate
+        tableView.estimatedRowHeight = originalEstimatedRowHeight
+    }
+    
     // ******************************* MARK: - NSObject Methods
     
-    override public func responds(to aSelector: Selector!) -> Bool {
+    override func responds(to aSelector: Selector!) -> Bool {
         var responds = super.responds(to: aSelector)
         
         if let originalTableViewDelegate = originalTableViewDelegate {
@@ -43,7 +51,7 @@ public class EstimatedRowHeightController: NSObject, UITableViewDelegate {
         return responds
     }
     
-    override public func forwardingTarget(for aSelector: Selector!) -> Any? {
+    override func forwardingTarget(for aSelector: Selector!) -> Any? {
         if let target = super.forwardingTarget(for: aSelector) {
             return target
         } else if let originalTableViewDelegate = originalTableViewDelegate, originalTableViewDelegate.responds(to: aSelector) {
@@ -55,7 +63,7 @@ public class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     
     // ******************************* MARK: - UITableViewDelegate
     
-    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if let height = originalTableViewDelegate?.tableView?(tableView, estimatedHeightForRowAt: indexPath) {
             return height
         } else {
@@ -63,8 +71,13 @@ public class EstimatedRowHeightController: NSObject, UITableViewDelegate {
         }
     }
     
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         estimatedHeights[indexPath] = cell.bounds.height
         originalTableViewDelegate?.tableView?(tableView, willDisplay: cell, forRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        estimatedHeights[indexPath] = cell.bounds.height
+        originalTableViewDelegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
 }

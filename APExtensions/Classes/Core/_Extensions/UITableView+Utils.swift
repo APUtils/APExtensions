@@ -79,3 +79,34 @@ public extension UITableView {
     }
 }
 
+// ******************************* MARK: - Estimated Size
+
+private var c_estimatedRowHeightControllerAssociationKey = 0
+
+public extension UITableView {
+    private var estimatedRowHeightController: EstimatedRowHeightController? {
+        get {
+            return objc_getAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey) as? EstimatedRowHeightController
+        }
+        set {
+            objc_setAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    /// Store cells' sizes and uses them on recalculation
+    public var handleEstimatedSizeAutomatically: Bool {
+        set {
+            let oldValue = estimatedRowHeightController != nil
+            guard newValue != oldValue else { return }
+            
+            if newValue {
+                estimatedRowHeightController = EstimatedRowHeightController(tableView: self)
+            } else {
+                estimatedRowHeightController = nil
+            }
+        }
+        get {
+            return estimatedRowHeightController != nil
+        }
+    }
+}

@@ -19,8 +19,6 @@ class TableViewVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private var estimatedRowController: EstimatedRowHeightController!
-    
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
@@ -29,8 +27,7 @@ class TableViewVC: UIViewController {
     }
     
     private func setup() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        estimatedRowController = EstimatedRowHeightController(tableView: tableView)
+        tableView.handleEstimatedSizeAutomatically = true
     }
 }
 
