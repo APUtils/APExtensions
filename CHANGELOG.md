@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.5.3](https://github.com/APUtils/APExtensions/releases/tag/4.5.3)
+Released on 08/02/2018.
+
+#### Added
+- Array .random
+- Data .asString
+- Dictionary .compactMapValues(_:)
+- NSObject .doOnce(key:action:)
+- Timer .scheduledMinuteStartTimer(action:)
+- UIApplication .startBackgroundTaskIfNeeded and .stopBackgroundTaskIfNeeded
+- UIScrollView .addRefreshControl(action:)
+- UITableView .handleEstimatedSizeAutomatically
+- UIViewController .wrappedIntoNavigation
+- Utils g_isRunningUnitTests
+
+
 ## [4.5.1](https://github.com/APUtils/APExtensions/releases/tag/4.5.1)
 Released on 04/21/2018.
 
