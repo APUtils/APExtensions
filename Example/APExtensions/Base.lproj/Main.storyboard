@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gdG-sY-tKX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gdG-sY-tKX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,6 +67,43 @@
             </objects>
             <point key="canvasLocation" x="529" y="-671"/>
         </scene>
+        <!--Table ViewVC-->
+        <scene sceneID="jfn-T1-hgh">
+            <objects>
+                <viewController id="Mvv-gg-xPg" customClass="TableViewVC" customModule="APExtensions_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="75L-G6-Qzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="05x-Pt-rdO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y3o-P7-Fwe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-LI-iiL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mvv-gg-xPg" id="5Fj-RB-Gxp"/>
+                                    <outlet property="delegate" destination="Mvv-gg-xPg" id="o0d-cp-9Co"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vgn-LI-iiL" secondAttribute="trailing" id="BoW-U6-7Ux"/>
+                            <constraint firstItem="vgn-LI-iiL" firstAttribute="top" secondItem="75L-G6-Qzg" secondAttribute="bottom" id="Qwn-jp-C4E"/>
+                            <constraint firstItem="05x-Pt-rdO" firstAttribute="top" secondItem="vgn-LI-iiL" secondAttribute="bottom" id="nYk-l9-zdJ"/>
+                            <constraint firstItem="vgn-LI-iiL" firstAttribute="leading" secondItem="Y3o-P7-Fwe" secondAttribute="leading" id="yv8-ef-fYt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vgn-LI-iiL" id="l45-or-zY3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbQ-Au-Ief" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207" y="-1430"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yMd-87-Te3">
             <objects>
@@ -116,7 +153,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bda-ft-FrP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHp-ng-nXD" userLabel="Bars avoid">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -146,8 +183,15 @@
                                                     <segue destination="bjU-9D-mS9" kind="presentation" id="2dg-Zu-mvh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-VV-1Ee">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfR-3P-t1b">
                                                 <rect key="frame" x="0.0" y="120" width="375" height="30"/>
+                                                <state key="normal" title="TableView &gt;"/>
+                                                <connections>
+                                                    <segue destination="Mvv-gg-xPg" kind="show" id="fDd-4Y-sL0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-VV-1Ee">
+                                                <rect key="frame" x="0.0" y="150" width="375" height="30"/>
                                                 <state key="normal" title="Debug"/>
                                                 <connections>
                                                     <action selector="onDebugTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EWm-TB-fVf"/>
@@ -420,6 +464,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XiS-EI-d8l"/>
+        <segue reference="2dg-Zu-mvh"/>
     </inferredMetricsTieBreakers>
 </document>

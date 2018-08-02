@@ -174,7 +174,7 @@ public extension UIView {
     public func showActivityIndicator() {
         showCounter += 1
         
-        var activityIndicator: UIActivityIndicatorView! = subviews.flatMap({ $0 as? UIActivityIndicatorView }).last
+        var activityIndicator: UIActivityIndicatorView! = subviews.compactMap({ $0 as? UIActivityIndicatorView }).last
         if activityIndicator == nil {
             activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
             activityIndicator.color = .lightGray
@@ -201,7 +201,7 @@ public extension UIView {
         }
         
         if showCounter <= 0 {
-            let activityIndicator = subviews.flatMap({ $0 as? UIActivityIndicatorView }).first
+            let activityIndicator = subviews.compactMap({ $0 as? UIActivityIndicatorView }).first
             activityIndicator?.stopAnimating()
             
             showCounter = 0

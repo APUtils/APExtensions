@@ -1,27 +1,32 @@
 PODS:
-  - APExtensions (4.5.2):
-    - APExtensions/Abstractions (= 4.5.2)
-    - APExtensions/Core (= 4.5.2)
-    - APExtensions/Storyboard (= 4.5.2)
-    - APExtensions/ViewConfiguration (= 4.5.2)
-    - APExtensions/ViewState (= 4.5.2)
-  - APExtensions/Abstractions (4.5.2)
-  - APExtensions/Core (4.5.2)
-  - APExtensions/Storyboard (4.5.2)
-  - APExtensions/ViewConfiguration (4.5.2)
-  - APExtensions/ViewState (4.5.2)
+  - APExtensions (4.5.3):
+    - APExtensions/Abstractions (= 4.5.3)
+    - APExtensions/Core (= 4.5.3)
+    - APExtensions/Storyboard (= 4.5.3)
+    - APExtensions/ViewConfiguration (= 4.5.3)
+    - APExtensions/ViewState (= 4.5.3)
+  - APExtensions/Abstractions (4.5.3)
+  - APExtensions/Core (4.5.3)
+  - APExtensions/Storyboard (4.5.3)
+  - APExtensions/ViewConfiguration (4.5.3)
+  - APExtensions/ViewState (4.5.3)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - Nimble (7.0.2)
-  - Nimble-Snapshots (6.2.1):
-    - Nimble-Snapshots/Core (= 6.2.1)
-  - Nimble-Snapshots/Core (6.2.1):
-    - FBSnapshotTestCase (~> 2.0)
+  - iOSSnapshotTestCase (2.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
+  - iOSSnapshotTestCase/Core (2.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (7.1.3)
+  - Nimble-Snapshots (6.4.1):
+    - Nimble-Snapshots/Core (= 6.4.1)
+  - Nimble-Snapshots/Core (6.4.1):
+    - iOSSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
-  - Quick (1.2.0)
+  - Quick (1.3.1)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -33,6 +38,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FBSnapshotTestCase
+    - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
     - Quick
@@ -42,11 +48,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 011602f7b002fac5ee0c50008cc0f991ab79993e
+  APExtensions: c253fd3b8ff91156c991d2ef5e93b5769d075958
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
-  Nimble-Snapshots: 31c8ef7fcebf0e68b4dff83f6e2160813a4a116b
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
+  Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
+  Nimble-Snapshots: 438fb1a6fa3c655e246fc9ac375f6cd2964d759a
+  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
 
 PODFILE CHECKSUM: fb1db13ad45d0c0645fa0184c85f4a3ed1c52995
 
