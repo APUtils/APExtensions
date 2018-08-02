@@ -36,7 +36,7 @@ public extension Dictionary {
     ///   transformed value of the same or of a different type.
     /// - Returns: A dictionary containing the keys and transformed values of
     ///   this dictionary.
-    public func compactMapValues<T>(_ transform: (Dictionary.Value) throws -> T?) rethrows -> [Dictionary.Key : T] {
+    public func compactMapValues<T>(_ transform: (Dictionary.Value) throws -> T?) rethrows -> [Dictionary.Key: T] {
         var resultDictionary = [Dictionary.Key: T]()
         
         for (key, value) in self {

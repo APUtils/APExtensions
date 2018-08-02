@@ -430,25 +430,27 @@ public func g_hideNetworkActivity() {
 
 // ******************************* MARK: - Swizzle
 
+/// Swizzles meta class methods
 public func g_swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard class_isMetaClass(`class`) else { return }
     
     let originalMethod = class_getClassMethod(`class`, originalSelector)!
     let swizzledMethod = class_getClassMethod(`class`, swizzledSelector)!
     
-    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+    f_swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
 }
 
+/// Swizzles class methods
 public func g_swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard !class_isMetaClass(`class`) else { return }
     
     let originalMethod = class_getInstanceMethod(`class`, originalSelector)!
     let swizzledMethod = class_getInstanceMethod(`class`, swizzledSelector)!
     
-    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+    f_swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
 }
 
-private func swizzleMethods(class: AnyClass, originalSelector: Selector, originalMethod: Method, swizzledSelector: Selector, swizzledMethod: Method) {
+private func f_swizzleMethods(class: AnyClass, originalSelector: Selector, originalMethod: Method, swizzledSelector: Selector, swizzledMethod: Method) {
     let didAddMethod = class_addMethod(`class`, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
     
     if didAddMethod {
@@ -467,7 +469,7 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
 ///     // or
 ///     let setupOnes = g_getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
 public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
-    return APExtensionsLoader.getClassesConform(to: `protocol`).flatMap({ $0 as? T })
+    return APExtensionsLoader.getClassesConform(to: `protocol`).compactMap({ $0 as? T })
 }
 
 /// Returns all child classes for specified class. Not recursively.
@@ -475,7 +477,7 @@ public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
 ///
 ///     let childClasses = g_getChildrenClasses(UIViewController.self)
 public func g_getChildrenClasses<T: AnyObject>(of `class`: T.Type) -> [T.Type] {
-    return APExtensionsLoader.getChildClasses(for: `class`).flatMap({ $0 as? T.Type })
+    return APExtensionsLoader.getChildClasses(for: `class`).compactMap({ $0 as? T.Type })
 }
 
 /// Returns string prepresentation of object's pointer
