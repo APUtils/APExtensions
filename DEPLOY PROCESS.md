@@ -2,6 +2,7 @@
 - Run `checkBuild.command`
 - Change version in podspec
 - Update CHANGELOG.md
+- Update README.md with new version
 - Run `updateDocs.command`
 - Push changes in git
 - Add git tag
