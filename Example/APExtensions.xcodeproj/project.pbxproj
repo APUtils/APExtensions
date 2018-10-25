@@ -27,6 +27,7 @@
 		B0A073CE1F3B79EE001B8CC6 /* UITextView.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073CD1F3B79EE001B8CC6 /* UITextView.png */; };
 		B0A073D01F3B7A3F001B8CC6 /* UIViewController.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */; };
 		B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */; };
+		B0E5B42C2113812C005D8319 /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B42B2113812C005D8319 /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,9 @@
 		B0A073CD1F3B79EE001B8CC6 /* UITextView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITextView.png; sourceTree = "<group>"; };
 		B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIViewController.png; sourceTree = "<group>"; };
 		B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToBottomViewController.swift; sourceTree = "<group>"; };
+		B0E5B42721137EBE005D8319 /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = podUpdate.command; sourceTree = "<group>"; };
+		B0E5B42B2113812C005D8319 /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
+		B0E5B43621138735005D8319 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		B7A07FA220F82B576CEC7EF3 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
 		BE3B1BF1D9E4EDA304E77323 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				B0032227200374C50020E171 /* _RemoveToTheRoot */,
 				B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */,
 				607FACD31AFB9204008FA782 /* _Supporting Files */,
+				B0E5B42A21138115005D8319 /* _TableView */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -196,11 +201,13 @@
 				E60E577FA62486502305A0F4 /* .travis.yml */,
 				32419D24EFD29E6FBBA7030A /* APExtensions.podspec */,
 				A57474C800BA2A652ED8F4FB /* CHANGELOG.md */,
+				B0E5B43621138735005D8319 /* checkBuild.command */,
 				B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */,
 				BE3B1BF1D9E4EDA304E77323 /* LICENSE */,
 				B7A07FA220F82B576CEC7EF3 /* podCheck.command */,
 				B02A385B1F3332E6002E29F0 /* podInstall.command */,
 				E53E65A9720A8DB4BF881A05 /* podPush.command */,
+				B0E5B42721137EBE005D8319 /* podUpdate.command */,
 				C1980566B39F5799ED4A250D /* README.md */,
 				B004134E202E0EA400B58E18 /* updateDocs.command */,
 			);
@@ -253,6 +260,14 @@
 			name = _ScrollToBottom;
 			sourceTree = "<group>";
 		};
+		B0E5B42A21138115005D8319 /* _TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0E5B42B2113812C005D8319 /* TableViewVC.swift */,
+			);
+			name = _TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,7 +280,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				121A3C007763F753CBBC9531 /* [CP] Embed Pods Frameworks */,
-				6C05ED612B33F28685E309A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,7 +299,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				E369D21277B8CEE3638152A4 /* [CP] Embed Pods Frameworks */,
-				3A548E590044270BE02D7A0E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,18 +317,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = XVJ8T9UW9V;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = XVJ8T9UW9V;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -386,36 +399,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A548E590044270BE02D7A0E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C05ED612B33F28685E309A6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		938C817D4AF348474CA45FCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,6 +446,7 @@
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -488,6 +472,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B099C487203EDD53000C01CB /* BecomeFirstResponderViewController.swift in Sources */,
 				B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */,
+				B0E5B42C2113812C005D8319 /* TableViewVC.swift in Sources */,
 				B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,12 +527,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -597,12 +584,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -645,8 +634,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -663,8 +651,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -683,8 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APExtensions_Example.app/APExtensions_Example";
 			};
 			name = Debug;
@@ -699,8 +685,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APExtensions_Example.app/APExtensions_Example";
 			};
 			name = Release;

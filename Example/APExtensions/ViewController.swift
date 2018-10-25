@@ -23,6 +23,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        doOnce(key: "viewDidLoad") {
+//            print("asd")
+//        }
+//        doOnce(key: "viewDidLoad") {
+//            print("asd")
+//        }
+        
+//        scrollView.addRefreshControl { control in
+//            g_asyncMain(1) {
+//                control.endRefreshing()
+//            }
+//        }
+        
 //        print([1,2,3,4,5,6,7,8,9].splittedArray(splitSize: 2))
         
 //        view.showActivityIndicator()

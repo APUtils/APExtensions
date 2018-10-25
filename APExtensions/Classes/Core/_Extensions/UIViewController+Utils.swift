@@ -93,17 +93,17 @@ public extension UIViewController {
     
     /// Returns true if controller curently is pushing or presenting.
     public var isBeingAdded: Bool {
-        return isMovingToParentViewController
+        return isMovingToParent
             || isBeingPresented
-            || (navigationController?.isMovingToParentViewController ?? false)
+            || (navigationController?.isMovingToParent ?? false)
             || (navigationController?.isBeingPresented ?? false)
     }
     
     /// Returns true if controller curently is poping or dismissing.
     public var isBeingRemoved: Bool {
-        return isMovingFromParentViewController
+        return isMovingFromParent
             || isBeingDismissed
-            || (navigationController?.isMovingFromParentViewController ?? false)
+            || (navigationController?.isMovingFromParent ?? false)
             || (navigationController?.isBeingDismissed ?? false)
     }
     
@@ -227,11 +227,16 @@ public extension UIViewController {
     }
 }
 
-// ******************************* MARK: - Editing
+// ******************************* MARK: - Other
 
-public extension UIViewController {
+extension UIViewController {
+    /// Returns navigation controller with self as root.
+    public var wrappedIntoNavigation: UINavigationController {
+        return UINavigationController(rootViewController: self)
+    }
+    
     /// End editing in viewController's view
-    @IBAction func endEditing(_ sender: Any) {
+    @IBAction public func endEditing(_ sender: Any) {
         view.endEditing(true)
     }
 }
