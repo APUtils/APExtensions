@@ -18,13 +18,26 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
-Cartfile:
+Cartfile for unified framework:
 
 ```
-github "APUtils/APExtensions" ~> 4.4
+github "APUtils/APExtensions" ~> 5.0
 ```
 
-If you want to add everything just attach `APExtensions.framework`, and if you need some specific part attach `APExtensionsAbstractions.framework`, `APExtensionsCore.framework`, `APExtensionsStoryboard.framework`, `APExtensionsViewConfiguration.framework` or `APExtensionsViewState.framework`.
+Cartfile for separate frameworks:
+
+```
+github "APUtils/APExtensions" "abstractions"
+github "APUtils/APExtensions" "core"
+github "APUtils/APExtensions" "storyboard"
+github "APUtils/APExtensions" "view-configuration"
+github "APUtils/APExtensions" "view-state"
+```
+
+Cartfile for specific commit:
+```
+github "APUtils/APExtensions" "a01cbc24474822d9b64e70372910f404d6b944a1"
+```
 
 #### CocoaPods
 
@@ -32,17 +45,17 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 4.4'
+pod 'APExtensions', '~> 5.0'
 ```
 
 Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`, `ViewState`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Abstractions', '~> 4.4'
-pod 'APExtensions/Core', '~> 4.4'
-pod 'APExtensions/Storyboard', '~> 4.4'
-pod 'APExtensions/ViewConfiguration', '~> 4.4'
-pod 'APExtensions/ViewState', '~> 4.4'
+pod 'APExtensions/Abstractions', '~> 5.0'
+pod 'APExtensions/Core', '~> 5.0'
+pod 'APExtensions/Storyboard', '~> 5.0'
+pod 'APExtensions/ViewConfiguration', '~> 5.0'
+pod 'APExtensions/ViewState', '~> 5.0'
 ```
 
 ## Usage

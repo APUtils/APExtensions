@@ -57,11 +57,61 @@ public extension UITableView {
 
 public extension UITableView {
     /// Assures content offeset won't change after reload
+    @available(*, renamed: "reloadDataKeepingBottomContentOffset")
     public func reloadDataKeepingContentOffset() {
+        reloadDataKeepingBottomContentOffset()
+    }
+    
+    /// Assures bottom content offeset won't change after reload
+    public func reloadDataKeepingBottomContentOffset() {
         let bottomOffset = contentSize.height - (contentOffset.y + bounds.height)
         reloadData()
         layoutIfNeeded()
         contentOffset.y = contentSize.height - (bottomOffset + bounds.height)
     }
+    
+    /// Assures content offeset won't change after updating cells size
+    public func updateCellSizesKeepingContentOffset() {
+        let bottomOffset = contentOffset.y
+        beginUpdates()
+        endUpdates()
+        contentOffset.y = bottomOffset
+    }
 }
 
+// ******************************* MARK: - Estimated Size
+
+private var c_estimatedRowHeightControllerAssociationKey = 0
+
+public extension UITableView {
+    private var estimatedRowHeightController: EstimatedRowHeightController? {
+        get {
+            return objc_getAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey) as? EstimatedRowHeightController
+        }
+        set {
+            objc_setAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private var _handleEstimatedSizeAutomatically: Bool {
+        return estimatedRowHeightController != nil && delegate === estimatedRowHeightController
+    }
+    
+    /// Store cells' sizes and uses them on recalculation.
+    /// Replaces and proxies tableView's `delegate` property
+    /// so be sure to assing this property when tableView's `delegate` is set.
+    public var handleEstimatedSizeAutomatically: Bool {
+        set {
+            guard newValue != _handleEstimatedSizeAutomatically else { return }
+            
+            if newValue {
+                estimatedRowHeightController = EstimatedRowHeightController(tableView: self)
+            } else {
+                estimatedRowHeightController = nil
+            }
+        }
+        get {
+            return _handleEstimatedSizeAutomatically
+        }
+    }
+}

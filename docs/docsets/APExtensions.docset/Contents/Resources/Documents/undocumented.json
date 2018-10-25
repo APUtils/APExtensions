@@ -1,6 +1,34 @@
 {
   "warnings": [
     {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Abstractions/DelayedValue.swift",
+      "line": 18,
+      "symbol": "DelayedValue.GetValue",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Abstractions/DelayedValue.swift",
+      "line": 18,
+      "symbol": "DelayedValue.GetValue",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Abstractions/DelayedValue.swift",
+      "line": 19,
+      "symbol": "DelayedValue.UseValue",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Abstractions/DelayedValue.swift",
+      "line": 19,
+      "symbol": "DelayedValue.UseValue",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Debug.swift",
       "line": 21,
       "symbol": "Log(_:_:_:_:showDelimiter:)",
@@ -44,140 +72,91 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 34,
-      "symbol": "g_screenSize.width",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 34,
-      "symbol": "g_screenSize.width",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 35,
-      "symbol": "g_screenSize.height",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 35,
-      "symbol": "g_screenSize.height",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 36,
-      "symbol": "g_screenSize.maxSide",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 36,
-      "symbol": "g_screenSize.maxSide",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 37,
-      "symbol": "g_screenSize.minSide",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 37,
-      "symbol": "g_screenSize.minSide",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 125,
+      "line": 132,
       "symbol": "g_perform(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 125,
+      "line": 132,
       "symbol": "g_perform(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 202,
+      "line": 209,
       "symbol": "g_animate(animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 202,
+      "line": 209,
       "symbol": "g_animate(animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 206,
+      "line": 213,
       "symbol": "g_animate(_:animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 206,
+      "line": 213,
       "symbol": "g_animate(_:animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 210,
+      "line": 217,
       "symbol": "g_animate(_:options:animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 210,
+      "line": 217,
       "symbol": "g_animate(_:options:animations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 214,
+      "line": 221,
       "symbol": "g_animate(_:delay:options:animations:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 214,
+      "line": 221,
       "symbol": "g_animate(_:delay:options:animations:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 409,
-      "symbol": "g_showNetworkActivity()",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "line": 358,
+      "symbol": "EmailAttachment",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 409,
+      "line": 358,
+      "symbol": "EmailAttachment",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
+      "line": 416,
       "symbol": "g_showNetworkActivity()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
@@ -185,69 +164,34 @@
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
       "line": 416,
+      "symbol": "g_showNetworkActivity()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
+      "line": 423,
       "symbol": "g_hideNetworkActivity()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 416,
+      "line": 423,
       "symbol": "g_hideNetworkActivity()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 426,
-      "symbol": "g_swizzleClassMethods(class:originalSelector:swizzledSelector:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 426,
-      "symbol": "g_swizzleClassMethods(class:originalSelector:swizzledSelector:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 435,
-      "symbol": "g_swizzleMethods(class:originalSelector:swizzledSelector:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 435,
-      "symbol": "g_swizzleMethods(class:originalSelector:swizzledSelector:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 474,
-      "symbol": "g_getPointer(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 474,
-      "symbol": "g_getPointer(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 478,
+      "line": 488,
       "symbol": "g_Translate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/Utils.swift",
-      "line": 478,
+      "line": 488,
       "symbol": "g_Translate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
@@ -379,15 +323,85 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 28,
+      "symbol": "EstimatedRowHeightController.init(tableView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 28,
+      "symbol": "EstimatedRowHeightController.init(tableView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 36,
+      "symbol": "EstimatedRowHeightController.responds(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 36,
+      "symbol": "EstimatedRowHeightController.responds(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 46,
+      "symbol": "EstimatedRowHeightController.forwardingTarget(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 46,
+      "symbol": "EstimatedRowHeightController.forwardingTarget(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 58,
+      "symbol": "EstimatedRowHeightController.tableView(_:estimatedHeightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 58,
+      "symbol": "EstimatedRowHeightController.tableView(_:estimatedHeightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 66,
+      "symbol": "EstimatedRowHeightController.tableView(_:willDisplay:forRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Controllers/EstimatedRowHeightController.swift",
+      "line": 66,
+      "symbol": "EstimatedRowHeightController.tableView(_:willDisplay:forRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Array+Utils.swift",
-      "line": 96,
+      "line": 118,
       "symbol": "Array.move(from:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Array+Utils.swift",
-      "line": 96,
+      "line": 118,
       "symbol": "Array.move(from:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -450,210 +464,210 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 35,
+      "line": 55,
       "symbol": "Dictionary.int(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 35,
+      "line": 55,
       "symbol": "Dictionary.int(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 49,
+      "line": 69,
       "symbol": "Dictionary.double(forKey:defaultValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 49,
+      "line": 69,
       "symbol": "Dictionary.double(forKey:defaultValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 53,
+      "line": 73,
       "symbol": "Dictionary.double(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 53,
+      "line": 73,
       "symbol": "Dictionary.double(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 67,
+      "line": 87,
       "symbol": "Dictionary.bool(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 67,
+      "line": 87,
       "symbol": "Dictionary.bool(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 83,
+      "line": 103,
       "symbol": "Dictionary.string(forKey:defaultValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 83,
+      "line": 103,
       "symbol": "Dictionary.string(forKey:defaultValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 87,
+      "line": 107,
       "symbol": "Dictionary.string(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 87,
+      "line": 107,
       "symbol": "Dictionary.string(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 101,
+      "line": 121,
       "symbol": "Dictionary.date(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 101,
+      "line": 121,
       "symbol": "Dictionary.date(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 111,
+      "line": 131,
       "symbol": "Dictionary.url(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 111,
+      "line": 131,
       "symbol": "Dictionary.url(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 121,
+      "line": 141,
       "symbol": "Dictionary.data(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 121,
+      "line": 141,
       "symbol": "Dictionary.data(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 129,
+      "line": 149,
       "symbol": "Dictionary.dictionary(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 129,
+      "line": 149,
       "symbol": "Dictionary.dictionary(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 145,
+      "line": 165,
       "symbol": "Dictionary.arrayOfInts(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 145,
+      "line": 165,
       "symbol": "Dictionary.arrayOfInts(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 149,
+      "line": 169,
       "symbol": "Dictionary.arrayOfDoubles(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 149,
+      "line": 169,
       "symbol": "Dictionary.arrayOfDoubles(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 153,
+      "line": 173,
       "symbol": "Dictionary.arrayOfBools(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 153,
+      "line": 173,
       "symbol": "Dictionary.arrayOfBools(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 157,
+      "line": 177,
       "symbol": "Dictionary.arrayOfStrings(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 157,
+      "line": 177,
       "symbol": "Dictionary.arrayOfStrings(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 161,
+      "line": 181,
       "symbol": "Dictionary.arrayOfDictionaries(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Dictionary+Utils.swift",
-      "line": 161,
+      "line": 181,
       "symbol": "Dictionary.arrayOfDictionaries(forKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -785,9 +799,16 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/NotificationCenter+Utils.swift",
-      "line": 39,
-      "symbol": "NotificationCenter.stopDayNotifications()",
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/NSObject+Utils.swift",
+      "line": 25,
+      "symbol": "NSObject.doOnce(key:action:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/NSObject+Utils.swift",
+      "line": 25,
+      "symbol": "NSObject.doOnce(key:action:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -799,29 +820,36 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/NotificationCenter+Utils.swift",
+      "line": 39,
+      "symbol": "NotificationCenter.stopDayNotifications()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Optional+Utils.swift",
-      "line": 62,
+      "line": 51,
       "symbol": "==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Optional+Utils.swift",
-      "line": 62,
+      "line": 51,
       "symbol": "==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Optional+Utils.swift",
-      "line": 70,
+      "line": 59,
       "symbol": "!=(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Optional+Utils.swift",
-      "line": 70,
+      "line": 59,
       "symbol": "!=(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
@@ -842,112 +870,154 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 30,
+      "line": 24,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 24,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 29,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 29,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 34,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 34,
+      "symbol": "String.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 40,
       "symbol": "String.first",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 30,
+      "line": 40,
       "symbol": "String.first",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 75,
+      "line": 93,
       "symbol": "String.appendNewLine()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 75,
+      "line": 93,
       "symbol": "String.appendNewLine()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 79,
+      "line": 97,
       "symbol": "String.append(valueName:value:separator:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 79,
+      "line": 97,
       "symbol": "String.append(valueName:value:separator:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 101,
+      "line": 119,
       "symbol": "String.appendWithNewLine(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 101,
+      "line": 119,
       "symbol": "String.appendWithNewLine(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 105,
-      "symbol": "String.appendWithSpace(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 105,
-      "symbol": "String.appendWithSpace(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 109,
-      "symbol": "String.appendWithComma(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 109,
-      "symbol": "String.appendWithComma(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 113,
-      "symbol": "String.append(string:separator:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 113,
-      "symbol": "String.append(string:separator:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
       "line": 123,
+      "symbol": "String.appendWithSpace(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 123,
+      "symbol": "String.appendWithSpace(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 127,
+      "symbol": "String.appendWithComma(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 127,
+      "symbol": "String.appendWithComma(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 131,
+      "symbol": "String.append(string:separator:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 131,
+      "symbol": "String.append(string:separator:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
+      "line": 141,
       "symbol": "String.wrap(class:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/String+Utils.swift",
-      "line": 123,
+      "line": 141,
       "symbol": "String.wrap(class:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -996,28 +1066,21 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
-      "line": 73,
+      "line": 103,
       "symbol": "UIScrollView.scrollToBottom(animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
-      "line": 73,
+      "line": 103,
       "symbol": "UIScrollView.scrollToBottom(animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 48,
-      "symbol": "UIView.fadeInAnimated()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 48,
+      "line": 54,
       "symbol": "UIView.fadeInAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1025,42 +1088,49 @@
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
       "line": 54,
+      "symbol": "UIView.fadeInAnimated()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
+      "line": 60,
       "symbol": "UIView.fadeOutAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 54,
+      "line": 60,
       "symbol": "UIView.fadeOutAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/ClassName.swift",
-      "line": 18,
+      "line": 21,
       "symbol": "ClassName.className",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/ClassName.swift",
-      "line": 18,
+      "line": 21,
       "symbol": "ClassName.className",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/Describable.swift",
-      "line": 15,
-      "symbol": "Describable.description",
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/ClassName.swift",
+      "line": 25,
+      "symbol": "ClassName.className",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/Describable.swift",
-      "line": 15,
-      "symbol": "Describable.description",
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/Core/_Protocols/ClassName.swift",
+      "line": 25,
+      "symbol": "ClassName.className",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -1780,98 +1850,126 @@
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 95,
-      "symbol": "UIViewController.ViewState",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "line": 115,
+      "symbol": "ViewControllerExtendedStates.viewDidAttach()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 95,
-      "symbol": "UIViewController.ViewState",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "line": 115,
+      "symbol": "ViewControllerExtendedStates.viewDidAttach()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 96,
+      "line": 116,
+      "symbol": "ViewControllerExtendedStates.viewStateDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 116,
+      "symbol": "ViewControllerExtendedStates.viewStateDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 124,
       "symbol": "UIViewController.ViewState.notLoaded",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 96,
+      "line": 124,
       "symbol": "UIViewController.ViewState.notLoaded",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 97,
+      "line": 125,
       "symbol": "UIViewController.ViewState.didLoad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 97,
+      "line": 125,
       "symbol": "UIViewController.ViewState.didLoad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 98,
+      "line": 126,
       "symbol": "UIViewController.ViewState.willAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 98,
+      "line": 126,
       "symbol": "UIViewController.ViewState.willAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 99,
+      "line": 127,
+      "symbol": "UIViewController.ViewState.didAttach",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 127,
+      "symbol": "UIViewController.ViewState.didAttach",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
+      "line": 128,
       "symbol": "UIViewController.ViewState.didAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 99,
+      "line": 128,
       "symbol": "UIViewController.ViewState.didAppear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 100,
+      "line": 129,
       "symbol": "UIViewController.ViewState.willDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 100,
+      "line": 129,
       "symbol": "UIViewController.ViewState.willDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 101,
+      "line": 130,
       "symbol": "UIViewController.ViewState.didDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/mac-246/Documents/Projects Pods/APExtensions/APExtensions/Classes/ViewState/UIViewController+ViewState.swift",
-      "line": 101,
+      "line": 130,
       "symbol": "UIViewController.ViewState.didDisappear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"

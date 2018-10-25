@@ -86,9 +86,25 @@ public extension UIViewController {
         return nil
     }
     
-    /// Returns true if controller curently is poping or dismissing
+    /// Returns true if controller curently is pushing, presenting, poping or dismissing.
+    public var isBeingTransitioned: Bool {
+        return isBeingAdded || isBeingRemoved
+    }
+    
+    /// Returns true if controller curently is pushing or presenting.
+    public var isBeingAdded: Bool {
+        return isMovingToParent
+            || isBeingPresented
+            || (navigationController?.isMovingToParent ?? false)
+            || (navigationController?.isBeingPresented ?? false)
+    }
+    
+    /// Returns true if controller curently is poping or dismissing.
     public var isBeingRemoved: Bool {
-        return isMovingFromParentViewController || isBeingDismissed || (navigationController?.isBeingDismissed ?? false)
+        return isMovingFromParent
+            || isBeingDismissed
+            || (navigationController?.isMovingFromParent ?? false)
+            || (navigationController?.isBeingDismissed ?? false)
     }
     
     /// Presents view controller animated
@@ -104,11 +120,6 @@ public extension UIViewController {
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     /// Removes also overlaying controllers if needed.
     public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
-        // Dismiss keyboard
-        if isViewLoaded {
-            view.endEditing(true)
-        }
-        
         if let navigationController = navigationController {
             // Has navigation controller
             if navigationController.presentedViewController != nil {
@@ -167,6 +178,11 @@ public extension UIViewController {
             // Unknown container or root. Can not do anything.
             completion?()
         }
+        
+        // Dismiss keyboard last so transition state can be detected and animations can be adjusted if needed
+        if isViewLoaded {
+            view.endEditing(true)
+        }
     }
     
     /// Removes all presented view controllers and navigates to the root.
@@ -211,11 +227,16 @@ public extension UIViewController {
     }
 }
 
-// ******************************* MARK: - Editing
+// ******************************* MARK: - Other
 
-public extension UIViewController {
+extension UIViewController {
+    /// Returns navigation controller with self as root.
+    public var wrappedIntoNavigation: UINavigationController {
+        return UINavigationController(rootViewController: self)
+    }
+    
     /// End editing in viewController's view
-    @IBAction func endEditing(_ sender: Any) {
+    @IBAction public func endEditing(_ sender: Any) {
         view.endEditing(true)
     }
 }

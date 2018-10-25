@@ -9,9 +9,9 @@
 import UIKit
 
 
-extension NSMutableAttributedString {
-    /// Sets font for first occurence of text. If text is nil sets font for entire string.
-    func set(font: UIFont, for text: String? = nil) {
+public extension NSMutableAttributedString {
+    /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.
+    public func set(font: UIFont, for text: String? = nil) {
         let range: NSRange
         if let text = text {
             range = mutableString.range(of: text)
@@ -24,24 +24,39 @@ extension NSMutableAttributedString {
         addAttribute(.font, value: font, range: range)
     }
     
-    /// Sets line spacing
-    func set(lineSpacing: CGFloat) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = lineSpacing
+    /// Sets aligment for the first occurence of text. If text is `nil` sets aligment for entire string.
+    public func set(font: UIFont? = nil,
+             aligment: NSTextAlignment? = nil,
+             headIndent: CGFloat? = nil,
+             lineSpacing: CGFloat? = nil,
+             lineHeightMultiple: CGFloat? = nil,
+             for text: String? = nil) {
         
-        addAttribute(.paragraphStyle, value: paragraphStyle, range: fullRange)
-    }
-    
-    /// Sets line height multiple
-    func set(lineHeightMultiple: CGFloat) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = lineHeightMultiple
+        let range: NSRange
+        if let text = text {
+            range = mutableString.range(of: text)
+        } else {
+            range = fullRange
+        }
         
-        addAttribute(.paragraphStyle, value: paragraphStyle, range: fullRange)
+        guard range.location != NSNotFound else { return }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        if let aligment = aligment { paragraphStyle.alignment = aligment }
+        if let headIndent = headIndent { paragraphStyle.headIndent = headIndent }
+        if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
+        if let lineHeightMultiple = lineHeightMultiple { paragraphStyle.lineHeightMultiple = lineHeightMultiple }
+        
+        addAttribute(.paragraphStyle, value: paragraphStyle, range: range)
     }
     
     /// Set text kern
-    func set(kern: CGFloat) {
+    public func set(kern: CGFloat) {
         addAttribute(.kern, value: kern, range: fullRange)
+    }
+    
+    /// Makes text underlined
+    public func setUnderline() {
+        addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: fullRange)
     }
 }

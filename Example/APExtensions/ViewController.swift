@@ -12,12 +12,29 @@ import APExtensions
 
 class ViewController: UIViewController {
     
+    // ******************************* MARK: - @IBOutlets
+    
     @IBOutlet private weak var scrollView: UIScrollView!
+    
+    // ******************************* MARK: - Private Properties
 
     // ******************************* MARK: - UIViewController Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        doOnce(key: "viewDidLoad") {
+//            print("asd")
+//        }
+//        doOnce(key: "viewDidLoad") {
+//            print("asd")
+//        }
+        
+//        scrollView.addRefreshControl { control in
+//            g_asyncMain(1) {
+//                control.endRefreshing()
+//            }
+//        }
         
 //        print([1,2,3,4,5,6,7,8,9].splittedArray(splitSize: 2))
         
@@ -42,18 +59,6 @@ class ViewController: UIViewController {
 //        _ = g_perform {
 //            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
 //        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {

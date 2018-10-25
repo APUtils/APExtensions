@@ -32,13 +32,13 @@ public extension NotificationCenter {
             startTimer()
         }
         
-        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
-        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onWillResignActive(_:)), name: .UIApplicationWillResignActive, object: nil)
+        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     public func stopDayNotifications() {
-        g_sharedNotificationCenter.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
-        g_sharedNotificationCenter.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
+        g_sharedNotificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        g_sharedNotificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
         
         stopTimer()
         
@@ -52,7 +52,7 @@ public extension NotificationCenter {
             guard let fireDate = fireDate else { return }
             
             dayTimer = Timer(fireAt: fireDate, interval: 0, target: self, selector: #selector(self.onTimer(_:)), userInfo: nil, repeats: false)
-            RunLoop.main.add(dayTimer!, forMode: .defaultRunLoopMode)
+            RunLoop.main.add(dayTimer!, forMode: .default)
         }
     }
     
