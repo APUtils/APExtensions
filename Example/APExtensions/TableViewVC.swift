@@ -28,6 +28,9 @@ class TableViewVC: UIViewController {
     
     private func setup() {
         tableView.handleEstimatedSizeAutomatically = true
+        tableView.handleEstimatedSizeAutomatically = true
+        tableView.handleEstimatedSizeAutomatically = false
+        tableView.handleEstimatedSizeAutomatically = false
     }
 }
 

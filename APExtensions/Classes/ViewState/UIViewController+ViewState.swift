@@ -51,7 +51,7 @@ private extension UIViewController {
     @objc private static var setupOnce: Int {
         struct Private {
             static var setupOnce: Int = {
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParentViewController:)), swizzledSelector: #selector(swizzled_willMove(toParentViewController:)))
+                swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParent:)), swizzledSelector: #selector(swizzled_willMove(toParent:)))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
                 swizzleMethods(class: UIViewController.self, originalSelector: #selector(becomeFirstResponder), swizzledSelector: #selector(swizzled_becomeFirstResponder))
@@ -146,7 +146,7 @@ extension UIViewController {
         }
     }
     
-    @objc private func swizzled_willMove(toParentViewController parent: UIViewController?) {
+    @objc private func swizzled_willMove(toParent parent: UIViewController?) {
         var userInfo: [String: Any] = [:]
         userInfo["viewState"] = viewState
         userInfo["parent"] = parent
@@ -154,7 +154,7 @@ extension UIViewController {
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
         (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
-        swizzled_willMove(toParentViewController: parent)
+        swizzled_willMove(toParent: parent)
     }
     
     @objc private func swizzled_viewDidLoad() {

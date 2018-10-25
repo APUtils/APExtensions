@@ -93,11 +93,16 @@ public extension UITableView {
         }
     }
     
-    /// Store cells' sizes and uses them on recalculation
+    private var _handleEstimatedSizeAutomatically: Bool {
+        return estimatedRowHeightController != nil && delegate === estimatedRowHeightController
+    }
+    
+    /// Store cells' sizes and uses them on recalculation.
+    /// Replaces and proxies tableView's `delegate` property
+    /// so be sure to assing this property when tableView's `delegate` is set.
     public var handleEstimatedSizeAutomatically: Bool {
         set {
-            let oldValue = estimatedRowHeightController != nil
-            guard newValue != oldValue else { return }
+            guard newValue != _handleEstimatedSizeAutomatically else { return }
             
             if newValue {
                 estimatedRowHeightController = EstimatedRowHeightController(tableView: self)
@@ -106,7 +111,7 @@ public extension UITableView {
             }
         }
         get {
-            return estimatedRowHeightController != nil
+            return _handleEstimatedSizeAutomatically
         }
     }
 }

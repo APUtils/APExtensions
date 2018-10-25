@@ -197,7 +197,7 @@ public func g_topViewController(base: UIViewController? = nil, shouldCheckPresen
 /// This property might be more accurate than `g_topViewController` if custom container view controllers configured properly to return their top most controllers for status bar appearance.
 public var g_statusBarStyleTopViewController: UIViewController? {
     var currentVc = g_topViewController
-    while let newTopVc = currentVc?.childViewControllerForStatusBarStyle {
+    while let newTopVc = currentVc?.childForStatusBarStyle {
         currentVc = g_topViewController(base: newTopVc)
     }
     
@@ -214,11 +214,11 @@ public func g_animate(_ duration: TimeInterval, animations: @escaping SimpleClos
     g_animate(duration, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: TimeInterval, options: UIViewAnimationOptions, animations: @escaping SimpleClosure) {
+public func g_animate(_ duration: TimeInterval, options: UIView.AnimationOptions, animations: @escaping SimpleClosure) {
     g_animate(duration, options: options, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIViewAnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
+public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
     UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
 }
 
@@ -288,7 +288,7 @@ public func g_synchronized(_ lock: Any, closure: () throws -> Void) rethrows {
 /// - parameter style: Action button style. Default is `.cancel`.
 /// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
 /// - parameter handler: Action button click closure. Default is `nil` - no action.
-public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertAction.Style = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
     if let cancelTitle = cancelTitle {
@@ -328,7 +328,7 @@ public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, t
 /// - parameter buttonsStyles: Button styles
 /// - parameter enabledButtons: Enabled buttons
 /// - parameter completion: Closure that takes button title and button index as its parameters
-public func g_showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertActionStyle]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
+public func g_showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertAction.Style]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
     if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
     if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
     
@@ -433,6 +433,8 @@ public func g_hideNetworkActivity() {
 /// Swizzles meta class methods
 public func g_swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard class_isMetaClass(`class`) else { return }
+    guard class_respondsToSelector(`class`, originalSelector) else { return }
+    guard class_respondsToSelector(`class`, swizzledSelector) else { return }
     
     let originalMethod = class_getClassMethod(`class`, originalSelector)!
     let swizzledMethod = class_getClassMethod(`class`, swizzledSelector)!
@@ -443,6 +445,8 @@ public func g_swizzleClassMethods(class: AnyClass, originalSelector: Selector, s
 /// Swizzles class methods
 public func g_swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard !class_isMetaClass(`class`) else { return }
+    guard class_respondsToSelector(`class`, originalSelector) else { return }
+    guard class_respondsToSelector(`class`, swizzledSelector) else { return }
     
     let originalMethod = class_getInstanceMethod(`class`, originalSelector)!
     let swizzledMethod = class_getInstanceMethod(`class`, swizzledSelector)!
@@ -491,8 +495,6 @@ public func g_Translate(_ string: String) -> String {
 
 /// Opens iOS Settings page for current application
 public func g_openAppSettings() {
-    guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
-    guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString + bundleIdentifier) else { return }
-    
+    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
     UIApplication.shared.openURL(settingsURL)
 }

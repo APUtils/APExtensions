@@ -93,17 +93,17 @@ public extension UIViewController {
     
     /// Returns true if controller curently is pushing or presenting.
     public var isBeingAdded: Bool {
-        return isMovingToParentViewController
+        return isMovingToParent
             || isBeingPresented
-            || (navigationController?.isMovingToParentViewController ?? false)
+            || (navigationController?.isMovingToParent ?? false)
             || (navigationController?.isBeingPresented ?? false)
     }
     
     /// Returns true if controller curently is poping or dismissing.
     public var isBeingRemoved: Bool {
-        return isMovingFromParentViewController
+        return isMovingFromParent
             || isBeingDismissed
-            || (navigationController?.isMovingFromParentViewController ?? false)
+            || (navigationController?.isMovingFromParent ?? false)
             || (navigationController?.isBeingDismissed ?? false)
     }
     

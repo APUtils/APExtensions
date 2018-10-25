@@ -22,13 +22,13 @@ public extension UIApplication {
 
 // ******************************* MARK: - Background Task
 
-private var v_backgroundTaskIdentifier = UIBackgroundTaskInvalid
+private var v_backgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
 
 public extension UIApplication {
     /// Starts background task if app is in background and task is not yet started.
     public func startBackgroundTaskIfNeeded() {
         guard UIApplication.shared.applicationState == .background else { return }
-        guard v_backgroundTaskIdentifier == UIBackgroundTaskInvalid else { return }
+        guard v_backgroundTaskIdentifier == .invalid else { return }
         
         v_backgroundTaskIdentifier = beginBackgroundTask {
             self.stopBackgroundTaskIfNeeded()
@@ -37,9 +37,9 @@ public extension UIApplication {
     
     /// Stops background task if not yet stopped.
     public func stopBackgroundTaskIfNeeded() {
-        guard v_backgroundTaskIdentifier != UIBackgroundTaskInvalid else { return }
+        guard v_backgroundTaskIdentifier != .invalid else { return }
         
         endBackgroundTask(v_backgroundTaskIdentifier)
-        v_backgroundTaskIdentifier = UIBackgroundTaskInvalid
+        v_backgroundTaskIdentifier = .invalid
     }
 }

@@ -34,7 +34,8 @@ public extension String {
     public subscript(range: Range<Int>) -> String {
         let start: Index = index(startIndex, offsetBy: range.lowerBound)
         let end: Index = index(start, offsetBy: range.upperBound - range.lowerBound)
-        return String(self[Range(start ..< end)])
+        let range = start ..< end
+        return String(self[range])
     }
     
     public var first: String {
@@ -184,18 +185,18 @@ public extension String {
     /// Width of a string written in one line.
     public func oneLineWidth(font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
         return boundingBox.width
     }
     
     /// Height of a string for specified font and width.
     public func height(font: UIFont, width: CGFloat) -> CGFloat {
-        return height(attributes: [NSAttributedStringKey.font: font], width: width)
+        return height(attributes: [.font: font], width: width)
     }
     
     /// Height of a string for specified attributes and width.
-    public func height(attributes: [NSAttributedStringKey: Any], width: CGFloat) -> CGFloat {
+    public func height(attributes: [NSAttributedString.Key: Any], width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g_pixelSize
         

@@ -9,8 +9,7 @@
 import UIKit
 
 
-/// Controller that improves UITableView scrolling and animation experience
-/// when cells height is dynamic on load but constant after that.
+/// Controller that improves UITableView scrolling and animation experience.
 /// - Note: You should assign tableView's `delegate` first and then create
 /// and store `EstimatedRowHeightController`. Everything else is automatic.
 class EstimatedRowHeightController: NSObject, UITableViewDelegate {
@@ -18,7 +17,6 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     // ******************************* MARK: - Private Properties
     
     private let tableView: UITableView
-    private let originalEstimatedRowHeight: CGFloat
     private let originalTableViewDelegate: UITableViewDelegate?
     private var estimatedHeights: [IndexPath: CGFloat] = [:]
     
@@ -28,7 +26,6 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     
     init(tableView: UITableView) {
         self.tableView = tableView
-        self.originalEstimatedRowHeight = tableView.estimatedRowHeight
         self.originalTableViewDelegate = tableView.delegate
         super.init()
         tableView.delegate = self
@@ -36,7 +33,6 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     
     deinit {
         tableView.delegate = originalTableViewDelegate
-        tableView.estimatedRowHeight = originalEstimatedRowHeight
     }
     
     // ******************************* MARK: - NSObject Methods
@@ -67,7 +63,7 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
         if let height = originalTableViewDelegate?.tableView?(tableView, estimatedHeightForRowAt: indexPath) {
             return height
         } else {
-            return estimatedHeights[indexPath] ?? UITableViewAutomaticDimension
+            return estimatedHeights[indexPath] ?? UITableView.automaticDimension
         }
     }
     

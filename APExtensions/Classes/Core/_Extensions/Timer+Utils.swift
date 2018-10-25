@@ -19,7 +19,7 @@ extension Timer {
         
         let date = Calendar.current.date(from: components) ?? Date()
         let timer = Timer(fire: date, interval: 60, repeats: true, block: action)
-        RunLoop.main.add(timer, forMode: .commonModes)
+        RunLoop.main.add(timer, forMode: .common)
         
         return timer
     }

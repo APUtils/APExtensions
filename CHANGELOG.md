@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.0](https://github.com/APUtils/APExtensions/releases/tag/5.0.0)
+Released on 25.10.2018.
+
+#### Added
+- Swift 4.2 support
+- NSMutableString .set(font:,for:)
+- NSMutableString .set(font:aligment:headIndent:lineSpacing:lineHeightMultiple:for:)
+- NSMutableString .set(kern:)
+- NSMutableString .setUnderline()
+
+
+#### Fixed
+- Swizzling crash if selector doesn't exist.
+- Open app settings URL
+- UINavigationController completion call
+
+
 ## [4.5.3](https://github.com/APUtils/APExtensions/releases/tag/4.5.3)
 Released on 08/02/2018.
 

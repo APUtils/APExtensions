@@ -176,13 +176,13 @@ public extension UIView {
         
         var activityIndicator: UIActivityIndicatorView! = subviews.compactMap({ $0 as? UIActivityIndicatorView }).last
         if activityIndicator == nil {
-            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
             activityIndicator.color = .lightGray
             addSubview(activityIndicator)
             activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
             activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         }
-        activityIndicator.superview?.bringSubview(toFront: activityIndicator)
+        activityIndicator.superview?.bringSubviewToFront(activityIndicator)
         
         if !activityIndicator.isAnimating {
             activityIndicator.startAnimating()
