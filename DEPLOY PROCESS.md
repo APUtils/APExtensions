@@ -1,0 +1,10 @@
+- Assure `CarthageSupport/APExtensions-example.xcodeproj` and `Example/APExtensions.xcworkspace` have all dependencies added.
+- Run `checkBuild.command`
+- Change version in podspec
+- Update CHANGELOG.md
+- Update README.md with new version
+- Run `updateDocs.command`
+- Push changes in git
+- Add git tag
+- Merge `master` to `core`, `abstractions`, `storyboard`, `view-configuration` and `view-state` branches.
+- Run `podPush.command`

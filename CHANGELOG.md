@@ -2,11 +2,86 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.0](https://github.com/APUtils/APExtensions/releases/tag/5.0.0)
+Released on 25.10.2018.
+
+#### Added
+- Swift 4.2 support
+- NSMutableString .set(font:,for:)
+- NSMutableString .set(font:aligment:headIndent:lineSpacing:lineHeightMultiple:for:)
+- NSMutableString .set(kern:)
+- NSMutableString .setUnderline()
+
+
+#### Fixed
+- Swizzling crash if selector doesn't exist.
+- Open app settings URL
+- UINavigationController completion call
+
+
+## [4.5.3](https://github.com/APUtils/APExtensions/releases/tag/4.5.3)
+Released on 08/02/2018.
+
+#### Added
+- Array .random
+- Data .asString
+- Dictionary .compactMapValues(_:)
+- NSObject .doOnce(key:action:)
+- Timer .scheduledMinuteStartTimer(action:)
+- UIApplication .startBackgroundTaskIfNeeded and .stopBackgroundTaskIfNeeded
+- UIScrollView .addRefreshControl(action:)
+- UITableView .handleEstimatedSizeAutomatically
+- UIViewController .wrappedIntoNavigation
+- Utils g_isRunningUnitTests
+
+
+## [4.5.1](https://github.com/APUtils/APExtensions/releases/tag/4.5.1)
+Released on 04/21/2018.
+
+#### Added
+- Array .group(_:)
+- Array .remove(_:)
+- ClassName .className property
+- Collection .hasElements
+- Data .init(hex:)
+- isNilOrEmpty for Optional Arrays and Dictionaries
+- String .asUrl
+- UITableView .updateCellSizesKeepingContentOffset()
+- UIView .becomeFirstResponderIfPossible()
+- UIView .isInAnimationClosure
+
+#### Changed
+- UITableView .reloadDataKeepingContentOffset() -> .reloadDataKeepingBottomContentOffset()
+- Utils g_screenSize struct -> g_screenSize size
+
+#### Fixed
+- String .decodedBase64 fix
+- UINavigationController .setViewControllers fix
+
+
+## [4.5.0](https://github.com/APUtils/APExtensions/releases/tag/4.5.0)
+Released on 02/23/2018.
+
+#### Added
+- ViewState .UIViewControllerViewDidAttached
+- UIResponder .becomeFirstResponderWhenPossible
+- UIViewController .isBeingAdded
+- UIViewController .isBeingTransitioned
+- ViewState UIViewControllerViewStateDidChange notification
+- ViewState ViewControllerExtendedStates protocol
+
+#### Changed
+- UIView .becomeFirstResponderOnViewDidAppear -> UIResponder .becomeFirstResponderOnViewDidAppear
+- UIViewContorller+Utils .remove calls endEditing after calling remove methods
+- ViewState.didAttached -> didAttach
+
+
 ## [4.4.2](https://github.com/APUtils/APExtensions/releases/tag/4.4.2)
 Released on 02/09/2018.
 
 #### Fixed
 - g_showPickerAlert crash on iPads
+
 
 ## [4.4.1](https://github.com/APUtils/APExtensions/releases/tag/4.4.1)
 Released on 02/09/2018.
