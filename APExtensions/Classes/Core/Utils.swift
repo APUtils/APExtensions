@@ -27,16 +27,6 @@ public typealias ErrorClosure = (_ error: Error?) -> Void
 /// Error stub to use for simplification
 public struct GeneralError: Error { public init() {} }
 
-// ******************************* MARK: - Global Structs
-
-/// Structure containing screen sizes. Available constants: `width`, `height`, `maxSide`, `minSide`
-public struct g_screenSize {
-    @nonobjc public static let width = UIScreen.main.bounds.size.width
-    @nonobjc public static let height = UIScreen.main.bounds.size.height
-    @nonobjc public static let maxSide = max(g_screenSize.width, g_screenSize.height)
-    @nonobjc public static let minSide = min(g_screenSize.width, g_screenSize.height)
-}
-
 // ******************************* MARK: - Comparison
 
 /// Compares two `CGSize`s with 0.0001 tolerance
@@ -62,23 +52,36 @@ public func g_isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
 /// Shared application
 public let g_sharedApplication = UIApplication.shared
 
-/// Standart user defaults
-public let g_sharedUserDefaults = UserDefaults.standard
+/// Default file manager
+public var g_sharedFileManager: FileManager {
+    return FileManager.default
+}
 
 /// Default notification center
-public let g_sharedNotificationCenter = NotificationCenter.default
+public var g_sharedNotificationCenter: NotificationCenter {
+    return NotificationCenter.default
+}
 
-/// Default file manager
-public let g_sharedFileManager = FileManager.default
+/// Shared user defaults
+public var g_sharedUserDefaults: UserDefaults {
+    return UserDefaults.standard
+}
 
 /// Is running on simulator?
 public let g_isSimulator = TARGET_OS_SIMULATOR != 0
 
+/// Screen size
+public let g_screenSize = UIScreen.main.bounds.size
+
 /// Screen scale factor
-public let g_screenScale: CGFloat = UIScreen.main.scale
+public var g_screenScale: CGFloat {
+    return UIScreen.main.scale
+}
 
 /// Screen pixel size
-public let g_pixelSize: CGFloat = 1 / UIScreen.main.scale
+public var g_pixelSize: CGFloat {
+    return 1 / UIScreen.main.scale
+}
 
 /// User documents directory URL
 public var g_documentsDirectoryUrl: URL {
@@ -96,9 +99,7 @@ public var g_cacheDirectoryUrl: URL {
 }
 
 /// Application delegate. Crashes if nil.
-public var g_appDelegate: UIApplicationDelegate {
-    return g_sharedApplication.delegate!
-}
+public let g_appDelegate: UIApplicationDelegate = g_sharedApplication.delegate!
 
 /// Application key window
 public var g_keyWindow: UIWindow? {
@@ -118,6 +119,12 @@ public var g_rootViewController: UIViewController {
 /// Is application in `active` state?
 public var g_isAppActive: Bool {
     return g_sharedApplication.applicationState == .active
+}
+
+/// Detect if the app is running unit tests.
+/// Note this only detects unit tests, not UI tests.
+public var g_isRunningUnitTests: Bool {
+    return ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
 }
 
 // ******************************* MARK: - Swift Exception Handling
@@ -190,7 +197,7 @@ public func g_topViewController(base: UIViewController? = nil, shouldCheckPresen
 /// This property might be more accurate than `g_topViewController` if custom container view controllers configured properly to return their top most controllers for status bar appearance.
 public var g_statusBarStyleTopViewController: UIViewController? {
     var currentVc = g_topViewController
-    while let newTopVc = currentVc?.childViewControllerForStatusBarStyle {
+    while let newTopVc = currentVc?.childForStatusBarStyle {
         currentVc = g_topViewController(base: newTopVc)
     }
     
@@ -207,11 +214,11 @@ public func g_animate(_ duration: TimeInterval, animations: @escaping SimpleClos
     g_animate(duration, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: TimeInterval, options: UIViewAnimationOptions, animations: @escaping SimpleClosure) {
+public func g_animate(_ duration: TimeInterval, options: UIView.AnimationOptions, animations: @escaping SimpleClosure) {
     g_animate(duration, options: options, animations: animations, completion: nil)
 }
 
-public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIViewAnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
+public func g_animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
     UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
 }
 
@@ -281,7 +288,7 @@ public func g_synchronized(_ lock: Any, closure: () throws -> Void) rethrows {
 /// - parameter style: Action button style. Default is `.cancel`.
 /// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
 /// - parameter handler: Action button click closure. Default is `nil` - no action.
-public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertActionStyle = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+public func g_showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertAction.Style = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
     let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
     if let cancelTitle = cancelTitle {
@@ -321,7 +328,7 @@ public func g_showEnterTextAlert(title: String? = nil, message: String? = nil, t
 /// - parameter buttonsStyles: Button styles
 /// - parameter enabledButtons: Enabled buttons
 /// - parameter completion: Closure that takes button title and button index as its parameters
-public func g_showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertActionStyle]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
+public func g_showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertAction.Style]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
     if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
     if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
     
@@ -423,25 +430,31 @@ public func g_hideNetworkActivity() {
 
 // ******************************* MARK: - Swizzle
 
+/// Swizzles meta class methods
 public func g_swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard class_isMetaClass(`class`) else { return }
+    guard class_respondsToSelector(`class`, originalSelector) else { return }
+    guard class_respondsToSelector(`class`, swizzledSelector) else { return }
     
     let originalMethod = class_getClassMethod(`class`, originalSelector)!
     let swizzledMethod = class_getClassMethod(`class`, swizzledSelector)!
     
-    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+    f_swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
 }
 
+/// Swizzles class methods
 public func g_swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
     guard !class_isMetaClass(`class`) else { return }
+    guard class_respondsToSelector(`class`, originalSelector) else { return }
+    guard class_respondsToSelector(`class`, swizzledSelector) else { return }
     
     let originalMethod = class_getInstanceMethod(`class`, originalSelector)!
     let swizzledMethod = class_getInstanceMethod(`class`, swizzledSelector)!
     
-    swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+    f_swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
 }
 
-private func swizzleMethods(class: AnyClass, originalSelector: Selector, originalMethod: Method, swizzledSelector: Selector, swizzledMethod: Method) {
+private func f_swizzleMethods(class: AnyClass, originalSelector: Selector, originalMethod: Method, swizzledSelector: Selector, swizzledMethod: Method) {
     let didAddMethod = class_addMethod(`class`, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
     
     if didAddMethod {
@@ -460,7 +473,7 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
 ///     // or
 ///     let setupOnes = g_getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
 public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
-    return APExtensionsLoader.getClassesConform(to: `protocol`).flatMap({ $0 as? T })
+    return APExtensionsLoader.getClassesConform(to: `protocol`).compactMap({ $0 as? T })
 }
 
 /// Returns all child classes for specified class. Not recursively.
@@ -468,9 +481,10 @@ public func g_getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
 ///
 ///     let childClasses = g_getChildrenClasses(UIViewController.self)
 public func g_getChildrenClasses<T: AnyObject>(of `class`: T.Type) -> [T.Type] {
-    return APExtensionsLoader.getChildClasses(for: `class`).flatMap({ $0 as? T.Type })
+    return APExtensionsLoader.getChildClasses(for: `class`).compactMap({ $0 as? T.Type })
 }
 
+/// Returns string prepresentation of object's pointer
 public func g_getPointer(_ any: AnyObject) -> String {
     return Unmanaged<AnyObject>.passUnretained(any as AnyObject).toOpaque().debugDescription
 }
@@ -481,8 +495,6 @@ public func g_Translate(_ string: String) -> String {
 
 /// Opens iOS Settings page for current application
 public func g_openAppSettings() {
-    guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
-    guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString + bundleIdentifier) else { return }
-    
+    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
     UIApplication.shared.openURL(settingsURL)
 }

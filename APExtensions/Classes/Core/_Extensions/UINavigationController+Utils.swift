@@ -12,9 +12,7 @@ import UIKit
 public extension UINavigationController {
     /// Root view controller
     public var rootViewController: UIViewController {
-        get {
-            return viewControllers.first!
-        }
+        return viewControllers.first!
     }
     
     /// Pushes view controller animated
@@ -33,18 +31,24 @@ public extension UINavigationController {
 public extension UINavigationController {
     /// Pushes view controller with completion
     public func pushViewController(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         pushViewController(viewController, animated: animated)
-        CATransaction.commit()
+        
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        } else {
+            completion?()
+        }
     }
     
     /// Pops view controller with completion
     public func popViewController(animated: Bool, completion: (() -> Void)?) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         popViewController(animated: animated)
-        CATransaction.commit()
+        
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        } else {
+            completion?()
+        }
     }
     
     /// Pops view controller if it present in navigation stack and all overlaying view controllers.
@@ -67,18 +71,24 @@ public extension UINavigationController {
     
     /// Pops to root with completion
     public func popToRootViewController(animated: Bool, completion: (() -> Void)?) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         popToRootViewController(animated: animated)
-        CATransaction.commit()
+        
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        } else {
+            completion?()
+        }
     }
     
     /// Replaces view controllers with completion
     public func setViewControllers(_ vcs: [UIViewController], animated: Bool, completion: (() -> Void)?) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         setViewControllers(vcs, animated: animated)
-        CATransaction.commit()
+        
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        } else {
+            completion?()
+        }
     }
     
     /// Replaces last view controller with completion

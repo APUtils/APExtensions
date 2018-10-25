@@ -11,7 +11,7 @@ import Foundation
 
 extension URLComponents {
     /// Adds query item to other query items
-    mutating func addQueryItem(_ item: URLQueryItem) {
+    public mutating func addQueryItem(_ item: URLQueryItem) {
         if queryItems == nil {
             queryItems = [item]
         } else {
