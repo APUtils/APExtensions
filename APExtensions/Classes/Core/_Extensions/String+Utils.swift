@@ -8,6 +8,16 @@
 
 import UIKit
 
+
+// ******************************* MARK: - Representation
+
+public extension String {
+    /// Returns string as URL
+    public var asUrl: URL? {
+        return URL(string: self)
+    }
+}
+
 // ******************************* MARK: - Subscript
 
 public extension String {
@@ -24,7 +34,8 @@ public extension String {
     public subscript(range: Range<Int>) -> String {
         let start: Index = index(startIndex, offsetBy: range.lowerBound)
         let end: Index = index(start, offsetBy: range.upperBound - range.lowerBound)
-        return String(self[Range(start ..< end)])
+        let range = start ..< end
+        return String(self[range])
     }
     
     public var first: String {
@@ -42,7 +53,15 @@ public extension String {
     
     /// Returns string decoded from base64 string
     public var decodedBase64: String? {
-        guard let data = Data(base64Encoded: self) else { return nil }
+        var encodedString = self
+        
+        // String MUST be dividable by 4. https://stackoverflow.com/questions/36364324/swift-base64-decoding-returns-nil/36366421#36366421
+        let remainder = encodedString.count % 4
+        if remainder > 0 {
+            encodedString = encodedString.padding(toLength: encodedString.count + 4 - remainder, withPad: "=", startingAt: 0)
+        }
+        
+        guard let data = Data(base64Encoded: encodedString) else { return nil }
         
         return String(data: data, encoding: .utf8)
     }
@@ -166,18 +185,18 @@ public extension String {
     /// Width of a string written in one line.
     public func oneLineWidth(font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
         return boundingBox.width
     }
     
     /// Height of a string for specified font and width.
     public func height(font: UIFont, width: CGFloat) -> CGFloat {
-        return height(attributes: [NSAttributedStringKey.font: font], width: width)
+        return height(attributes: [.font: font], width: width)
     }
     
     /// Height of a string for specified attributes and width.
-    public func height(attributes: [NSAttributedStringKey: Any], width: CGFloat) -> CGFloat {
+    public func height(attributes: [NSAttributedString.Key: Any], width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g_pixelSize
         

@@ -52,8 +52,38 @@ public extension UIScrollView {
 
 // ******************************* MARK: - UIRefreshControl
 
+private var c_refreshActionAssociationKey = 0
+
+@available(iOS 10.0, *)
+public extension UIRefreshControl {
+    /// Closure for refresh action.
+    /// Takes `UIRefreshControl` that triggered refresh as argument.
+    public typealias Action = (UIRefreshControl) -> Void
+    
+    fileprivate var action: Action? {
+        get {
+            return objc_getAssociatedObject(self, &c_refreshActionAssociationKey) as? Action
+        }
+        set {
+            objc_setAssociatedObject(self, &c_refreshActionAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    @objc fileprivate func onRefresh(_ sender: UIRefreshControl) {
+        action?(self)
+    }
+}
+
 @available(iOS 10.0, *)
 public extension UIScrollView {
+    /// Adds refresh control. Call finishRefresh() to stop.
+    public func addRefreshControl(action: @escaping UIRefreshControl.Action) {
+        let refreshControl = UIRefreshControl()
+        refreshControl.action = action
+        refreshControl.addTarget(refreshControl, action: #selector(UIRefreshControl.onRefresh(_:)), for: .valueChanged)
+        self.refreshControl = refreshControl
+    }
+    
     /// Adds refresh control. Call finishRefresh() to stop.
     public func addRefreshControl(target: AnyObject?, action: Selector) {
         let refreshControl = UIRefreshControl()

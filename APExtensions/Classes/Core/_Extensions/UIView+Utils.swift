@@ -45,6 +45,12 @@ public extension UIView {
 // ******************************* MARK: - Animations
 
 public extension UIView {
+    /// Checks if code runs inside animation closure
+    @available(iOS 9.0, *)
+    public static var isInAnimationClosure: Bool {
+        return inheritedAnimationDuration > 0
+    }
+    
     public func fadeInAnimated() {
         guard alpha != 1 else { return }
         
@@ -134,6 +140,13 @@ public extension UIView {
     @IBAction public func endEditing() {
         endEditing(true)
     }
+    
+    /// Checks if window is not nil before calling becomeFirstResponder()
+    public func becomeFirstResponderIfPossible() {
+        guard window != nil else { return }
+        
+        becomeFirstResponder()
+    }
 }
 
 // ******************************* MARK: - Activity Indicator
@@ -161,15 +174,15 @@ public extension UIView {
     public func showActivityIndicator() {
         showCounter += 1
         
-        var activityIndicator: UIActivityIndicatorView! = subviews.flatMap({ $0 as? UIActivityIndicatorView }).last
+        var activityIndicator: UIActivityIndicatorView! = subviews.compactMap({ $0 as? UIActivityIndicatorView }).last
         if activityIndicator == nil {
-            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
             activityIndicator.color = .lightGray
             addSubview(activityIndicator)
             activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
             activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         }
-        activityIndicator.superview?.bringSubview(toFront: activityIndicator)
+        activityIndicator.superview?.bringSubviewToFront(activityIndicator)
         
         if !activityIndicator.isAnimating {
             activityIndicator.startAnimating()
@@ -188,7 +201,7 @@ public extension UIView {
         }
         
         if showCounter <= 0 {
-            let activityIndicator = subviews.flatMap({ $0 as? UIActivityIndicatorView }).first
+            let activityIndicator = subviews.compactMap({ $0 as? UIActivityIndicatorView }).first
             activityIndicator?.stopAnimating()
             
             showCounter = 0

@@ -13,7 +13,7 @@ public extension UIWindow {
     /// Creates new alert window with AppearanceCaptureViewController as rootViewController
     public static func createAlert() -> UIWindow {
         let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.windowLevel = UIWindowLevelAlert
+        alertWindow.windowLevel = .alert
         alertWindow.rootViewController = AppearanceCaptureViewController()
         
         return alertWindow
@@ -22,7 +22,7 @@ public extension UIWindow {
     /// Creates new normal window with AppearanceCaptureViewController as rootViewController
     public static func createNormal() -> UIWindow {
         let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.windowLevel = UIWindowLevelNormal
+        alertWindow.windowLevel = .normal
         alertWindow.rootViewController = AppearanceCaptureViewController()
         
         return alertWindow
