@@ -21,7 +21,12 @@ class TableViewVC: UIViewController {
     
     // ******************************* MARK: - Initialization and Setup
     
+    deinit {
+        print("deinit \(self)")
+    }
+    
     override func viewDidLoad() {
+        print("viewDidLoad \(self)")
         setup()
         super.viewDidLoad()
     }
@@ -31,6 +36,7 @@ class TableViewVC: UIViewController {
         tableView.handleEstimatedSizeAutomatically = true
         tableView.handleEstimatedSizeAutomatically = false
         tableView.handleEstimatedSizeAutomatically = false
+        tableView.handleEstimatedSizeAutomatically = true
     }
 }
 
