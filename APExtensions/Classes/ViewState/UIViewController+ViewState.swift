@@ -116,6 +116,11 @@ public protocol ViewControllerExtendedStates {
     func viewStateDidChange()
 }
 
+public extension ViewControllerExtendedStates {
+    func viewDidAttach() {}
+    func viewStateDidChange() {}
+}
+
 // ******************************* MARK: - UIViewController Swizzling
 
 extension UIViewController {

@@ -121,12 +121,25 @@ public extension Array {
     }
 }
 
+// ******************************* MARK: - Equatable
+
 public extension Array where Element: Equatable {
-    /// Helper methods to remove all objects that are equal to passed one.
+    /// Helper method to remove all objects that are equal to passed one.
     public mutating func remove(_ element: Element) {
         while let index = index(of: element) {
             remove(at: index)
         }
+    }
+    
+    /// Helper method to remove all objects that are equal to those contained in `contentsOf` array.
+    public mutating func remove(contentsOf: [Element]) {
+        contentsOf.forEach { remove($0) }
+    }
+    
+    /// Helper method to append missing elements from array.
+    public mutating func appendMissing(contentsOf array: [Element]) {
+        let missing = array.filter { !contains($0) }
+        append(contentsOf: missing)
     }
 }
 

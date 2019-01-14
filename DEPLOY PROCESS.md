@@ -6,5 +6,5 @@
 - Run `updateDocs.command`
 - Push changes in git
 - Add git tag
-- Merge `master` to `core`, `abstractions`, `storyboard`, `view-configuration` and `view-state` branches.
+- Merge `master` to `core`, `abstractions`, `storyboard`, `view-configuration` and `view-state` branches if needed.
 - Run `podPush.command`

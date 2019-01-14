@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension URLComponents {
+public extension URLComponents {
     /// Adds query item to other query items
     public mutating func addQueryItem(_ item: URLQueryItem) {
         if queryItems == nil {
