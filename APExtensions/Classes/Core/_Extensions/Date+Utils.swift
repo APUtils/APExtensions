@@ -97,6 +97,15 @@ public extension Date {
     public func isSameDay(withDate date: Date) -> Bool {
         return Calendar.current.isDate(self, inSameDayAs: date)
     }
+    
+    public func adding(dateComponents: DateComponents) -> Date {
+        if let date = Calendar.current.date(byAdding: dateComponents, to: self) {
+            return date
+        } else {
+            print("Can't add date components '\(dateComponents)' to date '\(self)'")
+            return self
+        }
+    }
 }
 
 // ******************************* MARK: - String Representation

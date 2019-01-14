@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.1](https://github.com/APUtils/APExtensions/releases/tag/5.0.1)
+Released on 12.01.2019.
+
+#### Fixed
+- Leak fix for EstimatedRowHeightController
+
+
 ## [5.0.0](https://github.com/APUtils/APExtensions/releases/tag/5.0.0)
 Released on 25.10.2018.
 

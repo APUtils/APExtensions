@@ -17,7 +17,7 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     // ******************************* MARK: - Private Properties
     
     private let tableView: UITableView
-    private let originalTableViewDelegate: UITableViewDelegate?
+    private weak var originalTableViewDelegate: UITableViewDelegate?
     private var estimatedHeights: [IndexPath: CGFloat] = [:]
     
     // ******************************* MARK: - Initialization and Setup
