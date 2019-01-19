@@ -214,7 +214,7 @@ public extension UIView {
 extension UIView {
     /// Creates constraints between self and provided view for top, bottom, leading and trailing sides.
     @available(iOS 9.0, *)
-    func constraintSides(to view: UIView) {
+    public func constraintSides(to view: UIView) {
         var constraints: [NSLayoutConstraint] = []
         constraints.append(bottomAnchor.constraint(equalTo: view.bottomAnchor))
         constraints.append(leadingAnchor.constraint(equalTo: view.leadingAnchor))
