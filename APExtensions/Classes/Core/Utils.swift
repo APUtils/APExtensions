@@ -9,7 +9,10 @@
 import UIKit
 import MessageUI
 
-// TODO: Add description for functions
+// ******************************* MARK: - Constants
+
+open class Constants {}
+public var c: Constants = Constants()
 
 // ******************************* MARK: - Typealiases
 
