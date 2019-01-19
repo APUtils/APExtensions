@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 01/02/2017.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -35,6 +35,13 @@ public extension UICollectionView {
     ///
     ///     let cell: MyCell = collectionView.dequeueCell(for: indexPath)
     func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    /// Simplifies cell dequeue.
+    ///
+    ///     let cell = collectionView.dequeueCell(MyCell.self, for: indexPath)
+    func dequeueCell<T: UICollectionViewCell>(_ class: T, for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as! T
     }
     

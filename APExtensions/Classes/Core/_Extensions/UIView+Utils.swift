@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 28/05/16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -206,5 +206,21 @@ public extension UIView {
             
             showCounter = 0
         }
+    }
+}
+
+// ******************************* MARK: - Constraints
+
+extension UIView {
+    /// Creates constraints between self and provided view for top, bottom, leading and trailing sides.
+    @available(iOS 9.0, *)
+    func constraintSides(to view: UIView) {
+        var constraints: [NSLayoutConstraint] = []
+        constraints.append(bottomAnchor.constraint(equalTo: view.bottomAnchor))
+        constraints.append(leadingAnchor.constraint(equalTo: view.leadingAnchor))
+        constraints.append(trailingAnchor.constraint(equalTo: view.trailingAnchor))
+        constraints.append(topAnchor.constraint(equalTo: view.topAnchor))
+        
+        NSLayoutConstraint.activate(constraints)
     }
 }
