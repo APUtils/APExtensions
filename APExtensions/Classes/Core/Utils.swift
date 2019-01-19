@@ -11,8 +11,8 @@ import MessageUI
 
 // ******************************* MARK: - Constants
 
-open class Constants {}
-public var c: Constants = Constants()
+public struct Constants {}
+public let c: Constants.Type = Constants.self
 
 // ******************************* MARK: - Typealiases
 
