@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
+		0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		B08501B3203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
 		B08501B4203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
 		B08501B5203B6A5200E94409 /* UIResponder+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -229,6 +231,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
 		B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedRowHeightController.swift; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
@@ -478,6 +481,7 @@
 				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
 				B0F82FDC20375BDB004FC037 /* Manager.swift */,
 				B0F82FDB20375BDB004FC037 /* SetupOnce.swift */,
+				0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */,
 			);
 			path = _Protocols;
 			sourceTree = "<group>";
@@ -987,6 +991,7 @@
 				B0F8304920375BDB004FC037 /* UIViewController+Utils.swift in Sources */,
 				B0F8303A20375BDB004FC037 /* UIView+Utils.swift in Sources */,
 				B0F8304420375BDB004FC037 /* CGRect+Utils.swift in Sources */,
+				0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
 				B0F8307020375BDB004FC037 /* DelayedValue.swift in Sources */,
 				B0F8304C20375BDB004FC037 /* NotificationCenter+Utils.swift in Sources */,
 				B0F8306220375BDB004FC037 /* UIView+Storyboard.swift in Sources */,
@@ -1092,6 +1097,7 @@
 			files = (
 				B0F830F6203762D0004FC037 /* ClassName.swift in Sources */,
 				B0F830E4203762CB004FC037 /* Dictionary+Utils.swift in Sources */,
+				0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
 				B0E5B42F21138683005D8319 /* EstimatedRowHeightController.swift in Sources */,
 				B0F830F0203762CB004FC037 /* UIApplication+Utils.swift in Sources */,
 				B0F830CF203762CB004FC037 /* UIBarButtonItem+Utils.swift in Sources */,
