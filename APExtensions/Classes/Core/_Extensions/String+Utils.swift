@@ -97,7 +97,7 @@ public extension String {
     
     public mutating func append(valueName: String?, value: Any?, separator: String = ", ") {
         var stringRepresentation: String
-        if let value = g_unwrap(value) {
+        if let value = g.unwrap(value) {
             if let value = value as? String {
                 stringRepresentation = value
             } else if let bool = value as? Bool {
@@ -198,7 +198,7 @@ public extension String {
     /// Height of a string for specified attributes and width.
     public func height(attributes: [NSAttributedString.Key: Any], width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g_pixelSize
+        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g.pixelSize
         
         return height
     }

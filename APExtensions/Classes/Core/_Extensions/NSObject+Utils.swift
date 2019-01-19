@@ -24,7 +24,7 @@ public extension NSObject {
     
     public func doOnce(key: String, action: () -> Void) {
         var shouldPerformAction = false
-        g_synchronized(self) {
+        g.synchronized(self) {
             var doOnceStorage = self.doOnceStorage ?? []
             guard !doOnceStorage.contains(key) else { return }
             

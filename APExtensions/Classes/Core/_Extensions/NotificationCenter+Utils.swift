@@ -32,13 +32,13 @@ public extension NotificationCenter {
             startTimer()
         }
         
-        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
-        g_sharedNotificationCenter.addObserver(self, selector: #selector(self.onWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
+        g.sharedNotificationCenter.addObserver(self, selector: #selector(self.onDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        g.sharedNotificationCenter.addObserver(self, selector: #selector(self.onWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     public func stopDayNotifications() {
-        g_sharedNotificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
-        g_sharedNotificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        g.sharedNotificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        g.sharedNotificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
         
         stopTimer()
         
@@ -48,7 +48,7 @@ public extension NotificationCenter {
     // ******************************* MARK: - Timer
     
     private func startTimer() {
-        g_performInMain {
+        g.performInMain {
             guard let fireDate = fireDate else { return }
             
             dayTimer = Timer(fireAt: fireDate, interval: 0, target: self, selector: #selector(self.onTimer(_:)), userInfo: nil, repeats: false)
@@ -57,7 +57,7 @@ public extension NotificationCenter {
     }
     
     private func restartTimer() {
-        g_performInMain {
+        g.performInMain {
             self.stopTimer()
             
             fireDate = Date.tomorrow
@@ -66,14 +66,14 @@ public extension NotificationCenter {
     }
     
     private func stopTimer() {
-        g_performInMain {
+        g.performInMain {
             dayTimer?.invalidate()
             dayTimer = nil
         }
     }
     
     @objc private func onTimer(_ timer: Timer) {
-        g_sharedNotificationCenter.post(name: .DayDidStart, object: self)
+        g.sharedNotificationCenter.post(name: .DayDidStart, object: self)
         restartTimer()
     }
     
@@ -81,7 +81,7 @@ public extension NotificationCenter {
     
     @objc private func onDidBecomeActive(_ notification: Notification) {
         if let fireDate = fireDate, fireDate < Date() {
-            g_sharedNotificationCenter.post(name: .DayDidStart, object: self)
+            g.sharedNotificationCenter.post(name: .DayDidStart, object: self)
         }
         
         restartTimer()

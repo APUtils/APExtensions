@@ -11,7 +11,7 @@ import Foundation
 
 /// Simple abstraction that simplifies working with values that needs some time to be fetched.
 /// Kind of promise. Good to use in view models to simplify view configuration.
-public class DelayedValue<T> {
+open class DelayedValue<T> {
     
     // ******************************* MARK: - Types
     
