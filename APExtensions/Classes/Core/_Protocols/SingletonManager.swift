@@ -10,7 +10,7 @@ import Foundation
 
 
 /// Same as Manager but with singleton class property
-protocol SingletonManager: Manager {
+public protocol SingletonManager: Manager {
     /// Manager singleton
     static var shared: Self { get }
 }

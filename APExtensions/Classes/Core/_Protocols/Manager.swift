@@ -14,7 +14,7 @@
 ///      private var managers: [Manager.Type] = {
 ///          return g_getClassesConformToProtocol(Manager.self)
 ///      }()
-@objc public protocol Manager: class, ClassName {
+public protocol Manager: class, ClassName {
     /// Start manager. Usually on app start or user login.
     static func start()
     
