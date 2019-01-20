@@ -221,6 +221,7 @@ extension UIView {
         constraints.append(trailingAnchor.constraint(equalTo: view.trailingAnchor))
         constraints.append(topAnchor.constraint(equalTo: view.topAnchor))
         
+        translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)
     }
 }
