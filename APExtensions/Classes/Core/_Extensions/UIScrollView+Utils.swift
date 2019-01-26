@@ -48,6 +48,15 @@ public extension UIScrollView {
         
         contentOffset = newContentOffset
     }
+    
+    /// Scroll to a specific view so that it's top is at the top our scrollview
+    public func scrollToView(view: UIView, animated: Bool) {
+        // Get the Y position of your child view
+        let childFrame = view.convert(view.bounds, to: self)
+        
+        // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
+        scrollRectToVisible(childFrame, animated: animated)
+    }
 }
 
 // ******************************* MARK: - UIRefreshControl
