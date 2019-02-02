@@ -27,12 +27,19 @@ post_install do |installer|
     
     # TODO: Remove pods when they converted to Swift 4.2
     # Your list of targets here.
-    myTargets = ['Quick', 'Nimble', 'Nimble-Snapshots']
+    swift32 = ['Nimble-Snapshots']
+    swift41 = ['Nimble']
     
     installer.pods_project.targets.each do |target|
-        if myTargets.include? target.name
+        if swift32.include? target.name
             target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+            end
+        end
+        
+        if swift41.include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.1'
             end
         end
     end

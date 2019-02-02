@@ -13,8 +13,79 @@ import UIKit
 
 public extension String {
     /// Returns string as URL
+    @available(*, deprecated, renamed: "asURL")
     public var asUrl: URL? {
-        return URL(string: self)
+        return asURL
+    }
+    
+    /// Returns string as URL. Properly escapes URL components if needed.
+    public var asURL: URL? {
+        // Check for existing percent escapes first to prevent double-escaping of % character
+        if range(of: "%[0-9A-Fa-f]{2}", options: .regularExpression, range: nil, locale: nil) != nil {
+            // Already encoded
+            return URL(string: self)
+        }
+        
+        // Gettin host component
+        var reducedString = self
+        var components = reducedString.components(separatedBy: "://")
+        let hostComponent: String
+        if components.count == 2 {
+            hostComponent = components[0]
+            reducedString = components[1]
+        } else {
+            hostComponent = ""
+        }
+        
+        // Getting fragment component
+        components = reducedString.components(separatedBy: "#")
+        let fragmentComponent: String
+        if components.count == 2 {
+            reducedString = components[0]
+            fragmentComponent = components[1]
+        } else {
+            reducedString = components[0]
+            fragmentComponent = ""
+        }
+        
+        // Getting query component
+        components = reducedString.components(separatedBy: "?")
+        let queryComponent: String
+        if components.count == 2 {
+            reducedString = components[0]
+            queryComponent = components[1]
+        } else {
+            reducedString = components[0]
+            queryComponent = ""
+        }
+        
+        // What have left is a path
+        let pathComponent: String = reducedString
+        
+        guard let escapedHostComponent = hostComponent.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return nil }
+        guard let escapedPathComponent = pathComponent.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+        guard let escapedQueryComponent = queryComponent.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+        guard let escapedFragmentComponent = fragmentComponent.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else { return nil }
+        
+        var urlString = ""
+        
+        if !escapedHostComponent.isEmpty {
+            urlString = "\(escapedHostComponent)://"
+        }
+        
+        if !escapedPathComponent.isEmpty {
+            urlString = "\(urlString)\(escapedPathComponent)"
+        }
+        
+        if !escapedQueryComponent.isEmpty {
+            urlString = "\(urlString)?\(escapedQueryComponent)"
+        }
+        
+        if !escapedFragmentComponent.isEmpty {
+            urlString = "\(urlString)#\(escapedFragmentComponent)"
+        }
+        
+        return URL(string: urlString)
     }
 }
 
