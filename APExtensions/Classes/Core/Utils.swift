@@ -554,9 +554,13 @@ public func g_openAppSettings() {
 
 // ******************************* MARK: - New Globals Interface
 
-public var g: Globals = Globals()
+public let g: Globals = Globals()
 
 open class Globals {
+    
+    // ******************************* MARK: - Initialization and Setup
+    
+    public init() {}
     
     // ******************************* MARK: - Comparison
     
