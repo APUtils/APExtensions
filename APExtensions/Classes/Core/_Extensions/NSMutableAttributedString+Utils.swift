@@ -19,7 +19,10 @@ public extension NSMutableAttributedString {
             range = fullRange
         }
         
-        guard range.location != NSNotFound else { return }
+        guard range.location != NSNotFound else {
+            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            return
+        }
         
         addAttribute(.font, value: font, range: range)
     }
@@ -39,7 +42,10 @@ public extension NSMutableAttributedString {
             range = fullRange
         }
         
-        guard range.location != NSNotFound else { return }
+        guard range.location != NSNotFound else {
+            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            return
+        }
         
         let paragraphStyle = NSMutableParagraphStyle()
         if let aligment = aligment { paragraphStyle.alignment = aligment }
@@ -58,5 +64,23 @@ public extension NSMutableAttributedString {
     /// Makes text underlined
     public func setUnderline() {
         addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: fullRange)
+    }
+    
+    /// Makes text striked through
+    public func setStrikethrough(text: String? = nil) {
+        let range: NSRange
+        if let text = text {
+            range = mutableString.range(of: text)
+        } else {
+            range = fullRange
+        }
+        
+        guard range.location != NSNotFound else {
+            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            return
+        }
+        
+        addAttribute(NSAttributedString.Key.baselineOffset, value: 0, range: range)
+        addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
     }
 }
