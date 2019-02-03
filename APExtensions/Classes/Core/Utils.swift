@@ -32,7 +32,9 @@ public struct GeneralError: Error { public init() {} }
 
 // ******************************* MARK: - Comparison
 
-/// Compares two `CGSize`s with 0.0001 tolerance
+// TODO: Delete all deprecated functions and vars
+
+/// Compares two `CGSize`s with 0.0001 toleranceAnimators
 @available(*, deprecated, renamed: "g.isCGSizesEqual")
 public func g_isCGSizesEqual(first: CGSize, second: CGSize) -> Bool {
     if abs(first.width - second.width) < 0.0001 && abs(first.height - second.height) < 0.0001 {
@@ -555,6 +557,9 @@ public func g_openAppSettings() {
 public var g: Globals = Globals()
 
 open class Globals {
+    
+    // ******************************* MARK: - Comparison
+    
     /// Compares two `CGSize`s with 0.0001 tolerance
     open func isCGSizesEqual(first: CGSize, second: CGSize) -> Bool {
         if abs(first.width - second.width) < 0.0001 && abs(first.height - second.height) < 0.0001 {
@@ -630,11 +635,6 @@ open class Globals {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
     }
     
-    /// Application delegate. Crashes if nil.
-    open var appDelegate: UIApplicationDelegate {
-        return sharedApplication.delegate!
-    }
-    
     /// Application key window
     open var keyWindow: UIWindow? {
         return sharedApplication.keyWindow
@@ -642,12 +642,7 @@ open class Globals {
     
     /// Application window. Crashes if nil.
     open var appWindow: UIWindow {
-        return appDelegate.window!!
-    }
-    
-    /// Application root view controller. Crashes if nil.
-    open var rootViewController: UIViewController {
-        return appDelegate.window!!.rootViewController!
+        return sharedApplication.delegate!.window!!
     }
     
     /// Is application in `active` state?
@@ -694,7 +689,7 @@ open class Globals {
     ///   - base: Base controller from which to start. If not specified or nil then application delegate window's rootViewController will be used.
     ///   - shouldCheckPresented: Should it check for presented controllers?
     open func topViewController(base: UIViewController? = nil, shouldCheckPresented: Bool = true) -> UIViewController? {
-        let base = base ?? appDelegate.window??.rootViewController
+        let base = base ?? sharedApplication.delegate?.window??.rootViewController
         
         if let navigationVc = base as? UINavigationController {
             return topViewController(base: navigationVc.topViewController, shouldCheckPresented: shouldCheckPresented)
@@ -902,7 +897,7 @@ open class Globals {
             vc.addAttachmentData($0.0, mimeType: $0.1, fileName: $0.2)
         })
         
-        rootViewController.present(vc, animated: true, completion: nil)
+        sharedApplication.delegate?.window??.rootViewController?.present(vc, animated: true, completion: nil)
         
         return true
     }
@@ -1002,6 +997,20 @@ open class Globals {
     ///     let childClasses = getChildrenClasses(UIViewController.self)
     open func getChildrenClasses<T: AnyObject>(of `class`: T.Type) -> [T.Type] {
         return APExtensionsLoader.getChildClasses(for: `class`).compactMap({ $0 as? T.Type })
+    }
+    
+    open func getMethodsList(object: AnyObject) -> [String]? {
+        var mc: UInt32 = 0
+        let mcPointer = withUnsafeMutablePointer(to: &mc) { $0 }
+        guard let mlist = class_copyMethodList(object_getClass(object), mcPointer) else { return nil }
+        
+        var methods: [String] = []
+        for i in 0...Int(mc) {
+            let method = String(format: "Method #%d: %s", arguments: [i, sel_getName(method_getName(mlist[i]))])
+            methods.append(method)
+        }
+        
+        return methods
     }
     
     /// Returns string prepresentation of object's pointer
