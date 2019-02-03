@@ -87,6 +87,21 @@ public extension String {
         
         return URL(string: urlString)
     }
+    
+    /// Returns string as Int
+    public var asInt: Int? {
+        return Int(self)
+    }
+    
+    /// Returns string as NSAttributedString
+    public var asAttributedString: NSAttributedString {
+        return NSAttributedString(string: self)
+    }
+    
+    /// Returns string as NSMutableAttributedString
+    public var asMutableAttributedString: NSMutableAttributedString {
+        return NSMutableAttributedString(string: self)
+    }
 }
 
 // ******************************* MARK: - Subscript
