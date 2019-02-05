@@ -28,8 +28,7 @@ public extension NSMutableAttributedString {
     }
     
     /// Sets aligment for the first occurence of text. If text is `nil` sets aligment for entire string.
-    public func set(font: UIFont? = nil,
-             aligment: NSTextAlignment? = nil,
+    public func set(aligment: NSTextAlignment? = nil,
              headIndent: CGFloat? = nil,
              lineSpacing: CGFloat? = nil,
              lineHeightMultiple: CGFloat? = nil,
