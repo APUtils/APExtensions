@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
+		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		B08501B3203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
@@ -231,6 +233,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
 		B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedRowHeightController.swift; sourceTree = "<group>"; };
@@ -498,6 +501,7 @@
 				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
 				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
 				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
+				0D1B3892220A10230021FD11 /* Int+Utils.swift */,
 				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
 				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
 				B0F82FFC20375BDB004FC037 /* NotificationCenter+Utils.swift */,
@@ -1033,6 +1037,7 @@
 				B0F8305520375BDB004FC037 /* Date+Utils.swift in Sources */,
 				B0F8303220375BDB004FC037 /* CellInformation.swift in Sources */,
 				B0F8306320375BDB004FC037 /* UIFont+Storyboard.swift in Sources */,
+				0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */,
 				B0F8307420375BDB004FC037 /* UIViewController+ViewState.swift in Sources */,
 				B0F8303920375BDB004FC037 /* CGPoint+Utils.swift in Sources */,
 				B0F8304320375BDB004FC037 /* Character+Utils.swift in Sources */,
@@ -1144,6 +1149,7 @@
 				B0F830E2203762CB004FC037 /* UIViewController+Utils.swift in Sources */,
 				B0F830E0203762CB004FC037 /* UITableView+Utils.swift in Sources */,
 				B0F830F1203762CB004FC037 /* NSMutableAttributedString+Utils.swift in Sources */,
+				0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */,
 				B0F830D0203762CB004FC037 /* URL+Utils.swift in Sources */,
 				B0F830E3203762CB004FC037 /* Optional+Utils.swift in Sources */,
 				B0F830E5203762CB004FC037 /* NotificationCenter+Utils.swift in Sources */,
