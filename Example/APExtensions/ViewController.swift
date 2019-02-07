@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(g.isIPhone)
+        
         let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
         attributedText.setStrikethrough(text: "g Strikethrough T")
         debugLabel.attributedText = attributedText

@@ -609,6 +609,11 @@ open class Globals {
         return TARGET_OS_SIMULATOR != 0
     }
     
+    /// Is it an iPhone device?
+    open var isIPhone: Bool {
+        return TARGET_OS_IPHONE != 0
+    }
+    
     /// Screen size
     open var screenSize: CGSize {
         return UIScreen.main.bounds.size
