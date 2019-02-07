@@ -611,7 +611,7 @@ open class Globals {
     
     /// Is it an iPhone device?
     open var isIPhone: Bool {
-        return TARGET_OS_IPHONE != 0
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
     
     /// Screen size
