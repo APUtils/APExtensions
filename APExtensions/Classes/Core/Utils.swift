@@ -14,37 +14,37 @@ import MessageUI
 public struct Constants {
     
     /// Is running on simulator?
-    static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
+    public static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
     
     /// Is it an iPhone device?
-    static let isIPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
+    public static let isIPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
     
     /// Screen size
-    static let screenSize: CGSize = UIScreen.main.bounds.size
+    public static let screenSize: CGSize = UIScreen.main.bounds.size
     
     /// Screen scale factor
-    static let screenScale: CGFloat = UIScreen.main.scale
+    public static let screenScale: CGFloat = UIScreen.main.scale
     
     /// Screen pixel size
-    static let pixelSize: CGFloat = 1 / UIScreen.main.scale
+    public static let pixelSize: CGFloat = 1 / UIScreen.main.scale
     
     /// User documents directory URL
-    static let documentsDirectoryUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    public static let documentsDirectoryUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     
     /// User temporary directory URL
-    static let tempDirectoryUrl: URL = URL(fileURLWithPath: NSTemporaryDirectory())
+    public static let tempDirectoryUrl: URL = URL(fileURLWithPath: NSTemporaryDirectory())
     
     /// User cache directory URL
-    static let cacheDirectoryUrl: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
+    public static let cacheDirectoryUrl: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
     
     /// Height of status bar
-    static let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+    public static let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     
     /// Navigation bar height
-    static let navigationBarHeight: CGFloat = 44
+    public static let navigationBarHeight: CGFloat = 44
     
     /// Navigation bar height
-    static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
+    public static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
 }
 
 public let c: Constants.Type = Constants.self
