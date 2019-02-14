@@ -284,7 +284,7 @@ public extension String {
     /// Height of a string for specified attributes and width.
     public func height(attributes: [NSAttributedString.Key: Any], width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + g.pixelSize
+        let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + c.pixelSize
         
         return height
     }

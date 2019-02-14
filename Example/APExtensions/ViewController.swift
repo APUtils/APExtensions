@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(g.isIPhone)
+        print(c.isIPhone)
         
         let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
         attributedText.setStrikethrough(text: "g Strikethrough T")
