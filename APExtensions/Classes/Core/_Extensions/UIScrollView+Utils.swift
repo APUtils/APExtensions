@@ -13,6 +13,10 @@ import UIKit
 public extension UIScrollView {
     /// Set value for top `contentInset` and `scrollIndicatorInsets`
     public func setTopInset(_ topInset: CGFloat) {
+        if #available(iOS 11.0, *) {
+            contentInsetAdjustmentBehavior = .never
+        }
+        
         contentInset.top = topInset
         scrollIndicatorInsets.top = topInset
     }
@@ -24,6 +28,10 @@ public extension UIScrollView {
     
     /// Set value for top `contentInset` and `scrollIndicatorInsets`
     public func setBottomInset(_ bottomInset: CGFloat) {
+        if #available(iOS 11.0, *) {
+            contentInsetAdjustmentBehavior = .never
+        }
+        
         contentInset.bottom = bottomInset
         scrollIndicatorInsets.bottom = bottomInset
     }
