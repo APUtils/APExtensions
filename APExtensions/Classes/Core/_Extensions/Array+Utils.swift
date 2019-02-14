@@ -124,6 +124,12 @@ public extension Array {
 // ******************************* MARK: - Equatable
 
 public extension Array where Element: Equatable {
+    
+    /// Returns whether array has at least one common element with passed array.
+    public func hasIntersection(with array: [Element]) -> Bool {
+        return contains { array.contains($0) }
+    }
+    
     /// Helper method to remove all objects that are equal to passed one.
     public mutating func remove(_ element: Element) {
         while let index = index(of: element) {

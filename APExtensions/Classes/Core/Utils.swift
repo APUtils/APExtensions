@@ -11,7 +11,42 @@ import MessageUI
 
 // ******************************* MARK: - Constants
 
-public struct Constants {}
+public struct Constants {
+    
+    /// Is running on simulator?
+    static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
+    
+    /// Is it an iPhone device?
+    static let isIPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
+    
+    /// Screen size
+    static let screenSize: CGSize = UIScreen.main.bounds.size
+    
+    /// Screen scale factor
+    static let screenScale: CGFloat = UIScreen.main.scale
+    
+    /// Screen pixel size
+    static let pixelSize: CGFloat = 1 / UIScreen.main.scale
+    
+    /// User documents directory URL
+    static let documentsDirectoryUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    
+    /// User temporary directory URL
+    static let tempDirectoryUrl: URL = URL(fileURLWithPath: NSTemporaryDirectory())
+    
+    /// User cache directory URL
+    static let cacheDirectoryUrl: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
+    
+    /// Height of status bar
+    static let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+    
+    /// Navigation bar height
+    static let navigationBarHeight: CGFloat = 44
+    
+    /// Navigation bar height
+    static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
+}
+
 public let c: Constants.Type = Constants.self
 
 // ******************************* MARK: - Typealiases
@@ -604,46 +639,6 @@ open class Globals {
         return UserDefaults.standard
     }
     
-    /// Is running on simulator?
-    open var isSimulator: Bool {
-        return TARGET_OS_SIMULATOR != 0
-    }
-    
-    /// Is it an iPhone device?
-    open var isIPhone: Bool {
-        return UIDevice.current.userInterfaceIdiom == .phone
-    }
-    
-    /// Screen size
-    open var screenSize: CGSize {
-        return UIScreen.main.bounds.size
-    }
-    
-    /// Screen scale factor
-    open var screenScale: CGFloat {
-        return UIScreen.main.scale
-    }
-    
-    /// Screen pixel size
-    open var pixelSize: CGFloat {
-        return 1 / UIScreen.main.scale
-    }
-    
-    /// User documents directory URL
-    open var documentsDirectoryUrl: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-    }
-    
-    /// User temporary directory URL
-    open var tempDirectoryUrl: URL {
-        return URL(fileURLWithPath: NSTemporaryDirectory())
-    }
-    
-    /// User cache directory URL
-    open var cacheDirectoryUrl: URL {
-        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
-    }
-    
     /// Application key window
     open var keyWindow: UIWindow? {
         return sharedApplication.keyWindow
@@ -813,13 +808,16 @@ open class Globals {
     /// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
     /// - parameter handler: Action button click closure. Default is `nil` - no action.
     open func showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertAction.Style = .cancel, cancelTitle: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
-        let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
-        if let cancelTitle = cancelTitle {
-            alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
-        }
         
-        alertVC.present(animated: true)
+        performInMain {
+            let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: handler))
+            if let cancelTitle = cancelTitle {
+                alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
+            }
+            
+            alertVC.present(animated: true)
+        }
     }
     
     /// Shows enter text alert with title and message
@@ -828,22 +826,25 @@ open class Globals {
     /// - parameter placeholder: Text field placeholder
     /// - parameter completion: Closure that takes user entered text as parameter
     open func showEnterTextAlert(title: String? = nil, message: String? = nil, text: String? = nil, placeholder: String? = nil, completion: @escaping (_ text: String) -> ()) {
-        let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
-            let text = alertVC.textFields?.first?.text ?? ""
-            completion(text)
+        
+        performInMain {
+            let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
+                let text = alertVC.textFields?.first?.text ?? ""
+                completion(text)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            
+            alertVC.addTextField { (textField) in
+                textField.text = text
+                textField.placeholder = placeholder
+            }
+            
+            alertVC.addAction(confirmAction)
+            alertVC.addAction(cancelAction)
+            
+            alertVC.present(animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        
-        alertVC.addTextField { (textField) in
-            textField.text = text
-            textField.placeholder = placeholder
-        }
-        
-        alertVC.addAction(confirmAction)
-        alertVC.addAction(cancelAction)
-        
-        alertVC.present(animated: true)
     }
     
     /// Shows picker alert with title and message.
@@ -853,28 +854,31 @@ open class Globals {
     /// - parameter enabledButtons: Enabled buttons
     /// - parameter completion: Closure that takes button title and button index as its parameters
     open func showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertAction.Style]? = nil, enabledButtons: [Bool]? = nil, completion: @escaping ((String, Int) -> ())) {
-        if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
-        if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
         
-        let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        vc.addAction(cancel)
-        
-        for (index, button) in buttons.enumerated() {
-            let buttonStyle = buttonsStyles?[index] ?? .default
-            let action = UIAlertAction(title: button, style: buttonStyle, handler: { _ in
-                completion(button, index)
-            })
+        performInMain {
+            if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
+            if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
             
-            if let enabledButtons = enabledButtons, enabledButtons.count == buttons.count {
-                action.isEnabled = enabledButtons[index]
+            let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            vc.addAction(cancel)
+            
+            for (index, button) in buttons.enumerated() {
+                let buttonStyle = buttonsStyles?[index] ?? .default
+                let action = UIAlertAction(title: button, style: buttonStyle, handler: { _ in
+                    completion(button, index)
+                })
+                
+                if let enabledButtons = enabledButtons, enabledButtons.count == buttons.count {
+                    action.isEnabled = enabledButtons[index]
+                }
+                
+                vc.addAction(action)
             }
             
-            vc.addAction(action)
+            vc.present(animated: true)
         }
-        
-        vc.present(animated: true)
     }
     
     // ******************************* MARK: - Email
