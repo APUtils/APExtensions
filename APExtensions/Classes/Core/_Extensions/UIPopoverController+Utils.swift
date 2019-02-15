@@ -11,9 +11,8 @@ import Foundation
 
 public extension UIPopoverController {
     /// Tries to automatically detect pressed button and present from it on iPads.
-    /// Uses key or delegate window on iPhones.
-    /// Presents nothing if detection failed.
-    public func present() {        
+    /// Presents nothing if detection failed or it's iPhone.
+    public func present(animated: Bool = true) {
         let _origin: UIView?
         let window: UIWindow?
         if let _window = UIApplication.shared.keyWindow {
@@ -30,7 +29,8 @@ public extension UIPopoverController {
                 .compactMap { $0 as? UIButton }
                 .first { $0.isHighlighted }
         } else {
-            _origin = window
+            print("UIPopoverController can't be presented on iPhones")
+            return
         }
         
         guard let origin = _origin else {
@@ -38,6 +38,6 @@ public extension UIPopoverController {
             return
         }
         
-        present(from: origin.bounds, in: origin, permittedArrowDirections: .any, animated: true)
+        present(from: origin.bounds, in: origin, permittedArrowDirections: .any, animated: animated)
     }
 }

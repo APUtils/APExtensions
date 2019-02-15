@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(c.isIPhone)
-        
         let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
         attributedText.setStrikethrough(text: "g Strikethrough T")
         debugLabel.attributedText = attributedText
@@ -69,6 +67,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {
-        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .black
+        presentInPopoverIfNeeded(vc)
     }
 }

@@ -244,4 +244,13 @@ public extension UIViewController {
     public func wrappedIntoPopover() -> UIPopoverController {
         return UIPopoverController(contentViewController: self)
     }
+    
+    /// If it's an iPad wraps VC into popover, tries to automatically detect presentation place and then presents.
+    public func presentInPopoverIfNeeded(_ vc: UIViewController, animated: Bool = true) {
+        if c.isIPhone {
+            present(vc, animated: animated)
+        } else {
+            vc.wrappedIntoPopover().present(animated: animated)
+        }
+    }
 }
