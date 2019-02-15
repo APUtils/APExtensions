@@ -229,7 +229,7 @@ public extension UIViewController {
 
 // ******************************* MARK: - Other
 
-extension UIViewController {
+public extension UIViewController {
     /// Returns navigation controller with self as root.
     public var wrappedIntoNavigation: UINavigationController {
         return UINavigationController(rootViewController: self)
@@ -238,5 +238,10 @@ extension UIViewController {
     /// End editing in viewController's view
     @IBAction public func endEditing(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    /// Returns popover controller with self as root.
+    public func wrappedIntoPopover() -> UIPopoverController {
+        return UIPopoverController(contentViewController: self)
     }
 }

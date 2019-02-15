@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 1/8/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich All rights reserved.
 //
 
 import UIKit

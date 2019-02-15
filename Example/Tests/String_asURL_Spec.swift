@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 2/2/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich All rights reserved.
 //
 
 import Quick
