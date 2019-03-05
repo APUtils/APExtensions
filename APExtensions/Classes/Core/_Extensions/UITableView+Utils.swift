@@ -47,7 +47,7 @@ public extension UITableView {
     /// Simplifies header/footer dequeue. Specify type of variable on declaration so proper cell will be dequeued.
     /// Example:
     ///
-    ///     let view: MyHeaderFooter = tableView.dequeueReusableHeaderFooter()
+    ///     let view: MyHeaderFooter = tableView.dequeue()
     public func dequeue<T: UITableViewHeaderFooterView>() -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
     }

@@ -206,6 +206,8 @@
 		B0F83117203763D0004FC037 /* UIView+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302020375BDB004FC037 /* UIView+ViewConfiguration.swift */; };
 		B0F83118203763D0004FC037 /* UILabel+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302120375BDB004FC037 /* UILabel+ViewConfiguration.swift */; };
 		B0F83119203763D0004FC037 /* UITextField+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302220375BDB004FC037 /* UITextField+ViewConfiguration.swift */; };
+		E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
+		E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +340,7 @@
 		B0F8310C203763C6004FC037 /* APExtensionsViewConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APExtensionsViewConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APExtensionsViewConfiguration.h; sourceTree = "<group>"; };
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +486,7 @@
 				B0F82FDA20375BDB004FC037 /* Describable.swift */,
 				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
 				B0F82FDC20375BDB004FC037 /* Manager.swift */,
+				E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */,
 				B0F82FDB20375BDB004FC037 /* SetupOnce.swift */,
 				0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */,
 			);
@@ -1042,6 +1046,7 @@
 				B0F8303920375BDB004FC037 /* CGPoint+Utils.swift in Sources */,
 				B0F8304320375BDB004FC037 /* Character+Utils.swift in Sources */,
 				B0F8305920375BDB004FC037 /* APUtils.mm in Sources */,
+				E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */,
 				B0F8305320375BDB004FC037 /* String+Utils.swift in Sources */,
 				B0F8307320375BDB004FC037 /* ViewStateLoader.m in Sources */,
 				B0F8306C20375BDB004FC037 /* UIButton+ViewConfiguration.swift in Sources */,
@@ -1103,6 +1108,7 @@
 				B0F830F6203762D0004FC037 /* ClassName.swift in Sources */,
 				B0F830E4203762CB004FC037 /* Dictionary+Utils.swift in Sources */,
 				0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
+				E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */,
 				B0E5B42F21138683005D8319 /* EstimatedRowHeightController.swift in Sources */,
 				B0F830F0203762CB004FC037 /* UIApplication+Utils.swift in Sources */,
 				B0F830CF203762CB004FC037 /* UIBarButtonItem+Utils.swift in Sources */,
