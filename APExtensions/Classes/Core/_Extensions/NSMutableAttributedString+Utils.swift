@@ -55,7 +55,7 @@ public extension NSMutableAttributedString {
         addAttribute(.paragraphStyle, value: paragraphStyle, range: range)
     }
     
-    /// Set text kern
+    /// Sets text kern
     public func set(kern: CGFloat) {
         addAttribute(.kern, value: kern, range: fullRange)
     }

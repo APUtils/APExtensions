@@ -93,3 +93,19 @@ public extension InstantiatableContentView where Self: NSObject {
         return UINib(nibName: "\(type(of: self).className)ContentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
+
+public extension InstantiatableContentView where Self: UIView {
+    /// Instantiates contentView from xib file and making instantiator it's owner.
+    /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
+    /// After creation puts content view as subview to self and constraints sides.
+    /// Also makes self background color transparent.
+    /// The main idea here is that content view should fully set how self view looks.
+    @available(iOS 9.0, *)
+    public func createAndAttachContentView() {
+        backgroundColor = .clear
+        let contentView = createContentView()
+        contentView.frame = bounds
+        addSubview(contentView)
+        contentView.constraintSides(to: self)
+    }
+}

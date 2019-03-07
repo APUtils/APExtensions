@@ -8,7 +8,7 @@
 
 import UIKit
 
-// ******************************* MARK: - Cells, Header and Footer reuse
+// ******************************* MARK: - Cells, Header and Footer Reuse and Dequeue
 
 public extension UITableView {
     

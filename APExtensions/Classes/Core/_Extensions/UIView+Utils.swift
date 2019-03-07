@@ -211,7 +211,7 @@ public extension UIView {
 
 // ******************************* MARK: - Constraints
 
-extension UIView {
+public extension UIView {
     /// Creates constraints between self and provided view for top, bottom, leading and trailing sides.
     @available(iOS 9.0, *)
     public func constraintSides(to view: UIView) {

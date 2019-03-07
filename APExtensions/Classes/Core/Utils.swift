@@ -639,12 +639,12 @@ open class Globals {
         return UserDefaults.standard
     }
     
-    /// Application key window
+    /// Application's key window
     open var keyWindow: UIWindow? {
         return sharedApplication.keyWindow
     }
     
-    /// Application window. Crashes if nil.
+    /// Application's window. Crashes if nil.
     open var appWindow: UIWindow {
         return sharedApplication.delegate!.window!!
     }
