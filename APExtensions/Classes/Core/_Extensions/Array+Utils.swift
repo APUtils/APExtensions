@@ -93,7 +93,7 @@ public extension Array {
     }
     
     /// Transforms an array to a dictionary using array elements as keys and transform result as values.
-    func dictionaryMap<T>(_ transform:(_ element: Iterator.Element) throws -> T?) rethrows -> [Iterator.Element: T] {
+    public func dictionaryMap<T>(_ transform: (_ element: Iterator.Element) throws -> T?) rethrows -> [Iterator.Element: T] {
         return try self.reduce(into: [Iterator.Element: T]()) { dictionary, element in
             guard let value = try transform(element) else { return }
             
@@ -102,7 +102,7 @@ public extension Array {
     }
     
     /// Groups array elements into dictionary using provided transform to determine element's key.
-    func group<K>(_ keyTransform: (Iterator.Element) throws -> K) rethrows -> [K: [Iterator.Element]] {
+    public func group<K>(_ keyTransform: (Iterator.Element) throws -> K) rethrows -> [K: [Iterator.Element]] {
         var dictionary = [K: [Iterator.Element]]()
         for index in indices {
             let element = self[index]

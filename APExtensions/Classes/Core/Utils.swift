@@ -11,7 +11,7 @@ import MessageUI
 
 // ******************************* MARK: - Constants
 
-public struct Constants {
+public enum Constants {
     
     /// Is running on simulator?
     public static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0

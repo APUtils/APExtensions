@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Collection {
+public extension Collection {
     /// Checks if collection has elements
     public var hasElements: Bool {
         return !isEmpty
