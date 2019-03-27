@@ -11,7 +11,7 @@ import Foundation
 
 public extension Collection {
     /// Checks if collection has elements
-    public var hasElements: Bool {
+    var hasElements: Bool {
         return !isEmpty
     }
 }
