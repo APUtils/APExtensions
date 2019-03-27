@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile for unified framework:
 
 ```
-github "APUtils/APExtensions" ~> 5.0
+github "APUtils/APExtensions" ~> 7.0
 ```
 
 Cartfile for separate frameworks:
@@ -45,17 +45,17 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 5.0'
+pod 'APExtensions', '~> 7.0'
 ```
 
 Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`, `ViewState`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Abstractions', '~> 5.0'
-pod 'APExtensions/Core', '~> 5.0'
-pod 'APExtensions/Storyboard', '~> 5.0'
-pod 'APExtensions/ViewConfiguration', '~> 5.0'
-pod 'APExtensions/ViewState', '~> 5.0'
+pod 'APExtensions/Abstractions', '~> 7.0'
+pod 'APExtensions/Core', '~> 7.0'
+pod 'APExtensions/Storyboard', '~> 7.0'
+pod 'APExtensions/ViewConfiguration', '~> 7.0'
+pod 'APExtensions/ViewState', '~> 7.0'
 ```
 
 ## Usage

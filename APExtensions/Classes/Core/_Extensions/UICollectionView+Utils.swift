@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 01/02/2017.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -38,6 +38,13 @@ public extension UICollectionView {
         return dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as! T
     }
     
+    /// Simplifies cell dequeue.
+    ///
+    ///     let cell = collectionView.dequeueCell(MyCell.self, for: indexPath)
+    func dequeueCell<T: UICollectionViewCell>(_ class: T, for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: `class`.className, for: indexPath) as! T
+    }
+    
     /// Simplifies configurable cell dequeue.
     ///
     /// Example:
@@ -47,6 +54,21 @@ public extension UICollectionView {
         return dequeueReusableCell(withReuseIdentifier: `class`.className, for: indexPath) as! UICollectionViewCell & Configurable
     }
     
+    /// Simplifies header dequeue. Specify type of variable on declaration so proper header will be dequeued.
+    /// Example:
+    ///
+    ///     let header: MyHeader = collectionView.dequeueHeader(for: indexPath)
+    func dequeueHeader<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    /// Simplifies header dequeue.
+    ///
+    ///     let header = collectionView.dequeueHeader(MyHeader.self, for: indexPath)
+    func dequeueHeader<T: UICollectionReusableView>(_ class: T, for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: `class`.className, for: indexPath) as! T
+    }
+    
     /// Simplifies configurable header dequeue.
     ///
     /// Example:
@@ -54,6 +76,21 @@ public extension UICollectionView {
     ///     let cell = collectionView.dequeueConfigurableHeader(class: MyHeaderClass.self, for: indexPath)
     func dequeueConfigurableHeader(class: (UICollectionReusableView & Configurable).Type, for indexPath: IndexPath) -> UICollectionReusableView & Configurable {
         return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: `class`.className, for: indexPath) as! UICollectionReusableView & Configurable
+    }
+    
+    /// Simplifies footer dequeue. Specify type of variable on declaration so proper footer will be dequeued.
+    /// Example:
+    ///
+    ///     let footer: MyFooter = collectionView.dequeueFooter(for: indexPath)
+    func dequeueFooter<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    /// Simplifies footer dequeue.
+    ///
+    ///     let footer = collectionView.dequeueFooter(MyFooter.self, for: indexPath)
+    func dequeueFooter<T: UICollectionReusableView>(_ class: T, for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: `class`.className, for: indexPath) as! T
     }
     
     /// Simplifies configurable footer dequeue.

@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 6/12/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ public extension Data {
     // ******************************* MARK: - Hex
     
     /// Get HEX string from data. Can be used for sending APNS token to backend.
-    public var hexString: String {
+    var hexString: String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
     
@@ -38,36 +38,36 @@ public extension Data {
     // ******************************* MARK: - String
     
     /// Try to convert data to UTF8 string
-    public var utf8String: String? {
+    var utf8String: String? {
         return String(data: self, encoding: String.Encoding.utf8)
     }
     
     /// String representation for data.
     /// Try to decode as UTF8 string first.
     /// Uses hex representation if data can not be represented as UTF8 string.
-    public var asString: String {
+    var asString: String {
         return utf8String ?? hexString
     }
     
     // ******************************* MARK: - Other
     
     /// Try to serialize JSON data
-    public var jsonObject: Any? {
+    var jsonObject: Any? {
         return try? JSONSerialization.jsonObject(with: self, options: [])
     }
     
     /// Try to get dictionary from JSON data
-    public var jsonDictionary: [String : Any]? {
+    var jsonDictionary: [String : Any]? {
         return jsonObject as? [String : Any]
     }
     
     /// Try to get array from JSON data
-    public var jsonArray: [Any]? {
+    var jsonArray: [Any]? {
         return jsonObject as? [Any]
     }
     
     /// Try to get string for key in dictionary from JSON data
-    public func jsonDictionaryStringForKey(_ key: String) -> String? {
+    func jsonDictionaryStringForKey(_ key: String) -> String? {
         guard let dictionary = jsonDictionary else { return nil }
         
         let value = dictionary[key]

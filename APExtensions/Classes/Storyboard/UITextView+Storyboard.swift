@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 6/27/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ public extension UITextView {
     }
     
     /// Scale font for screen
-    @IBInspectable public var fitScreenSize: Bool {
+    @IBInspectable var fitScreenSize: Bool {
         get {
             return defaultFont != nil
         }

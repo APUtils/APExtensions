@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 10/4/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
 
 public extension UITextField {
-    public enum TextFieldState {
+    enum TextFieldState {
         case hidden
         case shown(text: String?, placeholder: String?)
         case transparent
@@ -30,7 +30,7 @@ public extension UITextField {
         }
     }
     
-    public func configure(textFieldState: TextFieldState) {
+    func configure(textFieldState: TextFieldState) {
         switch textFieldState {
         case .hidden:
             isHidden = true

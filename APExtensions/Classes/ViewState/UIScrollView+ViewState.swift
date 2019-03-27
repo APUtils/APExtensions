@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 12/7/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,7 @@ public extension UIScrollView {
     }
     
     /// Tells scroll view to flash its scroll indicators in view did appear.
-    @IBInspectable public var flashScrollIndicatorsOnViewDidAppear: Bool {
+    @IBInspectable var flashScrollIndicatorsOnViewDidAppear: Bool {
         get {
             return _flashScrollIndicatorsOnViewDidAppear
         }
@@ -58,7 +58,7 @@ public extension UIScrollView {
                         // Wait until appeared
                         var token: NSObjectProtocol!
                         token = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: viewController, queue: nil) { [weak self] _ in
-                            NotificationCenter.default.removeObserver(token)
+                            if let token = token { NotificationCenter.default.removeObserver(token) }
                             guard let `self` = self else { return }
                             // Reset this flag so we can assign it again later if needed
                             self._flashScrollIndicatorsOnViewDidAppear = false
