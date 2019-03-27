@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		80A92A74A767696EA54A2DA9 /* Pods_APExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */; };
 		8374A77656BB94E1D7977739 /* Pods_APExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395BB6683ADC88370A9C1FD3 /* Pods_APExtensions_Tests.framework */; };
 		B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */; };
@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_asURL_Spec.swift; sourceTree = "<group>"; };
 		1C3CB983CAFCAC76FA697699 /* Pods-APExtensions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1E18FF74BED638A6CBB3398F /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		32419D24EFD29E6FBBA7030A /* APExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = APExtensions.podspec; path = ../APExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -54,14 +55,12 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* APExtensions_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APExtensions_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		694EDDC8CC6DE26D228C04C4 /* Pods-APExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCF9756A45C4D4C058B3B72 /* Pods-APExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8AB945DBF0884CB5747888BD /* Pods_APExtensions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APExtensions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57474C800BA2A652ED8F4FB /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveToTheRootViewController.swift; sourceTree = "<group>"; };
 		B004134E202E0EA400B58E18 /* updateDocs.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = updateDocs.command; path = ../updateDocs.command; sourceTree = "<group>"; };
-		B02A385B1F3332E6002E29F0 /* podInstall.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = podInstall.command; sourceTree = "<group>"; };
 		B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnceProtocolExample.swift; sourceTree = "<group>"; };
 		B099C485203EDD53000C01CB /* BecomeFirstResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeFirstResponderViewController.swift; sourceTree = "<group>"; };
 		B0A073C11F3B741B001B8CC6 /* uiview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiview.png; sourceTree = "<group>"; };
@@ -73,7 +72,6 @@
 		B0A073CD1F3B79EE001B8CC6 /* UITextView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITextView.png; sourceTree = "<group>"; };
 		B0A073CF1F3B7A3F001B8CC6 /* UIViewController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIViewController.png; sourceTree = "<group>"; };
 		B0BBEDAD1FBB46A2000CBD87 /* ScrollToBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToBottomViewController.swift; sourceTree = "<group>"; };
-		B0E5B42721137EBE005D8319 /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = podUpdate.command; sourceTree = "<group>"; };
 		B0E5B42B2113812C005D8319 /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 		B0E5B43621138735005D8319 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
@@ -180,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* _Supporting Files */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -205,9 +203,7 @@
 				B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */,
 				BE3B1BF1D9E4EDA304E77323 /* LICENSE */,
 				B7A07FA220F82B576CEC7EF3 /* podCheck.command */,
-				B02A385B1F3332E6002E29F0 /* podInstall.command */,
 				E53E65A9720A8DB4BF881A05 /* podPush.command */,
-				B0E5B42721137EBE005D8319 /* podUpdate.command */,
 				C1980566B39F5799ED4A250D /* README.md */,
 				B004134E202E0EA400B58E18 /* updateDocs.command */,
 			);
@@ -317,18 +313,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = XVJ8T9UW9V;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = XVJ8T9UW9V;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -338,6 +334,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -387,7 +384,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APExtensions/APExtensions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -396,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		938C817D4AF348474CA45FCE /* [CP] Check Pods Manifest.lock */ = {
@@ -441,23 +438,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -481,7 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -576,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -634,7 +628,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -651,7 +645,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -670,7 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APExtensions_Example.app/APExtensions_Example";
 			};
 			name = Debug;
@@ -685,7 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APExtensions_Example.app/APExtensions_Example";
 			};
 			name = Release;

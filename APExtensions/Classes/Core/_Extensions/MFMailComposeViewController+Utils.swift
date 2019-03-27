@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 7/14/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import MessageUI
@@ -12,7 +12,7 @@ import MessageUI
 
 public extension MFMailComposeViewController {
     /// Creates controller and simplifies its dismissal
-    public static func create(to: [String]) -> MFMailComposeViewController? {
+    static func create(to: [String]) -> MFMailComposeViewController? {
         guard MFMailComposeViewController.canSendMail() else { return nil }
             
         let vc = MFMailComposeViewController()

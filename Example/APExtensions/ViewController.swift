@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     // ******************************* MARK: - @IBOutlets
     
     @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var debugLabel: UILabel!
     
     // ******************************* MARK: - Private Properties
 
@@ -22,6 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
+        attributedText.setStrikethrough(text: "g Strikethrough T")
+        debugLabel.attributedText = attributedText
         
 //        doOnce(key: "viewDidLoad") {
 //            print("asd")
@@ -62,6 +67,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {
-        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .black
+        presentInPopoverIfNeeded(vc)
     }
 }

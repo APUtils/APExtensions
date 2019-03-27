@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 12/15/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ public extension UIBarButtonItem {
         }
     }
     
-    public var isHidden: Bool {
+    var isHidden: Bool {
         get {
             return tintColor == .clear && isEnabled == false
         }

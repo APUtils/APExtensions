@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 7/12/17.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -25,7 +25,7 @@ public extension NSLayoutConstraint {
     
     /// Scale constraint constant to fit screen. Assuming source font is for 2208x1242 screen.
     /// In case you need to change constant value programmatically - reset this flag to false first.
-    @IBInspectable public var fitScreenSize: Bool {
+    @IBInspectable var fitScreenSize: Bool {
         get {
             return defaultConstant != nil
         }
@@ -59,7 +59,7 @@ public extension NSLayoutConstraint {
 
 public extension NSLayoutConstraint {
     /// Make one pixel size constraint
-    @IBInspectable public var onePixelSize: Bool {
+    @IBInspectable var onePixelSize: Bool {
         get {
             return constant == 1 / UIScreen.main.scale
         }

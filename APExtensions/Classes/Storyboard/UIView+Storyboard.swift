@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 19.02.16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 // ******************************* MARK: - Border
 
 public extension UIView {
-    @IBInspectable public var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             guard let borderColor = layer.borderColor else { return nil }
             
@@ -22,7 +22,7 @@ public extension UIView {
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -32,7 +32,7 @@ public extension UIView {
     }
     
     /// Sets border width equal to 1 pixel
-    @IBInspectable public var borderOnePixelWidth: Bool {
+    @IBInspectable var borderOnePixelWidth: Bool {
         get {
             return layer.borderWidth == 1.0 / UIScreen.main.scale
         }
@@ -49,7 +49,7 @@ public extension UIView {
 // ******************************* MARK: - Corner Radius
 
 public extension UIView {
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -62,7 +62,7 @@ public extension UIView {
 // ******************************* MARK: - Shadow
 
 public extension UIView {
-    @IBInspectable public var shadowColor: UIColor? {
+    @IBInspectable var shadowColor: UIColor? {
         get {
             guard let shadowColor = layer.shadowColor else { return nil }
             
@@ -73,7 +73,7 @@ public extension UIView {
         }
     }
     
-    @IBInspectable public var shadowOffset: CGPoint {
+    @IBInspectable var shadowOffset: CGPoint {
         get {
             return CGPoint(x: layer.shadowOffset.width, y: layer.shadowOffset.height)
         }
@@ -82,7 +82,7 @@ public extension UIView {
         }
     }
     
-    @IBInspectable public var shadowOpacity: Float {
+    @IBInspectable var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
         }
@@ -91,7 +91,7 @@ public extension UIView {
         }
     }
     
-    @IBInspectable public var shadowRadius: CGFloat {
+    @IBInspectable var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -101,7 +101,7 @@ public extension UIView {
     }
     
     /// Apply square path for shadow. This increases performance for shadow drawing in case shadow is square.
-    @IBInspectable public var shadowApplyPath: Bool {
+    @IBInspectable var shadowApplyPath: Bool {
         get {
             return layer.shadowPath != nil
         }

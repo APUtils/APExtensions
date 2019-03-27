@@ -3,19 +3,19 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 12/23/16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
-// ******************************* MARK: - Cells, Header and Footer reuse
+// ******************************* MARK: - Cells, Header and Footer Reuse and Dequeue
 
 public extension UITableView {
     
     // ******************************* MARK: - Cell
     
     /// Simplifies cell registration. Xib name must be the same as class name.
-    public func registerNib(class: UITableViewCell.Type) {
+    func registerNib(class: UITableViewCell.Type) {
         register(UINib(nibName: `class`.className, bundle: nil), forCellReuseIdentifier: `class`.className)
     }
     
@@ -24,7 +24,7 @@ public extension UITableView {
     /// Example:
     ///
     ///     let cell: MyCell = tableView.dequeue(for: indexPath)
-    public func dequeue<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+    func dequeue<T: UITableViewCell>(for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
@@ -33,22 +33,22 @@ public extension UITableView {
     /// Example:
     ///
     ///     let cell = tableView.dequeueConfigurable(cellClass: MyClass.self, for: indexPath)
-    public func dequeueConfigurable(class: (UITableViewCell & Configurable).Type, for indexPath: IndexPath) -> UITableViewCell & Configurable {
+    func dequeueConfigurable(class: (UITableViewCell & Configurable).Type, for indexPath: IndexPath) -> UITableViewCell & Configurable {
         return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! UITableViewCell & Configurable
     }
     
     // ******************************* MARK: - Header and Footer
     
     /// Simplifies header/footer registration. Xib name must be the same as class name.
-    public func registerNib(class: UITableViewHeaderFooterView.Type) {
+    func registerNib(class: UITableViewHeaderFooterView.Type) {
         register(UINib(nibName: `class`.className, bundle: nil), forHeaderFooterViewReuseIdentifier: `class`.className)
     }
     
     /// Simplifies header/footer dequeue. Specify type of variable on declaration so proper cell will be dequeued.
     /// Example:
     ///
-    ///     let view: MyHeaderFooter = tableView.dequeueReusableHeaderFooter()
-    public func dequeue<T: UITableViewHeaderFooterView>() -> T {
+    ///     let view: MyHeaderFooter = tableView.dequeue()
+    func dequeue<T: UITableViewHeaderFooterView>() -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
     }
 }
@@ -58,12 +58,12 @@ public extension UITableView {
 public extension UITableView {
     /// Assures content offeset won't change after reload
     @available(*, renamed: "reloadDataKeepingBottomContentOffset")
-    public func reloadDataKeepingContentOffset() {
+    func reloadDataKeepingContentOffset() {
         reloadDataKeepingBottomContentOffset()
     }
     
     /// Assures bottom content offeset won't change after reload
-    public func reloadDataKeepingBottomContentOffset() {
+    func reloadDataKeepingBottomContentOffset() {
         let bottomOffset = contentSize.height - (contentOffset.y + bounds.height)
         reloadData()
         layoutIfNeeded()
@@ -71,7 +71,7 @@ public extension UITableView {
     }
     
     /// Assures content offeset won't change after updating cells size
-    public func updateCellSizesKeepingContentOffset() {
+    func updateCellSizesKeepingContentOffset() {
         let bottomOffset = contentOffset.y
         beginUpdates()
         endUpdates()
@@ -100,7 +100,7 @@ public extension UITableView {
     /// Store cells' sizes and uses them on recalculation.
     /// Replaces and proxies tableView's `delegate` property
     /// so be sure to assing this property when tableView's `delegate` is set.
-    public var handleEstimatedSizeAutomatically: Bool {
+    var handleEstimatedSizeAutomatically: Bool {
         set {
             guard newValue != _handleEstimatedSizeAutomatically else { return }
             
