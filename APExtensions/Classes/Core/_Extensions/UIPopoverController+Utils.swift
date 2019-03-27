@@ -12,7 +12,7 @@ import Foundation
 public extension UIPopoverController {
     /// Tries to automatically detect pressed button and present from it on iPads.
     /// Presents nothing if detection failed or it's iPhone.
-    public func present(animated: Bool = true) {
+    func present(animated: Bool = true) {
         let _origin: UIView?
         let window: UIWindow?
         if let _window = UIApplication.shared.keyWindow {

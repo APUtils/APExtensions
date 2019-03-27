@@ -10,7 +10,7 @@ import UIKit
 
 
 public extension UITextView {
-    public enum TextViewState {
+    enum TextViewState {
         case hidden
         case shown(text: String?)
         case transparent
@@ -23,7 +23,7 @@ public extension UITextView {
         }
     }
     
-    public func configure(textViewState: TextViewState) {
+    func configure(textViewState: TextViewState) {
         switch textViewState {
         case .hidden:
             isHidden = true

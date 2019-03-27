@@ -22,7 +22,7 @@ public extension InstantiatableFromXib where Self: NSObject {
     
     /// Instantiates object from xib file. 
     /// Xib filename should be equal to object class name.
-    public static func create() -> Self {
+    static func create() -> Self {
         return objectFromXib()
     }
 }
@@ -49,13 +49,13 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     
     /// Name of storyboard that contains this view controller.
     /// If not specified uses view controller's class name without "ViewController" postfix.
-    public static var storyboardName: String {
+    static var storyboardName: String {
         return className.replacingOccurrences(of: "ViewController", with: "")
     }
     
     /// View controller storyboard ID.
     /// By default uses view controller's class name.
-    public static var storyboardID: String {
+    static var storyboardID: String {
         return className
     }
     
@@ -63,7 +63,7 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     /// By default uses view controller's class name without "ViewController" postfix for `storyboardName` and view controller's class name for `storyboardID`.
     /// Implement `storyboardName` if you want to secify custom storyboard name.
     /// Implement `storyboardID` if you want to specify custom storyboard ID.
-    public static func create() -> Self {
+    static func create() -> Self {
         return controllerFromStoryboard()
     }
     
@@ -71,7 +71,7 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     /// By default uses view controller's class name without "ViewController" postfix for `storyboardName` and view controller's class name for `storyboardID`.
     /// Implement `storyboardName` if you want to secify custom storyboard name.
     /// Implement `storyboardID` if you want to specify custom storyboard ID.
-    public static func createWithNavigationController() -> (UINavigationController, Self) {
+    static func createWithNavigationController() -> (UINavigationController, Self) {
         let vc = create()
         let navigationVc = UINavigationController(rootViewController: vc)
         
@@ -87,21 +87,21 @@ public protocol InstantiatableContentView {
 }
 
 public extension InstantiatableContentView where Self: NSObject {
-    /// Instantiates contentView from xib file and making instantiator it's owner.
+    /// Instantiates contentView from xib file and makes instantiator it's owner.
     /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
-    public func createContentView() -> UIView {
+    func createContentView() -> UIView {
         return UINib(nibName: "\(type(of: self).className)ContentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
 
 public extension InstantiatableContentView where Self: UIView {
-    /// Instantiates contentView from xib file and making instantiator it's owner.
+    /// Instantiates contentView from xib file and makes instantiator it's owner.
     /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
     /// After creation puts content view as subview to self and constraints sides.
     /// Also makes self background color transparent.
     /// The main idea here is that content view should fully set how self view looks.
     @available(iOS 9.0, *)
-    public func createAndAttachContentView() {
+    func createAndAttachContentView() {
         backgroundColor = .clear
         let contentView = createContentView()
         contentView.frame = bounds

@@ -12,7 +12,7 @@ import MessageUI
 
 public extension MFMailComposeViewController {
     /// Creates controller and simplifies its dismissal
-    public static func create(to: [String]) -> MFMailComposeViewController? {
+    static func create(to: [String]) -> MFMailComposeViewController? {
         guard MFMailComposeViewController.canSendMail() else { return nil }
             
         let vc = MFMailComposeViewController()

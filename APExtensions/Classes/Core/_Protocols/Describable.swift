@@ -12,7 +12,7 @@ import Foundation
 public protocol Describable: CustomStringConvertible {}
 
 public extension Describable {
-    public var description: String {
+    var description: String {
         var description = ""
         
         let mirror = Mirror(reflecting: self)

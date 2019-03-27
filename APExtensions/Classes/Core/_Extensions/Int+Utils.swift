@@ -12,12 +12,12 @@ import Foundation
 public extension Int {
     
     /// Returns whether number is even
-    public var isEven: Bool {
+    var isEven: Bool {
         return self % 2 == 0
     }
     
     /// Returns whether number is odd
-    public var isOdd: Bool {
+    var isOdd: Bool {
         return self % 2 == 1
     }
 }

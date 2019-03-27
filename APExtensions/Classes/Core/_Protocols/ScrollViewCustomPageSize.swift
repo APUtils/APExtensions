@@ -31,11 +31,11 @@ public protocol ScrollViewCustomHorizontalPageSize: UIScrollViewDelegate {
 }
 
 public extension ScrollViewCustomHorizontalPageSize {
-    public func getCurrentPage(scrollView: UIScrollView) -> CGFloat {
+    func getCurrentPage(scrollView: UIScrollView) -> CGFloat {
         return (scrollView.contentOffset.x + scrollView.contentInset.left) / pageSize
     }
     
-    public func getTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint) -> CGFloat {
+    func getTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint) -> CGFloat {
         let targetX: CGFloat = scrollView.contentOffset.x + velocity.x * 60.0
         
         var targetIndex = (targetX + scrollView.contentInset.left) / pageSize

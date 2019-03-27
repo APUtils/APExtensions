@@ -12,7 +12,7 @@ import UIKit
 
 public extension UIApplication {
     /// Initiates call to `phone`
-    public static func makeCall(phone: String) {
+    static func makeCall(phone: String) {
         let urlString = "telprompt://\(phone)"
         guard let url = URL(string: urlString) else { return }
         
@@ -26,7 +26,7 @@ private var v_backgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
 
 public extension UIApplication {
     /// Starts background task if app is in background and task is not yet started.
-    public func startBackgroundTaskIfNeeded() {
+    func startBackgroundTaskIfNeeded() {
         guard UIApplication.shared.applicationState == .background else { return }
         guard v_backgroundTaskIdentifier == .invalid else { return }
         
@@ -36,7 +36,7 @@ public extension UIApplication {
     }
     
     /// Stops background task if not yet stopped.
-    public func stopBackgroundTaskIfNeeded() {
+    func stopBackgroundTaskIfNeeded() {
         guard v_backgroundTaskIdentifier != .invalid else { return }
         
         endBackgroundTask(v_backgroundTaskIdentifier)

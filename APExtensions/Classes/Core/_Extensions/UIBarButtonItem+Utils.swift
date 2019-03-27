@@ -22,7 +22,7 @@ public extension UIBarButtonItem {
         }
     }
     
-    public var isHidden: Bool {
+    var isHidden: Bool {
         get {
             return tintColor == .clear && isEnabled == false
         }

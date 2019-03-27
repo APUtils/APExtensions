@@ -10,7 +10,7 @@ import UIKit
 
 
 public extension UIImageView {
-    public enum ImageViewState {
+    enum ImageViewState {
         case hidden
         case shown(image: UIImage?)
         case transparent
@@ -23,7 +23,7 @@ public extension UIImageView {
         }
     }
     
-    public func configure(imageViewState: ImageViewState) {
+    func configure(imageViewState: ImageViewState) {
         switch imageViewState {
         case .hidden:
             isHidden = true

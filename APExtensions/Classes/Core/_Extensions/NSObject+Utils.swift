@@ -22,7 +22,7 @@ public extension NSObject {
         }
     }
     
-    public func doOnce(key: String, action: () -> Void) {
+    func doOnce(key: String, action: () -> Void) {
         var shouldPerformAction = false
         g.synchronized(self) {
             var doOnceStorage = self.doOnceStorage ?? []
