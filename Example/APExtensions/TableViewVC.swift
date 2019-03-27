@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/2/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,12 @@ class TableViewVC: UIViewController {
     
     // ******************************* MARK: - Initialization and Setup
     
+    deinit {
+        print("deinit \(self)")
+    }
+    
     override func viewDidLoad() {
+        print("viewDidLoad \(self)")
         setup()
         super.viewDidLoad()
     }
@@ -31,6 +36,7 @@ class TableViewVC: UIViewController {
         tableView.handleEstimatedSizeAutomatically = true
         tableView.handleEstimatedSizeAutomatically = false
         tableView.handleEstimatedSizeAutomatically = false
+        tableView.handleEstimatedSizeAutomatically = true
     }
 }
 

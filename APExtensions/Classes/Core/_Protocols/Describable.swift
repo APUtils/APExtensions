@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 6/14/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ import Foundation
 public protocol Describable: CustomStringConvertible {}
 
 public extension Describable {
-    public var description: String {
+    var description: String {
         var description = ""
         
         let mirror = Mirror(reflecting: self)

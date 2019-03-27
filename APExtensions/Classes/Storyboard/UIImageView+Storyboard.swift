@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 22.02.16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ public extension UIImageView {
     }
     
     /// Scale image for screen
-    @IBInspectable public var fitScreenSize: Bool {
+    @IBInspectable var fitScreenSize: Bool {
         get {
             return defaultImage != nil
         }
@@ -67,7 +67,7 @@ public extension UIImageView {
     
     /// Using localized "_en" key to append to image. Won't work if you don't have "_en" key in your localized strings.
     /// In case you need to change image programmatically - set this property to `nil` first
-    @IBInspectable public var localizableImageName: String? {
+    @IBInspectable var localizableImageName: String? {
         get {
             return localizedImageName
         }

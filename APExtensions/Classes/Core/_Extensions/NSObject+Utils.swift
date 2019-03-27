@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 4/24/18.
-//  Copyright © 2018 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -22,9 +22,9 @@ public extension NSObject {
         }
     }
     
-    public func doOnce(key: String, action: () -> Void) {
+    func doOnce(key: String, action: () -> Void) {
         var shouldPerformAction = false
-        g_synchronized(self) {
+        g.synchronized(self) {
             var doOnceStorage = self.doOnceStorage ?? []
             guard !doOnceStorage.contains(key) else { return }
             

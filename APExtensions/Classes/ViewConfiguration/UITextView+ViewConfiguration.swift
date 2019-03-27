@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 10/4/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
 
 public extension UITextView {
-    public enum TextViewState {
+    enum TextViewState {
         case hidden
         case shown(text: String?)
         case transparent
@@ -23,7 +23,7 @@ public extension UITextView {
         }
     }
     
-    public func configure(textViewState: TextViewState) {
+    func configure(textViewState: TextViewState) {
         switch textViewState {
         case .hidden:
             isHidden = true

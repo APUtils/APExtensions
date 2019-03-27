@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 2/9/18.
-//  Copyright © 2018 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -11,15 +11,15 @@ import UIKit
 
 /// Can be used in overlaying windows to capture underlaying appearance and prevent it change.
 /// Appearance captured on initialization.
-public class AppearanceCaptureViewController: UIViewController {
+open class AppearanceCaptureViewController: UIViewController {
     private var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
     private var customPrefersStatusBarHidden = false
     
-    override public var prefersStatusBarHidden: Bool {
+    override open var prefersStatusBarHidden: Bool {
         return customPrefersStatusBarHidden
     }
     
-    override public var preferredStatusBarStyle : UIStatusBarStyle {
+    override open var preferredStatusBarStyle : UIStatusBarStyle {
         return customPreferredStatusBarStyle
     }
     
@@ -38,7 +38,7 @@ public class AppearanceCaptureViewController: UIViewController {
     }
     
     private func onInitSetup() {
-        let topVc = g_statusBarStyleTopViewController
+        let topVc = g.statusBarStyleTopViewController
         
         customPrefersStatusBarHidden = topVc?.prefersStatusBarHidden ?? false
         

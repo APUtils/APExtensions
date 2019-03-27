@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 08.08.16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ import Foundation
 // Collection (Array and Dictionary)
 public extension Optional where Wrapped: Collection {
     /// Check if object is nil or empty
-    public var isNilOrEmpty: Bool {
+    var isNilOrEmpty: Bool {
         if let value = self, !value.isEmpty {
             return false
         } else {
@@ -25,7 +25,7 @@ public extension Optional where Wrapped: Collection {
 // Strings
 public extension Optional where Wrapped == String {
     /// Check if object is nil or empty
-    public var isNilOrEmpty: Bool {
+    var isNilOrEmpty: Bool {
         if let value = self, !value.isEmpty {
             return false
         } else {
@@ -37,7 +37,7 @@ public extension Optional where Wrapped == String {
 // Data
 public extension Optional where Wrapped == Data {
     /// Check if object is nil or empty
-    public var isNilOrEmpty: Bool {
+    var isNilOrEmpty: Bool {
         if let value = self, !value.isEmpty {
             return false
         } else {
