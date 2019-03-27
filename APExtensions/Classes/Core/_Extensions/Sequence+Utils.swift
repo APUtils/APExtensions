@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/4/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
 
 
 public extension Sequence {
-    public func splitBefore(separator isSeparator: (Iterator.Element) -> Bool) -> [AnySequence<Iterator.Element>] {
+    func splitBefore(separator isSeparator: (Iterator.Element) -> Bool) -> [AnySequence<Iterator.Element>] {
         var result: [AnySequence<Iterator.Element>] = []
         var subSequence: [Iterator.Element] = []
         

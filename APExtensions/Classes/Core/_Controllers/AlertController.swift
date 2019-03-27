@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 4/26/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -50,7 +50,7 @@ public final class AlertController: UIAlertController {
                 if AlertController.presentationStyle == .window, let alertWindow = alertWindow {
                     popover.sourceView = alertWindow
                     popover.sourceRect = CGRect(x: alertWindow.bounds.size.width / 2, y: alertWindow.bounds.size.height, width: 0, height: 0)
-                } else if let view = g_topViewController?.view {
+                } else if let view = g.topViewController?.view {
                     popover.sourceView = view
                     popover.sourceRect = CGRect(x: view.bounds.size.width / 2, y: view.bounds.size.height, width: 0, height: 0)
                 } else {
@@ -60,14 +60,14 @@ public final class AlertController: UIAlertController {
             }
         }
         
-        g_performInMain {
+        g.performInMain {
             switch AlertController.presentationStyle {
             case .window:
                 self.alertWindow?.makeKeyAndVisible()
                 self.alertWindow?.rootViewController?.present(self, animated: animated, completion: completion)
                 
             case .topController:
-                g_topViewController?.present(self, animated: animated, completion: completion)
+                g.topViewController?.present(self, animated: animated, completion: completion)
             }
         }
     }

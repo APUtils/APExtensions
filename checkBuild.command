@@ -1,7 +1,18 @@
 #!/bin/bash
 
+set -e
+
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-xcodebuild -workspace "Example/APExtensions.xcworkspace" -scheme "APExtensions-Example" -configuration "Release" | xcpretty
-xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -alltargets | xcpretty
+echo ""
+
+set -o pipefail && xcodebuild -workspace "Example/APExtensions.xcworkspace" -scheme "APExtensions-Example" -configuration "Release"  -sdk iphonesimulator12.2 | xcpretty
+
+echo
+
+xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -alltargets  -sdk iphonesimulator12.2 | xcpretty
+
+echo ""
+echo "SUCCESS!"
+echo ""

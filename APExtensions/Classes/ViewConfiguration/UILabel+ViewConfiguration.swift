@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 9/11/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
 
 public extension UILabel {
-    public enum LabelState {
+    enum LabelState {
         case hidden
         case shown(text: String?)
         case transparent
@@ -23,7 +23,7 @@ public extension UILabel {
         }
     }
     
-    public func configure(labelState: LabelState) {
+    func configure(labelState: LabelState) {
         switch labelState {
         case .hidden:
             isHidden = true

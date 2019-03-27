@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 16.08.16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ public func += <K, V> (left: inout [K: V], right: [K: V]?) {
 
 public extension Dictionary {
     /// Helper method to modify value at specific key
-    public mutating func modifyValue(atKey key: Key, _ modifyValue: (_ element: inout Value?) throws -> ()) rethrows {
+    mutating func modifyValue(atKey key: Key, _ modifyValue: (_ element: inout Value?) throws -> ()) rethrows {
         var value = self[key]
         try modifyValue(&value)
         self[key] = value
@@ -36,7 +36,7 @@ public extension Dictionary {
     ///   transformed value of the same or of a different type.
     /// - Returns: A dictionary containing the keys and transformed values of
     ///   this dictionary.
-    public func compactMapValues<T>(_ transform: (Dictionary.Value) throws -> T?) rethrows -> [Dictionary.Key: T] {
+    func compactMapValues<T>(_ transform: (Dictionary.Value) throws -> T?) rethrows -> [Dictionary.Key: T] {
         var resultDictionary = [Dictionary.Key: T]()
         
         for (key, value) in self {
@@ -52,7 +52,7 @@ public extension Dictionary {
 // ******************************* MARK: - Values for key
 
 public extension Dictionary {
-    public func int(forKey key: Key) -> Int? {
+    func int(forKey key: Key) -> Int? {
         if let int = self[key] as? Int {
             return int
         } else if let number = self[key] as? NSNumber {
@@ -66,11 +66,11 @@ public extension Dictionary {
         }
     }
     
-    public func double(forKey key: Key, defaultValue: Double) -> Double {
+    func double(forKey key: Key, defaultValue: Double) -> Double {
         return double(forKey: key) ?? defaultValue
     }
     
-    public func double(forKey key: Key) -> Double? {
+    func double(forKey key: Key) -> Double? {
         if let double = self[key] as? Double {
             return double
         } else if let number = self[key] as? NSNumber {
@@ -84,7 +84,7 @@ public extension Dictionary {
         }
     }
     
-    public func bool(forKey key: Key) -> Bool? {
+    func bool(forKey key: Key) -> Bool? {
         if let bool = self[key] as? Bool {
             return bool
         } else if let number = self[key] as? NSNumber {
@@ -100,11 +100,11 @@ public extension Dictionary {
         }
     }
     
-    public func string(forKey key: Key, defaultValue: String) -> String {
+    func string(forKey key: Key, defaultValue: String) -> String {
         return string(forKey: key) ?? defaultValue
     }
     
-    public func string(forKey key: Key) -> String? {
+    func string(forKey key: Key) -> String? {
         if let string = self[key] as? String {
             return string
         } else if let number = self[key] as? NSNumber {
@@ -118,7 +118,7 @@ public extension Dictionary {
         }
     }
     
-    public func date(forKey key: Key) -> Date? {
+    func date(forKey key: Key) -> Date? {
         if let date = self[key] as? Date {
             return date
         } else if let double = self.double(forKey: key) {
@@ -128,7 +128,7 @@ public extension Dictionary {
         }
     }
     
-    public func url(forKey key: Key) -> URL? {
+    func url(forKey key: Key) -> URL? {
         if let url = self[key] as? URL {
             return url
         } else if let string = self[key] as? String, !string.isEmpty {
@@ -138,7 +138,7 @@ public extension Dictionary {
         }
     }
     
-    public func data(forKey key: Key) -> Data? {
+    func data(forKey key: Key) -> Data? {
         if let data = self[key] as? Data {
             return data
         } else {
@@ -146,7 +146,7 @@ public extension Dictionary {
         }
     }
     
-    public func dictionary(forKey key: Key) -> [String: Any]? {
+    func dictionary(forKey key: Key) -> [String: Any]? {
         if let dictionary = self[key] as? [String: Any] {
             return dictionary
         } else {
@@ -162,23 +162,23 @@ public extension Dictionary {
         }
     }
     
-    public func arrayOfInts(forKey key: Key) -> [Int]? {
+    func arrayOfInts(forKey key: Key) -> [Int]? {
         return array(forKey: key)
     }
     
-    public func arrayOfDoubles(forKey key: Key) -> [Double]? {
+    func arrayOfDoubles(forKey key: Key) -> [Double]? {
         return array(forKey: key)
     }
     
-    public func arrayOfBools(forKey key: Key) -> [Bool]? {
+    func arrayOfBools(forKey key: Key) -> [Bool]? {
         return array(forKey: key)
     }
     
-    public func arrayOfStrings(forKey key: Key) -> [String]? {
+    func arrayOfStrings(forKey key: Key) -> [String]? {
         return array(forKey: key)
     }
     
-    public func arrayOfDictionaries(forKey key: Key) -> [[String: Any]]? {
+    func arrayOfDictionaries(forKey key: Key) -> [[String: Any]]? {
         return array(forKey: key)
     }
 }

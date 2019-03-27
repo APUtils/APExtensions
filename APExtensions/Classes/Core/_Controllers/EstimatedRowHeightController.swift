@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 8/2/18.
-//  Copyright © 2018 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     // ******************************* MARK: - Private Properties
     
     private let tableView: UITableView
-    private let originalTableViewDelegate: UITableViewDelegate?
+    private weak var originalTableViewDelegate: UITableViewDelegate?
     private var estimatedHeights: [IndexPath: CGFloat] = [:]
     
     // ******************************* MARK: - Initialization and Setup

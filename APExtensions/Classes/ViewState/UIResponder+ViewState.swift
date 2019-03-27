@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 2/19/18.
-//  Copyright © 2018 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -68,7 +68,7 @@ public extension UIResponder {
     /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
     ///
     /// Because configuration usually is made in `viewDidLoad` or `viewWillAppear` while `view` still might have `nil` `window` it's useful to delay `becomeFirstResponder` calls.
-    @IBInspectable public var becomeMainRespoder: Bool {
+    @IBInspectable var becomeMainRespoder: Bool {
         get {
             return _becomeMainResponder
         }
@@ -91,7 +91,7 @@ public extension UIResponder {
                         guard let `self` = self, self._becomeMainResponder else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            NotificationCenter.default.removeObserver(stateDidChangedToken)
+                            if let stateDidChangedToken = stateDidChangedToken { NotificationCenter.default.removeObserver(stateDidChangedToken) }
                             return
                         }
                         // Assure notification for proper controller
@@ -118,7 +118,7 @@ public extension UIResponder {
     /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
     ///
     /// Because configuration usually is made in `viewDidLoad` or `viewWillAppear` while `view` still might have `nil` `window` it's useful to delay `becomeFirstResponder` calls.
-    @IBInspectable public var becomeFirstResponderWhenPossible: Bool {
+    @IBInspectable var becomeFirstResponderWhenPossible: Bool {
         get {
             return _becomeFirstResponderWhenPossible
         }
@@ -142,7 +142,7 @@ public extension UIResponder {
                         guard let `self` = self, self._becomeFirstResponderWhenPossible else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            NotificationCenter.default.removeObserver(stateDidChangedToken)
+                            if let stateDidChangedToken = stateDidChangedToken { NotificationCenter.default.removeObserver(stateDidChangedToken) }
                             return
                         }
                         // Assure notification for proper controller
@@ -151,7 +151,7 @@ public extension UIResponder {
                         guard self._viewController?.isViewLoaded == true && self._viewController?.view.window != nil else { return }
                         
                         // Got our notification. Remove observer.
-                        NotificationCenter.default.removeObserver(stateDidChangedToken)
+                        if let stateDidChangedToken = stateDidChangedToken { NotificationCenter.default.removeObserver(stateDidChangedToken) }
                         
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderWhenPossible = false
@@ -172,7 +172,7 @@ public extension UIResponder {
     /// Quote from Apple doc: "Never call this method on a view that is not part of an active view hierarchy. You can determine whether the view is onscreen, by checking its window property. If that property contains a valid window, it is part of an active view hierarchy. If that property is nil, the view is not part of a valid view hierarchy."
     ///
     /// Because configuration usually is made in `viewDidLoad` or `viewWillAppear` while `view` still might have `nil` `window` it's useful to delay `becomeFirstResponder` calls.
-    @IBInspectable public var becomeFirstResponderOnViewDidAppear: Bool {
+    @IBInspectable var becomeFirstResponderOnViewDidAppear: Bool {
         get {
             return _becomeFirstResponderOnViewDidAppear
         }
@@ -196,14 +196,14 @@ public extension UIResponder {
                         guard let `self` = self, self._becomeFirstResponderOnViewDidAppear else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            NotificationCenter.default.removeObserver(token)
+                            if let token = token { NotificationCenter.default.removeObserver(token) }
                             return
                         }
                         // Assure notification for proper controller
                         guard self._viewController == notification.object as? UIViewController else { return }
                         
                         // Got our notification. Remove observer.
-                        NotificationCenter.default.removeObserver(token)
+                        if let token = token { NotificationCenter.default.removeObserver(token) }
                         
                         // Reset this flag so we can assign it again later if needed
                         self._becomeFirstResponderOnViewDidAppear = false

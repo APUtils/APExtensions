@@ -47,7 +47,7 @@ public func Log(_ object: Any?, _ file: String = #file, _ function: String = #fu
 
 public func smartPrint(_ object: Any?, addNewLines: Bool = true, useDebugPrint: Bool = false) {
     #if DEBUG
-        if let value = g_unwrap(object) {
+        if let value = g.unwrap(object) {
             if let values = value as? [Any] {
                 print("\n")
                 for (i, value) in values.enumerated() {
