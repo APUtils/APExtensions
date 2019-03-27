@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 28/05/16.
-//  Copyright © 2016 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -47,8 +47,8 @@ private extension UIWindow {
 
 public extension UIViewController {
     /// Previous view controller in navigation stack
-    public var previous: UIViewController? {
-        guard let navigationVcs = navigationController?.viewControllers, let currentVcIndex = navigationVcs.index(of: self) else { return nil }
+    var previous: UIViewController? {
+        guard let navigationVcs = navigationController?.viewControllers, let currentVcIndex = navigationVcs.firstIndex(of: self) else { return nil }
         
         let previousIndex = currentVcIndex - 1
         if previousIndex >= 0 {
@@ -59,7 +59,7 @@ public extension UIViewController {
     }
     
     /// Goes down presentation chain and returns root view controller that presents whole chain.
-    public var rootPresentingViewController: UIViewController? {
+    var rootPresentingViewController: UIViewController? {
         var rootPresentingViewController = presentingViewController
         while let presentingVc = rootPresentingViewController?.presentingViewController {
             rootPresentingViewController = presentingVc
@@ -69,7 +69,7 @@ public extension UIViewController {
     }
     
     /// Try to get window that owns this view controller.
-    public var window: UIWindow? {
+    var window: UIWindow? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
             if let _nextResponder = nextResponder?.next {
@@ -87,12 +87,12 @@ public extension UIViewController {
     }
     
     /// Returns true if controller curently is pushing, presenting, poping or dismissing.
-    public var isBeingTransitioned: Bool {
+    var isBeingTransitioned: Bool {
         return isBeingAdded || isBeingRemoved
     }
     
     /// Returns true if controller curently is pushing or presenting.
-    public var isBeingAdded: Bool {
+    var isBeingAdded: Bool {
         return isMovingToParent
             || isBeingPresented
             || (navigationController?.isMovingToParent ?? false)
@@ -100,7 +100,7 @@ public extension UIViewController {
     }
     
     /// Returns true if controller curently is poping or dismissing.
-    public var isBeingRemoved: Bool {
+    var isBeingRemoved: Bool {
         return isMovingFromParent
             || isBeingDismissed
             || (navigationController?.isMovingFromParent ?? false)
@@ -108,7 +108,7 @@ public extension UIViewController {
     }
     
     /// Presents view controller animated
-    public func present(_ vc: UIViewController) {
+    func present(_ vc: UIViewController) {
         present(vc, animated: true)
     }
     
@@ -119,7 +119,7 @@ public extension UIViewController {
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     /// Removes also overlaying controllers if needed.
-    public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let navigationController = navigationController {
             // Has navigation controller
             if navigationController.presentedViewController != nil {
@@ -186,7 +186,7 @@ public extension UIViewController {
     }
     
     /// Removes all presented view controllers and navigates to the root.
-    public func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let rootPresentingViewController = rootPresentingViewController {
             
             let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController
@@ -229,14 +229,28 @@ public extension UIViewController {
 
 // ******************************* MARK: - Other
 
-extension UIViewController {
+public extension UIViewController {
     /// Returns navigation controller with self as root.
-    public var wrappedIntoNavigation: UINavigationController {
+    var wrappedIntoNavigation: UINavigationController {
         return UINavigationController(rootViewController: self)
     }
     
     /// End editing in viewController's view
-    @IBAction public func endEditing(_ sender: Any) {
+    @IBAction func endEditing(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    /// Returns popover controller with self as root.
+    func wrappedIntoPopover() -> UIPopoverController {
+        return UIPopoverController(contentViewController: self)
+    }
+    
+    /// If it's an iPad wraps VC into popover, tries to automatically detect presentation place and then presents.
+    func presentInPopoverIfNeeded(_ vc: UIViewController, animated: Bool = true) {
+        if c.isIPhone {
+            present(vc, animated: animated)
+        } else {
+            vc.wrappedIntoPopover().present(animated: animated)
+        }
     }
 }

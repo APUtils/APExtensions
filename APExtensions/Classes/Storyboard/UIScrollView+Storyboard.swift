@@ -3,15 +3,15 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 5/18/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
 // ******************************* MARK: - Helper Extension
 
-fileprivate extension UIView {
-    fileprivate var _viewController: UIViewController? {
+private extension UIView {
+    var _viewController: UIViewController? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
             nextResponder = nextResponder?.next
@@ -29,7 +29,7 @@ fileprivate extension UIView {
 
 @available(iOS 11.0, *)
 public extension UIScrollView {
-    @IBInspectable public var disableAutomaticContentAdjustment: Bool {
+    @IBInspectable var disableAutomaticContentAdjustment: Bool {
         get {
             return contentInsetAdjustmentBehavior == .never
         }
@@ -44,7 +44,7 @@ public extension UIScrollView {
 public extension UIScrollView {
     /// Sets 64 or 0 for top content inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids top bars. Takes into account `contentInsetAdjustmentBehavior`.
-    @IBInspectable public var avoidNavigationBar: Bool {
+    @IBInspectable var avoidNavigationBar: Bool {
         get {
             if #available(iOS 11.0, *) {
                 switch contentInsetAdjustmentBehavior {
@@ -64,6 +64,7 @@ public extension UIScrollView {
                     } else {
                         return contentInset.top == 64
                     }
+                @unknown default: return false
                 }
             } else {
                 return contentInset.top == 64
@@ -82,7 +83,7 @@ public extension UIScrollView {
     
     /// Sets 49 or 0 for bottom inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids bottom bars. Takes into account `contentInsetAdjustmentBehavior`.
-    @IBInspectable public var avoidTabBar: Bool {
+    @IBInspectable var avoidTabBar: Bool {
         get {
             if #available(iOS 11.0, *) {
                 switch contentInsetAdjustmentBehavior {
@@ -102,6 +103,8 @@ public extension UIScrollView {
                     } else {
                         return contentInset.bottom == 49
                     }
+                    
+                @unknown default: return false
                 }
             } else {
                 return contentInset.bottom == 49

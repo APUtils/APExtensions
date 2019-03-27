@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 7/18/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 
@@ -14,7 +14,7 @@
 ///      private var managers: [Manager.Type] = {
 ///          return g_getClassesConformToProtocol(Manager.self)
 ///      }()
-@objc public protocol Manager {
+public protocol Manager: class, ClassName {
     /// Start manager. Usually on app start or user login.
     static func start()
     

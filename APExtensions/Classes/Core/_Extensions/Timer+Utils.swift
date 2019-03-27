@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 4/25/18.
-//  Copyright © 2018 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
 
 
 @available(iOS 10.0, *)
-extension Timer {
+public extension Timer {
     /// Returns timer that fires at each minute start
     static func scheduledMinuteStartTimer(action: @escaping (Timer) -> Void) -> Timer {
         // Getting next minute start date

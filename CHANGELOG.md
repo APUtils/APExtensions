@@ -2,6 +2,71 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [7.0.0](https://github.com/APUtils/APExtensions/releases/tag/7.0.0)
+Released on 27.03.2019.
+
+#### Added
+- Swift 5.0 support
+- Array .hasIntersection(with:)
+- Array appendMissing(contentsOf:)
+- Array remove(contentsOf:)
+- c.cacheDirectoryUrl
+- c.documentsDirectoryUrl
+- c.isIPhone
+- c.isSimulator
+- c.navigationBarHeight
+- c.pixelSize
+- c.screenScale
+- c.screenSize
+- c.statusBarHeight
+- c.tempDirectoryUrl
+- c.topBarsHeight
+- Conform Manager to class and ClassName
+- Date .adding(dateComponents:)
+- Error .isCancelledError
+- Error .isConnectError -> isConnectionError
+- g.isIPhone
+- InstantiatableContentView .createAndAttachContentView() for UIView
+- Int .isEven
+- Int .isOdd
+- Missing substring warnings
+- New class Constants and global 'c' variable to group all constants
+- NSMutableAttributedString .setStrikethrough(text:)
+- ScrollViewCustomHorizontalPageSize protocol
+- SingletonManager protocol
+- String .asAttributedString
+- String .asInt
+- String .asMutableAttributedString
+- String .asURL property and specs
+- UICollectionView .dequeueFooter(for:)
+- UICollectionView .dequeueFooter(_:for:)
+- UICollectionView .dequeueHeader(for:)
+- UICollectionView .dequeueHeader(_:for:)
+- UIPopoverController .present
+- UIScrollView .scrollToView(view:animated:)
+- UIView .constraintSides(to:)
+- UIViewControler .presentInPopoverIfNeeded(_:animated:)
+- UIViewController .wrappedIntoPopover
+
+#### Changed
+- Moved some fields from Globals to Constants
+- Using global class instead of global functions. Globals deprecated.
+
+#### Fixed
+- Assure alerts are presented from main thread
+- Prevent content adjustment insets if we are specifying insets directly
+
+#### Removed
+- Removed appDelegate and rootViewController they should be typecasted by app
+
+
+## [5.0.1](https://github.com/APUtils/APExtensions/releases/tag/5.0.1)
+Released on 12.01.2019.
+
+#### Fixed
+- Leak fix for EstimatedRowHeightController
+
+
 ## [5.0.0](https://github.com/APUtils/APExtensions/releases/tag/5.0.0)
 Released on 25.10.2018.
 

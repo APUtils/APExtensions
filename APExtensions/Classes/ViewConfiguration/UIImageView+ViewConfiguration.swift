@@ -3,14 +3,14 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 9/11/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
 
 public extension UIImageView {
-    public enum ImageViewState {
+    enum ImageViewState {
         case hidden
         case shown(image: UIImage?)
         case transparent
@@ -23,7 +23,7 @@ public extension UIImageView {
         }
     }
     
-    public func configure(imageViewState: ImageViewState) {
+    func configure(imageViewState: ImageViewState) {
         switch imageViewState {
         case .hidden:
             isHidden = true

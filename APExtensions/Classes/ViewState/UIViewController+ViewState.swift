@@ -3,7 +3,7 @@
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 5/19/17.
-//  Copyright © 2017 Anton Plebanovich. All rights reserved.
+//  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
@@ -75,37 +75,37 @@ private var associatedStateKey = 0
 public extension Notification.Name {
     /// UIViewController willMove(toParentViewController:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["parent"]` parameter if needed.
-    public static let UIViewControllerWillMoveToParentViewController = Notification.Name("UIViewControllerWillMoveToParentViewController")
+    static let UIViewControllerWillMoveToParentViewController = Notification.Name("UIViewControllerWillMoveToParentViewController")
     
     /// UIViewController viewDidLoad() method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewDidLoad = Notification.Name("UIViewControllerViewDidLoad")
+    static let UIViewControllerViewDidLoad = Notification.Name("UIViewControllerViewDidLoad")
     
     /// UIViewController viewWillAppear(_:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewWillAppear = Notification.Name("UIViewControllerViewWillAppear")
+    static let UIViewControllerViewWillAppear = Notification.Name("UIViewControllerViewWillAppear")
     
     /// UIViewController becomeFirstResponder() method was called notification.
     /// Called between willAppear and didAppear when controller is attached to responders chain.
     /// You may check `object` notification's property for UIViewController object and `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewDidAttach = Notification.Name("UIViewControllerViewDidAttach")
+    static let UIViewControllerViewDidAttach = Notification.Name("UIViewControllerViewDidAttach")
     
     /// UIViewController viewDidAppear(_:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewDidAppear = Notification.Name("UIViewControllerViewDidAppear")
+    static let UIViewControllerViewDidAppear = Notification.Name("UIViewControllerViewDidAppear")
     
     /// UIViewController viewWillDisappear(_:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewWillDisappear = Notification.Name("UIViewControllerViewWillDisappear")
+    static let UIViewControllerViewWillDisappear = Notification.Name("UIViewControllerViewWillDisappear")
     
     /// UIViewController viewDidDisappear(_:) method was called notification.
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
-    public static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
+    static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
     
     /// UIViewController viewState did changed notification.
     /// You may check `object` notification's property for UIViewController object.
     /// `userInfo` dictionary contains `viewState` param and may contain `animated` and `parent` parameters depending on case.
-    public static let UIViewControllerViewStateDidChange = Notification.Name("UIViewControllerViewStateDidChange")
+    static let UIViewControllerViewStateDidChange = Notification.Name("UIViewControllerViewStateDidChange")
 }
 
 // ******************************* MARK: - ViewControllerExtendedStates
@@ -114,6 +114,11 @@ public extension Notification.Name {
 public protocol ViewControllerExtendedStates {
     func viewDidAttach()
     func viewStateDidChange()
+}
+
+public extension ViewControllerExtendedStates {
+    func viewDidAttach() {}
+    func viewStateDidChange() {}
 }
 
 // ******************************* MARK: - UIViewController Swizzling
@@ -242,7 +247,7 @@ public extension UIViewController {
     }
     
     /// Allows to hide keyboard when touch outside
-    @IBInspectable public var hideKeyboardOnTouch: Bool {
+    @IBInspectable var hideKeyboardOnTouch: Bool {
         get {
             return hideRecognizer != nil
         }
@@ -258,7 +263,7 @@ public extension UIViewController {
                     } else {
                         var notificationToken: NSObjectProtocol!
                         notificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
-                            NotificationCenter.default.removeObserver(notificationToken)
+                            if let notificationToken = notificationToken { NotificationCenter.default.removeObserver(notificationToken) }
                             
                             if let hideRecognizer = self?.hideRecognizer {
                                 self?.view.addGestureRecognizer(hideRecognizer)
