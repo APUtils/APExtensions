@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [7.0.1](https://github.com/APUtils/APExtensions/releases/tag/7.0.1)
+Released on 04.04.2019.
+
+#### Fixed
+- Earlier Swift versions support fix
+
+
 ## [7.0.0](https://github.com/APUtils/APExtensions/releases/tag/7.0.0)
 Released on 27.03.2019.
 
