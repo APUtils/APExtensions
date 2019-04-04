@@ -48,9 +48,15 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     }
     
     /// Name of storyboard that contains this view controller.
-    /// If not specified uses view controller's class name without "ViewController" postfix.
+    /// If not specified uses view controller's class name without "ViewController" or "VC" postfix.
     static var storyboardName: String {
-        return className.replacingOccurrences(of: "ViewController", with: "")
+        if className.hasSuffix("ViewController") {
+            return className.replacingOccurrences(of: "ViewController", with: "")
+        } else if className.hasSuffix("VC") {
+            return className.replacingOccurrences(of: "VC", with: "")
+        } else {
+            fatalError("Please specify proper `storyboardName` for your view controller")
+        }
     }
     
     /// View controller storyboard ID.
