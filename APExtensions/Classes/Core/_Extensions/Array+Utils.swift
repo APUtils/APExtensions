@@ -130,6 +130,11 @@ public extension Array where Element: Equatable {
         return contains { array.contains($0) }
     }
     
+    /// Returns intersection array.
+    func intersection(with array: [Element]) -> [Element] {
+        return filter { !array.contains($0) }
+    }
+    
     /// Helper method to remove all objects that are equal to passed one.
     mutating func remove(_ element: Element) {
         while let index = firstIndex(of: element) {

@@ -68,7 +68,14 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        estimatedHeights[indexPath] = cell.bounds.height
+        // Prevent cell stuck in zero size.
+        // Table view won't queue for actual height if 0 is returned for estimated.
+        if cell.bounds.height > 0 {
+            estimatedHeights[indexPath] = cell.bounds.height
+        } else {
+            estimatedHeights[indexPath] = nil
+        }
+        
         originalTableViewDelegate?.tableView?(tableView, willDisplay: cell, forRowAt: indexPath)
     }
     
