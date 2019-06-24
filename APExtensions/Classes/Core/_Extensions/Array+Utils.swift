@@ -132,7 +132,7 @@ public extension Array where Element: Equatable {
     
     /// Returns intersection array.
     func intersection(with array: [Element]) -> [Element] {
-        return filter { !array.contains($0) }
+        return filter { array.contains($0) }
     }
     
     /// Helper method to remove all objects that are equal to passed one.
