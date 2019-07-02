@@ -10,7 +10,7 @@ import Foundation
 
 
 public extension Sequence {
-    public func splitBefore(separator isSeparator: (Iterator.Element) -> Bool) -> [AnySequence<Iterator.Element>] {
+    func splitBefore(separator isSeparator: (Iterator.Element) -> Bool) -> [AnySequence<Iterator.Element>] {
         var result: [AnySequence<Iterator.Element>] = []
         var subSequence: [Iterator.Element] = []
         

@@ -10,7 +10,7 @@ import UIKit
 
 
 public extension UIButton {
-    public enum ButtonState {
+    enum ButtonState {
         case hidden
         case shown(text: String?)
         case transparent
@@ -23,7 +23,7 @@ public extension UIButton {
         }
     }
     
-    public func configure(buttonState: ButtonState) {
+    func configure(buttonState: ButtonState) {
         switch buttonState {
         case .hidden:
             isHidden = true

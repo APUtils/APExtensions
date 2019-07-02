@@ -11,7 +11,7 @@ import UIKit
 
 public extension NSMutableAttributedString {
     /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.
-    public func set(font: UIFont, for text: String? = nil) {
+    func set(font: UIFont, for text: String? = nil) {
         let range: NSRange
         if let text = text {
             range = mutableString.range(of: text)
@@ -28,7 +28,7 @@ public extension NSMutableAttributedString {
     }
     
     /// Sets aligment for the first occurence of text. If text is `nil` sets aligment for entire string.
-    public func set(aligment: NSTextAlignment? = nil,
+    func set(aligment: NSTextAlignment? = nil,
              headIndent: CGFloat? = nil,
              lineSpacing: CGFloat? = nil,
              lineHeightMultiple: CGFloat? = nil,
@@ -56,17 +56,17 @@ public extension NSMutableAttributedString {
     }
     
     /// Sets text kern
-    public func set(kern: CGFloat) {
+    func set(kern: CGFloat) {
         addAttribute(.kern, value: kern, range: fullRange)
     }
     
     /// Makes text underlined
-    public func setUnderline() {
+    func setUnderline() {
         addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: fullRange)
     }
     
     /// Makes text striked through
-    public func setStrikethrough(text: String? = nil) {
+    func setStrikethrough(text: String? = nil) {
         let range: NSRange
         if let text = text {
             range = mutableString.range(of: text)

@@ -11,19 +11,19 @@ import WebKit
 
 public extension WKWebView {
     /// Loads url from given string if possible
-    public func load(_ string: String) {
+    func load(_ string: String) {
         guard let url = URL(string: string) else { return }
         
         load(url)
     }
     
     /// Loads url
-    public func load(_ url: URL) {
+    func load(_ url: URL) {
         load(URLRequest(url: url))
     }
     
     /// Shows empty page
-    public func clear() {
+    func clear() {
         load("about:blank")
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 
 public extension Character {
-    public var isUpperCase: Bool {
+    var isUpperCase: Bool {
         return String(self) == String(self).uppercased()
     }
 }

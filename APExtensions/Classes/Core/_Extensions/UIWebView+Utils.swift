@@ -11,12 +11,12 @@ import UIKit
 
 public extension UIWebView {
     /// Loads url from given string if possible
-    public func load(urlString: String) {
+    func load(urlString: String) {
         load(url: URL(string: urlString))
     }
     
     /// Loads url
-    public func load(url: URL?) {
+    func load(url: URL?) {
         guard let url = url else { return }
         
         let request = URLRequest(url: url)
@@ -24,7 +24,7 @@ public extension UIWebView {
     }
     
     /// Shows empty page
-    public func clear() {
+    func clear() {
         load(urlString: "about:blank")
     }
 }

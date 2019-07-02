@@ -1,46 +1,26 @@
 PODS:
-  - APExtensions (6.0.0):
-    - APExtensions/Abstractions (= 6.0.0)
-    - APExtensions/Core (= 6.0.0)
-    - APExtensions/Storyboard (= 6.0.0)
-    - APExtensions/ViewConfiguration (= 6.0.0)
-    - APExtensions/ViewState (= 6.0.0)
-  - APExtensions/Abstractions (6.0.0)
-  - APExtensions/Core (6.0.0)
-  - APExtensions/Storyboard (6.0.0)
-  - APExtensions/ViewConfiguration (6.0.0)
-  - APExtensions/ViewState (6.0.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - iOSSnapshotTestCase (2.2.0):
-    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
-  - iOSSnapshotTestCase/Core (2.2.0)
-  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
-    - iOSSnapshotTestCase/Core
-  - Nimble (7.3.4)
-  - Nimble-Snapshots (6.4.1):
-    - Nimble-Snapshots/Core (= 6.4.1)
-  - Nimble-Snapshots/Core (6.4.1):
-    - iOSSnapshotTestCase (~> 2.0)
-    - Nimble (~> 7.0)
-  - Quick (1.3.4)
+  - APExtensions (7.0.1):
+    - APExtensions/Abstractions (= 7.0.1)
+    - APExtensions/Core (= 7.0.1)
+    - APExtensions/Storyboard (= 7.0.1)
+    - APExtensions/ViewConfiguration (= 7.0.1)
+    - APExtensions/ViewState (= 7.0.1)
+  - APExtensions/Abstractions (7.0.1)
+  - APExtensions/Core (7.0.1)
+  - APExtensions/Storyboard (7.0.1)
+  - APExtensions/ViewConfiguration (7.0.1)
+  - APExtensions/ViewState (7.0.1)
+  - Nimble (8.0.1)
+  - Quick (2.0.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
-  - FBSnapshotTestCase
   - Nimble
-  - Nimble-Snapshots
   - Quick
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - FBSnapshotTestCase
-    - iOSSnapshotTestCase
     - Nimble
-    - Nimble-Snapshots
     - Quick
 
 EXTERNAL SOURCES:
@@ -48,13 +28,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 154b66aa1b0debef220cab8bb5226d1915271bd2
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
-  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Nimble-Snapshots: 438fb1a6fa3c655e246fc9ac375f6cd2964d759a
-  Quick: f4f7f063c524394c73ed93ac70983c609805d481
+  APExtensions: 9a7a7b6ff5b9785b245962de89fbbdaf4c10f10e
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
 
-PODFILE CHECKSUM: d933deb9fed985bca7edf7a3932b3dcd62599f53
+PODFILE CHECKSUM: 974674c4301af37974294b668ba6935745a5d7d0
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1

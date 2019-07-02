@@ -14,7 +14,7 @@ private let roundFontSize = false
 
 public extension UIFont {
     /// Returns screen scaled font. Assuming source font is for 2208x1242 screen.
-    public var screenFitFont: UIFont {
+    var screenFitFont: UIFont {
         let baseScreenSize: CGFloat = 414 // iPhone 6+
         let currentScreenSize = UIScreen.main.bounds.width
         let fontResizeCoef = currentScreenSize / baseScreenSize

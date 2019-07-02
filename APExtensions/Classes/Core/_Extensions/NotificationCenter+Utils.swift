@@ -12,7 +12,7 @@ import Foundation
 
 public extension Notification.Name {
     /// Post on 0:00:00 every day so app can refresh it's data. For example change `Today` to `Yesterday` date formatter string.
-    public static let DayDidStart = Notification.Name("DayDidStart")
+    static let DayDidStart = Notification.Name("DayDidStart")
 }
 
 
@@ -22,7 +22,7 @@ private var fireDate: Date?
 
 public extension NotificationCenter {
     /// Start day notifications that post on 0:00:00 every day so app can refresh it's data. For example change `Today` to `Yesterday` date formatter string.
-    public func startDayNotifications() {
+    func startDayNotifications() {
         guard fireDate == nil else { return }
         
         fireDate = Date.tomorrow
@@ -36,7 +36,7 @@ public extension NotificationCenter {
         g.sharedNotificationCenter.addObserver(self, selector: #selector(self.onWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
-    public func stopDayNotifications() {
+    func stopDayNotifications() {
         g.sharedNotificationCenter.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         g.sharedNotificationCenter.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
         

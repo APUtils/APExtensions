@@ -10,13 +10,13 @@ import UIKit
 
 
 public extension UIView {
-    public enum ViewState {
+    enum ViewState {
         case hidden
         case shown
         case transparent
     }
     
-    public func configure(viewState: ViewState) {
+    func configure(viewState: ViewState) {
         switch viewState {
         case .hidden:
             isHidden = true

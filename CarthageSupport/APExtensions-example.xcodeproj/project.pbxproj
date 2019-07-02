@@ -208,6 +208,8 @@
 		B0F83117203763D0004FC037 /* UIView+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302020375BDB004FC037 /* UIView+ViewConfiguration.swift */; };
 		B0F83118203763D0004FC037 /* UILabel+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302120375BDB004FC037 /* UILabel+ViewConfiguration.swift */; };
 		B0F83119203763D0004FC037 /* UITextField+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302220375BDB004FC037 /* UITextField+ViewConfiguration.swift */; };
+		E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */; };
+		E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */; };
 		E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 		E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 /* End PBXBuildFile section */
@@ -343,6 +345,7 @@
 		B0F8310C203763C6004FC037 /* APExtensionsViewConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APExtensionsViewConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APExtensionsViewConfiguration.h; sourceTree = "<group>"; };
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPopoverController+Utils.swift"; sourceTree = "<group>"; };
 		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -530,6 +533,7 @@
 				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
 				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
 				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
+				E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */,
 				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
 				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
 				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
@@ -1068,6 +1072,7 @@
 				B0F8307520375BDB004FC037 /* UIView+ViewState.swift in Sources */,
 				B0F8304F20375BDB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F8304120375BDB004FC037 /* UIImageView+Utils.swift in Sources */,
+				E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */,
 				B0F8306B20375BDB004FC037 /* UIImageView+ViewConfiguration.swift in Sources */,
 				B0F8306A20375BDB004FC037 /* UITextView+ViewConfiguration.swift in Sources */,
@@ -1135,6 +1140,7 @@
 				B0F830C72037629E004FC037 /* APUtils.mm in Sources */,
 				B0F830CE203762CB004FC037 /* UIStoryboard+Utils.swift in Sources */,
 				B0F830F2203762D0004FC037 /* Describable.swift in Sources */,
+				E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				B0F830CD203762CB004FC037 /* FileManager+Utils.swift in Sources */,
 				B0F830D4203762CB004FC037 /* UIWebView+Utils.swift in Sources */,
 				B0F830E6203762CB004FC037 /* UIImage+Utils.swift in Sources */,
@@ -1278,7 +1284,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1330,7 +1336,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

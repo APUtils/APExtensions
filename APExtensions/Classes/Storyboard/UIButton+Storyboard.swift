@@ -23,7 +23,7 @@ public extension UIButton {
     }
     
     /// Scale button title font for screen
-    @IBInspectable public var fitScreenSize: Bool {
+    @IBInspectable var fitScreenSize: Bool {
         get {
             return self.defaultFont != nil
         }
@@ -49,7 +49,7 @@ public extension UIButton {
 
 public extension UIButton {
     /// Underlying label number of lines
-    @IBInspectable public var lines: Int {
+    @IBInspectable var lines: Int {
         get {
             return titleLabel?.numberOfLines ?? 1
         }

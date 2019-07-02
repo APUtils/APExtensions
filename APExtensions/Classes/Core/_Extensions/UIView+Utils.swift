@@ -12,7 +12,7 @@ import UIKit
 
 public extension UIView {
     /// View width
-    public var width: CGFloat {
+    var width: CGFloat {
         get {
             return bounds.width
         }
@@ -22,7 +22,7 @@ public extension UIView {
     }
     
     /// View height
-    public var height: CGFloat {
+    var height: CGFloat {
         get {
             return bounds.height
         }
@@ -32,7 +32,7 @@ public extension UIView {
     }
     
     /// View size
-    public var size: CGSize {
+    var size: CGSize {
         get {
             return bounds.size
         }
@@ -47,17 +47,17 @@ public extension UIView {
 public extension UIView {
     /// Checks if code runs inside animation closure
     @available(iOS 9.0, *)
-    public static var isInAnimationClosure: Bool {
+    static var isInAnimationClosure: Bool {
         return inheritedAnimationDuration > 0
     }
     
-    public func fadeInAnimated() {
+    func fadeInAnimated() {
         guard alpha != 1 else { return }
         
         g.animate { self.alpha = 1 }
     }
     
-    public func fadeOutAnimated() {
+    func fadeOutAnimated() {
         guard alpha != 0 else { return }
         
         g.animate { self.alpha = 0 }
@@ -68,12 +68,12 @@ public extension UIView {
 
 public extension UIView {
     /// Makes corner radius euqal to half of width or height
-    public func makeRound() {
+    func makeRound() {
         layer.cornerRadius = min(width, height) / 2
     }
     
     /// Returns closest UIViewController from responders chain.
-    public var viewController: UIViewController? {
+    var viewController: UIViewController? {
         var nextResponder: UIResponder? = self
         while nextResponder != nil {
             nextResponder = nextResponder?.next
@@ -87,7 +87,7 @@ public extension UIView {
     }
     
     /// Gets view's top most superview
-    public var rootView: UIView {
+    var rootView: UIView {
         return superview?.rootView ?? self
     }
 }
@@ -96,7 +96,7 @@ public extension UIView {
 
 public extension UIView {
     /// Returns all view's subviews
-    public var allSubviews: [UIView] {
+    var allSubviews: [UIView] {
         var allSubviews = self.subviews
         
         allSubviews.forEach { allSubviews.append(contentsOf: $0.allSubviews) }
@@ -104,17 +104,24 @@ public extension UIView {
         return allSubviews
     }
     
+    #if compiler(>=5)
     /// All view superviews to the top most
-    public var superviews: AnySequence<UIView> {
+    var superviews: DropFirstSequence<UnfoldSequence<UIView, (UIView?, Bool)>> {
         return sequence(first: self, next: { $0.superview }).dropFirst(1)
     }
+    #else
+    /// All view superviews to the top most
+    var superviews: AnySequence<UIView> {
+        return sequence(first: self, next: { $0.superview }).dropFirst(1)
+    }
+    #endif
 }
 
 // ******************************* MARK: - Image
 
 public extension UIView {
     /// Creates image from view and adds overlay image at the center if provided
-    public func getSnapshotImage(overlayImage: UIImage? = nil) -> UIImage {
+    func getSnapshotImage(overlayImage: UIImage? = nil) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
         defer { UIGraphicsEndImageContext() }
         
@@ -137,12 +144,12 @@ public extension UIView {
 
 public extension UIView {
     /// Ends editing on view and all of it's subviews
-    @IBAction public func endEditing() {
+    @IBAction func endEditing() {
         endEditing(true)
     }
     
     /// Checks if window is not nil before calling becomeFirstResponder()
-    public func becomeFirstResponderIfPossible() {
+    func becomeFirstResponderIfPossible() {
         guard window != nil else { return }
         
         becomeFirstResponder()
@@ -164,14 +171,14 @@ public extension UIView {
     }
     
     /// Is activity indicator showing?
-    public var isShowingActivityIndicator: Bool {
+    var isShowingActivityIndicator: Bool {
         return showCounter > 0
     }
     
     /// Shows activity indicator.
     /// It uses existing one if found in subviews.
     /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
-    public func showActivityIndicator() {
+    func showActivityIndicator() {
         showCounter += 1
         
         var activityIndicator: UIActivityIndicatorView! = subviews.compactMap({ $0 as? UIActivityIndicatorView }).last
@@ -193,7 +200,7 @@ public extension UIView {
     /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
     /// - parameters:
     ///   - force: Force activity indicator hide
-    public func hideActivityIndicator(force: Bool = false) {
+    func hideActivityIndicator(force: Bool = false) {
         if force {
             showCounter = 0
         } else {
@@ -214,12 +221,13 @@ public extension UIView {
 public extension UIView {
     /// Creates constraints between self and provided view for top, bottom, leading and trailing sides.
     @available(iOS 9.0, *)
-    public func constraintSides(to view: UIView) {
-        var constraints: [NSLayoutConstraint] = []
-        constraints.append(bottomAnchor.constraint(equalTo: view.bottomAnchor))
-        constraints.append(leadingAnchor.constraint(equalTo: view.leadingAnchor))
-        constraints.append(trailingAnchor.constraint(equalTo: view.trailingAnchor))
-        constraints.append(topAnchor.constraint(equalTo: view.topAnchor))
+    func constraintSides(to view: UIView) {
+        let constraints: [NSLayoutConstraint] = [
+            bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topAnchor.constraint(equalTo: view.topAnchor)
+        ]
         
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)

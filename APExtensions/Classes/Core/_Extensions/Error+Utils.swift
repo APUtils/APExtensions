@@ -12,18 +12,18 @@ import Foundation
 public extension Error {
     /// Checks if error is related to connection problems. Usual flow is to retry on those errors.
     @available(*, deprecated, renamed: "isConnectionError")
-    public var isConnectError: Bool {
+    var isConnectError: Bool {
         return isConnectionError
     }
     
     /// Checks if cancelled error
-    public var isCancelledError: Bool {
+    var isCancelledError: Bool {
         guard _domain == NSURLErrorDomain else { return false }
         return _code == NSURLErrorCancelled
     }
     
     /// Checks if error is related to connection problems. Usual flow is to retry on those errors.
-    public var isConnectionError: Bool {
+    var isConnectionError: Bool {
         guard _domain == NSURLErrorDomain else { return false }
         
         return _code == NSURLErrorNotConnectedToInternet

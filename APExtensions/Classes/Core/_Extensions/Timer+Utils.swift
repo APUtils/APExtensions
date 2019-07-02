@@ -12,7 +12,7 @@ import Foundation
 @available(iOS 10.0, *)
 public extension Timer {
     /// Returns timer that fires at each minute start
-    public static func scheduledMinuteStartTimer(action: @escaping (Timer) -> Void) -> Timer {
+    static func scheduledMinuteStartTimer(action: @escaping (Timer) -> Void) -> Timer {
         // Getting next minute start date
         var components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
         components.minute = (components.minute ?? 0) + 1
