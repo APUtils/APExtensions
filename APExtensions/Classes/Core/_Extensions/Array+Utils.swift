@@ -147,6 +147,11 @@ public extension Array where Element: Equatable {
         let missing = array.filter { !contains($0) }
         append(contentsOf: missing)
     }
+    
+    /// Helper method to filter out duplicates
+    public func filterDuplicates() -> [Element] {
+        return filterDuplicates { $0 == $1 }
+    }
 }
 
 // ******************************* MARK: - Splitting

@@ -11,6 +11,8 @@
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
+		0DCE43D9223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
+		0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
 		B08501B3203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
 		B08501B4203B6A2C00E94409 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; };
 		B08501B5203B6A5200E94409 /* UIResponder+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -237,6 +239,7 @@
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
+		0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Utils.swift"; sourceTree = "<group>"; };
 		B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
 		B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedRowHeightController.swift; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
@@ -517,6 +520,7 @@
 				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
 				B0F8300320375BDB004FC037 /* String+Utils.swift */,
 				B0E5B430211386AC005D8319 /* Timer+Utils.swift */,
+				0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */,
 				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
 				B0F82FE620375BDB004FC037 /* UIBarButtonItem+Utils.swift */,
 				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
@@ -1020,6 +1024,7 @@
 				B0F8303420375BDB004FC037 /* FileManager+Utils.swift in Sources */,
 				B0F8306720375BDB004FC037 /* UIScrollView+Storyboard.swift in Sources */,
 				B0F8303D20375BDB004FC037 /* UIStackView+Utils.swift in Sources */,
+				0DCE43D9223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */,
 				B0F8304020375BDB004FC037 /* UIWindow+Utils.swift in Sources */,
 				B0F8306120375BDB004FC037 /* UIButton+Storyboard.swift in Sources */,
 				B0F8304720375BDB004FC037 /* UITableView+Utils.swift in Sources */,
@@ -1159,6 +1164,7 @@
 				B0F830D0203762CB004FC037 /* URL+Utils.swift in Sources */,
 				B0F830E3203762CB004FC037 /* Optional+Utils.swift in Sources */,
 				B0F830E5203762CB004FC037 /* NotificationCenter+Utils.swift in Sources */,
+				0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */,
 				B0E5B435211386C6005D8319 /* NSObject+Utils.swift in Sources */,
 				B0F830D8203762CB004FC037 /* UIColor+Utils.swift in Sources */,
 				B0F830DF203762CB004FC037 /* WKWebView+Utils.swift in Sources */,
