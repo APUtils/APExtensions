@@ -11,5 +11,5 @@ import Foundation
 
 public extension TimeZone {
     /// GMT time zone
-    public static let gmt: TimeZone = TimeZone(secondsFromGMT: 0)!
+    static let gmt: TimeZone = TimeZone(secondsFromGMT: 0)!
 }

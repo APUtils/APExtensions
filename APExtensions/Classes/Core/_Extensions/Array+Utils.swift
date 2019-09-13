@@ -136,15 +136,13 @@ public extension Array where Element: Equatable {
     }
     
     /// Helper method to remove all objects that are equal to passed one.
-    mutating func remove(_ element: Element) {
-        while let index = firstIndex(of: element) {
-            remove(at: index)
-        }
+    mutating func removeAll(_ element: Element) {
+        removeAll { $0 == element }
     }
     
     /// Helper method to remove all objects that are equal to those contained in `contentsOf` array.
-    mutating func remove(contentsOf: [Element]) {
-        contentsOf.forEach { remove($0) }
+    mutating func removeAll(contentsOf: [Element]) {
+        removeAll { contentsOf.contains($0) }
     }
     
     /// Helper method to append missing elements from array.

@@ -212,6 +212,8 @@
 		E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */; };
 		E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 		E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
+		E28885F8232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */; };
+		E28885F9232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +349,7 @@
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPopoverController+Utils.swift"; sourceTree = "<group>"; };
 		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
+		E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,6 +547,7 @@
 				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
 				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
 				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
+				E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */,
 				B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */,
 			);
 			path = _Extensions;
@@ -1042,6 +1046,7 @@
 				B0F8306E20375BDB004FC037 /* UILabel+ViewConfiguration.swift in Sources */,
 				B0F8304A20375BDB004FC037 /* Optional+Utils.swift in Sources */,
 				B0F8305020375BDB004FC037 /* Sequence+Utils.swift in Sources */,
+				E28885F8232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */,
 				B0F8304620375BDB004FC037 /* WKWebView+Utils.swift in Sources */,
 				B0F8303520375BDB004FC037 /* UIStoryboard+Utils.swift in Sources */,
 				B0F8304220375BDB004FC037 /* UIScrollView+Utils.swift in Sources */,
@@ -1169,6 +1174,7 @@
 				0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */,
 				B0F830D0203762CB004FC037 /* URL+Utils.swift in Sources */,
 				B0F830E3203762CB004FC037 /* Optional+Utils.swift in Sources */,
+				E28885F9232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */,
 				B0F830E5203762CB004FC037 /* NotificationCenter+Utils.swift in Sources */,
 				0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */,
 				B0E5B435211386C6005D8319 /* NSObject+Utils.swift in Sources */,
