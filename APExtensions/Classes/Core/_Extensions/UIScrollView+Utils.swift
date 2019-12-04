@@ -26,7 +26,7 @@ public extension UIScrollView {
         setTopInset(64)
     }
     
-    /// Set value for top `contentInset` and `scrollIndicatorInsets`
+    /// Set value for bottom `contentInset` and `scrollIndicatorInsets`
     func setBottomInset(_ bottomInset: CGFloat) {
         if #available(iOS 11.0, *) {
             contentInsetAdjustmentBehavior = .never
@@ -36,7 +36,7 @@ public extension UIScrollView {
         scrollIndicatorInsets.bottom = bottomInset
     }
     
-    /// Set 49 for top `contentInset` and `scrollIndicatorInsets`
+    /// Set 49 for bottom `contentInset` and `scrollIndicatorInsets`
     func setBottomTabBarInset() {
         setBottomInset(49)
     }
