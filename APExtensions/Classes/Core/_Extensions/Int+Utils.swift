@@ -31,6 +31,11 @@ public extension Int {
 
 public extension Int {
     
+    /// Returns `self` as `CGFloat`
+    var asCGFloat: CGFloat {
+        return CGFloat(self)
+    }
+    
     /// Returns `self` as `Double`
     var asDouble: Double {
         return Double(self)
