@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
+		0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
+		0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DCE43D9223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
@@ -242,6 +244,7 @@
 
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Utils.swift"; sourceTree = "<group>"; };
 		B08501B2203B6A2C00E94409 /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
@@ -512,6 +515,7 @@
 				B0F82FF520375BDB004FC037 /* Data+Utils.swift */,
 				B0F8300520375BDB004FC037 /* Date+Utils.swift */,
 				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
+				0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */,
 				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
 				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
 				0D1B3892220A10230021FD11 /* Int+Utils.swift */,
@@ -1084,6 +1088,7 @@
 				B0F8303020375BDB004FC037 /* ClassName.swift in Sources */,
 				B0F8303E20375BDB004FC037 /* Error+Utils.swift in Sources */,
 				B0F8303C20375BDB004FC037 /* MFMailComposeViewController+Utils.swift in Sources */,
+				0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */,
 				B0F8306020375BDB004FC037 /* UIImageView+Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1154,6 +1159,7 @@
 				B0F830D5203762CB004FC037 /* MFMailComposeViewController+Utils.swift in Sources */,
 				B0F830EB203762CB004FC037 /* MFMessageComposeViewController+Utils.swift in Sources */,
 				B0F830DB203762CB004FC037 /* UIScrollView+Utils.swift in Sources */,
+				0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */,
 				B0F830DC203762CB004FC037 /* Character+Utils.swift in Sources */,
 				B0F830C92037629E004FC037 /* Utils.swift in Sources */,
 				B0F830D7203762CB004FC037 /* Error+Utils.swift in Sources */,
