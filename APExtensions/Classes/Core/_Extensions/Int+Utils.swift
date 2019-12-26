@@ -20,4 +20,34 @@ public extension Int {
     var isOdd: Bool {
         return self % 2 == 1
     }
+    
+    /// Returns `true` if value end on 1.
+    var isSingular: Bool {
+        return self % 10 == 1
+    }
+}
+
+// ******************************* MARK: - As
+
+public extension Int {
+    
+    /// Returns `self` as `Double`
+    var asDouble: Double {
+        return Double(self)
+    }
+    
+    /// Returns `self` as `Float`
+    var asFloat: Float {
+        return Float(self)
+    }
+    
+    /// Returns `self` as `String`
+    var asString: String {
+        return String(self)
+    }
+    
+    /// Returns `self` as `TimeInterval`
+    var asTimeInterval: TimeInterval {
+        return TimeInterval(self)
+    }
 }

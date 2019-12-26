@@ -10,8 +10,8 @@ PODS:
   - APExtensions/Storyboard (7.0.1)
   - APExtensions/ViewConfiguration (7.0.1)
   - APExtensions/ViewState (7.0.1)
-  - Nimble (8.0.1)
-  - Quick (2.0.0)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Nimble
     - Quick
 
@@ -29,9 +29,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   APExtensions: 9a7a7b6ff5b9785b245962de89fbbdaf4c10f10e
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
 PODFILE CHECKSUM: 974674c4301af37974294b668ba6935745a5d7d0
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
