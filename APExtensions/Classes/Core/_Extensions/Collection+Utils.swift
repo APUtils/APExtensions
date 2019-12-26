@@ -99,3 +99,13 @@ public extension Collection where Element: Equatable {
         return filterDuplicates { $0 == $1 }
     }
 }
+
+// ******************************* MARK: - As
+
+public extension Collection {
+    
+    /// Returns `self` as `Array`.
+    var asArray: [Element] {
+        return Array(self)
+    }
+}
