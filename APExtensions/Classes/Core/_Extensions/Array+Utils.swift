@@ -75,15 +75,37 @@ public extension Array where Element: Equatable {
         removeAll { $0 == element }
     }
     
-    /// Helper method to remove all objects that are equal to those contained in `contentsOf` array.
-    @inlinable mutating func removeAll(contentsOf: [Element]) {
-        removeAll { contentsOf.contains($0) }
+    /// Returns array removing all objects that are equal to passed one.
+    @inlinable func removingAll(_ element: Element) -> [Element] {
+        var resultArray = self
+        resultArray.removeAll(element)
+        return resultArray
     }
     
-    /// Helper method to append missing elements from array.
+    /// Helper method to remove all objects that are equal to those contained in `contentsOf` array.
+    @inlinable mutating func removeAll(contentsOf array: [Element]) {
+        removeAll { array.contains($0) }
+    }
+    
+    /// Returns array removing all objects that are equal to those contained in `array`.
+    @inlinable func removingAll(contentsOf array: [Element]) -> [Element] {
+        var resultArray = self
+        resultArray.removeAll(contentsOf: array)
+        return resultArray
+    }
+    
+    /// Helper method to append missing elements from passed `array`.
     @inlinable mutating func appendMissing(contentsOf array: [Element]) {
         let missing = array.filter { !contains($0) }
         append(contentsOf: missing)
+    }
+    
+    /// Returns array appending missing elements from passed `array`.
+    @inlinable func appendingMissing(contentsOf array: [Element]) -> [Element] {
+        let missing = array.filter { !contains($0) }
+        var resultArray = self
+        resultArray.append(contentsOf: missing)
+        return resultArray
     }
 }
 
