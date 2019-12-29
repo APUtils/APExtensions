@@ -18,7 +18,11 @@ public extension UIScrollView {
         }
         
         contentInset.top = topInset
-        scrollIndicatorInsets.top = topInset
+        
+        // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+        if #available(iOS 13.0, *) {} else {
+            scrollIndicatorInsets.top = topInset
+        }
     }
     
     /// Set 64 for top `contentInset` and `scrollIndicatorInsets`
@@ -33,7 +37,11 @@ public extension UIScrollView {
         }
         
         contentInset.bottom = bottomInset
-        scrollIndicatorInsets.bottom = bottomInset
+        
+        // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+        if #available(iOS 13.0, *) {} else {
+            scrollIndicatorInsets.bottom = bottomInset
+        }
     }
     
     /// Set 49 for bottom `contentInset` and `scrollIndicatorInsets`
@@ -118,18 +126,41 @@ public extension UIScrollView {
 
 public extension UIScrollView {
     func scrollToBottom(animated: Bool) {
-        let height = bounds.size.height
-        var y: CGFloat = 0.0
-        
-        if #available(iOS 11.0, *) {
-            y += adjustedContentInset.bottom
-        } else {
-            y += contentInset.bottom
+        func _getBottomContentOffset() -> CGPoint {
+            let height = bounds.size.height
+            var y: CGFloat = 0.0
+            
+            if #available(iOS 11.0, *) {
+                y += adjustedContentInset.bottom
+            } else {
+                y += contentInset.bottom
+            }
+            
+            if contentSize.height > height {
+                y += contentSize.height - height
+            }
+            
+            return CGPoint(x: 0, y: y)
         }
         
-        if contentSize.height > height {
-            y += contentSize.height - height
+        func _scrollToBottom(animated: Bool) {
+            let bottomContentOffset = _getBottomContentOffset()
+            if animated {
+                setContentOffset(bottomContentOffset, animated: true)
+            } else {
+                contentOffset = bottomContentOffset
+            }
         }
-        setContentOffset(CGPoint(x: 0, y: y), animated: animated)
+        
+        let originalContentOffset = contentOffset
+        
+        // Fixing bug when contentSize is wrong on new item add
+        UIView.performWithoutAnimation {
+            _scrollToBottom(animated: false)
+            layoutIfNeeded()
+            contentOffset = originalContentOffset
+        }
+        
+        _scrollToBottom(animated: animated)
     }
 }
