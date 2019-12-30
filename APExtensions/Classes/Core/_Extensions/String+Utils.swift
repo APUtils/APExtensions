@@ -12,11 +12,6 @@ import UIKit
 // ******************************* MARK: - Representation
 
 public extension String {
-    /// Returns string as URL
-    @available(*, deprecated, renamed: "asURL")
-    var asUrl: URL? {
-        return asURL
-    }
     
     /// Returns string as URL. Properly escapes URL components if needed.
     var asURL: URL? {

@@ -10,11 +10,6 @@ import Foundation
 
 
 public extension Error {
-    /// Checks if error is related to connection problems. Usual flow is to retry on those errors.
-    @available(*, deprecated, renamed: "isConnectionError")
-    var isConnectError: Bool {
-        return isConnectionError
-    }
     
     /// Checks if cancelled error
     var isCancelledError: Bool {
