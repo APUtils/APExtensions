@@ -87,6 +87,19 @@ public extension Array where Element: Equatable {
         removeAll { array.contains($0) }
     }
     
+    /// Removes the last object that is equal to a passed one.
+    @inlinable mutating func removeLast(_ element: Element) {
+        guard let lastIndex = lastIndex(of: element) else { return }
+        remove(at: lastIndex)
+    }
+    
+    /// Returns array removing the last object that is equal to a passed one.
+    @inlinable func removingLast(_ element: Element) -> [Element] {
+        var resultArray = self
+        resultArray.removeLast(element)
+        return resultArray
+    }
+    
     /// Returns array removing all objects that are equal to those contained in `array`.
     @inlinable func removingAll(contentsOf array: [Element]) -> [Element] {
         var resultArray = self
