@@ -318,9 +318,9 @@ open class Globals {
         
         performInMain {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: { _ in onCancel?() }))
+            alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: { _ in handler?() }))
             if let cancelTitle = cancelTitle {
-                alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: { _ in handler?() }))
+                alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: { _ in onCancel?() }))
             }
             
             alertVC.present(animated: true)
