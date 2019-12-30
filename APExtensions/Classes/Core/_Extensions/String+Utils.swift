@@ -289,3 +289,15 @@ public extension String {
         return height
     }
 }
+
+// ******************************* MARK: - Capitalization
+
+public extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
