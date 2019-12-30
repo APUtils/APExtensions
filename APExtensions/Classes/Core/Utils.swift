@@ -243,7 +243,12 @@ open class Globals {
         animate(duration, options: options, animations: animations, completion: nil)
     }
     
-    open func animate(_ duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = .beginFromCurrentState, animations: @escaping SimpleClosure, completion: ((Bool) -> ())? = nil) {
+    open func animate(_ duration: TimeInterval = 0.3,
+                      delay: TimeInterval = 0,
+                      options: UIView.AnimationOptions = .beginFromCurrentState,
+                      animations: @escaping SimpleClosure,
+                      completion: ((Bool) -> ())? = nil) {
+        
         UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
     }
     
@@ -314,7 +319,13 @@ open class Globals {
     /// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter handler: Action button click closure. Default is `nil` - no action.
-    open func showErrorAlert(title: String? = nil, message: String? = nil, actionTitle: String = "Dismiss", style: UIAlertAction.Style = .cancel, cancelTitle: String? = nil, onCancel: (() -> Void)? = nil, handler: (() -> Void)? = nil) {
+    open func showErrorAlert(title: String? = nil,
+                             message: String? = nil,
+                             actionTitle: String = "Dismiss",
+                             style: UIAlertAction.Style = .cancel,
+                             cancelTitle: String? = nil,
+                             onCancel: (() -> Void)? = nil,
+                             handler: (() -> Void)? = nil) {
         
         performInMain {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
@@ -333,7 +344,12 @@ open class Globals {
     /// - parameter placeholder: Text field placeholder
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes user entered text as parameter
-    open func showEnterTextAlert(title: String? = nil, message: String? = nil, text: String? = nil, placeholder: String? = nil, onCancel: (() -> Void)? = nil, completion: @escaping (_ text: String) -> ()) {
+    open func showEnterTextAlert(title: String? = nil,
+                                 message: String? = nil,
+                                 text: String? = nil,
+                                 placeholder: String? = nil,
+                                 onCancel: (() -> Void)? = nil,
+                                 completion: @escaping (_ text: String) -> ()) {
         
         performInMain {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
@@ -362,7 +378,13 @@ open class Globals {
     /// - parameter enabledButtons: Enabled buttons
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes button title and button index as its parameters
-    open func showPickerAlert(title: String? = nil, message: String? = nil, buttons: [String], buttonsStyles: [UIAlertAction.Style]? = nil, enabledButtons: [Bool]? = nil, onCancel: (() -> Void)? = nil, completion: @escaping ((String, Int) -> ())) {
+    open func showPickerAlert(title: String? = nil,
+                              message: String? = nil,
+                              buttons: [String],
+                              buttonsStyles: [UIAlertAction.Style]? = nil,
+                              enabledButtons: [Bool]? = nil,
+                              onCancel: (() -> Void)? = nil,
+                              completion: @escaping ((String, Int) -> ())) {
         
         performInMain {
             if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
