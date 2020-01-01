@@ -22,24 +22,29 @@ private extension UIWindow {
     /// Creates and shows overlay window with image of hoster window.
     /// Call passed dismiss closure with animation param in operationsCompletion when it's time to dismiss it.
     func performUnderOverlay(operationsCompletion: @escaping (_ dismiss: @escaping (_ animated: Bool) -> Void) -> Void, completion: SimpleClosure?) {
-        let alertWindow = UIWindow.createNormal()
+        let window = UIWindow.createNormal()
        
-        let imageVc = ImageOverlayViewController()
-        imageVc.modalPresentationStyle = .overFullScreen
-        imageVc.view.backgroundColor = .clear
+        let imageVC = ImageOverlayViewController()
+        imageVC.modalPresentationStyle = .overFullScreen
+        imageVC.view.backgroundColor = .clear
         
         let overlayImage = getSnapshotImage()
         
         // Create controller with overlay to animate dismiss
         let controllerOverlayImageView = UIImageView(image: overlayImage)
-        controllerOverlayImageView.frame = imageVc.view.bounds
+        controllerOverlayImageView.frame = imageVC.view.bounds
         controllerOverlayImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        imageVc.view.addSubview(controllerOverlayImageView)
+        imageVC.view.addSubview(controllerOverlayImageView)
         
-        alertWindow.makeKeyAndVisible()
-        alertWindow.rootViewController?.present(imageVc, animated: false) {
+        window.makeKeyAndVisible()
+        window.rootViewController?.present(imageVC, animated: false) {
             operationsCompletion { animated in
-                imageVc.dismiss(animated: animated, completion: completion)
+                imageVC.dismiss(animated: animated) {
+                    completion?()
+                    
+                    // Capture window till the end
+                    _ = window
+                }
             }
         }
     }

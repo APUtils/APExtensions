@@ -51,6 +51,17 @@ public extension UINavigationController {
         }
     }
     
+    /// Pops to view controller with completion
+    func popToViewController(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        popToViewController(viewController, animated: animated)
+        
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+        } else {
+            completion?()
+        }
+    }
+    
     /// Pops view controller if it present in navigation stack and all overlaying view controllers.
     /// Do nothing if view controller is not in navigation stack.
     func pop(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {

@@ -104,13 +104,14 @@ public extension UIView {
         return allSubviews
     }
     
+    #if compiler(>=5)
     /// All view superviews to the top most
-    #if compiler(<5)
-    public var superviews: AnySequence<UIView> {
+    var superviews: DropFirstSequence<UnfoldSequence<UIView, (UIView?, Bool)>> {
         return sequence(first: self, next: { $0.superview }).dropFirst(1)
     }
     #else
-    var superviews: DropFirstSequence<UnfoldSequence<UIView, (UIView?, Bool)>> {
+    /// All view superviews to the top most
+    var superviews: AnySequence<UIView> {
         return sequence(first: self, next: { $0.superview }).dropFirst(1)
     }
     #endif

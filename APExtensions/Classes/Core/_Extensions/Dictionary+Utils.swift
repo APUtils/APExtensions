@@ -34,7 +34,7 @@ public extension Dictionary {
     /// - Parameter transform: A closure that transforms a value. `transform`
     ///   accepts each value of the dictionary as its parameter and returns a
     ///   transformed value of the same or of a different type.
-    /// - Returns: A dictionary containing the keys and transformed values of
+    /// - Returns: A dictionary containing keys and transformed values of
     ///   this dictionary.
     func compactMapValues<T>(_ transform: (Dictionary.Value) throws -> T?) rethrows -> [Dictionary.Key: T] {
         var resultDictionary = [Dictionary.Key: T]()
@@ -46,6 +46,17 @@ public extension Dictionary {
         }
         
         return resultDictionary
+    }
+    
+    /// Returns a new dictionary containing the values of this dictionary with the
+    /// keys transformed by the given closure.
+    ///
+    /// - Parameter transform: A closure that transforms a key.
+    /// - Returns: A dictionary containing transformed keys and values.
+    func mapKeys(_ transform: (Dictionary.Key) throws -> Dictionary.Key) rethrows -> [Dictionary.Key: Dictionary.Value] {
+        return try reduce(into: [:]) { result, keyAndValue in
+            result[try transform(keyAndValue.key)] = keyAndValue.value
+        }
     }
 }
 

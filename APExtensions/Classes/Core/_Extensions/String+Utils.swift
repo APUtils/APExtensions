@@ -12,11 +12,6 @@ import UIKit
 // ******************************* MARK: - Representation
 
 public extension String {
-    /// Returns string as URL
-    @available(*, deprecated, renamed: "asURL")
-    var asUrl: URL? {
-        return asURL
-    }
     
     /// Returns string as URL. Properly escapes URL components if needed.
     var asURL: URL? {
@@ -287,5 +282,17 @@ public extension String {
         let height = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).height + c.pixelSize
         
         return height
+    }
+}
+
+// ******************************* MARK: - Capitalization
+
+public extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }
