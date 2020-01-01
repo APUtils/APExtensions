@@ -11,6 +11,7 @@
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
+		0DACFA0B23BCC6DF00FA6301 /* UIViewController+Utils.swift in Headers */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */; };
 		0DBC7CFE23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */; };
@@ -683,6 +684,7 @@
 				B0F8307820375C4C004FC037 /* UIView+Storyboard.swift in Headers */,
 				B0F8307920375C4C004FC037 /* UIFont+Storyboard.swift in Headers */,
 				B0F8307A20375C4C004FC037 /* UITextView+Storyboard.swift in Headers */,
+				0DACFA0B23BCC6DF00FA6301 /* UIViewController+Utils.swift in Headers */,
 				B0F8307B20375C4C004FC037 /* UIImage+Storyboard.swift in Headers */,
 				B0F8307C20375C4C004FC037 /* NSLayoutConstraint+Storyboard.swift in Headers */,
 				B0F8307D20375C4C004FC037 /* UIScrollView+Storyboard.swift in Headers */,
