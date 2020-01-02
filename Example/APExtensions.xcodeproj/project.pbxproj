@@ -17,7 +17,6 @@
 		8374A77656BB94E1D7977739 /* Pods_APExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395BB6683ADC88370A9C1FD3 /* Pods_APExtensions_Tests.framework */; };
 		B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */; };
 		B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */; };
-		B099C487203EDD53000C01CB /* BecomeFirstResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099C485203EDD53000C01CB /* BecomeFirstResponderViewController.swift */; };
 		B0A073C21F3B741B001B8CC6 /* uiview.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C11F3B741B001B8CC6 /* uiview.png */; };
 		B0A073C41F3B7563001B8CC6 /* nslayoutconstraint.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */; };
 		B0A073C61F3B7708001B8CC6 /* uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C51F3B7707001B8CC6 /* uibutton.png */; };
@@ -62,7 +61,6 @@
 		B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveToTheRootViewController.swift; sourceTree = "<group>"; };
 		B004134E202E0EA400B58E18 /* updateDocs.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = updateDocs.command; path = ../updateDocs.command; sourceTree = "<group>"; };
 		B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnceProtocolExample.swift; sourceTree = "<group>"; };
-		B099C485203EDD53000C01CB /* BecomeFirstResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeFirstResponderViewController.swift; sourceTree = "<group>"; };
 		B0A073C11F3B741B001B8CC6 /* uiview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiview.png; sourceTree = "<group>"; };
 		B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nslayoutconstraint.png; sourceTree = "<group>"; };
 		B0A073C51F3B7707001B8CC6 /* uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uibutton.png; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 		607FACD21AFB9204008FA782 /* Example for APExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				B099C483203EDD35000C01CB /* _BecomeFirstResponder */,
 				B06688E51F13EAB800A02878 /* _Gifs */,
 				B06688E41F13EAB300A02878 /* _Images */,
 				B0032227200374C50020E171 /* _RemoveToTheRoot */,
@@ -238,14 +235,6 @@
 			children = (
 			);
 			name = _Gifs;
-			sourceTree = "<group>";
-		};
-		B099C483203EDD35000C01CB /* _BecomeFirstResponder */ = {
-			isa = PBXGroup;
-			children = (
-				B099C485203EDD53000C01CB /* BecomeFirstResponderViewController.swift */,
-			);
-			name = _BecomeFirstResponder;
 			sourceTree = "<group>";
 		};
 		B0BBEDAB1FBB4684000CBD87 /* _ScrollToBottom */ = {
@@ -462,7 +451,6 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				B099C487203EDD53000C01CB /* BecomeFirstResponderViewController.swift in Sources */,
 				B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */,
 				B0E5B42C2113812C005D8319 /* TableViewVC.swift in Sources */,
 				B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */,
