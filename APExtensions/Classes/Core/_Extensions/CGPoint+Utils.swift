@@ -20,6 +20,27 @@ public extension CGPoint {
         lhs.x -= rhs.x
         lhs.y -= rhs.y
     }
+    
+    static func *=(lhs: inout CGPoint, rhs: CGFloat) {
+        lhs.x *= rhs
+        lhs.y *= rhs
+    }
+    
+    static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+    
+    static func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+    
+    static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+        return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
+    }
+    
+    static prefix func -(point: CGPoint) -> CGPoint {
+        return CGPoint(x: -point.x, y: -point.y)
+    }
 }
 
 // ******************************* MARK: - Other

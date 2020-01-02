@@ -4,12 +4,10 @@ PODS:
     - APExtensions/Core (= 7.0.1)
     - APExtensions/Storyboard (= 7.0.1)
     - APExtensions/ViewConfiguration (= 7.0.1)
-    - APExtensions/ViewState (= 7.0.1)
   - APExtensions/Abstractions (7.0.1)
   - APExtensions/Core (7.0.1)
   - APExtensions/Storyboard (7.0.1)
   - APExtensions/ViewConfiguration (7.0.1)
-  - APExtensions/ViewState (7.0.1)
   - Nimble (8.0.4)
   - Quick (2.2.0)
 
@@ -28,7 +26,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: d43078807b25844a58c06b435cb0e42e334aedd1
+  APExtensions: 681fbb94d87100ff8eeb74e78ace0ff9612979e9
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 

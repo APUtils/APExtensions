@@ -31,7 +31,6 @@ github "APUtils/APExtensions" "abstractions"
 github "APUtils/APExtensions" "core"
 github "APUtils/APExtensions" "storyboard"
 github "APUtils/APExtensions" "view-configuration"
-github "APUtils/APExtensions" "view-state"
 ```
 
 Cartfile for specific commit:
@@ -48,14 +47,13 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions', '~> 7.0'
 ```
 
-Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`, `ViewState`. Example Podfile for subspec:
+Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`. Example Podfile for subspec:
 
 ```ruby
 pod 'APExtensions/Abstractions', '~> 7.0'
 pod 'APExtensions/Core', '~> 7.0'
 pod 'APExtensions/Storyboard', '~> 7.0'
 pod 'APExtensions/ViewConfiguration', '~> 7.0'
-pod 'APExtensions/ViewState', '~> 7.0'
 ```
 
 ## Usage
@@ -101,15 +99,7 @@ imageView.configure(viewModel.imageViewState)
 
 ### ViewState
 
-#### ViewController
-
-- Extends UIViewController with .viewState enum property. Possible cases: `.notLoaded`, `.didLoad`, `.willAppear`, `.didAppear`, `.willDisappear`, `.didDisappear`.
-- Every UIViewController starts to send notifications about its state change. Available notifications to observe: `.UIViewControllerWillMoveToParentViewController`, `.UIViewControllerViewDidLoad`, `.UIViewControllerViewWillAppear`, `.UIViewControllerViewDidAppear`, `.UIViewControllerViewWillDisappear`, `.UIViewControllerViewDidDisappear`. You could check `userInfo` notification's dictionary for parameters if needed.
-- Adds `.hideKeyboardOnTouch` @IBInspectable property to hide keyboard on touch outside.
-
-#### View
-
-Adds `.becomeFirstResponderOnViewDidAppear` @IBInspectable property to become first responser on `viewDidAppear`.
+Moved to https://github.com/APUtils/ViewState
 
 ### Storyboard
 
