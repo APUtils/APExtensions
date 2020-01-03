@@ -94,7 +94,11 @@ public extension StringProtocol {
     
     /// Returns `self` as `String`
     var asString: String {
-        return String(self)
+        if let string = self as? String {
+            return string
+        } else {
+            return String(self)
+        }
     }
     
     /// Returns string as NSAttributedString
