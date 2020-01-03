@@ -125,6 +125,28 @@ public extension UIScrollView {
 // ******************************* MARK: - Scroll
 
 public extension UIScrollView {
+    func scrollToTop(animated: Bool) {
+        func _scrollToTop(animated: Bool) {
+            let topContentOffset: CGPoint = .init(x: 0, y: -contentInset.top)
+            if animated {
+                setContentOffset(topContentOffset, animated: true)
+            } else {
+                contentOffset = topContentOffset
+            }
+        }
+        
+        let originalContentOffset = contentOffset
+        
+        // Fixing bug when contentSize is wrong on new item add
+        UIView.performWithoutAnimation {
+            _scrollToTop(animated: false)
+            layoutIfNeeded()
+            contentOffset = originalContentOffset
+        }
+        
+        _scrollToTop(animated: animated)
+    }
+    
     func scrollToBottom(animated: Bool) {
         func _getBottomContentOffset() -> CGPoint {
             let height = bounds.size.height

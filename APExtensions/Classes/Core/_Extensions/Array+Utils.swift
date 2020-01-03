@@ -17,14 +17,6 @@ public extension Array {
         return self[1]
     }
     
-    /// Returns random element from array
-    var random: Element? {
-        guard !isEmpty else { return nil }
-        
-        let index = Int(arc4random_uniform(UInt32(count)))
-        return self[index]
-    }
-    
     /// Replaces last element with new element and returns replaced element.
     @discardableResult
     mutating func replaceLast(_ element: Element) -> Element {
