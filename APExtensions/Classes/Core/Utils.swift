@@ -47,8 +47,13 @@ public enum Constants {
     public static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
     
     /// Returns the on screen home button height
-    @available(iOS 11.0, *)
-    public static let homeButtonHeight: CGFloat = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
+    public static let homeButtonHeight: CGFloat = {
+        if #available(iOS 11.0, *) {
+            return UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
+        } else {
+            return 0
+        }
+    }()
 }
 
 public let c: Constants.Type = Constants.self
