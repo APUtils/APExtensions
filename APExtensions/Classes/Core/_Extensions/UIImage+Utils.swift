@@ -19,6 +19,24 @@ public extension UIImage {
         self.init(contentsOfFile: file.path)
     }
     
+    /// Returns image with overlay image drawn the center on top.
+    func image(withOverlayImageAtCenter overlayImage: UIImage) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        
+        draw(at: CGPoint(x: 0, y: 0))
+        let centerRectOrigin = CGPoint(x: (size.width - overlayImage.size.width) / 2, y: (size.height - overlayImage.size.height) / 2)
+        let centerRect = CGRect(origin: centerRectOrigin, size: overlayImage.size)
+        overlayImage.draw(in: centerRect)
+        
+        if let image = UIGraphicsGetImageFromCurrentImageContext() {
+            return image
+        } else {
+            return self
+        }
+    }
+    
+    /// Returns image with overlay image drawn in the `rect` on top.
     func image(withOverlayImage overlayImage: UIImage, inRect rect: CGRect) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         defer { UIGraphicsEndImageContext() }
