@@ -135,15 +135,6 @@ public extension UIScrollView {
             }
         }
         
-        let originalContentOffset = contentOffset
-        
-        // Fixing bug when contentSize is wrong on new item add
-        UIView.performWithoutAnimation {
-            _scrollToTop(animated: false)
-            layoutIfNeeded()
-            contentOffset = originalContentOffset
-        }
-        
         _scrollToTop(animated: animated)
     }
     
@@ -177,15 +168,6 @@ public extension UIScrollView {
             } else {
                 contentOffset = bottomContentOffset
             }
-        }
-        
-        let originalContentOffset = contentOffset
-        
-        // Fixing bug when contentSize is wrong on new item add
-        UIView.performWithoutAnimation {
-            _scrollToBottom(animated: false)
-            layoutIfNeeded()
-            contentOffset = originalContentOffset
         }
         
         _scrollToBottom(animated: animated)
