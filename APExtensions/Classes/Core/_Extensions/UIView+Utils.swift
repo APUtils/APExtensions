@@ -45,10 +45,17 @@ public extension UIView {
 // ******************************* MARK: - Animations
 
 public extension UIView {
+    
     /// Checks if code runs inside animation closure
     @available(iOS 9.0, *)
     static var isInAnimationClosure: Bool {
         return inheritedAnimationDuration > 0
+    }
+    
+    /// Returns `true` if view can be animated.
+    /// That means `window` is not `nil` and application state is `.active`.
+    var isAnimatable: Bool {
+        return window != nil && UIApplication.shared.applicationState == .active
     }
     
     func fadeInAnimated() {
