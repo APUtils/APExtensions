@@ -32,6 +32,7 @@ public extension Date {
     }
     
     /// Get date's components. Uses user's time zone.
+    /// - components: year, month, day, hour, minute, second, timeZone, calendar.
     var components: DateComponents {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
     }
@@ -111,6 +112,7 @@ public extension Date {
 // ******************************* MARK: - String Representation
 
 public extension Date {
+    
     /// Simplification of getting string from date
     func getString(dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short, doesRelativeDateFormatting: Bool = true) -> String {
         let formatter = DateFormatter()

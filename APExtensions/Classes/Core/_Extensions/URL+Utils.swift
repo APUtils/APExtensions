@@ -43,7 +43,7 @@ public extension URL {
         guard !pathComponent.isEmpty else { return self }
         
         var pathComponent = pathComponent
-        if pathComponent[0] == "/" {
+        if pathComponent.first == "/" {
             pathComponent = String(pathComponent.dropFirst())
         }
         

@@ -11,6 +11,8 @@
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D47E42A23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */; };
 		0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */; };
+		0D47E43E23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */; };
+		0D47E43F23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */; };
 		0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0DACFA0B23BCC6DF00FA6301 /* UIViewController+Utils.swift in Headers */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -232,6 +234,7 @@
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
+		0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Utils.swift"; sourceTree = "<group>"; };
 		0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
 		0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
@@ -528,6 +531,7 @@
 				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
 				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
 				B0F8300320375BDB004FC037 /* String+Utils.swift */,
+				0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */,
 				B0E5B430211386AC005D8319 /* Timer+Utils.swift */,
 				0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */,
 				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
@@ -996,6 +1000,7 @@
 				B0F8304920375BDB004FC037 /* UIViewController+Utils.swift in Sources */,
 				B0F8303A20375BDB004FC037 /* UIView+Utils.swift in Sources */,
 				B0F8304420375BDB004FC037 /* CGRect+Utils.swift in Sources */,
+				0D47E43E23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */,
 				0DAD0A5221F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
 				B0F8307020375BDB004FC037 /* DelayedValue.swift in Sources */,
 				B0F8304C20375BDB004FC037 /* NotificationCenter+Utils.swift in Sources */,
@@ -1110,6 +1115,7 @@
 				B0F830E8203762CB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F830EF203762CB004FC037 /* NSCoder+Utils.swift in Sources */,
 				B0F830DA203762CB004FC037 /* UIImageView+Utils.swift in Sources */,
+				0D47E43F23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */,
 				B0F830D3203762CB004FC037 /* UIView+Utils.swift in Sources */,
 				0DBC7CFF23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */,
 				B0F830F3203762D0004FC037 /* SetupOnce.swift in Sources */,
