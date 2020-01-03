@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
+		0D47E42A23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */; };
+		0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */; };
 		0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0DACFA0B23BCC6DF00FA6301 /* UIViewController+Utils.swift in Headers */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -229,11 +231,14 @@
 
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
 		0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
 		0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Utils.swift"; sourceTree = "<group>"; };
 		0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Utils.swift"; sourceTree = "<group>"; };
+		2FD0E5C8628CEDB87D8F3685 /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
+		455377CF05E63E6D27701A1A /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedRowHeightController.swift; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
 		B0E5B433211386C5005D8319 /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
@@ -330,6 +335,7 @@
 		B0F8310C203763C6004FC037 /* APExtensionsViewConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APExtensionsViewConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APExtensionsViewConfiguration.h; sourceTree = "<group>"; };
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F995755C4365A3761276EA /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPopoverController+Utils.swift"; sourceTree = "<group>"; };
 		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
 		E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utils.swift"; sourceTree = "<group>"; };
@@ -382,9 +388,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D47E42C23BF4C7C00C4BFDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99FA42F92FF24674C0706112 /* _Carthage */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99FA42F92FF24674C0706112 /* _Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				2FD0E5C8628CEDB87D8F3685 /* carthageAdd.command */,
+				455377CF05E63E6D27701A1A /* carthageRemove.command */,
+				C2F995755C4365A3761276EA /* carthageUpdate.command */,
+			);
+			name = _Carthage;
+			sourceTree = "<group>";
+		};
 		B0F82FA620375B69004FC037 = {
 			isa = PBXGroup;
 			children = (
+				0D47E42C23BF4C7C00C4BFDC /* Frameworks */,
 				B0F82FB120375B69004FC037 /* APExtensions-example */,
 				B0F82FCA20375BA8004FC037 /* APExtensions */,
 				B0F8308920375CE3004FC037 /* APExtensionsViewState */,
@@ -491,6 +516,7 @@
 				0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */,
 				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
 				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
+				0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */,
 				0D1B3892220A10230021FD11 /* Int+Utils.swift */,
 				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
 				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
@@ -696,10 +722,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0F82FC120375B69004FC037 /* Build configuration list for PBXNativeTarget "APExtensions-example" */;
 			buildPhases = (
+				69CBD1298A31A8E67A04CC24 /* Carthage Install */,
 				B0F82FAB20375B69004FC037 /* Sources */,
 				B0F82FAC20375B69004FC037 /* Frameworks */,
 				B0F82FAD20375B69004FC037 /* Resources */,
 				B0F82FD520375BA8004FC037 /* Embed Frameworks */,
+				9B3ADBD08B7B638067013710 /* Carthage Copy */,
 			);
 			buildRules = (
 			);
@@ -908,6 +936,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69CBD1298A31A8E67A04CC24 /* Carthage Install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Install";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstall.command\"\n";
+		};
+		9B3ADBD08B7B638067013710 /* Carthage Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Copy";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0F82FAB20375B69004FC037 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -968,6 +1035,7 @@
 				B0F8304220375BDB004FC037 /* UIScrollView+Utils.swift in Sources */,
 				B0F8305120375BDB004FC037 /* UINavigationController+Utils.swift in Sources */,
 				B0F8304820375BDB004FC037 /* Array+Utils.swift in Sources */,
+				0D47E42A23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F8305520375BDB004FC037 /* Date+Utils.swift in Sources */,
 				B0F8303220375BDB004FC037 /* CellInformation.swift in Sources */,
 				B0F8306320375BDB004FC037 /* UIFont+Storyboard.swift in Sources */,
@@ -1070,6 +1138,7 @@
 				B0F830E7203762CB004FC037 /* UINavigationBar+Utils.swift in Sources */,
 				B0F830E1203762CB004FC037 /* Array+Utils.swift in Sources */,
 				B0F830DE203762CB004FC037 /* Data+Utils.swift in Sources */,
+				0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F830CC203762CB004FC037 /* UICollectionView+Utils.swift in Sources */,
 				B0F830EC203762CB004FC037 /* String+Utils.swift in Sources */,
 				B0F830EE203762CB004FC037 /* Date+Utils.swift in Sources */,
@@ -1261,6 +1330,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UW54N2U6G5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "APExtensions-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-example${DEVELOPMENT_TEAM}";
@@ -1276,6 +1349,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UW54N2U6G5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "APExtensions-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-example${DEVELOPMENT_TEAM}";

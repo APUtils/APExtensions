@@ -1,6 +1,6 @@
 //
 //  TimeZone+Utils.swift
-//  APExtensions-example
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 3/16/19.
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.

@@ -408,14 +408,14 @@
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Array+Utils.swift",
-      "line": 63,
+      "line": 55,
       "symbol": "Array.move(from:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/Array+Utils.swift",
-      "line": 63,
+      "line": 55,
       "symbol": "Array.move(from:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1221,41 +1221,55 @@
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
       "line": 128,
-      "symbol": "UIScrollView.scrollToBottom(animated:)",
+      "symbol": "UIScrollView.scrollToTop(animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
       "line": 128,
+      "symbol": "UIScrollView.scrollToTop(animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
+      "line": 150,
+      "symbol": "UIScrollView.scrollToBottom(animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIScrollView+Utils.swift",
+      "line": 150,
       "symbol": "UIScrollView.scrollToBottom(animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 54,
+      "line": 61,
       "symbol": "UIView.fadeInAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 54,
+      "line": 61,
       "symbol": "UIView.fadeInAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 60,
+      "line": 67,
       "symbol": "UIView.fadeOutAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/UIView+Utils.swift",
-      "line": 60,
+      "line": 67,
       "symbol": "UIView.fadeOutAnimated()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

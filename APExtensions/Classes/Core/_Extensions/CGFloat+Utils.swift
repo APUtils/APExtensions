@@ -1,6 +1,6 @@
 //
 //  CGFloat+Utils.swift
-//  APExtensions-example
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 1/1/20.
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
