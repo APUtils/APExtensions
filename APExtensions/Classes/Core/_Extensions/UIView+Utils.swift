@@ -128,22 +128,21 @@ public extension UIView {
 
 public extension UIView {
     /// Creates image from view and adds overlay image at the center if provided
-    func getSnapshotImage(overlayImage: UIImage? = nil) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
-        defer { UIGraphicsEndImageContext() }
-        
-        layer.render(in: UIGraphicsGetCurrentContext()!)
-        
-        if let overlayImage = overlayImage {
-            let imageWidth = overlayImage.size.width
-            let imageHeight = overlayImage.size.height
-            let imageRect = CGRect(x: bounds.midX - imageWidth / 2, y: bounds.midY - imageHeight / 2, width: imageWidth, height: imageHeight)
-            overlayImage.draw(in: imageRect)
+    func getSnapshotImage() -> UIImage? {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+            
+        } else {
+            UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+            defer { UIGraphicsEndImageContext() }
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+            self.layer.render(in: context)
+            guard let snapshotImage = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+            return snapshotImage
         }
-        
-        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        return snapshotImage
     }
 }
 
