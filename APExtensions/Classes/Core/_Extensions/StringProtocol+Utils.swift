@@ -214,3 +214,45 @@ public extension StringProtocol {
         return prefix(1).capitalized + dropFirst()
     }
 }
+
+// ******************************* MARK: - Subscript
+
+public extension StringProtocol {
+    subscript(value: Int) -> Character {
+        self[index(at: value)]
+    }
+}
+
+public extension StringProtocol {
+    subscript(value: NSRange) -> SubSequence {
+        self[value.lowerBound..<value.upperBound]
+    }
+}
+
+public extension StringProtocol {
+    subscript(value: CountableClosedRange<Int>) -> SubSequence {
+        self[index(at: value.lowerBound)...index(at: value.upperBound)]
+    }
+    
+    subscript(value: CountableRange<Int>) -> SubSequence {
+        self[index(at: value.lowerBound)..<index(at: value.upperBound)]
+    }
+    
+    subscript(value: PartialRangeUpTo<Int>) -> SubSequence {
+        self[..<index(at: value.upperBound)]
+    }
+    
+    subscript(value: PartialRangeThrough<Int>) -> SubSequence {
+        self[...index(at: value.upperBound)]
+    }
+    
+    subscript(value: PartialRangeFrom<Int>) -> SubSequence {
+        self[index(at: value.lowerBound)...]
+    }
+}
+
+private extension StringProtocol {
+    func index(at offset: Int) -> String.Index {
+        index(startIndex, offsetBy: offset)
+    }
+}
