@@ -78,11 +78,11 @@ public struct GeneralError: Error { public init() {} }
 
 /// Helper protocol
 private protocol _Optional {
-    var value: Any? { get }
+    var _value: Any? { get }
 }
 
 extension Optional: _Optional {
-    var value: Any? {
+    var _value: Any? {
         switch self {
         case .none: return nil
         case .some(_): return self!
@@ -96,7 +96,7 @@ public func g_unwrap(_ _any: Any?) -> Any? {
     
     // Check if Any actually is Any?
     if let optionalAny = any as? _Optional {
-        return g_unwrap(optionalAny.value)
+        return g_unwrap(optionalAny._value)
     } else {
         return any
     }
@@ -189,7 +189,7 @@ open class Globals {
         
         // Check if Any actually is Any?
         if let optionalAny = any as? _Optional {
-            return unwrap(optionalAny.value)
+            return unwrap(optionalAny._value)
         } else {
             return any
         }

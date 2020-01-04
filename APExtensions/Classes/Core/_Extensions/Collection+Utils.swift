@@ -8,14 +8,6 @@
 
 import Foundation
 
-
-public extension Collection {
-    /// Checks if collection has elements
-    var hasElements: Bool {
-        return !isEmpty
-    }
-}
-
 // ******************************* MARK: - Scripting
 
 public extension Collection {
@@ -106,6 +98,10 @@ public extension Collection {
     
     /// Returns `self` as `Array`.
     var asArray: [Element] {
-        return Array(self)
+        if let array = self as? [Element] {
+            return array
+        } else {
+            return Array(self)
+        }
     }
 }

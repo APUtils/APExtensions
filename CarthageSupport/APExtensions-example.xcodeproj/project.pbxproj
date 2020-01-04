@@ -13,6 +13,10 @@
 		0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */; };
 		0D47E43E23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */; };
 		0D47E43F23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */; };
+		0D47E44823C0165800C4BFDC /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E44623C0165800C4BFDC /* OptionalType.swift */; };
+		0D47E44A23C0165800C4BFDC /* Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E44723C0165800C4BFDC /* Occupiable.swift */; };
+		0D47E44C23C0166100C4BFDC /* Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E44723C0165800C4BFDC /* Occupiable.swift */; };
+		0D47E44D23C0166600C4BFDC /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E44623C0165800C4BFDC /* OptionalType.swift */; };
 		0D5A7D9C23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */; };
 		0DACFA0B23BCC6DF00FA6301 /* UIViewController+Utils.swift in Headers */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -235,6 +239,8 @@
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
 		0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Utils.swift"; sourceTree = "<group>"; };
+		0D47E44623C0165800C4BFDC /* OptionalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
+		0D47E44723C0165800C4BFDC /* Occupiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupiable.swift; sourceTree = "<group>"; };
 		0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
 		0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
@@ -497,6 +503,8 @@
 				B0F82FDA20375BDB004FC037 /* Describable.swift */,
 				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
 				B0F82FDC20375BDB004FC037 /* Manager.swift */,
+				0D47E44723C0165800C4BFDC /* Occupiable.swift */,
+				0D47E44623C0165800C4BFDC /* OptionalType.swift */,
 				E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */,
 				B0F82FDB20375BDB004FC037 /* SetupOnce.swift */,
 				0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */,
@@ -1042,6 +1050,7 @@
 				B0F8304820375BDB004FC037 /* Array+Utils.swift in Sources */,
 				0D47E42A23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F8305520375BDB004FC037 /* Date+Utils.swift in Sources */,
+				0D47E44A23C0165800C4BFDC /* Occupiable.swift in Sources */,
 				B0F8303220375BDB004FC037 /* CellInformation.swift in Sources */,
 				B0F8306320375BDB004FC037 /* UIFont+Storyboard.swift in Sources */,
 				0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */,
@@ -1052,6 +1061,7 @@
 				B0F8305320375BDB004FC037 /* String+Utils.swift in Sources */,
 				B0F8306C20375BDB004FC037 /* UIButton+ViewConfiguration.swift in Sources */,
 				B0F8305420375BDB004FC037 /* NSAttributedString+Utils.swift in Sources */,
+				0D47E44823C0165800C4BFDC /* OptionalType.swift in Sources */,
 				B0F8305E20375BDB004FC037 /* AppearanceCaptureViewController.swift in Sources */,
 				B0E5B434211386C6005D8319 /* NSObject+Utils.swift in Sources */,
 				B0F8305720375BDB004FC037 /* UIApplication+Utils.swift in Sources */,
@@ -1128,6 +1138,7 @@
 				B0F830CD203762CB004FC037 /* FileManager+Utils.swift in Sources */,
 				B0F830D4203762CB004FC037 /* UIWebView+Utils.swift in Sources */,
 				B0F830E6203762CB004FC037 /* UIImage+Utils.swift in Sources */,
+				0D47E44D23C0166600C4BFDC /* OptionalType.swift in Sources */,
 				B0F830C82037629E004FC037 /* Debug.swift in Sources */,
 				B0F830C52037629E004FC037 /* APExtensionsLoader.m in Sources */,
 				B0F830D5203762CB004FC037 /* MFMailComposeViewController+Utils.swift in Sources */,
@@ -1147,6 +1158,7 @@
 				0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F830CC203762CB004FC037 /* UICollectionView+Utils.swift in Sources */,
 				B0F830EC203762CB004FC037 /* String+Utils.swift in Sources */,
+				0D47E44C23C0166100C4BFDC /* Occupiable.swift in Sources */,
 				B0F830EE203762CB004FC037 /* Date+Utils.swift in Sources */,
 				B0F830CA203762C6004FC037 /* AppearanceCaptureViewController.swift in Sources */,
 				B0F830D2203762CB004FC037 /* CGPoint+Utils.swift in Sources */,
