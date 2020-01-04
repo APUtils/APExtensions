@@ -1,5 +1,5 @@
 //
-//  Array+Utils.swift
+//  RangeReplaceableCollection+Utils.swift
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 09.08.16.
@@ -8,28 +8,11 @@
 
 import Foundation
 
-
-public extension Array {
-    /// Second element in array
-    var second: Element? {
-        guard count > 1 else { return nil }
-        
-        return self[1]
-    }
-    
-    /// Replaces last element with new element and returns replaced element.
-    @discardableResult
-    mutating func replaceLast(_ element: Element) -> Element {
-        let lastElement = removeLast()
-        append(element)
-        
-        return lastElement
-    }
-}
+// ******************************* MARK: - RangeReplaceableCollection
 
 // ******************************* MARK: - Scripting
 
-public extension Array {
+public extension RangeReplaceableCollection {
     
     /// Helper method to modify all value type objects in array
     @inlinable mutating func modifyForEach(_ body: (_ index: Index, _ element: inout Element) throws -> ()) rethrows {
@@ -42,7 +25,8 @@ public extension Array {
     @inlinable mutating func modifyElement(atIndex index: Index, _ modifyElement: (_ element: inout Element) throws -> ()) rethrows {
         var element = self[index]
         try modifyElement(&element)
-        self[index] = element
+        self.remove(at: index)
+        self.insert(element, at: index)
     }
     
     /// Helper methods to remove object using closure
@@ -60,7 +44,7 @@ public extension Array {
 
 // ******************************* MARK: - Equatable
 
-public extension Array where Element: Equatable {
+public extension RangeReplaceableCollection where Element: Equatable {
     
     /// Helper method to remove all objects that are equal to passed one.
     @inlinable mutating func removeAll(_ element: Element) {
@@ -68,7 +52,7 @@ public extension Array where Element: Equatable {
     }
     
     /// Returns array removing all objects that are equal to passed one.
-    @inlinable func removingAll(_ element: Element) -> [Element] {
+    @inlinable func removingAll(_ element: Element) -> Self {
         var resultArray = self
         resultArray.removeAll(element)
         return resultArray
@@ -79,21 +63,8 @@ public extension Array where Element: Equatable {
         removeAll { array.contains($0) }
     }
     
-    /// Removes the last object that is equal to a passed one.
-    @inlinable mutating func removeLast(_ element: Element) {
-        guard let lastIndex = lastIndex(of: element) else { return }
-        remove(at: lastIndex)
-    }
-    
-    /// Returns array removing the last object that is equal to a passed one.
-    @inlinable func removingLast(_ element: Element) -> [Element] {
-        var resultArray = self
-        resultArray.removeLast(element)
-        return resultArray
-    }
-    
     /// Returns array removing all objects that are equal to those contained in `array`.
-    @inlinable func removingAll(contentsOf array: [Element]) -> [Element] {
+    @inlinable func removingAll(contentsOf array: [Element]) -> Self {
         var resultArray = self
         resultArray.removeAll(contentsOf: array)
         return resultArray
@@ -106,7 +77,7 @@ public extension Array where Element: Equatable {
     }
     
     /// Returns array appending missing elements from passed `array`.
-    @inlinable func appendingMissing(contentsOf array: [Element]) -> [Element] {
+    @inlinable func appendingMissing(contentsOf array: [Element]) -> Self {
         let missing = array.filter { !contains($0) }
         var resultArray = self
         resultArray.append(contentsOf: missing)
@@ -114,13 +85,48 @@ public extension Array where Element: Equatable {
     }
 }
 
-// ******************************* MARK: - Splitting
+// ******************************* MARK: - RangeReplaceableCollection & BidirectionalCollection
 
-public extension Array {
-    /// Splits array into slices of specified size
-    func splittedArray(splitSize: Int) -> [[Element]] {
-        return stride(from: 0, to: count, by: splitSize).map {
-            Array(self[$0..<Swift.min($0 + splitSize, count)])
-        }
+public extension RangeReplaceableCollection where Self: BidirectionalCollection {
+    /// Replaces last element with new element and returns replaced element.
+    @discardableResult
+    mutating func replaceLast(_ element: Element) -> Element {
+        let lastElement = removeLast()
+        append(element)
+        
+        return lastElement
+    }
+}
+
+public extension RangeReplaceableCollection where Index == Int, Self: BidirectionalCollection {
+    /// Second element in array
+    var second: Element? {
+        guard count > 1 else { return nil }
+        
+        return self[1]
+    }
+    
+    /// Replaces last element with new element and returns replaced element.
+    @discardableResult
+    mutating func replaceLast(_ element: Element) -> Element {
+        let lastElement = removeLast()
+        append(element)
+        
+        return lastElement
+    }
+}
+
+public extension RangeReplaceableCollection where Element: Equatable, Self: BidirectionalCollection {
+    /// Removes the last object that is equal to a passed one.
+    @inlinable mutating func removeLast(_ element: Element) {
+        guard let lastIndex = lastIndex(of: element) else { return }
+        remove(at: lastIndex)
+    }
+    
+    /// Returns array removing the last object that is equal to a passed one.
+    @inlinable func removingLast(_ element: Element) -> Self {
+        var resultArray = self
+        resultArray.removeLast(element)
+        return resultArray
     }
 }

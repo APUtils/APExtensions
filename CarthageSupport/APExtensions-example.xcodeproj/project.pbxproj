@@ -72,7 +72,7 @@
 		B0F8304520375BDB004FC037 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF520375BDB004FC037 /* Data+Utils.swift */; };
 		B0F8304620375BDB004FC037 /* WKWebView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */; };
 		B0F8304720375BDB004FC037 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */; };
-		B0F8304820375BDB004FC037 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF820375BDB004FC037 /* Array+Utils.swift */; };
+		B0F8304820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */; };
 		B0F8304920375BDB004FC037 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; };
 		B0F8304A20375BDB004FC037 /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */; };
 		B0F8304B20375BDB004FC037 /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */; };
@@ -170,7 +170,7 @@
 		B0F830DE203762CB004FC037 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF520375BDB004FC037 /* Data+Utils.swift */; };
 		B0F830DF203762CB004FC037 /* WKWebView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */; };
 		B0F830E0203762CB004FC037 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */; };
-		B0F830E1203762CB004FC037 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF820375BDB004FC037 /* Array+Utils.swift */; };
+		B0F830E1203762CB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */; };
 		B0F830E2203762CB004FC037 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */; };
 		B0F830E3203762CB004FC037 /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */; };
 		B0F830E4203762CB004FC037 /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */; };
@@ -290,7 +290,7 @@
 		B0F82FF520375BDB004FC037 /* Data+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
-		B0F82FF820375BDB004FC037 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollection+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
@@ -515,7 +515,6 @@
 		B0F82FE220375BDB004FC037 /* _Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B0F82FF820375BDB004FC037 /* Array+Utils.swift */,
 				0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */,
 				B0F82FE920375BDB004FC037 /* CGPoint+Utils.swift */,
 				B0F82FF420375BDB004FC037 /* CGRect+Utils.swift */,
@@ -537,6 +536,7 @@
 				B0F8300820375BDB004FC037 /* NSMutableAttributedString+Utils.swift */,
 				B0E5B433211386C5005D8319 /* NSObject+Utils.swift */,
 				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
+				B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */,
 				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
 				B0F8300320375BDB004FC037 /* String+Utils.swift */,
 				0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */,
@@ -1047,7 +1047,7 @@
 				B0F8303520375BDB004FC037 /* UIStoryboard+Utils.swift in Sources */,
 				B0F8304220375BDB004FC037 /* UIScrollView+Utils.swift in Sources */,
 				B0F8305120375BDB004FC037 /* UINavigationController+Utils.swift in Sources */,
-				B0F8304820375BDB004FC037 /* Array+Utils.swift in Sources */,
+				B0F8304820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */,
 				0D47E42A23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F8305520375BDB004FC037 /* Date+Utils.swift in Sources */,
 				0D47E44A23C0165800C4BFDC /* Occupiable.swift in Sources */,
@@ -1153,7 +1153,7 @@
 				B0F830F5203762D0004FC037 /* Configurable.swift in Sources */,
 				B0F830CB203762C6004FC037 /* AlertController.swift in Sources */,
 				B0F830E7203762CB004FC037 /* UINavigationBar+Utils.swift in Sources */,
-				B0F830E1203762CB004FC037 /* Array+Utils.swift in Sources */,
+				B0F830E1203762CB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */,
 				B0F830DE203762CB004FC037 /* Data+Utils.swift in Sources */,
 				0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,
 				B0F830CC203762CB004FC037 /* UICollectionView+Utils.swift in Sources */,
