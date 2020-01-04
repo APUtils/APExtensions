@@ -21,6 +21,7 @@ public func += <K, V> (left: inout [K: V], right: [K: V]?) {
 // ******************************* MARK: - Scripting
 
 public extension Dictionary {
+    
     /// Helper method to modify value at specific key
     mutating func modifyValue(atKey key: Key, _ modifyValue: (_ element: inout Value?) throws -> ()) rethrows {
         var value = self[key]
@@ -58,6 +59,25 @@ public extension Dictionary {
             result[try transform(keyAndValue.key)] = keyAndValue.value
         }
     }
+    
+    /// Helper method to modify all value type objects in array
+    @inlinable mutating func modifyForEach(_ body: (_ key: inout Key, _ value: inout Value) throws -> ()) rethrows {
+        for key in keys {
+            try modifyKeyAndValue(key: key) { try body(&$0, &$1) }
+        }
+    }
+    
+    /// Helper method to modify value type objects in array at specific index
+    @inlinable mutating func modifyKeyAndValue(key: Key, _ modifyKeyAndValue: (_ key: inout Key, _ value: inout Value) throws -> ()) rethrows {
+        guard var value = self[key] else { return }
+        let oldKey = key
+        var newKey = key
+        try modifyKeyAndValue(&newKey, &value)
+        if oldKey != newKey {
+            self[oldKey] = nil
+        }
+        self[newKey] = value
+    }
 }
 
 // ******************************* MARK: - Values for key
@@ -67,7 +87,7 @@ public extension Dictionary {
         if let int = self[key] as? Int {
             return int
         } else if let number = self[key] as? NSNumber {
-             return number.intValue
+            return number.intValue
         } else if let string = self[key] as? String {
             return Int(string)
         } else if let double = self[key] as? Double {
