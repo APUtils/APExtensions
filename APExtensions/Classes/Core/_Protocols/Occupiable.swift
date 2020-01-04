@@ -17,30 +17,11 @@ import Foundation
 public protocol Occupiable {
     var isEmpty: Bool { get }
     var isNotEmpty: Bool { get }
-    init()
 }
 
 public extension Occupiable {
     var isNotEmpty: Bool {
         return !isEmpty
-    }
-}
-
-// I can't think of a way to combine these collection types. Suggestions welcomed!
-extension Array: Occupiable {}
-extension Dictionary: Occupiable {}
-extension Set: Occupiable {}
-extension String: Occupiable {}
-
-extension NSMutableString: Occupiable {
-    public var isEmpty: Bool {
-        return length == 0
-    }
-}
-
-extension NSMutableAttributedString: Occupiable {
-    public var isEmpty: Bool {
-        return length == 0
     }
 }
 
@@ -100,11 +81,6 @@ public extension Optional where Wrapped: Occupiable {
             return nil
         }
     }
-    
-    /// Unwraps optional and replaces `nil` value by empty value.
-    var nonNil: Wrapped {
-        return self ?? Wrapped()
-    }
 }
 
 public extension Optional where Wrapped: Collection & Occupiable {
@@ -113,5 +89,37 @@ public extension Optional where Wrapped: Collection & Occupiable {
     /// than 'isNotEmpty'.
     var hasElements: Bool {
         return isNotEmpty
+    }
+}
+
+// ******************************* MARK: - InitializeableOccupiable
+
+public protocol InitializeableOccupiable: Occupiable {
+    init()
+}
+
+// I can't think of a way to combine these collection types. Suggestions welcomed!
+extension Array: InitializeableOccupiable {}
+extension Dictionary: InitializeableOccupiable {}
+extension Set: InitializeableOccupiable {}
+extension String: InitializeableOccupiable {}
+
+extension NSMutableString: InitializeableOccupiable {
+    public var isEmpty: Bool {
+        return length == 0
+    }
+}
+
+extension NSMutableAttributedString: InitializeableOccupiable {
+    public var isEmpty: Bool {
+        return length == 0
+    }
+}
+
+public extension Optional where Wrapped: InitializeableOccupiable {
+    
+    /// Unwraps optional and replaces `nil` value by empty value.
+    var nonNil: Wrapped {
+        return self ?? Wrapped()
     }
 }
