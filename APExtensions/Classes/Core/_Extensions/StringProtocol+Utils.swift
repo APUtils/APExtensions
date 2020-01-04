@@ -152,7 +152,7 @@ public extension StringProtocol {
 public extension StringProtocol {
     /// Splits string by capital letters without stripping them
     var splittedByCapitals: [String] {
-        return splitBefore(separator: { $0.isUpperCase }).map({ String($0) })
+        return splitBefore(separator: { $0.isUppercase }).map({ String($0) })
     }
     
     /// Split string into slices of specified length
