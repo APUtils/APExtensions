@@ -54,6 +54,15 @@ public enum Constants {
             return 0
         }
     }()
+    
+    /// Detect if the app is running both UI and Unit tests.
+    public static let isRunningTests: Bool = ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
+    
+    /// Detect if the app is running UI tests.
+    public static let isRunningUITests: Bool = isRunningTests && ProcessInfo.processInfo.environment["XPC_SERVICE_NAME"]?.contains(".xctrunner") ?? false
+    
+    /// Detect if the app is running unit tests.
+    public static let isRunningUnitTests: Bool = isRunningTests && !isRunningUITests
 }
 
 public let c: Constants.Type = Constants.self
@@ -167,12 +176,6 @@ open class Globals {
     /// Is application in `active` state?
     open var isAppActive: Bool {
         return sharedApplication.applicationState == .active
-    }
-    
-    /// Detect if the app is running unit tests.
-    /// Note this only detects unit tests, not UI tests.
-    open var isRunningUnitTests: Bool {
-        return ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
     }
     
     // ******************************* MARK: - Swift Exception Handling

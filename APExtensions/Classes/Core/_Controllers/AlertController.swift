@@ -10,7 +10,7 @@ import UIKit
 
 // ******************************* MARK: - Class Implementation
 
-public final class AlertController: UIAlertController {
+open class AlertController: UIAlertController {
     
     // ******************************* MARK: - Types
     

@@ -61,6 +61,16 @@
                ReferencedContainer = "container:APExtensions.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0D15797D23C2308A007402BD"
+               BuildableName = "APExtensions_UITests.xctest"
+               BlueprintName = "APExtensions_UITests"
+               ReferencedContainer = "container:APExtensions.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
