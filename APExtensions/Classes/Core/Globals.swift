@@ -1,117 +1,13 @@
 //
-//  Utils.swift
+//  Globals.swift
 //  APExtensions
 //
-//  Created by Anton Plebanovich on 07/10/2017.
-//  Copyright (c) 2017 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 1/5/20.
+//  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import MessageUI
-
-// ******************************* MARK: - Constants
-
-public enum Constants {
-    
-    /// Is running on simulator?
-    public static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
-    
-    /// Is it an iPhone device?
-    public static let isIPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
-    
-    /// Screen size
-    public static let screenSize: CGSize = UIScreen.main.bounds.size
-    
-    /// Screen scale factor
-    public static let screenScale: CGFloat = UIScreen.main.scale
-    
-    /// Screen pixel size
-    public static let pixelSize: CGFloat = 1 / UIScreen.main.scale
-    
-    /// User documents directory URL
-    public static let documentsDirectoryUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-    
-    /// User temporary directory URL
-    public static let tempDirectoryUrl: URL = URL(fileURLWithPath: NSTemporaryDirectory())
-    
-    /// User cache directory URL
-    public static let cacheDirectoryUrl: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
-    
-    /// Height of status bar
-    public static let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-    
-    /// Navigation bar height
-    public static let navigationBarHeight: CGFloat = 44
-    
-    /// Navigation bar height
-    public static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
-    
-    /// Returns the on screen home button height
-    public static let homeButtonHeight: CGFloat = {
-        if #available(iOS 11.0, *) {
-            return UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
-        } else {
-            return 0
-        }
-    }()
-    
-    /// Detect if the app is running both UI and Unit tests.
-    public static let isRunningTests: Bool = ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
-    
-    /// Detect if the app is running UI tests.
-    public static let isRunningUITests: Bool = isRunningTests && ProcessInfo.processInfo.environment["XPC_SERVICE_NAME"]?.contains(".xctrunner") ?? false
-    
-    /// Detect if the app is running unit tests.
-    public static let isRunningUnitTests: Bool = isRunningTests && !isRunningUITests
-}
-
-public let c: Constants.Type = Constants.self
-
-// ******************************* MARK: - Typealiases
-
-/// Closure that takes Void and returns Void.
-public typealias SimpleClosure = () -> Void
-
-/// Closure that takes Bool and returns Void.
-public typealias SuccessClosure = (_ success: Bool) -> Void
-
-/// Closure that takes Bool and returns Void.
-public typealias ErrorClosure = (_ error: Error?) -> Void
-
-// ******************************* MARK: - Error
-
-/// Error stub to use for simplification
-public struct GeneralError: Error { public init() {} }
-
-// ******************************* MARK: - Unwrap
-
-/// Helper protocol
-private protocol _Optional {
-    var _value: Any? { get }
-}
-
-extension Optional: _Optional {
-    var _value: Any? {
-        switch self {
-        case .none: return nil
-        case .some(_): return self!
-        }
-    }
-}
-
-/// Removes nested optionals until only one left
-public func g_unwrap(_ _any: Any?) -> Any? {
-    guard let any = _any else { return _any }
-    
-    // Check if Any actually is Any?
-    if let optionalAny = any as? _Optional {
-        return g_unwrap(optionalAny._value)
-    } else {
-        return any
-    }
-}
-
-// ******************************* MARK: - New Globals Interface
 
 public let g: Globals = Globals()
 
@@ -582,5 +478,21 @@ open class Globals {
     open func openAppSettings() {
         guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
         UIApplication.shared.openURL(settingsURL)
+    }
+}
+
+// ******************************* MARK: - Unwrap
+
+/// Helper protocol
+private protocol _Optional {
+    var _value: Any? { get }
+}
+
+extension Optional: _Optional {
+    var _value: Any? {
+        switch self {
+        case .none: return nil
+        case .some(_): return self!
+        }
     }
 }

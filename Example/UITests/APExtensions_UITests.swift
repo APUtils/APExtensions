@@ -6,7 +6,6 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
-import APExtensions
 import XCTest
 
 class APExtensions_UITests: XCTestCase {
@@ -29,10 +28,6 @@ class APExtensions_UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue(Constants.isRunningTests)
-        XCTAssertTrue(Constants.isRunningUITests)
-        XCTAssertFalse(Constants.isRunningUnitTests)
+        XCTAssertTrue(app.staticTexts["ui-tests-label"].exists)
     }
 }

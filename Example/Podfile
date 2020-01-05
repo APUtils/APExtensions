@@ -16,11 +16,6 @@ target 'APExtensions_Example' do
   end
 end
 
-target 'APExtensions_UITests' do
-  pod 'APExtensions', :path => '../'
-end
-
-
 post_install do |installer|
   # Add podInstall.command and podUpdate.command shell scripts to Pods project
   pods_project = installer.pods_project

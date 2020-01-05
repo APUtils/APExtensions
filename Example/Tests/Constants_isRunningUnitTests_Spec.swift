@@ -10,6 +10,9 @@ import Quick
 import Nimble
 @testable import APExtensions
 
+// po ProcessInfo.processInfo.environment.forEach { print("\"\($0)\": \"\($1)\",") }
+// comm -23 file1 file2 - Different lines from file 1
+// comm -13 file1 file2 - Different lines from file 2
 class Constants_isRunningUnitTests_Spec: QuickSpec {
     override func spec() {
         describe("Constants.isRunning...") {
