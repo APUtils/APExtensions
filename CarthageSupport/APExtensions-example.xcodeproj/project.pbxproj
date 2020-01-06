@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
+		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
+		0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D4630E323C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
 		0D4630E423C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
 		0D4630E523C26EF200108415 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E123C26EF200108415 /* Definitions.swift */; };
@@ -241,6 +243,7 @@
 
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		0D4630E223C26EF200108415 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -403,6 +406,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D43F14623C3A5B9009E1C28 /* _Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */,
+				B0F82FE920375BDB004FC037 /* CGPoint+Utils.swift */,
+				B0F82FF420375BDB004FC037 /* CGRect+Utils.swift */,
+				B0F82FF320375BDB004FC037 /* Character+Utils.swift */,
+				0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */,
+				B0F82FF520375BDB004FC037 /* Data+Utils.swift */,
+				B0F8300520375BDB004FC037 /* Date+Utils.swift */,
+				0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */,
+				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
+				0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */,
+				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
+				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
+				0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */,
+				0D1B3892220A10230021FD11 /* Int+Utils.swift */,
+				B0F82FFC20375BDB004FC037 /* NotificationCenter+Utils.swift */,
+				B0F8300420375BDB004FC037 /* NSAttributedString+Utils.swift */,
+				B0F8300620375BDB004FC037 /* NSCoder+Utils.swift */,
+				B0F8300820375BDB004FC037 /* NSMutableAttributedString+Utils.swift */,
+				B0E5B433211386C5005D8319 /* NSObject+Utils.swift */,
+				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
+				B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */,
+				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
+				B0F8300320375BDB004FC037 /* String+Utils.swift */,
+				0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */,
+				B0E5B430211386AC005D8319 /* Timer+Utils.swift */,
+				0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */,
+				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
+				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
+				E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */,
+			);
+			path = _Foundation;
+			sourceTree = "<group>";
+		};
+		0D43F14723C3A5CC009E1C28 /* _UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
+				B0F82FE620375BDB004FC037 /* UIBarButtonItem+Utils.swift */,
+				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
+				B0F82FE320375BDB004FC037 /* UICollectionView+Utils.swift */,
+				B0F82FEF20375BDB004FC037 /* UIColor+Utils.swift */,
+				B0F82FFD20375BDB004FC037 /* UIImage+Utils.swift */,
+				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
+				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
+				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
+				E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */,
+				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
+				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
+				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
+				B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */,
+				B0F82FEA20375BDB004FC037 /* UIView+Utils.swift */,
+				B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */,
+				B0F82FEB20375BDB004FC037 /* UIWebView+Utils.swift */,
+				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
+			);
+			path = _UIKit;
+			sourceTree = "<group>";
+		};
+		0D43F14823C3A5EE009E1C28 /* _WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */,
+			);
+			path = _WebKit;
+			sourceTree = "<group>";
+		};
+		0D43F14923C3A613009E1C28 /* _MessageUI */ = {
+			isa = PBXGroup;
+			children = (
+				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
+				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
+			);
+			path = _MessageUI;
+			sourceTree = "<group>";
+		};
 		0D47E42C23BF4C7C00C4BFDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +568,7 @@
 		B0F82FD720375BDB004FC037 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0D43F14923C3A613009E1C28 /* _MessageUI */,
 				B0F8300E20375BDB004FC037 /* _Controllers */,
 				B0F82FE220375BDB004FC037 /* _Extensions */,
 				B0F82FD920375BDB004FC037 /* _Protocols */,
@@ -523,55 +605,9 @@
 		B0F82FE220375BDB004FC037 /* _Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0DACFA0F23BCD77D00FA6301 /* CGFloat+Utils.swift */,
-				B0F82FE920375BDB004FC037 /* CGPoint+Utils.swift */,
-				B0F82FF420375BDB004FC037 /* CGRect+Utils.swift */,
-				B0F82FF320375BDB004FC037 /* Character+Utils.swift */,
-				0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */,
-				B0F82FF520375BDB004FC037 /* Data+Utils.swift */,
-				B0F8300520375BDB004FC037 /* Date+Utils.swift */,
-				B0F82FFB20375BDB004FC037 /* Dictionary+Utils.swift */,
-				0D5A7D9B23B4B2C800E0687B /* Double+Utils.swift */,
-				B0F82FEE20375BDB004FC037 /* Error+Utils.swift */,
-				B0F82FE420375BDB004FC037 /* FileManager+Utils.swift */,
-				0D47E42923BF4C6400C4BFDC /* FloatingPoint+Utils.swift */,
-				0D1B3892220A10230021FD11 /* Int+Utils.swift */,
-				B0F82FEC20375BDB004FC037 /* MFMailComposeViewController+Utils.swift */,
-				B0F8300220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift */,
-				B0F82FFC20375BDB004FC037 /* NotificationCenter+Utils.swift */,
-				B0F8300420375BDB004FC037 /* NSAttributedString+Utils.swift */,
-				B0F8300620375BDB004FC037 /* NSCoder+Utils.swift */,
-				B0F8300820375BDB004FC037 /* NSMutableAttributedString+Utils.swift */,
-				B0E5B433211386C5005D8319 /* NSObject+Utils.swift */,
-				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
-				B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */,
-				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
-				B0F8300320375BDB004FC037 /* String+Utils.swift */,
-				0D47E43D23BFFC0E00C4BFDC /* StringProtocol+Utils.swift */,
-				B0E5B430211386AC005D8319 /* Timer+Utils.swift */,
-				0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */,
-				B0F8300720375BDB004FC037 /* UIApplication+Utils.swift */,
-				B0F82FE620375BDB004FC037 /* UIBarButtonItem+Utils.swift */,
-				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
-				B0F82FE320375BDB004FC037 /* UICollectionView+Utils.swift */,
-				B0F82FEF20375BDB004FC037 /* UIColor+Utils.swift */,
-				B0F82FFD20375BDB004FC037 /* UIImage+Utils.swift */,
-				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
-				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
-				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
-				E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */,
-				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
-				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
-				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
-				B0F82FF720375BDB004FC037 /* UITableView+Utils.swift */,
-				B0F82FEA20375BDB004FC037 /* UIView+Utils.swift */,
-				B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */,
-				B0F82FEB20375BDB004FC037 /* UIWebView+Utils.swift */,
-				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
-				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
-				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
-				E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */,
-				B0F82FF620375BDB004FC037 /* WKWebView+Utils.swift */,
+				0D43F14623C3A5B9009E1C28 /* _Foundation */,
+				0D43F14723C3A5CC009E1C28 /* _UIKit */,
+				0D43F14823C3A5EE009E1C28 /* _WebKit */,
 			);
 			path = _Extensions;
 			sourceTree = "<group>";
@@ -1052,6 +1088,7 @@
 				B0F8306E20375BDB004FC037 /* UILabel+ViewConfiguration.swift in Sources */,
 				B0F8304A20375BDB004FC037 /* Optional+Utils.swift in Sources */,
 				B0F8305020375BDB004FC037 /* Sequence+Utils.swift in Sources */,
+				0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */,
 				E28885F8232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */,
 				B0F8304620375BDB004FC037 /* WKWebView+Utils.swift in Sources */,
 				B0F8303520375BDB004FC037 /* UIStoryboard+Utils.swift in Sources */,
@@ -1118,6 +1155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F830F6203762D0004FC037 /* ClassName.swift in Sources */,
+				0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */,
 				B0F830E4203762CB004FC037 /* Dictionary+Utils.swift in Sources */,
 				0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
 				E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */,
