@@ -102,13 +102,28 @@ public extension UIView {
 // ******************************* MARK: - Sequence
 
 public extension UIView {
+    
     /// Returns all view's subviews
     var allSubviews: [UIView] {
         var allSubviews = self.subviews
-        
         allSubviews.forEach { allSubviews.append(contentsOf: $0.allSubviews) }
-        
         return allSubviews
+    }
+    
+    /// Consider view with alpha <0.01 as invisible because it stops receiving touches at this level:
+    /// "This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01."
+    var isVisible: Bool {
+        return !isHidden && alpha >= 0.01
+    }
+    
+    /// Returns all view's subviews
+    var allVisibleSubviews: [UIView] {
+        var allSubviewsVisible = self.subviews
+        allSubviewsVisible
+            .filter { $0.isVisible }
+            .forEach { allSubviewsVisible.append(contentsOf: $0.allVisibleSubviews) }
+        
+        return allSubviewsVisible
     }
     
     #if compiler(>=5)
