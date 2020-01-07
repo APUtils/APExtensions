@@ -8,6 +8,53 @@
 
 import UIKit
 
+// ******************************* MARK: - UIRefreshControl
+
+private var c_refreshActionAssociationKey = 0
+
+@available(iOS 10.0, *)
+public extension UIRefreshControl {
+    /// Closure for refresh action.
+    /// Takes `UIRefreshControl` that triggered refresh as argument.
+    typealias Action = (UIRefreshControl) -> Void
+    
+    fileprivate var action: Action? {
+        get {
+            return objc_getAssociatedObject(self, &c_refreshActionAssociationKey) as? Action
+        }
+        set {
+            objc_setAssociatedObject(self, &c_refreshActionAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    @objc fileprivate func onRefresh(_ sender: UIRefreshControl) {
+        action?(self)
+    }
+}
+
+@available(iOS 10.0, *)
+public extension UIScrollView {
+    /// Adds refresh control. Call finishRefresh() to stop.
+    func addRefreshControl(action: @escaping UIRefreshControl.Action) {
+        let refreshControl = UIRefreshControl()
+        refreshControl.action = action
+        refreshControl.addTarget(refreshControl, action: #selector(UIRefreshControl.onRefresh(_:)), for: .valueChanged)
+        self.refreshControl = refreshControl
+    }
+    
+    /// Adds refresh control. Call finishRefresh() to stop.
+    func addRefreshControl(target: AnyObject?, action: Selector) {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(target, action: action, for: .valueChanged)
+        self.refreshControl = refreshControl
+    }
+    
+    /// Stops refresh
+    func finishRefresh() {
+        refreshControl?.endRefreshing()
+    }
+}
+
 // ******************************* MARK: - Insets
 
 public extension UIScrollView {
@@ -58,94 +105,18 @@ public extension UIScrollView {
     func setBottomTabBarInset() {
         setBottomInset(49)
     }
-    
-    /// Assures that contentOffset value is correct.
-    func clampContentOffset() {
-        let minOffsetY = -fullContentInsets.top
-        let maxOffsetY = max(contentSize.height - bounds.size.height + fullContentInsets.bottom, -fullContentInsets.top)
-        let minOffsetX = -fullContentInsets.left
-        let maxOffsetX = max(contentSize.width - bounds.size.width + fullContentInsets.right, fullContentInsets.left)
-        
-        var newContentOffset = contentOffset
-        newContentOffset.y = min(newContentOffset.y, maxOffsetY)
-        newContentOffset.y = max(newContentOffset.y, minOffsetY)
-        newContentOffset.x = min(newContentOffset.x, maxOffsetX)
-        newContentOffset.x = max(newContentOffset.x, minOffsetX)
-        
-        contentOffset = newContentOffset
-    }
-    
-    /// Scroll to a specific view so that it's top is at the top our scrollview
-    func scrollToView(view: UIView, animated: Bool) {
-        // Get the Y position of your child view
-        let childFrame = view.convert(view.bounds, to: self)
-        
-        // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
-        scrollRectToVisible(childFrame, animated: animated)
-    }
-}
-
-// ******************************* MARK: - UIRefreshControl
-
-private var c_refreshActionAssociationKey = 0
-
-@available(iOS 10.0, *)
-public extension UIRefreshControl {
-    /// Closure for refresh action.
-    /// Takes `UIRefreshControl` that triggered refresh as argument.
-    typealias Action = (UIRefreshControl) -> Void
-    
-    fileprivate var action: Action? {
-        get {
-            return objc_getAssociatedObject(self, &c_refreshActionAssociationKey) as? Action
-        }
-        set {
-            objc_setAssociatedObject(self, &c_refreshActionAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    @objc fileprivate func onRefresh(_ sender: UIRefreshControl) {
-        action?(self)
-    }
-}
-
-@available(iOS 10.0, *)
-public extension UIScrollView {
-    /// Adds refresh control. Call finishRefresh() to stop.
-    func addRefreshControl(action: @escaping UIRefreshControl.Action) {
-        let refreshControl = UIRefreshControl()
-        refreshControl.action = action
-        refreshControl.addTarget(refreshControl, action: #selector(UIRefreshControl.onRefresh(_:)), for: .valueChanged)
-        self.refreshControl = refreshControl
-    }
-    
-    /// Adds refresh control. Call finishRefresh() to stop.
-    func addRefreshControl(target: AnyObject?, action: Selector) {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(target, action: action, for: .valueChanged)
-        self.refreshControl = refreshControl
-    }
-    
-    /// Stops refresh
-    func finishRefresh() {
-        refreshControl?.endRefreshing()
-    }
 }
 
 // ******************************* MARK: - Scroll
 
 public extension UIScrollView {
     func scrollToTop(animated: Bool) {
-        func _scrollToTop(animated: Bool) {
-            let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
-            if animated {
-                setContentOffset(topContentOffset, animated: true)
-            } else {
-                contentOffset = topContentOffset
-            }
+        let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
+        if animated {
+            setContentOffset(topContentOffset, animated: true)
+        } else {
+            contentOffset = topContentOffset
         }
-        
-        _scrollToTop(animated: animated)
     }
     
     func scrollToBottom(animated: Bool) {
@@ -164,24 +135,44 @@ public extension UIScrollView {
             return CGPoint(x: 0, y: y)
         }
         
-        func _scrollToBottom(animated: Bool) {
-            let bottomContentOffset = _getBottomContentOffset()
+        if let tableView = self as? UITableView {
+            // Since table view `contentSize` might change when cell become visible
+            // we need to use `UITableView`'s methods instead.
+            tableView.scrollToRow(at: tableView.lastRowIndexPath, at: .bottom, animated: animated)
             
-            if let tableView = self as? UITableView {
-                // Since table view `contentSize` might change when cell become visible
-                // we need to use `UITableView`'s methods instead.
-                tableView.scrollToRow(at: tableView.lastRowIndexPath, at: .bottom, animated: animated)
-                
+        } else {
+            // Use `UIScrollView`'s methods
+            let bottomContentOffset = _getBottomContentOffset()
+            if animated {
+                setContentOffset(bottomContentOffset, animated: true)
             } else {
-                // Use `UIScrollView`'s methods
-                if animated {
-                    setContentOffset(bottomContentOffset, animated: true)
-                } else {
-                    contentOffset = bottomContentOffset
-                }
+                contentOffset = bottomContentOffset
             }
         }
+    }
+    
+    /// Scroll to a specific view so that it's top is at the top our scrollview
+    func scrollToView(view: UIView, animated: Bool) {
+        // Get the Y position of your child view
+        let childFrame = view.convert(view.bounds, to: self)
         
-        _scrollToBottom(animated: animated)
+        // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
+        scrollRectToVisible(childFrame, animated: animated)
+    }
+    
+    /// Assures that contentOffset value is correct.
+    func clampContentOffset() {
+        let minOffsetY = -fullContentInsets.top
+        let maxOffsetY = max(contentSize.height - bounds.size.height + fullContentInsets.bottom, -fullContentInsets.top)
+        let minOffsetX = -fullContentInsets.left
+        let maxOffsetX = max(contentSize.width - bounds.size.width + fullContentInsets.right, fullContentInsets.left)
+        
+        var newContentOffset = contentOffset
+        newContentOffset.y = min(newContentOffset.y, maxOffsetY)
+        newContentOffset.y = max(newContentOffset.y, minOffsetY)
+        newContentOffset.x = min(newContentOffset.x, maxOffsetX)
+        newContentOffset.x = max(newContentOffset.x, minOffsetX)
+        
+        contentOffset = newContentOffset
     }
 }
