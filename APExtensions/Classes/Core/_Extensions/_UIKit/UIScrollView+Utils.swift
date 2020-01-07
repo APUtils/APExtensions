@@ -111,11 +111,18 @@ public extension UIScrollView {
 
 public extension UIScrollView {
     func scrollToTop(animated: Bool) {
-        let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
-        if animated {
-            setContentOffset(topContentOffset, animated: true)
+        if let tableView = self as? UITableView {
+            // Since table view `contentSize` might change when cell become visible
+            // we need to use `UITableView`'s methods instead.
+            tableView.scrollToRow(at: IndexPath(, at: .bottom, animated: animated)
+            
         } else {
-            contentOffset = topContentOffset
+            let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
+            if animated {
+                setContentOffset(topContentOffset, animated: true)
+            } else {
+                contentOffset = topContentOffset
+            }
         }
     }
     
