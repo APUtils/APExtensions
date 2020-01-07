@@ -55,7 +55,7 @@ infix operator .< : ComparisonPrecedence
 infix operator .> : ComparisonPrecedence
 infix operator .<= : ComparisonPrecedence
 infix operator .>= : ComparisonPrecedence
-extension CGFloat {
+public extension CGFloat {
     
     /// Checks whether two `CGFloat` values corresponds to the same pixel.
     static func .== (lhs: CGFloat, rhs: CGFloat) -> Bool {
