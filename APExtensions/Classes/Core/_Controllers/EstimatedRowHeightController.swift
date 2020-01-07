@@ -140,7 +140,7 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
                 // Try guess and return average value
                 let sameSectionIndexPaths = estimatedHeights.keys.filter({ $0.section == indexPath.section })
                 if sameSectionIndexPaths.hasElements {
-                    return sameSectionIndexPaths.compactMap { estimatedHeights[$0] }.average()
+                    return sameSectionIndexPaths.compactMap { estimatedHeights[$0] }.average().roundedToPixel
                 } else {
                     return UITableView.automaticDimension
                 }
