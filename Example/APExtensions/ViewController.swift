@@ -25,8 +25,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ////////////////////////////////////////////////////////////
         // Do not remove. UI tests will fail.
         fallbackToUITests()
+        ////////////////////////////////////////////////////////////
         
         let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
         attributedText.setStrikethrough(text: "g Strikethrough T")

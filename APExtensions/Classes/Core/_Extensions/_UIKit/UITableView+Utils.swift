@@ -19,20 +19,14 @@ public extension UITableView {
         register(UINib(nibName: `class`.className, bundle: nil), forCellReuseIdentifier: `class`.className)
     }
     
-    /// Simplifies cell dequeue. Specify type of variable on declaration so proper cell will be dequeued.
-    ///
-    /// Example:
-    ///
-    ///     let cell: MyCell = tableView.dequeue(for: indexPath)
-    func dequeue<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+    /// Simplifies cell dequeue.
+    /// - parameter class: Cell's class.
+    /// - parameter indexPath: Cell's index path.
+    func dequeue<T: UITableViewCell>(_ class: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
     /// Simplifies configurable cell dequeue.
-    ///
-    /// Example:
-    ///
-    ///     let cell = tableView.dequeueConfigurable(cellClass: MyClass.self, for: indexPath)
     func dequeueConfigurable(class: (UITableViewCell & Configurable).Type, for indexPath: IndexPath) -> UITableViewCell & Configurable {
         return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! UITableViewCell & Configurable
     }
@@ -44,11 +38,9 @@ public extension UITableView {
         register(UINib(nibName: `class`.className, bundle: nil), forHeaderFooterViewReuseIdentifier: `class`.className)
     }
     
-    /// Simplifies header/footer dequeue. Specify type of variable on declaration so proper cell will be dequeued.
-    /// Example:
-    ///
-    ///     let view: MyHeaderFooter = tableView.dequeue()
-    func dequeue<T: UITableViewHeaderFooterView>() -> T {
+    /// Simplifies header/footer dequeue.
+    /// - parameter class: Header or footer class.
+    func dequeue<T: UITableViewHeaderFooterView>(_ class: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
     }
 }
