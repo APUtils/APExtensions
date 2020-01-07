@@ -47,7 +47,7 @@ public extension CGFloat {
     }
 }
 
-// ******************************* MARK: - Pixel Comparison
+// ******************************* MARK: - Pixel Operations
 
 infix operator .== : ComparisonPrecedence
 infix operator .!= : ComparisonPrecedence
@@ -88,5 +88,12 @@ extension CGFloat {
     /// Checks whether two `CGFloat` values corresponds to the same pixel or the left one is bigger.
     static func .>= (lhs: CGFloat, rhs: CGFloat) -> Bool {
         return (lhs .== rhs) || (lhs > rhs)
+    }
+}
+
+public extension CGFloat {
+    var roundedToPixel: CGFloat {
+        let scale = UIScreen.main.scale
+        return (self * scale).rounded() / scale
     }
 }
