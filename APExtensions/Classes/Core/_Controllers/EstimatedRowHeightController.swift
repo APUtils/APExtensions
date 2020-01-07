@@ -134,7 +134,17 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
         if let height = originalTableViewDelegate?.tableView?(tableView, estimatedHeightForRowAt: indexPath) {
             return height
         } else {
-            return estimatedHeights[indexPath] ?? UITableView.automaticDimension
+            if let estimatedHeight = estimatedHeights[indexPath] {
+                return estimatedHeight
+            } else {
+                // Try guess and return average value
+                let sameSectionIndexPaths = estimatedHeights.keys.filter({ $0.section == indexPath.section })
+                if sameSectionIndexPaths.hasElements {
+                    return sameSectionIndexPaths.compactMap { estimatedHeights[$0] }.average()
+                } else {
+                    return UITableView.automaticDimension
+                }
+            }
         }
     }
     
@@ -266,7 +276,7 @@ private extension UITableView {
     
     @available(iOS 11.0, *)
     @objc private func _apextensions_performBatchUpdates(_ updates: (() -> Void)?, completion: ((Bool) -> Void)? = nil) {
-    
+        
         isUpdating = true
         _apextensions_performBatchUpdates(updates, completion: { success in
             NotificationCenter.default.post(name: .uiTableView_IndexPathChanged_NotificationName, object: self)

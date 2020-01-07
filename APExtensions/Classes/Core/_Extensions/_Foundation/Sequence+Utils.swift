@@ -99,3 +99,19 @@ public extension Sequence {
         }
     }
 }
+
+// ******************************* MARK: - Operations
+
+public extension Sequence where Element: BinaryFloatingPoint {
+    func average() -> Element {
+        var i: Element = 0
+        var total: Element = 0
+        
+        for value in self {
+            total = total + value
+            i += 1
+        }
+        
+        return total / i
+    }
+}
