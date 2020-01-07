@@ -183,3 +183,27 @@ public extension UIScrollView {
         contentOffset = newContentOffset
     }
 }
+
+// ******************************* MARK: - Helper Properties
+
+public extension UIScrollView {
+    
+    /// Frame of the content.
+    var contentFrame: CGRect {
+        .init(x: 0,
+              y: 0,
+              width: contentSize.width,
+              height: contentSize.height)
+    }
+    
+    /// Scrollable frame. Equal to content size + fullContentInsets.
+    var scrollableFrame: CGRect {
+        .init(x: -fullContentInsets.left,
+              y: -fullContentInsets.top,
+              width: contentSize.width + fullContentInsets.right + fullContentInsets.left,
+              height: contentSize.height + fullContentInsets.bottom + fullContentInsets.top)
+    }
+    
+    /// Visible area frame. Equal to bounds.
+    var visibleFrame: CGRect { bounds }
+}

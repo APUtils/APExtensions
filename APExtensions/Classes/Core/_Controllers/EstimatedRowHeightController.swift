@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// TODO: Need to react on row insertions and deletions
 /// Controller that improves UITableView scrolling and animation experience.
 /// - Note: You should assign tableView's `delegate` first and then create
 /// and store `EstimatedRowHeightController`. Everything else is automatic.

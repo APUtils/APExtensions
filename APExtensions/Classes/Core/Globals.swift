@@ -19,18 +19,10 @@ open class Globals {
     
     // ******************************* MARK: - Comparison
     
+    // TODO: Should be compared by pixel equality
     /// Compares two `CGSize`s with 0.0001 tolerance
     open func isCGSizesEqual(first: CGSize, second: CGSize) -> Bool {
         if abs(first.width - second.width) < 0.0001 && abs(first.height - second.height) < 0.0001 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    /// Compares two `CGFloat`s with 0.0001 tolerance
-    open func isCGFloatsEqual(first: CGFloat, second: CGFloat) -> Bool {
-        if abs(first - second) < 0.0001 {
             return true
         } else {
             return false

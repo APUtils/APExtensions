@@ -46,3 +46,47 @@ public extension CGFloat {
         return Double(self)
     }
 }
+
+// ******************************* MARK: - Pixel Comparison
+
+infix operator .== : ComparisonPrecedence
+infix operator .!= : ComparisonPrecedence
+infix operator .< : ComparisonPrecedence
+infix operator .> : ComparisonPrecedence
+infix operator .<= : ComparisonPrecedence
+infix operator .>= : ComparisonPrecedence
+extension CGFloat {
+    
+    /// Checks whether two `CGFloat` values corresponds to the same pixel.
+    static func .== (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        let scale = UIScreen.main.scale
+        let lhsPixel = (lhs * scale).rounded()
+        let rhsPixel = (rhs * scale).rounded()
+        return lhsPixel == rhsPixel
+    }
+    
+    /// Checks whether two `CGFloat` values doesn't correspond to the same pixel.
+    static func .!= (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        return !(lhs .== rhs)
+    }
+    
+    /// Checks whether two `CGFloat` values doesn't correspond to the same pixel and the left one is smaller.
+    static func .< (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        return lhs .!= rhs && lhs < rhs
+    }
+    
+    /// Checks whether two `CGFloat` values doesn't correspond to the same pixel and the left one is bigger.
+    static func .> (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        return lhs .!= rhs && lhs > rhs
+    }
+    
+    /// Checks whether two `CGFloat` values corresponds to the same pixel or the left one is smaller.
+    static func .<= (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        return (lhs .== rhs) || (lhs < rhs)
+    }
+    
+    /// Checks whether two `CGFloat` values corresponds to the same pixel or the left one is bigger.
+    static func .>= (lhs: CGFloat, rhs: CGFloat) -> Bool {
+        return (lhs .== rhs) || (lhs > rhs)
+    }
+}
