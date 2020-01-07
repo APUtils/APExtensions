@@ -166,10 +166,22 @@ public extension UIScrollView {
         
         func _scrollToBottom(animated: Bool) {
             let bottomContentOffset = _getBottomContentOffset()
-            if animated {
-                setContentOffset(bottomContentOffset, animated: true)
+            
+            if let tableView = self as? UITableView {
+                // Since table view `contentSize` might change when cell become visible
+                // we need to use `UITableView`'s methods instead.
+                let lastSection = tableView.numberOfSections - 1
+                let lastRow = tableView.numberOfRows(inSection: lastSection) - 1
+                let lastRowIndexPath = IndexPath(row: lastRow, section: lastSection)
+                tableView.scrollToRow(at: lastRowIndexPath, at: .bottom, animated: animated)
+                
             } else {
-                contentOffset = bottomContentOffset
+                // Use `UIScrollView`'s methods
+                if animated {
+                    setContentOffset(bottomContentOffset, animated: true)
+                } else {
+                    contentOffset = bottomContentOffset
+                }
             }
         }
         
