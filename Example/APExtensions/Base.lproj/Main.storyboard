@@ -78,20 +78,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-LI-iiL">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Mvv-gg-xPg" id="5Fj-RB-Gxp"/>
                                     <outlet property="delegate" destination="Mvv-gg-xPg" id="o0d-cp-9Co"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-u1-cFl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="30"/>
+                                <state key="normal" title="Debug"/>
+                                <connections>
+                                    <action selector="onDebugTap:" destination="Mvv-gg-xPg" eventType="touchUpInside" id="lpc-Sy-5Pl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xcf-u1-cFl" firstAttribute="leading" secondItem="Y3o-P7-Fwe" secondAttribute="leading" id="37Z-nI-Dhj"/>
                             <constraint firstAttribute="trailing" secondItem="vgn-LI-iiL" secondAttribute="trailing" id="BoW-U6-7Ux"/>
-                            <constraint firstItem="vgn-LI-iiL" firstAttribute="top" secondItem="75L-G6-Qzg" secondAttribute="bottom" id="Qwn-jp-C4E"/>
+                            <constraint firstItem="xcf-u1-cFl" firstAttribute="top" secondItem="75L-G6-Qzg" secondAttribute="bottom" id="Qzj-Xb-pgO"/>
+                            <constraint firstAttribute="trailing" secondItem="xcf-u1-cFl" secondAttribute="trailing" id="jwv-Ri-L7U"/>
                             <constraint firstItem="05x-Pt-rdO" firstAttribute="top" secondItem="vgn-LI-iiL" secondAttribute="bottom" id="nYk-l9-zdJ"/>
                             <constraint firstItem="vgn-LI-iiL" firstAttribute="leading" secondItem="Y3o-P7-Fwe" secondAttribute="leading" id="yv8-ef-fYt"/>
+                            <constraint firstItem="vgn-LI-iiL" firstAttribute="top" secondItem="xcf-u1-cFl" secondAttribute="bottom" constant="8" symbolic="YES" id="zD9-vu-h4c"/>
                         </constraints>
                     </view>
                     <connections>
@@ -100,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbQ-Au-Ief" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="-1430"/>
+            <point key="canvasLocation" x="-207.19999999999999" y="-1430.7346326836582"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yMd-87-Te3">

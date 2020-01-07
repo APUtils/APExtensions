@@ -60,23 +60,10 @@ public extension Dictionary {
         }
     }
     
-    /// Helper method to modify all value type objects in array
-    @inlinable mutating func modifyForEach(_ body: (_ key: inout Key, _ value: inout Value) throws -> ()) rethrows {
-        for key in keys {
-            try modifyKeyAndValue(key: key) { try body(&$0, &$1) }
-        }
-    }
-    
-    /// Helper method to modify value type objects in array at specific index
-    @inlinable mutating func modifyKeyAndValue(key: Key, _ modifyKeyAndValue: (_ key: inout Key, _ value: inout Value) throws -> ()) rethrows {
-        guard var value = self[key] else { return }
-        let oldKey = key
-        var newKey = key
-        try modifyKeyAndValue(&newKey, &value)
-        if oldKey != newKey {
-            self[oldKey] = nil
-        }
-        self[newKey] = value
+    /// Map keys and values together into a new dictionary.
+    /// - warning: Resulting keys must be unique!
+    @inlinable func mapDictionary<T: Hashable, U>(_ transform: (_ key: Key, _ value: Value) throws -> (key: T, U)) rethrows -> [T: U] {
+        return Dictionary<T, U>(uniqueKeysWithValues: try map { try transform($0, $1) })
     }
 }
 

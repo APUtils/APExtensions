@@ -6,10 +6,8 @@
 //  Copyright © 2019 Anton Plebanovich All rights reserved.
 //
 
-import UIKit
-
 import APExtensions
-
+import UIKit
 
 class TableViewVC: UIViewController {
     
@@ -18,6 +16,8 @@ class TableViewVC: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     // ******************************* MARK: - Private Properties
+    
+    private var cellsCount = 100
     
     // ******************************* MARK: - Initialization and Setup
     
@@ -33,10 +33,14 @@ class TableViewVC: UIViewController {
     
     private func setup() {
         tableView.handleEstimatedSizeAutomatically = true
-        tableView.handleEstimatedSizeAutomatically = true
-        tableView.handleEstimatedSizeAutomatically = false
-        tableView.handleEstimatedSizeAutomatically = false
-        tableView.handleEstimatedSizeAutomatically = true
+    }
+    
+    // ******************************* MARK: - Actions
+    
+    @IBAction private func onDebugTap(_ sender: Any) {
+        cellsCount -= 1
+//        tableView.insertRows(at: [tableView.firstRowIndexPath], with: .none)
+        tableView.deleteRows(at: [tableView.firstRowIndexPath], with: .none)
     }
 }
 
@@ -44,7 +48,7 @@ class TableViewVC: UIViewController {
 
 extension TableViewVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return cellsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
