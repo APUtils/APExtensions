@@ -12,7 +12,10 @@ import UIKit
 
 public extension UITableView {
     
-    /// Returns last row index path
+    /// Returns first section's first row index path.
+    /// If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+    /// If table view has zero cells for the first section returns (0, NSNotFound)
+    /// and this index path is valid for scrolling.
     var firstRowIndexPath: IndexPath {
         let firstSection: Int = (numberOfSections - 1)._clampedRowOrSection
         if firstSection == NSNotFound {
@@ -25,7 +28,10 @@ public extension UITableView {
         return firstRowIndexPath
     }
     
-    /// Returns last row index path
+    /// Returns last row index path or NSNotFound
+    /// If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+    /// If table view has zero cells for the last section returns (section, NSNotFound)
+    /// and this index path is valid for scrolling.
     var lastRowIndexPath: IndexPath {
         let lastSection: Int = (numberOfSections - 1)._clampedRowOrSection
         if lastSection == NSNotFound {
