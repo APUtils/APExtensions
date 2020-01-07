@@ -114,7 +114,7 @@ public extension UIScrollView {
         if let tableView = self as? UITableView {
             // Since table view `contentSize` might change when cell become visible
             // we need to use `UITableView`'s methods instead.
-            tableView.scrollToRow(at: tableView.firstRowIndexPath, at: .bottom, animated: animated)
+            tableView.scrollToRow(at: tableView.firstRowIndexPath, at: .top, animated: animated)
             
         } else {
             let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
