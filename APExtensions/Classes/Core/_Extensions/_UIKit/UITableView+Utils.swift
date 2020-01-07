@@ -8,6 +8,19 @@
 
 import UIKit
 
+// ******************************* MARK: - Other
+
+public extension UITableView {
+    
+    /// Returns last row index path
+    var lastRowIndexPath: IndexPath {
+        let lastSection = numberOfSections - 1
+        let lastRow = numberOfRows(inSection: lastSection) - 1
+        let lastRowIndexPath = IndexPath(row: lastRow, section: lastSection)
+        return lastRowIndexPath
+    }
+}
+
 // ******************************* MARK: - Cells, Header and Footer Reuse and Dequeue
 
 public extension UITableView {
