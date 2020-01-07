@@ -17,12 +17,12 @@ public extension UITableView {
     /// If table view has zero cells for the first section returns (0, NSNotFound)
     /// and this index path is valid for scrolling.
     var firstRowIndexPath: IndexPath {
-        let firstSection: Int = (numberOfSections - 1)._clampedRowOrSection
+        let firstSection: Int = (min(0, numberOfSections - 1))._clampedRowOrSection
         if firstSection == NSNotFound {
             return IndexPath(row: NSNotFound, section: NSNotFound)
         }
         
-        let firstRow = (numberOfRows(inSection: firstSection) - 1)._clampedRowOrSection
+        let firstRow = (min(0, numberOfRows(inSection: firstSection) - 1))._clampedRowOrSection
         let firstRowIndexPath = IndexPath(row: firstRow, section: firstSection)
         
         return firstRowIndexPath
