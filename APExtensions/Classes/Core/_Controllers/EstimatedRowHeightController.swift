@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Move to a separate pod. It's too fucking awesome!!!!!!!!!!!!!!!
+// I'm too fucking awesome omg why i'm so gooooooood
 /// Controller that improves UITableView scrolling and animation experience.
 /// - Note: You should assign tableView's `delegate` first and then create
 /// and store `EstimatedRowHeightController`. Everything else is automatic.
