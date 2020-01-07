@@ -11,6 +11,16 @@ import UIKit
 // ******************************* MARK: - Insets
 
 public extension UIScrollView {
+    
+    /// Returns `adjustedContentInset` on iOS >= 11 and `contentInset` on iOS < 11.
+    var fullContentInsets: UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            return adjustedContentInset
+        } else {
+            return contentInset
+        }
+    }
+    
     /// Set value for top `contentInset` and `scrollIndicatorInsets`
     func setTopInset(_ topInset: CGFloat) {
         if #available(iOS 11.0, *) {
@@ -51,10 +61,10 @@ public extension UIScrollView {
     
     /// Assures that contentOffset value is correct.
     func clampContentOffset() {
-        let minOffsetY = -contentInset.top
-        let maxOffsetY = max(contentSize.height - bounds.size.height + contentInset.bottom, -contentInset.top)
-        let minOffsetX = -contentInset.left
-        let maxOffsetX = max(contentSize.width - bounds.size.width + contentInset.right, contentInset.left)
+        let minOffsetY = -fullContentInsets.top
+        let maxOffsetY = max(contentSize.height - bounds.size.height + fullContentInsets.bottom, -fullContentInsets.top)
+        let minOffsetX = -fullContentInsets.left
+        let maxOffsetX = max(contentSize.width - bounds.size.width + fullContentInsets.right, fullContentInsets.left)
         
         var newContentOffset = contentOffset
         newContentOffset.y = min(newContentOffset.y, maxOffsetY)
@@ -127,7 +137,7 @@ public extension UIScrollView {
 public extension UIScrollView {
     func scrollToTop(animated: Bool) {
         func _scrollToTop(animated: Bool) {
-            let topContentOffset: CGPoint = .init(x: 0, y: -contentInset.top)
+            let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
             if animated {
                 setContentOffset(topContentOffset, animated: true)
             } else {
@@ -141,20 +151,13 @@ public extension UIScrollView {
     func scrollToBottom(animated: Bool) {
         func _getBottomContentOffset() -> CGPoint {
             let height = bounds.size.height
-            var y: CGFloat = 0.0
-            
-            if #available(iOS 11.0, *) {
-                y += adjustedContentInset.bottom
-            } else {
-                y += contentInset.bottom
-            }
-            
+            var y: CGFloat = fullContentInsets.bottom
             if contentSize.height > height {
                 y += contentSize.height - height
             }
             
-            let minOffsetY = -contentInset.top
-            let maxOffsetY = max(contentSize.height - bounds.size.height + contentInset.bottom, -contentInset.top)
+            let minOffsetY = -fullContentInsets.top
+            let maxOffsetY = max(contentSize.height - bounds.size.height + fullContentInsets.bottom, -fullContentInsets.top)
             y = min(y, maxOffsetY)
             y = max(y, minOffsetY)
             

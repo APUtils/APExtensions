@@ -25,20 +25,6 @@ private extension UIView {
     }
 }
 
-// ******************************* MARK: - Adjustment Behavior
-
-@available(iOS 11.0, *)
-public extension UIScrollView {
-    @IBInspectable var disableAutomaticContentAdjustment: Bool {
-        get {
-            return contentInsetAdjustmentBehavior == .never
-        }
-        set {
-            contentInsetAdjustmentBehavior = newValue ? .never : .automatic
-        }
-    }
-}
-
 // ******************************* MARK: - Bars Avoid
 
 private let _statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
@@ -61,7 +47,7 @@ public extension UIScrollView {
                     } else {
                         return contentInset.top == _topBarsHeight
                     }
-                
+                    
                 case .automatic:
                     if let _ = _viewController?.navigationController {
                         return adjustedContentInset.top == _topBarsHeight
@@ -76,7 +62,7 @@ public extension UIScrollView {
         }
         set {
             if #available(iOS 11.0, *) {
-                disableAutomaticContentAdjustment = true
+                contentInsetAdjustmentBehavior = .never
             }
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
@@ -120,7 +106,7 @@ public extension UIScrollView {
         }
         set {
             if #available(iOS 11.0, *) {
-                disableAutomaticContentAdjustment = true
+                contentInsetAdjustmentBehavior = .never
             }
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
