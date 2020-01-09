@@ -31,8 +31,8 @@ public extension UICollectionView {
     }
     
     /// Simplifies cell dequeue.
-    func dequeueCell<T: UICollectionViewCell>(_ class: T, for indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withReuseIdentifier: `class`.className, for: indexPath) as! T
+    func dequeueCell<T: UICollectionViewCell>(_ class: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as! T
     }
     
     /// Simplifies configurable cell dequeue.
@@ -44,7 +44,7 @@ public extension UICollectionView {
     /// Example:
     ///
     ///     let header: MyHeader = collectionView.dequeueHeader(for: indexPath)
-    func dequeueHeader<T: UICollectionReusableView>(_ class: T, for indexPath: IndexPath) -> T {
+    func dequeueHeader<T: UICollectionReusableView>(_ class: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.className, for: indexPath) as! T
     }
     
@@ -58,7 +58,7 @@ public extension UICollectionView {
     }
     
     /// Simplifies footer dequeue.
-    func dequeueFooter<T: UICollectionReusableView>(_ class: T, for indexPath: IndexPath) -> T {
+    func dequeueFooter<T: UICollectionReusableView>(_ class: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.className, for: indexPath) as! T
     }
     
