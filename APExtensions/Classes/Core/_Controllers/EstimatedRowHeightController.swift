@@ -8,8 +8,6 @@
 
 import UIKit
 
-// TODO: Move to a separate pod. It's too fucking awesome!!!!!!!!!!!!!!!
-// I'm too fucking awesome omg why i'm so gooooooood
 /// Controller that improves UITableView scrolling and animation experience.
 /// - Note: You should assign tableView's `delegate` first and then create
 /// and store `EstimatedRowHeightController`. Everything else is automatic.
@@ -94,10 +92,9 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
         // Let's ignore moves for now since there isn't enough of how it behave and when to apply it
         
         // estimatedHeights.keys.map { $0.row }.sorted().forEach { print($0) }
-        // First, let's invalidate reloads
-        tableView.reloadIndexPaths.forEach {
-            estimatedHeights[$0] = nil
-        }
+        
+        // First, no sense to invalidate values for reload it'll be requested when needed anyway
+        // and what we have is the best possible approximation since height might not be changed on update.
         
         // Second, let's handle deletions.
         // We need to clear actual deleted index paths and then process all others
