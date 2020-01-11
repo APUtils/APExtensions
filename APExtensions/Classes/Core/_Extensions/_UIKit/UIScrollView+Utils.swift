@@ -190,22 +190,24 @@ public extension UIScrollView {
     
     /// Frame of the content.
     var contentFrame: CGRect {
-        .init(x: 0,
-              y: 0,
-              width: contentSize.width,
-              height: contentSize.height)
+        CGRect(x: 0,
+               y: 0,
+               width: contentSize.width,
+               height: contentSize.height)
+            .roundedToPixel
     }
     
     /// Scrollable frame. Equal to content size + fullContentInsets.
     var scrollableFrame: CGRect {
-        .init(x: -fullContentInsets.left,
-              y: -fullContentInsets.top,
-              width: contentSize.width + fullContentInsets.right + fullContentInsets.left,
-              height: contentSize.height + fullContentInsets.bottom + fullContentInsets.top)
+        CGRect(x: -fullContentInsets.left,
+               y: -fullContentInsets.top,
+               width: contentSize.width + fullContentInsets.right + fullContentInsets.left,
+               height: contentSize.height + fullContentInsets.bottom + fullContentInsets.top)
+            .roundedToPixel
     }
     
     /// Visible area frame. Equal to bounds.
-    var visibleFrame: CGRect { bounds }
+    var visibleFrame: CGRect { bounds.roundedToPixel }
     
     /// Returns whether scrollable frame is more than visible frame
     var isScrollable: Bool {
