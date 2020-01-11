@@ -206,4 +206,9 @@ public extension UIScrollView {
     
     /// Visible area frame. Equal to bounds.
     var visibleFrame: CGRect { bounds }
+    
+    /// Returns whether scrollable frame is more than visible frame
+    var isScrollable: Bool {
+        return scrollableFrame.contains(visibleFrame)
+    }
 }

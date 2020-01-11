@@ -2,14 +2,14 @@
 //  TableViewVC.swift
 //  APExtensions
 //
-//  Created by Anton Plebanovich on 8/2/18.
-//  Copyright © 2019 Anton Plebanovich All rights reserved.
+//  Created by Anton Plebanovich on 1/11/20.
+//  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
 import APExtensions
 import UIKit
 
-class TableViewVC: UIViewController {
+final class TableViewVC: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
     
@@ -17,7 +17,7 @@ class TableViewVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private var cellsCount = 100
+    private var vm: TableViewVM = TableViewVM()
     
     // ******************************* MARK: - Initialization and Setup
     
@@ -32,26 +32,48 @@ class TableViewVC: UIViewController {
     }
     
     private func setup() {
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.registerNib(class: TableViewCell.self)
         tableView.handleEstimatedSizeAutomatically = true
+        tableView.computeRowHeightAutomatically(cell: TableViewCell.instantiateFromXib()) { [weak self] in
+            self?.configureCell($0, indexPath: $1)
+        }
     }
     
     // ******************************* MARK: - Actions
     
     @IBAction private func onDebugTap(_ sender: Any) {
-        cellsCount -= 1
-//        tableView.insertRows(at: [tableView.firstRowIndexPath], with: .none)
-        tableView.deleteRows(at: [tableView.firstRowIndexPath], with: .none)
+        
     }
 }
+
+// ******************************* MARK: - InstantiatableFromStoryboard
+
+extension TableViewVC: InstantiatableFromStoryboard {}
 
 // ******************************* MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension TableViewVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellsCount
+        return vm.cellVMs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeue(TableViewCell.self, for: indexPath)
+        configureCell(cell, indexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(_ cell: TableViewCell, indexPath: IndexPath) {
+        let cellVM = vm.cellVMs[indexPath.row]
+        cell.configure(vm: cellVM)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let cellVM = vm.cellVMs[indexPath.row]
     }
 }

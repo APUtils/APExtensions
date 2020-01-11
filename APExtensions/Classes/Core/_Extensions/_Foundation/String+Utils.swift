@@ -70,3 +70,18 @@ public extension String {
         self = self.capitalizingFirstLetter()
     }
 }
+
+// ******************************* MARK: - Random
+
+public extension String {
+    
+    /// Generates random string with spaces.
+    static func random(length: Int, averageWordLength: Int? = nil) -> String {
+        let length = 62
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let spacesCount = averageWordLength == nil ? 0 : length / averageWordLength!
+        let lettersWithSpace = letters.appending(String(repeating: " ", count: spacesCount))
+        return String((0..<length).map{ _ in lettersWithSpace.randomElement()! })
+    }
+}
+

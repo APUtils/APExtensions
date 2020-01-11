@@ -79,6 +79,11 @@ class ViewController: UIViewController {
         uiTestsLabel.isHidden = false
     }
     
+    @IBAction private func onTableViewTap(_ sender: Any) {
+        let vc = TableViewVC.instantiateFromStoryboard()
+        navigationController?.pushViewController(vc)
+    }
+    
     @IBAction private func onDebugTap(_ sender: Any) {
         let vc = UIViewController()
         vc.view.backgroundColor = .black

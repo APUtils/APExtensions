@@ -136,9 +136,9 @@ class EstimatedRowHeightController: NSObject, UITableViewDelegate {
             if let estimatedHeight = estimatedHeights[indexPath] {
                 return estimatedHeight
             } else {
-                // Try guess and return average value
                 let sameSectionIndexPaths = estimatedHeights.keys.filter({ $0.section == indexPath.section })
                 if sameSectionIndexPaths.hasElements {
+                    // Try guess and return average value
                     return sameSectionIndexPaths.compactMap { estimatedHeights[$0] }.average().roundedToPixel
                 } else {
                     return UITableView.automaticDimension
@@ -343,5 +343,42 @@ private extension UITableView {
         }
         
         _apextensions_moveRow(at: indexPath, to: newIndexPath)
+    }
+}
+
+// ******************************* MARK: - UITableView Extension
+
+private var c_estimatedRowHeightControllerAssociationKey = 0
+
+public extension UITableView {
+    private var estimatedRowHeightController: EstimatedRowHeightController? {
+        get {
+            return objc_getAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey) as? EstimatedRowHeightController
+        }
+        set {
+            objc_setAssociatedObject(self, &c_estimatedRowHeightControllerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private var _handleEstimatedSizeAutomatically: Bool {
+        return estimatedRowHeightController != nil
+    }
+    
+    /// Store cells' sizes and uses them on recalculation.
+    /// - warning: Replaces and proxies tableView's `delegate` property
+    /// so be sure to assing this property when tableView's `delegate` already is set.
+    var handleEstimatedSizeAutomatically: Bool {
+        set {
+            guard newValue != _handleEstimatedSizeAutomatically else { return }
+            
+            if newValue {
+                estimatedRowHeightController = EstimatedRowHeightController(tableView: self)
+            } else {
+                estimatedRowHeightController = nil
+            }
+        }
+        get {
+            return _handleEstimatedSizeAutomatically
+        }
     }
 }
