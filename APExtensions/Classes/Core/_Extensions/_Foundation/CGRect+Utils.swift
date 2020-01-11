@@ -20,4 +20,12 @@ public extension CGRect {
             origin.y = newValue.y - height / 2
         }
     }
+    
+    /// Returns new rect rounded to a nearest pixel.
+    var roundedToPixel: CGRect {
+        return CGRect(x: origin.x.roundedToPixel,
+                      y: origin.y.roundedToPixel,
+                      width: size.width.roundedToPixel,
+                      height: size.height.roundedToPixel)
+    }
 }
