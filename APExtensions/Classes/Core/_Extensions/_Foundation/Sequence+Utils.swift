@@ -103,6 +103,8 @@ public extension Sequence {
 // ******************************* MARK: - Operations
 
 public extension Sequence where Element: BinaryFloatingPoint {
+    
+    /// Returns averge value of all elements in a sequence.
     func average() -> Element {
         var i: Element = 0
         var total: Element = 0
@@ -112,6 +114,10 @@ public extension Sequence where Element: BinaryFloatingPoint {
             i += 1
         }
         
-        return total / i
+        if i == 0 {
+            return 0
+        } else {
+            return total / i
+        }
     }
 }

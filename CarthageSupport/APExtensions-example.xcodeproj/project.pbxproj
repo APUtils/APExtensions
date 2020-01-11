@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
-		0D3445BB23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */; };
-		0D3445BC23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */; };
 		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D4630E323C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
@@ -39,8 +37,6 @@
 		0DBC7CFF23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */; };
 		0DCE43D9223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
 		0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
-		B0E5B42E21138683005D8319 /* EstimatedRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */; };
-		B0E5B42F21138683005D8319 /* EstimatedRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */; };
 		B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B432211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B434211386C6005D8319 /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B433211386C5005D8319 /* NSObject+Utils.swift */; };
@@ -245,7 +241,6 @@
 
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
-		0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExactRowHeightController.swift; sourceTree = "<group>"; };
 		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
@@ -261,7 +256,6 @@
 		0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Utils.swift"; sourceTree = "<group>"; };
 		2FD0E5C8628CEDB87D8F3685 /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
 		455377CF05E63E6D27701A1A /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
-		B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedRowHeightController.swift; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
 		B0E5B433211386C5005D8319 /* NSObject+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Utils.swift"; sourceTree = "<group>"; };
 		B0F82FAF20375B69004FC037 /* APExtensions-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APExtensions-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -620,8 +614,6 @@
 			children = (
 				B0F8301020375BDB004FC037 /* AlertController.swift */,
 				B0F8300F20375BDB004FC037 /* AppearanceCaptureViewController.swift */,
-				B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */,
-				0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */,
 			);
 			path = _Controllers;
 			sourceTree = "<group>";
@@ -1067,7 +1059,6 @@
 				B0F8305820375BDB004FC037 /* NSMutableAttributedString+Utils.swift in Sources */,
 				B0F8303820375BDB004FC037 /* UIButton+Utils.swift in Sources */,
 				B0F8302B20375BDB004FC037 /* APExtensionsLoader.m in Sources */,
-				B0E5B42E21138683005D8319 /* EstimatedRowHeightController.swift in Sources */,
 				B0F8303F20375BDB004FC037 /* UIColor+Utils.swift in Sources */,
 				B0F8303620375BDB004FC037 /* UIBarButtonItem+Utils.swift in Sources */,
 				B0F8306D20375BDB004FC037 /* UIView+ViewConfiguration.swift in Sources */,
@@ -1126,7 +1117,6 @@
 				B0F8304F20375BDB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F8304120375BDB004FC037 /* UIImageView+Utils.swift in Sources */,
 				E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
-				0D3445BB23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */,
 				B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */,
 				B0F8306B20375BDB004FC037 /* UIImageView+ViewConfiguration.swift in Sources */,
 				B0F8306A20375BDB004FC037 /* UITextView+ViewConfiguration.swift in Sources */,
@@ -1164,7 +1154,6 @@
 				B0F830E4203762CB004FC037 /* Dictionary+Utils.swift in Sources */,
 				0DAD0A5321F3A4D700F0B3BC /* SingletonManager.swift in Sources */,
 				E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */,
-				B0E5B42F21138683005D8319 /* EstimatedRowHeightController.swift in Sources */,
 				B0F830F0203762CB004FC037 /* UIApplication+Utils.swift in Sources */,
 				B0F830CF203762CB004FC037 /* UIBarButtonItem+Utils.swift in Sources */,
 				B0F830D9203762CB004FC037 /* UIWindow+Utils.swift in Sources */,
@@ -1191,7 +1180,6 @@
 				E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				0D4630E823C26EF200108415 /* Constants.swift in Sources */,
 				B0F830CD203762CB004FC037 /* FileManager+Utils.swift in Sources */,
-				0D3445BC23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */,
 				B0F830D4203762CB004FC037 /* UIWebView+Utils.swift in Sources */,
 				B0F830E6203762CB004FC037 /* UIImage+Utils.swift in Sources */,
 				0D47E44D23C0166600C4BFDC /* OptionalType.swift in Sources */,
