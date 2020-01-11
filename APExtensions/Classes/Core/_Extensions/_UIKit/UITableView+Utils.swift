@@ -118,3 +118,13 @@ public extension UITableView {
         contentOffset.y = bottomOffset
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension UITableView {
+    
+    /// IndexPaths of visible cells
+    var visibleIndexPaths: [IndexPath] {
+        visibleCells.compactMap { indexPath(for: $0) }
+    }
+}
