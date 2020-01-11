@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1B3893220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
 		0D1B3894220A10230021FD11 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1B3892220A10230021FD11 /* Int+Utils.swift */; };
+		0D3445BB23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */; };
+		0D3445BC23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */; };
 		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D4630E323C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
@@ -243,6 +245,7 @@
 
 /* Begin PBXFileReference section */
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExactRowHeightController.swift; sourceTree = "<group>"; };
 		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
@@ -618,6 +621,7 @@
 				B0F8301020375BDB004FC037 /* AlertController.swift */,
 				B0F8300F20375BDB004FC037 /* AppearanceCaptureViewController.swift */,
 				B0E5B42D21138683005D8319 /* EstimatedRowHeightController.swift */,
+				0D3445BA23CA1A6B0053C1C4 /* ExactRowHeightController.swift */,
 			);
 			path = _Controllers;
 			sourceTree = "<group>";
@@ -1122,6 +1126,7 @@
 				B0F8304F20375BDB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F8304120375BDB004FC037 /* UIImageView+Utils.swift in Sources */,
 				E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
+				0D3445BB23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */,
 				B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */,
 				B0F8306B20375BDB004FC037 /* UIImageView+ViewConfiguration.swift in Sources */,
 				B0F8306A20375BDB004FC037 /* UITextView+ViewConfiguration.swift in Sources */,
@@ -1186,6 +1191,7 @@
 				E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				0D4630E823C26EF200108415 /* Constants.swift in Sources */,
 				B0F830CD203762CB004FC037 /* FileManager+Utils.swift in Sources */,
+				0D3445BC23CA1A6B0053C1C4 /* ExactRowHeightController.swift in Sources */,
 				B0F830D4203762CB004FC037 /* UIWebView+Utils.swift in Sources */,
 				B0F830E6203762CB004FC037 /* UIImage+Utils.swift in Sources */,
 				0D47E44D23C0166600C4BFDC /* OptionalType.swift in Sources */,
