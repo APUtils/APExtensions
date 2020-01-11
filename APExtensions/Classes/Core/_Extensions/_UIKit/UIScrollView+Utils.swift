@@ -211,6 +211,6 @@ public extension UIScrollView {
     
     /// Returns whether scrollable frame is more than visible frame
     var isScrollable: Bool {
-        return scrollableFrame.contains(visibleFrame)
+        return scrollableFrame.height .> visibleFrame.height
     }
 }
