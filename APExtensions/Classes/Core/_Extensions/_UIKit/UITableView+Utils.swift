@@ -70,13 +70,21 @@ public extension UITableView {
     /// - parameter class: Cell's class.
     /// - parameter indexPath: Cell's index path.
     func dequeue<T: UITableViewCell>(_ class: T.Type, for indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! T
+        var cell: T!
+        UIView.performWithoutAnimation {
+            cell = dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as? T
+        }
+        return cell
     }
     
     /// Simplifies configurable cell dequeue.
     typealias ConfigurableCell = UITableViewCell & Configurable
     func dequeueConfigurable(class: ConfigurableCell.Type, for indexPath: IndexPath) -> ConfigurableCell {
-        return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! ConfigurableCell
+        var cell: ConfigurableCell!
+        UIView.performWithoutAnimation {
+            cell = dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as? ConfigurableCell
+        }
+        return cell
     }
     
     // ******************************* MARK: - Header and Footer
@@ -89,7 +97,11 @@ public extension UITableView {
     /// Simplifies header/footer dequeue.
     /// - parameter class: Header or footer class.
     func dequeue<T: UITableViewHeaderFooterView>(_ class: T.Type) -> T {
-        return dequeueReusableHeaderFooterView(withIdentifier: `class`.className) as! T
+        var view: T!
+        UIView.performWithoutAnimation {
+            view = dequeueReusableHeaderFooterView(withIdentifier: `class`.className) as? T
+        }
+        return view
     }
 }
 

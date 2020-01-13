@@ -91,3 +91,17 @@ public extension NotificationCenter {
         stopTimer()
     }
 }
+
+// ******************************* MARK: - Perform Once
+
+public extension NotificationCenter {
+    
+    /// Observes notification once and then removes observer.
+    func observeOnce(forName: NSNotification.Name?, object: Any?, queue: OperationQueue?, using: @escaping (Notification) -> Void) {
+        var token: NSObjectProtocol!
+        token = addObserver(forName: forName, object: object, queue: queue, using: { [weak self] notification in
+            if let token = token { self?.removeObserver(token) }
+            using(notification)
+        })
+    }
+}
