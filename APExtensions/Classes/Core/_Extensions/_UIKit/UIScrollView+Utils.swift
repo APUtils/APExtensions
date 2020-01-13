@@ -110,6 +110,13 @@ public extension UIScrollView {
 // ******************************* MARK: - Scroll
 
 public extension UIScrollView {
+    
+    /// Stops current scroll
+    func stopScrolling() {
+        setContentOffset(contentOffset, animated: false)
+    }
+    
+    /// Scroll to top
     func scrollToTop(animated: Bool) {
         if let tableView = self as? UITableView {
             // Since table view `contentSize` might change when cell become visible
@@ -126,6 +133,7 @@ public extension UIScrollView {
         }
     }
     
+    /// Scroll to bottom
     func scrollToBottom(animated: Bool) {
         func _getBottomContentOffset() -> CGPoint {
             let height = bounds.size.height
