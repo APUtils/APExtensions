@@ -70,7 +70,7 @@ public extension UITableView {
     /// - parameter class: Cell's class.
     /// - parameter indexPath: Cell's index path.
     func dequeue<T: UITableViewCell>(_ class: T.Type, for indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+        return dequeueReusableCell(withIdentifier: `class`.className, for: indexPath) as! T
     }
     
     /// Simplifies configurable cell dequeue.
@@ -89,7 +89,7 @@ public extension UITableView {
     /// Simplifies header/footer dequeue.
     /// - parameter class: Header or footer class.
     func dequeue<T: UITableViewHeaderFooterView>(_ class: T.Type) -> T {
-        return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
+        return dequeueReusableHeaderFooterView(withIdentifier: `class`.className) as! T
     }
 }
 
