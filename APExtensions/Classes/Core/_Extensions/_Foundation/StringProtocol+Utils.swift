@@ -82,6 +82,11 @@ public extension StringProtocol {
         return URL(string: urlString)
     }
     
+    /// Returns `self` as file URL
+    var asFileURL: URL {
+        return URL(fileURLWithPath: asString)
+    }
+    
     /// Returns `self` as `Int`
     var asInt: Int? {
         return Int(self)
