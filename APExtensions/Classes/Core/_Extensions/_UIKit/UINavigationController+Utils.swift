@@ -32,34 +32,19 @@ public extension UINavigationController {
     /// Pushes view controller with completion
     func pushViewController(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         pushViewController(viewController, animated: animated)
-        
-        if animated, let coordinator = transitionCoordinator {
-            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
-        } else {
-            completion?()
-        }
+        handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops view controller with completion
     func popViewController(animated: Bool, completion: (() -> Void)?) {
         popViewController(animated: animated)
-        
-        if animated, let coordinator = transitionCoordinator {
-            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
-        } else {
-            completion?()
-        }
+        handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops to view controller with completion
     func popToViewController(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         popToViewController(viewController, animated: animated)
-        
-        if animated, let coordinator = transitionCoordinator {
-            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
-        } else {
-            completion?()
-        }
+        handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops view controller if it present in navigation stack and all overlaying view controllers.
@@ -83,23 +68,13 @@ public extension UINavigationController {
     /// Pops to root with completion
     func popToRootViewController(animated: Bool, completion: (() -> Void)?) {
         popToRootViewController(animated: animated)
-        
-        if animated, let coordinator = transitionCoordinator {
-            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
-        } else {
-            completion?()
-        }
+        handleCompletion(animated: animated, completion: completion)
     }
     
     /// Replaces view controllers with completion
     func setViewControllers(_ vcs: [UIViewController], animated: Bool, completion: (() -> Void)?) {
         setViewControllers(vcs, animated: animated)
-        
-        if animated, let coordinator = transitionCoordinator {
-            coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
-        } else {
-            completion?()
-        }
+        handleCompletion(animated: animated, completion: completion)
     }
     
     /// Replaces last view controller with completion
@@ -109,5 +84,17 @@ public extension UINavigationController {
         vcs.append(vc)
         
         setViewControllers(vcs, animated: animated, completion: completion)
+    }
+    
+    private func handleCompletion(animated: Bool, completion: (() -> Void)?) {
+        if animated, let coordinator = transitionCoordinator {
+            let success = coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
+            if !success {
+                completion?()
+            }
+            
+        } else {
+            completion?()
+        }
     }
 }

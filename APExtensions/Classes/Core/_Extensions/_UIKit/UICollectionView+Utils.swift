@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public extension UICollectionView {
     
     // ******************************* MARK: - Cell Nib
