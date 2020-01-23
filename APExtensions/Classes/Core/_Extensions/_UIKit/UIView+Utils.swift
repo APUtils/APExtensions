@@ -13,9 +13,10 @@ import UIKit
 public extension UIView {
     
     /// Consider view with alpha <0.01 as invisible because it stops receiving touches at this level:
-    /// "This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01."
+    /// "This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01".
+    /// This one also checks all superviews for the same parameters.
     var isVisible: Bool {
-        return !isHidden && alpha >= 0.01
+        return !isHidden && alpha >= 0.01 && superviews.reduce(true) { $0 && !$1.isHidden && $1.alpha >= 0.01 }
     }
     
     /// Checks wheter view is visible in containing window.
