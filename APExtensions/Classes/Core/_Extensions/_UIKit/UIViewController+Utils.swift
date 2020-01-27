@@ -116,15 +116,20 @@ public extension UIViewController {
     func present(_ vc: UIViewController) {
         present(vc, animated: true)
     }
+}
+
+// ******************************* MARK: - Remove
+    
+extension UIViewController {
     
     /// Remove view controller animated action. Removes using pop if it was pushed or using dismiss if it was presented.
-    @IBAction func remove(sender: Any) {
+    @IBAction open func remove(sender: Any) {
         remove(animated: true)
     }
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     /// Removes also overlaying controllers if needed.
-    func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let navigationController = navigationController {
             // Has navigation controller
             if navigationController.presentedViewController != nil {
@@ -191,7 +196,7 @@ public extension UIViewController {
     }
     
     /// Removes all presented view controllers and navigates to the root.
-    func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         if let rootPresentingViewController = rootPresentingViewController {
             
             let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController
@@ -234,24 +239,24 @@ public extension UIViewController {
 
 // ******************************* MARK: - Other
 
-public extension UIViewController {
+extension UIViewController {
     /// Returns navigation controller with self as root.
-    var wrappedIntoNavigation: UINavigationController {
+    public var wrappedIntoNavigation: UINavigationController {
         return UINavigationController(rootViewController: self)
     }
     
     /// End editing in viewController's view
-    @IBAction func endEditing(_ sender: Any) {
+    @IBAction open func endEditing(_ sender: Any) {
         view.endEditing(true)
     }
     
     /// Returns popover controller with self as root.
-    func wrappedIntoPopover() -> UIPopoverController {
+    public func wrappedIntoPopover() -> UIPopoverController {
         return UIPopoverController(contentViewController: self)
     }
     
     /// If it's an iPad wraps VC into popover, tries to automatically detect presentation place and then presents.
-    func presentInPopoverIfNeeded(_ vc: UIViewController, animated: Bool = true) {
+    public func presentInPopoverIfNeeded(_ vc: UIViewController, animated: Bool = true) {
         if c.isIPhone {
             present(vc, animated: animated)
         } else {
