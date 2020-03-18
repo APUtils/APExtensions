@@ -151,9 +151,12 @@ public extension UIScrollView {
         }
         
         if let tableView = self as? UITableView {
+            let lastRowIndexPath = tableView.lastRowIndexPath
+            guard lastRowIndexPath.section != NSNotFound else { return }
+            
             // Since table view `contentSize` might change when cell become visible
             // we need to use `UITableView`'s methods instead.
-            tableView.scrollToRow(at: tableView.lastRowIndexPath, at: .bottom, animated: animated)
+            tableView.scrollToRow(at: lastRowIndexPath, at: .bottom, animated: animated)
             
         } else {
             // Use `UIScrollView`'s methods
