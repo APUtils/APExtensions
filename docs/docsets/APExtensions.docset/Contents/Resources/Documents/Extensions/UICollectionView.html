@@ -14,7 +14,7 @@
     <a title="UICollectionView Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="../Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="../Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -453,39 +471,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE11dequeueCell3forx10Foundation9IndexPathV_tSo0abE0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeueCell(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE11dequeueCell3forx10Foundation9IndexPathV_tSo0abE0CRbzlF">dequeueCell(for:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Simplifies cell dequeue. Specify type of variable on declaration so proper cell will be dequeued.
-Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyCell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueCell</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueCell</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionViewCell</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE11dequeueCell_3forxx_10Foundation9IndexPathVtSo0abE0CRbzlF"></a>
+                    <a name="/s:So16UICollectionViewC12APExtensionsE11dequeueCell_3forxxm_10Foundation9IndexPathVtSo0abE0CRbzlF"></a>
                     <a name="//apple_ref/swift/Method/dequeueCell(_:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE11dequeueCell_3forxx_10Foundation9IndexPathVtSo0abE0CRbzlF">dequeueCell(_:for:)</a>
+                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE11dequeueCell_3forxxm_10Foundation9IndexPathVtSo0abE0CRbzlF">dequeueCell(_:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -494,15 +482,13 @@ Example:</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Simplifies cell dequeue.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueCell</span><span class="p">(</span><span class="kt">MyCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueCell</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionViewCell</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueCell</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionViewCell</span></code></pre>
 
                         </div>
                       </div>
@@ -524,10 +510,6 @@ Example:</p>
                       <div class="abstract">
                         <p>Simplifies configurable cell dequeue.</p>
 
-<p>Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueConfigurableCell</span><span class="p">(</span><span class="nv">class</span><span class="p">:</span> <span class="kt">MyCellClass</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -543,9 +525,9 @@ Example:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueHeader3forx10Foundation9IndexPathV_tSo0a8ReusableB0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeueHeader(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueHeader3forx10Foundation9IndexPathV_tSo0a8ReusableB0CRbzlF">dequeueHeader(for:)</a>
+                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueHeader_3forxxm_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/dequeueHeader(_:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueHeader_3forxxm_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF">dequeueHeader(_:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -563,36 +545,7 @@ Example:</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueHeader</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueHeader_3forxx_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeueHeader(_:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueHeader_3forxx_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF">dequeueHeader(_:for:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Simplifies header dequeue.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">header</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueHeader</span><span class="p">(</span><span class="kt">MyHeader</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueHeader</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueHeader</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
 
                         </div>
                       </div>
@@ -633,39 +586,9 @@ Example:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueFooter3forx10Foundation9IndexPathV_tSo0a8ReusableB0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeueFooter(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueFooter3forx10Foundation9IndexPathV_tSo0a8ReusableB0CRbzlF">dequeueFooter(for:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Simplifies footer dequeue. Specify type of variable on declaration so proper footer will be dequeued.
-Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">footer</span><span class="p">:</span> <span class="kt">MyFooter</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueFooter</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueFooter</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueFooter_3forxx_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF"></a>
+                    <a name="/s:So16UICollectionViewC12APExtensionsE13dequeueFooter_3forxxm_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF"></a>
                     <a name="//apple_ref/swift/Method/dequeueFooter(_:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueFooter_3forxx_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF">dequeueFooter(_:for:)</a>
+                    <a class="token" href="#/s:So16UICollectionViewC12APExtensionsE13dequeueFooter_3forxxm_10Foundation9IndexPathVtSo0a8ReusableB0CRbzlF">dequeueFooter(_:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -674,15 +597,13 @@ Example:</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Simplifies footer dequeue.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">footer</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueFooter</span><span class="p">(</span><span class="kt">MyFooter</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueFooter</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeueFooter</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
 
                         </div>
                       </div>
@@ -725,7 +646,7 @@ Example:</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

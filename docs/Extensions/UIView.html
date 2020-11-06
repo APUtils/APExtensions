@@ -14,7 +14,7 @@
     <a title="UIView Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="../Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="../Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -359,6 +377,75 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So6UIViewC12APExtensionsE9isVisibleSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isVisible" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So6UIViewC12APExtensionsE9isVisibleSbvp">isVisible</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Consider view with alpha &lt;0.01 as invisible because it stops receiving touches at this level:
+&ldquo;This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01&rdquo;.
+This one also checks all superviews for the same parameters.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isVisible</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So6UIViewC12APExtensionsE17isVisibleInWindowSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isVisibleInWindow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So6UIViewC12APExtensionsE17isVisibleInWindowSbvp">isVisibleInWindow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks wheter view is visible in containing window.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isVisibleInWindow</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sizes"></a>
+                <a name="//apple_ref/swift/Section/Sizes" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Sizes"></a>
+                  <h3 class="section-name"><p>Sizes</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -701,6 +788,33 @@ That means <code>window</code> is not <code>nil</code> and application state is 
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:So6UIViewC12APExtensionsE18allVisibleSubviewsSayABGvp"></a>
+                    <a name="//apple_ref/swift/Property/allVisibleSubviews" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So6UIViewC12APExtensionsE18allVisibleSubviewsSayABGvp">allVisibleSubviews</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all view&rsquo;s subviews</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">allVisibleSubviews</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:So6UIViewC12APExtensionsE10superviewss17DropFirstSequenceVys06UnfoldF0VyA2BSg_SbtGGvp"></a>
                     <a name="//apple_ref/swift/Property/superviews" class="dashAnchor"></a>
                     <a class="token" href="#/s:So6UIViewC12APExtensionsE10superviewss17DropFirstSequenceVys06UnfoldF0VyA2BSg_SbtGGvp">superviews</a>
@@ -760,9 +874,9 @@ That means <code>window</code> is not <code>nil</code> and application state is 
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC12APExtensionsE16getSnapshotImage07overlayE0So7UIImageCAGSg_tF"></a>
-                    <a name="//apple_ref/swift/Method/getSnapshotImage(overlayImage:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC12APExtensionsE16getSnapshotImage07overlayE0So7UIImageCAGSg_tF">getSnapshotImage(overlayImage:)</a>
+                    <a name="/s:So6UIViewC12APExtensionsE16getSnapshotImageSo7UIImageCSgyF"></a>
+                    <a name="//apple_ref/swift/Method/getSnapshotImage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So6UIViewC12APExtensionsE16getSnapshotImageSo7UIImageCSgyF">getSnapshotImage()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -777,7 +891,7 @@ That means <code>window</code> is not <code>nil</code> and application state is 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSnapshotImage</span><span class="p">(</span><span class="nv">overlayImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSnapshotImage</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1360,7 +1474,7 @@ Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced o
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

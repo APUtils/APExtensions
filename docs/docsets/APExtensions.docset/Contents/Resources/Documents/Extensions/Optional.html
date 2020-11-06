@@ -14,7 +14,7 @@
     <a title="Optional Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="../Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="../Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -351,10 +369,15 @@
             <h1>Optional</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="n">_Optional</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt"><a href="../Protocols/OptionalType.html">OptionalType</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt">Collection</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span> <span class="o">==</span> <span class="kt">String</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span> <span class="o">==</span> <span class="kt">Data</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt">Collection</span> <span class="o">&amp;</span> <span class="kt"><a href="../Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
 
                 </div>
               </div>
@@ -362,6 +385,46 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsE6_valueypSgvp"></a>
+                    <a name="//apple_ref/swift/Property/_value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsE6_valueypSgvp">_value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">_value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/CustomStringConvertible"></a>
+                <a name="//apple_ref/swift/Section/CustomStringConvertible" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/CustomStringConvertible"></a>
+                  <h3 class="section-name"><p>CustomStringConvertible</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -383,6 +446,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsE5valuexSgvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsE5valuexSgvp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cast <code>Optional&lt;Wrapped&gt;</code> to <code>Wrapped?</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Wrapped</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -511,10 +601,186 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Wrapped%60:%20%60Occupiable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Wrapped`: `Occupiable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Wrapped%60:%20%60Occupiable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Wrapped</code>: <code><a href="../Protocols/Occupiable.html">Occupiable</a></code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsAA10OccupiableRzlE12isNilOrEmptySbvp"></a>
+                    <a name="//apple_ref/swift/Property/isNilOrEmpty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsAA10OccupiableRzlE12isNilOrEmptySbvp">isNilOrEmpty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>true</code> if current occupiable optional is either nil or empty, <code>false</code> otherwise.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isNilOrEmpty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsAA10OccupiableRzlE10isNotEmptySbvp"></a>
+                    <a name="//apple_ref/swift/Property/isNotEmpty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsAA10OccupiableRzlE10isNotEmptySbvp">isNotEmpty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>true</code> if current occupiable optional represents some non-empty value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isNotEmpty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsAA10OccupiableRzlE8nonEmptyxSgvp"></a>
+                    <a name="//apple_ref/swift/Property/nonEmpty" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsAA10OccupiableRzlE8nonEmptyxSgvp">nonEmpty</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unwraps optional and replaces empty value by <code>nil</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">nonEmpty</span><span class="p">:</span> <span class="kt">Wrapped</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Wrapped%60:%20%60Collection%60%20&amp;%20%60Occupiable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Wrapped`: `Collection` &amp; `Occupiable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Wrapped%60:%20%60Collection%60%20&amp;%20%60Occupiable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Wrapped</code>: <code>Collection</code> &amp; <code><a href="../Protocols/Occupiable.html">Occupiable</a></code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsAA10OccupiableRzSlRzlE11hasElementsSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasElements" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsAA10OccupiableRzSlRzlE11hasElementsSbvp">hasElements</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property equal to <code><a href="../Extensions/Optional.html#/s:Sq12APExtensionsAA10OccupiableRzlE10isNotEmptySbvp">isNotEmpty</a></code> property.
+Added just because in the case of Collection types, &lsquo;hasElements&rsquo; is more descriptive name
+than &lsquo;isNotEmpty&rsquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hasElements</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Wrapped%60:%20%60InitializeableOccupiable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Wrapped`: `InitializeableOccupiable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Wrapped%60:%20%60InitializeableOccupiable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Wrapped</code>: <code><a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sq12APExtensionsAA24InitializeableOccupiableRzlE6nonNilxvp"></a>
+                    <a name="//apple_ref/swift/Property/nonNil" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sq12APExtensionsAA24InitializeableOccupiableRzlE6nonNilxvp">nonNil</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unwraps optional and replaces <code>nil</code> value by empty value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">nonNil</span><span class="p">:</span> <span class="kt">Wrapped</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

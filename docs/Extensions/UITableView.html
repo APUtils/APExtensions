@@ -14,7 +14,7 @@
     <a title="UITableView Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="../Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="../Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -359,6 +377,70 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So11UITableViewC12APExtensionsE17firstRowIndexPath10Foundation0fG0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/firstRowIndexPath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE17firstRowIndexPath10Foundation0fG0Vvp">firstRowIndexPath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns first section&rsquo;s first row index path.
+If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+If table view has zero cells for the first section returns (0, NSNotFound)
+and this index path is valid for scrolling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstRowIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So11UITableViewC12APExtensionsE16lastRowIndexPath10Foundation0fG0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/lastRowIndexPath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE16lastRowIndexPath10Foundation0fG0Vvp">lastRowIndexPath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns last row index path or NSNotFound
+If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+If table view has zero cells for the last section returns (section, NSNotFound)
+and this index path is valid for scrolling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lastRowIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
               <div class="task-name-container">
                 <a name="/Cell"></a>
                 <a name="//apple_ref/swift/Section/Cell" class="dashAnchor"></a>
@@ -399,9 +481,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11UITableViewC12APExtensionsE7dequeue3forx10Foundation9IndexPathV_tSo0aB4CellCRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeue(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE7dequeue3forx10Foundation9IndexPathV_tSo0aB4CellCRbzlF">dequeue(for:)</a>
+                    <a name="/s:So11UITableViewC12APExtensionsE7dequeue_3forxxm_10Foundation9IndexPathVtSo0aB4CellCRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/dequeue(_:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE7dequeue_3forxxm_10Foundation9IndexPathVtSo0aB4CellCRbzlF">dequeue(_:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -409,18 +491,72 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Simplifies cell dequeue. Specify type of variable on declaration so proper cell will be dequeued.</p>
-
-<p>Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyCell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeue</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
+                        <p>Simplifies cell dequeue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UITableViewCell</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>class</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Cell&rsquo;s class.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Cell&rsquo;s index path.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So11UITableViewC12APExtensionsE16ConfigurableCella"></a>
+                    <a name="//apple_ref/swift/Alias/ConfigurableCell" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE16ConfigurableCella">ConfigurableCell</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Simplifies configurable cell dequeue.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ConfigurableCell</span> <span class="o">=</span> <span class="kt">UITableViewCell</span> <span class="o">&amp;</span> <span class="kt"><a href="../Protocols/Configurable.html">Configurable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -440,18 +576,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Simplifies configurable cell dequeue.</p>
-
-<p>Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueConfigurable</span><span class="p">(</span><span class="nv">cellClass</span><span class="p">:</span> <span class="kt">MyClass</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
-</code></pre>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dequeueConfigurable</span><span class="p">(</span><span class="nv">class</span><span class="p">:</span> <span class="p">(</span><span class="kt">UITableViewCell</span> <span class="o">&amp;</span> <span class="kt"><a href="../Protocols/Configurable.html">Configurable</a></span><span class="p">)</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="o">&amp;</span> <span class="kt"><a href="../Protocols/Configurable.html">Configurable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dequeueConfigurable</span><span class="p">(</span><span class="nv">class</span><span class="p">:</span> <span class="kt"><a href="../Extensions/UITableView.html#/s:So11UITableViewC12APExtensionsE16ConfigurableCella">ConfigurableCell</a></span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">for</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Extensions/UITableView.html#/s:So11UITableViewC12APExtensionsE16ConfigurableCella">ConfigurableCell</a></span></code></pre>
 
                         </div>
                       </div>
@@ -501,9 +633,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11UITableViewC12APExtensionsE7dequeuexySo0ab12HeaderFooterB0CRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/dequeue()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE7dequeuexySo0ab12HeaderFooterB0CRbzlF">dequeue()</a>
+                    <a name="/s:So11UITableViewC12APExtensionsE7dequeueyxxmSo0ab12HeaderFooterB0CRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/dequeue(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE7dequeueyxxmSo0ab12HeaderFooterB0CRbzlF">dequeue(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -511,19 +643,35 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Simplifies header/footer dequeue. Specify type of variable on declaration so proper cell will be dequeued.
-Example:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">MyHeaderFooter</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeue</span><span class="p">()</span>
-</code></pre>
+                        <p>Simplifies header/footer dequeue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UITableViewHeaderFooterView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">dequeue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">class</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UITableViewHeaderFooterView</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>class</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Header or footer class.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -627,11 +775,11 @@ Example:</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Estimated%20Size"></a>
-                <a name="//apple_ref/swift/Section/Estimated Size" class="dashAnchor"></a>
+                <a name="/Other"></a>
+                <a name="//apple_ref/swift/Section/Other" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Estimated%20Size"></a>
-                  <h3 class="section-name"><p>Estimated Size</p>
+                  <a class="section-name-link" href="#/Other"></a>
+                  <h3 class="section-name"><p>Other</p>
 </h3>
                 </div>
               </div>
@@ -639,9 +787,9 @@ Example:</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So11UITableViewC12APExtensionsE32handleEstimatedSizeAutomaticallySbvp"></a>
-                    <a name="//apple_ref/swift/Property/handleEstimatedSizeAutomatically" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE32handleEstimatedSizeAutomaticallySbvp">handleEstimatedSizeAutomatically</a>
+                    <a name="/s:So11UITableViewC12APExtensionsE17visibleIndexPathsSay10Foundation0E4PathVGvp"></a>
+                    <a name="//apple_ref/swift/Property/visibleIndexPaths" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So11UITableViewC12APExtensionsE17visibleIndexPathsSay10Foundation0E4PathVGvp">visibleIndexPaths</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -649,16 +797,14 @@ Example:</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Store cells&rsquo; sizes and uses them on recalculation.
-Replaces and proxies tableView&rsquo;s <code>delegate</code> property
-so be sure to assing this property when tableView&rsquo;s <code>delegate</code> is set.</p>
+                        <p>IndexPaths of visible cells</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">handleEstimatedSizeAutomatically</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">visibleIndexPaths</span><span class="p">:</span> <span class="p">[</span><span class="kt">IndexPath</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -670,7 +816,7 @@ so be sure to assing this property when tableView&rsquo;s <code>delegate</code> 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

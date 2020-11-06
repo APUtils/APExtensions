@@ -14,7 +14,7 @@
     <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions/Array.html">Array</a>
+                <a href="Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -355,11 +373,11 @@
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/CustomStringConvertible"></a>
-                <a name="//apple_ref/swift/Section/CustomStringConvertible" class="dashAnchor"></a>
+                <a name="/Unwrap"></a>
+                <a name="//apple_ref/swift/Section/Unwrap" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/CustomStringConvertible"></a>
-                  <h3 class="section-name"><p>CustomStringConvertible</p>
+                  <a class="section-name-link" href="#/Unwrap"></a>
+                  <h3 class="section-name"><p>Unwrap</p>
 </h3>
                 </div>
               </div>
@@ -384,38 +402,15 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="n">_Optional</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt"><a href="Protocols/OptionalType.html">OptionalType</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt">Collection</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span> <span class="o">==</span> <span class="kt">String</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span> <span class="o">==</span> <span class="kt">Data</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:Sa"></a>
-                    <a name="//apple_ref/swift/Extension/Array" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sa">Array</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/Array.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Array</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Array</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt"><a href="Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt">Collection</span> <span class="o">&amp;</span> <span class="kt"><a href="Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -529,6 +524,19 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/As"></a>
+                <a name="//apple_ref/swift/Section/As" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/As"></a>
+                  <h3 class="section-name"><p>As</p>
+</h3>
+                </div>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -556,6 +564,19 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scripting"></a>
+                <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Scripting"></a>
+                  <h3 class="section-name"><p>Scripting</p>
+</h3>
+                </div>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -576,8 +597,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Collection</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="kt">Index</span> <span class="o">==</span> <span class="kt">Int</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt"><a href="Protocols/Occupiable.html">Occupiable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -651,14 +673,41 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation14DateComponentsV"></a>
+                    <a name="//apple_ref/swift/Extension/DateComponents" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation14DateComponentsV">DateComponents</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/DateComponents.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">DateComponents</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Scripting"></a>
+                <a name="/Scripting2"></a>
                 <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Scripting"></a>
+                  <a class="section-name-link" href="#/Scripting2"></a>
                   <h3 class="section-name"><p>Scripting</p>
 </h3>
                 </div>
@@ -685,6 +734,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Dictionary</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Dictionary</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -852,75 +902,6 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Creation"></a>
-                <a name="//apple_ref/swift/Section/Creation" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Creation"></a>
-                  <h3 class="section-name"><p>Creation</p>
-</h3>
-                </div>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MFMailComposeViewController"></a>
-                    <a name="//apple_ref/swift/Extension/MFMailComposeViewController" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MFMailComposeViewController">MFMailComposeViewController</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/MFMailComposeViewController.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">MFMailComposeViewController</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MFMailComposeViewController</span><span class="p">:</span> <span class="kt">MFMailComposeViewControllerDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MFMessageComposeViewController"></a>
-                    <a name="//apple_ref/swift/Extension/MFMessageComposeViewController" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MFMessageComposeViewController">MFMessageComposeViewController</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/MFMessageComposeViewController.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">MFMessageComposeViewController</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MFMessageComposeViewController</span><span class="p">:</span> <span class="kt">MFMessageComposeViewControllerDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -996,6 +977,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">NSMutableAttributedString</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">NSMutableAttributedString</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1102,6 +1084,63 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scripting3"></a>
+                <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Scripting3"></a>
+                  <h3 class="section-name"><p>Scripting</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sm"></a>
+                    <a name="//apple_ref/swift/Extension/RangeReplaceableCollection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sm">RangeReplaceableCollection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/RangeReplaceableCollection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RangeReplaceableCollection</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RangeReplaceableCollection</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RangeReplaceableCollection</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt">BidirectionalCollection</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RangeReplaceableCollection</span> <span class="k">where</span> <span class="kt">Index</span> <span class="o">==</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">Self</span><span class="p">:</span> <span class="kt">BidirectionalCollection</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RangeReplaceableCollection</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="k">Self</span><span class="p">:</span> <span class="kt">BidirectionalCollection</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/As2"></a>
+                <a name="//apple_ref/swift/Section/As" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/As2"></a>
+                  <h3 class="section-name"><p>As</p>
+</h3>
+                </div>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -1123,6 +1162,10 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">BinaryFloatingPoint</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="Protocols/OptionalType.html">OptionalType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1133,11 +1176,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Representation"></a>
-                <a name="//apple_ref/swift/Section/Representation" class="dashAnchor"></a>
+                <a name="/Appending"></a>
+                <a name="//apple_ref/swift/Section/Appending" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Representation"></a>
-                  <h3 class="section-name"><p>Representation</p>
+                  <a class="section-name-link" href="#/Appending"></a>
+                  <h3 class="section-name"><p>Appending</p>
 </h3>
                 </div>
               </div>
@@ -1163,6 +1206,47 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">String</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">String</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Representation"></a>
+                <a name="//apple_ref/swift/Section/Representation" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Representation"></a>
+                  <h3 class="section-name"><p>Representation</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sy"></a>
+                    <a name="//apple_ref/swift/Extension/StringProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy">StringProtocol</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/StringProtocol.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">StringProtocol</span></code></pre>
 
                         </div>
                       </div>
@@ -1217,6 +1301,87 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Timer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV"></a>
+                    <a name="//apple_ref/swift/Extension/URL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV">URL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/URL.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation13URLComponentsV"></a>
+                    <a name="//apple_ref/swift/Extension/URLComponents" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation13URLComponentsV">URLComponents</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/URLComponents.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URLComponents</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSUserDefaults"></a>
+                    <a name="//apple_ref/swift/Extension/UserDefaults" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSUserDefaults">UserDefaults</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UserDefaults.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UserDefaults</span></code></pre>
 
                         </div>
                       </div>
@@ -1510,46 +1675,6 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Insets"></a>
-                <a name="//apple_ref/swift/Section/Insets" class="dashAnchor"></a>
-                <div class="section-name-container">
-                  <a class="section-name-link" href="#/Insets"></a>
-                  <h3 class="section-name"><p>Insets</p>
-</h3>
-                </div>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)UIScrollView"></a>
-                    <a name="//apple_ref/swift/Extension/UIScrollView" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)UIScrollView">UIScrollView</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/UIScrollView.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIScrollView</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
                 <a name="/UIRefreshControl"></a>
                 <a name="//apple_ref/swift/Section/UIRefreshControl" class="dashAnchor"></a>
                 <div class="section-name-container">
@@ -1580,6 +1705,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIRefreshControl</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIScrollView"></a>
+                    <a name="//apple_ref/swift/Extension/UIScrollView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIScrollView">UIScrollView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UIScrollView.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIScrollView</span></code></pre>
 
                         </div>
                       </div>
@@ -1644,11 +1796,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Cells,%20Header%20and%20Footer%20Reuse%20and%20Dequeue"></a>
-                <a name="//apple_ref/swift/Section/Cells, Header and Footer Reuse and Dequeue" class="dashAnchor"></a>
+                <a name="/Other"></a>
+                <a name="//apple_ref/swift/Section/Other" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Cells,%20Header%20and%20Footer%20Reuse%20and%20Dequeue"></a>
-                  <h3 class="section-name"><p>Cells, Header and Footer Reuse and Dequeue</p>
+                  <a class="section-name-link" href="#/Other"></a>
+                  <h3 class="section-name"><p>Other</p>
 </h3>
                 </div>
               </div>
@@ -1684,11 +1836,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Sizes"></a>
-                <a name="//apple_ref/swift/Section/Sizes" class="dashAnchor"></a>
+                <a name="/Screen%20related"></a>
+                <a name="//apple_ref/swift/Section/Screen related" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Sizes"></a>
-                  <h3 class="section-name"><p>Sizes</p>
+                  <a class="section-name-link" href="#/Screen%20related"></a>
+                  <h3 class="section-name"><p>Screen related</p>
 </h3>
                 </div>
               </div>
@@ -1763,33 +1915,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)UIWebView"></a>
-                    <a name="//apple_ref/swift/Extension/UIWebView" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)UIWebView">UIWebView</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/UIWebView.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIWebView</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:objc(cs)UIWindow"></a>
                     <a name="//apple_ref/swift/Extension/UIWindow" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)UIWindow">UIWindow</a>
@@ -1817,87 +1942,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation3URLV"></a>
-                    <a name="//apple_ref/swift/Extension/URL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation3URLV">URL</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/URL.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URL</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation13URLComponentsV"></a>
-                    <a name="//apple_ref/swift/Extension/URLComponents" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation13URLComponentsV">URLComponents</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/URLComponents.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URLComponents</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)NSUserDefaults"></a>
-                    <a name="//apple_ref/swift/Extension/UserDefaults" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NSUserDefaults">UserDefaults</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Extensions/UserDefaults.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UserDefaults</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:objc(cs)WKWebView"></a>
                     <a name="//apple_ref/swift/Extension/WKWebView" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)WKWebView">WKWebView</a>
@@ -1916,6 +1960,167 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">WKWebView</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Creation"></a>
+                <a name="//apple_ref/swift/Section/Creation" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Creation"></a>
+                  <h3 class="section-name"><p>Creation</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MFMailComposeViewController"></a>
+                    <a name="//apple_ref/swift/Extension/MFMailComposeViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MFMailComposeViewController">MFMailComposeViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/MFMailComposeViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">MFMailComposeViewController</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MFMailComposeViewController</span><span class="p">:</span> <span class="kt">MFMailComposeViewControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MFMessageComposeViewController"></a>
+                    <a name="//apple_ref/swift/Extension/MFMessageComposeViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MFMessageComposeViewController">MFMessageComposeViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/MFMessageComposeViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">MFMessageComposeViewController</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MFMessageComposeViewController</span><span class="p">:</span> <span class="kt">MFMessageComposeViewControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/InitializeableOccupiable"></a>
+                <a name="//apple_ref/swift/Section/InitializeableOccupiable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/InitializeableOccupiable"></a>
+                  <h3 class="section-name"><p>InitializeableOccupiable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa"></a>
+                    <a name="//apple_ref/swift/Extension/Array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa">Array</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Array</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sh"></a>
+                    <a name="//apple_ref/swift/Extension/Set" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sh">Set</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Set</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSMutableString"></a>
+                    <a name="//apple_ref/swift/Extension/NSMutableString" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSMutableString">NSMutableString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/NSMutableString.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">NSMutableString</span><span class="p">:</span> <span class="kt"><a href="Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -2075,7 +2280,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

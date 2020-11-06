@@ -14,7 +14,7 @@
     <a title="Sequence Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (71% documented)</p>
+        <p><a href="../index.html">APExtensions Docs</a> (73% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,7 +70,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/Array.html">Array</a>
+                <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -92,6 +92,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DateComponents.html">DateComponents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
@@ -130,6 +133,9 @@
                 <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/NSMutableString.html">NSMutableString</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSObject.html">NSObject</a>
               </li>
               <li class="nav-group-task">
@@ -145,10 +151,19 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Sh">Set</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/TimeZone.html">TimeZone</a>
@@ -238,9 +253,6 @@
                 <a href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIWebView.html">UIWebView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
               </li>
               <li class="nav-group-task">
@@ -273,9 +285,6 @@
                 <a href="../Functions.html#/s:12APExtensions3Log____13showDelimiteryypSg_S2SSiSbtF">Log(_:_:_:_:showDelimiter:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:12APExtensions8g_unwrapyypSgACF">g_unwrap(_:)</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Functions.html#/s:12APExtensions10smartPrint_11addNewLines08useDebugC0yypSg_S2btF">smartPrint(_:addNewLines:useDebugPrint:)</a>
               </li>
             </ul>
@@ -293,6 +302,9 @@
                 <a href="../Protocols/Describable.html">Describable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/InitializeableOccupiable.html">InitializeableOccupiable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/InstantiatableContentView.html">InstantiatableContentView</a>
               </li>
               <li class="nav-group-task">
@@ -303,6 +315,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Manager.html">Manager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Occupiable.html">Occupiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OptionalType.html">OptionalType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/ScrollViewCustomHorizontalPageSize.html">ScrollViewCustomHorizontalPageSize</a>
@@ -352,6 +370,10 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">BinaryFloatingPoint</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Occupiable.html">Occupiable</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Sequence</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="../Protocols/OptionalType.html">OptionalType</a></span></code></pre>
 
                 </div>
               </div>
@@ -359,6 +381,46 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsE7asArraySay7ElementQzGvp"></a>
+                    <a name="//apple_ref/swift/Property/asArray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsE7asArraySay7ElementQzGvp">asArray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>self</code> as <code>Array</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Splitting"></a>
+                <a name="//apple_ref/swift/Section/Splitting" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Splitting"></a>
+                  <h3 class="section-name"><p>Splitting</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -389,10 +451,329 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scripting"></a>
+                <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Scripting"></a>
+                  <h3 class="section-name"><p>Scripting</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsE5count5whereSiSb7ElementQzKXE_tKF"></a>
+                    <a name="//apple_ref/swift/Method/count(where:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsE5count5whereSiSb7ElementQzKXE_tKF">count(where:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">count</span><span class="p">(</span><span class="k">where</span> <span class="nv">isIncluded</span><span class="p">:</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsE16filterDuplicatesySay7ElementQzGSbAD_ADtKXEKF"></a>
+                    <a name="//apple_ref/swift/Method/filterDuplicates(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsE16filterDuplicatesySay7ElementQzGSbAD_ADtKXEKF">filterDuplicates(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to filter out duplicates. Element will be filtered out if closure return true.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">filterDuplicates</span><span class="p">(</span><span class="n">_</span> <span class="nv">includeElement</span><span class="p">:</span> <span class="p">(</span><span class="n">_</span> <span class="nv">lhs</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="n">_</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsE13dictionaryMapySDy7ElementQzqd__Gqd__SgADKXEKSHADRQlF"></a>
+                    <a name="//apple_ref/swift/Method/dictionaryMap(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsE13dictionaryMapySDy7ElementQzqd__Gqd__SgADKXEKSHADRQlF">dictionaryMap(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transforms an array to a dictionary using array elements as keys and transform result as values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="n">dictionaryMap</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span> <span class="p">:</span> <span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Element</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Element%60:%20%60Equatable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Element`: `Equatable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Element%60:%20%60Equatable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Element</code>: <code>Equatable</code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsSQ7ElementRpzrlE15hasIntersection4withSbSayACG_tF"></a>
+                    <a name="//apple_ref/swift/Method/hasIntersection(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsSQ7ElementRpzrlE15hasIntersection4withSbSayACG_tF">hasIntersection(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns whether collection has at least one common element with passed array.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">hasIntersection</span><span class="p">(</span><span class="n">with</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsSQ7ElementRpzrlE12intersection4withSayACGAF_tF"></a>
+                    <a name="//apple_ref/swift/Method/intersection(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsSQ7ElementRpzrlE12intersection4withSayACGAF_tF">intersection(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns intersection array.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">intersection</span><span class="p">(</span><span class="n">with</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsSQ7ElementRpzrlE16filterDuplicatesSayACGyF"></a>
+                    <a name="//apple_ref/swift/Method/filterDuplicates()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsSQ7ElementRpzrlE16filterDuplicatesSayACGyF">filterDuplicates()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to filter out duplicates</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">filterDuplicates</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Element%60:%20%60BinaryFloatingPoint%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Element`: `BinaryFloatingPoint`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Element%60:%20%60BinaryFloatingPoint%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Element</code>: <code>BinaryFloatingPoint</code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsSB7ElementRpzrlE7averageACyF"></a>
+                    <a name="//apple_ref/swift/Method/average()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsSB7ElementRpzrlE7averageACyF">average()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns averge value of all elements in a sequence.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">average</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Element</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Element%60:%20%60Occupiable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Element`: `Occupiable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Element%60:%20%60Occupiable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Element</code>: <code><a href="../Protocols/Occupiable.html">Occupiable</a></code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsAA10Occupiable7ElementRpzrlE11filterEmptySayADGyF"></a>
+                    <a name="//apple_ref/swift/Method/filterEmpty()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsAA10Occupiable7ElementRpzrlE11filterEmptySayADGyF">filterEmpty()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns an array containing, in order, the elements of the sequence filtering out all
+empty elements.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filterEmpty</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of non-empty elements with preserved order.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Element%60:%20%60OptionalType%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Element`: `OptionalType`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Element%60:%20%60OptionalType%60"></a>
+                  <h3 class="section-name"><p>Available where <code>Element</code>: <code><a href="../Protocols/OptionalType.html">OptionalType</a></code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ST12APExtensionsAA12OptionalType7ElementRpzrlE9filterNilSayAC_7WrappedQZGyF"></a>
+                    <a name="//apple_ref/swift/Method/filterNil()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ST12APExtensionsAA12OptionalType7ElementRpzrlE9filterNilSayAC_7WrappedQZGyF">filterNil()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filterNil</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="o">.</span><span class="kt">Wrapped</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-01-03)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2020-11-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
