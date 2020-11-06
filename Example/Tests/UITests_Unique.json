@@ -1,0 +1,2 @@
+    "DYLD_INSERT_LIBRARIES": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/usr/lib/libXCTTargetBootstrapInject.dylib",
+    "OS_ACTIVITY_MODE": "info",

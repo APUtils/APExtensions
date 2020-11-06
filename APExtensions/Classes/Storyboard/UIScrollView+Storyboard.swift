@@ -25,59 +25,53 @@ private extension UIView {
     }
 }
 
-// ******************************* MARK: - Adjustment Behavior
-
-@available(iOS 11.0, *)
-public extension UIScrollView {
-    @IBInspectable var disableAutomaticContentAdjustment: Bool {
-        get {
-            return contentInsetAdjustmentBehavior == .never
-        }
-        set {
-            contentInsetAdjustmentBehavior = newValue ? .never : .automatic
-        }
-    }
-}
-
 // ******************************* MARK: - Bars Avoid
 
+private let _statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+private let _navigationBarHeight: CGFloat = 44
+private let _topBarsHeight: CGFloat = _statusBarHeight + _navigationBarHeight
+
 public extension UIScrollView {
-    /// Sets 64 or 0 for top content inset and disables automatic mechanisms to prevent conflict.
+    /// Sets (status bar + 44) or 0 for top content inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids top bars. Takes into account `contentInsetAdjustmentBehavior`.
     @IBInspectable var avoidNavigationBar: Bool {
         get {
             if #available(iOS 11.0, *) {
                 switch contentInsetAdjustmentBehavior {
-                case .always: return adjustedContentInset.top == 64
-                case .never: return contentInset.top == 64
+                case .always: return adjustedContentInset.top == _topBarsHeight
+                case .never: return contentInset.top == _topBarsHeight
                     
                 case .scrollableAxes:
                     if isScrollEnabled || alwaysBounceVertical {
-                        return adjustedContentInset.top == 64
+                        return adjustedContentInset.top == _topBarsHeight
                     } else {
-                        return contentInset.top == 64
+                        return contentInset.top == _topBarsHeight
                     }
-                
+                    
                 case .automatic:
                     if let _ = _viewController?.navigationController {
-                        return adjustedContentInset.top == 64
+                        return adjustedContentInset.top == _topBarsHeight
                     } else {
-                        return contentInset.top == 64
+                        return contentInset.top == _topBarsHeight
                     }
                 @unknown default: return false
                 }
             } else {
-                return contentInset.top == 64
+                return contentInset.top == _topBarsHeight
             }
         }
         set {
             if #available(iOS 11.0, *) {
-                disableAutomaticContentAdjustment = true
+                contentInsetAdjustmentBehavior = .never
             }
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
-            contentInset.top = newValue ? 64 : 0
-            scrollIndicatorInsets.top = newValue ? 64 : 0
+            contentInset.top = newValue ? _topBarsHeight : 0
+            
+            // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+            if #available(iOS 13.0, *) {} else {
+                scrollIndicatorInsets.top = newValue ? _topBarsHeight : 0
+            }
         }
     }
     
@@ -112,12 +106,16 @@ public extension UIScrollView {
         }
         set {
             if #available(iOS 11.0, *) {
-                disableAutomaticContentAdjustment = true
+                contentInsetAdjustmentBehavior = .never
             }
             
             _viewController?.automaticallyAdjustsScrollViewInsets = false
             contentInset.bottom = newValue ? 49 : 0
-            scrollIndicatorInsets.bottom = newValue ? 49 : 0
+            
+            // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+            if #available(iOS 13.0, *) {} else {
+                scrollIndicatorInsets.bottom = newValue ? 49 : 0
+            }
         }
     }
 }
