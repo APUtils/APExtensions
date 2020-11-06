@@ -22,6 +22,7 @@ public extension NSObject {
         }
     }
     
+    /// Performs action for a key once only.
     func doOnce(key: String, action: () -> Void) {
         var shouldPerformAction = false
         g.synchronized(self) {

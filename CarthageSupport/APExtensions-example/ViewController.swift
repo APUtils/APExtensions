@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(Constants.topBarsHeight)
+        print(Constants.statusBarHeight)
+        print(Constants.homeButtonHeight)
         print(DateComponents(timeInterval: 10000000000.111) )
     }
 }

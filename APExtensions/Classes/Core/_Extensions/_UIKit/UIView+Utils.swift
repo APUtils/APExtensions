@@ -114,7 +114,12 @@ public extension UIView {
     
     /// Gets view's top most superview
     var rootView: UIView {
-        return superview?.rootView ?? self
+        var rootView: UIView = self
+        while let nextView = rootView.superview {
+            rootView = nextView
+        }
+        
+        return rootView
     }
 }
 

@@ -12,10 +12,14 @@ set -e
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-. "utils.sh"
+# includes
+. ./utils.sh
 
+# Assume scripts are placed in /Scripts/Carthage dir
 cd ..
 cd ..
+
+applyXcode12Workaround
 
 # Try one level up if didn't find Cartfile.
 if [ ! -f "Cartfile" ]; then

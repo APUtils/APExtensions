@@ -1,15 +1,15 @@
 PODS:
-  - APExtensions (7.0.1):
-    - APExtensions/Abstractions (= 7.0.1)
-    - APExtensions/Core (= 7.0.1)
-    - APExtensions/Storyboard (= 7.0.1)
-    - APExtensions/ViewConfiguration (= 7.0.1)
-  - APExtensions/Abstractions (7.0.1)
-  - APExtensions/Core (7.0.1)
-  - APExtensions/Storyboard (7.0.1)
-  - APExtensions/ViewConfiguration (7.0.1)
-  - Nimble (8.0.5)
-  - Quick (2.2.0)
+  - APExtensions (8.0.0):
+    - APExtensions/Abstractions (= 8.0.0)
+    - APExtensions/Core (= 8.0.0)
+    - APExtensions/Storyboard (= 8.0.0)
+    - APExtensions/ViewConfiguration (= 8.0.0)
+  - APExtensions/Abstractions (8.0.0)
+  - APExtensions/Core (8.0.0)
+  - APExtensions/Storyboard (8.0.0)
+  - APExtensions/ViewConfiguration (8.0.0)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -17,7 +17,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Nimble
     - Quick
 
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: e0377240c9db7bc42c3b864c039ba70c1b4034a3
-  Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  APExtensions: b5c4b22b103a9f93d7c608148b2e381f5fcd7483
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
 
-PODFILE CHECKSUM: 4b5c5f2c7197edfe35d6fcde94c10e52a8bf017e
+PODFILE CHECKSUM: a0f6f399b41f798686d3544b71fe2c1c5676d6d7
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0
