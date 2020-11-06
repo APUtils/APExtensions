@@ -12,7 +12,7 @@ import UIKit
 
 /// Helps to instantiate object from xib file.
 public protocol InstantiatableFromXib {
-    static func create() -> Self
+    static func instantiateFromXib() -> Self
 }
 
 public extension InstantiatableFromXib where Self: NSObject {
@@ -22,7 +22,7 @@ public extension InstantiatableFromXib where Self: NSObject {
     
     /// Instantiates object from xib file. 
     /// Xib filename should be equal to object class name.
-    static func create() -> Self {
+    static func instantiateFromXib() -> Self {
         return objectFromXib()
     }
 }
@@ -33,8 +33,7 @@ public extension InstantiatableFromXib where Self: NSObject {
 public protocol InstantiatableFromStoryboard: class {
     static var storyboardName: String { get }
     static var storyboardID: String { get }
-    static func create() -> Self
-    static func createWithNavigationController() -> (UINavigationController, Self)
+    static func instantiateFromStoryboard() -> Self
 }
 
 public extension InstantiatableFromStoryboard where Self: UIViewController {
@@ -48,9 +47,15 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     }
     
     /// Name of storyboard that contains this view controller.
-    /// If not specified uses view controller's class name without "ViewController" postfix.
+    /// If not specified uses view controller's class name without "ViewController" or "VC" postfix.
     static var storyboardName: String {
-        return className.replacingOccurrences(of: "ViewController", with: "")
+        if className.hasSuffix("ViewController") {
+            return className.replacingOccurrences(of: "ViewController", with: "")
+        } else if className.hasSuffix("VC") {
+            return className.replacingOccurrences(of: "VC", with: "")
+        } else {
+            fatalError("Please specify proper `storyboardName` for your view controller")
+        }
     }
     
     /// View controller storyboard ID.
@@ -63,19 +68,8 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
     /// By default uses view controller's class name without "ViewController" postfix for `storyboardName` and view controller's class name for `storyboardID`.
     /// Implement `storyboardName` if you want to secify custom storyboard name.
     /// Implement `storyboardID` if you want to specify custom storyboard ID.
-    static func create() -> Self {
+    static func instantiateFromStoryboard() -> Self {
         return controllerFromStoryboard()
-    }
-    
-    /// Instantiates view controller from storyboard file wrapped into navigation controller.
-    /// By default uses view controller's class name without "ViewController" postfix for `storyboardName` and view controller's class name for `storyboardID`.
-    /// Implement `storyboardName` if you want to secify custom storyboard name.
-    /// Implement `storyboardID` if you want to specify custom storyboard ID.
-    static func createWithNavigationController() -> (UINavigationController, Self) {
-        let vc = create()
-        let navigationVc = UINavigationController(rootViewController: vc)
-        
-        return (navigationVc, vc)
     }
 }
 
@@ -83,27 +77,29 @@ public extension InstantiatableFromStoryboard where Self: UIViewController {
 
 /// Helps to instantiate content view from storyboard file.
 public protocol InstantiatableContentView {
-    func createContentView() -> UIView
+    func instantiateContentView() -> UIView
 }
 
 public extension InstantiatableContentView where Self: NSObject {
+    
     /// Instantiates contentView from xib file and makes instantiator it's owner.
     /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
-    func createContentView() -> UIView {
+    func instantiateContentView() -> UIView {
         return UINib(nibName: "\(type(of: self).className)ContentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
 
 public extension InstantiatableContentView where Self: UIView {
+    
     /// Instantiates contentView from xib file and makes instantiator it's owner.
     /// Xib filename should be composed of className + "ContentView" postfix. E.g. MyView -> MyViewContentView
     /// After creation puts content view as subview to self and constraints sides.
     /// Also makes self background color transparent.
     /// The main idea here is that content view should fully set how self view looks.
     @available(iOS 9.0, *)
-    func createAndAttachContentView() {
+    func instantiateAndAttachContentView() {
         backgroundColor = .clear
-        let contentView = createContentView()
+        let contentView = instantiateContentView()
         contentView.frame = bounds
         addSubview(contentView)
         contentView.constraintSides(to: self)

@@ -2,6 +2,124 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [8.0.0](https://github.com/APUtils/APExtensions/releases/tag/8.0.0)
+Released on 06.11.2019.
+
+#### Added
+- Added more convenient dequeue methods to use
+- Added UIScrollView .scrollToTop(animated:)
+- Array .appendingMissing(contentsOf:)
+- Array .intersection(with:)
+- Array .remove -> .removeAll
+- Array .removeLast(_:)
+- Array .removingAll(contentsOf:)
+- Array .removingAll(_:)
+- Array .removingLast(_:)
+- Cancel handler for alerts
+- CGFloat .asDouble
+- CGFloat .asHundredthString
+- CGFloat .asInt
+- CGFloat .asString
+- CGFloat .asTenthString
+- CGPoint .distance(to:)
+- Character .asString
+- Character .isUpperCase -> isUppercase
+- Collection .asArray
+- Collection .count(where:)
+- Collection .hasElements
+- Collection? .hasElements
+- Constants .homeButtonHeight
+- DateComponents .init(timeInterval:components:)
+- Dictionary .mapKeys(_:)
+- Dictionary .modifyForEach(_:) to modify dictionary keys and values inplace
+- Dictionary .modifyKeyAndValue(key:_:)
+- Double .asDate
+- Double .asHundredthString
+- Double .asInt
+- Double .asString
+- Double .asTenthString
+- Fixed UIViewController remove under overlay case
+- FloatingPoint .isWhole
+- InitializeableOccupiable: Occupiable to be able to use non initable Occupiables
+- Int .asCGFloat
+- Int .asDouble
+- Int .asFloat
+- Int .asHexString
+- Int .asString
+- Int .asTimeInterval
+- Int .isSingular
+- Migrated all existing conformances to InitializeableOccupiable
+- Occupiable .isEmpty
+- Occupiable .isNotEmpty
+- Occupiable protocol for Array, Dictionary, Set, String, NSMutableString, NSMutableAttributedString
+- Occupiable? .isNilOrEmpty
+- Occupiable? .isNilOrEmpty
+- Occupiable? .isNotEmpty
+- Occupiable? .nonEmpty
+- Occupiable? .nonNil
+- Sequence .filterEmpty()
+- Sequence of Optionals .filterNil()
+- String .capitalizeFirstLetter()
+- String .capitalizingFirstLetter()
+- StringProtocol .asDouble
+- StringProtocol .asString
+- StringProtocol subscription
+- UIColor.hexAverage(colors:)
+- UIColor.hueAverage(colors:)
+- UIImage .image(withOverlayImageAtCenter:)
+- UINavigationController .popToViewController(viewController:animated:completion:)
+- UIScrollView .fullContentInsets
+- UITableView .firstRowIndexPath
+- UITableView .lastRowIndexPath
+- UIView .allVisibleSubviews
+- UIView .isAnimatable
+- UIView .isVisible
+- UIView .isVisibleInWindow
+- UserDefaults .hasObject(forKey:)
+
+#### Moved
+- Migrates non-mutable String extensions to StringProtocol
+- Moved Array .enumerateForEach(_:) to Collection
+- Moved Array .enumerateMap(_:) to Collection
+- Moved Array .filterDuplicates() to Collection
+- Moved Array .filterDuplicates(_:) to Collection
+- Moved Array .group(_:) to Collection
+- Moved Array .hasIntersection(with:) to Collection
+- Moved Array .intersection(with:) to Collection
+- Moved Array extensions to RangeReplaceableCollection, BidirectionalCollection, Collection and Sequence
+- Moved some Collection extensions to Sequence
+- Moved ViewState to a separate repository
+- UIView .getSnapshotImage(overlayImage:) -> getSnapshotImage() and now returns optional UIImage to prevent possible crashes
+
+#### Fixed
+- Fixed alert actions
+- Fixed scroll view indicator inset on iOS 13
+- Fixed scrolling to bottom
+- Fixed top bars height on X devices
+- Fixed UIScrollView .scrollToBottom(animated:) and .scrollToTop(animated:) to use proper insets for calculation
+- Fixed UIScrollView scrolling and clamping
+- Fixed UIScrolView .scrollToBottom(animated:) method for a case when it's UITableVIew
+- UIScrollView scroll to top fix for UITableView
+
+#### Removed
+- iOS 8 support
+- Removed confusing dequeue methods
+- Removed deprecated methods
+- Removed excessive Array .random
+- Removed excessive String .first
+- Removed excessive String .randomSymbol()
+- Removed excessive String subscript methods
+- Removed excessive UIAlertAction parameter
+- Removed workarounds for UIScrollView scroll methods since they cause layout issues
+
+
+## [7.0.1](https://github.com/APUtils/APExtensions/releases/tag/7.0.1)
+Released on 04.04.2019.
+
+#### Fixed
+- Earlier Swift versions support fix
+
+
 ## [7.0.0](https://github.com/APUtils/APExtensions/releases/tag/7.0.0)
 Released on 27.03.2019.
 

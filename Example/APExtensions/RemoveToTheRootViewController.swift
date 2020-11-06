@@ -67,12 +67,12 @@ final class RemoveToTheRootViewController: UIViewController, InstantiatableFromS
     // ******************************* MARK: - Actions
     
     @IBAction private func onPresentTap(_ sender: Any) {
-        let navigationVc = RemoveToTheRootViewController.createWithNavigationController().0
+        let navigationVc = RemoveToTheRootViewController.instantiateFromStoryboard().wrappedIntoNavigation
         present(navigationVc, animated: true, completion: nil)
     }
     
     @IBAction private func onPushTap(_ sender: Any) {
-        navigationController?.pushViewController(RemoveToTheRootViewController.create(), animated: true)
+        navigationController?.pushViewController(RemoveToTheRootViewController.instantiateFromStoryboard(), animated: true)
     }
     
     @IBAction private func onRemoveToTheRootTap(_ sender: Any) {
