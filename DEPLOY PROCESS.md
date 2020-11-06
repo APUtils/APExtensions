@@ -7,5 +7,5 @@
 - Run `updateDocs.command`
 - Push changes in git
 - Add git tag
-- Merge `master` to needed branched, e.g. `core`, `abstractions`, `storyboard`, `view-configuration` or `view-state`.
+- Merge `master` to needed branched, e.g. `core`, `abstractions`, `storyboard` or `view-configuration`.
 - Run `podPush.command`

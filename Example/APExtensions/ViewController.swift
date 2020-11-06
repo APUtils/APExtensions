@@ -80,8 +80,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .black
-        presentInPopoverIfNeeded(vc)
+        
     }
 }

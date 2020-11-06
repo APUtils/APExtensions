@@ -28,9 +28,9 @@ askForContinue() {
 }
 
 fixWarnings() {
-    # Project last update check to 11.2
-    sed -i '' -e 's/LastUpgradeCheck = 1100;/LastUpgradeCheck = 1130;/g' 'Pods/Pods.xcodeproj/project.pbxproj'
+    # Project last update check to 12.0
+    sed -i '' -e 's/LastUpgradeCheck = 1100;/LastUpgradeCheck = 1210;/g' 'Pods/Pods.xcodeproj/project.pbxproj'
     
     # Schemes last update verions to 11.2
-    find Pods/Pods.xcodeproj/xcuserdata -type f -name '*.xcscheme' -exec sed -i '' -e 's/LastUpgradeVersion = \"1100\"/LastUpgradeVersion = \"1130\"/g' {} +
+    find Pods/Pods.xcodeproj/xcuserdata -type f -name '*.xcscheme' -exec sed -i '' -e 's/LastUpgradeVersion = \"1100\"/LastUpgradeVersion = \"1210\"/g' {} +
 }
