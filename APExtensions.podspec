@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '7.0.1'
+  s.version          = '8.0.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -29,8 +29,8 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.source           = { :git => 'https://github.com/APUtils/APExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
-  s.swift_versions = '5.1'
+  s.ios.deployment_target = '9.0'
+  s.swift_versions = ['5.1']
 
   s.source_files = 'APExtensions/Classes/**/*'
   
@@ -38,7 +38,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
   #   'APExtensions' => ['APExtensions/Assets/*.png']
   # }
 
-  s.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
@@ -49,11 +48,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.subspec 'Abstractions' do |abstraction|
     abstraction.source_files = 'APExtensions/Classes/Abstractions/**/*'
-  end
-
-  s.subspec 'ViewState' do |viewState|
-    viewState.source_files = 'APExtensions/Classes/ViewState/**/*'
-    viewState.private_header_files = 'APExtensions/Classes/ViewState/ViewStateLoader.h'
   end
 
   s.subspec 'ViewConfiguration' do |viewConfiguration|

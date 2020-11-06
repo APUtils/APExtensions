@@ -12,5 +12,6 @@ import APExtensions
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static let shared = UIApplication.shared.delegate as! AppDelegate
     var window: UIWindow?
 }
