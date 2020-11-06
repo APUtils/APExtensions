@@ -13,7 +13,7 @@
 #endif
 
 #import "APExtensionsLoader.h"
-
+#import <objc/runtime.h>
 
 static Class *_allClasses = nil;
 static int _count = 0;
