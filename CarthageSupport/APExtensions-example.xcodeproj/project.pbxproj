@@ -205,8 +205,6 @@
 		B0F83117203763D0004FC037 /* UIView+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302020375BDB004FC037 /* UIView+ViewConfiguration.swift */; };
 		B0F83118203763D0004FC037 /* UILabel+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302120375BDB004FC037 /* UILabel+ViewConfiguration.swift */; };
 		B0F83119203763D0004FC037 /* UITextField+ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F8302220375BDB004FC037 /* UITextField+ViewConfiguration.swift */; };
-		E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */; };
-		E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */; };
 		E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 		E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 		E28885F8232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */; };
@@ -348,7 +346,6 @@
 		B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APExtensionsViewConfiguration.h; sourceTree = "<group>"; };
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F995755C4365A3761276EA /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
-		E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPopoverController+Utils.swift"; sourceTree = "<group>"; };
 		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
 		E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -448,7 +445,6 @@
 				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
 				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
 				B0F8300120375BDB004FC037 /* UINavigationController+Utils.swift */,
-				E23C20FC224BC27900DB1AD5 /* UIPopoverController+Utils.swift */,
 				B0F82FF220375BDB004FC037 /* UIScrollView+Utils.swift */,
 				B0F82FED20375BDB004FC037 /* UIStackView+Utils.swift */,
 				B0F82FE520375BDB004FC037 /* UIStoryboard+Utils.swift */,
@@ -1111,7 +1107,6 @@
 				B0F8306820375BDB004FC037 /* UILabel+Storyboard.swift in Sources */,
 				B0F8304F20375BDB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F8304120375BDB004FC037 /* UIImageView+Utils.swift in Sources */,
-				E23C20FD224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */,
 				B0F8306B20375BDB004FC037 /* UIImageView+ViewConfiguration.swift in Sources */,
 				B0F8306A20375BDB004FC037 /* UITextView+ViewConfiguration.swift in Sources */,
@@ -1172,7 +1167,6 @@
 				B0F830C72037629E004FC037 /* APUtils.mm in Sources */,
 				B0F830CE203762CB004FC037 /* UIStoryboard+Utils.swift in Sources */,
 				B0F830F2203762D0004FC037 /* Describable.swift in Sources */,
-				E23C20FE224BC27A00DB1AD5 /* UIPopoverController+Utils.swift in Sources */,
 				0D4630E823C26EF200108415 /* Constants.swift in Sources */,
 				B0F830CD203762CB004FC037 /* FileManager+Utils.swift in Sources */,
 				B0F830E6203762CB004FC037 /* UIImage+Utils.swift in Sources */,
