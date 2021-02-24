@@ -6,7 +6,11 @@
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-. "utils"
+. "utils.sh"
+
+# Font Constants
+bold_text=$(tput bold)
+normal_text=$(tput sgr0)
 
 cd ..
 cd ..

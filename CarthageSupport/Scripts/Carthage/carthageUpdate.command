@@ -15,7 +15,6 @@ cd "$base_dir"
 # includes
 . ./utils.sh
 
-# Assume scripts are placed in /Scripts/Carthage dir
 cd ..
 cd ..
 

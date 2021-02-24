@@ -8,10 +8,6 @@ green_color='\033[0;32m'
 blue_color='\033[0;34m'
 no_color='\033[0m'
 
-# Font Constants
-bold_text=$(tput bold)
-normal_text=$(tput sgr0)
-
 getFrameworks() {
 	file_name="${1}"
 	grep -o -E "^git.*|^binary.*" "${file_name}" | sed -E "s/(github \"|git \"|binary \")//" | sed -e "s/\".*//" | sed -e "s/^.*\///" -e "s/\".*//" -e "s/.json//"
@@ -43,6 +39,12 @@ getAllFrameworks() {
 # https://github.com/mapbox/mapbox-navigation-ios/blob/master/scripts/wcarthage.sh
 applyXcode12Workaround() {
     echo "Applying Xcode 12 workaround..."
+
+    echo "Cleanup Carthage temporary items"
+    for i in {1..1000}; do
+        dir_name="${TMPDIR}TemporaryItems/(A Document Being Saved By carthage ${i})"
+        [ -e "${dir_name}" ] && rm -rf "${dir_name}" || true
+    done
     
     xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
     trap 'rm -f "${xcconfig}"' INT TERM HUP EXIT
