@@ -294,12 +294,12 @@ open class Globals {
         
         performInMain {
             if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count {
-                logError("Invalid buttonsStyles count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons.count])
+                logError("Invalid buttonsStyles count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons?.count])
                 return
             }
             
             if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count {
-                logError("Invalid enabledButtons count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons.count])
+                logError("Invalid enabledButtons count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles?.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons.count])
                 return
             }
             

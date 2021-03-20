@@ -8,6 +8,12 @@
 
 import Foundation
 
+#if COCOAPODS
+import LogsManager
+#else
+import RoutableLogger
+#endif
+
 // ******************************* MARK: - Resource
 
 public extension Bundle {
@@ -156,7 +162,7 @@ public extension Bundle {
 // ******************************* MARK: - ExpressibleByStringLiteral
 
 extension Bundle.Version: ExpressibleByStringLiteral {
-    init(stringLiteral value: String) {
+    public init(stringLiteral value: String) {
         self.init(value)
     }
 }
@@ -164,7 +170,7 @@ extension Bundle.Version: ExpressibleByStringLiteral {
 // ******************************* MARK: - CustomStringConvertible
 
 extension Bundle.Version: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         version
     }
 }
@@ -172,7 +178,7 @@ extension Bundle.Version: CustomStringConvertible {
 // ******************************* MARK: - Comparable
 
 extension Bundle.Version: Comparable {
-    static func < (lhs: Bundle.Version, rhs: Bundle.Version) -> Bool {
+    public static func < (lhs: Bundle.Version, rhs: Bundle.Version) -> Bool {
         if lhs.major < rhs.major {
             return true
         } else if lhs.major > rhs.major {
