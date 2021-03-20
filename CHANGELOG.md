@@ -2,6 +2,48 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [9.0.0](https://github.com/APUtils/APExtensions/releases/tag/9.0.0)
+Released on 20.03.2021.
+
+#### Added
+- Ability to route logs using RoutableLogger
+- Bundle .json(forResource:withExtension:)
+- Bundle.appBuildVersionString
+- Bundle.appFullVersionString
+- Bundle.appVersion
+- Bundle.appVersionString
+- Bundle.fullAppVersion
+- CGFloat .asCeilString
+- CGFloat .asThousandsString
+- Data .asciiString
+- Data .init?(safeContentsOf:)
+- Data .safeWrite(to:options:)
+- Double .asCeilString
+- Double .asThousandsString
+- Float .asCeilString
+- Float .asDouble
+- Float .asHundredthString
+- Float .asInt
+- Float .asString
+- Float .asTenthString
+- Float .asThousandsString
+- Float .roundTo(precision:)
+- RangeReplaceableCollection .fourth
+- RangeReplaceableCollection .third
+- ScrollViewCustomHorizontalPageSize example
+- UIApplication.isRunningUnitTests
+
+#### Changed
+- Carthage subspecs are no longer supported
+- Data .asString -> Using ASCII representation after UTF8 representation when trying to cast data to string
+- UIView .constraintSides(to:) -> constraintSides(to:insets:)
+
+#### Removed
+- Abstractions subspec
+- Debug.swift log functions
+- UIPopoverController extensions
+
+
 ## [8.0.0](https://github.com/APUtils/APExtensions/releases/tag/8.0.0)
 Released on 06.11.2019.
 
