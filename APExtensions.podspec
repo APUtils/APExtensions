@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '9.0.1'
+  s.version          = '9.0.2'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -44,7 +44,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.subspec 'Core' do |subspec|
       subspec.source_files = 'APExtensions/Classes/Core/**/*'
-      subspec.dependency 'LogsManager/RoutableLogger', '>= 9.1.4'
+      subspec.dependency 'LogsManager/RoutableLogger', '>= 9.1.5'
   end
 
   s.subspec 'ViewConfiguration' do |subspec|
