@@ -15,17 +15,9 @@ import Nimble
 // comm -13 file1 file2 - Different lines from file 2
 class Constants_isRunningUnitTests_Spec: QuickSpec {
     override func spec() {
-        describe("Constants.isRunning...") {
-            it("should return valid value for Tests") {
-                expect(Constants.isRunningTests).to(beTrue())
-            }
-            
-            it("should return valid value for UITests") {
-                expect(Constants.isRunningUITests).to(beFalse())
-            }
-            
+        describe("UIApplication.isRunning...") {
             it("should return valid value for UnitTests") {
-                expect(Constants.isRunningUnitTests).to(beTrue())
+                expect(UIApplication.isRunningUnitTests).to(beTrue())
             }
         }
     }

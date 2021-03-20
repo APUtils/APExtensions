@@ -51,19 +51,6 @@ public enum Constants {
             return 0
         }
     }()
-    
-    /// Detect if the app is running both UI and Unit tests.
-    public static let isRunningTests: Bool = isRunningUITests || isRunningUnitTests
-    
-    /// Detect if the app is running UI tests.
-    public static let isRunningUITests: Bool = ProcessInfo.processInfo
-        .environment["DYLD_INSERT_LIBRARIES"]?
-        .hasSuffix("libXCTTargetBootstrapInject.dylib") ?? false
-    
-    /// Detect if the app is running unit tests.
-    public static let isRunningUnitTests: Bool = ProcessInfo.processInfo
-        .environment.keys
-        .contains("XCTestConfigurationFilePath")
 }
 
 public let c: Constants.Type = Constants.self

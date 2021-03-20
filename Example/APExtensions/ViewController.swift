@@ -25,11 +25,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ////////////////////////////////////////////////////////////
-        // Do not remove. UI tests will fail.
-        fallbackToUITests()
-        ////////////////////////////////////////////////////////////
-        
         let attributedText = NSMutableAttributedString(string: "Debug Strikethrough Text")
         attributedText.setStrikethrough(text: "g Strikethrough T")
         debugLabel.attributedText = attributedText
@@ -72,11 +67,6 @@ class ViewController: UIViewController {
 //        _ = g_perform {
 //            NSException(name: NSExceptionName("name") , reason: "reason", userInfo: ["info": "info"]).raise()
 //        }
-    }
-    
-    private func fallbackToUITests() {
-        guard c.isRunningUITests else { return }
-        uiTestsLabel.isHidden = false
     }
     
     @IBAction private func onDebugTap(_ sender: Any) {

@@ -28,7 +28,7 @@ echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Example/APExtensions.xcworkspace" -scheme "APExtensions-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
 
 echo -e "\nBuilding Carthage projects..."
-. "./Carthage Project/Scripts/Carthage/utils.sh"
+. "./CarthageSupport/Scripts/Carthage/utils.sh"
 applyXcode12Workaround
 set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensions-example" | xcpretty
 
@@ -36,13 +36,20 @@ echo -e "\nBuilding with Carthage..."
 carthage build --no-skip-current --cache-builds
 
 echo -e "\nPerforming tests..."
-simulator_id="$(xcrun simctl list devices available | grep "iPhone SE" | tail -1 | sed -e "s/.*iPhone SE (//g" -e "s/).*//g")"
-if [ -z "${simulator_id}" ]; then
-    echo "error: Please install 'iPhone SE' simulator."
-    echo " "
-    exit 1
-else
+simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
+if [ -n "${simulator_id}" ]; then
     echo "Using iPhone SE simulator with ID: '${simulator_id}'"
+
+else
+    simulator_id="$(xcrun simctl list devices available iPhone | grep "^    " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
+    if [ -n "${simulator_id}" ]; then
+        echo "Using iPhone simulator with ID: '${simulator_id}'"
+        
+    else
+        echo  >&2 "error: Please install iPhone simulator."
+        echo " "
+        exit 1
+    fi
 fi
 
 set -o pipefail && xcodebuild -workspace "Example/APExtensions.xcworkspace" -sdk iphonesimulator -scheme "APExtensions-Example" -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty

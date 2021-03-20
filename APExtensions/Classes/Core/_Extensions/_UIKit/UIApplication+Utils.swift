@@ -49,5 +49,9 @@ public extension UIApplication {
 public extension UIApplication {
     
     /// Returns `true` if the app is running unit tests and `false` otherwise.
-    static let isRunningUnitTests = ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
+    static let isRunningUnitTests: Bool = ProcessInfo
+        .processInfo
+        .environment
+        .keys
+        .contains("XCTestConfigurationFilePath")
 }

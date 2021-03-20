@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gdG-sY-tKX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gdG-sY-tKX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -169,29 +169,19 @@
                                     <constraint firstAttribute="trailing" secondItem="bda-ft-FrP" secondAttribute="trailing" id="ziW-vI-vcJ"/>
                                 </constraints>
                             </scrollView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The application is running UI tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-Ep-3qw">
-                                <rect key="frame" x="58.5" y="323.5" width="258" height="20.5"/>
-                                <accessibility key="accessibilityConfiguration" identifier="ui-tests-label"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="feY-f9-q54" secondAttribute="trailing" id="BWZ-R9-Bni"/>
                             <constraint firstItem="feY-f9-q54" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NhG-qu-8ac"/>
-                            <constraint firstItem="zg1-Ep-3qw" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ZJd-jC-gPn"/>
                             <constraint firstItem="feY-f9-q54" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="aIo-5i-mDb"/>
                             <constraint firstAttribute="bottom" secondItem="feY-f9-q54" secondAttribute="bottom" id="ee3-AO-eLl"/>
-                            <constraint firstItem="zg1-Ep-3qw" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iBl-aU-NZe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E2M-wB-FB7"/>
                     <connections>
                         <outlet property="debugLabel" destination="dTL-pF-kGn" id="dct-ac-nkE"/>
                         <outlet property="scrollView" destination="feY-f9-q54" id="hf6-rm-mB1"/>
-                        <outlet property="uiTestsLabel" destination="zg1-Ep-3qw" id="SbB-Jg-igX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

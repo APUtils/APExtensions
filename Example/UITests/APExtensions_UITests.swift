@@ -27,7 +27,5 @@ class APExtensions_UITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-        
-        XCTAssertTrue(app.staticTexts["ui-tests-label"].exists)
     }
 }
