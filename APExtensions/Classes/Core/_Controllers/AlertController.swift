@@ -8,6 +8,12 @@
 
 import UIKit
 
+#if COCOAPODS
+import LogsManager
+#else
+import RoutableLogger
+#endif
+
 // ******************************* MARK: - Class Implementation
 
 open class AlertController: UIAlertController {
@@ -54,7 +60,7 @@ open class AlertController: UIAlertController {
                     popover.sourceView = view
                     popover.sourceRect = CGRect(x: view.bounds.size.width / 2, y: view.bounds.size.height, width: 0, height: 0)
                 } else {
-                    print("AlertController: can not get sourceView and sourceRect for presentation")
+                    logError("AlertController: can not get sourceView and sourceRect for presentation", data: ["popoverSourceView": popover.sourceView, "popoverSourceRect": popover.sourceRect, "popover": popover, "presentationStyle": AlertController.presentationStyle, "alertWindow": alertWindow, "topViewController": g.topViewController])
                     return
                 }
             }

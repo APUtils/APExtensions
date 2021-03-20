@@ -21,22 +21,10 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile for unified framework:
 
 ```
-github "APUtils/APExtensions" ~> 8.0
+github "APUtils/APExtensions" ~> 9.0
 ```
 
-Cartfile for separate frameworks:
-
-```
-github "APUtils/APExtensions" "abstractions"
-github "APUtils/APExtensions" "core"
-github "APUtils/APExtensions" "storyboard"
-github "APUtils/APExtensions" "view-configuration"
-```
-
-Cartfile for specific commit:
-```
-github "APUtils/APExtensions" "a01cbc24474822d9b64e70372910f404d6b944a1"
-```
+You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
 
 #### CocoaPods
 
@@ -44,16 +32,15 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 8.0'
+pod 'APExtensions', '~> 9.0'
 ```
 
-Available subspecs: `Abstractions`,  `Core`, `Storyboard`, `ViewConfiguration`. Example Podfile for subspec:
+Available subspecs: `Core`, `Storyboard`, `ViewConfiguration`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Abstractions', '~> 8.0'
-pod 'APExtensions/Core', '~> 8.0'
-pod 'APExtensions/Storyboard', '~> 8.0'
-pod 'APExtensions/ViewConfiguration', '~> 8.0'
+pod 'APExtensions/Core', '~> 9.0'
+pod 'APExtensions/Storyboard', '~> 9.0'
+pod 'APExtensions/ViewConfiguration', '~> 9.0'
 ```
 
 ## Usage
@@ -63,26 +50,6 @@ See [documentation](http://cocoadocs.org/docsets/APExtensions) for more details.
 ### Core
 
 Global Utils and Debug methods, Controllers, Protocols and whole lot of default classes extensions. Read more in [DOCS](https://aputils.github.io/APExtensions/).
-
-### Abstractions
-
-Various abstractions that simplyfies working.
-
-#### DelayedValue
-
-Simple abstraction that simplifies working with values that needs some time to be fetched. Kind of promise. Good to use in view models to simplify view configuration.
-
-```swift
-DelayedValue<UIImage> { completion in
-    // Getting image async. It takes some time.
-    
-    // Return image
-    completion(image)
-}.onValueAvailable { image in
-    // Will be called when image is available
-    self.imageView.image = image
-}
-```
 
 ### ViewConfiguration
 

@@ -8,6 +8,11 @@
 
 import UIKit
 
+#if COCOAPODS
+import LogsManager
+#else
+import RoutableLogger
+#endif
 
 public extension NSMutableAttributedString {
     /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.
@@ -20,7 +25,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         
@@ -42,7 +47,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         
@@ -75,7 +80,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            print("Unable to locate '\(text ?? "")' in '\(self)'")
+            logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         

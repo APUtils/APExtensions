@@ -9,6 +9,12 @@
 import Foundation
 import MessageUI
 
+#if COCOAPODS
+import LogsManager
+#else
+import RoutableLogger
+#endif
+
 public let g: Globals = Globals()
 
 open class Globals {
@@ -287,8 +293,15 @@ open class Globals {
                               completion: @escaping ((String, Int) -> ())) {
         
         performInMain {
-            if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count { print("Invalid buttonsStyles count"); return }
-            if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count { print("Invalid enabledButtons count"); return }
+            if let buttonsStyles = buttonsStyles, buttons.count != buttonsStyles.count {
+                logError("Invalid buttonsStyles count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons.count])
+                return
+            }
+            
+            if let enabledButtons = enabledButtons, buttons.count != enabledButtons.count {
+                logError("Invalid enabledButtons count", data: ["title": title, "message": message, "buttons": buttons, "buttonsStyles": buttonsStyles, "buttonsCount": buttons.count, "buttonsStylesCount": buttonsStyles.count, "enabledButtons": enabledButtons, "enabledButtonsCount": enabledButtons.count])
+                return
+            }
             
             let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
             

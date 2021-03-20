@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '8.0.0'
+  s.version          = '9.0.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -42,19 +42,16 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  s.subspec 'Core' do |core|
-    core.source_files = 'APExtensions/Classes/Core/**/*'
+  s.subspec 'Core' do |subspec|
+      subspec.source_files = 'APExtensions/Classes/Core/**/*'
+      subspec.dependency 'LogsManager/RoutableLogger'
   end
 
-  s.subspec 'Abstractions' do |abstraction|
-    abstraction.source_files = 'APExtensions/Classes/Abstractions/**/*'
+  s.subspec 'ViewConfiguration' do |subspec|
+      subspec.source_files = 'APExtensions/Classes/ViewConfiguration/**/*'
   end
 
-  s.subspec 'ViewConfiguration' do |viewConfiguration|
-    viewConfiguration.source_files = 'APExtensions/Classes/ViewConfiguration/**/*'
-  end
-
-  s.subspec 'Storyboard' do |storyboard|
-    storyboard.source_files = 'APExtensions/Classes/Storyboard/**/*'
+  s.subspec 'Storyboard' do |subspec|
+      subspec.source_files = 'APExtensions/Classes/Storyboard/**/*'
   end
 end

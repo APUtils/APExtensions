@@ -106,6 +106,18 @@ public extension RangeReplaceableCollection where Index == Int, Self: Bidirectio
         return self[1]
     }
     
+    /// Third element in a collection
+    var third: Element? {
+        guard count > 2 else { return nil }
+        return self[2]
+    }
+    
+    /// Fourth element in a collection
+    var fourth: Element? {
+        guard count > 3 else { return nil }
+        return self[3]
+    }
+    
     /// Replaces last element with new element and returns replaced element.
     @discardableResult
     mutating func replaceLast(_ element: Element) -> Element {

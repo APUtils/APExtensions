@@ -8,6 +8,12 @@
 
 import Foundation
 
+#if COCOAPODS
+import LogsManager
+#else
+import RoutableLogger
+#endif
+
 // ******************************* MARK: - Components
 
 public extension Date {
@@ -103,7 +109,7 @@ public extension Date {
         if let date = Calendar.current.date(byAdding: dateComponents, to: self) {
             return date
         } else {
-            print("Can't add date components '\(dateComponents)' to date '\(self)'")
+            logError("Can't add date components", data: ["dateComponents": dateComponents, "date": self])
             return self
         }
     }

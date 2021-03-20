@@ -37,16 +37,22 @@ public extension Data {
     
     // ******************************* MARK: - String
     
+    /// Try to convert data to ASCII string
+    var asciiString: String? {
+        String(data: self, encoding: String.Encoding.ascii)
+    }
+    
     /// Try to convert data to UTF8 string
     var utf8String: String? {
         return String(data: self, encoding: String.Encoding.utf8)
     }
     
     /// String representation for data.
-    /// Try to decode as UTF8 string first.
-    /// Uses hex representation if data can not be represented as UTF8 string.
+    /// Try to decode as UTF8 string at first.
+    /// Try to decode as ASCII string at second.
+    /// Uses hex representation if data can not be represented as UTF8 or ASCII string.
     var asString: String {
-        return utf8String ?? hexString
+        utf8String ?? asciiString ?? hexString
     }
     
     // ******************************* MARK: - Other
@@ -73,5 +79,36 @@ public extension Data {
         let value = dictionary[key]
         
         return value as? String
+    }
+}
+
+// ******************************* MARK: - Safe Methods
+
+public extension Data {
+    
+    /// Initialize data with content of a given file and report error if unable.
+    init?(safeContentsOf url: URL, file: String = #file, function: String = #function, line: UInt = #line) {
+        do {
+            try self.init(contentsOf: url)
+        } catch {
+            logError("Can not get data from url", error: error, data: ["url": url], file: file, function: function, line: line)
+            return nil
+        }
+    }
+    
+    /// Write the contents of the `Data` to a location and report error if unable.
+    ///
+    /// - parameter url: The location to write the data into.
+    /// - parameter options: Options for writing the data. Default value is `[]`.
+    /// - throws: An error in the Cocoa domain, if there is an error writing to the `URL`.
+    @discardableResult
+    func safeWrite(to url: URL, options: Data.WritingOptions = [], file: String = #file, function: String = #function, line: UInt = #line) -> Bool {
+        do {
+            try write(to: url, options: options)
+            return true
+        } catch {
+            logError("Unable to write data", error: error, file: file, function: function, line: line)
+            return false
+        }
     }
 }
