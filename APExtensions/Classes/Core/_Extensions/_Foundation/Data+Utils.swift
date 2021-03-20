@@ -96,7 +96,7 @@ public extension Data {
         do {
             try self.init(contentsOf: url)
         } catch {
-            logError("Can not get data from url", error: error, data: ["url": url], file: file, function: function, line: line)
+            RoutableLogger.logError("Can not get data from url", error: error, data: ["url": url], file: file, function: function, line: line)
             return nil
         }
     }
@@ -112,7 +112,7 @@ public extension Data {
             try write(to: url, options: options)
             return true
         } catch {
-            logError("Unable to write data", error: error, file: file, function: function, line: line)
+            RoutableLogger.logError("Unable to write data", error: error, file: file, function: function, line: line)
             return false
         }
     }

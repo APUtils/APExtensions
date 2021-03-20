@@ -1,16 +1,16 @@
 PODS:
-  - APExtensions (9.0.0):
-    - APExtensions/Core (= 9.0.0)
-    - APExtensions/Storyboard (= 9.0.0)
-    - APExtensions/ViewConfiguration (= 9.0.0)
-  - APExtensions/Core (9.0.0):
-    - LogsManager/RoutableLogger
-  - APExtensions/Storyboard (9.0.0)
-  - APExtensions/ViewConfiguration (9.0.0)
+  - APExtensions (9.0.1):
+    - APExtensions/Core (= 9.0.1)
+    - APExtensions/Storyboard (= 9.0.1)
+    - APExtensions/ViewConfiguration (= 9.0.1)
+  - APExtensions/Core (9.0.1):
+    - LogsManager/RoutableLogger (>= 9.1.4)
+  - APExtensions/Storyboard (9.0.1)
+  - APExtensions/ViewConfiguration (9.0.1)
   - CocoaLumberjack/Core (3.7.0)
   - CocoaLumberjack/Swift (3.7.0):
     - CocoaLumberjack/Core
-  - LogsManager/RoutableLogger (9.1.3):
+  - LogsManager/RoutableLogger (9.1.4):
     - CocoaLumberjack/Swift
   - Nimble (9.0.0)
   - Quick (3.1.2)
@@ -32,9 +32,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 41ac9a5b419a7b57d61ea7c183df00a8746d4bc0
+  APExtensions: a0c428f99cfd85818d6e3cb0e41ff09ba1372983
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
-  LogsManager: f533c755f3ace74d02f240d81ce13270ef3ead90
+  LogsManager: 7d7079c0f7487f2a7e4feda6330f7adb31a5e9f5
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
 

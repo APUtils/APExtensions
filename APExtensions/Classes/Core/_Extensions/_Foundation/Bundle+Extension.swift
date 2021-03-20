@@ -20,12 +20,12 @@ public extension Bundle {
     
     func json(forResource resource: String, withExtension extension: String) -> [String: Any]? {
         guard let url = url(forResource: resource, withExtension: `extension`) else {
-            logError("Unable to locate a resource in main bundle", data: ["resource": resource, "extension": `extension`])
+            RoutableLogger.logError("Unable to locate a resource in main bundle", data: ["resource": resource, "extension": `extension`])
             return nil
         }
         
         guard let data = Data(safeContentsOf: url) else {
-            logError("Unable to get data for a resource", data: ["resource": resource, "extension": `extension`, "url": url])
+            RoutableLogger.logError("Unable to get data for a resource", data: ["resource": resource, "extension": `extension`, "url": url])
             return nil
         }
         
@@ -33,7 +33,7 @@ public extension Bundle {
         do {
             _json = try JSONSerialization.jsonObject(with: data, options: [])
         } catch {
-            logError("Unable to serialize resource into JSON",
+            RoutableLogger.logError("Unable to serialize resource into JSON",
                      error: error,
                      data: [
                         "resource": resource,
@@ -46,7 +46,7 @@ public extension Bundle {
         }
         
         guard let json = _json as? [String: Any] else {
-            logError("Unable to cast JSON to a Dictionary", data: [
+            RoutableLogger.logError("Unable to cast JSON to a Dictionary", data: [
                 "resource": resource,
                 "extension": `extension`,
                 "url": url,
@@ -138,7 +138,7 @@ public extension Bundle {
             } else {
                 major = 0
                 isValid = false
-                logError("Invalid major version", data: ["version": version])
+                RoutableLogger.logError("Invalid major version", data: ["version": version])
             }
             
             if let minor = components.second?.asInt {

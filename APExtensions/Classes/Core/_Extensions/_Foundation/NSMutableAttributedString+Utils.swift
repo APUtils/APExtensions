@@ -25,7 +25,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            logError("Unable to locate text", data: ["text": text, "self": self])
+            RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         
@@ -47,7 +47,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            logError("Unable to locate text", data: ["text": text, "self": self])
+            RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         
@@ -80,7 +80,7 @@ public extension NSMutableAttributedString {
         }
         
         guard range.location != NSNotFound else {
-            logError("Unable to locate text", data: ["text": text, "self": self])
+            RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
             return
         }
         

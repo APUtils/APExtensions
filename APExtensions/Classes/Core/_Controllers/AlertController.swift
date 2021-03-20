@@ -60,7 +60,7 @@ open class AlertController: UIAlertController {
                     popover.sourceView = view
                     popover.sourceRect = CGRect(x: view.bounds.size.width / 2, y: view.bounds.size.height, width: 0, height: 0)
                 } else {
-                    logError("AlertController: can not get sourceView and sourceRect for presentation", data: ["popoverSourceView": popover.sourceView, "popoverSourceRect": popover.sourceRect, "popover": popover, "presentationStyle": AlertController.presentationStyle, "alertWindow": alertWindow, "topViewController": g.topViewController])
+                    RoutableLogger.logError("AlertController: can not get sourceView and sourceRect for presentation", data: ["popoverSourceView": popover.sourceView, "popoverSourceRect": popover.sourceRect, "popover": popover, "presentationStyle": AlertController.presentationStyle, "alertWindow": alertWindow, "topViewController": g.topViewController])
                     return
                 }
             }

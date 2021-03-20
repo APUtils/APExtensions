@@ -109,7 +109,7 @@ public extension Date {
         if let date = Calendar.current.date(byAdding: dateComponents, to: self) {
             return date
         } else {
-            logError("Can't add date components", data: ["dateComponents": dateComponents, "date": self])
+            RoutableLogger.logError("Can't add date components", data: ["dateComponents": dateComponents, "date": self])
             return self
         }
     }
