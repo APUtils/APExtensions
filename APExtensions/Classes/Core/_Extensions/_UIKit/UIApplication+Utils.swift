@@ -43,3 +43,11 @@ public extension UIApplication {
         v_backgroundTaskIdentifier = .invalid
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension UIApplication {
+    
+    /// Returns `true` if the app is running unit tests and `false` otherwise.
+    static let isRunningUnitTests = ProcessInfo.processInfo.environment.keys.contains("XCTestConfigurationFilePath")
+}
