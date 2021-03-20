@@ -6,8 +6,7 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
-import UIKit
-
+import CoreGraphics
 
 public extension CGRect {
     /// Center point

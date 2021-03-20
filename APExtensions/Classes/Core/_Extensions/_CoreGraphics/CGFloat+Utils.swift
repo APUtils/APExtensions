@@ -6,25 +6,35 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 // ******************************* MARK: - As String
 
 public extension CGFloat {
     
-    /// Returns `self` as `String`
-    var asString: String {
-        return asDouble.asString
+    /// Returns string representation rounded to tenth
+    var asCeilString: String {
+        String(format: "%.0f", self)
     }
     
     /// Returns string representation rounded to tenth
     var asTenthString: String {
-        return String(format: "%.1f", self)
+        String(format: "%.1f", self)
     }
     
     /// Returns string representation rounded to hundredth
     var asHundredthString: String {
-        return String(format: "%.2f", self)
+        String(format: "%.2f", self)
+    }
+    
+    /// Returns string representation rounded to thousands
+    var asThousandsString: String {
+        String(format: "%.3f", self)
+    }
+    
+    /// Returns `self` as `String`
+    var asString: String {
+        asDouble.asString
     }
 }
 

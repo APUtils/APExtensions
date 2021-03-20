@@ -1,16 +1,38 @@
 //
-//  Double+Utils.swift
-//  APExtensions
+//  Float+Utils.swift
+//  Pods
 //
-//  Created by Anton Plebanovich on 12/26/19.
-//  Copyright © 2019 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 3/20/21.
+//  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
 
+public extension Float {
+    
+    /// Return `self` as `Double`.
+    var asDouble: Double {
+        Double(self)
+    }
+    
+    /// Returns `self` as `Int`
+    var asInt: Int? {
+        if self >= Int.min.asFloat, self < Int.max.asFloat {
+            return Int(self)
+        } else {
+            return nil
+        }
+    }
+    
+    func roundTo(precision: Int) -> Float {
+        let divisor = pow(10.0, Float(precision))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
 // ******************************* MARK: - As String
 
-public extension Double {
+extension Float {
     
     /// Returns string representation rounded to tenth
     var asCeilString: String {
@@ -35,24 +57,5 @@ public extension Double {
     /// Returns `self` as `String`
     var asString: String {
         String(self)
-    }
-}
-
-// ******************************* MARK: - As
-
-public extension Double {
-    
-    /// Returns `self` as `Date` using `timeIntervalSince1970` representation.
-    var asDate: Date {
-        return Date(timeIntervalSince1970: self)
-    }
-    
-    /// Returns `self` as `Int` if possible
-    var asInt: Int? {
-        if self >= Int.min.asDouble, self < Int.max.asDouble {
-            return Int(self)
-        } else {
-            return nil
-        }
     }
 }
