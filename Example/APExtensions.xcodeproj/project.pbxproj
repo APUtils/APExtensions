@@ -11,6 +11,7 @@
 		0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */; };
 		0D15797923C22FF7007402BD /* Constants_isRunningUnitTests_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15797823C22FF5007402BD /* Constants_isRunningUnitTests_Spec.swift */; };
 		0D15798123C2308A007402BD /* APExtensions_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15798023C2308A007402BD /* APExtensions_UITests.swift */; };
+		0D20D61C2607449F00767851 /* Bundle_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D61B2607449F00767851 /* Bundle_Spec.swift */; };
 		0D6869E92555D3CC00C1D884 /* CustomPageSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6869E62555D3CC00C1D884 /* CustomPageSizeVC.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		0D15797E23C2308A007402BD /* APExtensions_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APExtensions_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D15798023C2308A007402BD /* APExtensions_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APExtensions_UITests.swift; sourceTree = "<group>"; };
 		0D15798223C2308A007402BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D20D61B2607449F00767851 /* Bundle_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle_Spec.swift; sourceTree = "<group>"; };
 		0D4630D523C241DD00108415 /* Simulator_UITests_Environment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Simulator_UITests_Environment.json; sourceTree = "<group>"; };
 		0D4630D723C2429600108415 /* computeDiff.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = computeDiff.command; sourceTree = "<group>"; };
 		0D4630D823C2442800108415 /* UnitTests_Unique.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UnitTests_Unique.json; sourceTree = "<group>"; };
@@ -137,6 +139,16 @@
 				0D15798223C2308A007402BD /* Info.plist */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		0D20D61A2607448A00767851 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				0D4630D623C2426900108415 /* IsTests */,
+				0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */,
+				0D20D61B2607449F00767851 /* Bundle_Spec.swift */,
+			);
+			name = Specs;
 			sourceTree = "<group>";
 		};
 		0D4630D623C2426900108415 /* IsTests */ = {
@@ -224,9 +236,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0D4630D623C2426900108415 /* IsTests */,
+				0D20D61A2607448A00767851 /* Specs */,
 				607FACE91AFB9204008FA782 /* _Supporting Files */,
-				0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -387,7 +398,6 @@
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = XVJ8T9UW9V;
 						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -566,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D20D61C2607449F00767851 /* Bundle_Spec.swift in Sources */,
 				0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */,
 				0D15797923C22FF7007402BD /* Constants_isRunningUnitTests_Spec.swift in Sources */,
 			);
@@ -777,9 +788,11 @@
 			baseConfigurationReference = 02237C3924CDA9B9ADD6620C /* Pods-APExtensions_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XVJ8T9UW9V;
+				CURRENT_PROJECT_VERSION = 1217;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = APExtensions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 9.0.2;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -792,9 +805,11 @@
 			baseConfigurationReference = 99E1AC5C268B8B21D4383758 /* Pods-APExtensions_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XVJ8T9UW9V;
+				CURRENT_PROJECT_VERSION = 1217;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = APExtensions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 9.0.2;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APExtensions-Example${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

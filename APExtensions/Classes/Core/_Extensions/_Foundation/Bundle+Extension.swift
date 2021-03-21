@@ -96,3 +96,13 @@ public extension Bundle {
     /// - build: 9832
     static let fullAppVersion: Version = { Version(appFullVersionString) }()
 }
+
+// ******************************* MARK: - Other
+
+public extension Bundle {
+    
+    /// Example: com.anton-plebanovich.APExtensions-Example
+    static let appID: String = {
+        main.infoDictionary?["CFBundleIdentifier"] as? String ?? "unknown"
+    }()
+}
