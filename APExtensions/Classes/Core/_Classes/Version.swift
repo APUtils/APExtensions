@@ -93,7 +93,7 @@ extension Version: CustomStringConvertible {
 // ******************************* MARK: - Comparable
 
 extension Version: Comparable {
-    public static func < (lhs: Bundle.Version, rhs: Bundle.Version) -> Bool {
+    public static func < (lhs: Version, rhs: Version) -> Bool {
         if lhs.major < rhs.major {
             return true
         } else if lhs.major > rhs.major {
