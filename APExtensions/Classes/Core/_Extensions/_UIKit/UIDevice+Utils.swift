@@ -59,3 +59,18 @@ extension UIDevice.BatteryState: CustomStringConvertible {
         }
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension UIDevice {
+    
+    /// Current device is a simulator
+    static let isSimulator: Bool = {
+        TARGET_OS_SIMULATOR != 0
+    }()
+    
+    /// Current device is a real device
+    static let isReal: Bool = {
+        TARGET_OS_SIMULATOR == 0
+    }()
+}

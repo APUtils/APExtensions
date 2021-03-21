@@ -1,5 +1,5 @@
 //
-//  Bundle+Extension.swift
+//  Bundle+Utils.swift
 //  APExtensions
 //
 //  Created by Anton Plebanovich on 3/20/21.
