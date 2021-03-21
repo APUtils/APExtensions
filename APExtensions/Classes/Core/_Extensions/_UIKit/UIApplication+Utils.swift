@@ -73,29 +73,33 @@ extension UIApplication.State: CustomStringConvertible {
 
 extension UIApplication: SetupOnce {
     
-    private static let previousApplicationStartTimeUserDefaultsKey = "APExtensions_UIApplication_previousApplicationStartTime"
-    public static var previousApplicationStartTime: Date {
+    private static let previousStartTimeUserDefaultsKey = "APExtensions_UIApplication_previousStartTime"
+    
+    /// Previous application start time
+    public static var previousStartTime: Date {
         get {
-            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: previousApplicationStartTimeUserDefaultsKey))
+            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: previousStartTimeUserDefaultsKey))
         }
         set {
-            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: previousApplicationStartTimeUserDefaultsKey)
+            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: previousStartTimeUserDefaultsKey)
         }
     }
     
-    private static let applicationStartTimeUserDefaultsKey = "APExtensions_UIApplication_applicationStartTime"
-    public static var applicationStartTime: Date {
+    private static let startTimeUserDefaultsKey = "APExtensions_UIApplication_startTime"
+    
+    /// Application start time
+    public static var startTime: Date {
         get {
-            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: applicationStartTimeUserDefaultsKey))
+            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: startTimeUserDefaultsKey))
         }
         set {
-            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: applicationStartTimeUserDefaultsKey)
+            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: startTimeUserDefaultsKey)
         }
     }
     
     public static var setupOnce: Int = {
-        previousApplicationStartTime = applicationStartTime
-        applicationStartTime = Date()
+        previousStartTime = startTime
+        startTime = Date()
         
         return 0
     }()

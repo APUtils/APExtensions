@@ -119,6 +119,28 @@ public extension Date {
 
 public extension Date {
     
+    /// Return `self` as a time string with a `HH:mm:ss.SSS` format. E.g. `10:20:45.123`.
+    /// Useful for logs.
+    var asLogsTimeString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss.SSS"
+        formatter.timeZone = .current
+        
+        let string = formatter.string(from: self)
+        return string
+    }
+    
+    /// Return `self` as a date and time string with a `dd.MM.yyyy HH:mm:ss.SSS` format. E.g. `08.10.2019 16:16:40.723`.
+    /// Useful for logs.
+    var asLogsDateAndTimeString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm:ss.SSS"
+        formatter.timeZone = .current
+        
+        let string = formatter.string(from: self)
+        return string
+    }
+    
     /// Simplification of getting string from date
     func getString(dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short, doesRelativeDateFormatting: Bool = true) -> String {
         let formatter = DateFormatter()
