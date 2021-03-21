@@ -43,3 +43,11 @@ public extension Int {
     /// Returns `self` as `TimeInterval`
     var asTimeInterval: TimeInterval { .init(self) }
 }
+
+// ******************************* MARK: - Int32
+
+public extension Int32 {
+    
+    /// Returns `self` as `Int`
+    var asInt: Int { Int(self) }
+}
