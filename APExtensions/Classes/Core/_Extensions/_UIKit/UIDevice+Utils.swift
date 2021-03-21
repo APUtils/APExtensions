@@ -45,3 +45,17 @@ public extension UIDevice {
         return uuid.uuidString
     }
 }
+
+// ******************************* MARK: - UIDevice.BatteryState - CustomStringConvertible
+
+extension UIDevice.BatteryState: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .charging: return "charging"
+        case .full: return "full"
+        case .unknown: return "unknown"
+        case .unplugged: return "unplugged"
+        @unknown default: return "undefined"
+        }
+    }
+}

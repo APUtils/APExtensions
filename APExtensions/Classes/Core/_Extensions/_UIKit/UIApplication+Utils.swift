@@ -44,7 +44,7 @@ public extension UIApplication {
     }
 }
 
-// ******************************* MARK: - Other
+// ******************************* MARK: - Tests
 
 public extension UIApplication {
     
@@ -54,4 +54,49 @@ public extension UIApplication {
         .environment
         .keys
         .contains("XCTestConfigurationFilePath")
+}
+
+// ******************************* MARK: - UIApplication.State - CustomStringConvertible
+
+extension UIApplication.State: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .active: return "active"
+        case .background: return "background"
+        case .inactive: return "inactive"
+        @unknown default: return "unknown"
+        }
+    }
+}
+
+// ******************************* MARK: - Start Time
+
+extension UIApplication: SetupOnce {
+    
+    private static let previousApplicationStartTimeUserDefaultsKey = "APExtensions_UIApplication_previousApplicationStartTime"
+    public static var previousApplicationStartTime: Date {
+        get {
+            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: previousApplicationStartTimeUserDefaultsKey))
+        }
+        set {
+            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: previousApplicationStartTimeUserDefaultsKey)
+        }
+    }
+    
+    private static let applicationStartTimeUserDefaultsKey = "APExtensions_UIApplication_applicationStartTime"
+    public static var applicationStartTime: Date {
+        get {
+            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: applicationStartTimeUserDefaultsKey))
+        }
+        set {
+            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: applicationStartTimeUserDefaultsKey)
+        }
+    }
+    
+    public static var setupOnce: Int = {
+        previousApplicationStartTime = applicationStartTime
+        applicationStartTime = Date()
+        
+        return 0
+    }()
 }

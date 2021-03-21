@@ -30,26 +30,26 @@ public extension String {
         }
         
         if let valueName = valueName {
-            append(string: "\(valueName):", separator: separator)
+            append("\(valueName):", separator: separator)
             appendWithSpace(stringRepresentation)
         } else {
-            append(string: stringRepresentation, separator: separator)
+            append(stringRepresentation, separator: separator)
         }
     }
     
     mutating func appendWithNewLine(_ string: String?) {
-        append(string: string, separator: "\n")
+        append(string, separator: "\n")
     }
     
     mutating func appendWithSpace(_ string: String?) {
-        append(string: string, separator: " ")
+        append(string, separator: " ")
     }
     
     mutating func appendWithComma(_ string: String?) {
-        append(string: string, separator: ", ")
+        append(string, separator: ", ")
     }
     
-    mutating func append(string: String?, separator: String) {
+    mutating func append(_ string: String?, separator: String) {
         guard let string = string, !string.isEmpty else { return }
         
         if isEmpty {
