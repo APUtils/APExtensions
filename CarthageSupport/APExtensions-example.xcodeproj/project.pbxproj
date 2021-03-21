@@ -13,6 +13,10 @@
 		0D20D3E8260675E400767851 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D3E6260675E400767851 /* Bundle+Extension.swift */; };
 		0D20D3EE260675ED00767851 /* Float+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D3ED260675ED00767851 /* Float+Utils.swift */; };
 		0D20D3EF260675ED00767851 /* Float+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D3ED260675ED00767851 /* Float+Utils.swift */; };
+		0D20D5B22607315F00767851 /* UIDevice+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B12607315F00767851 /* UIDevice+Utils.swift */; };
+		0D20D5B32607315F00767851 /* UIDevice+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B12607315F00767851 /* UIDevice+Utils.swift */; };
+		0D20D5BA2607319800767851 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B92607319700767851 /* Version.swift */; };
+		0D20D5BB2607319800767851 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B92607319700767851 /* Version.swift */; };
 		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D4630E323C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
@@ -243,6 +247,8 @@
 		0D1B3892220A10230021FD11 /* Int+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		0D20D3E6260675E400767851 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		0D20D3ED260675ED00767851 /* Float+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Utils.swift"; sourceTree = "<group>"; };
+		0D20D5B12607315F00767851 /* UIDevice+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Utils.swift"; sourceTree = "<group>"; };
+		0D20D5B92607319700767851 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
@@ -397,6 +403,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D20D5B82607319700767851 /* _Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0D20D5B92607319700767851 /* Version.swift */,
+			);
+			path = _Classes;
+			sourceTree = "<group>";
+		};
 		0D43F14623C3A5B9009E1C28 /* _Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +454,7 @@
 				B0F82FE820375BDB004FC037 /* UIButton+Utils.swift */,
 				B0F82FE320375BDB004FC037 /* UICollectionView+Utils.swift */,
 				B0F82FEF20375BDB004FC037 /* UIColor+Utils.swift */,
+				0D20D5B12607315F00767851 /* UIDevice+Utils.swift */,
 				B0F82FFD20375BDB004FC037 /* UIImage+Utils.swift */,
 				B0F82FF120375BDB004FC037 /* UIImageView+Utils.swift */,
 				B0F82FFE20375BDB004FC037 /* UINavigationBar+Utils.swift */,
@@ -565,9 +580,10 @@
 		B0F82FD720375BDB004FC037 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0D43F14923C3A613009E1C28 /* _MessageUI */,
+				0D20D5B82607319700767851 /* _Classes */,
 				B0F8300E20375BDB004FC037 /* _Controllers */,
 				B0F82FE220375BDB004FC037 /* _Extensions */,
+				0D43F14923C3A613009E1C28 /* _MessageUI */,
 				B0F82FD920375BDB004FC037 /* _Protocols */,
 				B0F8300A20375BDB004FC037 /* APExtensionsLoader.h */,
 				B0F82FD820375BDB004FC037 /* APExtensionsLoader.m */,
@@ -977,6 +993,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F8302F20375BDB004FC037 /* Configurable.swift in Sources */,
+				0D20D5B22607315F00767851 /* UIDevice+Utils.swift in Sources */,
 				B0F8304E20375BDB004FC037 /* UINavigationBar+Utils.swift in Sources */,
 				B0F8306520375BDB004FC037 /* UIImage+Storyboard.swift in Sources */,
 				0D4630E323C26EF200108415 /* Globals.swift in Sources */,
@@ -1051,6 +1068,7 @@
 				B0F8306820375BDB004FC037 /* UILabel+Storyboard.swift in Sources */,
 				B0F8304F20375BDB004FC037 /* URLComponents+Utils.swift in Sources */,
 				B0F8304120375BDB004FC037 /* UIImageView+Utils.swift in Sources */,
+				0D20D5BA2607319800767851 /* Version.swift in Sources */,
 				B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */,
 				B0F8306B20375BDB004FC037 /* UIImageView+ViewConfiguration.swift in Sources */,
 				B0F8306A20375BDB004FC037 /* UITextView+ViewConfiguration.swift in Sources */,
@@ -1107,6 +1125,7 @@
 				0DE1519A260669580067545C /* CGFloat+Utils.swift in Sources */,
 				0DBC7CFF23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */,
 				B0F830F3203762D0004FC037 /* SetupOnce.swift in Sources */,
+				0D20D5B32607315F00767851 /* UIDevice+Utils.swift in Sources */,
 				B0F830E9203762CB004FC037 /* Sequence+Utils.swift in Sources */,
 				B0F830F4203762D0004FC037 /* Manager.swift in Sources */,
 				B0F830C72037629E004FC037 /* APUtils.mm in Sources */,
@@ -1127,6 +1146,7 @@
 				B0F830F5203762D0004FC037 /* Configurable.swift in Sources */,
 				B0F830CB203762C6004FC037 /* AlertController.swift in Sources */,
 				B0F830E7203762CB004FC037 /* UINavigationBar+Utils.swift in Sources */,
+				0D20D5BB2607319800767851 /* Version.swift in Sources */,
 				B0F830E1203762CB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */,
 				B0F830DE203762CB004FC037 /* Data+Utils.swift in Sources */,
 				0D47E42B23BF4C6400C4BFDC /* FloatingPoint+Utils.swift in Sources */,

@@ -1,6 +1,6 @@
 //
 //  UIButton+ViewConfiguration.swift
-//  Pods
+//  APExtensions
 //
 //  Created by Anton Plebanovich on 10/4/17.
 //  

@@ -23,4 +23,3 @@ public typealias ErrorClosure = (_ error: Error?) -> Void
 
 /// Error stub to use for simplification
 public struct GeneralError: Error { public init() {} }
-
