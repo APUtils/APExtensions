@@ -20,13 +20,13 @@ public struct Version: Codable, Equatable {
     
     // ******************************* MARK: - Public Properties
     
-    let major: Int
-    let minor: Int
-    let patch: Int
-    let build: Int?
-    let isValid: Bool
+    public let major: Int
+    public let minor: Int
+    public let patch: Int
+    public let build: Int?
+    public let isValid: Bool
     
-    var version: String {
+    public var version: String {
         if let build = build {
             return "\(major).\(minor).\(patch).\(build)"
         } else {
@@ -36,7 +36,7 @@ public struct Version: Codable, Equatable {
     
     // ******************************* MARK: - Initialization and Setup
     
-    init(major: Int, minor: Int, patch: Int, build: Int? = nil) {
+    public init(major: Int, minor: Int, patch: Int, build: Int? = nil) {
         self.major = major
         self.minor = minor
         self.patch = patch
@@ -45,7 +45,7 @@ public struct Version: Codable, Equatable {
     }
     
     /// Instantiates version struct with version string.
-    init(_ version: String) {
+    public init(_ version: String) {
         let components = version.components(separatedBy: ".")
         
         if let major = components.first?.asInt {

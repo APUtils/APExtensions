@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIDevice {
+public extension UIDevice {
     
     /// Returns a current device version.
     static var currentDeviceSystemVersion: Version {
