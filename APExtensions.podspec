@@ -31,16 +31,9 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.ios.deployment_target = '9.0'
   s.swift_versions = ['5.1']
-
-  s.source_files = 'APExtensions/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'APExtensions' => ['APExtensions/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.default_subspec = 'Core', 'ViewConfiguration', 'Storyboard'
 
   s.subspec 'Core' do |subspec|
       subspec.source_files = 'APExtensions/Classes/Core/**/*'
