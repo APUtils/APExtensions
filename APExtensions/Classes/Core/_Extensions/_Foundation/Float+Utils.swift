@@ -32,7 +32,7 @@ public extension Float {
 
 // ******************************* MARK: - As String
 
-extension Float {
+public extension Float {
     
     /// Returns string representation rounded to tenth
     var asCeilString: String {

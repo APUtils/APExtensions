@@ -83,3 +83,21 @@ public extension String {
         return String((0..<length).map{ _ in lettersWithSpace.randomElement()! })
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension String {
+    
+    /// Returns fileName without extension
+    var fileName: String {
+        guard let lastPathComponent = components(separatedBy: "/").last else { return "" }
+        
+        var components = lastPathComponent.components(separatedBy: ".")
+        if components.count == 1 {
+            return lastPathComponent
+        } else {
+            components.removeLast()
+            return components.joined(separator: ".")
+        }
+    }
+}

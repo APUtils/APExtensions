@@ -17,6 +17,7 @@
 		0D20D5B32607315F00767851 /* UIDevice+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B12607315F00767851 /* UIDevice+Utils.swift */; };
 		0D20D5BA2607319800767851 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B92607319700767851 /* Version.swift */; };
 		0D20D5BB2607319800767851 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B92607319700767851 /* Version.swift */; };
+		0D20D62226074AAD00767851 /* Bool+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D62126074AAD00767851 /* Bool+Utils.swift */; };
 		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D43F14C23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
 		0D4630E323C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
@@ -249,6 +250,7 @@
 		0D20D3ED260675ED00767851 /* Float+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Utils.swift"; sourceTree = "<group>"; };
 		0D20D5B12607315F00767851 /* UIDevice+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Utils.swift"; sourceTree = "<group>"; };
 		0D20D5B92607319700767851 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		0D20D62126074AAD00767851 /* Bool+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Utils.swift"; sourceTree = "<group>"; };
 		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				B0F82FE720375BDB004FC037 /* URL+Utils.swift */,
 				B0F82FFF20375BDB004FC037 /* URLComponents+Utils.swift */,
 				E28885F7232BE35900B8F8E8 /* UserDefaults+Utils.swift */,
+				0D20D62126074AAD00767851 /* Bool+Utils.swift */,
 			);
 			path = _Foundation;
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 				B0F8302F20375BDB004FC037 /* Configurable.swift in Sources */,
 				0D20D5B22607315F00767851 /* UIDevice+Utils.swift in Sources */,
 				B0F8304E20375BDB004FC037 /* UINavigationBar+Utils.swift in Sources */,
+				0D20D62226074AAD00767851 /* Bool+Utils.swift in Sources */,
 				B0F8306520375BDB004FC037 /* UIImage+Storyboard.swift in Sources */,
 				0D4630E323C26EF200108415 /* Globals.swift in Sources */,
 				B0F8302C20375BDB004FC037 /* Describable.swift in Sources */,
