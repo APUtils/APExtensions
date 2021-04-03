@@ -43,18 +43,23 @@ public extension CGFloat {
 public extension CGFloat {
     
     /// Returns `self` as `Int` if possible
-    var asInt: Int? {
-        if self >= Int.min.asCGFloat, self < Int.max.asCGFloat {
-            return Int(self)
-        } else {
-            return nil
-        }
-    }
+    var asInt: Int? { Int(exactly: self) }
     
     /// Returns `self` as `Double`
     var asDouble: Double {
         return Double(self)
     }
+}
+
+// ******************************* MARK: - Other
+
+public extension CGFloat {
+    
+    /// Returns `true` if `self` is ceil. Returns `false` otherwise.
+    var isCeil: Bool {
+        floor(self) == self
+    }
+    
 }
 
 // ******************************* MARK: - Pixel Operations

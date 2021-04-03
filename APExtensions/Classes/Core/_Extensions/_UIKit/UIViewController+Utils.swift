@@ -237,16 +237,23 @@ extension UIViewController {
     }
 }
 
-// ******************************* MARK: - Other
-
 extension UIViewController {
-    /// Returns navigation controller with self as root.
-    public var wrappedIntoNavigation: UINavigationController {
-        return UINavigationController(rootViewController: self)
-    }
     
     /// End editing in viewController's view
     @IBAction open func endEditing(_ sender: Any) {
         view.endEditing(true)
+    }
+}
+
+// ******************************* MARK: - Other
+
+public extension UIViewController {
+    
+    /// Returns navigation controller with self as root.
+    var wrappedIntoNavigation: UINavigationController {
+        let vc = UINavigationController(rootViewController: self)
+        vc.modalPresentationStyle = .fullScreen
+        
+        return vc
     }
 }

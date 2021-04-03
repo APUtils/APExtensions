@@ -25,6 +25,9 @@ public extension Int {
 
 public extension Int {
     
+    /// Returns `self` as `UInt`
+    var asUInt: UInt? { UInt(exactly: self) }
+    
     /// Returns `self` as `CGFloat`
     var asCGFloat: CGFloat { .init(self) }
     

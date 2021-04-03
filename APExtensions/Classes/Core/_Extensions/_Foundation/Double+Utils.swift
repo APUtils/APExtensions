@@ -36,6 +36,11 @@ public extension Double {
     var asString: String {
         String(self)
     }
+    
+    /// Returns string representation rounded to provided precition
+    func asString(precition: UInt) -> String {
+        String(format: "%.\(precition)f", self)
+    }
 }
 
 // ******************************* MARK: - As
@@ -48,11 +53,16 @@ public extension Double {
     }
     
     /// Returns `self` as `Int` if possible
-    var asInt: Int? {
-        if self >= Int.min.asDouble, self < Int.max.asDouble {
-            return Int(self)
-        } else {
-            return nil
-        }
+    var asInt: Int? { Int(exactly: self) }
+}
+
+// ******************************* MARK: - Other
+
+public extension Double {
+    
+    /// Returns `true` if `self` is ceil. Returns `false` otherwise.
+    var isCeil: Bool {
+        floor(self) == self
     }
+    
 }

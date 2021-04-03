@@ -18,6 +18,15 @@ public extension URL {
         return String(lastPathComponent.split(separator: ".")[0])
     }
     
+    /// Returns directory URL
+    @available(iOS 9.0, *)
+    var directory: URL {
+        if isLocalDirectory {
+            return self
+        } else {
+            return deletingLastPathComponent()
+        }
+    }
     /// Check if it's URL to local directory
     @available(iOS 9.0, *)
     var isLocalDirectory: Bool {

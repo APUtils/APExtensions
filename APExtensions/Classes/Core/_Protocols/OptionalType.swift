@@ -14,6 +14,7 @@ import Foundation
 public protocol OptionalType {
     associatedtype Wrapped
     var value: Wrapped? { get }
+    init(nilLiteral: ())
 }
 
 extension Optional: OptionalType {

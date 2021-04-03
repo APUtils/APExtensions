@@ -16,18 +16,7 @@ public extension Float {
     }
     
     /// Returns `self` as `Int`
-    var asInt: Int? {
-        if self >= Int.min.asFloat, self < Int.max.asFloat {
-            return Int(self)
-        } else {
-            return nil
-        }
-    }
-    
-    func roundTo(precision: Int) -> Float {
-        let divisor = pow(10.0, Float(precision))
-        return (self * divisor).rounded() / divisor
-    }
+    var asInt: Int? { Int(exactly: self) }
 }
 
 // ******************************* MARK: - As String
@@ -58,4 +47,20 @@ public extension Float {
     var asString: String {
         String(self)
     }
+}
+
+// ******************************* MARK: - Other
+
+public extension Float {
+    
+    /// Returns `true` if `self` is ceil. Returns `false` otherwise.
+    var isCeil: Bool {
+        floor(self) == self
+    }
+    
+    func roundTo(precision: Int) -> Float {
+        let divisor = pow(10.0, Float(precision))
+        return (self * divisor).rounded() / divisor
+    }
+    
 }
