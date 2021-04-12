@@ -62,6 +62,7 @@
 		0D4630D723C2429600108415 /* computeDiff.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = computeDiff.command; sourceTree = "<group>"; };
 		0D4630D823C2442800108415 /* UnitTests_Unique.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UnitTests_Unique.json; sourceTree = "<group>"; };
 		0D4630D923C2443B00108415 /* UITests_Unique.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UITests_Unique.json; sourceTree = "<group>"; };
+		0D59C2092624D8820073C456 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = ../CarthageSupport/Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D6869E62555D3CC00C1D884 /* CustomPageSizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageSizeVC.swift; sourceTree = "<group>"; };
 		0DE44C7D23C236A000E157DE /* Simulator_UnitTests_Environment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Simulator_UnitTests_Environment.json; sourceTree = "<group>"; };
 		0DE44C7E23C236C700E157DE /* Simulator_NotTests_Environment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Simulator_NotTests_Environment.json; sourceTree = "<group>"; };
@@ -261,6 +262,7 @@
 				B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */,
 				BE3B1BF1D9E4EDA304E77323 /* LICENSE */,
 				C1980566B39F5799ED4A250D /* README.md */,
+				0D59C2092624D8820073C456 /* carthageUpdate.command */,
 				B0E5B43621138735005D8319 /* checkBuild.command */,
 				B7A07FA220F82B576CEC7EF3 /* podCheck.command */,
 				E53E65A9720A8DB4BF881A05 /* podPush.command */,

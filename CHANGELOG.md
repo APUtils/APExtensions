@@ -2,6 +2,54 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [10.0.0](https://github.com/APUtils/APExtensions/releases/tag/10.0.0)
+Released on 12.04.2021.
+
+#### Added
+- Bool .asAnimatedString
+- Bool .asEnabledString
+- Bool .asFinishedString
+- Bool .asForceString
+- Bool .asPausedString
+- Bool .asString
+- Bundle.appID
+- CGFloat .isCeil
+- Date .asLogsDateAndTimeString
+- Date .asLogsTimeString
+- Double .asString(precition:)
+- Double .isCeil
+- FileManager .freeDiskSpace
+- Float .isCeil
+- Int .asUInt
+- Int32 .asInt
+- OptionalType .init(nilLiteral: ())
+- RandomAccessCollection .existingIndex(after:)
+- String .fileName
+- UIApplication.applicationStartTime
+- UIApplication.previousApplicationStartTime
+- UIApplication.State: CustomStringConvertible
+- UIDevice .distinctID
+- UIDevice.BatteryState: CustomStringConvertible
+- UIDevice.currentDeviceSystemVersion
+- UIDevice.isReal
+- UIDevice.isSimulator
+- UInt .asCGFloat
+- UInt .asDouble
+- UInt .asFloat
+- UInt .asHexString
+- UInt .asInt
+- UInt .asString
+- UInt .asTimeInterval
+- URL .directory
+
+#### Changed
+- String .append(string:separator:) -> .append(_:separator:)
+- UIApplication.applicationStartTime -> .startTime
+- UIApplication.previousApplicationStartTime -> .previousStartTime
+- UIViewController .wrappedIntoNavigation now inherits .modalPresentationStyle
+- Version struct is a separate entity now
+
+
 ## [9.0.0](https://github.com/APUtils/APExtensions/releases/tag/9.0.0)
 Released on 20.03.2021.
 

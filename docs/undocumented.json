@@ -16,14 +16,14 @@
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/Constants.swift",
-      "line": 69,
+      "line": 56,
       "symbol": "c",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/Constants.swift",
-      "line": 69,
+      "line": 56,
       "symbol": "c",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
@@ -225,17 +225,101 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/Globals.swift",
-      "line": 497,
-      "symbol": "Optional._value",
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 23,
+      "symbol": "Version.major",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/Globals.swift",
-      "line": 497,
-      "symbol": "Optional._value",
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 23,
+      "symbol": "Version.major",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 24,
+      "symbol": "Version.minor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 24,
+      "symbol": "Version.minor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 25,
+      "symbol": "Version.patch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 25,
+      "symbol": "Version.patch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 26,
+      "symbol": "Version.build",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 26,
+      "symbol": "Version.build",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 27,
+      "symbol": "Version.isValid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 27,
+      "symbol": "Version.isValid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 29,
+      "symbol": "Version.version",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 29,
+      "symbol": "Version.version",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 39,
+      "symbol": "Version.init(major:minor:patch:build:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Classes/Version.swift",
+      "line": 39,
+      "symbol": "Version.init(major:minor:patch:build:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -477,15 +561,15 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Extension.swift",
-      "line": 15,
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Utils.swift",
+      "line": 21,
       "symbol": "Bundle.json(forResource:withExtension:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Extension.swift",
-      "line": 15,
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Utils.swift",
+      "line": 21,
       "symbol": "Bundle.json(forResource:withExtension:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -730,28 +814,28 @@
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/FileManager+Utils.swift",
-      "line": 36,
+      "line": 41,
       "symbol": "FileManager.itemExists(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/FileManager+Utils.swift",
-      "line": 36,
+      "line": 41,
       "symbol": "FileManager.itemExists(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Float+Utils.swift",
-      "line": 27,
+      "line": 61,
       "symbol": "Float.roundTo(precision:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Float+Utils.swift",
-      "line": 27,
+      "line": 61,
       "symbol": "Float.roundTo(precision:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -997,14 +1081,14 @@
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/String+Utils.swift",
       "line": 52,
-      "symbol": "String.append(string:separator:)",
+      "symbol": "String.append(_:separator:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/String+Utils.swift",
       "line": 52,
-      "symbol": "String.append(string:separator:)",
+      "symbol": "String.append(_:separator:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -1146,6 +1230,20 @@
       "line": 254,
       "symbol": "StringProtocol.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_UIKit/UIApplication+Utils.swift",
+      "line": 100,
+      "symbol": "UIApplication.setupOnce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_UIKit/UIApplication+Utils.swift",
+      "line": 100,
+      "symbol": "UIApplication.setupOnce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
@@ -1528,14 +1626,28 @@
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Protocols/OptionalType.swift",
-      "line": 27,
+      "line": 17,
+      "symbol": "OptionalType.init(nilLiteral:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Protocols/OptionalType.swift",
+      "line": 17,
+      "symbol": "OptionalType.init(nilLiteral:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Protocols/OptionalType.swift",
+      "line": 28,
       "symbol": "Sequence.filterNil()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Protocols/OptionalType.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "Sequence.filterNil()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -8,13 +8,21 @@
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Section/Extensions" class="dashAnchor"></a>
     <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">APExtensions Docs</a> (74% documented)</p>
+        <p><a href="index.html">APExtensions 10.0.0 Docs</a> (74% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,10 +78,10 @@
                 <a href="Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/Bundle.html">Bundle</a>
+                <a href="Extensions/Bool.html">Bool</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/Bundle/Version.html">– Version</a>
+                <a href="Extensions/Bundle.html">Bundle</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/CGFloat.html">CGFloat</a>
@@ -121,6 +129,9 @@
                 <a href="Extensions/Int.html">Int</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/MFMailComposeViewController.html">MFMailComposeViewController</a>
               </li>
               <li class="nav-group-task">
@@ -157,6 +168,9 @@
                 <a href="Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/RandomAccessCollection.html">RandomAccessCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
               </li>
               <li class="nav-group-task">
@@ -181,6 +195,9 @@
                 <a href="Extensions/UIApplication.html">UIApplication</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/UIApplication/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -194,6 +211,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIDevice.html">UIDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIDevice/BatteryState.html">– BatteryState</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/UIFont.html">UIFont</a>
@@ -257,6 +280,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/UIWindow.html">UIWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UInt.html">UInt</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/URL.html">URL</a>
@@ -342,6 +368,9 @@
               <li class="nav-group-task">
                 <a href="Structs/GeneralError.html">GeneralError</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Structs/Version.html">Version</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -370,11 +399,11 @@
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Unwrap"></a>
-                <a name="//apple_ref/swift/Section/Unwrap" class="dashAnchor"></a>
+                <a name="/CustomStringConvertible"></a>
+                <a name="//apple_ref/swift/Section/CustomStringConvertible" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Unwrap"></a>
-                  <h3 class="section-name"><p>Unwrap</p>
+                  <a class="section-name-link" href="#/CustomStringConvertible"></a>
+                  <h3 class="section-name"><p>CustomStringConvertible</p>
 </h3>
                 </div>
               </div>
@@ -399,8 +428,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="n">_Optional</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Optional</span><span class="p">:</span> <span class="kt"><a href="Protocols/OptionalType.html">OptionalType</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span><span class="p">:</span> <span class="kt">Collection</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Optional</span> <span class="k">where</span> <span class="kt">Wrapped</span> <span class="o">==</span> <span class="kt">String</span></code></pre>
@@ -521,6 +549,33 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sb"></a>
+                    <a name="//apple_ref/swift/Extension/Bool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sb">Bool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/Bool.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -605,11 +660,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Scripting"></a>
-                <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
+                <a name="/Splitting"></a>
+                <a name="//apple_ref/swift/Section/Splitting" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Scripting"></a>
-                  <h3 class="section-name"><p>Scripting</p>
+                  <a class="section-name-link" href="#/Splitting"></a>
+                  <h3 class="section-name"><p>Splitting</p>
 </h3>
                 </div>
               </div>
@@ -634,8 +689,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Collection</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="kt">Index</span> <span class="o">==</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="kt">Index</span> <span class="o">==</span> <span class="kt">Int</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Collection</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt"><a href="Protocols/Occupiable.html">Occupiable</a></span></code></pre>
 
                         </div>
@@ -741,10 +795,10 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Scripting2"></a>
+                <a name="/Scripting"></a>
                 <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Scripting2"></a>
+                  <a class="section-name-link" href="#/Scripting"></a>
                   <h3 class="section-name"><p>Scripting</p>
 </h3>
                 </div>
@@ -966,6 +1020,46 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Int32"></a>
+                <a name="//apple_ref/swift/Section/Int32" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Int32"></a>
+                  <h3 class="section-name"><p>Int32</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s5Int32V"></a>
+                    <a name="//apple_ref/swift/Extension/Int32" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s5Int32V">Int32</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/Int32.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Int32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -1152,10 +1246,10 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Scripting3"></a>
+                <a name="/Scripting2"></a>
                 <a name="//apple_ref/swift/Section/Scripting" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Scripting3"></a>
+                  <a class="section-name-link" href="#/Scripting2"></a>
                   <h3 class="section-name"><p>Scripting</p>
 </h3>
                 </div>
@@ -1374,6 +1468,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:Su"></a>
+                    <a name="//apple_ref/swift/Extension/UInt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Su">UInt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UInt.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:10Foundation3URLV"></a>
                     <a name="//apple_ref/swift/Extension/URL" class="dashAnchor"></a>
                     <a class="token" href="#/s:10Foundation3URLV">URL</a>
@@ -1452,6 +1573,33 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sk"></a>
+                    <a name="//apple_ref/swift/Extension/RandomAccessCollection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sk">RandomAccessCollection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/RandomAccessCollection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">RandomAccessCollection</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -1486,6 +1634,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIApplication</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">UIApplication</span><span class="p">:</span> <span class="kt"><a href="Protocols/SetupOnce.html">SetupOnce</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1594,6 +1743,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIDevice"></a>
+                    <a name="//apple_ref/swift/Extension/UIDevice" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIDevice">UIDevice</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UIDevice.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIDevice</span></code></pre>
 
                         </div>
                       </div>
@@ -2317,8 +2493,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-03-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-04-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

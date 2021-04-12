@@ -478,29 +478,15 @@
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Extension.swift",
-      "line": 51,
+      "line": 15,
       "symbol": "Bundle.json(forResource:withExtension:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Bundle+Extension.swift",
-      "line": 51,
+      "line": 15,
       "symbol": "Bundle.json(forResource:withExtension:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Data+Utils.swift",
-      "line": 88,
-      "symbol": "Data.safeAppend(fileURL:file:function:line:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/antonplebanovich/Documents/Project Pods/APExtensions/APExtensions/Classes/Core/_Extensions/_Foundation/Data+Utils.swift",
-      "line": 88,
-      "symbol": "Data.safeAppend(fileURL:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

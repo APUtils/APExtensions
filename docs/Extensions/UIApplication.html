@@ -8,13 +8,21 @@
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Extension/UIApplication" class="dashAnchor"></a>
     <a title="UIApplication Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (74% documented)</p>
+        <p><a href="../index.html">APExtensions 10.0.0 Docs</a> (74% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,10 +78,10 @@
                 <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/Bundle.html">Bundle</a>
+                <a href="../Extensions/Bool.html">Bool</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/Bundle/Version.html">– Version</a>
+                <a href="../Extensions/Bundle.html">Bundle</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -121,6 +129,9 @@
                 <a href="../Extensions/Int.html">Int</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/MFMailComposeViewController.html">MFMailComposeViewController</a>
               </li>
               <li class="nav-group-task">
@@ -157,6 +168,9 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RandomAccessCollection.html">RandomAccessCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
               </li>
               <li class="nav-group-task">
@@ -181,6 +195,9 @@
                 <a href="../Extensions/UIApplication.html">UIApplication</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/UIApplication/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -194,6 +211,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice.html">UIDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice/BatteryState.html">– BatteryState</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIFont.html">UIFont</a>
@@ -257,6 +280,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UInt.html">UInt</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/URL.html">URL</a>
@@ -342,6 +368,9 @@
               <li class="nav-group-task">
                 <a href="../Structs/GeneralError.html">GeneralError</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -366,7 +395,9 @@
             <h1>UIApplication</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIApplication</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">UIApplication</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SetupOnce.html">SetupOnce</a></span></code></pre>
 
                 </div>
               </div>
@@ -380,7 +411,7 @@
                     <code>
                     <a name="/s:So13UIApplicationC12APExtensionsE8makeCall5phoneySS_tFZ"></a>
                     <a name="//apple_ref/swift/Method/makeCall(phone:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So13UIApplicationC12APExtensionsE8makeCall5phoneySS_tFZ">makeCall(phone:)</a>
+                    <a class="token" href="#/s:So13UIApplicationC12APExtensionsE8makeCall5phoneySS_tFZ">makeCall(phone:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -473,11 +504,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Other"></a>
-                <a name="//apple_ref/swift/Section/Other" class="dashAnchor"></a>
+                <a name="/Tests"></a>
+                <a name="//apple_ref/swift/Section/Tests" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Other"></a>
-                  <h3 class="section-name"><p>Other</p>
+                  <a class="section-name-link" href="#/Tests"></a>
+                  <h3 class="section-name"><p>Tests</p>
 </h3>
                 </div>
               </div>
@@ -511,11 +542,145 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIApplication.State%20-%20CustomStringConvertible"></a>
+                <a name="//apple_ref/swift/Section/UIApplication.State - CustomStringConvertible" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/UIApplication.State%20-%20CustomStringConvertible"></a>
+                  <h3 class="section-name"><p>UIApplication.State - CustomStringConvertible</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@UIApplicationState"></a>
+                    <a name="//apple_ref/swift/Extension/State" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@UIApplicationState">State</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../Extensions/UIApplication/State.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="kt">State</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Start%20Time"></a>
+                <a name="//apple_ref/swift/Section/Start Time" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Start%20Time"></a>
+                  <h3 class="section-name"><p>Start Time</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13UIApplicationC12APExtensionsE17previousStartTime10Foundation4DateVvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/previousStartTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13UIApplicationC12APExtensionsE17previousStartTime10Foundation4DateVvpZ">previousStartTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Previous application start time</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">previousStartTime</span><span class="p">:</span> <span class="kt">Date</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13UIApplicationC12APExtensionsE9startTime10Foundation4DateVvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/startTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13UIApplicationC12APExtensionsE9startTime10Foundation4DateVvpZ">startTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Application start time</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">startTime</span><span class="p">:</span> <span class="kt">Date</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@APExtensions@@objc(cs)UIApplication(cpy)setupOnce"></a>
+                    <a name="//apple_ref/swift/Variable/setupOnce" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@APExtensions@@objc(cs)UIApplication(cpy)setupOnce">setupOnce</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">setupOnce</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-03-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-04-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

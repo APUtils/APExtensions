@@ -8,13 +8,21 @@
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Extension/StringProtocol" class="dashAnchor"></a>
     <a title="StringProtocol Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">APExtensions Docs</a> (74% documented)</p>
+        <p><a href="../index.html">APExtensions 10.0.0 Docs</a> (74% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -70,10 +78,10 @@
                 <a href="../Extensions.html#/s:Sa">Array</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/Bundle.html">Bundle</a>
+                <a href="../Extensions/Bool.html">Bool</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/Bundle/Version.html">– Version</a>
+                <a href="../Extensions/Bundle.html">Bundle</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/CGFloat.html">CGFloat</a>
@@ -121,6 +129,9 @@
                 <a href="../Extensions/Int.html">Int</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/MFMailComposeViewController.html">MFMailComposeViewController</a>
               </li>
               <li class="nav-group-task">
@@ -157,6 +168,9 @@
                 <a href="../Extensions/Optional.html">Optional</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/RandomAccessCollection.html">RandomAccessCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/RangeReplaceableCollection.html">RangeReplaceableCollection</a>
               </li>
               <li class="nav-group-task">
@@ -181,6 +195,9 @@
                 <a href="../Extensions/UIApplication.html">UIApplication</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/UIApplication/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -194,6 +211,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice.html">UIDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice/BatteryState.html">– BatteryState</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIFont.html">UIFont</a>
@@ -257,6 +280,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIWindow.html">UIWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UInt.html">UInt</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/URL.html">URL</a>
@@ -342,6 +368,9 @@
               <li class="nav-group-task">
                 <a href="../Structs/GeneralError.html">GeneralError</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -366,6 +395,7 @@
             <h1>StringProtocol</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">StringProtocol</span></code></pre>
 
                 </div>
@@ -716,7 +746,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsE13splitByLengthySaySSGSiF"></a>
                     <a name="//apple_ref/swift/Method/splitByLength(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsE13splitByLengthySaySSGSiF">splitByLength(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsE13splitByLengthySaySSGSiF">splitByLength(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -756,7 +786,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsE12oneLineWidth4font12CoreGraphics7CGFloatVSo6UIFontC_tF"></a>
                     <a name="//apple_ref/swift/Method/oneLineWidth(font:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsE12oneLineWidth4font12CoreGraphics7CGFloatVSo6UIFontC_tF">oneLineWidth(font:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsE12oneLineWidth4font12CoreGraphics7CGFloatVSo6UIFontC_tF">oneLineWidth(font:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -783,7 +813,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsE6height4font5width12CoreGraphics7CGFloatVSo6UIFontC_AGtF"></a>
                     <a name="//apple_ref/swift/Method/height(font:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsE6height4font5width12CoreGraphics7CGFloatVSo6UIFontC_AGtF">height(font:width:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsE6height4font5width12CoreGraphics7CGFloatVSo6UIFontC_AGtF">height(font:<wbr>width:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -810,7 +840,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsE6height10attributes5width12CoreGraphics7CGFloatVSDySo21NSAttributedStringKeyaypG_AGtF"></a>
                     <a name="//apple_ref/swift/Method/height(attributes:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsE6height10attributes5width12CoreGraphics7CGFloatVSDySo21NSAttributedStringKeyaypG_AGtF">height(attributes:width:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsE6height10attributes5width12CoreGraphics7CGFloatVSDySo21NSAttributedStringKeyaypG_AGtF">height(attributes:<wbr>width:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -890,7 +920,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEySJSicip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEySJSicip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEySJSicip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -917,7 +947,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzSo8_NSRangeVcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSo8_NSRangeVcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSo8_NSRangeVcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -944,7 +974,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzSNySiGcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSNySiGcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSNySiGcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -971,7 +1001,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzSnySiGcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSnySiGcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzSnySiGcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -998,7 +1028,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeUpToVySiGcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeUpToVySiGcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeUpToVySiGcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1025,7 +1055,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzs19PartialRangeThroughVySiGcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs19PartialRangeThroughVySiGcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs19PartialRangeThroughVySiGcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1052,7 +1082,7 @@
                     <code>
                     <a name="/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeFromVySiGcip"></a>
                     <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeFromVySiGcip">subscript(_:)</a>
+                    <a class="token" href="#/s:Sy12APExtensionsEy11SubSequenceQzs16PartialRangeFromVySiGcip">subscript(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1079,8 +1109,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-03-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/APUtils/APExtensions" target="_blank" rel="external">Anton Plebanovich</a>. All rights reserved. (Last updated: 2021-04-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
