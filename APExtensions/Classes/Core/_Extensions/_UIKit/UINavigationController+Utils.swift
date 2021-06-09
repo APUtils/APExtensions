@@ -30,26 +30,26 @@ public extension UINavigationController {
 
 public extension UINavigationController {
     /// Pushes view controller with completion
-    func pushViewController(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+    func pushViewController(_ viewController: UIViewController, animated: Bool = true, completion: (() -> Void)?) {
         pushViewController(viewController, animated: animated)
         handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops view controller with completion
-    func popViewController(animated: Bool, completion: (() -> Void)?) {
+    func popViewController(animated: Bool = true, completion: (() -> Void)?) {
         popViewController(animated: animated)
         handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops to view controller with completion
-    func popToViewController(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+    func popToViewController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)?) {
         popToViewController(viewController, animated: animated)
         handleCompletion(animated: animated, completion: completion)
     }
     
     /// Pops view controller if it present in navigation stack and all overlaying view controllers.
     /// Do nothing if view controller is not in navigation stack.
-    func pop(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+    func pop(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)?) {
         if viewControllers.last == viewController {
             // Last controller in stack. Just dismiss it.
             popViewController(animated: animated, completion: completion)
@@ -66,19 +66,19 @@ public extension UINavigationController {
     }
     
     /// Pops to root with completion
-    func popToRootViewController(animated: Bool, completion: (() -> Void)?) {
+    func popToRootViewController(animated: Bool = true, completion: (() -> Void)?) {
         popToRootViewController(animated: animated)
         handleCompletion(animated: animated, completion: completion)
     }
     
     /// Replaces view controllers with completion
-    func setViewControllers(_ vcs: [UIViewController], animated: Bool, completion: (() -> Void)?) {
+    func setViewControllers(_ vcs: [UIViewController], animated: Bool = true, completion: (() -> Void)?) {
         setViewControllers(vcs, animated: animated)
         handleCompletion(animated: animated, completion: completion)
     }
     
     /// Replaces last view controller with completion
-    func replaceLast(_ vc: UIViewController, animated: Bool, completion: (() -> Void)?) {
+    func replaceLast(_ vc: UIViewController, animated: Bool = true, completion: (() -> Void)?) {
         var vcs = viewControllers
         vcs.removeLast()
         vcs.append(vc)
@@ -86,7 +86,7 @@ public extension UINavigationController {
         setViewControllers(vcs, animated: animated, completion: completion)
     }
     
-    private func handleCompletion(animated: Bool, completion: (() -> Void)?) {
+    private func handleCompletion(animated: Bool = true, completion: (() -> Void)?) {
         if animated, let coordinator = transitionCoordinator {
             let success = coordinator.animate(alongsideTransition: nil, completion: { _ in completion?() })
             if !success {

@@ -49,7 +49,7 @@ open class AlertController: UIAlertController {
     
     // ******************************* MARK: - Public Methods
     
-    public func present(animated: Bool, completion: (() -> Void)? = nil) {
+    public func present(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let popover = popoverPresentationController {
             // Prevent crash by targeting bottom of the screen
             if popover.sourceView == nil && popover.sourceRect == .zero {

@@ -10,7 +10,6 @@ import Foundation
 
 // ******************************* MARK: - Fit Screen
 
-private let roundConstantSize = false
 private var defaultConstantAssociationKey = 0
 
 public extension NSLayoutConstraint {
@@ -38,9 +37,7 @@ public extension NSLayoutConstraint {
                 let currentScreenSize = UIScreen.main.bounds.width
                 let resizeCoef = currentScreenSize / baseScreenSize
                 var newConstant = constant * resizeCoef
-                if roundConstantSize {
-                    newConstant = newConstant.rounded(.toNearestOrEven)
-                }
+                newConstant = newConstant.rounded(.toNearestOrEven)
                 
                 defaultConstant = constant
                 constant = newConstant

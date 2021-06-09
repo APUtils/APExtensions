@@ -129,7 +129,7 @@ extension UIViewController {
     
     /// Removes view controller using pop if it was pushed or using dismiss if it was presented.
     /// Removes also overlaying controllers if needed.
-    public func remove(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func remove(animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
         if let navigationController = navigationController {
             // Has navigation controller
             if navigationController.presentedViewController != nil {
@@ -196,7 +196,7 @@ extension UIViewController {
     }
     
     /// Removes all presented view controllers and navigates to the root.
-    public func removeToRoot(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    public func removeToRoot(animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
         if let rootPresentingViewController = rootPresentingViewController {
             
             let _navigationVc = rootPresentingViewController.navigationController ?? rootPresentingViewController as? UINavigationController

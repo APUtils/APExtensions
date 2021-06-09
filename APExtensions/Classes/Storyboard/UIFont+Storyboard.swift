@@ -8,10 +8,6 @@
 
 import UIKit
 
-
-private let roundFontSize = false
-
-
 public extension UIFont {
     /// Returns screen scaled font. Assuming source font is for 2208x1242 screen.
     var screenFitFont: UIFont {
@@ -19,9 +15,7 @@ public extension UIFont {
         let currentScreenSize = UIScreen.main.bounds.width
         let fontResizeCoef = currentScreenSize / baseScreenSize
         var newFontSize = pointSize * fontResizeCoef
-        if roundFontSize {
-            newFontSize = newFontSize.rounded(.toNearestOrEven)
-        }
+        newFontSize = newFontSize.rounded(.toNearestOrEven)
         
         return UIFont(descriptor: fontDescriptor, size: newFontSize)
     }
