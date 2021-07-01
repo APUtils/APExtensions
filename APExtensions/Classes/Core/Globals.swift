@@ -378,7 +378,11 @@ open class Globals {
         
         guard let url = urlComponents.url else { return }
         
-        sharedApplication.openURL(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     // ******************************* MARK: - Network Activity
@@ -482,7 +486,12 @@ open class Globals {
     /// Opens iOS Settings page for current application
     open func openAppSettings() {
         guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-        UIApplication.shared.openURL(settingsURL)
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(settingsURL)
+        }
     }
 }
 

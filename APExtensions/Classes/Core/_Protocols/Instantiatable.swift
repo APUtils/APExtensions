@@ -30,7 +30,7 @@ public extension InstantiatableFromXib where Self: NSObject {
 // ******************************* MARK: - InstantiatableFromStoryboard
 
 /// Helps to instantiate object from storyboard file.
-public protocol InstantiatableFromStoryboard: class {
+public protocol InstantiatableFromStoryboard: AnyObject {
     static var storyboardName: String { get }
     static var storyboardID: String { get }
     static func instantiateFromStoryboard() -> Self

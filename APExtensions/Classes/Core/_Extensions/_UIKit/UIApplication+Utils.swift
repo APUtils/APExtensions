@@ -16,7 +16,11 @@ public extension UIApplication {
         let urlString = "telprompt://\(phone)"
         guard let url = URL(string: urlString) else { return }
         
-        shared.openURL(url)
+        if #available(iOS 10.0, *) {
+            shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            shared.openURL(url)
+        }
     }
 }
 
