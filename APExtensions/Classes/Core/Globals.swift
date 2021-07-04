@@ -247,23 +247,27 @@ open class Globals {
     /// Shows enter text alert with title and message
     /// - parameter title: Alert title
     /// - parameter message: Alert message
+    /// - parameter confirmTitle: Confirm button title. Default is `Confirm`.
     /// - parameter placeholder: Text field placeholder
+    /// - parameter cancelTitle: Cancel button title. Default is `Cancel`.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes user entered text as parameter
     open func showEnterTextAlert(title: String? = nil,
                                  message: String? = nil,
                                  text: String? = nil,
+                                 confirmTitle: String = "Confirm",
                                  placeholder: String? = nil,
+                                 cancelTitle: String = "Cancel",
                                  onCancel: (() -> Void)? = nil,
                                  completion: @escaping (_ text: String) -> ()) {
         
         performInMain {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
-            let confirmAction = UIAlertAction(title: "Confirm", style: .cancel) { action in
+            let confirmAction = UIAlertAction(title: confirmTitle, style: .cancel) { action in
                 let text = alertVC.textFields?.first?.text ?? ""
                 completion(text)
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in onCancel?() })
+            let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: { _ in onCancel?() })
             
             alertVC.addTextField { (textField) in
                 textField.text = text
@@ -282,6 +286,7 @@ open class Globals {
     /// - parameter buttons: Button titles
     /// - parameter buttonsStyles: Button styles
     /// - parameter enabledButtons: Enabled buttons
+    /// - parameter cancelTitle: Cancel button title. Default is `Cancel`.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes button title and button index as its parameters
     open func showPickerAlert(title: String? = nil,
@@ -289,6 +294,7 @@ open class Globals {
                               buttons: [String],
                               buttonsStyles: [UIAlertAction.Style]? = nil,
                               enabledButtons: [Bool]? = nil,
+                              cancelTitle: String = "Cancel",
                               onCancel: (() -> Void)? = nil,
                               completion: @escaping ((String, Int) -> ())) {
         
@@ -305,7 +311,7 @@ open class Globals {
             
             let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
             
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in onCancel?() })
+            let cancel = UIAlertAction(title: cancelTitle, style: .cancel, handler: { _ in onCancel?() })
             vc.addAction(cancel)
             
             for (index, button) in buttons.enumerated() {
