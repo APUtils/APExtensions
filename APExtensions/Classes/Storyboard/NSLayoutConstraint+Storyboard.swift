@@ -34,7 +34,7 @@ public extension NSLayoutConstraint {
                 guard defaultConstant == nil else { return }
                 
                 var newConstant = constant * c.screenResizeCoef
-                newConstant = newConstant.rounded(.toNearestOrEven)
+                newConstant = newConstant.rounded()
                 
                 defaultConstant = constant
                 constant = newConstant

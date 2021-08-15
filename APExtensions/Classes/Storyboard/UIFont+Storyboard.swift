@@ -12,7 +12,7 @@ public extension UIFont {
     /// Returns screen scaled font. Assuming source font is for 2208x1242 screen.
     var screenFitFont: UIFont {
         var newFontSize = pointSize * c.screenResizeCoef
-        newFontSize = newFontSize.rounded(.toNearestOrEven)
+        newFontSize = newFontSize.rounded()
         
         return UIFont(descriptor: fontDescriptor, size: newFontSize)
     }
