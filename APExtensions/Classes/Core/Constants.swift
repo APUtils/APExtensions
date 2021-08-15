@@ -22,6 +22,12 @@ public enum Constants {
     /// Screen scale factor
     public static let screenScale: CGFloat = UIScreen.main.scale
     
+    public static let screenResizeCoef: CGFloat = {
+        let baseScreenSize: CGFloat = 414 // iPhone 6+
+        let currentScreenSize = UIScreen.main.bounds.width
+        return currentScreenSize / baseScreenSize
+    }()
+    
     /// Screen pixel size
     public static let pixelSize: CGFloat = 1 / UIScreen.main.scale
     

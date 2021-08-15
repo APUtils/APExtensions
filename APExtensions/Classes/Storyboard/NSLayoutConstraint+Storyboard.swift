@@ -33,10 +33,7 @@ public extension NSLayoutConstraint {
                 // Scale if isn't yet
                 guard defaultConstant == nil else { return }
                 
-                let baseScreenSize: CGFloat = 414 // iPhone 6+
-                let currentScreenSize = UIScreen.main.bounds.width
-                let resizeCoef = currentScreenSize / baseScreenSize
-                var newConstant = constant * resizeCoef
+                var newConstant = constant * c.screenResizeCoef
                 newConstant = newConstant.rounded(.toNearestOrEven)
                 
                 defaultConstant = constant
