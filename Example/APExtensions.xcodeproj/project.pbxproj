@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0466B505B4A26F89B3DD460A /* Pods_APExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABAC99683403EA4DAC7C897 /* Pods_APExtensions_Example.framework */; };
+		0D11DF6E26D4405600FA8C7C /* Occupiable_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D11DF6D26D4405600FA8C7C /* Occupiable_Spec.swift */; };
 		0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */; };
 		0D15797923C22FF7007402BD /* Constants_isRunningUnitTests_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15797823C22FF5007402BD /* Constants_isRunningUnitTests_Spec.swift */; };
 		0D15798123C2308A007402BD /* APExtensions_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15798023C2308A007402BD /* APExtensions_UITests.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		02237C3924CDA9B9ADD6620C /* Pods-APExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example.debug.xcconfig"; path = "Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		06C843E967CF077415EBF867 /* Pods-APExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D11DF6D26D4405600FA8C7C /* Occupiable_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occupiable_Spec.swift; sourceTree = "<group>"; };
 		0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_asURL_Spec.swift; sourceTree = "<group>"; };
 		0D15797823C22FF5007402BD /* Constants_isRunningUnitTests_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants_isRunningUnitTests_Spec.swift; sourceTree = "<group>"; };
 		0D15797E23C2308A007402BD /* APExtensions_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APExtensions_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				0D4630D623C2426900108415 /* IsTests */,
 				0D1410D82205FF3A002BB8C5 /* String_asURL_Spec.swift */,
 				0D20D61B2607449F00767851 /* Bundle_Spec.swift */,
+				0D11DF6D26D4405600FA8C7C /* Occupiable_Spec.swift */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D20D61C2607449F00767851 /* Bundle_Spec.swift in Sources */,
+				0D11DF6E26D4405600FA8C7C /* Occupiable_Spec.swift in Sources */,
 				0D1410D92205FF3A002BB8C5 /* String_asURL_Spec.swift in Sources */,
 				0D15797923C22FF7007402BD /* Constants_isRunningUnitTests_Spec.swift in Sources */,
 			);

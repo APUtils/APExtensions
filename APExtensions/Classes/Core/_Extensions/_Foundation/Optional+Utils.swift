@@ -10,18 +10,6 @@ import Foundation
 
 // ******************************* MARK: - isNilOrEmpty
 
-// Collection (Array and Dictionary)
-public extension Optional where Wrapped: Collection {
-    /// Check if object is nil or empty
-    var isNilOrEmpty: Bool {
-        if let value = self, !value.isEmpty {
-            return false
-        } else {
-            return true
-        }
-    }
-}
-
 // Strings
 public extension Optional where Wrapped == String {
     /// Check if object is nil or empty

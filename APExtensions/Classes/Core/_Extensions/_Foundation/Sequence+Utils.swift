@@ -62,6 +62,7 @@ public extension Sequence where Element: Equatable {
     }
     
     /// Helper method to filter out duplicates
+    // TODO: Rename to `unique` or `distinct`.
     @inlinable func filterDuplicates() -> [Element] {
         return filterDuplicates { $0 == $1 }
     }
@@ -75,6 +76,7 @@ public extension Sequence {
     }
     
     /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
+    // TODO: Rename to `unique` or `distinct`.
     @inlinable func filterDuplicates(_ includeElement: (_ lhs: Element, _ rhs: Element) throws -> Bool) rethrows -> [Element] {
         var results = [Element]()
         

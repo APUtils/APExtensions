@@ -8,8 +8,8 @@ PODS:
   - APExtensions/Storyboard (10.0.0)
   - APExtensions/ViewConfiguration (10.0.0)
   - LogsManager/RoutableLogger (9.1.5)
-  - Nimble (9.0.0)
-  - Quick (3.1.2)
+  - Nimble (9.2.0)
+  - Quick (4.0.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -29,9 +29,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   APExtensions: b46cab78fe5d291e1157838fd78962a886e627df
   LogsManager: e821cea87e608e96cf39a68009d830579098a2cb
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
-  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
 
 PODFILE CHECKSUM: 25177b247dc120dabd5c7492986724ed0dc00ce2
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2
