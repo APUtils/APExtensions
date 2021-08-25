@@ -104,6 +104,12 @@ extension Dictionary: InitializeableOccupiable {}
 extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}
 
+extension NSOrderedSet: InitializeableOccupiable {
+    public var isEmpty: Bool {
+        count == 0
+    }
+}
+
 extension NSMutableString: InitializeableOccupiable {
     public var isEmpty: Bool {
         return length == 0
