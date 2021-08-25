@@ -108,6 +108,11 @@ extension NSOrderedSet: InitializeableOccupiable {
     public var isEmpty: Bool {
         count == 0
     }
+    
+    /// Property equal to `isNotEmpty` property.
+    /// Added just because in the case of Collection types, 'hasElements' is more descriptive name
+    /// than 'isNotEmpty'.
+    public var hasElements: Bool { return isNotEmpty }
 }
 
 extension NSMutableString: InitializeableOccupiable {
