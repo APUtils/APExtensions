@@ -16,7 +16,7 @@ public extension Float {
     }
     
     /// Returns `self` as `Int`
-    var asInt: Int? { Int(exactly: self) }
+    var asInt: Int? { Int(exactly: rounded()) }
 }
 
 // ******************************* MARK: - As String

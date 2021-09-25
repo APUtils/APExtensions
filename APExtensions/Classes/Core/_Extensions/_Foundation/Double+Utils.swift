@@ -53,7 +53,7 @@ public extension Double {
     }
     
     /// Returns `self` as `Int` if possible
-    var asInt: Int? { Int(exactly: self) }
+    var asInt: Int? { Int(exactly: rounded()) }
 }
 
 // ******************************* MARK: - Other

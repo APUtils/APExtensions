@@ -43,7 +43,7 @@ public extension CGFloat {
 public extension CGFloat {
     
     /// Returns `self` as `Int` if possible
-    var asInt: Int? { Int(exactly: self) }
+    var asInt: Int? { Int(exactly: rounded()) }
     
     /// Returns `self` as `Double`
     var asDouble: Double {
