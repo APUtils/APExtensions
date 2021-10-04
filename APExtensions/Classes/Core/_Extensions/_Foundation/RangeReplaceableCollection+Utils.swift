@@ -70,6 +70,23 @@ public extension RangeReplaceableCollection where Element: Equatable {
         return resultArray
     }
     
+    /// Helper method to append element if it's missing.
+    @inlinable mutating func appendIfMissing(_ element: Element) {
+        if !array.contains(element) {
+            append(element)
+        }
+    }
+    
+    /// Returns array appending element if it's missing.
+    @inlinable func appendingMissing(_ element: Element) -> Self {
+        var resultArray = self
+        if !resultArray.contains(element) {
+            append(element)
+        }
+        
+        return resultArray
+    }
+    
     /// Helper method to append missing elements from passed `array`.
     @inlinable mutating func appendMissing(contentsOf array: [Element]) {
         let missing = array.filter { !contains($0) }

@@ -25,22 +25,22 @@ public extension Float {
     
     /// Returns string representation rounded to tenth
     var asCeilString: String {
-        String(format: "%.0f", self)
+        NumberFormatter.ceil.string(from: self as NSNumber) ?? ""
     }
     
     /// Returns string representation rounded to tenth
     var asTenthString: String {
-        String(format: "%.1f", self)
+        NumberFormatter.tenth.string(from: self as NSNumber) ?? ""
     }
     
     /// Returns string representation rounded to hundredth
     var asHundredthString: String {
-        String(format: "%.2f", self)
+        NumberFormatter.hundredth.string(from: self as NSNumber) ?? ""
     }
     
     /// Returns string representation rounded to thousands
     var asThousandsString: String {
-        String(format: "%.3f", self)
+        NumberFormatter.thousands.string(from: self as NSNumber) ?? ""
     }
     
     /// Returns `self` as `String`

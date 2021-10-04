@@ -42,7 +42,16 @@ open class AlertController: UIAlertController {
         super.viewDidDisappear(animated)
         
         if AlertController.presentationStyle == .window {
+            view.removeFromSuperview()
+            
+            alertWindow?.rootViewController = nil
             alertWindow?.isHidden = true
+            
+            // https://stackoverflow.com/a/59988501/4124265
+            if #available(iOS 13.0, *) {
+                alertWindow?.windowScene = nil
+            }
+            
             alertWindow = nil
         }
     }
