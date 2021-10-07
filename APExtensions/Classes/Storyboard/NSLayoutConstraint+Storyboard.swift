@@ -33,11 +33,13 @@ public extension NSLayoutConstraint {
                 // Scale if isn't yet
                 guard defaultConstant == nil else { return }
                 
-                var newConstant = constant * c.screenResizeCoef
-                newConstant = newConstant.rounded()
-                
                 defaultConstant = constant
-                constant = newConstant
+                if constant != 0 {
+                    var newConstant = constant * c.screenResizeCoef
+                    newConstant = newConstant.rounded()
+                    constant = newConstant
+                }
+                
             } else {
                 // Restore
                 if let defaultConstant = defaultConstant {
