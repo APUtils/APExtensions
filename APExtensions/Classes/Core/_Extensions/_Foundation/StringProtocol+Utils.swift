@@ -270,3 +270,17 @@ private extension StringProtocol {
         index(startIndex, offsetBy: offset)
     }
 }
+// ******************************* MARK: - Appending
+
+public extension StringProtocol {
+    
+    func appending<T: StringProtocol, U: StringProtocol>(_ string: T?, separator: U) -> String {
+        guard let string = string, !string.isEmpty else { return asString }
+        
+        if isEmpty {
+            return appending(string)
+        } else {
+            return appending("\(separator)\(string)")
+        }
+    }
+}
