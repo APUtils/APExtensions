@@ -446,6 +446,132 @@ open class Globals {
         }
     }
     
+    // ******************************* MARK: - Erase
+    
+    open func eraseAllData() {
+        eraseUserDefaults()
+        eraseKeychain()
+        eraseFiles()
+    }
+    
+    open func eraseUserDefaults() {
+        let appDomain = Bundle.main.bundleIdentifier
+        UserDefaults.standard.removePersistentDomain(forName: appDomain ?? "")
+    }
+    
+    open func eraseKeychain() {
+        let secItemClasses = [
+            kSecClassGenericPassword,
+            kSecClassInternetPassword,
+            kSecClassCertificate,
+            kSecClassKey,
+            kSecClassIdentity
+        ]
+        
+        secItemClasses.forEach { secItemClass in
+            let spec = [kSecClass: secItemClass]
+            SecItemDelete(spec as CFDictionary)
+        }
+    }
+    
+    open func eraseFiles() {
+        var directoriesToErase: [URL] = []
+        
+        if let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            directoriesToErase.append(caches)
+        }
+        
+        if let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            directoriesToErase.append(documents)
+        }
+        
+        directoriesToErase.append(URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true))
+        
+        if let application = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first {
+            directoriesToErase.append(application)
+        }
+        
+        if let library = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first {
+            
+            // Cookies
+            let cookies = library.appendingPathComponent("Cookies/")
+            directoriesToErase.append(cookies)
+            
+            // User defaults
+            let userDefaults = library.appendingPathComponent("Preferences/")
+            directoriesToErase.append(userDefaults)
+            
+            // Private Documents
+            let privateDocuments = library.appendingPathComponent("PrivateDocuments/")
+            directoriesToErase.append(privateDocuments)
+            
+            do {
+                let urls = try FileManager.default.contentsOfDirectory(
+                    at: library,
+                    includingPropertiesForKeys: nil,
+                    options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants])
+                
+                for url in urls {
+                    var isDirectory: Bool
+                    do {
+                        isDirectory = try url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory == true
+                    } catch {
+                        RoutableLogger.logError("Unable to check item type", error: error, data: ["url": url])
+                        continue
+                    }
+                    
+                    if isDirectory {
+                        continue
+                    }
+                    
+                    do {
+                        try FileManager.default.removeItem(at: url)
+                    } catch {
+                        RoutableLogger.logError("Unable to check item type", error: error, data: ["url": url])
+                    }
+                }
+                
+            } catch {
+                RoutableLogger.logError("Unable to get contents of library directory to erase files", error: error, data: ["library": library])
+            }
+            
+        }
+        
+        for directory in directoriesToErase {
+            if !FileManager.default.fileExists(atPath: directory.path) {
+                continue
+            }
+            
+            let urls: [URL]
+            do {
+                urls = try FileManager.default.contentsOfDirectory(
+                    at: directory,
+                    includingPropertiesForKeys: nil,
+                    options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants])
+            } catch {
+                RoutableLogger.logError("Unable to get contents of directory to erase files", error: error, data: ["directory": directory])
+                continue
+            }
+            
+            for url in urls {
+                if url.lastPathComponent == "Snapshots" {
+                    continue
+                }
+                
+                // Prevent logs deletion so we can check them later
+                if url.lastPathComponent == "LogsManager" {
+                    continue
+                }
+                
+                do {
+                    try FileManager.default.removeItem(at: url)
+                } catch {
+                    RoutableLogger.logError("Unable to remove item", error: error, data: ["url": url, "directory": directory])
+                }
+            }
+        }
+    }
+    
     // ******************************* MARK: - Other Global Functions
     
     /// Returns all classes that conforms to specified protocol. Protocol must be declared with @objc annotation.
