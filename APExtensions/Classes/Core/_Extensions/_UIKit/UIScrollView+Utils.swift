@@ -169,6 +169,13 @@ public extension UIScrollView {
         }
     }
     
+    /// Adjust content offset so view is at the center if possible.
+    func scrollViewToCenter(_ view: UIView) {
+        let centerY = view.convert(view.bounds, to: self).center.y
+        contentOffset.y = centerY - bounds.height / 2
+        clampContentOffset()
+    }
+    
     /// Scroll to a specific view so that it's top is at the top our scrollview
     func scrollToView(view: UIView, animated: Bool) {
         // Get the Y position of your child view
@@ -223,5 +230,35 @@ public extension UIScrollView {
     /// Returns whether scrollable frame is more than visible frame
     var isScrollable: Bool {
         return scrollableFrame.height .> visibleFrame.height
+    }
+}
+
+// ******************************* MARK: - Paging
+
+public extension UIScrollView {
+    
+    /// Current page size
+    var pageSize: CGFloat {
+        return bounds.width
+    }
+    
+    /// Current page value
+    var currentPage: Int {
+        let currentPageFloat = (contentOffset.x + contentInset.left) / pageSize
+        let currentPage = Int(currentPageFloat.rounded())
+        return currentPage
+    }
+    
+    /// Current number of pages
+    var numberOfPages: Int {
+        let numberOfPagesFloat = (contentSize.width + contentInset.right + contentInset.left) / pageSize
+        let numberOfPages = Int(numberOfPagesFloat.rounded())
+        return numberOfPages
+    }
+    
+    /// Returns `true` if scroll position is on the last page.
+    /// Returns `false` otherwise
+    var isLastPage: Bool {
+        currentPage >= numberOfPages - 1
     }
 }

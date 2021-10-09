@@ -47,6 +47,11 @@ public extension Double {
 
 public extension Double {
     
+    /// Returns `self` as `CGFloat`
+    var asCGFloat: CGFloat {
+        CGFloat(self)
+    }
+    
     /// Returns `self` as `Date` using `timeIntervalSince1970` representation.
     var asDate: Date {
         return Date(timeIntervalSince1970: self)
@@ -59,6 +64,11 @@ public extension Double {
 // ******************************* MARK: - Other
 
 public extension Double {
+    
+    /// Return absolute value of self
+    var abs: Double {
+        Swift.abs(self)
+    }
     
     /// Returns `true` if `self` is ceil. Returns `false` otherwise.
     var isCeil: Bool {

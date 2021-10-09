@@ -10,7 +10,7 @@ import Foundation
 
 // ******************************* MARK: - Scripting
 
-extension Collection {
+public extension Collection {
     
     /// Helper method to enumerate all objects in array together with index
     @inlinable func enumerateForEach(_ body: (_ index: Index, _ element: Element) throws -> ()) rethrows {
@@ -19,7 +19,7 @@ extension Collection {
         }
     }
     
-    /// Helper method to map all objects in array together with index
+    /// Helper method to map all objects in a connection together with index
     @inlinable func enumerateMap<T>(_ body: (_ index: Index, _ element: Element) throws -> T) rethrows -> [T] {
         var map: [T] = []
         for index in indices {
@@ -27,6 +27,23 @@ extension Collection {
         }
         
         return map
+    }
+    
+    /// Helper method to map all objects in a collection together with previous element.
+    @inlinable
+    func mapWithPrevious<T>(_ transform: (Self.Element, Self.Element) throws -> T) rethrows -> [T] {
+        var array: [T] = []
+        
+        var previous: Self.Element?
+        try forEach { element in
+            defer { previous = element }
+            guard let previous = previous else { return }
+            
+            let newElement = try transform(previous, element)
+            array.append(newElement)
+        }
+        
+        return array
     }
     
     /// Groups array elements into dictionary using provided transform to determine element's key.
@@ -41,6 +58,11 @@ extension Collection {
         }
         
         return dictionary
+    }
+    
+    /// Returns element from the collection or `nil` if index is out of bounds.
+    subscript(optional i: Index) -> Iterator.Element? {
+        indices.contains(i) ? self[i] : nil
     }
 }
 

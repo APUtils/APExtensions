@@ -112,8 +112,18 @@ public extension Data {
             try write(to: url, options: options)
             return true
         } catch {
-            RoutableLogger.logError("Unable to write data", error: error, file: file, function: function, line: line)
+            RoutableLogger.logError("Unable to write data", error: error, data: ["self": asString, "url": url], file: file, function: function, line: line)
             return false
+        }
+    }
+    
+    /// Try to serialize `self` to JSON object and report error if unable.
+    func safeSerializeToJSON() -> Any? {
+        do {
+            return try JSONSerialization.jsonObject(with: self, options: .allowFragments)
+        } catch {
+            RoutableLogger.logError("Unable to parse date to JSON", error: error, data: ["self": asString])
+            return nil
         }
     }
 }

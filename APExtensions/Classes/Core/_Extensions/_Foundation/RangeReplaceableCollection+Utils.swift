@@ -115,6 +115,20 @@ public extension RangeReplaceableCollection where Self: BidirectionalCollection 
     }
 }
 
+public extension RangeReplaceableCollection where Index == Int {
+    
+    /// Returns array of random elements from a collection.
+    /// - Parameter count: Amount of random elements to return.
+    func random(count: Int) -> [Element] {
+        var elements = self
+        return stride(from: 0, to: count, by: 1).compactMap { _ -> Element? in
+            guard let i = (elements.startIndex..<elements.endIndex).randomElement() else { return nil }
+            return elements.remove(at: i)
+        }
+    }
+}
+
+
 public extension RangeReplaceableCollection where Index == Int, Self: BidirectionalCollection {
     /// Second element in array
     var second: Element? {

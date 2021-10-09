@@ -45,6 +45,11 @@ public extension CGFloat {
     /// Returns `self` as `Int` if possible
     var asInt: Int? { Int(exactly: rounded()) }
     
+    /// Returns `self` as `Float`
+    var asFloat: Float {
+        Float(self)
+    }
+    
     /// Returns `self` as `Double`
     var asDouble: Double {
         return Double(self)

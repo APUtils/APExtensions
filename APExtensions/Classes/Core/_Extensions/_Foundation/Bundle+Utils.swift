@@ -59,6 +59,42 @@ public extension Bundle {
     }
 }
 
+// ******************************* MARK: - Safe
+
+public extension Bundle {
+    
+    /// Gets data for a resource from bundle and reports error if unable.
+    func safeGetData(forResource resource: String, withExtension extension: String) -> Data? {
+        guard let url = url(forResource: resource, withExtension: `extension`) else {
+            RoutableLogger.logError("Unable to get URL for JSON mock", data: ["resource": resource, "extension": `extension`])
+            return Data()
+        }
+        
+        do {
+            return try Data(contentsOf: url)
+        } catch {
+            RoutableLogger.logError("Unable to get contents of file for JSON mock", error: error, data: ["resource": resource, "extension": `extension`, "url": url])
+            return Data()
+        }
+    }
+    
+    /// Gets string for a resource from bundle and reports error if unable.
+    func safeGetString(forResource resource: String, withExtension extension: String) -> String? {
+        guard let path = path(forResource: resource, ofType: `extension`) else {
+            RoutableLogger.logError("Unable to get path for JSON mock", data: ["resource": resource, "extension": `extension`])
+            return nil
+        }
+        
+        do {
+            return try String(contentsOfFile: path, encoding: .utf8)
+        } catch {
+            RoutableLogger.logError("Unable to get contents of file for JSON mock", error: error, data: ["resource": resource, "extension": `extension`, "path": path])
+            return nil
+        }
+    }
+}
+
+
 // ******************************* MARK: - Version
 
 public extension Bundle {

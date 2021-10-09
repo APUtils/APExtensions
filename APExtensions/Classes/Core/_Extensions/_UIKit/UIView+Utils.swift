@@ -98,6 +98,15 @@ public extension UIView {
         layer.cornerRadius = min(width, height) / 2
     }
     
+    /// Rounds view corners using layer mask.
+    /// - note: You need to call this method each time view bounds are changed.
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+    
     /// Returns closest UIViewController from responders chain.
     var viewController: UIViewController? {
         var nextResponder: UIResponder? = self

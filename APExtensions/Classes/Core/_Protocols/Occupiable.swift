@@ -100,6 +100,7 @@ public protocol InitializeableOccupiable: Occupiable {
 
 // I can't think of a way to combine these collection types. Suggestions welcomed!
 extension Array: InitializeableOccupiable {}
+extension Data: InitializeableOccupiable {}
 extension Dictionary: InitializeableOccupiable {}
 extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}

@@ -1,16 +1,16 @@
 //
-//  Int+Utils.swift
-//  APExtensions
+//  Int32+Utils.swift
+//  Pods
 //
-//  Created by Anton Plebanovich on 2/5/19.
-//  Copyright © 2019 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 9.10.21.
+//  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
 import Foundation
 
 // ******************************* MARK: - Is
 
-public extension Int {
+public extension Int32 {
     
     /// Returns whether number is even
     var isEven: Bool { self % 2 == 0 }
@@ -24,36 +24,29 @@ public extension Int {
 
 // ******************************* MARK: - As
 
-public extension Int {
+public extension Int32 {
+    
+    /// Returns `self` as `Int`
+    var asInt: Int { Int(self) }
     
     /// Returns `self` as `UInt`
     var asUInt: UInt? { UInt(exactly: self) }
     
     /// Returns `self` as `CGFloat`
-    var asCGFloat: CGFloat { .init(self) }
+    var asCGFloat: CGFloat { CGFloat(self) }
     
     /// Returns `self` as `Double`
-    var asDouble: Double { .init(self) }
+    var asDouble: Double { Double(self) }
     
     /// Returns `self` as `Float`
-    var asFloat: Float { .init(self) }
+    var asFloat: Float { Float(self) }
     
     /// Returns `self` as `String`
-    var asString: String { .init(self) }
+    var asString: String { String(self) }
     
     /// Returns `self` as HEX `String` in a format like `0xAABB11`
-    var asHexString: String { .init(format:"0x%02X", self) }
+    var asHexString: String { String(format:"0x%02X", self) }
     
     /// Returns `self` as `TimeInterval`
-    var asTimeInterval: TimeInterval { .init(self) }
-}
-
-// ******************************* MARK: - Other
-
-public extension Int {
-    
-    /// Makes `self` negative to the current value.
-    var negative: Int {
-        -self
-    }
+    var asTimeInterval: TimeInterval { TimeInterval(self) }
 }
