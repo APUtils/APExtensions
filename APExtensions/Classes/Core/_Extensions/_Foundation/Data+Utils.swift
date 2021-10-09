@@ -64,16 +64,34 @@ public extension Data {
     
     /// Try to serialize JSON data
     var jsonObject: Any? {
-        return try? JSONSerialization.jsonObject(with: self, options: [])
+        if #available(iOS 15.0, *) {
+            return try? JSONSerialization.jsonObject(with: self, options: [.json5Allowed])
+        } else {
+            return try? JSONSerialization.jsonObject(with: self, options: [.fragmentsAllowed])
+        }
     }
     
     /// Try to get dictionary from JSON data
     var jsonDictionary: [String : Any]? {
+        let jsonObject: Any?
+        if #available(iOS 15.0, *) {
+            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [.json5Allowed, .topLevelDictionaryAssumed])
+        } else {
+            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [])
+        }
+        
         return jsonObject as? [String : Any]
     }
     
     /// Try to get array from JSON data
     var jsonArray: [Any]? {
+        let jsonObject: Any?
+        if #available(iOS 15.0, *) {
+            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [.json5Allowed])
+        } else {
+            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [])
+        }
+        
         return jsonObject as? [Any]
     }
     
