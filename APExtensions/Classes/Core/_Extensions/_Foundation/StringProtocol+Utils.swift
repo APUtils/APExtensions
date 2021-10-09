@@ -90,8 +90,8 @@ public extension StringProtocol {
     /// Returns `self` as `Bool` if conversion is possible.
     var asBool: Bool? {
         switch lowercased() {
-        case "true", "yes", "1": return true
-        case "false", "no", "0": return false
+        case "true", "yes", "1", "enable": return true
+        case "false", "no", "0", "disable": return false
         default: return nil
         }
     }
