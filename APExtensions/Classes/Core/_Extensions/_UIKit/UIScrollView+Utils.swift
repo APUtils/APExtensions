@@ -237,19 +237,22 @@ public extension UIScrollView {
 
 public extension UIScrollView {
     
-    /// Current page size
+    /// Current page size.
+    /// - note: Currently, horizontal paging is only supported.
     var pageSize: CGFloat {
         return bounds.width
     }
     
-    /// Current page value
+    /// Current page value.
+    /// - note: Currently, horizontal paging is only supported.
     var currentPage: Int {
         let currentPageFloat = (contentOffset.x + contentInset.left) / pageSize
         let currentPage = Int(currentPageFloat.rounded())
         return currentPage
     }
     
-    /// Current number of pages
+    /// Current number of pages.
+    /// - note: Currently, horizontal paging is only supported.
     var numberOfPages: Int {
         let numberOfPagesFloat = (contentSize.width + contentInset.right + contentInset.left) / pageSize
         let numberOfPages = Int(numberOfPagesFloat.rounded())
@@ -257,8 +260,17 @@ public extension UIScrollView {
     }
     
     /// Returns `true` if scroll position is on the last page.
-    /// Returns `false` otherwise
+    /// Returns `false` otherwise.
+    /// - note: Currently, horizontal paging is only supported.
     var isLastPage: Bool {
         currentPage >= numberOfPages - 1
+    }
+    
+    /// Scrolls to the next page if it's available.
+    /// - note: Currently, horizontal paging is only supported.
+    func scrollToNextPage() {
+        let nextPage = min(currentPage + 1, numberOfPages - 1)
+        let contentOffsetX = nextPage.asCGFloat * pageSize
+        contentOffset.x = contentOffsetX + contentInset.left
     }
 }
