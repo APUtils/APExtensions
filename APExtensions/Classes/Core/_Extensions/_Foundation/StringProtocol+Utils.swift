@@ -87,14 +87,23 @@ public extension StringProtocol {
         return URL(fileURLWithPath: asString)
     }
     
-    /// Returns `self` as `Int`
-    var asInt: Int? {
-        return Int(self)
+    /// Returns `self` as `Bool` if conversion is possible.
+    var asBool: Bool? {
+        switch lowercased() {
+        case "true", "yes", "1": return true
+        case "false", "no", "0": return false
+        default: return nil
+        }
     }
     
     /// Returns `self` as `Double`
     var asDouble: Double? {
         return Double(self)
+    }
+    
+    /// Returns `self` as `Int`
+    var asInt: Int? {
+        return Int(self)
     }
     
     /// Returns `self` as `String`
