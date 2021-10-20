@@ -8,6 +8,9 @@
 
 import Foundation
 
+@available(iOS 10.0, macOS 10.12, *)
+private let isoDateFormatter = ISO8601DateFormatter()
+
 // ******************************* MARK: - Easy dictionary merge
 
 public func += <K, V> (left: inout [K: V], right: [K: V]?) {
@@ -141,6 +144,8 @@ public extension Dictionary {
             return date
         } else if let double = self.double(forKey: key) {
             return Date(timeIntervalSince1970: double)
+        } else if #available(iOS 10.0, macOS 10.12, *), let string = self.string(forKey: key) {
+            return isoDateFormatter.date(from: string)
         } else {
             return nil
         }
