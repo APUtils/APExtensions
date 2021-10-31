@@ -62,9 +62,19 @@ public extension Sequence where Element: Equatable {
     }
     
     /// Helper method to filter out duplicates
-    // TODO: Rename to `unique` or `distinct`.
     @inlinable func filterDuplicates() -> [Element] {
         return filterDuplicates { $0 == $1 }
+    }
+}
+
+// ******************************* MARK: - Hashable
+
+public extension Sequence where Element: Hashable {
+    
+    /// Fast method to get unique values without keeping an order.
+    /// - note: It's ~1000 times faster than `filterDuplicates()` for 10000 items sequence.
+    @inlinable func uniqueUnordered() -> [Element] {
+        return Array(Set(self))
     }
 }
 
@@ -76,15 +86,14 @@ public extension Sequence {
     }
     
     /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
-    // TODO: Rename to `unique` or `distinct`.
-    @inlinable func filterDuplicates(_ includeElement: (_ lhs: Element, _ rhs: Element) throws -> Bool) rethrows -> [Element] {
+    @inlinable func filterDuplicates(_ isDuplicate: (_ lhs: Element, _ rhs: Element) throws -> Bool) rethrows -> [Element] {
         var results = [Element]()
         
         try forEach { element in
-            let existingElements = try results.filter {
-                return try includeElement(element, $0)
+            let duplicate = try results.contains {
+                return try isDuplicate(element, $0)
             }
-            if existingElements.count == 0 {
+            if !duplicate {
                 results.append(element)
             }
         }
