@@ -59,3 +59,11 @@ public extension URL {
         return appendingPathComponent(pathComponent, isDirectory: isDirectory)
     }
 }
+
+// ******************************* MARK: - Comparable
+
+extension URL: Comparable {
+    public static func < (lhs: URL, rhs: URL) -> Bool {
+        lhs.relativeString < rhs.relativeString
+    }
+}
