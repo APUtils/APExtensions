@@ -47,6 +47,11 @@ public extension Double {
 
 public extension Double {
     
+    /// Returns `self` as `Float`
+    var asFloat: Float {
+        Float(self)
+    }
+    
     /// Returns `self` as `CGFloat`
     var asCGFloat: CGFloat {
         CGFloat(self)
