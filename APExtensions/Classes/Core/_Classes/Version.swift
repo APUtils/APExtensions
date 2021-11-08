@@ -7,12 +7,7 @@
 //
 
 import Foundation
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 /// Struct to work with versions.
 /// Version example - 0.19.0.123

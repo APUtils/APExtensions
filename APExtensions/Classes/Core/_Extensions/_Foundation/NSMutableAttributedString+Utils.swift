@@ -7,12 +7,7 @@
 //
 
 import UIKit
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 public extension NSMutableAttributedString {
     /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.

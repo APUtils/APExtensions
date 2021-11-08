@@ -37,7 +37,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.subspec 'Core' do |subspec|
       subspec.source_files = 'APExtensions/Classes/Core/**/*'
-      subspec.dependency 'LogsManager/RoutableLogger', '>= 9.1.5'
+      subspec.dependency 'RoutableLogger'
   end
 
   s.subspec 'ViewConfiguration' do |subspec|

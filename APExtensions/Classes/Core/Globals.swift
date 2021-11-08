@@ -8,12 +8,7 @@
 
 import Foundation
 import MessageUI
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 public let g: Globals = Globals()
 

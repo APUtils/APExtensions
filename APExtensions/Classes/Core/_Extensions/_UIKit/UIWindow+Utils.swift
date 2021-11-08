@@ -7,12 +7,7 @@
 //
 
 import UIKit
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 public extension UIWindow {
     /// Creates new alert window with AppearanceCaptureViewController as rootViewController

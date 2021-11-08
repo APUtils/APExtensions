@@ -4,12 +4,12 @@ PODS:
     - APExtensions/Storyboard (= 10.0.0)
     - APExtensions/ViewConfiguration (= 10.0.0)
   - APExtensions/Core (10.0.0):
-    - LogsManager/RoutableLogger (>= 9.1.5)
+    - RoutableLogger
   - APExtensions/Storyboard (10.0.0)
   - APExtensions/ViewConfiguration (10.0.0)
-  - LogsManager/RoutableLogger (9.1.8)
   - Nimble (9.2.1)
   - Quick (4.0.0)
+  - RoutableLogger (9.1.10)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -18,19 +18,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - LogsManager
     - Nimble
     - Quick
+    - RoutableLogger
 
 EXTERNAL SOURCES:
   APExtensions:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: b46cab78fe5d291e1157838fd78962a886e627df
-  LogsManager: 1dfa84fa133ba22076e7a95fcc8276a0e57673c9
+  APExtensions: 61ac6903670be0a2dba70dacbc4bd39f768e47af
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  RoutableLogger: 5bfbffe104a5b9edd805909212130029721ee8f8
 
 PODFILE CHECKSUM: 25177b247dc120dabd5c7492986724ed0dc00ce2
 

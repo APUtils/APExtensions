@@ -7,12 +7,7 @@
 //
 
 import UIKit
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 // ******************************* MARK: - Class Implementation
 

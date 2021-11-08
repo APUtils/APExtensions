@@ -7,12 +7,7 @@
 //
 
 import Foundation
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 public extension Data {
     
