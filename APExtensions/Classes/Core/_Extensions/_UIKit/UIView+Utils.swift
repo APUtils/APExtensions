@@ -282,4 +282,17 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)
     }
+    
+    /// Get all constraints to `self` from inner view hierarchy.
+    func getInnerConstraints() -> [NSLayoutConstraint] {
+        constraints(to: self)
+            .sorted { $0.priority > $1.priority }
+    }
+    
+    /// Get all constraints to `self` from outer view hierarchy.
+    func getOuterConstraints() -> [NSLayoutConstraint] {
+        superviews
+            .flatMap { $0.constraints(to: self) }
+            .sorted { $0.priority > $1.priority }
+    }
 }

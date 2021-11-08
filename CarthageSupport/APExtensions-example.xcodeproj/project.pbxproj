@@ -59,6 +59,10 @@
 		0DE151AC26066BC10067545C /* RoutableLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1519F26066B030067545C /* RoutableLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DE151B526066C3B0067545C /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1519F26066B030067545C /* RoutableLogger.framework */; };
 		0DE151B626066C3C0067545C /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1519F26066B030067545C /* RoutableLogger.framework */; };
+		0DF7D7C2273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */; };
+		0DF7D7C3273959BD00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */; };
+		0DF7D7C527395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */; };
+		0DF7D7C627395A1F00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */; };
 		B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B432211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B434211386C6005D8319 /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B433211386C5005D8319 /* NSObject+Utils.swift */; };
@@ -275,6 +279,8 @@
 		0DE15193260669580067545C /* CGRect+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
 		0DE15194260669580067545C /* CGFloat+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Utils.swift"; sourceTree = "<group>"; };
 		0DE1519F26066B030067545C /* RoutableLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutableLogger.framework; path = ../Carthage/Build/iOS/RoutableLogger.framework; sourceTree = "<group>"; };
+		0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint.Attribute+Extension.swift"; sourceTree = "<group>"; };
+		0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		2FD0E5C8628CEDB87D8F3685 /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
 		455377CF05E63E6D27701A1A /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
@@ -487,6 +493,8 @@
 				B0F82FF920375BDB004FC037 /* UIViewController+Utils.swift */,
 				B0F82FF020375BDB004FC037 /* UIWindow+Utils.swift */,
 				0DD62C7B273939BE00DB4C12 /* UIEdgeInsets+Extension.swift */,
+				0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */,
+				0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */,
 			);
 			path = _UIKit;
 			sourceTree = "<group>";
@@ -1015,6 +1023,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F8302F20375BDB004FC037 /* Configurable.swift in Sources */,
+				0DF7D7C527395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */,
 				0D20D5B22607315F00767851 /* UIDevice+Utils.swift in Sources */,
 				B0F8304E20375BDB004FC037 /* UINavigationBar+Utils.swift in Sources */,
 				0D20D62226074AAD00767851 /* Bool+Utils.swift in Sources */,
@@ -1035,6 +1044,7 @@
 				B0F8302B20375BDB004FC037 /* APExtensionsLoader.m in Sources */,
 				B0F8303F20375BDB004FC037 /* UIColor+Utils.swift in Sources */,
 				B0F8303620375BDB004FC037 /* UIBarButtonItem+Utils.swift in Sources */,
+				0DF7D7C2273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift in Sources */,
 				B0F8306D20375BDB004FC037 /* UIView+ViewConfiguration.swift in Sources */,
 				B0F8305620375BDB004FC037 /* NSCoder+Utils.swift in Sources */,
 				0D20D3EE260675ED00767851 /* Float+Utils.swift in Sources */,
@@ -1171,8 +1181,10 @@
 				B0F830DC203762CB004FC037 /* Character+Utils.swift in Sources */,
 				B0F830D7203762CB004FC037 /* Error+Utils.swift in Sources */,
 				B0F830F5203762D0004FC037 /* Configurable.swift in Sources */,
+				0DF7D7C627395A1F00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */,
 				B0F830CB203762C6004FC037 /* AlertController.swift in Sources */,
 				B0F830E7203762CB004FC037 /* UINavigationBar+Utils.swift in Sources */,
+				0DF7D7C3273959BD00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift in Sources */,
 				0D20D5BB2607319800767851 /* Version.swift in Sources */,
 				B0F830E1203762CB004FC037 /* RangeReplaceableCollection+Utils.swift in Sources */,
 				B0F830DE203762CB004FC037 /* Data+Utils.swift in Sources */,
