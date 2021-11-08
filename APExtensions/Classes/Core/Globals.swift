@@ -408,22 +408,61 @@ open class Globals {
     // ******************************* MARK: - Swizzle
     
     /// Swizzles meta class methods
+    /// - Parameters:
+    ///   - class: Class or meta class.
     open func swizzleClassMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
-        guard class_isMetaClass(`class`) else { return }
-        guard class_respondsToSelector(`class`, originalSelector) else { return }
-        guard class_respondsToSelector(`class`, swizzledSelector) else { return }
+        let metaClass: AnyClass
+        if class_isMetaClass(`class`) {
+            metaClass = `class`
+            
+        } else {
+            // Getting meta class of class
+            let className = "\(`class`)"
+            guard let _metaClass = objc_getMetaClass(className) as? AnyClass else {
+                RoutableLogger.logError("Unable to get metaclass from class", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+                return
+            }
+            
+            metaClass = _metaClass
+        }
         
-        let originalMethod = class_getClassMethod(`class`, originalSelector)!
-        let swizzledMethod = class_getClassMethod(`class`, swizzledSelector)!
+        guard class_isMetaClass(metaClass) else {
+            RoutableLogger.logError("Class is not meta class", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
         
-        swizzleMethods(class: `class`, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
+        guard class_respondsToSelector(metaClass, originalSelector) else {
+            RoutableLogger.logError("Meta class does not respond to original selector", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
+        
+        guard class_respondsToSelector(metaClass, swizzledSelector) else {
+            RoutableLogger.logError("Meta class does not respond to swizzled selector", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
+        
+        let originalMethod = class_getClassMethod(metaClass, originalSelector)!
+        let swizzledMethod = class_getClassMethod(metaClass, swizzledSelector)!
+        
+        swizzleMethods(class: metaClass, originalSelector: originalSelector, originalMethod: originalMethod, swizzledSelector: swizzledSelector, swizzledMethod: swizzledMethod)
     }
     
     /// Swizzles class methods
     open func swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
-        guard !class_isMetaClass(`class`) else { return }
-        guard class_respondsToSelector(`class`, originalSelector) else { return }
-        guard class_respondsToSelector(`class`, swizzledSelector) else { return }
+        guard !class_isMetaClass(`class`) else {
+            RoutableLogger.logError("Class is meta class", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
+        
+        guard class_respondsToSelector(`class`, originalSelector) else {
+            RoutableLogger.logError("Class does not respond to original selector", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
+        
+        guard class_respondsToSelector(`class`, swizzledSelector) else {
+            RoutableLogger.logError("Class does not respond to swizzled selector", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            return
+        }
         
         let originalMethod = class_getInstanceMethod(`class`, originalSelector)!
         let swizzledMethod = class_getInstanceMethod(`class`, swizzledSelector)!
