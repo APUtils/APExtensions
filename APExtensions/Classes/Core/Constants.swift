@@ -23,6 +23,7 @@ public enum Constants {
     public static let screenScale: CGFloat = UIScreen.main.scale
     
     /// Coeficient that applies for font and constraint sizes when fit for screen size is enabled on element.
+    /// - Tag: screenResizeCoef
     public static let screenResizeCoef: CGFloat = {
         let baseScreenSize: CGFloat = 414 // iPhone 6+
         let currentScreenSize = UIScreen.main.bounds.width

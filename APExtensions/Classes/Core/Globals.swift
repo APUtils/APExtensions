@@ -625,6 +625,14 @@ open class Globals {
             UIApplication.shared.openURL(settingsURL)
         }
     }
+    
+    /// - Parameter value: Value to resize.
+    /// - returns: Screen resized value.
+    ///
+    /// Please check [screenResizeCoef](x-source-tag://screenResizeCoef) for more details
+    open func screenResize(_ value: CGFloat) -> CGFloat {
+        value.screenResized
+    }
 }
 
 // ******************************* MARK: - Unwrap

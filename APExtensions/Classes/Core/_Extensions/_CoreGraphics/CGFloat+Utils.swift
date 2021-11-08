@@ -65,6 +65,12 @@ public extension CGFloat {
         floor(self) == self
     }
     
+    /// - returns: Screen resized value.
+    ///
+    /// Please check [screenResizeCoef](x-source-tag://screenResizeCoef) for more details
+    var screenResized: CGFloat {
+        (self * c.screenResizeCoef).rounded()
+    }
 }
 
 // ******************************* MARK: - Pixel Operations
