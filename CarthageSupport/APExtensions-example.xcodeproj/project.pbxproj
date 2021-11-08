@@ -63,6 +63,8 @@
 		0DF7D7C3273959BD00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */; };
 		0DF7D7C527395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */; };
 		0DF7D7C627395A1F00C93EA4 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */; };
+		0DF7D7C827395D2F00C93EA4 /* NumberFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C727395D2E00C93EA4 /* NumberFormatter+Utils.swift */; };
+		0DF7D7C927395D2F00C93EA4 /* NumberFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7D7C727395D2E00C93EA4 /* NumberFormatter+Utils.swift */; };
 		B0E5B431211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B432211386AC005D8319 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B430211386AC005D8319 /* Timer+Utils.swift */; };
 		B0E5B434211386C6005D8319 /* NSObject+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5B433211386C5005D8319 /* NSObject+Utils.swift */; };
@@ -281,6 +283,7 @@
 		0DE1519F26066B030067545C /* RoutableLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutableLogger.framework; path = ../Carthage/Build/iOS/RoutableLogger.framework; sourceTree = "<group>"; };
 		0DF7D7C1273959BB00C93EA4 /* NSLayoutConstraint.Attribute+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint.Attribute+Extension.swift"; sourceTree = "<group>"; };
 		0DF7D7C427395A1D00C93EA4 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		0DF7D7C727395D2E00C93EA4 /* NumberFormatter+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Utils.swift"; sourceTree = "<group>"; };
 		2FD0E5C8628CEDB87D8F3685 /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
 		455377CF05E63E6D27701A1A /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		B0E5B430211386AC005D8319 /* Timer+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Utils.swift"; sourceTree = "<group>"; };
@@ -456,6 +459,7 @@
 				B0F8300620375BDB004FC037 /* NSCoder+Utils.swift */,
 				B0F8300820375BDB004FC037 /* NSMutableAttributedString+Utils.swift */,
 				B0E5B433211386C5005D8319 /* NSObject+Utils.swift */,
+				0DF7D7C727395D2E00C93EA4 /* NumberFormatter+Utils.swift */,
 				B0F82FFA20375BDB004FC037 /* Optional+Utils.swift */,
 				B0F82FF820375BDB004FC037 /* RangeReplaceableCollection+Utils.swift */,
 				B0F8300020375BDB004FC037 /* Sequence+Utils.swift */,
@@ -1097,6 +1101,7 @@
 				0DBC7CFE23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */,
 				0D20D6E52607654000767851 /* RandomAccessCollection+Utils.swift in Sources */,
 				B0F8303720375BDB004FC037 /* URL+Utils.swift in Sources */,
+				0DF7D7C827395D2F00C93EA4 /* NumberFormatter+Utils.swift in Sources */,
 				B0F8303320375BDB004FC037 /* UICollectionView+Utils.swift in Sources */,
 				B0F8306F20375BDB004FC037 /* UITextField+ViewConfiguration.swift in Sources */,
 				B0F8304520375BDB004FC037 /* Data+Utils.swift in Sources */,
@@ -1158,6 +1163,7 @@
 				B0F830DA203762CB004FC037 /* UIImageView+Utils.swift in Sources */,
 				0D47E43F23BFFC0E00C4BFDC /* StringProtocol+Utils.swift in Sources */,
 				B0F830D3203762CB004FC037 /* UIView+Utils.swift in Sources */,
+				0DF7D7C927395D2F00C93EA4 /* NumberFormatter+Utils.swift in Sources */,
 				0DE1519A260669580067545C /* CGFloat+Utils.swift in Sources */,
 				0DBC7CFF23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */,
 				0DD62C7D273939BE00DB4C12 /* UIEdgeInsets+Extension.swift in Sources */,

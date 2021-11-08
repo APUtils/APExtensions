@@ -295,4 +295,17 @@ public extension UIView {
             .flatMap { $0.constraints(to: self) }
             .sorted { $0.priority > $1.priority }
     }
+    
+    /// Returns contraints to a `view` that source view owns.
+    /// - Parameter view: A view to use for a check.
+    func constraints(to view: UIView) -> [NSLayoutConstraint] {
+        constraints.filter { $0.firstItem === view || $0.secondItem === view }
+    }
+    
+    /// Removes all constraints to a passed `view` that source view owns.
+    /// - Parameter view: A view to use for a check.
+    func removeConstraints(to view: UIView) {
+        let constraints = self.constraints(to: view)
+        removeConstraints(constraints)
+    }
 }
