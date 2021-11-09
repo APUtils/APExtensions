@@ -47,6 +47,8 @@
 		0DBC7CFF23BA53D500CD0EA1 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */; };
 		0DCE43D9223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
 		0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */; };
+		0DD27656273A3A9800BDEBF3 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD27655273A3A9800BDEBF3 /* JSONSerializable.swift */; };
+		0DD27657273A3A9800BDEBF3 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD27655273A3A9800BDEBF3 /* JSONSerializable.swift */; };
 		0DD62C7C273939BE00DB4C12 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62C7B273939BE00DB4C12 /* UIEdgeInsets+Extension.swift */; };
 		0DD62C7D273939BE00DB4C12 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62C7B273939BE00DB4C12 /* UIEdgeInsets+Extension.swift */; };
 		0DE15195260669580067545C /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE15192260669580067545C /* CGPoint+Utils.swift */; };
@@ -276,6 +278,7 @@
 		0DAD0A5121F3A4D700F0B3BC /* SingletonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonManager.swift; sourceTree = "<group>"; };
 		0DBC7CFD23BA53D500CD0EA1 /* Collection+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Utils.swift"; sourceTree = "<group>"; };
 		0DCE43D8223D3DCB00CB4929 /* TimeZone+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Utils.swift"; sourceTree = "<group>"; };
+		0DD27655273A3A9800BDEBF3 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 		0DD62C7B273939BE00DB4C12 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		0DE15192260669580067545C /* CGPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
 		0DE15193260669580067545C /* CGRect+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
@@ -637,6 +640,7 @@
 				B0F82FDD20375BDB004FC037 /* Configurable.swift */,
 				B0F82FDA20375BDB004FC037 /* Describable.swift */,
 				B0F82FDF20375BDB004FC037 /* Instantiatable.swift */,
+				0DD27655273A3A9800BDEBF3 /* JSONSerializable.swift */,
 				B0F82FDC20375BDB004FC037 /* Manager.swift */,
 				0D47E44723C0165800C4BFDC /* Occupiable.swift */,
 				0D47E44623C0165800C4BFDC /* OptionalType.swift */,
@@ -903,7 +907,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					B0F82FAE20375B69004FC037 = {
@@ -1071,6 +1075,7 @@
 				B0F8305F20375BDB004FC037 /* AlertController.swift in Sources */,
 				B0F8306E20375BDB004FC037 /* UILabel+ViewConfiguration.swift in Sources */,
 				B0F8304A20375BDB004FC037 /* Optional+Utils.swift in Sources */,
+				0DD27656273A3A9800BDEBF3 /* JSONSerializable.swift in Sources */,
 				B0F8305020375BDB004FC037 /* Sequence+Utils.swift in Sources */,
 				0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */,
 				E28885F8232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */,
@@ -1211,6 +1216,7 @@
 				E28885F9232BE35900B8F8E8 /* UserDefaults+Utils.swift in Sources */,
 				0D4630E423C26EF200108415 /* Globals.swift in Sources */,
 				B0F830E5203762CB004FC037 /* NotificationCenter+Utils.swift in Sources */,
+				0DD27657273A3A9800BDEBF3 /* JSONSerializable.swift in Sources */,
 				0DCE43DA223D3DCB00CB4929 /* TimeZone+Utils.swift in Sources */,
 				B0E5B435211386C6005D8319 /* NSObject+Utils.swift in Sources */,
 				B0F830D8203762CB004FC037 /* UIColor+Utils.swift in Sources */,
