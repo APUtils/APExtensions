@@ -243,16 +243,15 @@ open class Globals {
     /// - parameter title: Alert title
     /// - parameter message: Alert message
     /// - parameter confirmTitle: Confirm button title. Default is `Confirm`.
-    /// - parameter placeholder: Text field placeholder
     /// - parameter cancelTitle: Cancel button title. Default is `Cancel`.
+    /// - parameter textFieldConfiguration: Text field configuration closure.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes user entered text as parameter
     open func showEnterTextAlert(title: String? = nil,
                                  message: String? = nil,
-                                 text: String? = nil,
                                  confirmTitle: String = "Confirm",
-                                 placeholder: String? = nil,
                                  cancelTitle: String = "Cancel",
+                                 textFieldConfiguration: ((UITextField) -> Void)? = nil,
                                  onCancel: (() -> Void)? = nil,
                                  completion: @escaping (_ text: String) -> ()) {
         
@@ -265,8 +264,7 @@ open class Globals {
             let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: { _ in onCancel?() })
             
             alertVC.addTextField { (textField) in
-                textField.text = text
-                textField.placeholder = placeholder
+                textFieldConfiguration?(textField)
             }
             
             alertVC.addAction(confirmAction)
