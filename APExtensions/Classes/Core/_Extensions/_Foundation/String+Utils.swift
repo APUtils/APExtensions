@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RoutableLogger
 
 // ******************************* MARK: - Appending
 
@@ -81,6 +82,27 @@ public extension String {
         let spacesCount = averageWordLength == nil ? 0 : letters.count / averageWordLength!
         let lettersWithSpace = letters.appending(String(repeating: " ", count: spacesCount))
         return String((0..<length).map{ _ in lettersWithSpace.randomElement()! })
+    }
+}
+
+// ******************************* MARK: - Safe
+
+public extension String {
+    
+    /// Safely initializes string with contents of a file or returns `nil` and reports an error if unable.
+    init?(safeContentsOf url: URL, encoding: Encoding, file: String = #file, function: String = #function, line: UInt = #line) {
+        
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            RoutableLogger.logError("Unable to get contents of non-existing file", data: ["url": url], file: file, function: function, line: line)
+            return nil
+        }
+        
+        do {
+            try self.init(contentsOf: url, encoding: encoding)
+        } catch {
+            RoutableLogger.logError("Can not get contents of a file", error: error, data: ["url": url], file: file, function: function, line: line)
+            return nil
+        }
     }
 }
 

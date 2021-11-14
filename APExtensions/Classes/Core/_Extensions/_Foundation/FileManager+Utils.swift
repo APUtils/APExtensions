@@ -134,7 +134,7 @@ public extension FileManager {
         }
     }
     
-    /// Safely returns directory contents or an empty array if unable.
+    /// Safely returns directory contents or an empty array and reports an error if unable.
     func safeGetContents(url: URL, file: String = #file, function: String = #function, line: UInt = #line) -> [URL] {
         guard fileExists(atPath: url.path) else { return [] }
         
