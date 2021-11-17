@@ -105,6 +105,10 @@ extension Dictionary: InitializeableOccupiable {}
 extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}
 
+extension NSDictionary: InitializeableOccupiable {
+    public var isEmpty: Bool { count == 0 }
+}
+
 extension NSOrderedSet: InitializeableOccupiable {
     public var isEmpty: Bool {
         count == 0
