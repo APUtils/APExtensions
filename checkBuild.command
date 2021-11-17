@@ -31,6 +31,8 @@ echo -e "\nBuilding Carthage projects..."
 . "./CarthageSupport/Scripts/Carthage/utils.sh"
 applyXcode12Workaround
 set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensions-example" | xcpretty
+set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensionsStoryboard" | xcpretty
+set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensionsViewConfiguration" | xcpretty
 
 echo -e "\nBuilding with Carthage..."
 carthage build --no-skip-current --cache-builds
