@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '10.1.1'
+  s.version          = '10.1.2'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -46,5 +46,15 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.subspec 'Storyboard' do |subspec|
       subspec.source_files = 'APExtensions/Classes/Storyboard/**/*', 'APExtensions/Classes/Shared/**/*'
+  end
+  
+  # Extractions
+  
+  s.subspec 'Occupiable' do |subspec|
+      subspec.source_files = 'APExtensions/Classes/Core/_Protocols/Occupiable.swift'
+  end
+  
+  s.subspec 'OptionalType' do |subspec|
+      subspec.source_files = 'APExtensions/Classes/Core/_Protocols/OptionalType.swift'
   end
 end
