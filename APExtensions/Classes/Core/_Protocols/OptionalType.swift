@@ -6,8 +6,6 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-
 // Take from https://github.com/RxSwiftCommunity/RxOptional/blob/master/Sources/RxOptional/OptionalType.swift
 // Originally from here: https://github.com/artsy/eidolon/blob/24e36a69bbafb4ef6dbe4d98b575ceb4e1d8345f/Kiosk/Observable%2BOperators.swift#L30-L40
 // Credit to Artsy and @ashfurrow

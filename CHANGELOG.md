@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [10.1.5](https://github.com/APUtils/APExtensions/releases/tag/10.1.5)
+Released on 17.11.2021.
+
+#### Added
+- [Occupiable] support for osX 10.10, watchOS 2.0, tvOS 9.0
+- [OptionalType] support for osX 10.10, watchOS 2.0, tvOS 9.0
+
+
 ## [10.1.4](https://github.com/APUtils/APExtensions/releases/tag/10.1.4)
 Released on 17.11.2021.
 
