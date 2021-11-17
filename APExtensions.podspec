@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '10.1.5'
+  s.version          = '10.1.6'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -31,20 +31,23 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.ios.deployment_target = '9.0'
   s.swift_versions = ['5.1']
-  s.frameworks = 'Foundation', 'UIKit', 'MessageUI'
+  s.frameworks = 'Foundation'
   
   s.default_subspec = 'Core', 'ViewConfiguration', 'Storyboard'
 
   s.subspec 'Core' do |subspec|
+      subspec.frameworks = 'Foundation', 'UIKit', 'MessageUI'
       subspec.source_files = 'APExtensions/Classes/Core/**/*', 'APExtensions/Classes/Shared/**/*'
       subspec.dependency 'RoutableLogger'
   end
 
   s.subspec 'ViewConfiguration' do |subspec|
+      subspec.frameworks = 'Foundation', 'UIKit'
       subspec.source_files = 'APExtensions/Classes/ViewConfiguration/**/*'
   end
 
   s.subspec 'Storyboard' do |subspec|
+      subspec.frameworks = 'Foundation', 'UIKit'
       subspec.source_files = 'APExtensions/Classes/Storyboard/**/*', 'APExtensions/Classes/Shared/**/*'
   end
   
