@@ -1,15 +1,15 @@
 PODS:
-  - APExtensions (10.0.0):
-    - APExtensions/Core (= 10.0.0)
-    - APExtensions/Storyboard (= 10.0.0)
-    - APExtensions/ViewConfiguration (= 10.0.0)
-  - APExtensions/Core (10.0.0):
+  - APExtensions (10.1.0):
+    - APExtensions/Core (= 10.1.0)
+    - APExtensions/Storyboard (= 10.1.0)
+    - APExtensions/ViewConfiguration (= 10.1.0)
+  - APExtensions/Core (10.1.0):
     - RoutableLogger
-  - APExtensions/Storyboard (10.0.0)
-  - APExtensions/ViewConfiguration (10.0.0)
+  - APExtensions/Storyboard (10.1.0)
+  - APExtensions/ViewConfiguration (10.1.0)
   - Nimble (9.2.1)
   - Quick (4.0.0)
-  - RoutableLogger (9.1.10)
+  - RoutableLogger (9.1.12)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -27,10 +27,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 61ac6903670be0a2dba70dacbc4bd39f768e47af
+  APExtensions: 364159bf7b705cd69c0dfa810f7eebcbf0a767c3
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
-  RoutableLogger: 5bfbffe104a5b9edd805909212130029721ee8f8
+  RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
 
 PODFILE CHECKSUM: 25177b247dc120dabd5c7492986724ed0dc00ce2
 

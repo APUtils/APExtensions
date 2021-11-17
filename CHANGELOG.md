@@ -2,6 +2,132 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [10.1.0](https://github.com/APUtils/APExtensions/releases/tag/10.1.0)
+Released on 17.11.2021.
+
+#### Added
+- BidirectionalCollection .fourth
+- BidirectionalCollection .fourthIndex
+- BidirectionalCollection .second
+- BidirectionalCollection .secondIndex
+- BidirectionalCollection .third
+- BidirectionalCollection .thirdIndex
+- Bundle .safeGetData(forResource:withExtension:)
+- Bundle .safeGetString(forResource:withExtension:)
+- CGFLoat .asFloat
+- CGFloat .screenResized
+- Collection .mapWithPrevious(_:)
+- Collection .subscript(optional:)
+- Data .safeSerializeToJSON()
+- Data JSON methods update to support JSON 5
+- Data: InitializeableOccupiable
+- Date .asLogsDate
+- Date .asLogsDateAndTimeString format change
+- DateComponents .negative
+- Decodable .create(jsonData:)
+- Decodable .create(propertyListData:)
+- Double .abs
+- Double .asCGFloat
+- Double .asFloat
+- Encodable .jsonEncoded()
+- Encodable .propertyListEncoded()
+- FileManager .safeCreateDirectory(at:withIntermediateDirectories:attributes:)
+- FileManager .safeFileSize(url:)
+- FileManager .safeGetAttributes(url:)
+- FileManager .safeGetContents(url:)
+- FileManager .safeGetModificationDate(url:)
+- FileManager .safeRemoveItem(url:)
+- FileManager .safeRemoveItemIfExists(at:)
+- FileManager .safeRemoveItemIfExists(atPath:)
+- FileManager .safeSetModificationDate(_:url:)
+- Globals .eraseAllData()
+- Globals .eraseFiles()
+- Globals .eraseKeychain()
+- Globals .eraseUserDefaults()
+- Globals .screenResize(_:)
+- Int .negative
+- Int32 .asCGFloat
+- Int32 .asDouble
+- Int32 .asFloat
+- Int32 .asHexString
+- Int32 .asInt
+- Int32 .asString
+- Int32 .asTimeInterval
+- Int32 .asUInt
+- Int32 .isEven
+- Int32 .isOdd
+- Int32 .isSingular
+- JSONSerializable .asJSONString
+- JSONSerializable .asPrettyJSONString
+- JSONSerializable .toJSONString(options:)
+- JSONSerializable for Arrays and Dictionaries
+- NSLayoutAnchor .constraint(equalTo:priority:constant:)
+- NSLayoutAnchor .constraint(lessThanOrEqualTo:priority:constant:)
+- NSLayoutConstraint .attribute(for:)
+- NSLayoutConstraint .attributeForOtherView(view:)
+- NSLayoutConstraint .constant(to:)
+- NSLayoutConstraint .firstView
+- NSLayoutConstraint .otherView(to:)
+- NSLayoutConstraint .secondView
+- NSLayoutConstraint.activate(_:)
+- NSLayoutConstraint.Attribute .isBottomSide
+- NSLayoutConstraint.Attribute .isCenterX
+- NSLayoutConstraint.Attribute .isCenterY
+- NSLayoutConstraint.Attribute .isHorizontal
+- NSLayoutConstraint.Attribute .isLeftSide
+- NSLayoutConstraint.Attribute .isRightSide
+- NSLayoutConstraint.Attribute .isTopSide
+- NSLayoutConstraint.Attribute .isVertical
+- NSLayoutConstraint.deactivate(_:)
+- NSLayoutDimension .constraint(equalToConstant:priority:)
+- NSLayoutDimension .constraint(greaterThanOrEqualToConstant:priority:)
+- NSOrderedSet .hasElements
+- NSOrderedSet: InitializeableOccupiable
+- NumberFormatter.ceil
+- NumberFormatter.hundredth
+- NumberFormatter.tenth
+- NumberFormatter.thousands
+- RangeReplaceableCollection .appendIfMissing(_:)
+- RangeReplaceableCollection .appendingMissing(_:)
+- RangeReplaceableCollection<Int> .random(count:)
+- Safer alert remove
+- screenResizeCoef Constant
+- Sequence .uniqueUnordered()
+- String(safeContentsOf:encoding:)
+- StringProtocol .appending(_:separator:)
+- StringProtocol .asBool
+- Title parameters for alerts
+- UIEdgeInsets .init(t:l:b:r:)
+- UIEdgeInsets .modify(_:)
+- UIEdgeInsets .screenResized
+- UIScrollView .currentPage
+- UIScrollView .isLastPage
+- UIScrollView .numberOfPages
+- UIScrollView .pageSize
+- UIScrollView .scrollToNextPage()
+- UIScrollView .scrollViewToCenter(_:)
+- UIView .constraints(to:)
+- UIView .getInnerConstraints()
+- UIView .getOuterConstraints()
+- UIView .removeConstraints(to:)
+- UIView .roundCorners(corners:radius:)
+- UIWindow .remove()
+- URL: Comparable
+
+#### Changed
+- Improved Globals swizzle methods to log errors and swizzleClassMethods(...) to handle ordinary class parameter
+- Migration to RoutableLogger
+- Moved UIView .isAnimatable to ViewState framework
+- Replaced text: and placeholder: parameters with textFieldConfiguration: in Globals .showEnterTextAlert(...)
+- Round to nearest ceil value for screen fit methods
+- Sequence .filterDuplicates() performance improve
+- Using animated = true by default for controller navigation
+
+#### Fixed
+- Ambiguous isNilOrEmpty fix
+- Exactly inits fix
+
+
 ## [10.0.0](https://github.com/APUtils/APExtensions/releases/tag/10.0.0)
 Released on 12.04.2021.
 

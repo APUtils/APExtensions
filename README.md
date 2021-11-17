@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile for unified framework:
 
 ```
-github "APUtils/APExtensions" ~> 10.0
+github "APUtils/APExtensions" ~> 10.1
 ```
 
 You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
@@ -32,15 +32,15 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 10.0'
+pod 'APExtensions', '~> 10.1'
 ```
 
 Available subspecs: `Core`, `Storyboard`, `ViewConfiguration`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Core', '~> 10.0'
-pod 'APExtensions/Storyboard', '~> 10.0'
-pod 'APExtensions/ViewConfiguration', '~> 10.0'
+pod 'APExtensions/Core', '~> 10.1'
+pod 'APExtensions/Storyboard', '~> 10.1'
+pod 'APExtensions/ViewConfiguration', '~> 10.1'
 ```
 
 ## Usage
