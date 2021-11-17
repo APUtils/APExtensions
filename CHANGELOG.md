@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [10.1.4](https://github.com/APUtils/APExtensions/releases/tag/10.1.4)
+Released on 17.11.2021.
+
+#### Added
+- NSDictionary: InitializeableOccupiable
+
+
+## [10.1.3](https://github.com/APUtils/APExtensions/releases/tag/10.1.3)
+Released on 17.11.2021.
+
+#### Changed
+- [Carthage] Use XCFrameworks
+
+#### Deprecated
+- [Carthage] Use Frameworks
+
+
 ## [10.1.2](https://github.com/APUtils/APExtensions/releases/tag/10.1.2)
 Released on 17.11.2021.
 
