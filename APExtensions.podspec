@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '10.1.0'
+  s.version          = '10.1.1'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.default_subspec = 'Core', 'ViewConfiguration', 'Storyboard'
 
   s.subspec 'Core' do |subspec|
-      subspec.source_files = 'APExtensions/Classes/Core/**/*'
+      subspec.source_files = 'APExtensions/Classes/Core/**/*', 'APExtensions/Classes/Shared/**/*'
       subspec.dependency 'RoutableLogger'
   end
 
@@ -45,6 +45,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
   end
 
   s.subspec 'Storyboard' do |subspec|
-      subspec.source_files = 'APExtensions/Classes/Storyboard/**/*'
+      subspec.source_files = 'APExtensions/Classes/Storyboard/**/*', 'APExtensions/Classes/Shared/**/*'
   end
 end
