@@ -14,15 +14,31 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-#### Carthage
+#### Carthage **DEPRECATED**
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
-Cartfile for unified framework:
+Cartfile:
+
+```
+github "APUtils/APExtensions" "10.1.2"
+```
+
+Install command: `carthage bootstrap`
+
+You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
+
+#### Carthage with XCFrameworks
+
+Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
+
+Cartfile:
 
 ```
 github "APUtils/APExtensions" ~> 10.1
 ```
+
+Install command: `carthage bootstrap --use-xcframeworks`
 
 You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
 
