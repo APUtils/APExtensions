@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile for unified framework:
 
 ```
-github "APUtils/APExtensions" ~> 10.1
+github "APUtils/APExtensions" "carthage-old"
 ```
 
 You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
