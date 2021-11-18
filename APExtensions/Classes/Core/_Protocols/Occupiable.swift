@@ -42,6 +42,12 @@ public extension Collection where Self: Occupiable {
     var hasElements: Bool { return isNotEmpty }
 }
 
+public extension Collection {
+    var hasElements: Bool {
+        !isEmpty
+    }
+}
+
 // ******************************* MARK: - Sequence + Occupiable
 
 public extension Sequence where Element: Occupiable {

@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [10.1.8](https://github.com/APUtils/APExtensions/releases/tag/10.1.8)
+Released on 18.11.2021.
+
+#### Added
+- Collection .hasElements
+
+
 ## [10.1.7](https://github.com/APUtils/APExtensions/releases/tag/10.1.7)
 Released on 18.11.2021.
 
