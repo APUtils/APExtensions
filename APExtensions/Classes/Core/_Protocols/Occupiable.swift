@@ -106,13 +106,11 @@ extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}
 
 extension NSDictionary: InitializeableOccupiable {
-    public var isEmpty: Bool { count == 0 }
+    public var isEmpty: Bool { count < 1 }
 }
 
-extension NSOrderedSet: InitializeableOccupiable {
-    public var isEmpty: Bool {
-        count == 0
-    }
+extension NSSet: InitializeableOccupiable {
+    public var isEmpty: Bool { count < 1 }
     
     /// Property equal to `isNotEmpty` property.
     /// Added just because in the case of Collection types, 'hasElements' is more descriptive name
@@ -120,16 +118,21 @@ extension NSOrderedSet: InitializeableOccupiable {
     public var hasElements: Bool { return isNotEmpty }
 }
 
-extension NSMutableString: InitializeableOccupiable {
-    public var isEmpty: Bool {
-        return length == 0
-    }
+extension NSOrderedSet: InitializeableOccupiable {
+    public var isEmpty: Bool { count < 1 }
+    
+    /// Property equal to `isNotEmpty` property.
+    /// Added just because in the case of Collection types, 'hasElements' is more descriptive name
+    /// than 'isNotEmpty'.
+    public var hasElements: Bool { return isNotEmpty }
 }
 
-extension NSMutableAttributedString: InitializeableOccupiable {
-    public var isEmpty: Bool {
-        return length == 0
-    }
+extension NSString: InitializeableOccupiable {
+    public var isEmpty: Bool { length < 1 }
+}
+
+extension NSAttributedString: InitializeableOccupiable {
+    public var isEmpty: Bool { length < 1 }
 }
 
 public extension Optional where Wrapped: InitializeableOccupiable {

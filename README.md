@@ -28,7 +28,7 @@ Install command: `carthage bootstrap`
 
 You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
 
-#### Carthage with XCFrameworks
+#### Carthage with XCFrameworks **DEPRECATED**
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
