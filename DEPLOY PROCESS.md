@@ -5,7 +5,6 @@
 - Change version in podspec
 - Update CHANGELOG.md
 - Update README.md with new version if needed
-- Run `updateDocs.command`
 - Push changes in git
 - Add git tag
 - Merge `master` to needed branched, e.g. `core`, `abstractions`, `storyboard` or `view-configuration`.

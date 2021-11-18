@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APExtensions" "10.1.2"
+github "APUtils/APExtensions" "carthage-old"
 ```
 
 Install command: `carthage bootstrap`
