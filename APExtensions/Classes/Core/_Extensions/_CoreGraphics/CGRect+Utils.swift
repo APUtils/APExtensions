@@ -20,11 +20,13 @@ public extension CGRect {
         }
     }
     
-    /// Returns new rect rounded to a nearest pixel.
-    var roundedToPixel: CGRect {
-        return CGRect(x: origin.x.roundedToPixel,
-                      y: origin.y.roundedToPixel,
-                      width: size.width.roundedToPixel,
-                      height: size.height.roundedToPixel)
+    /// Returns new rect rounded to a nearest pixel value using the specified rounding rule.
+    /// Uses `.toNearestOrAwayFromZero` by default.
+    /// - returns: The integral value found by rounding using rule. 
+    func roundedToPixel(_ rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> CGRect {
+        return CGRect(x: origin.x.roundedToPixel(rule),
+                      y: origin.y.roundedToPixel(rule),
+                      width: size.width.roundedToPixel(rule),
+                      height: size.height.roundedToPixel(rule))
     }
 }

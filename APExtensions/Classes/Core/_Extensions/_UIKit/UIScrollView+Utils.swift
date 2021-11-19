@@ -212,7 +212,7 @@ public extension UIScrollView {
                y: 0,
                width: contentSize.width,
                height: contentSize.height)
-            .roundedToPixel
+            .roundedToPixel()
     }
     
     /// Scrollable frame. Equal to content size + fullContentInsets.
@@ -221,15 +221,21 @@ public extension UIScrollView {
                y: -fullContentInsets.top,
                width: contentSize.width + fullContentInsets.right + fullContentInsets.left,
                height: contentSize.height + fullContentInsets.bottom + fullContentInsets.top)
-            .roundedToPixel
+            .roundedToPixel()
     }
     
-    /// Visible area frame. Equal to bounds.
-    var visibleFrame: CGRect { bounds.roundedToPixel }
+    /// Visible content frame. Equal to bounds without insets.
+    var visibleContentFrame: CGRect {
+        CGRect(x: bounds.origin.x + fullContentInsets.left,
+               y: bounds.origin.y + fullContentInsets.top,
+               width: bounds.size.width - fullContentInsets.right - fullContentInsets.left,
+               height: bounds.size.height - fullContentInsets.bottom - fullContentInsets.top)
+            .roundedToPixel()
+    }
     
     /// Returns whether scrollable frame is more than visible frame
     var isScrollable: Bool {
-        return scrollableFrame.height .> visibleFrame.height
+        return scrollableFrame.height .> visibleContentFrame.height
     }
 }
 

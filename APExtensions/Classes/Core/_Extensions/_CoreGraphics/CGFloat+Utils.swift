@@ -119,15 +119,11 @@ public extension CGFloat {
 
 public extension CGFloat {
     
-    /// Returns value raunded to a nearest pixel
-    var roundedToPixel: CGFloat {
+    /// Returns this value rounded to a pixel value using the specified rounding rule.
+    /// Uses `.toNearestOrAwayFromZero` by default.
+    /// - returns: The integral value found by rounding using rule.
+    func roundedToPixel(_ rule: FloatingPointRoundingRule = .toNearestOrAwayFromZero) -> CGFloat {
         let scale = UIScreen.main.scale
-        return (self * scale).rounded() / scale
-    }
-    
-    /// Returns value raunded to a nearest up pixel
-    var roundedUpToPixel: CGFloat {
-        let scale = UIScreen.main.scale
-        return (self * scale).rounded(.up) / scale
+        return (self * scale).rounded(rule) / scale
     }
 }
