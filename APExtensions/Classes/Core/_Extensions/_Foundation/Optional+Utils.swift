@@ -8,32 +8,6 @@
 
 import Foundation
 
-// ******************************* MARK: - isNilOrEmpty
-
-// Strings
-public extension Optional where Wrapped == String {
-    /// Check if object is nil or empty
-    var isNilOrEmpty: Bool {
-        if let value = self, !value.isEmpty {
-            return false
-        } else {
-            return true
-        }
-    }
-}
-
-// Data
-public extension Optional where Wrapped == Data {
-    /// Check if object is nil or empty
-    var isNilOrEmpty: Bool {
-        if let value = self, !value.isEmpty {
-            return false
-        } else {
-            return true
-        }
-    }
-}
-
 // ******************************* MARK: - Optional Arrays Equatable
 
 public func ==<T>(lhs: [T]?, rhs: [T]?) -> Bool where T: Equatable {
