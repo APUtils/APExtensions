@@ -225,7 +225,7 @@ public extension UIView {
         
         var activityIndicator: UIActivityIndicatorView! = subviews.compactMap({ $0 as? UIActivityIndicatorView }).last
         if activityIndicator == nil {
-            activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+            activityIndicator = UIActivityIndicatorView(style: .large)
             activityIndicator.color = .lightGray
             addSubview(activityIndicator)
             activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)

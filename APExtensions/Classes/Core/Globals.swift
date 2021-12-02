@@ -53,6 +53,7 @@ open class Globals {
     }
     
     /// Application's key window
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes")
     open var keyWindow: UIWindow? {
         return sharedApplication.keyWindow
     }
@@ -388,6 +389,7 @@ open class Globals {
     
     private var networkActivityCounter = 0
     
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Provide a custom network activity UI in your app if desired.")
     open func showNetworkActivity() {
         networkActivityCounter = max(0, networkActivityCounter)
         networkActivityCounter += 1
@@ -395,6 +397,7 @@ open class Globals {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Provide a custom network activity UI in your app if desired.")
     open func hideNetworkActivity() {
         networkActivityCounter -= 1
         

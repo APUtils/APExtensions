@@ -19,6 +19,8 @@
 		0D20D5BB2607319800767851 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D5B92607319700767851 /* Version.swift */; };
 		0D20D62226074AAD00767851 /* Bool+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D62126074AAD00767851 /* Bool+Utils.swift */; };
 		0D20D6E52607654000767851 /* RandomAccessCollection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D6E42607654000767851 /* RandomAccessCollection+Utils.swift */; };
+		0D2A94C8274DACAC00E393E1 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A94C7274DACAC00E393E1 /* DispatchQueue+Extension.swift */; };
+		0D2A94C9274DACAC00E393E1 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A94C7274DACAC00E393E1 /* DispatchQueue+Extension.swift */; };
 		0D2F7F632617F6ED00B4012D /* UInt+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F7F622617F6ED00B4012D /* UInt+Utils.swift */; };
 		0D2F7F682617F6EF00B4012D /* UInt+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F7F622617F6ED00B4012D /* UInt+Utils.swift */; };
 		0D43F14B23C3A643009E1C28 /* DateComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */; };
@@ -275,6 +277,7 @@
 		0D20D5B92607319700767851 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		0D20D62126074AAD00767851 /* Bool+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Utils.swift"; sourceTree = "<group>"; };
 		0D20D6E42607654000767851 /* RandomAccessCollection+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Utils.swift"; sourceTree = "<group>"; };
+		0D2A94C7274DACAC00E393E1 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		0D2F7F622617F6ED00B4012D /* UInt+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt+Utils.swift"; sourceTree = "<group>"; };
 		0D43F14A23C3A643009E1C28 /* DateComponents+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Utils.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -455,6 +458,14 @@
 				0D20D6E42607654000767851 /* RandomAccessCollection+Utils.swift */,
 			);
 			path = _Swift;
+			sourceTree = "<group>";
+		};
+		0D2A94C6274DAC9400E393E1 /* _Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				0D2A94C7274DACAC00E393E1 /* DispatchQueue+Extension.swift */,
+			);
+			path = _Dispatch;
 			sourceTree = "<group>";
 		};
 		0D43F14623C3A5B9009E1C28 /* _Foundation */ = {
@@ -685,6 +696,7 @@
 		B0F82FE220375BDB004FC037 /* _Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0D2A94C6274DAC9400E393E1 /* _Dispatch */,
 				0D20D6E32607653000767851 /* _Swift */,
 				0DE15191260669580067545C /* _CoreGraphics */,
 				0D43F14623C3A5B9009E1C28 /* _Foundation */,
@@ -1102,6 +1114,7 @@
 				B0F8303120375BDB004FC037 /* Instantiatable.swift in Sources */,
 				0DE15197260669580067545C /* CGRect+Utils.swift in Sources */,
 				B0F8304D20375BDB004FC037 /* UIImage+Utils.swift in Sources */,
+				0D2A94C8274DACAC00E393E1 /* DispatchQueue+Extension.swift in Sources */,
 				B0F8306620375BDB004FC037 /* NSLayoutConstraint+Storyboard.swift in Sources */,
 				B0F8305F20375BDB004FC037 /* AlertController.swift in Sources */,
 				B0F8306E20375BDB004FC037 /* UILabel+ViewConfiguration.swift in Sources */,
@@ -1230,6 +1243,7 @@
 				B0F830C52037629E004FC037 /* APExtensionsLoader.m in Sources */,
 				0D671C6D2744AE8A00B3B8E9 /* NSLayoutAnchor+Utils.swift in Sources */,
 				B0F830D5203762CB004FC037 /* MFMailComposeViewController+Utils.swift in Sources */,
+				0D2A94C9274DACAC00E393E1 /* DispatchQueue+Extension.swift in Sources */,
 				B0F830EB203762CB004FC037 /* MFMessageComposeViewController+Utils.swift in Sources */,
 				B0F830DB203762CB004FC037 /* UIScrollView+Utils.swift in Sources */,
 				0D5A7D9D23B4B2C800E0687B /* Double+Utils.swift in Sources */,

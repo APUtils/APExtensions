@@ -6,6 +6,7 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import RoutableLogger
 import UIKit
 
 // ******************************* MARK: - Helper Extension
@@ -27,13 +28,19 @@ private extension UIView {
 
 // ******************************* MARK: - Bars Avoid
 
+@available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use the statusBarManager property of the window scene instead.")
 private let _statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+
 private let _navigationBarHeight: CGFloat = 44
+
+@available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use the statusBarManager property of the window scene instead.")
 private let _topBarsHeight: CGFloat = _statusBarHeight + _navigationBarHeight
 
 public extension UIScrollView {
+    
     /// Sets (status bar + 44) or 0 for top content inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids top bars. Takes into account `contentInsetAdjustmentBehavior`.
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Deprecated. Please use something else.")
     @IBInspectable var avoidNavigationBar: Bool {
         get {
             if #available(iOS 11.0, *) {
@@ -65,7 +72,10 @@ public extension UIScrollView {
                 contentInsetAdjustmentBehavior = .never
             }
             
-            _viewController?.automaticallyAdjustsScrollViewInsets = false
+            if #available(iOS 11.0, *) {} else {
+                _viewController?.automaticallyAdjustsScrollViewInsets = false
+            }
+            
             contentInset.top = newValue ? _topBarsHeight : 0
             
             // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
@@ -109,7 +119,10 @@ public extension UIScrollView {
                 contentInsetAdjustmentBehavior = .never
             }
             
-            _viewController?.automaticallyAdjustsScrollViewInsets = false
+            if #available(iOS 11.0, *) {} else {
+                _viewController?.automaticallyAdjustsScrollViewInsets = false
+            }
+            
             contentInset.bottom = newValue ? 49 : 0
             
             // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`

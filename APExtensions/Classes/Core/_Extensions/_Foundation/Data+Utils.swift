@@ -19,6 +19,7 @@ public extension Data {
     }
     
     /// Creates data from HEX string
+    @available(iOS, introduced: 2.0, deprecated: 13.0)
     init(hex: String) {
         var hex = hex.replacingOccurrences(of: " ", with: "")
         var data = Data()
@@ -135,7 +136,7 @@ public extension Data {
         do {
             return try JSONSerialization.jsonObject(with: self, options: .allowFragments)
         } catch {
-            RoutableLogger.logError("Unable to parse date to JSON", error: error, data: ["self": asString])
+            RoutableLogger.logError("Unable to parse data to JSON", error: error, data: ["self": asString])
             return nil
         }
     }
