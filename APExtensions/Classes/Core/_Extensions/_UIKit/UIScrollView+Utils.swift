@@ -275,8 +275,14 @@ public extension UIScrollView {
     /// Scrolls to the next page if it's available.
     /// - note: Currently, horizontal paging is only supported.
     func scrollToNextPage() {
-        let nextPage = min(currentPage + 1, numberOfPages - 1)
-        let contentOffsetX = nextPage.asCGFloat * pageSize
+        scrollToPage(currentPage + 1)
+    }
+    
+    /// Scrolls to the page if it's available.
+    /// - note: Currently, horizontal paging is only supported.
+    func scrollToPage(_ page: Int) {
+        let page = min(page, numberOfPages - 1)
+        let contentOffsetX = page.asCGFloat * pageSize
         contentOffset.x = contentOffsetX + contentInset.left
     }
 }
