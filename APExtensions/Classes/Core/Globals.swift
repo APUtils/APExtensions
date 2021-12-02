@@ -52,6 +52,26 @@ open class Globals {
         return UserDefaults.standard
     }
     
+    /// Height of status bar for the application window.
+    /// Might be `nil` if there is no application window.
+    /// 44 on X devices, 20 on usual.
+    static var statusBarHeight: CGFloat? {
+        UIApplication.shared
+            .delegate?
+            .window??
+            .windowScene?
+            .statusBarManager?
+            .statusBarFrame
+            .height
+    }
+    
+    /// Tob bars height for the application window.
+    /// Might be `nil` if there is no application window. 
+    static var topBarsHeight: CGFloat? {
+        guard let statusBarHeight = statusBarHeight else { return nil }
+        return statusBarHeight + c.navigationBarHeight
+    }
+    
     /// Application's key window
     @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes")
     open var keyWindow: UIWindow? {

@@ -35,14 +35,14 @@ public extension Constants {
     static let cacheDirectoryUrl: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
     
     /// Height of status bar. 44 on X devices, 20 on usual.
-    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use the statusBarManager property of the window scene instead.")
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Please use g.statusBarHeight instead")
     static let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     
     /// Navigation bar height
     static let navigationBarHeight: CGFloat = 44
     
-    /// Navigation bar height
-    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use the statusBarManager property of the window scene instead.")
+    /// Top bars height
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Please use g.topBarsHeight instead")
     static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
     
     /// Returns the on screen home button height
