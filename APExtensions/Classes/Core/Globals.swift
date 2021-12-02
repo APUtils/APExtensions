@@ -10,7 +10,9 @@ import Foundation
 import MessageUI
 import RoutableLogger
 
-public let g: Globals = Globals()
+/// You may override any open property or function and set you own class here.
+/// The other option is to declare your own global variable with extended functionality.
+public var g: Globals = Globals()
 
 open class Globals {
     
