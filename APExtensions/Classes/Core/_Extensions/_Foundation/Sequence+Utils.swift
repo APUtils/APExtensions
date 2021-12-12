@@ -102,11 +102,18 @@ public extension Sequence {
     }
     
     /// Transforms an array to a dictionary using array elements as keys and transform result as values.
-    @inlinable func dictionaryMap<T>(_ transform: (_ element: Iterator.Element) throws -> T?) rethrows -> [Iterator.Element: T] {
+    @inlinable func dictionaryMapKeys<T>(_ transform: (_ element: Iterator.Element) throws -> T?) rethrows -> [Iterator.Element: T] {
         return try self.reduce(into: [Iterator.Element: T]()) { dictionary, element in
             guard let value = try transform(element) else { return }
-            
             dictionary[element] = value
+        }
+    }
+    
+    /// Transforms an array to a dictionary using array elements as values and transform result as keys.
+    @inlinable func dictionaryMapValues<T>(_ transform: (_ element: Iterator.Element) throws -> T?) rethrows -> [T: Iterator.Element] {
+        return try self.reduce(into: [T: Iterator.Element]()) { dictionary, element in
+            guard let key = try transform(element) else { return }
+            dictionary[key] = element
         }
     }
 }

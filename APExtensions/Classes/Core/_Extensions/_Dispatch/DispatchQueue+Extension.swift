@@ -23,13 +23,20 @@ public extension DispatchQueue {
                 return key
             }
         }
-        set {
-            objc_setAssociatedObject(self, &c_keyAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    /// Performs `work` on `self` asynchronously in not already on `self`.
+    /// Otherwise, just performs `work`.
+    func performAsyncIfNeeded(execute work: @escaping () -> Void) {
+        if DispatchQueue.getSpecific(key: key) != nil {
+            work()
+        } else {
+            async { work() }
         }
     }
     
-    /// Performs `work` on `self` synchronously. Just performs `work` if already on a `self.`
-    func performSync<T>(execute work: () throws -> T) rethrows -> T {
+    /// Performs `work` on `self` synchronously. Just performs `work` if already on `self`.
+    func performSyncIfNeeded<T>(execute work: () throws -> T) rethrows -> T {
         if DispatchQueue.getSpecific(key: key) != nil {
             return try work()
         } else {
