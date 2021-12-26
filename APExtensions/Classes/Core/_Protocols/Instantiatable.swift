@@ -96,12 +96,14 @@ public extension InstantiatableContentView where Self: UIView {
     /// After creation puts content view as subview to self and constraints sides.
     /// Also makes self background color transparent.
     /// The main idea here is that content view should fully set how self view looks.
+    /// - parameter insets: Insets to the `containerView`. `.zero` by default.
+    /// - parameter bottomPriority: Bottom constraint priority. In some cases non-required priority might be preffered. 
     @available(iOS 9.0, *)
-    func instantiateAndAttachContentView(insets: UIEdgeInsets = .zero) {
+    func instantiateAndAttachContentView(insets: UIEdgeInsets = .zero, bottomPriority: UILayoutPriority = .required) {
         backgroundColor = .clear
         let contentView = instantiateContentView()
         contentView.frame = bounds
         addSubview(contentView)
-        contentView.constraintSides(to: self, insets: insets)
+        contentView.constraintSides(to: self, insets: insets, bottomPriority: bottomPriority)
     }
 }

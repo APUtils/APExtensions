@@ -265,10 +265,11 @@ public extension UIView {
     /// Creates constraints between self and provided view for top, bottom, leading and trailing sides.
     /// - parameter containerView: Container view containing `self`.
     /// - parameter insets: Insets to the `containerView`. `.zero` by default.
+    /// - parameter bottomPriority: Bottom constraint priority. In some cases non-required priority might be preffered.
     @available(iOS 9.0, *)
-    func constraintSides(to containerView: UIView, insets: UIEdgeInsets = .zero) {
+    func constraintSides(to containerView: UIView, insets: UIEdgeInsets = .zero, bottomPriority: UILayoutPriority = .required) {
         let constraints: [NSLayoutConstraint] = [
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, priority: bottomPriority, constant: insets.bottom),
             leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: insets.left),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right),
             topAnchor.constraint(equalTo: containerView.topAnchor, constant: insets.top)
