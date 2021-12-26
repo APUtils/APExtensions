@@ -57,6 +57,7 @@ open class Globals {
     /// Height of status bar for the application window.
     /// Might be `nil` if there is no application window.
     /// 44 on X devices, 20 on usual.
+    @available(iOS 13.0, *)
     open var statusBarHeight: CGFloat? {
         UIApplication.shared
             .delegate?
@@ -68,7 +69,8 @@ open class Globals {
     }
     
     /// Tob bars height for the application window.
-    /// Might be `nil` if there is no application window. 
+    /// Might be `nil` if there is no application window.
+    @available(iOS 13.0, *)
     open var topBarsHeight: CGFloat? {
         guard let statusBarHeight = statusBarHeight else { return nil }
         return statusBarHeight + c.navigationBarHeight

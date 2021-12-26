@@ -220,6 +220,7 @@ public extension UIView {
     /// Shows activity indicator.
     /// It uses existing one if found in subviews.
     /// Calls to -showActivityIndicator and -hideActivityIndicator have to be balanced or hide have to be forced.
+    @available(iOS 13.0, *)
     func showActivityIndicator() {
         showCounter += 1
         
