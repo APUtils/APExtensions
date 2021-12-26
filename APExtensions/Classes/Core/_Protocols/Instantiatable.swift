@@ -97,11 +97,11 @@ public extension InstantiatableContentView where Self: UIView {
     /// Also makes self background color transparent.
     /// The main idea here is that content view should fully set how self view looks.
     @available(iOS 9.0, *)
-    func instantiateAndAttachContentView() {
+    func instantiateAndAttachContentView(insets: UIEdgeInsets = .zero) {
         backgroundColor = .clear
         let contentView = instantiateContentView()
         contentView.frame = bounds
         addSubview(contentView)
-        contentView.constraintSides(to: self)
+        contentView.constraintSides(to: self, insets: insets)
     }
 }
