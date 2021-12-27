@@ -14,17 +14,23 @@ public extension UILabel {
         public var backgroundColor: UIColor?
         public var text: String?
         public var textColor: UIColor?
-        public var visibility: Visibility
+        public var visibility: Visibility?
         
         public var viewVM: UIView.ViewModel {
-            .init(backgroundColor: backgroundColor,
-                  visibility: visibility)
+            if let visibility = visibility {
+                return .init(backgroundColor: backgroundColor,
+                      visibility: visibility)
+            } else {
+                let visible = text != nil
+                return .init(backgroundColor: backgroundColor,
+                             visibility: visible ? .visible : .hidden)
+            }
         }
         
         public init(backgroundColor: UIColor? = nil,
                     text: String? = nil,
                     textColor: UIColor? = nil,
-                    visibility: Visibility = .visible) {
+                    visibility: Visibility? = nil) {
             
             self.backgroundColor = backgroundColor
             self.text = text
