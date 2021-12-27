@@ -11,10 +11,14 @@ import UIKit
 
 public extension UIButton {
     /// Sets button's title for control state normal without animations
-    func setTitle(_ title: String?) {
+    func setTitleWithoutAnimations(_ title: String?) {
         UIView.performWithoutAnimation {
             setTitle(title, for: .normal)
-            layoutIfNeeded()
+            
+            guard let titleLabel = titleLabel else { return }
+            titleLabel.text = title
+            titleLabel.sizeToFit()
+            titleLabel.center = bounds.center
         }
     }
 }

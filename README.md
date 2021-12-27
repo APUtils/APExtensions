@@ -51,12 +51,12 @@ it, simply add the following line to your Podfile:
 pod 'APExtensions', '~> 10.1'
 ```
 
-Available subspecs: `Core`, `Storyboard`, `ViewConfiguration`. Example Podfile for subspec:
+Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
 
 ```ruby
 pod 'APExtensions/Core', '~> 10.1'
 pod 'APExtensions/Storyboard', '~> 10.1'
-pod 'APExtensions/ViewConfiguration', '~> 10.1'
+pod 'APExtensions/ViewModel', '~> 10.1'
 ```
 
 ## Usage
@@ -67,18 +67,9 @@ See [documentation](http://cocoadocs.org/docsets/APExtensions) for more details.
 
 Global Utils and Debug methods, Controllers, Protocols and whole lot of default classes extensions. Read more in [DOCS](https://aputils.github.io/APExtensions/).
 
-### ViewConfiguration
+### ViewModel
 
-Adds `State` enum and `.configure(_:)` method to views so it's easy and robust to configure them.
-
-```swift
-// Creating UIImageView.State and store it in view model
-let imageViewState: UIImageView.State = .shown(image: UIImage(named: "ic_done_resizeable"))
-viewModel.imageViewState = imageViewState
-
-// Configure UIImageView with view model
-imageView.configure(viewModel.imageViewState)
-```
+Adds `ViewModel` struct and `.configure(vm:)` method to views so it's easy and robust to configure them.
 
 ### ViewState
 

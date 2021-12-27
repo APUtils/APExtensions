@@ -33,7 +33,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.swift_versions = ['5.1']
   s.frameworks = 'Foundation'
   
-  s.default_subspec = 'Core', 'ViewConfiguration', 'Storyboard'
+  s.default_subspec = 'Core', 'ViewModel', 'Storyboard'
 
   s.subspec 'Core' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit', 'MessageUI'
@@ -41,9 +41,9 @@ A helpful collection of extensions, controllers and protocols. See documentation
       subspec.dependency 'RoutableLogger'
   end
 
-  s.subspec 'ViewConfiguration' do |subspec|
+  s.subspec 'ViewModel' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit'
-      subspec.source_files = 'APExtensions/Classes/ViewConfiguration/**/*'
+      subspec.source_files = 'APExtensions/Classes/ViewModel/**/*'
   end
 
   s.subspec 'Storyboard' do |subspec|
