@@ -1,18 +1,17 @@
 //
-//  UITextView+Storyboard.swift
-//  APExtensions
+//  UITextField+Storyboard.swift
+//  Pods
 //
-//  Created by Anton Plebanovich on 6/27/17.
-//  Copyright © 2019 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 8.02.22.
+//  Copyright © 2022 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
-
 private var defaultFontAssociationKey = 0
 
-
-public extension UITextView {
+extension UITextField {
+    
     private var defaultFont: UIFont? {
         get {
             return objc_getAssociatedObject(self, &defaultFontAssociationKey) as? UIFont
@@ -22,7 +21,7 @@ public extension UITextView {
         }
     }
     
-    /// Scale font for screen
+    /// Scale title font for screen
     @IBInspectable var fitScreenSize: Bool {
         get {
             return defaultFont != nil

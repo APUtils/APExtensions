@@ -43,6 +43,14 @@ public extension UIButton {
             }
         }
     }
+    
+    /// Makes font scalable depending on device content size category
+    @IBInspectable
+    var scalable: Bool {
+        @available(*, unavailable)
+        get { return false }
+        set { titleLabel?.scalable = newValue }
+    }
 }
 
 // ******************************* MARK: - Label

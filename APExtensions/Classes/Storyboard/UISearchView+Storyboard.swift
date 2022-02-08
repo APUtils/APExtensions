@@ -1,18 +1,17 @@
 //
-//  UITextView+Storyboard.swift
-//  APExtensions
+//  UISearchView+Storyboard.swift
+//  Pods
 //
-//  Created by Anton Plebanovich on 6/27/17.
-//  Copyright © 2019 Anton Plebanovich. All rights reserved.
+//  Created by Anton Plebanovich on 8.02.22.
+//  Copyright © 2022 Anton Plebanovich. All rights reserved.
 //
 
 import UIKit
 
-
 private var defaultFontAssociationKey = 0
 
-
-public extension UITextView {
+extension UISearchBar {
+    
     private var defaultFont: UIFont? {
         get {
             return objc_getAssociatedObject(self, &defaultFontAssociationKey) as? UIFont
@@ -22,19 +21,19 @@ public extension UITextView {
         }
     }
     
-    /// Scale font for screen
+    /// Scale title font for screen
     @IBInspectable var fitScreenSize: Bool {
         get {
             return defaultFont != nil
         }
         set {
             if newValue {
-                defaultFont = font
-                font = font?.screenFitFont
+                defaultFont = searchTextField.font
+                searchTextField.font = searchTextField.font?.screenFitFont
             } else {
                 // Restore
                 if let defaultFont = defaultFont {
-                    font = defaultFont
+                    searchTextField.font = defaultFont
                     self.defaultFont = nil
                 }
             }
@@ -46,13 +45,6 @@ public extension UITextView {
     var scalable: Bool {
         @available(*, unavailable)
         get { return false }
-        set {
-            if newValue {
-                font = font?.scalable
-                adjustsFontForContentSizeCategory = true
-            } else {
-                adjustsFontForContentSizeCategory = false
-            }
-        }
+        set { searchTextField.scalable = newValue }
     }
 }

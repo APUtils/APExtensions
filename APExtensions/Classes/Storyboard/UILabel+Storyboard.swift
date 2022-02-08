@@ -40,4 +40,19 @@ public extension UILabel {
             }
         }
     }
+    
+    /// Makes font scalable depending on device content size category
+    @IBInspectable
+    var scalable: Bool {
+        @available(*, unavailable)
+        get { return false }
+        set {
+            if newValue {
+                font = font.scalable
+                adjustsFontForContentSizeCategory = true
+            } else {
+                adjustsFontForContentSizeCategory = false
+            }
+        }
+    }
 }
