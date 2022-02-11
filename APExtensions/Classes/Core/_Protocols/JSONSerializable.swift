@@ -31,6 +31,9 @@ public extension JSONSerializable {
     }
     
     func toJSONString(options: JSONSerialization.WritingOptions, file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        
+        guard JSONSerialization.isValidJSONObject(self) else { return nil }
+        
         do {
             let objectData: Data = try JSONSerialization.data(withJSONObject: self, options: options)
             let objectString: String = objectData.utf8String ?? ""

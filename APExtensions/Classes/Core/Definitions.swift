@@ -23,3 +23,12 @@ public typealias ErrorClosure = (_ error: Error?) -> Void
 
 /// Error stub to use for simplification
 public struct GeneralError: Error { public init() {} }
+
+/// Error with message string used as error description
+public struct StringError: LocalizedError {
+    private let message: String
+    public init(message: String) { self.message = message }
+    
+    // LocalizedError
+    public var errorDescription: String? { message }
+}
