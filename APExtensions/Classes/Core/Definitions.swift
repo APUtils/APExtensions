@@ -25,10 +25,13 @@ public typealias ErrorClosure = (_ error: Error?) -> Void
 public struct GeneralError: Error { public init() {} }
 
 /// Error with message string used as error description
-public struct StringError: LocalizedError {
+public struct StringError: LocalizedError, CustomStringConvertible {
     private let message: String
     public init(message: String) { self.message = message }
     
     // LocalizedError
     public var errorDescription: String? { message }
+    
+    // CustomStringConvertible
+    public var description: String { message }
 }
