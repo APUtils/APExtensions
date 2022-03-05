@@ -24,7 +24,7 @@ public extension String {
             } else if let bool = value as? Bool {
                 stringRepresentation = bool ? "true" : "false"
             } else {
-                stringRepresentation = String(describing: value)
+                stringRepresentation = "\(value)"
             }
         } else {
             stringRepresentation = "nil"

@@ -270,6 +270,7 @@ private extension StringProtocol {
         index(startIndex, offsetBy: offset)
     }
 }
+
 // ******************************* MARK: - Appending
 
 public extension StringProtocol {

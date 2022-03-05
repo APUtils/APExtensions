@@ -62,6 +62,8 @@ open class AlertController: UIAlertController {
             }
         }
         
+        RoutableLogger.logInfo("Presenting alert with title: <\(title.description)>, message: <\(message.description)>, style: <\(preferredStyle.rawValue)>, actions: \(actions.map { $0.title.description })")
+        
         g.performInMain {
             switch AlertController.presentationStyle {
             case .window:

@@ -19,11 +19,11 @@ public protocol ClassName {
 
 public extension ClassName {
     @nonobjc static var className: String {
-        return String(describing: self)
+        "\(self)"
     }
     
     @nonobjc var className: String {
-        return String(describing: type(of: self))
+        "\(type(of: self))"
     }
 }
 

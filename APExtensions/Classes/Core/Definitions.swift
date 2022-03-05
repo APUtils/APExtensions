@@ -27,7 +27,7 @@ public struct GeneralError: Error { public init() {} }
 /// Error with message string used as error description
 public struct StringError: LocalizedError, CustomStringConvertible {
     private let message: String
-    public init(message: String) { self.message = message }
+    public init(_ message: String) { self.message = message }
     
     // LocalizedError
     public var errorDescription: String? { message }

@@ -255,9 +255,16 @@ open class Globals {
         
         performInMain {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: { _ in handler?() }))
+            alertVC.addAction(UIAlertAction(title: actionTitle, style: style, handler: { action in
+                RoutableLogger.logInfo("Alert action '\(action.title.description)' clicked")
+                handler?()
+            }))
+            
             if let cancelTitle = cancelTitle {
-                alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: { _ in onCancel?() }))
+                alertVC.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: { action in
+                    RoutableLogger.logInfo("Alert cancel action '\(action.title.description)' clicked")
+                    onCancel?()
+                }))
             }
             
             alertVC.present(animated: true)
@@ -284,9 +291,13 @@ open class Globals {
             let alertVC = AlertController(title: title, message: message, preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: confirmTitle, style: .cancel) { action in
                 let text = alertVC.textFields?.first?.text ?? ""
+                RoutableLogger.logInfo("Enter text alert action '\(action.title.description)' clicked with text: \(text)")
                 completion(text)
             }
-            let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: { _ in onCancel?() })
+            let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: { action in
+                RoutableLogger.logInfo("Enter text alert cancel action '\(action.title.description)' clicked")
+                onCancel?()
+            })
             
             alertVC.addTextField { (textField) in
                 textFieldConfiguration?(textField)
@@ -329,12 +340,16 @@ open class Globals {
             
             let vc = AlertController(title: title, message: message, preferredStyle: .actionSheet)
             
-            let cancel = UIAlertAction(title: cancelTitle, style: .cancel, handler: { _ in onCancel?() })
+            let cancel = UIAlertAction(title: cancelTitle, style: .cancel, handler: { action in
+                RoutableLogger.logInfo("Picker alert cancel action '\(action.title.description)' clicked")
+                onCancel?()
+            })
             vc.addAction(cancel)
             
             for (index, button) in buttons.enumerated() {
                 let buttonStyle = buttonsStyles?[index] ?? .default
-                let action = UIAlertAction(title: button, style: buttonStyle, handler: { _ in
+                let action = UIAlertAction(title: button, style: buttonStyle, handler: { action in
+                    RoutableLogger.logInfo("Picker alert action'\(action.title.description)' clicked")
                     completion(button, index)
                 })
                 
