@@ -118,10 +118,10 @@ public extension UIScrollView {
     
     /// Scroll to top
     func scrollToTop(animated: Bool) {
-        if let tableView = self as? UITableView {
+        if let tableView = self as? UITableView, let firstRowIndexPath = tableView.firstRowIndexPath {
             // Since table view `contentSize` might change when cell become visible
             // we need to use `UITableView`'s methods instead.
-            tableView.scrollToRow(at: tableView.firstRowIndexPath, at: .top, animated: animated)
+            tableView.scrollToRow(at: firstRowIndexPath, at: .top, animated: animated)
             
         } else {
             let topContentOffset: CGPoint = .init(x: 0, y: -fullContentInsets.top)
@@ -150,10 +150,7 @@ public extension UIScrollView {
             return CGPoint(x: 0, y: y)
         }
         
-        if let tableView = self as? UITableView {
-            let lastRowIndexPath = tableView.lastRowIndexPath
-            guard lastRowIndexPath.section != NSNotFound else { return }
-            
+        if let tableView = self as? UITableView, let lastRowIndexPath = tableView.lastRowIndexPath {
             // Since table view `contentSize` might change when cell become visible
             // we need to use `UITableView`'s methods instead.
             tableView.scrollToRow(at: lastRowIndexPath, at: .bottom, animated: animated)

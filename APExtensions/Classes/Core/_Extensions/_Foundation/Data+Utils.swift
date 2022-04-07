@@ -14,7 +14,7 @@ public extension Data {
     // ******************************* MARK: - Hex
     
     /// Get HEX string from data. Can be used for sending APNS token to backend.
-    var hexString: String {
+    func toHEXString() -> String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
     
@@ -36,27 +36,85 @@ public extension Data {
         self = data
     }
     
-    // ******************************* MARK: - String
+    // ******************************* MARK: - To
     
     /// Try to convert data to ASCII string
-    var asciiString: String? {
-        String(data: self, encoding: String.Encoding.ascii)
+    func safeASCIIString(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        guard let string = String(data: self, encoding: String.Encoding.ascii) else {
+            RoutableLogger.logError("Unable to create ASCII string from data", data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+        
+        return string
     }
     
     /// Try to convert data to UTF8 string
-    var utf8String: String? {
-        return String(data: self, encoding: String.Encoding.utf8)
+    func safeUTF8String(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        guard let string = String(data: self, encoding: String.Encoding.utf8) else {
+            RoutableLogger.logError("Unable to create UTF8 string from data", data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+        
+        return string
     }
     
     /// String representation for data.
     /// Try to decode as UTF8 string at first.
     /// Try to decode as ASCII string at second.
     /// Uses hex representation if data can not be represented as UTF8 or ASCII string.
-    var asString: String {
-        utf8String ?? asciiString ?? hexString
+    func safeString(file: String = #file, function: String = #function, line: UInt = #line) -> String {
+        safeUTF8String(file: file, function: function, line: line)
+        ?? safeASCIIString(file: file, function: function, line: line)
+        ?? toHEXString()
     }
     
     // ******************************* MARK: - Other
+    
+    // TODO: Rework all
+    
+    /// Try to get dictionary from JSON data
+    func safeJSONDictionary(file: String = #file, function: String = #function, line: UInt = #line) -> [String: Any]? {
+        do {
+            let jsonObject: Any
+            if #available(iOS 15.0, *) {
+                jsonObject = try JSONSerialization.jsonObject(with: self, options: [.json5Allowed, .topLevelDictionaryAssumed])
+            } else {
+                jsonObject = try JSONSerialization.jsonObject(with: self, options: [])
+            }
+            guard let dictionary = jsonObject as? [String: Any] else {
+                RoutableLogger.logError("Unable to convert object to dictionary", data: ["data": self, "jsonObject": jsonObject, "type": type(of: jsonObject)], file: file, function: function, line: line)
+                return nil
+            }
+            
+            return dictionary
+            
+        } catch {
+            RoutableLogger.logError("Unable to serialize data to dictionary", error: error, data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+    }
+    
+    /// Try to get array from JSON data
+    func safeJSONArray(file: String = #file, function: String = #function, line: UInt = #line) -> [Any]? {
+        do {
+            let jsonObject: Any
+            if #available(iOS 15.0, *) {
+                jsonObject = try JSONSerialization.jsonObject(with: self, options: [.json5Allowed])
+            } else {
+                jsonObject = try JSONSerialization.jsonObject(with: self, options: [])
+            }
+            guard let array = jsonObject as? [Any] else {
+                RoutableLogger.logError("Unable to convert object to array", data: ["data": self, "jsonObject": jsonObject, "type": type(of: jsonObject)], file: file, function: function, line: line)
+                return nil
+            }
+            
+            return array
+            
+        } catch {
+            RoutableLogger.logError("Unable to serialize data to array", error: error, data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+    }
     
     /// Try to serialize JSON data
     var jsonObject: Any? {
@@ -67,33 +125,9 @@ public extension Data {
         }
     }
     
-    /// Try to get dictionary from JSON data
-    var jsonDictionary: [String : Any]? {
-        let jsonObject: Any?
-        if #available(iOS 15.0, *) {
-            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [.json5Allowed, .topLevelDictionaryAssumed])
-        } else {
-            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [])
-        }
-        
-        return jsonObject as? [String : Any]
-    }
-    
-    /// Try to get array from JSON data
-    var jsonArray: [Any]? {
-        let jsonObject: Any?
-        if #available(iOS 15.0, *) {
-            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [.json5Allowed])
-        } else {
-            jsonObject = try? JSONSerialization.jsonObject(with: self, options: [])
-        }
-        
-        return jsonObject as? [Any]
-    }
-    
     /// Try to get string for key in dictionary from JSON data
     func jsonDictionaryStringForKey(_ key: String) -> String? {
-        guard let dictionary = jsonDictionary else { return nil }
+        guard let dictionary = safeJSONDictionary() else { return nil }
         
         let value = dictionary[key]
         
@@ -126,7 +160,7 @@ public extension Data {
             try write(to: url, options: options)
             return true
         } catch {
-            RoutableLogger.logError("Unable to write data", error: error, data: ["self": asString, "url": url], file: file, function: function, line: line)
+            RoutableLogger.logError("Unable to write data", error: error, data: ["self": safeString(), "url": url], file: file, function: function, line: line)
             return false
         }
     }
@@ -136,7 +170,7 @@ public extension Data {
         do {
             return try JSONSerialization.jsonObject(with: self, options: .allowFragments)
         } catch {
-            RoutableLogger.logError("Unable to parse data to JSON", error: error, data: ["self": asString])
+            RoutableLogger.logError("Unable to parse data to JSON", error: error, data: ["self": safeString()])
             return nil
         }
     }
@@ -152,7 +186,7 @@ public extension Data {
         do {
             return try (self as NSData).compressed(using: algorithm) as Data
         } catch {
-            RoutableLogger.logError("Unable to compress data", data: ["data": asString])
+            RoutableLogger.logError("Unable to compress data", data: ["data": safeString()])
             return self
         }
     }
@@ -161,7 +195,7 @@ public extension Data {
         do {
             return try (self as NSData).decompressed(using: algorithm) as Data
         } catch {
-            RoutableLogger.logError("Unable to decompress data", data: ["data": asString])
+            RoutableLogger.logError("Unable to decompress data", data: ["data": safeString()])
             return self
         }
     }

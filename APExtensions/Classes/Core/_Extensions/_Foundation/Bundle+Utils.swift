@@ -34,7 +34,7 @@ public extension Bundle {
                         "resource": resource,
                         "extension": `extension`,
                         "url": url,
-                        "data": data.utf8String
+                        "data": data.safeUTF8String()
                      ])
             
             return nil

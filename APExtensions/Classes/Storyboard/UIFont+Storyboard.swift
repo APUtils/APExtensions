@@ -20,6 +20,7 @@ public extension UIFont {
     }
     
     /// Returns scalable font depending on device content size category
+    @available(iOS 11.0, *)
     var scalable: UIFont {
         let style: UIFont.TextStyle
         switch pointSize {

@@ -12,35 +12,40 @@ public protocol JSONSerializable {}
 
 public extension JSONSerializable {
     
-    /// Returns `self` converted to a JSON string or reports an error an returns `nil` if unable.
+    /// Returns `self` converted to a JSON string or reports an error and returns `nil` if unable.
     /// It's using keys sorting on iOS 11 or higher.
-    var asJSONString: String? {
+    func safeJSONString(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
         if #available(iOS 11.0, *) {
-            return toJSONString(options: [.sortedKeys])
+            return safeJSONString(options: [.sortedKeys], file: file, function: function, line: line)
         } else {
-            return toJSONString(options: [])
+            return safeJSONString(options: [], file: file, function: function, line: line)
         }
     }
     
-    var asPrettyJSONString: String? {
+    func safePrettyJSONString(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
         if #available(iOS 11.0, *) {
-            return toJSONString(options: [.sortedKeys, .prettyPrinted])
+            return safeJSONString(options: [.sortedKeys, .prettyPrinted], file: file, function: function, line: line)
         } else {
-            return toJSONString(options: [.prettyPrinted])
+            return safeJSONString(options: [.prettyPrinted], file: file, function: function, line: line)
         }
     }
     
-    func toJSONString(options: JSONSerialization.WritingOptions, file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+    func safeJSONString(options: JSONSerialization.WritingOptions, file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        safeJSONData(options: options, file: file, function: function, line: line)?
+            .safeUTF8String(file: file, function: function, line: line)
+    }
+    
+    func safeJSONData(options: JSONSerialization.WritingOptions, file: String = #file, function: String = #function, line: UInt = #line) -> Data? {
         
-        guard JSONSerialization.isValidJSONObject(self) else { return nil }
+        guard JSONSerialization.isValidJSONObject(self) else {
+            RoutableLogger.logError("Ivalid JSON object", data: ["self": self, "options": options], file: file, function: function, line: line)
+            return nil
+        }
         
         do {
-            let objectData: Data = try JSONSerialization.data(withJSONObject: self, options: options)
-            let objectString: String = objectData.utf8String ?? ""
-            return objectString
-            
+            return try JSONSerialization.data(withJSONObject: self, options: options)
         } catch {
-            RoutableLogger.logError("Unable to transform array to JSON string", error: error, data: ["self": self, "options": options], file: file, function: function, line: line)
+            RoutableLogger.logError("Unable to transform object to JSON string", error: error, data: ["self": self, "options": options], file: file, function: function, line: line)
             return nil
         }
     }

@@ -45,6 +45,7 @@ public extension UIButton {
     }
     
     /// Makes font scalable depending on device content size category
+    @available(iOS 11.0, *)
     @IBInspectable
     var scalable: Bool {
         @available(*, unavailable)

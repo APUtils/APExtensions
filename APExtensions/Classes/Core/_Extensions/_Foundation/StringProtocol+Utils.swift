@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RoutableLogger
 
 // ******************************* MARK: - Representation
 
@@ -123,6 +124,26 @@ public extension StringProtocol {
     /// Returns string as NSMutableAttributedString
     var asMutableAttributedString: NSMutableAttributedString {
         return NSMutableAttributedString(string: asString)
+    }
+}
+
+// ******************************* MARK: - To
+
+public extension StringProtocol {
+    
+    func safeJSONArray(file: String = #file, function: String = #function, line: UInt = #line) -> [Any]? {
+        safeUTF8Data(file: file, function: function, line: line)?
+            .safeJSONArray(file: file, function: function, line: line)
+    }
+    
+    /// Converts string to UTF8 data if possible and report error if unable
+    func safeUTF8Data(file: String = #file, function: String = #function, line: UInt = #line) -> Data? {
+        guard let data = data(using: .utf8) else {
+            RoutableLogger.logError("Unable to convert string to UTF8 data", data: ["self": self], file: file, function: function, line: line)
+            return nil
+        }
+        
+        return data
     }
 }
 

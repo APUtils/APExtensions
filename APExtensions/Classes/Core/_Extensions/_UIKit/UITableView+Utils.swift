@@ -13,13 +13,13 @@ import UIKit
 public extension UITableView {
     
     /// Returns first section's first row index path.
-    /// If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+    /// If table view has zero sections returns `nil`.
     /// If table view has zero cells for the first section returns (0, NSNotFound)
     /// and this index path is valid for scrolling.
-    var firstRowIndexPath: IndexPath {
+    var firstRowIndexPath: IndexPath? {
         let firstSection: Int = (min(0, numberOfSections - 1))._clampedRowOrSection
         if firstSection == NSNotFound {
-            return IndexPath(row: NSNotFound, section: NSNotFound)
+            return nil
         }
         
         let firstRow = (min(0, numberOfRows(inSection: firstSection) - 1))._clampedRowOrSection
@@ -29,13 +29,13 @@ public extension UITableView {
     }
     
     /// Returns last row index path or NSNotFound
-    /// If table view has zero sections returns (NSNotFound, NSNotFound). Invalid for scrolling.
+    /// If table view has zero sections returns `nil`.
     /// If table view has zero cells for the last section returns (section, NSNotFound)
     /// and this index path is valid for scrolling.
-    var lastRowIndexPath: IndexPath {
+    var lastRowIndexPath: IndexPath? {
         let lastSection: Int = (numberOfSections - 1)._clampedRowOrSection
         if lastSection == NSNotFound {
-            return IndexPath(row: NSNotFound, section: NSNotFound)
+            return nil
         }
         
         let lastRow = (numberOfRows(inSection: lastSection) - 1)._clampedRowOrSection
