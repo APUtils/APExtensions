@@ -64,6 +64,9 @@ public extension Double {
     
     /// Returns `self` as `Int` if possible
     var asInt: Int? { Int(exactly: rounded()) }
+    
+    /// Returns `self` as `Int64` if possible
+    var asInt64: Int64? { Int64(exactly: rounded()) }
 }
 
 // ******************************* MARK: - Other
