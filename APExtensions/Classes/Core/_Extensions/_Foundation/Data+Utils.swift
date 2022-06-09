@@ -181,22 +181,22 @@ public extension Data {
 @available(iOS 13.0, *)
 public extension Data {
     
-    /// - note: In rare cases for some reason compression may fail. We just return data itself in that case.
-    func compressed(using algorithm: NSData.CompressionAlgorithm) -> Data {
+    /// - note: In rare cases for some reason compression may fail
+    func safeCompressed(using algorithm: NSData.CompressionAlgorithm) -> Data? {
         do {
             return try (self as NSData).compressed(using: algorithm) as Data
         } catch {
             RoutableLogger.logError("Unable to compress data", data: ["data": safeString()])
-            return self
+            return nil
         }
     }
     
-    func decompressed(using algorithm: NSData.CompressionAlgorithm) -> Data {
+    func safeDecompressed(using algorithm: NSData.CompressionAlgorithm) -> Data? {
         do {
             return try (self as NSData).decompressed(using: algorithm) as Data
         } catch {
             RoutableLogger.logError("Unable to decompress data", data: ["data": safeString()])
-            return self
+            return nil
         }
     }
 }

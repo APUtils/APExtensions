@@ -349,7 +349,7 @@ open class Globals {
             for (index, button) in buttons.enumerated() {
                 let buttonStyle = buttonsStyles?[index] ?? .default
                 let action = UIAlertAction(title: button, style: buttonStyle, handler: { action in
-                    RoutableLogger.logInfo("Picker alert action'\(action.title.description)' clicked")
+                    RoutableLogger.logInfo("Picker alert action '\(action.title.description)' clicked")
                     completion(button, index)
                 })
                 
