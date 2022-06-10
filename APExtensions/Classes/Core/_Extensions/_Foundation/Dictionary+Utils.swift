@@ -68,6 +68,12 @@ public extension Dictionary {
     @inlinable func mapDictionary<T: Hashable, U>(_ transform: (_ key: Key, _ value: Value) throws -> (key: T, U)) rethrows -> [T: U] {
         return Dictionary<T, U>(uniqueKeysWithValues: try map { try transform($0, $1) })
     }
+    
+    /// Compact map keys and values together into a new dictionary.
+    /// - warning: Resulting keys must be unique!
+    @inlinable func compactMapDictionary<T: Hashable, U>(_ transform: (_ key: Key, _ value: Value) throws -> (key: T, U)?) rethrows -> [T: U] {
+        return Dictionary<T, U>(uniqueKeysWithValues: try compactMap { try transform($0, $1) })
+    }
 }
 
 // ******************************* MARK: - Values for key
