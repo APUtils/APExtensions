@@ -10,6 +10,7 @@ import Foundation
 
 
 public extension NSAttributedString {
+    
     /// Range from the start to the end.
     var fullRange: NSRange {
         return NSRange(location: 0, length: length)

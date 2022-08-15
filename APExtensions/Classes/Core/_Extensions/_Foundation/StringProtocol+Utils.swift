@@ -90,6 +90,10 @@ public extension StringProtocol {
     
     /// Returns `self` as `Bool` if conversion is possible.
     var asBool: Bool? {
+        if let bool = Bool(asString) {
+            return bool
+        }
+        
         switch lowercased() {
         case "true", "yes", "1", "enable": return true
         case "false", "no", "0", "disable": return false
@@ -304,5 +308,15 @@ public extension StringProtocol {
         } else {
             return appending("\(separator)\(string)")
         }
+    }
+}
+
+// ******************************* MARK: - Range
+
+public extension StringProtocol {
+    
+    /// Range from the start to the end.
+    var fullRange: Range<String.Index> {
+        Range<String.Index>(uncheckedBounds: (startIndex, endIndex))
     }
 }

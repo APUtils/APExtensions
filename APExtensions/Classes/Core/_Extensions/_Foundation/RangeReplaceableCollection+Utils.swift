@@ -128,7 +128,6 @@ public extension RangeReplaceableCollection where Index == Int {
     }
 }
 
-
 public extension RangeReplaceableCollection where Index == Int, Self: BidirectionalCollection {
     /// Second element in array
     var second: Element? {
