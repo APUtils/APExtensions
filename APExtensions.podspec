@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '10.1.8'
+  s.version          = '11.0.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.source           = { :git => 'https://github.com/APUtils/APExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
   s.swift_versions = ['5.1']
   s.frameworks = 'Foundation'
   

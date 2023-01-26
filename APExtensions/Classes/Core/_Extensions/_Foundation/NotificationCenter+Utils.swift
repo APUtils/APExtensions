@@ -98,9 +98,13 @@ public extension NotificationCenter {
     
     /// Observes notification once and then removes observer.
     func observeOnce(forName: NSNotification.Name?, object: Any?, queue: OperationQueue?, using: @escaping (Notification) -> Void) {
-        var token: NSObjectProtocol!
-        token = addObserver(forName: forName, object: object, queue: queue, using: { [weak self] notification in
-            if let token = token { self?.removeObserver(token) }
+        class Storage {
+            var token: NSObjectProtocol?
+        }
+        
+        let storage = Storage()
+        storage.token = addObserver(forName: forName, object: object, queue: queue, using: { [weak self] notification in
+            if let token = storage.token { self?.removeObserver(token) }
             using(notification)
         })
     }

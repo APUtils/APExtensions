@@ -2,6 +2,89 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [11.0.0](https://github.com/APUtils/APExtensions/releases/tag/11.0.0)
+Released on 2023-01-26.
+
+#### Added
+- Ability to change c.screenResizeCoef
+- Data .compressed(using:)
+- Data .decompressed(using:)
+- Deprecation warnings
+- DispatchQueue performSync(execute:)
+- Globals statusBarHeight
+- Globals topBarsHeight
+- Logs for alert flow
+- StringError
+- UIScrollView scrollToPage(_:)
+- [AnyKeyPath] asString
+- [Data] asciiString -> safeASCIIString()
+- [Data] asString -> safeString()
+- [Data] hexString -> toHEXString()
+- [Data] jsonArray -> safeJSONArray()
+- [Data] jsonDictionary -> safeJSONDictionary()
+- [Data] utf8String -> safeUTF8String()
+- [Dictionary] compactMapDictionary(_:)
+- [DispatchQueue] performAsyncIfNeeded(execute:)
+- [Double] asInt64
+- [Int64] asCGFloat
+- [Int64] asDouble
+- [Int64] asFloat
+- [Int64] asHexString
+- [Int64] asInt
+- [Int64] asString
+- [Int64] asTimeInterval
+- [Int64] asUInt
+- [Int64] isEven
+- [Int64] isOdd
+- [Int64] isSingular
+- [JSONSerializable] asJSONString -> safeJSONString()
+- [JSONSerializable] asPrettyJSONString -> safePrettyJSONString()
+- [JSONSerializable] safeJSONData()
+- [JSONSerializable] toJSONString -> safeJSONString()
+- [Sequence] average() now returns optional element
+- [Sequence] dictionaryMapValues(_:)
+- [Storyboard][Font] scalable
+- [Storyboard][UIButton] scalable
+- [Storyboard][UILabel] scalable
+- [Storyboard][UISearchView] fitScreenSize
+- [Storyboard][UISearchView] scalable
+- [Storyboard][UITextField] fitScreenSize
+- [Storyboard][UITextField] scalable
+- [Storyboard][UITextView] scalable
+- [StringProtocol] .fullRange
+- [StringProtocol] safeJSONArray()
+- [StringProtocol] safeUTF8Data()
+- [UIScrollView] table view scrolling crash when there is no elements
+- [UITableView] firstRowIndexPath and lastRowIndexPath now optional
+
+#### Changed
+- Allow to set other Globals
+- Excessive Optional extensions remove
+- Min supported iOS version is 11.0
+- Refactored [ViewModel] to use view models
+- UIScrollView .visibleContentFrame takes insets into account
+- [Data] Made `safeCompressed(using:)` and `safeDecompressed(using:)` return type optional
+- [InstantiatableContentView<View>] instantiateAndAttachContentView(insets:) -> instantiateAndAttachContentView(insets:bottomPriority:)
+- [Sequence] dictionaryMapKeys <-> dictionaryMapValues
+- [UILabel] Allowed `nil` visibility
+- [ViewConfiguration] -> [ViewModel]
+
+#### Fixed
+- Methods iOS availability fix
+
+#### Renamed
+- CGFloat .roundedToPixel -> .roundedToPixel(_:)
+- CGRect .roundedToPixel -> .roundedToPixel(_:)
+- UIScrollView .visibleFrame -> .visibleContentFrame
+- [DispatchQueue] performSync(execute:) -> performSyncIfNeeded(execute:)
+- [Sequence] dictionaryMap(_:) -> dictionaryMapKeys(_:)
+
+#### Removed
+- CGFloat .roundedUpToPixel
+
+#### Improved
+- Performance and compile-time optimizations
+
 ## [10.1.8](https://github.com/APUtils/APExtensions/releases/tag/10.1.8)
 Released on 18.11.2021.
 

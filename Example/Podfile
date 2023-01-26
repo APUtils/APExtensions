@@ -1,5 +1,5 @@
 # Deployment Target
-platform :ios, '9.0'
+platform :ios, '11.0'
 install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
@@ -21,6 +21,11 @@ post_install do |installer|
   pods_project = installer.pods_project
   pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
   pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+  
+  # Silence Pods project warning
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['DEAD_CODE_STRIPPING'] = 'YES'
+  end
   
   # Silence deployment target warnings
   installer.pods_project.targets.each do |target|
