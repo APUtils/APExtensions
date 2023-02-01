@@ -1,6 +1,7 @@
 # APExtensions
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Version](https://img.shields.io/cocoapods/v/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![License](https://img.shields.io/cocoapods/l/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
@@ -35,7 +36,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APExtensions" ~> 10.1
+github "APUtils/APExtensions" ~> 12.0
 ```
 
 Install command: `carthage bootstrap --use-xcframeworks`
@@ -48,15 +49,27 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 10.1'
+pod 'APExtensions', '~> 12.0'
 ```
 
 Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Core', '~> 10.1'
-pod 'APExtensions/Storyboard', '~> 10.1'
-pod 'APExtensions/ViewModel', '~> 10.1'
+pod 'APExtensions/Core', '~> 12.0'
+pod 'APExtensions/Storyboard', '~> 12.0'
+pod 'APExtensions/ViewModel', '~> 12.0'
+```
+
+#### Swift Package Manager
+
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
+
+Once you have your Swift package set up, adding `APExtensions` as a dependency is as easy as adding it to the dependencies value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "12.0.0"))
+]
 ```
 
 ## Usage

@@ -6,6 +6,9 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsShared
+#endif
 import Foundation
 import MessageUI
 import RoutableLogger
@@ -90,12 +93,6 @@ open class Globals {
     /// Is application in `active` state?
     open var isAppActive: Bool {
         return sharedApplication.applicationState == .active
-    }
-    
-    // ******************************* MARK: - Swift Exception Handling
-    
-    open func perform(_ closure: SimpleClosure) -> NSException? {
-        return APUtils.perform(closure)
     }
     
     // ******************************* MARK: - Unwrap
@@ -647,24 +644,6 @@ open class Globals {
     }
     
     // ******************************* MARK: - Other Global Functions
-    
-    /// Returns all classes that conforms to specified protocol. Protocol must be declared with @objc annotation.
-    /// Takes 0.003s - 0.02s on 5s device. Example usage:
-    ///
-    ///     let setupOnes: [SetupOnce.Type] = getClassesConformToProtocol(SetupOnce.self)
-    ///     // or
-    ///     let setupOnes = getClassesConformToProtocol(SetupOnce.self) as [SetupOnce.Type]
-    open func getClassesConformToProtocol<T>(_ protocol: Protocol) -> [T] {
-        return APExtensionsLoader.getClassesConform(to: `protocol`).compactMap({ $0 as? T })
-    }
-    
-    /// Returns all child classes for specified class. Not recursively.
-    /// Takes 0.015s on 5s device. Example usage:
-    ///
-    ///     let childClasses = getChildrenClasses(UIViewController.self)
-    open func getChildrenClasses<T: AnyObject>(of `class`: T.Type) -> [T.Type] {
-        return APExtensionsLoader.getChildClasses(for: `class`).compactMap({ $0 as? T.Type })
-    }
     
     open func getMethodsList(object: AnyObject) -> [String]? {
         var mc: UInt32 = 0

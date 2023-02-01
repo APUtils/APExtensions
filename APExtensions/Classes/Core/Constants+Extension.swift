@@ -6,7 +6,11 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsShared
+#endif
 import Foundation
+import UIKit
 
 public extension Constants {
     

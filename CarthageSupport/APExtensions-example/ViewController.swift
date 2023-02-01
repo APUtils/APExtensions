@@ -13,9 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Previous start time: \(UIApplication.previousStartTime)")
-        print("Start time: \(UIApplication.startTime)")
-        
         print(Constants.topBarsHeight)
         print(Constants.statusBarHeight)
         print(Constants.homeButtonHeight)

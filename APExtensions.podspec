@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '11.0.1'
+  s.version          = '12.0.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
 A helpful collection of extensions, controllers and protocols. See documentation for details.
@@ -23,14 +17,12 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.homepage         = 'https://github.com/APUtils/APExtensions'
   s.documentation_url = 'https://aputils.github.io/APExtensions/'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Anton Plebanovich' => 'anton.plebanovich@gmail.com' }
   s.source           = { :git => 'https://github.com/APUtils/APExtensions.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
-  s.swift_versions = ['5.1']
+  s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
   s.frameworks = 'Foundation'
   
   s.default_subspec = 'Core', 'ViewModel', 'Storyboard'

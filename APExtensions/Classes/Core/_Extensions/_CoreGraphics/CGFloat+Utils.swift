@@ -6,7 +6,12 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsShared
+#endif
 import CoreGraphics
+import Foundation
+import UIKit
 
 // ******************************* MARK: - As String
 

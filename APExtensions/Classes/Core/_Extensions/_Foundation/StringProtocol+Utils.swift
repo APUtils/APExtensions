@@ -6,8 +6,12 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsShared
+#endif
 import Foundation
 import RoutableLogger
+import UIKit
 
 // ******************************* MARK: - Representation
 

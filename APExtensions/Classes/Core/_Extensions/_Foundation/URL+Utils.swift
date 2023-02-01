@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 public extension URL {
     /// File name without extension. Nil if it's directory.

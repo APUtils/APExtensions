@@ -20,7 +20,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */; };
-		B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */; };
 		B0A073C21F3B741B001B8CC6 /* uiview.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C11F3B741B001B8CC6 /* uiview.png */; };
 		B0A073C41F3B7563001B8CC6 /* nslayoutconstraint.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */; };
 		B0A073C61F3B7708001B8CC6 /* uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A073C51F3B7707001B8CC6 /* uibutton.png */; };
@@ -66,6 +65,7 @@
 		0D4630D923C2443B00108415 /* UITests_Unique.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UITests_Unique.json; sourceTree = "<group>"; };
 		0D59C2092624D8820073C456 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = ../CarthageSupport/Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0D6869E62555D3CC00C1D884 /* CustomPageSizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageSizeVC.swift; sourceTree = "<group>"; };
+		0DDA92572988F6AA00F5BBBD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0DE44C7D23C236A000E157DE /* Simulator_UnitTests_Environment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Simulator_UnitTests_Environment.json; sourceTree = "<group>"; };
 		0DE44C7E23C236C700E157DE /* Simulator_NotTests_Environment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Simulator_NotTests_Environment.json; sourceTree = "<group>"; };
 		1E18FF74BED638A6CBB3398F /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 		A57474C800BA2A652ED8F4FB /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		B0032229200374E10020E171 /* RemoveToTheRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveToTheRootViewController.swift; sourceTree = "<group>"; };
 		B004134E202E0EA400B58E18 /* updateDocs.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = updateDocs.command; path = ../updateDocs.command; sourceTree = "<group>"; };
-		B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupOnceProtocolExample.swift; sourceTree = "<group>"; };
 		B0A073C11F3B741B001B8CC6 /* uiview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiview.png; sourceTree = "<group>"; };
 		B0A073C31F3B7562001B8CC6 /* nslayoutconstraint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nslayoutconstraint.png; sourceTree = "<group>"; };
 		B0A073C51F3B7707001B8CC6 /* uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uibutton.png; sourceTree = "<group>"; };
@@ -222,7 +221,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				B086B4ED1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 			);
 			name = "Example for APExtensions";
@@ -261,6 +259,7 @@
 				1E18FF74BED638A6CBB3398F /* .gitignore */,
 				E60E577FA62486502305A0F4 /* .travis.yml */,
 				32419D24EFD29E6FBBA7030A /* APExtensions.podspec */,
+				0DDA92572988F6AA00F5BBBD /* Package.swift */,
 				A57474C800BA2A652ED8F4FB /* CHANGELOG.md */,
 				B0FD60272040960D004C1D01 /* DEPLOY PROCESS.md */,
 				BE3B1BF1D9E4EDA304E77323 /* LICENSE */,
@@ -570,7 +569,6 @@
 			files = (
 				0D6869E92555D3CC00C1D884 /* CustomPageSizeVC.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				B086B4EE1F4353FD00D7B4B7 /* SetupOnceProtocolExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B003222B200374E10020E171 /* RemoveToTheRootViewController.swift in Sources */,
 				B0BBEDAF1FBB46A2000CBD87 /* ScrollToBottomViewController.swift in Sources */,

@@ -6,6 +6,9 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsShared
+#endif
 import UIKit
 import RoutableLogger
 

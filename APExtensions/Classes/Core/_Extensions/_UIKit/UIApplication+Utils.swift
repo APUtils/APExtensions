@@ -72,39 +72,3 @@ extension UIApplication.State: CustomStringConvertible {
         }
     }
 }
-
-// ******************************* MARK: - Start Time
-
-extension UIApplication: SetupOnce {
-    
-    private static let previousStartTimeUserDefaultsKey = "APExtensions_UIApplication_previousStartTime"
-    
-    /// Previous application start time
-    public static var previousStartTime: Date {
-        get {
-            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: previousStartTimeUserDefaultsKey))
-        }
-        set {
-            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: previousStartTimeUserDefaultsKey)
-        }
-    }
-    
-    private static let startTimeUserDefaultsKey = "APExtensions_UIApplication_startTime"
-    
-    /// Application start time
-    public static var startTime: Date {
-        get {
-            Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: startTimeUserDefaultsKey))
-        }
-        set {
-            UserDefaults.standard.setValue(newValue.timeIntervalSince1970, forKey: startTimeUserDefaultsKey)
-        }
-    }
-    
-    public static var setupOnce: Int = {
-        previousStartTime = startTime
-        startTime = Date()
-        
-        return 0
-    }()
-}

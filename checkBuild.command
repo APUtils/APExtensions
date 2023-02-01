@@ -24,6 +24,9 @@ if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
 	exit 1
 fi
 
+echo -e "\nBuilding Swift Package for iOS..."
+swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
+
 echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Example/APExtensions.xcworkspace" -scheme "APExtensions-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
 

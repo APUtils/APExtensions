@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [12.0.0](https://github.com/APUtils/APExtensions/releases/tag/12.0.0)
+Released on 2023-01-31.
+
+#### Removed
+- `APUtils.perform(_:)` protocol and related logic
+- `SetupOnce` protocol and related logic
+- 
+
 ## [11.0.0](https://github.com/APUtils/APExtensions/releases/tag/11.0.0)
 Released on 2023-01-26.
 

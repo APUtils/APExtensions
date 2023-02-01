@@ -7,10 +7,9 @@
 //
 
 import Foundation
-
+import UIKit
 
 private var defaultTintColorAssociationKey = 0
-
 
 public extension UIBarButtonItem {
     private var defaultTintColor: UIColor? {
