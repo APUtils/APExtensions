@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "logsmanager",
+      "identity" : "routablelogger",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/APUtils/LogsManager.git",
+      "location" : "https://github.com/anton-plebanovich/RoutableLogger.git",
       "state" : {
-        "revision" : "abf0996cd8ca8dfea3273cb8d7f330dd22076b1d",
-        "version" : "12.0.2"
+        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
+        "version" : "1.0.0"
       }
     }
   ],

@@ -38,7 +38,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/APUtils/LogsManager.git", .upToNextMajor(from: "12.0.0")),
+        .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
         .target(
@@ -53,7 +53,7 @@ let package = Package(
         .target(
             name: "APExtensionsCore",
             dependencies: [
-                .product(name: "RoutableLogger", package: "LogsManager"),
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
                 "APExtensionsShared",
                 "APExtensionsOccupiable",
                 "APExtensionsOptionalType",
@@ -75,7 +75,7 @@ let package = Package(
         .target(
             name: "APExtensionsStoryboard",
             dependencies: [
-                .product(name: "RoutableLogger", package: "LogsManager"),
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
                 "APExtensionsShared",
             ],
             path: "APExtensions/Classes/Storyboard",

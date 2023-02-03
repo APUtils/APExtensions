@@ -5,7 +5,6 @@
 //  Created by Anton Plebanovich on 3.02.23.
 //
 
-import APExtensions
 import UIKit
 
 @main
