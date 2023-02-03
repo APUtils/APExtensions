@@ -44,13 +44,9 @@ let package = Package(
         .target(
             name: "APExtensions",
             dependencies: [
-                .product(name: "RoutableLogger", package: "LogsManager"),
                 "APExtensionsCore",
                 "APExtensionsViewModel",
                 "APExtensionsStoryboard",
-                "APExtensionsShared",
-                "APExtensionsOccupiable",
-                "APExtensionsOptionalType",
             ],
             path: "APExtensions/Classes/APExtensions"
         ),
