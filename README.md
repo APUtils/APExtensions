@@ -15,6 +15,31 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+#### Swift Package Manager
+
+- In Xcode select `File` > `Add Packages...`
+- Copy and paste the following into the search: `https://github.com/APUtils/APExtensions`
+- **‼️Make sure `Up to Next Major Version` is selected and put `12.0.0` into the lower bound. There is a bug in Xcode, it does not select versions higher than 9.0.0 by default‼️**
+- Tap `Add Package`
+- Select `APExtension` to add everything and tap `Add Package`
+
+#### CocoaPods
+
+APExtensions is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'APExtensions', '~> 12.0'
+```
+
+Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
+
+```ruby
+pod 'APExtensions/Core', '~> 12.0'
+pod 'APExtensions/Storyboard', '~> 12.0'
+pod 'APExtensions/ViewModel', '~> 12.0'
+```
+
 #### Carthage **DEPRECATED**
 
 Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
@@ -42,35 +67,6 @@ github "APUtils/APExtensions" ~> 12.0
 Install command: `carthage bootstrap --use-xcframeworks`
 
 You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
-
-#### CocoaPods
-
-APExtensions is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'APExtensions', '~> 12.0'
-```
-
-Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
-
-```ruby
-pod 'APExtensions/Core', '~> 12.0'
-pod 'APExtensions/Storyboard', '~> 12.0'
-pod 'APExtensions/ViewModel', '~> 12.0'
-```
-
-#### Swift Package Manager
-
-The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
-
-Once you have your Swift package set up, adding `APExtensions` as a dependency is as easy as adding it to the dependencies value of your `Package.swift`.
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "12.0.0"))
-]
-```
 
 ## Usage
 
@@ -156,6 +152,14 @@ Extends default attributes that can be configured using storyboard.
 #### Remark
 
 Assuming layout was made for highest screen size (iPhone 6+, 6s+, 7+) so subject will be reduced propotionally on lower resolution screens.
+
+### Occupiable
+
+`Occupiable` protocol
+
+### OptionalType
+
+`OptionalType` protocol
 
 ## Contributions
 
