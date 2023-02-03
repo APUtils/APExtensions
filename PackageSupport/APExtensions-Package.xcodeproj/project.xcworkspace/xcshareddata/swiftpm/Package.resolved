@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "logsmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/APUtils/LogsManager.git",
+      "state" : {
+        "revision" : "abf0996cd8ca8dfea3273cb8d7f330dd22076b1d",
+        "version" : "12.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}

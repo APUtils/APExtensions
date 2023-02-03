@@ -8,7 +8,7 @@ cd "$base_dir"
 echo ""
 echo -e "\nChecking Carthage integrity..."
 pbxproj_path='CarthageSupport/APExtensions-example.xcodeproj/project.pbxproj'
-swift_files=$(find 'APExtensions/Classes' -type f -name "*.swift" | grep -o "[0-9a-zA-Z+ ]*.swift" | sort -fu)
+swift_files=$(find 'APExtensions/Classes' -type f -name "*.swift" | grep -o "[0-9a-zA-Z+ ]*.swift" | sort -fu | grep -v "Dummy.swift")
 swift_files_count=$(echo "${swift_files}" | wc -l | tr -d ' ')
 
 build_section_id=$(sed -n -e '/\/\* APExtensions \*\/ = {/,/};/p' "${pbxproj_path}" | sed -n '/PBXNativeTarget/,/Sources/p' | tail -1 | tr -d "\t" | cut -d ' ' -f 1)
@@ -25,7 +25,10 @@ if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
 fi
 
 echo -e "\nBuilding Swift Package for iOS..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
+swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios16.2-simulator"
+
+echo -e "\nBuilding Swift Package project..."
+set -o pipefail && xcodebuild -project "PackageSupport/APExtensions-Package.xcodeproj" -sdk iphonesimulator -scheme "APExtensions-Package" | xcpretty
 
 echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Example/APExtensions.xcworkspace" -scheme "APExtensions-Example" -configuration "Release" -sdk iphonesimulator | xcpretty

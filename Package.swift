@@ -14,48 +14,27 @@ let package = Package(
     products: [
         .library(
             name: "APExtensions",
-            targets: [
-                "APExtensionsCore",
-                "APExtensionsViewModel",
-                "APExtensionsStoryboard",
-                "APExtensionsShared",
-                "APExtensionsOccupiable",
-                "APExtensionsOptionalType",
-            ]
+            targets: ["APExtensions"]
         ),
         .library(
             name: "APExtensionsCore",
-            targets: [
-                "APExtensionsCore",
-                "APExtensionsShared",
-                "APExtensionsOccupiable",
-                "APExtensionsOptionalType",
-            ]
+            targets: ["APExtensionsCore"]
         ),
         .library(
             name: "APExtensionsViewModel",
-            targets: [
-                "APExtensionsViewModel",
-            ]
+            targets: ["APExtensionsViewModel"]
         ),
         .library(
             name: "APExtensionsStoryboard",
-            targets: [
-                "APExtensionsStoryboard",
-                "APExtensionsShared",
-            ]
+            targets: ["APExtensionsStoryboard"]
         ),
         .library(
             name: "APExtensionsOccupiable",
-            targets: [
-                "APExtensionsOccupiable",
-            ]
+            targets: ["APExtensionsOccupiable"]
         ),
         .library(
             name: "APExtensionsOptionalType",
-            targets: [
-                "APExtensionsOptionalType",
-            ]
+            targets: ["APExtensionsOptionalType"]
         ),
     ],
     dependencies: [
@@ -63,9 +42,25 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "APExtensions",
+            dependencies: [
+                .product(name: "RoutableLogger", package: "LogsManager"),
+                "APExtensionsCore",
+                "APExtensionsViewModel",
+                "APExtensionsStoryboard",
+                "APExtensionsShared",
+                "APExtensionsOccupiable",
+                "APExtensionsOptionalType",
+            ],
+            path: "APExtensions/Classes/APExtensions"
+        ),
+        .target(
             name: "APExtensionsCore",
             dependencies: [
-                .product(name: "RoutableLogger", package: "LogsManager")
+                .product(name: "RoutableLogger", package: "LogsManager"),
+                "APExtensionsShared",
+                "APExtensionsOccupiable",
+                "APExtensionsOptionalType",
             ],
             path: "APExtensions/Classes/Core",
             exclude: ["_Protocols/Occupiable", "_Protocols/OptionalType"],
@@ -84,7 +79,8 @@ let package = Package(
         .target(
             name: "APExtensionsStoryboard",
             dependencies: [
-                .product(name: "RoutableLogger", package: "LogsManager")
+                .product(name: "RoutableLogger", package: "LogsManager"),
+                "APExtensionsShared",
             ],
             path: "APExtensions/Classes/Storyboard",
             swiftSettings: [
