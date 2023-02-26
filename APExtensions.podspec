@@ -23,7 +23,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
 
   s.ios.deployment_target = '11.0'
   s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
-  s.frameworks = 'Foundation'
   
   s.default_subspec = 'Core', 'ViewModel', 'Storyboard'
 

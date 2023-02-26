@@ -6,8 +6,6 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-
 // ******************************* MARK: - Checks
 
 public extension FloatingPoint {

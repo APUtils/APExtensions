@@ -10,6 +10,24 @@ import UIKit
 import RoutableLogger
 
 public extension NSMutableAttributedString {
+    
+    /// Makes text underlined
+    func set(color: UIColor, substring: String? = nil) {
+        let range: NSRange
+        if let substring {
+            range = mutableString.range(of: substring)
+        } else {
+            range = fullRange
+        }
+        
+        guard range.location != NSNotFound else {
+            RoutableLogger.logError("Unable to locate text", data: ["substring": substring, "self": self])
+            return
+        }
+        
+        addAttribute(.foregroundColor, value: color, range: range)
+    }
+    
     /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.
     func set(font: UIFont, for text: String? = nil) {
         let range: NSRange

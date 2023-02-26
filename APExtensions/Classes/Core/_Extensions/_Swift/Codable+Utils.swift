@@ -6,8 +6,6 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-
 // ******************************* MARK: - Property List Codable
 
 public extension Encodable {

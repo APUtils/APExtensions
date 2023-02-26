@@ -6,15 +6,24 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import RoutableLogger
 import UIKit
 
-
 public extension UIColor {
+    
     /// Init color from 0-255 RGB components
     convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        if !(red >= 0 && red <= 255) {
+            RoutableLogger.logError("Invalid red component", data: ["red": red, "green": green, "blue": blue])
+        }
+        
+        if !(green >= 0 && green <= 255) {
+            RoutableLogger.logError("Invalid green component", data: ["red": red, "green": green, "blue": blue])
+        }
+        
+        if !(blue >= 0 && blue <= 255) {
+            RoutableLogger.logError("Invalid blue component", data: ["red": red, "green": green, "blue": blue])
+        }
         
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }

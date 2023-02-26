@@ -6,8 +6,6 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-
 public extension UInt {
     
     /// Returns `self` as `Int` if possible

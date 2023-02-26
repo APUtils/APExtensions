@@ -6,8 +6,6 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-
 @available(iOS 10.0, macOS 10.12, *)
 private let isoDateFormatter = ISO8601DateFormatter()
 

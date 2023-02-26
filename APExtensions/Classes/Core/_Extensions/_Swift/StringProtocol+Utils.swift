@@ -9,9 +9,7 @@
 #if SPM
 import APExtensionsShared
 #endif
-import Foundation
 import RoutableLogger
-import UIKit
 
 // ******************************* MARK: - Representation
 
