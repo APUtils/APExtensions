@@ -114,11 +114,11 @@ public extension Date {
 
 public extension Date {
     
-    /// Return `self` as a date string with a `yyyy.MM.dd` format. E.g. `2019.10.15`.
+    /// Return `self` as a date string with a `yyyy-MM-dd` format. E.g. `2019-10-15`.
     /// Useful for logs.
     var asLogsDate: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .current
         
         let string = formatter.string(from: self)
@@ -136,11 +136,11 @@ public extension Date {
         return string
     }
     
-    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format. E.g. `2019.10.15 16:16:40.723`.
+    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format. E.g. `2019-10-15 16:16:40.723`.
     /// Useful for logs.
     var asLogsDateAndTimeString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd HH:mm:ss.SSS"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         formatter.timeZone = .current
         
         let string = formatter.string(from: self)
