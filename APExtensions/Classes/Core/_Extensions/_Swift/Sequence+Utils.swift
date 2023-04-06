@@ -113,6 +113,15 @@ public extension Sequence {
             dictionary[element] = value
         }
     }
+    
+    /// Transforms an array to a dictionary using key and value transforms.
+    @inlinable func dictionaryMapKeysAndValues<K, V>(keyTransform: (_ element: Iterator.Element) throws -> K?, valueTransform: (_ element: Iterator.Element) throws -> V?) rethrows -> [K: V] {
+        return try reduce(into: [K: V]()) { dictionary, element in
+            guard let key = try keyTransform(element) else { return }
+            guard let value = try valueTransform(element) else { return }
+            dictionary[key] = value
+        }
+    }
 }
 
 // ******************************* MARK: - Operations
