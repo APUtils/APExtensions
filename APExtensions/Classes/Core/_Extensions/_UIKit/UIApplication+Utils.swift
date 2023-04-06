@@ -60,6 +60,30 @@ public extension UIApplication {
         .contains("XCTestConfigurationFilePath")
 }
 
+// ******************************* MARK: - Window
+
+public extension UIApplication {
+    
+    /// Returns the first key window across all connected scenes
+    var firstKeyWindow: UIWindow? {
+        if #available(iOS 15.0, *) {
+            return connectedScenes
+                .compactMap {
+                    ($0 as? UIWindowScene)?.keyWindow
+                }
+                .first
+            
+        } else if #available(iOS 13.0, *) {
+            return connectedScenes
+                .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+                .first { $0.isKeyWindow }
+            
+        } else {
+            return keyWindow
+        }
+    }
+}
+
 // ******************************* MARK: - UIApplication.State - CustomStringConvertible
 
 extension UIApplication.State: CustomStringConvertible {

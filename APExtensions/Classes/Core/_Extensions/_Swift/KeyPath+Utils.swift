@@ -8,7 +8,8 @@
 
 public extension AnyKeyPath {
     
-    /// Returns key path as string
+    /// Returns key path as string.
+    /// Returns `nil` for Swift key pathes.
     var asString: String? {
         _kvcKeyPathString?.description
     }
