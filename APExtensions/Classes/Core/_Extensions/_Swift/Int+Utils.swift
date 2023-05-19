@@ -24,6 +24,9 @@ public extension Int {
 
 public extension Int {
     
+    /// Returns `self` as `Int32`
+    var asInt32: Int32? { Int32(exactly: self) }
+    
     /// Returns `self` as `UInt`
     var asUInt: UInt? { UInt(exactly: self) }
     
