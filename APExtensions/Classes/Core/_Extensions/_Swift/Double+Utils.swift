@@ -6,6 +6,8 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
+
 // ******************************* MARK: - As String
 
 public extension Double {

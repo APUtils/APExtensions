@@ -6,6 +6,9 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import Darwin
+import Foundation
+
 public extension Float {
     
     /// Return `self` as `Double`.

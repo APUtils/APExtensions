@@ -6,6 +6,9 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import CoreFoundation
+import Foundation
+
 // ******************************* MARK: - Is
 
 public extension Int32 {

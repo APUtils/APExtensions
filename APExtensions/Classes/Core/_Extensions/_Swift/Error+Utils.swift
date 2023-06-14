@@ -6,6 +6,8 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
+
 public extension Error {
     
     /// Checks if cancelled error
