@@ -40,9 +40,6 @@ set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xco
 set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensionsStoryboard" | xcpretty
 set -o pipefail && xcodebuild -project "CarthageSupport/APExtensions-example.xcodeproj" -sdk iphonesimulator -target "APExtensionsViewModel" | xcpretty
 
-echo -e "\nBuilding with Carthage..."
-carthage build --use-xcframeworks --no-skip-current --cache-builds
-
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
 if [ -n "${simulator_id}" ]; then
