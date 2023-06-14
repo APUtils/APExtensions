@@ -456,7 +456,7 @@ open class Globals {
             // Getting meta class of class
             let className = "\(`class`)"
             guard let _metaClass = objc_getMetaClass(className) as? AnyClass else {
-                RoutableLogger.logError("Unable to get metaclass from class", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+                reportSwizzleError(message: "Unable to get metaclass from class", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
                 return
             }
             
@@ -464,17 +464,17 @@ open class Globals {
         }
         
         guard class_isMetaClass(metaClass) else {
-            RoutableLogger.logError("Class is not meta class", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Class is not meta class", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
         guard class_respondsToSelector(metaClass, originalSelector) else {
-            RoutableLogger.logError("Meta class does not respond to original selector", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Meta class does not respond to original selector", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
         guard class_respondsToSelector(metaClass, swizzledSelector) else {
-            RoutableLogger.logError("Meta class does not respond to swizzled selector", data: ["class": `class`, "metaClass": metaClass, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Meta class does not respond to swizzled selector", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
@@ -487,17 +487,17 @@ open class Globals {
     /// Swizzles class methods
     open func swizzleMethods(class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
         guard !class_isMetaClass(`class`) else {
-            RoutableLogger.logError("Class is meta class", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Class is meta class", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
         guard class_respondsToSelector(`class`, originalSelector) else {
-            RoutableLogger.logError("Class does not respond to original selector", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Class does not respond to original selector", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
         guard class_respondsToSelector(`class`, swizzledSelector) else {
-            RoutableLogger.logError("Class does not respond to swizzled selector", data: ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector])
+            reportSwizzleError(message: "Class does not respond to swizzled selector", class: `class`, originalSelector: originalSelector, swizzledSelector: swizzledSelector)
             return
         }
         
@@ -515,6 +515,55 @@ open class Globals {
         } else {
             method_exchangeImplementations(originalMethod, swizzledMethod)
         }
+    }
+    
+    private func reportSwizzleError(message: String, class: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+        
+        // https://stackoverflow.com/a/51199156/4124265
+        func getMethodNamesForClass(cls: AnyClass) -> [String] {
+            var methodCount: UInt32 = 0
+            let methodList = class_copyMethodList(cls, &methodCount)
+            var methodNames: [String] = []
+            if let methodList = methodList, methodCount > 0 {
+                enumerateCArray(array: methodList, count: methodCount) { i, m in
+                    let name = methodName(m: m) ?? "unknown"
+                    methodNames.append("#\(i): \(name)")
+                }
+                
+                free(methodList)
+            }
+            
+            return methodNames
+        }
+        
+        func enumerateCArray<T>(array: UnsafePointer<T>, count: UInt32, f: (UInt32, T) -> Void) {
+            var ptr = array
+            for i in 0..<count {
+                f(i, ptr.pointee)
+                ptr = ptr.successor()
+            }
+        }
+        
+        func methodName(m: Method) -> String? {
+            let sel = method_getName(m)
+            let nameCString = sel_getName(sel)
+            return String(cString: nameCString)
+        }
+        
+        func getMethodNamesForClassNamed(classname: String) -> [String] {
+            // NSClassFromString() is declared to return AnyClass!, but should be AnyClass?
+            let maybeClass: AnyClass? = NSClassFromString(classname)
+            if let cls: AnyClass = maybeClass {
+                return getMethodNamesForClass(cls: cls)
+            } else {
+                return ["\(classname): no such class"]
+            }
+        }
+        
+        let methodNames = getMethodNamesForClass(cls: `class`)
+        
+        let data: [String: Any] = ["class": `class`, "originalSelector": originalSelector, "swizzledSelector": swizzledSelector, "methodNames": methodNames]
+        RoutableLogger.logError("Swizzle error", data: ["message": message, "data": data])
     }
     
     // ******************************* MARK: - Erase
