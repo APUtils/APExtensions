@@ -94,11 +94,11 @@ public extension Bundle {
 
 public extension Bundle {
     
-    /// Example: 3.10.0
+    /// Example: 1.10.0
     static let appVersionString: String = {
         var version = main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
         
-        // Removing excessive version components, e.g. '.93'
+        // Removing excessive version components
         var dotComponents = version.components(separatedBy: ".")
         if dotComponents.count > 3 {
             dotComponents.removeLast(dotComponents.count - 3)
@@ -109,23 +109,23 @@ public extension Bundle {
     }()
     
     /// Example:
-    /// - major: 3
+    /// - major: 1
     /// - minor: 10
     /// - patch: 0
-    static let appVersion: Version = { Version(appVersionString) }()
+    static let appVersion: Version = Version(appVersionString)
     
-    /// Example: 9364
-    static let appBuildVersionString: String = { main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown" }()
+    /// Example: 1234
+    static let appBuildVersionString: String = main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown"
     
-    /// Example: 3.10.0.9364
-    static let appFullVersionString: String = { "\(appVersionString).\(appBuildVersionString)" }()
+    /// Example: 1.10.0.1234
+    static let appFullVersionString: String = "\(appVersionString).\(appBuildVersionString)"
     
     /// Example:
-    /// - major: 3
+    /// - major: 1
     /// - minor: 10
     /// - patch: 0
-    /// - build: 9832
-    static let fullAppVersion: Version = { Version(appFullVersionString) }()
+    /// - build: 1234
+    static let fullAppVersion: Version = Version(appFullVersionString)
 }
 
 // ******************************* MARK: - Other
@@ -133,7 +133,5 @@ public extension Bundle {
 public extension Bundle {
     
     /// Example: com.anton-plebanovich.APExtensions-Example
-    static let appID: String = {
-        main.infoDictionary?["CFBundleIdentifier"] as? String ?? "unknown"
-    }()
+    static let appID: String = main.infoDictionary?["CFBundleIdentifier"] as? String ?? "unknown"
 }
