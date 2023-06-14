@@ -7,9 +7,6 @@ let package = Package(
     name: "APExtensions",
     platforms: [
         .iOS(.v11),
-        .macOS(.v10_13),
-        .tvOS(.v11),
-        .watchOS(.v4),
     ],
     products: [
         .library(

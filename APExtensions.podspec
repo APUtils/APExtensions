@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APExtensions'
-  s.version          = '12.0.1'
+  s.version          = '13.0.0'
   s.summary          = 'A helpful collection of extensions, controllers and protocols.'
 
   s.description      = <<-DESC
