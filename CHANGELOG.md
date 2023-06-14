@@ -2,13 +2,39 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [13.0.0](https://github.com/APUtils/APExtensions/releases/tag/13.0.0)
+Released on 2023-06-14.
+
+#### Added
+- [Error] asStringError
+- [Error] isGeneralError
+- [GeneralError] shared
+- [Int] asInt32
+- [NSMutableAttributedString] - set(color:substring:)
+- [Sequence] dictionaryMapKeysAndValues(keyTransform:valueTransform:)
+- [StringError] public message property
+- [UIApplication] firstKeyWindow
+- [UIColor] Invalid color components logs
+- [UIImage] init?(color:size:)
+
+#### Changed
+- [Date] `asLogsDate` and `asLogsDateAndTimeString` format change `yyyy.MM.dd` -> `yyyy-MM-dd`
+
+#### Fixed
+- [SPM] Build fix
+
+#### Improved
+- [Date] Performance optimization
+- [Globals] Better swizzle error report
+
+
 ## [12.0.0](https://github.com/APUtils/APExtensions/releases/tag/12.0.0)
 Released on 2023-01-31.
 
 #### Removed
 - `APUtils.perform(_:)` protocol and related logic
 - `SetupOnce` protocol and related logic
-- 
+
 
 ## [11.0.0](https://github.com/APUtils/APExtensions/releases/tag/11.0.0)
 Released on 2023-01-26.
