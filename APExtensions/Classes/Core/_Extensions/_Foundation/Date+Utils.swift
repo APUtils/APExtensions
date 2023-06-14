@@ -114,37 +114,46 @@ public extension Date {
 
 public extension Date {
     
-    /// Return `self` as a date string with a `yyyy-MM-dd` format. E.g. `2019-10-15`.
-    /// Useful for logs.
-    var asLogsDate: String {
+    fileprivate static let logsDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .current
         
-        let string = formatter.string(from: self)
-        return string
+        return formatter
+    }()
+    
+    /// Return `self` as a date string with a `yyyy-MM-dd` format. E.g. `2019-10-15`.
+    /// Useful for logs.
+    var asLogsDate: String {
+        Self.logsDateFormatter.string(from: self)
     }
     
-    /// Return `self` as a time string with a `HH:mm:ss.SSS` format. E.g. `10:20:45.123`.
-    /// Useful for logs.
-    var asLogsTimeString: String {
+    fileprivate static let logsTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss.SSS"
         formatter.timeZone = .current
         
-        let string = formatter.string(from: self)
-        return string
+        return formatter
+    }()
+    
+    /// Return `self` as a time string with a `HH:mm:ss.SSS` format. E.g. `10:20:45.123`.
+    /// Useful for logs.
+    var asLogsTimeString: String {
+        Self.logsTimeFormatter.string(from: self)
     }
     
-    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format. E.g. `2019-10-15 16:16:40.723`.
-    /// Useful for logs.
-    var asLogsDateAndTimeString: String {
+    fileprivate static let logsDateAndTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         formatter.timeZone = .current
         
-        let string = formatter.string(from: self)
-        return string
+        return formatter
+    }()
+    
+    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format. E.g. `2019-10-15 16:16:40.723`.
+    /// Useful for logs.
+    var asLogsDateAndTimeString: String {
+        Self.logsDateAndTimeFormatter.string(from: self)
     }
     
     /// Simplification of getting string from date
