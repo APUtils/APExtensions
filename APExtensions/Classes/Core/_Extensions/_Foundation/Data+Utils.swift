@@ -11,6 +11,38 @@ import RoutableLogger
 
 public extension Data {
     
+    // ******************************* MARK: - Safe
+    
+    /// String representation for data.
+    /// Try to decode as UTF8 string at first.
+    /// Try to decode as ASCII string at second.
+    /// Uses hex representation if data can not be represented as UTF8 or ASCII string.
+    func safeString(file: String = #file, function: String = #function, line: UInt = #line) -> String {
+        safeUTF8String(file: file, function: function, line: line)
+        ?? safeASCIIString(file: file, function: function, line: line)
+        ?? toHEXString()
+    }
+    
+    /// Try to convert data to ASCII string
+    func safeASCIIString(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        guard let string = String(data: self, encoding: String.Encoding.ascii) else {
+            RoutableLogger.logError("Unable to create ASCII string from data", data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+        
+        return string
+    }
+    
+    /// Try to convert data to UTF8 string
+    func safeUTF8String(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
+        guard let string = String(data: self, encoding: String.Encoding.utf8) else {
+            RoutableLogger.logError("Unable to create UTF8 string from data", data: ["data": self], file: file, function: function, line: line)
+            return nil
+        }
+        
+        return string
+    }
+    
     // ******************************* MARK: - Hex
     
     /// Get HEX string from data. Can be used for sending APNS token to backend.
@@ -34,38 +66,6 @@ public extension Data {
         }
         
         self = data
-    }
-    
-    // ******************************* MARK: - To
-    
-    /// Try to convert data to ASCII string
-    func safeASCIIString(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
-        guard let string = String(data: self, encoding: String.Encoding.ascii) else {
-            RoutableLogger.logError("Unable to create ASCII string from data", data: ["data": self], file: file, function: function, line: line)
-            return nil
-        }
-        
-        return string
-    }
-    
-    /// Try to convert data to UTF8 string
-    func safeUTF8String(file: String = #file, function: String = #function, line: UInt = #line) -> String? {
-        guard let string = String(data: self, encoding: String.Encoding.utf8) else {
-            RoutableLogger.logError("Unable to create UTF8 string from data", data: ["data": self], file: file, function: function, line: line)
-            return nil
-        }
-        
-        return string
-    }
-    
-    /// String representation for data.
-    /// Try to decode as UTF8 string at first.
-    /// Try to decode as ASCII string at second.
-    /// Uses hex representation if data can not be represented as UTF8 or ASCII string.
-    func safeString(file: String = #file, function: String = #function, line: UInt = #line) -> String {
-        safeUTF8String(file: file, function: function, line: line)
-        ?? safeASCIIString(file: file, function: function, line: line)
-        ?? toHEXString()
     }
     
     // ******************************* MARK: - Other
