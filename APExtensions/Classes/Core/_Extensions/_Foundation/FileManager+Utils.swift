@@ -73,6 +73,30 @@ public extension FileManager {
 
 public extension FileManager {
     
+    /// Safely copies item if it isn't exist or reports error if unable.
+    func safeCopyItem(at: URL,
+                      to: URL,
+                      file: String = #file,
+                      function: String = #function,
+                      line: UInt = #line) {
+        
+        guard !fileExists(atPath: at.path) else { return }
+        
+        do {
+            try copyItem(at: at, to: to)
+        } catch {
+            RoutableLogger.logError("Can not copy item",
+                                    error: error,
+                                    data: [
+                                        "at": at,
+                                        "to": to,
+                                    ],
+                                    file: file,
+                                    function: function,
+                                    line: line)
+        }
+    }
+    
     /// Removes item and logs error if unable
     func safeRemoveItemIfExists(atPath path: String, file: String = #file, function: String = #function, line: UInt = #line) {
         guard fileExists(atPath: path) else { return }
