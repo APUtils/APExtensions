@@ -57,7 +57,7 @@ public extension Dictionary {
     ///
     /// - Parameter transform: A closure that transforms a key.
     /// - Returns: A dictionary containing transformed keys and values.
-    func mapKeys(_ transform: (Dictionary.Key) throws -> Dictionary.Key) rethrows -> [Dictionary.Key: Dictionary.Value] {
+    func mapKeys<T: Hashable>(_ transform: (Key) throws -> T) rethrows -> [T: Value] {
         return try reduce(into: [:]) { result, keyAndValue in
             result[try transform(keyAndValue.key)] = keyAndValue.value
         }
