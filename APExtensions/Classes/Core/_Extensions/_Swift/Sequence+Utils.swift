@@ -145,3 +145,11 @@ public extension Sequence where Element: BinaryFloatingPoint {
         }
     }
 }
+
+public extension Sequence where Element: Sequence {
+    
+    /// Flattens array of arrays
+    func flatten() -> [Element.Element] {
+        flatMap { $0 }
+    }
+}
