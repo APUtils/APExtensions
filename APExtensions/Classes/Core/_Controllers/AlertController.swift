@@ -31,6 +31,10 @@ open class AlertController: UIAlertController {
     
     private lazy var alertWindow: UIWindow? = .createAlert()
     
+    private var appearanceCaptureViewController: AppearanceCaptureViewController? {
+        alertWindow?.rootViewController as? AppearanceCaptureViewController
+    }
+    
     // ******************************* MARK: - UIViewController Methods
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -45,7 +49,11 @@ open class AlertController: UIAlertController {
     
     // ******************************* MARK: - Public Methods
     
-    public func present(animated: Bool = true, completion: (() -> Void)? = nil) {
+    public func present(animated: Bool = true, preferredStatusBarStyle: UIStatusBarStyle? = nil, completion: (() -> Void)? = nil) {
+        if let preferredStatusBarStyle {
+            appearanceCaptureViewController?.customPreferredStatusBarStyle = preferredStatusBarStyle
+        }
+        
         if let popover = popoverPresentationController {
             // Prevent crash by targeting bottom of the screen
             if popover.sourceView == nil && popover.sourceRect == .zero {

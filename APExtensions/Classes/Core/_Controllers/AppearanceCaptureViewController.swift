@@ -12,15 +12,15 @@ import UIKit
 /// Can be used in overlaying windows to capture underlaying appearance and prevent it change.
 /// Appearance captured on initialization.
 open class AppearanceCaptureViewController: UIViewController {
-    private var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
-    private var customPrefersStatusBarHidden = false
+    var customPreferredStatusBarStyle = UIStatusBarStyle.lightContent
+    var customPrefersStatusBarHidden = false
     
-    override open var prefersStatusBarHidden: Bool {
-        return customPrefersStatusBarHidden
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        customPreferredStatusBarStyle
     }
     
-    override open var preferredStatusBarStyle : UIStatusBarStyle {
-        return customPreferredStatusBarStyle
+    override open var prefersStatusBarHidden: Bool {
+        customPrefersStatusBarHidden
     }
     
     // ******************************* MARK: - Initialization and Setup
@@ -42,7 +42,7 @@ open class AppearanceCaptureViewController: UIViewController {
         
         customPrefersStatusBarHidden = topVc?.prefersStatusBarHidden ?? false
         
-        if (Bundle.main.object(forInfoDictionaryKey: "UIViewControllerBasedStatusBarAppearance") as! Bool?) ?? true {
+        if (Bundle.main.object(forInfoDictionaryKey: "UIViewControllerBasedStatusBarAppearance") as? Bool) ?? true {
             customPreferredStatusBarStyle = topVc?.preferredStatusBarStyle ?? .default
         } else {
             if let barStyle = topVc?.navigationController?.navigationBar.barStyle {

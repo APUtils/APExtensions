@@ -240,6 +240,7 @@ open class Globals {
     /// - parameter actionTitle: Action button title. Default is `Dismiss`.
     /// - parameter style: Action button style. Default is `.cancel`.
     /// - parameter cancelTitle: Cancel button title. Default is `nil` - no cancel button.
+    /// - parameter preferredStatusBarStyle: Preferred status bar style to use during alert presentation.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter handler: Action button click closure. Default is `nil` - no action.
     open func showErrorAlert(title: String? = nil,
@@ -247,6 +248,7 @@ open class Globals {
                              actionTitle: String = "Dismiss",
                              style: UIAlertAction.Style = .cancel,
                              cancelTitle: String? = nil,
+                             preferredStatusBarStyle: UIStatusBarStyle? = nil,
                              onCancel: (() -> Void)? = nil,
                              handler: (() -> Void)? = nil) {
         
@@ -264,7 +266,7 @@ open class Globals {
                 }))
             }
             
-            alertVC.present(animated: true)
+            alertVC.present(animated: true, preferredStatusBarStyle: preferredStatusBarStyle)
         }
     }
     
@@ -273,6 +275,7 @@ open class Globals {
     /// - parameter message: Alert message
     /// - parameter confirmTitle: Confirm button title. Default is `Confirm`.
     /// - parameter cancelTitle: Cancel button title. Default is `Cancel`.
+    /// - parameter preferredStatusBarStyle: Preferred status bar style to use during alert presentation.
     /// - parameter textFieldConfiguration: Text field configuration closure.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes user entered text as parameter
@@ -280,6 +283,7 @@ open class Globals {
                                  message: String? = nil,
                                  confirmTitle: String = "Confirm",
                                  cancelTitle: String = "Cancel",
+                                 preferredStatusBarStyle: UIStatusBarStyle? = nil,
                                  textFieldConfiguration: ((UITextField) -> Void)? = nil,
                                  onCancel: (() -> Void)? = nil,
                                  completion: @escaping (_ text: String) -> ()) {
@@ -303,7 +307,7 @@ open class Globals {
             alertVC.addAction(confirmAction)
             alertVC.addAction(cancelAction)
             
-            alertVC.present(animated: true)
+            alertVC.present(animated: true, preferredStatusBarStyle: preferredStatusBarStyle)
         }
     }
     
@@ -313,6 +317,7 @@ open class Globals {
     /// - parameter buttonsStyles: Button styles
     /// - parameter enabledButtons: Enabled buttons
     /// - parameter cancelTitle: Cancel button title. Default is `Cancel`.
+    /// - parameter preferredStatusBarStyle: Preferred status bar style to use during alert presentation.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter completion: Closure that takes button title and button index as its parameters
     open func showPickerAlert(title: String? = nil,
@@ -321,6 +326,7 @@ open class Globals {
                               buttonsStyles: [UIAlertAction.Style]? = nil,
                               enabledButtons: [Bool]? = nil,
                               cancelTitle: String = "Cancel",
+                              preferredStatusBarStyle: UIStatusBarStyle? = nil,
                               onCancel: (() -> Void)? = nil,
                               completion: @escaping ((String, Int) -> ())) {
         
@@ -357,7 +363,7 @@ open class Globals {
                 vc.addAction(action)
             }
             
-            vc.present(animated: true)
+            vc.present(animated: true, preferredStatusBarStyle: preferredStatusBarStyle)
         }
     }
     
