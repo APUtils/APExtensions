@@ -114,6 +114,25 @@ public extension Date {
 
 public extension Date {
     
+    @available(macOS 10.13, *)
+    static let isoGmtWithMillisAndTimeZone: ISO8601DateFormatter = {
+        let df = ISO8601DateFormatter()
+        df.formatOptions = [
+            .withInternetDateTime,
+            .withDashSeparatorInDate,
+            .withColonSeparatorInTime,
+            .withFractionalSeconds,
+        ]
+        
+        return df
+    }()
+    
+    /// Return `self` as a date string with a ISO format including milliseconds. E.g. `2014-07-16T06:50:00.000`.
+    /// GMT time zone is assumed. Useful to pass to backend.
+    var asIsoWithMillisecondsDate: String {
+        Self.isoGmtWithMillisAndTimeZone.string(from: self)
+    }
+    
     fileprivate static let logsDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
