@@ -76,8 +76,11 @@ public extension UIScrollView {
         
         contentInset.top = topInset
         
-        // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
-        if #available(iOS 13.0, *) {} else {
+        if #available(iOS 14.0, *) {
+            scrollIndicatorInsets.top = topInset
+        } else if #available(iOS 13.0, *) {
+            // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+        } else {
             scrollIndicatorInsets.top = topInset
         }
     }
@@ -95,8 +98,11 @@ public extension UIScrollView {
         
         contentInset.bottom = bottomInset
         
-        // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
-        if #available(iOS 13.0, *) {} else {
+        if #available(iOS 14.0, *) {
+            scrollIndicatorInsets.bottom = bottomInset
+        } else if #available(iOS 13.0, *) {
+            // Scroll indicator inset behavior changed on iOS 13 and now its added to `contentInset`
+        } else {
             scrollIndicatorInsets.bottom = bottomInset
         }
     }
