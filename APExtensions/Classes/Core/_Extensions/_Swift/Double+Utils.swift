@@ -12,7 +12,7 @@ import Foundation
 
 public extension Double {
     
-    /// Returns string representation rounded to tenth
+    /// Returns string representation rounded to ceil
     var asCeilString: String {
         NumberFormatter.ceil.string(from: self as NSNumber) ?? ""
     }

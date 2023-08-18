@@ -125,6 +125,11 @@ public extension StringProtocol {
         }
     }
     
+    /// Returns `self` as `TimeInterval`
+    var asTimeInterval: TimeInterval? {
+        TimeInterval(self)
+    }
+    
     /// Returns string as NSAttributedString
     var asAttributedString: NSAttributedString {
         return NSAttributedString(string: asString)

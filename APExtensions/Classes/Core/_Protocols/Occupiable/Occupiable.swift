@@ -110,6 +110,21 @@ extension Data: InitializeableOccupiable {}
 extension Dictionary: InitializeableOccupiable {}
 extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}
+extension Substring: InitializeableOccupiable {}
+
+@available(iOS 15, *)
+extension AttributedString: InitializeableOccupiable {
+    public var isEmpty: Bool {
+        startIndex == endIndex
+    }
+}
+
+@available(iOS 15, *)
+extension AttributedSubstring: InitializeableOccupiable {
+    public var isEmpty: Bool {
+        startIndex == endIndex
+    }
+}
 
 extension NSDictionary: InitializeableOccupiable {
     public var isEmpty: Bool { count < 1 }

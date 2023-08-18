@@ -24,7 +24,7 @@ public extension Float {
 
 public extension Float {
     
-    /// Returns string representation rounded to tenth
+    /// Returns string representation rounded to ceil
     var asCeilString: String {
         NumberFormatter.ceil.string(from: self as NSNumber) ?? ""
     }
