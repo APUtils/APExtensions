@@ -112,14 +112,14 @@ extension Set: InitializeableOccupiable {}
 extension String: InitializeableOccupiable {}
 extension Substring: InitializeableOccupiable {}
 
-@available(iOS 15, *)
+@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
 extension AttributedString: InitializeableOccupiable {
     public var isEmpty: Bool {
         startIndex == endIndex
     }
 }
 
-@available(iOS 15, *)
+@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
 extension AttributedSubstring: InitializeableOccupiable {
     public var isEmpty: Bool {
         startIndex == endIndex
