@@ -2,6 +2,28 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [14.0.0](https://github.com/APUtils/APExtensions/releases/tag/14.0.0)
+Released on 2023-08-18.
+
+#### Added
+- [Date] asIsoWithMillisecondsDate
+- [FileManager] safeCopyItem(at:to:)
+- [Occupiable] For `Substring`, `AttributedString` and `AttributedSubstring`
+- [Sequence] flatten()
+- [StringProtocol] `asTimeInterval`
+- [UIView] isVisible **BREAKING**
+
+#### Changed
+- [Dictionary] mapKeys type change allow
+- [Globals] Allow to customize presented alert status bar style
+
+#### Fixed
+- [UScrollView] Scroll indicator insets set fix
+
+#### Renamed
+- [UIView] isVisible > isVisibleInViewHierarchy **BREAKING**
+
+
 ## [13.0.0](https://github.com/APUtils/APExtensions/releases/tag/13.0.0)
 Released on 2023-06-14.
 

@@ -102,6 +102,7 @@
 		BE3B1BF1D9E4EDA304E77323 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C1980566B39F5799ED4A250D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C2FF588CBB9626B96C282BC5 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
+		E222F9432A8F8C210045C82E /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 		E53E65A9720A8DB4BF881A05 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
 		E60E577FA62486502305A0F4 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		F69F65646AB6281CC2F972B1 /* Pods-APExtensions_Example-APExtensions_UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example-APExtensions_UITests.release.xcconfig"; path = "Target Support Files/Pods-APExtensions_Example-APExtensions_UITests/Pods-APExtensions_Example-APExtensions_UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 				C1980566B39F5799ED4A250D /* README.md */,
 				0D59C2092624D8820073C456 /* carthageUpdate.command */,
 				B0E5B43621138735005D8319 /* checkBuild.command */,
+				E222F9432A8F8C210045C82E /* packageUpdate.command */,
 				B7A07FA220F82B576CEC7EF3 /* podCheck.command */,
 				E53E65A9720A8DB4BF881A05 /* podPush.command */,
 				B004134E202E0EA400B58E18 /* updateDocs.command */,
