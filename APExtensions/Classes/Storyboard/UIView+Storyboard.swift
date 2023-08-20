@@ -87,7 +87,8 @@ public extension UIView {
             return layer.shadowOpacity
         }
         set {
-            layer.shadowOpacity = newValue
+            // Apple: The value in this property must be in the range 0.0 (transparent) to 1.0 (opaque)
+            layer.shadowOpacity = max(0, min(1, newValue))
         }
     }
     
