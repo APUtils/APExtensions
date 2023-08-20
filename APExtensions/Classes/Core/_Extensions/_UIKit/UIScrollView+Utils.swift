@@ -73,6 +73,9 @@ public extension UIScrollView {
         if #available(iOS 11.0, *) {
             contentInsetAdjustmentBehavior = .never
         }
+        if #available(iOS 13.0, *) {
+            automaticallyAdjustsScrollIndicatorInsets = false
+        }
         
         contentInset.top = topInset
         
@@ -94,6 +97,9 @@ public extension UIScrollView {
     func setBottomInset(_ bottomInset: CGFloat) {
         if #available(iOS 11.0, *) {
             contentInsetAdjustmentBehavior = .never
+        }
+        if #available(iOS 13.0, *) {
+            automaticallyAdjustsScrollIndicatorInsets = false
         }
         
         contentInset.bottom = bottomInset
