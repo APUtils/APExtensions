@@ -19,7 +19,6 @@ public extension Data {
     /// Uses hex representation if data can not be represented as UTF8 or ASCII string.
     func safeString(file: String = #file, function: String = #function, line: UInt = #line) -> String {
         safeUTF8String(file: file, function: function, line: line)
-        ?? safeASCIIString(file: file, function: function, line: line)
         ?? toHEXString()
     }
     
