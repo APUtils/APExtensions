@@ -75,6 +75,17 @@ public extension Sequence where Element: Hashable {
     }
 }
 
+public extension Sequence {
+    
+    /// Fast method to get unique values without keeping an order.
+    /// - note: It's ~1000 times faster than `filterDuplicates()` for 10000 items sequence.
+    @inlinable func uniqueUnordered<T: Hashable>(_ getElement: (Element) -> T) -> [T] {
+        var set = Set<T>()
+        forEach { set.insert(getElement($0)) }
+        return Array(set)
+    }
+}
+
 // ******************************* MARK: - Scripting
 
 public extension Sequence {
