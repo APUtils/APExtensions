@@ -9,8 +9,17 @@
 import Foundation
 
 public extension UserDefaults {
+    
     /// Wheter UserDefaults has the object for the key
     func hasObject(forKey key: String) -> Bool {
         return object(forKey: key) != nil
+    }
+    
+    /// Moves value from `oldKey` to the `newKey` if it exists.
+    func moveValueIfExists(oldKey: String, newKey: String) {
+        guard let value = value(forKey: oldKey) else { return }
+        
+        set(value, forKey: newKey)
+        removeObject(forKey: oldKey)
     }
 }
