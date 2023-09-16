@@ -181,7 +181,7 @@ public extension UIScrollView {
     /// Adjust content offset so view is at the center if possible.
     func scrollViewToCenter(_ view: UIView) {
         let centerY = view.convert(view.bounds, to: self).center.y
-        contentOffset.y = centerY - bounds.height / 2
+        contentOffset.y = centerY - (height + fullContentInsets.top - fullContentInsets.bottom) / 2
         clampContentOffset()
     }
     

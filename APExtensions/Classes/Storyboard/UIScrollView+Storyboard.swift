@@ -70,9 +70,7 @@ public extension UIScrollView {
         set {
             if #available(iOS 11.0, *) {
                 contentInsetAdjustmentBehavior = .never
-            }
-            
-            if #available(iOS 11.0, *) {} else {
+            } else {
                 _viewController?.automaticallyAdjustsScrollViewInsets = false
             }
             
@@ -117,9 +115,7 @@ public extension UIScrollView {
         set {
             if #available(iOS 11.0, *) {
                 contentInsetAdjustmentBehavior = .never
-            }
-            
-            if #available(iOS 11.0, *) {} else {
+            } else {
                 _viewController?.automaticallyAdjustsScrollViewInsets = false
             }
             
