@@ -50,7 +50,7 @@ public extension Data {
     }
     
     /// Creates data from HEX string
-    @available(iOS, introduced: 2.0, deprecated: 13.0)
+    @available(iOS, introduced: 8.0, deprecated: 13.0)
     init(hex: String) {
         var hex = hex.replacingOccurrences(of: " ", with: "")
         var data = Data()
