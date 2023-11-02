@@ -188,11 +188,6 @@ extension UIViewController {
             // Unknown container or root. Can not do anything.
             completion?()
         }
-        
-        // Dismiss keyboard last so transition state can be detected and animations can be adjusted if needed
-        if isViewLoaded {
-            view.endEditing(true)
-        }
     }
     
     /// Removes all presented view controllers and navigates to the root.
