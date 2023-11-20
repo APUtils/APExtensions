@@ -19,7 +19,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 - In Xcode select `File` > `Add Packages...`
 - Copy and paste the following into the search: `https://github.com/APUtils/APExtensions`
-- **‼️Make sure `Up to Next Major Version` is selected and put `13.0.0` into the lower bound. There is a bug in Xcode, it does not select versions higher than 9.0.0 by default‼️**
+- **‼️Make sure `Up to Next Major Version` is selected and put `14.1.0` into the lower bound. There is a bug in Xcode, it does not select versions higher than 9.0.0 by default‼️**
 - Tap `Add Package`
 - Select `APExtension` to add everything and tap `Add Package`
 
@@ -29,15 +29,15 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 13.0'
+pod 'APExtensions', '~> 14.1'
 ```
 
 Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Core', '~> 13.0'
-pod 'APExtensions/Storyboard', '~> 13.0'
-pod 'APExtensions/ViewModel', '~> 13.0'
+pod 'APExtensions/Core', '~> 14.1'
+pod 'APExtensions/Storyboard', '~> 14.1'
+pod 'APExtensions/ViewModel', '~> 14.1'
 ```
 
 #### Carthage **DEPRECATED**
@@ -61,7 +61,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APExtensions" ~> 13.0
+github "APUtils/APExtensions" ~> 14.1
 ```
 
 Install command: `carthage bootstrap --use-xcframeworks`

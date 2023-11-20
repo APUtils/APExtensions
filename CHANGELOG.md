@@ -2,6 +2,28 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [14.1.0](https://github.com/APUtils/APExtensions/releases/tag/14.1.0)
+Released on 2023-11-20
+
+#### Added
+- [Calendar] gregorian
+- [Sequence] uniqueUnordered(_:)
+- [UserDefaults] moveValueIfExists(oldKey:newKey:)
+
+#### Changed
+- Do not end editing on VC remove
+- Moved [Dispatch] extensions to a subspec
+- [Data] Do not try to represent data as ASCII for `safeString`
+- [Sequence] Allow optional elements and ignore `nil` for `uniqueUnordered`
+- [Sequence] Rethrowable `uniqueUnordered`
+- [UIView] `shadowOpacity` value clamp
+
+#### Fixed
+- Warnings fix
+- [UIScrollView] Fixed `scrollViewToCenter(_:)` for various insets
+- [UIScrollView] Scroll indicator insets adjust fix
+
+
 ## [14.0.0](https://github.com/APUtils/APExtensions/releases/tag/14.0.0)
 Released on 2023-08-18.
 

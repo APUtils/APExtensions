@@ -24,9 +24,6 @@ if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
 	exit 1
 fi
 
-echo -e "\nBuilding Swift Package for iOS..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios16.2-simulator"
-
 echo -e "\nBuilding Swift Package project..."
 set -o pipefail && xcodebuild -project "PackageExample/APExtensions-Package.xcodeproj" -sdk iphonesimulator -scheme "APExtensions-Package" | xcpretty
 

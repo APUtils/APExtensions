@@ -29,8 +29,6 @@
 		0D4630E423C26EF200108415 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E023C26EF200108415 /* Globals.swift */; };
 		0D4630E523C26EF200108415 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E123C26EF200108415 /* Definitions.swift */; };
 		0D4630E623C26EF200108415 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4630E123C26EF200108415 /* Definitions.swift */; };
-		0D5EB95F29E426CA008AE583 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB91A29E426C9008AE583 /* DispatchQueue+Extension.swift */; };
-		0D5EB96029E426CA008AE583 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB91A29E426C9008AE583 /* DispatchQueue+Extension.swift */; };
 		0D5EB96129E426CA008AE583 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB91C29E426C9008AE583 /* UICollectionView+Utils.swift */; };
 		0D5EB96229E426CA008AE583 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB91C29E426C9008AE583 /* UICollectionView+Utils.swift */; };
 		0D5EB96329E426CA008AE583 /* NSLayoutAnchor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB91D29E426C9008AE583 /* NSLayoutAnchor+Utils.swift */; };
@@ -239,6 +237,12 @@
 		B0F830F7203762D0004FC037 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FDF20375BDB004FC037 /* Instantiatable.swift */; };
 		B0F830F8203762D0004FC037 /* CellInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F82FE020375BDB004FC037 /* CellInformation.swift */; };
 		B0F83110203763C6004FC037 /* APExtensionsViewConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E225C95E2B0B79E6001DBECC /* Calendar+APExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C95D2B0B79E6001DBECC /* Calendar+APExtensions.swift */; };
+		E225C95F2B0B79E6001DBECC /* Calendar+APExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C95D2B0B79E6001DBECC /* Calendar+APExtensions.swift */; };
+		E225C9612B0B79FB001DBECC /* StaticString+AP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C9602B0B79FB001DBECC /* StaticString+AP.swift */; };
+		E225C9622B0B79FB001DBECC /* StaticString+AP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C9602B0B79FB001DBECC /* StaticString+AP.swift */; };
+		E225C9652B0B7A32001DBECC /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C9642B0B7A32001DBECC /* DispatchQueue+Extension.swift */; };
+		E225C9662B0B7A32001DBECC /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225C9642B0B7A32001DBECC /* DispatchQueue+Extension.swift */; };
 		E2418D7E2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 		E2418D7F2220164100449ACE /* ScrollViewCustomPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */; };
 /* End PBXBuildFile section */
@@ -279,7 +283,6 @@
 		0D2B44B92982BDF900C0FAEB /* UIImageView+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ViewModel.swift"; sourceTree = "<group>"; };
 		0D4630E023C26EF200108415 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		0D4630E123C26EF200108415 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
-		0D5EB91A29E426C9008AE583 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		0D5EB91C29E426C9008AE583 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
 		0D5EB91D29E426C9008AE583 /* NSLayoutAnchor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Utils.swift"; sourceTree = "<group>"; };
 		0D5EB91E29E426C9008AE583 /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
@@ -395,6 +398,9 @@
 		B0F8310E203763C6004FC037 /* APExtensionsViewConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APExtensionsViewConfiguration.h; sourceTree = "<group>"; };
 		B0F8310F203763C6004FC037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F995755C4365A3761276EA /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
+		E225C95D2B0B79E6001DBECC /* Calendar+APExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+APExtensions.swift"; sourceTree = "<group>"; };
+		E225C9602B0B79FB001DBECC /* StaticString+AP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StaticString+AP.swift"; sourceTree = "<group>"; };
+		E225C9642B0B7A32001DBECC /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		E2418D7D2220164100449ACE /* ScrollViewCustomPageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewCustomPageSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -479,14 +485,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0D5EB91929E426C9008AE583 /* _Dispatch */ = {
-			isa = PBXGroup;
-			children = (
-				0D5EB91A29E426C9008AE583 /* DispatchQueue+Extension.swift */,
-			);
-			path = _Dispatch;
-			sourceTree = "<group>";
-		};
 		0D5EB91B29E426C9008AE583 /* _UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,22 +517,23 @@
 		0D5EB93229E426C9008AE583 /* _Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				0D5EB93329E426C9008AE583 /* FileManager+Utils.swift */,
-				0D5EB93429E426C9008AE583 /* UserDefaults+Utils.swift */,
-				0D5EB93529E426C9008AE583 /* URL+Utils.swift */,
-				0D5EB93629E426C9008AE583 /* Timer+Utils.swift */,
-				0D5EB93729E426C9008AE583 /* DateComponents+Utils.swift */,
 				0D5EB93829E426C9008AE583 /* Bundle+Utils.swift */,
-				0D5EB93929E426C9008AE583 /* NSObject+Utils.swift */,
+				E225C95D2B0B79E6001DBECC /* Calendar+APExtensions.swift */,
 				0D5EB93A29E426C9008AE583 /* Data+Utils.swift */,
-				0D5EB93B29E426C9008AE583 /* NotificationCenter+Utils.swift */,
-				0D5EB93C29E426C9008AE583 /* TimeZone+Utils.swift */,
-				0D5EB93D29E426C9008AE583 /* URLComponents+Utils.swift */,
-				0D5EB93E29E426C9008AE583 /* NSAttributedString+Utils.swift */,
-				0D5EB93F29E426C9008AE583 /* NumberFormatter+Utils.swift */,
 				0D5EB94029E426C9008AE583 /* Date+Utils.swift */,
+				0D5EB93729E426C9008AE583 /* DateComponents+Utils.swift */,
+				0D5EB93329E426C9008AE583 /* FileManager+Utils.swift */,
+				0D5EB93B29E426C9008AE583 /* NotificationCenter+Utils.swift */,
+				0D5EB93E29E426C9008AE583 /* NSAttributedString+Utils.swift */,
 				0D5EB94129E426C9008AE583 /* NSCoder+Utils.swift */,
 				0D5EB94229E426C9008AE583 /* NSMutableAttributedString+Utils.swift */,
+				0D5EB93929E426C9008AE583 /* NSObject+Utils.swift */,
+				0D5EB93F29E426C9008AE583 /* NumberFormatter+Utils.swift */,
+				0D5EB93629E426C9008AE583 /* Timer+Utils.swift */,
+				0D5EB93C29E426C9008AE583 /* TimeZone+Utils.swift */,
+				0D5EB93529E426C9008AE583 /* URL+Utils.swift */,
+				0D5EB93D29E426C9008AE583 /* URLComponents+Utils.swift */,
+				0D5EB93429E426C9008AE583 /* UserDefaults+Utils.swift */,
 			);
 			path = _Foundation;
 			sourceTree = "<group>";
@@ -550,27 +549,28 @@
 		0D5EB94529E426C9008AE583 /* _Swift */ = {
 			isa = PBXGroup;
 			children = (
-				0D5EB94629E426C9008AE583 /* Int32+Utils.swift */,
-				0D5EB94729E426C9008AE583 /* StringProtocol+Utils.swift */,
-				0D5EB94829E426C9008AE583 /* Codable+Utils.swift */,
-				0D5EB94929E426C9008AE583 /* Float+Utils.swift */,
-				0D5EB94A29E426CA008AE583 /* Int+Utils.swift */,
-				0D5EB94B29E426CA008AE583 /* Error+Utils.swift */,
-				0D5EB94C29E426CA008AE583 /* FloatingPoint+Utils.swift */,
-				0D5EB94D29E426CA008AE583 /* Bool+Utils.swift */,
-				0D5EB94E29E426CA008AE583 /* RangeReplaceableCollection+Utils.swift */,
-				0D5EB94F29E426CA008AE583 /* Character+Utils.swift */,
 				0D5EB95029E426CA008AE583 /* BidirectionalCollection+Utils.swift */,
+				0D5EB94D29E426CA008AE583 /* Bool+Utils.swift */,
+				0D5EB94F29E426CA008AE583 /* Character+Utils.swift */,
+				0D5EB94829E426C9008AE583 /* Codable+Utils.swift */,
+				0D5EB95829E426CA008AE583 /* Collection+Utils.swift */,
+				0D5EB95329E426CA008AE583 /* Dictionary+Utils.swift */,
+				0D5EB95929E426CA008AE583 /* Double+Utils.swift */,
+				0D5EB94B29E426CA008AE583 /* Error+Utils.swift */,
+				0D5EB94929E426C9008AE583 /* Float+Utils.swift */,
+				0D5EB94C29E426CA008AE583 /* FloatingPoint+Utils.swift */,
+				0D5EB94A29E426CA008AE583 /* Int+Utils.swift */,
+				0D5EB94629E426C9008AE583 /* Int32+Utils.swift */,
+				0D5EB95429E426CA008AE583 /* Int64+Utils.swift */,
 				0D5EB95129E426CA008AE583 /* KeyPath+Utils.swift */,
 				0D5EB95229E426CA008AE583 /* Optional+Utils.swift */,
-				0D5EB95329E426CA008AE583 /* Dictionary+Utils.swift */,
-				0D5EB95429E426CA008AE583 /* Int64+Utils.swift */,
 				0D5EB95529E426CA008AE583 /* RandomAccessCollection+Utils.swift */,
+				0D5EB94E29E426CA008AE583 /* RangeReplaceableCollection+Utils.swift */,
 				0D5EB95629E426CA008AE583 /* Sequence+Utils.swift */,
-				0D5EB95729E426CA008AE583 /* UInt+Utils.swift */,
-				0D5EB95829E426CA008AE583 /* Collection+Utils.swift */,
-				0D5EB95929E426CA008AE583 /* Double+Utils.swift */,
+				E225C9602B0B79FB001DBECC /* StaticString+AP.swift */,
 				0D5EB95A29E426CA008AE583 /* String+Utils.swift */,
+				0D5EB94729E426C9008AE583 /* StringProtocol+Utils.swift */,
+				0D5EB95729E426CA008AE583 /* UInt+Utils.swift */,
 			);
 			path = _Swift;
 			sourceTree = "<group>";
@@ -673,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				B0F82FD720375BDB004FC037 /* Core */,
+				E225C9632B0B7A32001DBECC /* Dispatch */,
 				0D671C762744B2E400B3B8E9 /* Shared */,
 				B0F8301120375BDB004FC037 /* Storyboard */,
 				0D2B44B32982BDF900C0FAEB /* ViewModel */,
@@ -718,7 +719,6 @@
 			isa = PBXGroup;
 			children = (
 				0D5EB95B29E426CA008AE583 /* _CoreGraphics */,
-				0D5EB91929E426C9008AE583 /* _Dispatch */,
 				0D5EB93229E426C9008AE583 /* _Foundation */,
 				0D5EB94529E426C9008AE583 /* _Swift */,
 				0D5EB91B29E426C9008AE583 /* _UIKit */,
@@ -797,6 +797,14 @@
 				B0F8310F203763C6004FC037 /* Info.plist */,
 			);
 			path = APExtensionsViewConfiguration;
+			sourceTree = "<group>";
+		};
+		E225C9632B0B7A32001DBECC /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				E225C9642B0B7A32001DBECC /* DispatchQueue+Extension.swift */,
+			);
+			path = Dispatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1081,12 +1089,12 @@
 			files = (
 				B0F8302F20375BDB004FC037 /* Configurable.swift in Sources */,
 				0D5EB96729E426CA008AE583 /* UIDevice+Utils.swift in Sources */,
-				0D5EB95F29E426CA008AE583 /* DispatchQueue+Extension.swift in Sources */,
 				B0F8306520375BDB004FC037 /* UIImage+Storyboard.swift in Sources */,
 				0D5EB96329E426CA008AE583 /* NSLayoutAnchor+Utils.swift in Sources */,
 				0D4630E323C26EF200108415 /* Globals.swift in Sources */,
 				0D5EB98B29E426CA008AE583 /* UIApplication+Utils.swift in Sources */,
 				0D5EB97529E426CA008AE583 /* UIColor+Utils.swift in Sources */,
+				E225C9652B0B7A32001DBECC /* DispatchQueue+Extension.swift in Sources */,
 				0D5EB97B29E426CA008AE583 /* UIScrollView+Utils.swift in Sources */,
 				0D5EB9B929E426CA008AE583 /* Error+Utils.swift in Sources */,
 				0D5EB99B29E426CA008AE583 /* Data+Utils.swift in Sources */,
@@ -1117,6 +1125,7 @@
 				B0F8302E20375BDB004FC037 /* Manager.swift in Sources */,
 				0D5EB9C929E426CB008AE583 /* Dictionary+Utils.swift in Sources */,
 				B0F8305220375BDB004FC037 /* MFMessageComposeViewController+Utils.swift in Sources */,
+				E225C9612B0B79FB001DBECC /* StaticString+AP.swift in Sources */,
 				0D5EB97F29E426CA008AE583 /* UIViewController+Utils.swift in Sources */,
 				0D5EB9D529E426CB008AE583 /* Double+Utils.swift in Sources */,
 				0D5EB9D729E426CB008AE583 /* String+Utils.swift in Sources */,
@@ -1134,6 +1143,7 @@
 				B0F8303120375BDB004FC037 /* Instantiatable.swift in Sources */,
 				0D5EB9C329E426CB008AE583 /* BidirectionalCollection+Utils.swift in Sources */,
 				B0F8306620375BDB004FC037 /* NSLayoutConstraint+Storyboard.swift in Sources */,
+				E225C95E2B0B79E6001DBECC /* Calendar+APExtensions.swift in Sources */,
 				B0F8305F20375BDB004FC037 /* AlertController.swift in Sources */,
 				0D5EB97929E426CA008AE583 /* UIImageView+Utils.swift in Sources */,
 				0D5EB9A129E426CA008AE583 /* URLComponents+Utils.swift in Sources */,
@@ -1215,8 +1225,8 @@
 				0D5EB9B029E426CA008AE583 /* Int32+Utils.swift in Sources */,
 				0D5EB98C29E426CA008AE583 /* UIApplication+Utils.swift in Sources */,
 				0D5EB9DC29E426CB008AE583 /* CGRect+Utils.swift in Sources */,
+				E225C9662B0B7A32001DBECC /* DispatchQueue+Extension.swift in Sources */,
 				0D5EB9B429E426CA008AE583 /* Codable+Utils.swift in Sources */,
-				0D5EB96029E426CA008AE583 /* DispatchQueue+Extension.swift in Sources */,
 				0D5EB9DA29E426CB008AE583 /* CGPoint+Utils.swift in Sources */,
 				0D5EB99629E426CA008AE583 /* DateComponents+Utils.swift in Sources */,
 				0D5EB9A629E426CA008AE583 /* NumberFormatter+Utils.swift in Sources */,
@@ -1278,7 +1288,9 @@
 				0D5EB9B229E426CA008AE583 /* StringProtocol+Utils.swift in Sources */,
 				0D85E868298A34B6001702E5 /* Occupiable.swift in Sources */,
 				0D5EB98829E426CA008AE583 /* UINavigationController+Utils.swift in Sources */,
+				E225C9622B0B79FB001DBECC /* StaticString+AP.swift in Sources */,
 				0D20D5BB2607319800767851 /* Version.swift in Sources */,
+				E225C95F2B0B79E6001DBECC /* Calendar+APExtensions.swift in Sources */,
 				0D5EB9BE29E426CA008AE583 /* Bool+Utils.swift in Sources */,
 				0D5EB99C29E426CA008AE583 /* Data+Utils.swift in Sources */,
 				B0F830CA203762C6004FC037 /* AppearanceCaptureViewController.swift in Sources */,
