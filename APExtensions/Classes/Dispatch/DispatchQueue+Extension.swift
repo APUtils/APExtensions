@@ -50,7 +50,7 @@ public extension DispatchQueue {
     /// Performs `work` on `self` asynchronously if not isRunningUnitTests.
     /// Otherwise, just performs `work`.
     func performAsyncIfNotRunningUnitTests(execute work: @escaping () -> Void) {
-        if UIApplication.isRunningUnitTests {
+        if ProcessInfo._isRunningUnitTests {
             work()
         } else {
             async { work() }
@@ -147,4 +147,13 @@ fileprivate extension StaticString {
             String(decoding: $0, as: UTF8.self)
         }
     }
+}
+
+fileprivate extension ProcessInfo {
+    
+    /// Returns `true` if the app is running unit tests and `false` otherwise.
+    static let _isRunningUnitTests: Bool = processInfo
+        .environment
+        .keys
+        .contains("XCTestConfigurationFilePath")
 }
