@@ -24,11 +24,17 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.ios.deployment_target = '11.0'
   s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
   
-  s.default_subspec = 'Core', 'ViewModel', 'Storyboard'
+  s.default_subspec = 'Core', 'Dispatch', 'ViewModel', 'Storyboard'
 
   s.subspec 'Core' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit', 'MessageUI'
       subspec.source_files = 'APExtensions/Classes/Core/**/*', 'APExtensions/Classes/Shared/**/*'
+      subspec.dependency 'RoutableLogger'
+  end
+  
+  s.subspec 'Dispatch' do |subspec|
+      subspec.frameworks = 'Foundation'
+      subspec.source_files = 'APExtensions/Classes/Dispatch/**/*'
       subspec.dependency 'RoutableLogger'
   end
 
