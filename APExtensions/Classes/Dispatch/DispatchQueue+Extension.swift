@@ -100,7 +100,7 @@ public extension DispatchQueue {
         if Thread.isMainThread { return }
         
         lazy var message = "Main thread assertion failed with '\(hint())' hint"
-        RoutableLogger.logErrorOnce(message, file: file._toString(), function: function, line: line)
+        logAssertionFailure(message)
         assertionFailure(message, file: file, line: line)
     }
     
@@ -115,7 +115,7 @@ public extension DispatchQueue {
         if DispatchQueue.isMainQueue { return }
         
         lazy var message = "Main queue assertion failed with '\(hint())' hint"
-        RoutableLogger.logErrorOnce(message, file: file._toString(), function: function, line: line)
+        logAssertionFailure(message)
         assertionFailure(message, file: file, line: line)
     }
     
@@ -132,8 +132,24 @@ public extension DispatchQueue {
         if DispatchQueue.getSpecific(key: key) != nil { return }
         
         lazy var message = "Queue assertion failed with '\(hint())' hint"
-        RoutableLogger.logErrorOnce(message, file: file._toString(), function: function, line: line)
+        logAssertionFailure(message)
         assertionFailure(message, file: file, line: line)
+    }
+    
+    private static func logAssertionFailure(
+        _ message: @autoclosure () -> String,
+        file: StaticString = #file,
+        function: String = #function,
+        line: UInt = #line
+    ) {
+        RoutableLogger.logErrorOnce(message(),
+                                    data: [
+                                        "thread": Thread.current,
+                                        "queue": String(cString: __dispatch_queue_get_label(nil), encoding: .utf8),
+                                    ],
+                                    file: file._toString(),
+                                    function: function,
+                                    line: line)
     }
 }
 
