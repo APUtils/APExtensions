@@ -57,11 +57,6 @@ public extension Sequence where Element: Equatable {
     @inlinable func intersection(with array: [Element]) -> [Element] {
         return filter { array.contains($0) }
     }
-    
-    /// Helper method to filter out duplicates
-    @inlinable func filterDuplicates() -> [Element] {
-        return filterDuplicates { $0 == $1 }
-    }
 }
 
 // ******************************* MARK: - Hashable
@@ -78,15 +73,29 @@ public extension Sequence where Element: Hashable {
 public extension Sequence {
     
     /// Fast method to get unique values without keeping an order.
-    /// - note: It's ~1000 times faster than `filterDuplicates()` for 10000 items sequence.
-    @inlinable func uniqueUnordered<T: Hashable>(_ getElement: (Element) throws -> T?) rethrows -> [T] {
+    @inlinable func uniqueUnorderedCompactMap<T: Hashable>(_ compactMap: (Element) throws -> T?) rethrows -> [T] {
         var set = Set<T>()
         try forEach {
-            if let element = try getElement($0) {
+            if let element = try compactMap($0) {
                 set.insert(element)
             }
         }
+        
         return Array(set)
+    }
+    
+    /// Fast method to get unique values without keeping an order.
+    @inlinable func uniqueOrderedCompactMap<T: Hashable>(_ compactMap: (Element) throws -> T?) rethrows -> [T] {
+        var array = Array<T>()
+        var set = Set<T>()
+        try forEach {
+            if let element = try compactMap($0), !set.contains(element) {
+                set.insert(element)
+                array.append(element)
+            }
+        }
+        
+        return array
     }
 }
 
@@ -95,22 +104,6 @@ public extension Sequence {
 public extension Sequence {
     @inlinable func count(where isIncluded: (Element) throws -> Bool) rethrows -> Int {
         try filter(isIncluded).count
-    }
-    
-    /// Helper method to filter out duplicates. Element will be filtered out if closure return true.
-    @inlinable func filterDuplicates(_ isDuplicate: (_ lhs: Element, _ rhs: Element) throws -> Bool) rethrows -> [Element] {
-        var results = [Element]()
-        
-        try forEach { element in
-            let duplicate = try results.contains {
-                return try isDuplicate(element, $0)
-            }
-            if !duplicate {
-                results.append(element)
-            }
-        }
-        
-        return results
     }
     
     /// Transforms an array to a dictionary using array elements as values and transform result as keys.
