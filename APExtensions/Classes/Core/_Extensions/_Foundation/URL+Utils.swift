@@ -10,12 +10,21 @@ import Foundation
 import UIKit
 
 public extension URL {
+    
     /// File name without extension. Nil if it's directory.
     @available(iOS 9.0, *)
     var fileName: String? {
         guard !hasDirectoryPath else { return nil }
         
         return String(lastPathComponent.split(separator: ".")[0])
+    }
+    
+    /// File name with extension. Nil if it's directory.
+    @available(iOS 9.0, *)
+    var fullFileName: String? {
+        guard !hasDirectoryPath else { return nil }
+        
+        return lastPathComponent
     }
     
     /// Returns directory URL
