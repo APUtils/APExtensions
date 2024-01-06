@@ -15,11 +15,11 @@ public extension UserDefaults {
         return object(forKey: key) != nil
     }
     
-    /// Moves value from `oldKey` to the `newKey` if it exists.
-    func moveValueIfExists(oldKey: String, newKey: String) {
-        guard let value = value(forKey: oldKey) else { return }
+    /// Moves object from `oldKey` to the `newKey` if it exists.
+    func moveObjectIfExists(oldKey: String, newKey: String) {
+        guard let object = object(forKey: oldKey) else { return }
         
-        set(value, forKey: newKey)
+        set(object, forKey: newKey)
         removeObject(forKey: oldKey)
     }
 }
