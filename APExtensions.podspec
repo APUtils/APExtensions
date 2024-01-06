@@ -31,12 +31,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
       subspec.source_files = 'APExtensions/Classes/Core/**/*', 'APExtensions/Classes/Shared/**/*'
       subspec.dependency 'RoutableLogger'
   end
-  
-  s.subspec 'Dispatch' do |subspec|
-      subspec.frameworks = 'Foundation'
-      subspec.source_files = 'APExtensions/Classes/Dispatch/**/*'
-      subspec.dependency 'RoutableLogger'
-  end
 
   s.subspec 'ViewModel' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit'
@@ -50,6 +44,12 @@ A helpful collection of extensions, controllers and protocols. See documentation
   end
   
   # Extractions
+  
+  s.subspec 'Dispatch' do |subspec|
+      subspec.frameworks = 'Foundation'
+      subspec.source_files = 'APExtensions/Classes/Dispatch/**/*'
+      subspec.dependency 'RoutableLogger'
+  end
   
   s.subspec 'Occupiable' do |subspec|
       subspec.ios.deployment_target = '11.0'
