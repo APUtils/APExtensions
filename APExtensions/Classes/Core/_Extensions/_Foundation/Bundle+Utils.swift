@@ -108,6 +108,9 @@ public extension Bundle {
         return version
     }()
     
+    /// Example: 1234
+    static let appBuildVersionInt: Int? = appBuildVersionString.asInt
+    
     /// Example:
     /// - major: 1
     /// - minor: 10
