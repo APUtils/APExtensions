@@ -135,6 +135,7 @@ public extension Date {
     
     fileprivate static let logsDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.calendar = .gregorian
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .current
         
@@ -149,6 +150,7 @@ public extension Date {
     
     fileprivate static let logsTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.calendar = .gregorian
         formatter.dateFormat = "HH:mm:ss.SSS"
         formatter.timeZone = .current
         
@@ -163,6 +165,7 @@ public extension Date {
     
     fileprivate static let logsDateAndTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.calendar = .gregorian
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         formatter.timeZone = .current
         
