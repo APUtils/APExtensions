@@ -32,9 +32,9 @@ public extension CGFloat {
         NumberFormatter.hundredth.string(from: self as NSNumber) ?? ""
     }
     
-    /// Returns string representation rounded to thousands
-    var asThousandsString: String {
-        NumberFormatter.thousands.string(from: self as NSNumber) ?? ""
+    /// Returns string representation rounded to thousandth
+    var asThousandthString: String {
+        NumberFormatter.thousandth.string(from: self as NSNumber) ?? ""
     }
     
     /// Returns `self` as `String`

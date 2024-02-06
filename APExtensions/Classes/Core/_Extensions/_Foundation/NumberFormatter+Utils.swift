@@ -27,7 +27,7 @@ public extension NumberFormatter {
         return nf
     }()
     
-    static let thousands: NumberFormatter = {
+    static let thousandth: NumberFormatter = {
         let nf = NumberFormatter()
         nf.maximumFractionDigits = 3
         return nf
