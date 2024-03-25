@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
 ## [14.2.0](https://github.com/APUtils/APExtensions/releases/tag/14.2.0)
+Released on 2024-03-25.
 
 #### Added
 - Added `uniqueOrderedCompactMap(_:)`
