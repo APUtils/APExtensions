@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 
 #### Removed
 - Removed `filterDuplicates` and `filterDuplicates(_:)` as non-performant
+- [FileManager] `freeDiskSpace` removed
 
 #### Renamed
 - Renamed `uniqueUnordered(_:)` > `uniqueUnorderedCompactMap(_:)`

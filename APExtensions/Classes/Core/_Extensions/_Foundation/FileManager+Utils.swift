@@ -47,28 +47,6 @@ public extension FileManager {
     }
 }
 
-// ******************************* MARK: - Disk Space
-
-public extension FileManager {
-    
-    /// Returns formatted string containing free disk space size.
-    var freeDiskSpace: String {
-        ByteCountFormatter.string(fromByteCount: freeDiskSpaceInBytes, countStyle: .file)
-    }
-    
-    fileprivate var freeDiskSpaceInBytes: Int64 {
-        do {
-            let systemAttributes = try attributesOfFileSystem(forPath: NSHomeDirectory())
-            let freeSpace = (systemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.int64Value
-            return freeSpace ?? 0
-        } catch {
-            RoutableLogger.logError("Unable to get free space", data: ["home": NSHomeDirectory()])
-            return 0
-        }
-    }
-    
-}
-
 // ******************************* MARK: - Safe
 
 public extension FileManager {
