@@ -2,6 +2,33 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+## [14.2.0](https://github.com/APUtils/APExtensions/releases/tag/14.2.0)
+
+#### Added
+- Added `uniqueOrderedCompactMap(_:)`
+- [Bundle] Added `appBuildVersionInt`
+- [JSONSerialization] `safeJSONData(object:options:)`
+- [UILayoutPriority] Added conformance for `ExpressibleByFloatLiteral` and `ExpressibleByIntegerLiteral`
+- [URL] fullFileName
+
+#### Changed
+- Include `Occupiable` and `OptionalType` in the default spec
+- More info for queue assertion
+- Use Gregorian calendar for log formatters
+- [FileManager] `force` parameter for `safeCopyItem` method
+
+#### Fixed
+- [FileManager] `safeCopyItem` logic fix
+
+#### Removed
+- Removed `filterDuplicates` and `filterDuplicates(_:)` as non-performant
+
+#### Renamed
+- Renamed `uniqueUnordered(_:)` > `uniqueUnorderedCompactMap(_:)`
+- [UserDefaults] Rename `moveValueIfExists` > `moveObjectIfExists`
+- `thousands` > `thousandth`
+
+
 ## [14.1.0](https://github.com/APUtils/APExtensions/releases/tag/14.1.0)
 Released on 2023-11-20
 
