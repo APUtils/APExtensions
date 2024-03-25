@@ -22,7 +22,12 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.source           = { :git => 'https://github.com/APUtils/APExtensions.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
-  s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
+  s.swift_versions = ['5']
+  
+  # 1.12.0: Ensure developers won't hit CocoaPods/CocoaPods#11402 with the resource
+  # bundle for the privacy manifest.
+  # 1.13.0: visionOS is recognized as a platform.
+  s.cocoapods_version = '>= 1.13.0'
   
   s.default_subspec = 'Core', 'Dispatch', 'Occupiable', 'OptionalType', 'ViewModel', 'Storyboard'
 
