@@ -1,6 +1,5 @@
 # APExtensions
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Version](https://img.shields.io/cocoapods/v/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
 [![License](https://img.shields.io/cocoapods/l/APExtensions.svg?style=flat)](http://cocoapods.org/pods/APExtensions)
@@ -39,34 +38,6 @@ pod 'APExtensions/Core', '~> 14.1'
 pod 'APExtensions/Storyboard', '~> 14.1'
 pod 'APExtensions/ViewModel', '~> 14.1'
 ```
-
-#### Carthage **DEPRECATED**
-
-Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
-
-Cartfile:
-
-```
-github "APUtils/APExtensions" "carthage-old"
-```
-
-Install command: `carthage bootstrap`
-
-You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
-
-#### Carthage with XCFrameworks **DEPRECATED**
-
-Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
-
-Cartfile:
-
-```
-github "APUtils/APExtensions" ~> 14.1
-```
-
-Install command: `carthage bootstrap --use-xcframeworks`
-
-You should later add both `APExtensions` and `RoutableLogger` frameworks to your project.
 
 ## Usage
 

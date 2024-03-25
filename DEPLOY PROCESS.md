@@ -1,4 +1,3 @@
-- Assure `CarthageSupport/APExtensions-example.xcodeproj` and `Example/APExtensions.xcworkspace` have all dependencies added.
 - Change version in podspec
 - Run `podUpdate.command`
 - Run `swift package update`
