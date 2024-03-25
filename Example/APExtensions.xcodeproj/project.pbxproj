@@ -14,6 +14,7 @@
 		0D15798123C2308A007402BD /* APExtensions_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15798023C2308A007402BD /* APExtensions_UITests.swift */; };
 		0D20D61C2607449F00767851 /* Bundle_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20D61B2607449F00767851 /* Bundle_Spec.swift */; };
 		0D6869E92555D3CC00C1D884 /* CustomPageSizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6869E62555D3CC00C1D884 /* CustomPageSizeVC.swift */; };
+		488545F2BDCD91313F1CB37D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0217854B4761A737FBF0C7E7 /* PrivacyInfo.xcprivacy */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0217854B4761A737FBF0C7E7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		02237C3924CDA9B9ADD6620C /* Pods-APExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Example.debug.xcconfig"; path = "Target Support Files/Pods-APExtensions_Example/Pods-APExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		06C843E967CF077415EBF867 /* Pods-APExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APExtensions_Tests/Pods-APExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D11DF6D26D4405600FA8C7C /* Occupiable_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occupiable_Spec.swift; sourceTree = "<group>"; };
@@ -190,11 +192,12 @@
 			children = (
 				607FACF51AFB993E008FA782 /* _ */,
 				607FACD21AFB9204008FA782 /* Example for APExtensions */,
+				3D52F793FCECDFB20FED898D /* Frameworks */,
+				FFB7B80810C01F136E7DE7D8 /* Pods */,
 				607FACD11AFB9204008FA782 /* Products */,
+				E8B0626EF1015135173A7565 /* Resources */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				0D15797F23C2308A007402BD /* UITests */,
-				FFB7B80810C01F136E7DE7D8 /* Pods */,
-				3D52F793FCECDFB20FED898D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +314,15 @@
 			name = _ScrollToBottom;
 			sourceTree = "<group>";
 		};
+		E8B0626EF1015135173A7565 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0217854B4761A737FBF0C7E7 /* PrivacyInfo.xcprivacy */,
+			);
+			name = Resources;
+			path = APExtensions/Resources;
+			sourceTree = "<group>";
+		};
 		FFB7B80810C01F136E7DE7D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +405,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0D15797D23C2308A007402BD = {
@@ -456,6 +468,7 @@
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				B0A073CC1F3B79A8001B8CC6 /* UIScrollView.png in Resources */,
 				B0A073CE1F3B79EE001B8CC6 /* UITextView.png in Resources */,
+				488545F2BDCD91313F1CB37D /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
