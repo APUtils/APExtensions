@@ -18,6 +18,10 @@ let package = Package(
             targets: ["APExtensionsCore"]
         ),
         .library(
+            name: "APExtensionsDispatch",
+            targets: ["APExtensionsDispatch"]
+        ),
+        .library(
             name: "APExtensionsViewModel",
             targets: ["APExtensionsViewModel"]
         ),
@@ -42,6 +46,7 @@ let package = Package(
             name: "APExtensions",
             dependencies: [
                 "APExtensionsCore",
+                "APExtensionsDispatch",
                 "APExtensionsViewModel",
                 "APExtensionsStoryboard",
             ],
@@ -63,6 +68,21 @@ let package = Package(
             sources: ["Classes/Core"],
             resources: [
                 .process("Privacy/APExtensions.Core/PrivacyInfo.xcprivacy"),
+            ],
+            swiftSettings: [
+                .define("SPM"),
+            ]
+        ),
+        .target(
+            name: "APExtensionsDispatch",
+            dependencies: [
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
+            ],
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/Dispatch"],
+            resources: [
+                .process("Privacy/APExtensions.Dispatch/PrivacyInfo.xcprivacy"),
             ],
             swiftSettings: [
                 .define("SPM"),
