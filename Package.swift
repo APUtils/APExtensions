@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "APExtensions",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v12),
     ],
     products: [
         .library(
@@ -45,7 +45,10 @@ let package = Package(
                 "APExtensionsViewModel",
                 "APExtensionsStoryboard",
             ],
-            path: "APExtensions/Classes/APExtensions"
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/APExtensions"],
+            resources: []
         ),
         .target(
             name: "APExtensionsCore",
@@ -55,8 +58,12 @@ let package = Package(
                 "APExtensionsOccupiable",
                 "APExtensionsOptionalType",
             ],
-            path: "APExtensions/Classes/Core",
-            exclude: ["_Protocols/Occupiable", "_Protocols/OptionalType"],
+            path: "APExtensions",
+            exclude: ["Classes/Core/_Protocols/Occupiable", "Classes/Core/_Protocols/OptionalType"],
+            sources: ["Classes/Core"],
+            resources: [
+                .process("Privacy/APExtensions.Core/PrivacyInfo.xcprivacy"),
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -64,7 +71,12 @@ let package = Package(
         .target(
             name: "APExtensionsViewModel",
             dependencies: [],
-            path: "APExtensions/Classes/ViewModel/",
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/ViewModel"],
+            resources: [
+                .process("Privacy/APExtensions.ViewModel/PrivacyInfo.xcprivacy"),
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -75,7 +87,12 @@ let package = Package(
                 .product(name: "RoutableLogger", package: "RoutableLogger"),
                 "APExtensionsShared",
             ],
-            path: "APExtensions/Classes/Storyboard",
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/Storyboard"],
+            resources: [
+                .process("Privacy/APExtensions.Storyboard/PrivacyInfo.xcprivacy"),
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -83,7 +100,9 @@ let package = Package(
         .target(
             name: "APExtensionsShared",
             dependencies: [],
-            path: "APExtensions/Classes/Shared",
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/Shared"],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -91,7 +110,12 @@ let package = Package(
         .target(
             name: "APExtensionsOccupiable",
             dependencies: [],
-            path: "APExtensions/Classes/Core/_Protocols/Occupiable",
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/Core/_Protocols/Occupiable"],
+            resources: [
+                .process("Privacy/APExtensions.Occupiable/PrivacyInfo.xcprivacy"),
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -99,7 +123,12 @@ let package = Package(
         .target(
             name: "APExtensionsOptionalType",
             dependencies: [],
-            path: "APExtensions/Classes/Core/_Protocols/OptionalType",
+            path: "APExtensions",
+            exclude: [],
+            sources: ["Classes/Core/_Protocols/OptionalType"],
+            resources: [
+                .process("Privacy/APExtensions.OptionalType/PrivacyInfo.xcprivacy"),
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]

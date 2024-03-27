@@ -34,20 +34,20 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.subspec 'Core' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit', 'MessageUI'
       subspec.source_files = 'APExtensions/Classes/Core/**/*', 'APExtensions/Classes/Shared/**/*'
-      subspec.resource_bundle = {"APExtensions.Core.privacy"=>"Pod/Privacy/APExtensions.Core/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.Core.privacy"=>"APExtensions/Privacy/APExtensions.Core/PrivacyInfo.xcprivacy"}
       subspec.dependency 'RoutableLogger'
   end
 
   s.subspec 'ViewModel' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit'
       subspec.source_files = 'APExtensions/Classes/ViewModel/**/*'
-      subspec.resource_bundle = {"APExtensions.ViewModel.privacy"=>"Pod/Privacy/APExtensions.ViewModel/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.ViewModel.privacy"=>"APExtensions/Privacy/APExtensions.ViewModel/PrivacyInfo.xcprivacy"}
   end
 
   s.subspec 'Storyboard' do |subspec|
       subspec.frameworks = 'Foundation', 'UIKit'
       subspec.source_files = 'APExtensions/Classes/Storyboard/**/*', 'APExtensions/Classes/Shared/**/*'
-      subspec.resource_bundle = {"APExtensions.Storyboard.privacy"=>"Pod/Privacy/APExtensions.Storyboard/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.Storyboard.privacy"=>"APExtensions/Privacy/APExtensions.Storyboard/PrivacyInfo.xcprivacy"}
       subspec.dependency 'RoutableLogger'
   end
   
@@ -56,7 +56,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
   s.subspec 'Dispatch' do |subspec|
       subspec.frameworks = 'Foundation'
       subspec.source_files = 'APExtensions/Classes/Dispatch/**/*'
-      subspec.resource_bundle = {"APExtensions.Dispatch.privacy"=>"Pod/Privacy/APExtensions.Dispatch/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.Dispatch.privacy"=>"APExtensions/Privacy/APExtensions.Dispatch/PrivacyInfo.xcprivacy"}
       subspec.dependency 'RoutableLogger'
   end
   
@@ -67,7 +67,7 @@ A helpful collection of extensions, controllers and protocols. See documentation
       subspec.tvos.deployment_target = '11.0'
       
       subspec.source_files = 'APExtensions/Classes/Core/_Protocols/Occupiable/Occupiable.swift'
-      subspec.resource_bundle = {"APExtensions.Occupiable.privacy"=>"Pod/Privacy/APExtensions.Occupiable/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.Occupiable.privacy"=>"APExtensions/Privacy/APExtensions.Occupiable/PrivacyInfo.xcprivacy"}
   end
   
   s.subspec 'OptionalType' do |subspec|
@@ -77,6 +77,6 @@ A helpful collection of extensions, controllers and protocols. See documentation
       subspec.tvos.deployment_target = '11.0'
       
       subspec.source_files = 'APExtensions/Classes/Core/_Protocols/OptionalType/OptionalType.swift'
-      subspec.resource_bundle = {"APExtensions.OptionalType.privacy"=>"Pod/Privacy/APExtensions.OptionalType/PrivacyInfo.xcprivacy"}
+      subspec.resource_bundle = {"APExtensions.OptionalType.privacy"=>"APExtensions/Privacy/APExtensions.OptionalType/PrivacyInfo.xcprivacy"}
   end
 end
