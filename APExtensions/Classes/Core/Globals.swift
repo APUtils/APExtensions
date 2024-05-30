@@ -245,7 +245,7 @@ open class Globals {
     /// - parameter handler: Action button click closure. Default is `nil` - no action.
     open func showErrorAlert(title: String? = nil,
                              message: String? = nil,
-                             actionTitle: String = "Dismiss",
+                             actionTitle: String = Constants.Strings.dismiss,
                              style: UIAlertAction.Style = .cancel,
                              cancelTitle: String? = nil,
                              preferredStatusBarStyle: UIStatusBarStyle? = nil,
@@ -281,8 +281,8 @@ open class Globals {
     /// - parameter completion: Closure that takes user entered text as parameter
     open func showEnterTextAlert(title: String? = nil,
                                  message: String? = nil,
-                                 confirmTitle: String = "Confirm",
-                                 cancelTitle: String = "Cancel",
+                                 confirmTitle: String = Constants.Strings.confirm,
+                                 cancelTitle: String = Constants.Strings.cancel,
                                  preferredStatusBarStyle: UIStatusBarStyle? = nil,
                                  textFieldConfiguration: ((UITextField) -> Void)? = nil,
                                  onCancel: (() -> Void)? = nil,
@@ -325,7 +325,7 @@ open class Globals {
                               buttons: [String],
                               buttonsStyles: [UIAlertAction.Style]? = nil,
                               enabledButtons: [Bool]? = nil,
-                              cancelTitle: String = "Cancel",
+                              cancelTitle: String = Constants.Strings.cancel,
                               preferredStatusBarStyle: UIStatusBarStyle? = nil,
                               onCancel: (() -> Void)? = nil,
                               completion: @escaping ((String, Int) -> ())) {
