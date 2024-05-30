@@ -52,53 +52,64 @@ public extension FileManager {
 public extension FileManager {
     
     /// Safely copies item if it isn't exist or reports error if unable.
+    @discardableResult
     func safeCopyItem(at: URL,
                       to: URL,
                       force: Bool,
                       file: String = #file,
                       function: String = #function,
-                      line: UInt = #line) {
+                      line: UInt = #line) -> Bool {
         
         guard fileExists(atPath: at.path) else {
             RoutableLogger.logError("Unable to copy item. It does not exist", data: ["at": at, "to": to], file: file, function: function, line: line)
-            return
+            return false
         }
         
         if fileExists(atPath: to.path) {
             if force {
-                safeRemoveItem(url: to)
+                if !safeRemoveItemIfExists(at: to) {
+                    return false
+                }
             } else {
                 RoutableLogger.logError("Unable to copy item. There is an existing item at the destination", data: ["at": at, "to": to], file: file, function: function, line: line)
-                return
+                return false
             }
         }
         
         do {
             try copyItem(at: at, to: to)
+            return true
         } catch {
             RoutableLogger.logError("Can not copy item", error: error, data: ["at": at, "to": to], file: file, function: function, line: line)
+            return false
         }
     }
     
     /// Removes item and logs error if unable
-    func safeRemoveItemIfExists(atPath path: String, file: String = #file, function: String = #function, line: UInt = #line) {
-        guard fileExists(atPath: path) else { return }
+    @discardableResult
+    func safeRemoveItemIfExists(atPath path: String, file: String = #file, function: String = #function, line: UInt = #line) -> Bool {
+        guard fileExists(atPath: path) else { return true }
         
         do {
             try removeItem(atPath: path)
+            return true
         } catch {
             RoutableLogger.logError("Can not remove item at path", error: error, data: ["path": path], file: file, function: function, line: line)
+            return false
         }
     }
     
     /// Removes item if it exists and logs error if unable.
-    func safeRemoveItemIfExists(at url: URL, file: String = #file, function: String = #function, line: UInt = #line) {
-        guard fileExists(atPath: url.path) else { return }
+    @discardableResult
+    func safeRemoveItemIfExists(at url: URL, file: String = #file, function: String = #function, line: UInt = #line) -> Bool {
+        guard fileExists(atPath: url.path) else { return true }
         
         do {
             try removeItem(at: url)
+            return true
         } catch {
             RoutableLogger.logError("Can not remove item at URL", error: error, data: ["url": url], file: file, function: function, line: line)
+            return false
         }
     }
     
@@ -157,17 +168,19 @@ public extension FileManager {
     }
     
     /// Safely creates directory if it isn't exist or reports error if unable.
+    @discardableResult
     func safeCreateDirectory(at url: URL,
                              withIntermediateDirectories createIntermediates: Bool,
                              attributes: [FileAttributeKey: Any]? = nil,
                              file: String = #file,
                              function: String = #function,
-                             line: UInt = #line) {
+                             line: UInt = #line) -> Bool {
         
-        guard !fileExists(atPath: url.path) else { return }
+        guard !fileExists(atPath: url.path) else { return true }
         
         do {
             try createDirectory(at: url, withIntermediateDirectories: createIntermediates, attributes: attributes)
+            return true
         } catch {
             RoutableLogger.logError("Can not create directory",
                                     error: error,
@@ -179,18 +192,21 @@ public extension FileManager {
                                     file: file,
                                     function: function,
                                     line: line)
+            return false
         }
     }
     
     /// Safely removes item if it exists or reports error if unable.
+    @discardableResult
     func safeRemoveItem(url: URL,
                         file: String = #file,
                         function: String = #function,
-                        line: UInt = #line) {
+                        line: UInt = #line) -> Bool {
         
         do {
-            guard fileExists(atPath: url.path) else { return }
+            guard fileExists(atPath: url.path) else { return true }
             try removeItem(at: url)
+            return true
             
         } catch {
             RoutableLogger.logError("Can not delete file",
@@ -199,6 +215,7 @@ public extension FileManager {
                                     file: file,
                                     function: function,
                                     line: line)
+            return false
         }
     }
 }
