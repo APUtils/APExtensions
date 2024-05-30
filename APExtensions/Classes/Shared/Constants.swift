@@ -29,6 +29,8 @@ public extension Constants {
 // ******************************* MARK: - Strings
 
 public extension Constants.Strings {
+    static var alertMessage: String? = nil
+    static var alertTitle: String? = nil
     static var cancel = "Cancel"
     static var confirm = "Confirm"
     static var dismiss = "Dismiss"

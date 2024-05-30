@@ -243,8 +243,8 @@ open class Globals {
     /// - parameter preferredStatusBarStyle: Preferred status bar style to use during alert presentation.
     /// - parameter onCancel: Cancel button click closure. Default is `nil` - no action.
     /// - parameter handler: Action button click closure. Default is `nil` - no action.
-    open func showErrorAlert(title: String? = nil,
-                             message: String? = nil,
+    open func showErrorAlert(title: String? = Constants.Strings.alertTitle,
+                             message: String? = Constants.Strings.alertMessage,
                              actionTitle: String = Constants.Strings.dismiss,
                              style: UIAlertAction.Style = .cancel,
                              cancelTitle: String? = nil,
