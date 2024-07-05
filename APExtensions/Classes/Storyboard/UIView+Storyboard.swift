@@ -18,7 +18,12 @@ public extension UIView {
             return UIColor(cgColor: borderColor)
         }
         set {
-            layer.borderColor = newValue?.cgColor
+            // For some reason, it may resolve to wrong color mode by default so using `resolvedColor`
+            if #available(iOS 13.0, *) {
+                layer.borderColor = newValue?.resolvedColor(with: traitCollection).cgColor
+            } else {
+                layer.borderColor = newValue?.cgColor
+            }
         }
     }
     
@@ -69,7 +74,12 @@ public extension UIView {
             return UIColor(cgColor: shadowColor)
         }
         set {
-            layer.shadowColor = newValue?.cgColor
+            // For some reason, it may resolve to wrong color mode by default so using `resolvedColor`
+            if #available(iOS 13.0, *) {
+                layer.shadowColor = newValue?.resolvedColor(with: traitCollection).cgColor
+            } else {
+                layer.shadowColor = newValue?.cgColor
+            }
         }
     }
     
