@@ -113,3 +113,19 @@ public extension UIColor {
         return UIColor(hue: averageHue, saturation: averageSaturation, brightness: averageBrightness, alpha: averageAlpha)
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension UIColor {
+    
+    /// Resolves color using application's delegate window or passed `view`
+    func applicationResolvedColor(view: UIView) -> UIColor {
+        guard #available(iOS 13.0, *) else { return self }
+            
+        if let window = UIApplication.shared.delegate?.window ?? nil {
+            return resolvedColor(with: window.traitCollection)
+        } else {
+            return resolvedColor(with: view.traitCollection)
+        }
+    }
+}
