@@ -12,7 +12,7 @@ import UIKit
 private var defaultFontAssociationKey = 0
 
 
-public extension UILabel {
+extension UILabel {
     private var defaultFont: UIFont? {
         get {
             return objc_getAssociatedObject(self, &defaultFontAssociationKey) as? UIFont
@@ -23,7 +23,7 @@ public extension UILabel {
     }
     
     /// Scale title font for screen
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return defaultFont != nil
         }
@@ -44,7 +44,7 @@ public extension UILabel {
     /// Makes font scalable depending on device content size category
     @available(iOS 11.0, *)
     @IBInspectable
-    var scalable: Bool {
+    open var scalable: Bool {
         @available(*, unavailable)
         get { return false }
         set {

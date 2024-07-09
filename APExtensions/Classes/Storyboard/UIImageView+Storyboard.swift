@@ -14,7 +14,7 @@ import UIKit
 private let keepPreviousImage = false
 private var defaultImageAssociationKey = 0
 
-public extension UIImageView {
+extension UIImageView {
     private var defaultImage: UIImage? {
         get {
             return objc_getAssociatedObject(self, &defaultImageAssociationKey) as? UIImage
@@ -25,7 +25,7 @@ public extension UIImageView {
     }
     
     /// Scale image for screen
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return defaultImage != nil
         }
@@ -55,7 +55,7 @@ public extension UIImageView {
 
 private var localizedImageNameAssociationKey = 0
 
-public extension UIImageView {
+extension UIImageView {
     private var localizedImageName: String? {
         get {
             return objc_getAssociatedObject(self, &localizedImageNameAssociationKey) as? String
@@ -67,7 +67,7 @@ public extension UIImageView {
     
     /// Using localized "_en" key to append to image. Won't work if you don't have "_en" key in your localized strings.
     /// In case you need to change image programmatically - set this property to `nil` first
-    @IBInspectable var localizableImageName: String? {
+    @IBInspectable open var localizableImageName: String? {
         get {
             return localizedImageName
         }

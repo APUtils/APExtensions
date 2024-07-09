@@ -36,12 +36,12 @@ private let _navigationBarHeight: CGFloat = 44
 @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use the statusBarManager property of the window scene instead.")
 private let _topBarsHeight: CGFloat = _statusBarHeight + _navigationBarHeight
 
-public extension UIScrollView {
+extension UIScrollView {
     
     /// Sets (status bar + 44) or 0 for top content inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids top bars. Takes into account `contentInsetAdjustmentBehavior`.
     @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Deprecated. Please use something else.")
-    @IBInspectable var avoidNavigationBar: Bool {
+    @IBInspectable open var avoidNavigationBar: Bool {
         get {
             if #available(iOS 11.0, *) {
                 switch contentInsetAdjustmentBehavior {
@@ -85,7 +85,7 @@ public extension UIScrollView {
     
     /// Sets 49 or 0 for bottom inset and disables automatic mechanisms to prevent conflict.
     /// Returns true if scroll view avoids bottom bars. Takes into account `contentInsetAdjustmentBehavior`.
-    @IBInspectable var avoidTabBar: Bool {
+    @IBInspectable open var avoidTabBar: Bool {
         get {
             if #available(iOS 11.0, *) {
                 switch contentInsetAdjustmentBehavior {

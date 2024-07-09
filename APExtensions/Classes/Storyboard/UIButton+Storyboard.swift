@@ -12,7 +12,7 @@ import UIKit
 
 private var defaultFontAssociationKey = 0
 
-public extension UIButton {
+extension UIButton {
     private var defaultFont: UIFont? {
         get {
             return objc_getAssociatedObject(self, &defaultFontAssociationKey) as? UIFont
@@ -23,7 +23,7 @@ public extension UIButton {
     }
     
     /// Scale button title font for screen
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return self.defaultFont != nil
         }
@@ -47,7 +47,7 @@ public extension UIButton {
     /// Makes font scalable depending on device content size category
     @available(iOS 11.0, *)
     @IBInspectable
-    var scalable: Bool {
+    open var scalable: Bool {
         @available(*, unavailable)
         get { return false }
         set { titleLabel?.scalable = newValue }
@@ -56,9 +56,9 @@ public extension UIButton {
 
 // ******************************* MARK: - Label
 
-public extension UIButton {
+extension UIButton {
     /// Underlying label number of lines
-    @IBInspectable var lines: Int {
+    @IBInspectable open var lines: Int {
         get {
             return titleLabel?.numberOfLines ?? 1
         }

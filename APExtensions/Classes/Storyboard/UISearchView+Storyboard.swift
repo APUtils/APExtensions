@@ -23,7 +23,7 @@ extension UISearchBar {
     
     /// Scale title font for screen
     @available(iOS 13.0, *)
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return defaultFont != nil
         }
@@ -44,7 +44,7 @@ extension UISearchBar {
     /// Makes font scalable depending on device content size category
     @available(iOS 13.0, *)
     @IBInspectable
-    var scalable: Bool {
+    open var scalable: Bool {
         @available(*, unavailable)
         get { return false }
         set { searchTextField.scalable = newValue }

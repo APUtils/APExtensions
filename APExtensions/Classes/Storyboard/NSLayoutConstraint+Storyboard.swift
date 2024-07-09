@@ -15,7 +15,7 @@ import UIKit
 
 private var defaultConstantAssociationKey = 0
 
-public extension NSLayoutConstraint {
+extension NSLayoutConstraint {
     private var defaultConstant: CGFloat? {
         get {
             return objc_getAssociatedObject(self, &defaultConstantAssociationKey) as? CGFloat
@@ -27,7 +27,7 @@ public extension NSLayoutConstraint {
     
     /// Scale constraint constant to fit screen. Assuming source font is for 2208x1242 screen.
     /// In case you need to change constant value programmatically - reset this flag to false first.
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return defaultConstant != nil
         }
@@ -56,9 +56,9 @@ public extension NSLayoutConstraint {
 
 // ******************************* MARK: - One Pixel Width
 
-public extension NSLayoutConstraint {
+extension NSLayoutConstraint {
     /// Make one pixel size constraint
-    @IBInspectable var onePixelSize: Bool {
+    @IBInspectable open var onePixelSize: Bool {
         get {
             return constant == 1 / UIScreen.main.scale
         }

@@ -12,10 +12,10 @@ import APExtensionsShared
 import UIKit
 import RoutableLogger
 
-public extension UIFont {
+extension UIFont {
     
     /// Returns screen scaled font. Assuming source font is for 2208x1242 screen.
-    var screenFitFont: UIFont {
+    @objc open var screenFitFont: UIFont {
         var newFontSize = pointSize * c.screenResizeCoef
         newFontSize = newFontSize.rounded()
         
@@ -24,7 +24,7 @@ public extension UIFont {
     
     /// Returns scalable font depending on device content size category
     @available(iOS 11.0, *)
-    var scalable: UIFont {
+    @objc open var scalable: UIFont {
         let style: UIFont.TextStyle
         switch pointSize {
         case 34...: style = .largeTitle

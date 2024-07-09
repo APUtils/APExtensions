@@ -22,7 +22,7 @@ extension UITextField {
     }
     
     /// Scale title font for screen
-    @IBInspectable var fitScreenSize: Bool {
+    @IBInspectable open var fitScreenSize: Bool {
         get {
             return defaultFont != nil
         }
@@ -43,7 +43,7 @@ extension UITextField {
     /// Makes font scalable depending on device content size category
     @available(iOS 11.0, *)
     @IBInspectable
-    var scalable: Bool {
+    open var scalable: Bool {
         @available(*, unavailable)
         get { return false }
         set {

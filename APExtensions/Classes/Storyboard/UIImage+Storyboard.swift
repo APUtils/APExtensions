@@ -8,10 +8,9 @@
 
 import UIKit
 
-
-public extension UIImage {
+extension UIImage {
     /// Returns screen scaled image. Assuming source image is for 2208x1242 screen.
-    var screenFitImage: UIImage {
+    @objc open var screenFitImage: UIImage {
         // Assuming we don't have 2x image in assets folder. 6+ size is 1242x2208.
         let resizeCoef = UIScreen.main.bounds.width * UIScreen.main.scale / 1242
         let newImageSize = CGSize(width: size.width * resizeCoef, height: size.height * resizeCoef)
