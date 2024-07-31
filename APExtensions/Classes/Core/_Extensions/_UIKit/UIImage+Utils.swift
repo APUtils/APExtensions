@@ -11,6 +11,21 @@ import UIKit
 
 public extension UIImage {
     
+    /// Extracts image name from a description.
+    /// * Example description: `<UIImage:0x60000278ce10 named(main: ic_timeline_milestone_bluedot) {16, 16}>`
+    /// * Example name: `ic_timeline_milestone_bluedot`
+    /// - warning: For the debug use only.
+    var name: String? {
+        let description = self.description
+        guard let regexp = try? NSRegularExpression(pattern: "\\(main: (.*)\\)", options: []) else { return nil }
+        guard let match = regexp.matches(in: description, options: [], range: description.fullNSRange).first else { return nil }
+        guard match.numberOfRanges > 0 else { return nil }
+        let range = match.range(at: match.numberOfRanges - 1)
+        let idx1 = description.index(description.startIndex, offsetBy: range.lowerBound)
+        let idx2 = description.index(description.startIndex, offsetBy: range.upperBound)
+        return String(description[idx1..<idx2])
+    }
+    
     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)

@@ -330,7 +330,7 @@ public extension StringProtocol {
         Range<String.Index>(uncheckedBounds: (startIndex, endIndex))
     }
     
-    /// Range from the start to the end.
+    /// NSRange from the start to the end.
     var fullNSRange: NSRange {
         NSRange(location: 0, length: count)
     }
