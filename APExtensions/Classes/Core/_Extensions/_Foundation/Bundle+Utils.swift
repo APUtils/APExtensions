@@ -13,7 +13,7 @@ import RoutableLogger
 
 public extension Bundle {
     
-    func json(forResource resource: String, withExtension extension: String) -> [String: Any]? {
+    func json(forResource resource: String, withExtension extension: String?) -> [String: Any]? {
         guard let url = url(forResource: resource, withExtension: `extension`) else {
             RoutableLogger.logError("Unable to locate a resource in main bundle", data: ["resource": resource, "extension": `extension`])
             return nil
@@ -59,7 +59,7 @@ public extension Bundle {
 public extension Bundle {
     
     /// Gets data for a resource from bundle and reports error if unable.
-    func safeGetData(forResource resource: String, withExtension extension: String) -> Data? {
+    func safeGetData(forResource resource: String, withExtension extension: String?) -> Data? {
         guard let url = url(forResource: resource, withExtension: `extension`) else {
             RoutableLogger.logError("Unable to get URL for JSON mock", data: ["resource": resource, "extension": `extension`])
             return Data()
@@ -74,7 +74,7 @@ public extension Bundle {
     }
     
     /// Gets string for a resource from bundle and reports error if unable.
-    func safeGetString(forResource resource: String, withExtension extension: String) -> String? {
+    func safeGetString(forResource resource: String, withExtension extension: String?) -> String? {
         guard let path = path(forResource: resource, ofType: `extension`) else {
             RoutableLogger.logError("Unable to get path for JSON mock", data: ["resource": resource, "extension": `extension`])
             return nil
