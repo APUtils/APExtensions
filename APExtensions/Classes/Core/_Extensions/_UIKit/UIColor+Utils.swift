@@ -119,15 +119,18 @@ public extension UIColor {
 public extension UIColor {
     
     /// Resolves color using application's delegate window if `view` is not yet added to `window`
-    func applicationResolvedColor(view: UIView) -> UIColor {
+    func applicationResolvedColor(view: UIView? = nil, file: String = #file, function: String = #function, line: UInt = #line) -> UIColor {
         guard #available(iOS 13.0, *) else { return self }
             
-        if view.window != nil {
+        if let view, view.window != nil {
             return resolvedColor(with: view.traitCollection)
         } else if let window = UIApplication.shared.delegate?.window ?? nil {
             return resolvedColor(with: window.traitCollection)
-        } else {
+        } else if let view {
             return resolvedColor(with: view.traitCollection)
+        } else {
+            RoutableLogger.logError("Unable to resolve color", file: file, function: function, line: line)
+            return self
         }
     }
 }
