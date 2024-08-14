@@ -81,10 +81,10 @@ public extension UIViewController {
                 nextResponder = _nextResponder
             } else if let vc = nextResponder as? UIViewController {
                 nextResponder = vc.navigationController
-            }
-            
-            if let window = nextResponder as? UIWindow {
+            } else if let window = nextResponder as? UIWindow {
                 return window
+            } else {
+                return nil
             }
         }
         
