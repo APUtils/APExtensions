@@ -28,7 +28,8 @@ public extension UIWindow {
         return alertWindow
     }
     
-    /// Removes window from windows stack
+    /// Removes window from windows stack.
+    /// Additionally, remove all subviews and `rootViewController` to prevent possible leaks.
     func remove() {
         RoutableLogger.logDebug("Removing '\(g.getPointer(self))' window")
         
@@ -39,6 +40,9 @@ public extension UIWindow {
         /// Removing it here manually.
         rootViewController?.view.removeFromSuperview()
         rootViewController = nil
+        
+        subviews.forEach { $0.removeFromSuperview() }
+        
         isHidden = true
         
         // https://stackoverflow.com/a/59988501/4124265
