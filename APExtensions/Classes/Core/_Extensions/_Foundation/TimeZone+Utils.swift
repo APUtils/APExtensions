@@ -8,8 +8,17 @@
 
 import Foundation
 
+// ******************************* MARK: - Static time zones
 
 public extension TimeZone {
     /// GMT time zone
     static let gmt: TimeZone = TimeZone(secondsFromGMT: 0)!
+}
+
+// ******************************* MARK: - Short Description
+
+public extension TimeZone {
+    var shortDescription: String {
+        "\(identifier) \(abbreviation().description)"
+    }
 }
