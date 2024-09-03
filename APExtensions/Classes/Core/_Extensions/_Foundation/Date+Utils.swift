@@ -133,6 +133,21 @@ public extension Date {
         Self.isoGmtWithMillisAndTimeZone.string(from: self)
     }
     
+    /// Simplification of getting string from date
+    func getString(dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short, doesRelativeDateFormatting: Bool = true) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = dateStyle
+        formatter.timeStyle = timeStyle
+        formatter.doesRelativeDateFormatting = doesRelativeDateFormatting
+        
+        return formatter.string(from: self)
+    }
+}
+
+// ******************************* MARK: - Local Logs
+
+public extension Date {
+    
     fileprivate static let logsDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.calendar = .gregorian
@@ -142,8 +157,8 @@ public extension Date {
         return formatter
     }()
     
-    /// Return `self` as a date string with a `yyyy-MM-dd` format. E.g. `2019-10-15`.
-    /// Useful for logs.
+    /// Return `self` as a date string with a `yyyy-MM-dd` format in the current time zone. E.g. `2019-10-15`.
+    /// Useful for local logs.
     var asLogsDate: String {
         Self.logsDateFormatter.string(from: self)
     }
@@ -157,8 +172,8 @@ public extension Date {
         return formatter
     }()
     
-    /// Return `self` as a time string with a `HH:mm:ss.SSS` format. E.g. `10:20:45.123`.
-    /// Useful for logs.
+    /// Return `self` as a time string with a `HH:mm:ss.SSS` format in the current time zone. E.g. `10:20:45.123`.
+    /// Useful for local logs.
     var asLogsTimeString: String {
         Self.logsTimeFormatter.string(from: self)
     }
@@ -172,19 +187,53 @@ public extension Date {
         return formatter
     }()
     
-    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format. E.g. `2019-10-15 16:16:40.723`.
-    /// Useful for logs.
+    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format in the current time zone. E.g. `2019-10-15 16:16:40.723`.
+    /// Useful for local logs.
     var asLogsDateAndTimeString: String {
         Self.logsDateAndTimeFormatter.string(from: self)
     }
+}
+
+// ******************************* MARK: - Global Logs
+
+public extension Date {
     
-    /// Simplification of getting string from date
-    func getString(dateStyle: DateFormatter.Style = .short, timeStyle: DateFormatter.Style = .short, doesRelativeDateFormatting: Bool = true) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = dateStyle
-        formatter.timeStyle = timeStyle
-        formatter.doesRelativeDateFormatting = doesRelativeDateFormatting
+    fileprivate static let gmtLogsDateFormatter: DateFormatter = {
+        let formatter = logsDateFormatter
+        formatter.timeZone = .gmt
         
-        return formatter.string(from: self)
+        return formatter
+    }()
+    
+    /// Return `self` as a date string with a `yyyy-MM-dd` format in the `GMT` time zone. E.g. `2019-10-15`.
+    /// Useful for global logs.
+    var asGmtLogsDate: String {
+        Self.gmtLogsDateFormatter.string(from: self)
+    }
+    
+    fileprivate static let gmtLogsTimeFormatter: DateFormatter = {
+        let formatter = logsTimeFormatter
+        formatter.timeZone = .gmt
+        
+        return formatter
+    }()
+    
+    /// Return `self` as a time string with a `HH:mm:ss.SSS` format in the `GMT` time zone. E.g. `10:20:45.123`.
+    /// Useful for global logs.
+    var asGmtLogsTimeString: String {
+        Self.gmtLogsTimeFormatter.string(from: self)
+    }
+    
+    fileprivate static let gmtLogsDateAndTimeFormatter: DateFormatter = {
+        let formatter = logsDateAndTimeFormatter
+        formatter.timeZone = .gmt
+        
+        return formatter
+    }()
+    
+    /// Return `self` as a date and time string with a `yyyy.MM.dd HH:mm:ss.SSS` format in the `GMT` time zone. E.g. `2019-10-15 16:16:40.723`.
+    /// Useful for global logs.
+    var asGmtLogsDateAndTimeString: String {
+        Self.gmtLogsDateAndTimeFormatter.string(from: self)
     }
 }
