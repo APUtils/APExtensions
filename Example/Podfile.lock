@@ -17,7 +17,7 @@ PODS:
   - APExtensions/ViewModel (14.2.0)
   - Nimble (10.0.0)
   - Quick (5.0.1)
-  - RoutableLogger (12.3.3)
+  - RoutableLogger (12.4.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   APExtensions: 06c059d069034fb32db789432ee889274b453435
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
+  RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
 
 PODFILE CHECKSUM: 963030d9678de3f79f8a26e8c8f618b2eceb873d
 
