@@ -12,7 +12,8 @@ import RoutableLogger
 public extension NSMutableAttributedString {
     
     /// Makes text underlined
-    func set(color: UIColor, substring: String? = nil) {
+    @discardableResult
+    func set(color: UIColor, substring: String? = nil) -> Self {
         let range: NSRange
         if let substring {
             range = mutableString.range(of: substring)
@@ -22,14 +23,17 @@ public extension NSMutableAttributedString {
         
         guard range.location != NSNotFound else {
             RoutableLogger.logError("Unable to locate text", data: ["substring": substring, "self": self])
-            return
+            return self
         }
         
         addAttribute(.foregroundColor, value: color, range: range)
+        
+        return self
     }
     
     /// Sets font for the first occurence of text. If text is `nil` sets font for entire string.
-    func set(font: UIFont, for text: String? = nil) {
+    @discardableResult
+    func set(font: UIFont, for text: String? = nil) -> Self {
         let range: NSRange
         if let text = text {
             range = mutableString.range(of: text)
@@ -39,18 +43,21 @@ public extension NSMutableAttributedString {
         
         guard range.location != NSNotFound else {
             RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
-            return
+            return self
         }
         
         addAttribute(.font, value: font, range: range)
+        
+        return self
     }
     
     /// Sets aligment for the first occurence of text. If text is `nil` sets aligment for entire string.
+    @discardableResult
     func set(aligment: NSTextAlignment? = nil,
              headIndent: CGFloat? = nil,
              lineSpacing: CGFloat? = nil,
              lineHeightMultiple: CGFloat? = nil,
-             for text: String? = nil) {
+             for text: String? = nil) -> Self {
         
         let range: NSRange
         if let text = text {
@@ -61,7 +68,7 @@ public extension NSMutableAttributedString {
         
         guard range.location != NSNotFound else {
             RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
-            return
+            return self
         }
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -71,20 +78,27 @@ public extension NSMutableAttributedString {
         if let lineHeightMultiple = lineHeightMultiple { paragraphStyle.lineHeightMultiple = lineHeightMultiple }
         
         addAttribute(.paragraphStyle, value: paragraphStyle, range: range)
+        
+        return self
     }
     
     /// Sets text kern
-    func set(kern: CGFloat) {
+    @discardableResult
+    func set(kern: CGFloat) -> Self {
         addAttribute(.kern, value: kern, range: fullRange)
+        return self
     }
     
     /// Makes text underlined
-    func setUnderline() {
+    @discardableResult
+    func setUnderline() -> Self {
         addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: fullRange)
+        return self
     }
     
     /// Makes text striked through
-    func setStrikethrough(text: String? = nil) {
+    @discardableResult
+    func setStrikethrough(text: String? = nil) -> Self {
         let range: NSRange
         if let text = text {
             range = mutableString.range(of: text)
@@ -94,10 +108,12 @@ public extension NSMutableAttributedString {
         
         guard range.location != NSNotFound else {
             RoutableLogger.logError("Unable to locate text", data: ["text": text, "self": self])
-            return
+            return self
         }
         
         addAttribute(NSAttributedString.Key.baselineOffset, value: 0, range: range)
         addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        
+        return self
     }
 }
