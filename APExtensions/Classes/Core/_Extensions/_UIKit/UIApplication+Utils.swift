@@ -86,7 +86,7 @@ public extension UIApplication {
 
 // ******************************* MARK: - UIApplication.State - CustomStringConvertible
 
-extension UIApplication.State: CustomStringConvertible {
+extension UIApplication.State: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .active: return "active"

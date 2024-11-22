@@ -21,7 +21,7 @@ public extension MFMessageComposeViewController {
     }
 }
 
-extension MFMessageComposeViewController: MFMessageComposeViewControllerDelegate {
+extension MFMessageComposeViewController: @retroactive MFMessageComposeViewControllerDelegate {
     public func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true, completion: nil)
     }

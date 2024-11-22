@@ -26,7 +26,7 @@ public func !=<T>(lhs: [T]?, rhs: [T]?) -> Bool where T: Equatable {
 
 // ******************************* MARK: - CustomStringConvertible
 
-extension Optional: CustomStringConvertible {
+extension Optional: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .some(let value):

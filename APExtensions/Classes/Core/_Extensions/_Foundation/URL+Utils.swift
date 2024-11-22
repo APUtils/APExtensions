@@ -71,7 +71,7 @@ public extension URL {
 
 // ******************************* MARK: - Comparable
 
-extension URL: Comparable {
+extension URL: @retroactive Comparable {
     public static func < (lhs: URL, rhs: URL) -> Bool {
         lhs.relativeString < rhs.relativeString
     }

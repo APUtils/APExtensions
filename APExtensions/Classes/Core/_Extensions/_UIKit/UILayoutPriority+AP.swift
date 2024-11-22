@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension UILayoutPriority: ExpressibleByFloatLiteral {
+extension UILayoutPriority: @retroactive ExpressibleByFloatLiteral {
     public init(floatLiteral value: Float) {
         self.init(value)
     }
 }
 
-extension UILayoutPriority: ExpressibleByIntegerLiteral {
+extension UILayoutPriority: @retroactive ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) {
         self.init(value.asFloat)
     }

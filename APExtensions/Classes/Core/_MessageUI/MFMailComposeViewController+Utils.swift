@@ -23,7 +23,7 @@ public extension MFMailComposeViewController {
     }
 }
 
-extension MFMailComposeViewController: MFMailComposeViewControllerDelegate {
+extension MFMailComposeViewController: @retroactive MFMailComposeViewControllerDelegate {
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }

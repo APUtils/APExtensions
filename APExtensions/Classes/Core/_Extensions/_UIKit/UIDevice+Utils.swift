@@ -48,7 +48,7 @@ public extension UIDevice {
 
 // ******************************* MARK: - UIDevice.BatteryState - CustomStringConvertible
 
-extension UIDevice.BatteryState: CustomStringConvertible {
+extension UIDevice.BatteryState: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .charging: return "charging"
