@@ -28,4 +28,8 @@ public extension Error {
             || _code == NSURLErrorDNSLookupFailed
             || _code == NSURLErrorTimedOut
     }
+    
+    var underlyingError: Error? {
+        _userInfo?[NSUnderlyingErrorKey] as? Error
+    }
 }
