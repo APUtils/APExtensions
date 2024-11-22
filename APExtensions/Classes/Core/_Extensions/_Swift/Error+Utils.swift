@@ -29,6 +29,20 @@ public extension Error {
             || _code == NSURLErrorTimedOut
     }
     
+    var coreErrorCode: Int {
+        coreError._code
+    }
+    
+    /// Gets the first error from underlying or `self`
+    var coreError: Error {
+        var coreError: Error = self
+        while let underlyingError = coreError.underlyingError {
+            coreError = underlyingError
+        }
+        
+        return coreError
+    }
+    
     var underlyingError: Error? {
         _userInfo?[NSUnderlyingErrorKey] as? Error
     }
