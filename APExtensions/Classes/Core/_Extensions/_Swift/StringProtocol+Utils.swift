@@ -130,6 +130,10 @@ public extension StringProtocol {
         TimeInterval(self)
     }
     
+    var asMutableString: NSMutableString {
+        NSMutableString(string: asString)
+    }
+    
     /// Returns string as NSAttributedString
     var asAttributedString: NSAttributedString {
         return NSAttributedString(string: asString)
@@ -158,6 +162,19 @@ public extension StringProtocol {
         }
         
         return data
+    }
+    
+    /// Fixes unicode escapes in string
+    /// Example input: Twoja metoda p\U0142atno\U015bci zosta\U0142a odrzucona.
+    /// Example result: Twoja metoda płatności została odrzucona.
+    func toUnicodeUnescaped() -> String {
+        let mutableString = asString
+            .replacingOccurrences(of: "\\U", with: "\\u")
+            .asMutableString
+        
+        CFStringTransform(mutableString, nil, "Any-Hex/Java" as CFString, true)
+        
+        return mutableString as String
     }
 }
 
