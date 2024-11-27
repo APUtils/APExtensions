@@ -33,6 +33,11 @@ public extension Error {
         coreError._code
     }
     
+    /// Gets the first error from underlying or `self` and casts it to `NSError`
+    var coreNSError: NSError {
+        coreError as NSError
+    }
+    
     /// Gets the first error from underlying or `self`
     var coreError: Error {
         var coreError: Error = self
