@@ -56,7 +56,7 @@ open class AlertController: UIAlertController {
         
         if let popover = popoverPresentationController {
             // Prevent crash by targeting bottom of the screen
-            if popover.sourceView == nil && popover.sourceRect == .zero {
+            if popover.sourceView == nil && popover.sourceRect.isInvalid {
                 if AlertController.presentationStyle == .window, let alertWindow = alertWindow {
                     popover.sourceView = alertWindow
                     popover.sourceRect = CGRect(x: alertWindow.bounds.size.width / 2, y: alertWindow.bounds.size.height, width: 0, height: 0)
@@ -82,5 +82,11 @@ open class AlertController: UIAlertController {
                 g.topViewController?.present(self, animated: animated, completion: completion)
             }
         }
+    }
+}
+
+fileprivate extension CGRect {
+    var isInvalid: Bool {
+        isNull || isInfinite || self == .zero
     }
 }
