@@ -20,6 +20,11 @@ public extension CGRect {
         }
     }
     
+    /// Assumes it's popover source rect and checks its validity
+    var isInvalidPopoverSourceRect: Bool {
+        isNull || isInfinite || self == .zero
+    }
+
     /// Returns new rect rounded to a nearest pixel value using the specified rounding rule.
     /// Uses `.toNearestOrAwayFromZero` by default.
     /// - returns: The integral value found by rounding using rule. 
