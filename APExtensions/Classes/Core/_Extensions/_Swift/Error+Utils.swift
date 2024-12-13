@@ -48,6 +48,10 @@ public extension Error {
         return coreError
     }
     
+    var underlyingNSError: NSError? {
+        _userInfo?[NSUnderlyingErrorKey] as? NSError
+    }
+    
     var underlyingError: Error? {
         _userInfo?[NSUnderlyingErrorKey] as? Error
     }
