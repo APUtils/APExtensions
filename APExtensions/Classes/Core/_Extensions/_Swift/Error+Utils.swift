@@ -10,6 +10,11 @@ import Foundation
 
 public extension Error {
     
+    /// Returns `self` as `NSError`
+    var asNSError: NSError {
+        self as NSError
+    }
+    
     /// Checks if cancelled error
     var isCancelledError: Bool {
         guard _domain == NSURLErrorDomain else { return false }
