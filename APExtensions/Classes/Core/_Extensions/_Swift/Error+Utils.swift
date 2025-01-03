@@ -53,6 +53,18 @@ public extension Error {
         return coreError
     }
     
+    /// Example: `SKErrorDomain 0 | ASDErrorDomain 500 | AMSErrorDomain 305`
+    var segmentationString: String {
+        var segmentationStringComponents: [String] = ["\(_domain) \(_code)"]
+        var coreError: Error = self
+        while let underlyingError = coreError.underlyingError {
+            coreError = underlyingError
+            segmentationStringComponents.append("\(underlyingError._domain) \(underlyingError._code)")
+        }
+        
+        return segmentationStringComponents.joined(separator: " | ")
+    }
+    
     var underlyingNSError: NSError? {
         _userInfo?[NSUnderlyingErrorKey] as? NSError
     }
