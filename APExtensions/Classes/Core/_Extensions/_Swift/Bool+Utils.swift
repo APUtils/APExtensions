@@ -6,6 +6,8 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+// ******************************* MARK: - As
+
 public extension Bool {
     
     /// Returns "with animations" for `true` and "without animations" for `false`
@@ -37,4 +39,12 @@ public extension Bool {
     var asString: String {
         self ? "true" : "false"
     }
+}
+
+// ******************************* MARK: - Operations
+
+public extension Bool {
+    
+    /// Returns opposite of `self`
+    var not: Bool { !self }
 }
