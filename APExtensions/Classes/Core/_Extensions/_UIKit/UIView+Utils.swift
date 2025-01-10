@@ -95,7 +95,10 @@ public extension UIView {
 public extension UIView {
     /// Makes corner radius euqal to half of width or height
     func makeRound() {
-        layer.cornerRadius = min(width, height) / 2
+        let cornerRadius = min(width, height) / 2
+        if layer.cornerRadius != cornerRadius {
+            layer.cornerRadius = cornerRadius
+        }
     }
     
     /// Rounds view corners using layer mask.

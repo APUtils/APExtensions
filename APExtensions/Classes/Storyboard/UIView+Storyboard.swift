@@ -55,6 +55,7 @@ extension UIView {
             return layer.cornerRadius
         }
         set {
+            if layer.cornerRadius == newValue { return }
             layer.cornerRadius = newValue
         }
     }
