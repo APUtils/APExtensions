@@ -66,10 +66,14 @@ public extension Error {
     }
     
     var underlyingNSError: NSError? {
-        _userInfo?[NSUnderlyingErrorKey] as? NSError
+        userInfo?[NSUnderlyingErrorKey] as? NSError
     }
     
     var underlyingError: Error? {
-        _userInfo?[NSUnderlyingErrorKey] as? Error
+        userInfo?[NSUnderlyingErrorKey] as? Error
+    }
+    
+    var userInfo: [String: Any]? {
+        _userInfo as? [String: Any]
     }
 }
