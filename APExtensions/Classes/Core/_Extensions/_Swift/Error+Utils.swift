@@ -73,7 +73,7 @@ public extension Error {
         userInfo?[NSUnderlyingErrorKey] as? Error
     }
     
-    var userInfo: [String: Any]? {
-        _userInfo as? [String: Any]
+    var userInfo: [AnyHashable: Any]? {
+        _userInfo as? [AnyHashable: Any]
     }
 }
