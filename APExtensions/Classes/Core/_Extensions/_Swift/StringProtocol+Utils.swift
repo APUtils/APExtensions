@@ -253,10 +253,12 @@ public extension StringProtocol {
 public extension StringProtocol {
     /// Width of a string written in one line.
     func oneLineWidth(font: UIFont) -> CGFloat {
+        return oneLineBoundingRect(font: font).width
+    }
+    
+    func oneLineBoundingRect(font: UIFont) -> CGRect {
         let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = asString.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
-        
-        return boundingBox.width
+        return asString.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
     }
     
     /// Height of a string for specified font and width.
