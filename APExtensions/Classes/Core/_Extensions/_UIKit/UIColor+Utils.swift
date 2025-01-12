@@ -141,8 +141,7 @@ public extension UIColor {
         } else if let view {
             return resolvedColor(with: view.traitCollection)
         } else {
-            RoutableLogger.logError("Unable to resolve color", file: file, function: function, line: line)
-            return self
+            return resolvedColor(with: UITraitCollection.current)
         }
     }
 }
