@@ -133,6 +133,14 @@ public extension UIView {
         
         return rootView
     }
+    
+    /// Forces layout and display
+    func forceLayoutAndDisplay() {
+        setNeedsLayout()
+        setNeedsDisplay()
+        layoutIfNeeded()
+        layer.displayIfNeeded()
+    }
 }
 
 // ******************************* MARK: - Sequence
