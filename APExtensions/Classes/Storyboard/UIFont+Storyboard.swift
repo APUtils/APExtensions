@@ -25,10 +25,10 @@ extension UIFont {
     /// Returns scalable font depending on device content size category
     @available(iOS 11.0, *)
     @objc open var scalable: UIFont {
-        scalable(maximumPointSize: nil, compatibleWith: nil)
+        scalable(compatibleWith: nil, maximumPointSize: nil)
     }
     
-    public func scalable(maximumPointSize: CGFloat?, compatibleWith tc: UITraitCollection?) -> UIFont {
+    public func scalable(compatibleWith tc: UITraitCollection?, maximumPointSize: CGFloat? = nil) -> UIFont {
         let style: UIFont.TextStyle
         switch pointSize {
         case 34...: style = .largeTitle
