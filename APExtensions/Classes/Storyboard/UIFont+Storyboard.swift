@@ -25,6 +25,10 @@ extension UIFont {
     /// Returns scalable font depending on device content size category
     @available(iOS 11.0, *)
     @objc open var scalable: UIFont {
+        scalable(maximumPointSize: nil, compatibleWith: nil)
+    }
+    
+    public func scalable(maximumPointSize: CGFloat?, compatibleWith tc: UITraitCollection?) -> UIFont {
         let style: UIFont.TextStyle
         switch pointSize {
         case 34...: style = .largeTitle
@@ -43,6 +47,10 @@ extension UIFont {
             style = .body
         }
         
-        return UIFontMetrics(forTextStyle: style).scaledFont(for: self)
+        if let maximumPointSize {
+            return UIFontMetrics(forTextStyle: style).scaledFont(for: self, maximumPointSize: maximumPointSize, compatibleWith: tc)
+        } else {
+            return UIFontMetrics(forTextStyle: style).scaledFont(for: self, compatibleWith: tc)
+        }
     }
 }
