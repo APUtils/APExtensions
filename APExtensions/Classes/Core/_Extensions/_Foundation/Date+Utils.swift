@@ -12,6 +12,10 @@ import RoutableLogger
 // ******************************* MARK: - Components
 
 public extension Date {
+    
+    /// `1970-01-01T00:00:00Z`
+    static let zero: Date = Date(timeIntervalSince1970: 0)
+    
     /// Get yesterday's day start date. Uses user's time zone.
     static var yesterday: Date {
         return Calendar.current.date(byAdding: DateComponents(day: -1), to: Date())!.startOfDay
