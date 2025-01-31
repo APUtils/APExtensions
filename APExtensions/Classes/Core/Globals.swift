@@ -57,9 +57,36 @@ open class Globals {
         return UserDefaults.standard
     }
     
-    /// Height of status bar for the application window.
+    /// The max known height of status bar for the application window.
     /// Might be `nil` if there is no application window.
-    /// 44 on X devices, 20 on usual.
+    /// If status bar is always hidden, then height is `0`.
+    /// `44` on X devices, `20` on usual.
+    @available(iOS 13.0, *)
+    open var maxKnownStatusBarHeight: CGFloat? {
+        if let maxKnownStatusBarHeight = Self._maxKnownStatusBarHeight {
+            if let statusBarHeight, statusBarHeight > maxKnownStatusBarHeight {
+                Self._maxKnownStatusBarHeight = statusBarHeight
+                return statusBarHeight
+                
+            } else {
+                return maxKnownStatusBarHeight
+            }
+            
+        } else if let statusBarHeight {
+            Self._maxKnownStatusBarHeight = statusBarHeight
+            return statusBarHeight
+            
+        } else {
+            return nil
+        }
+    }
+    
+    private static var _maxKnownStatusBarHeight: CGFloat?
+    
+    /// The current height of status bar for the application window.
+    /// Might be `nil` if there is no application window.
+    /// If status bar is hidden, then height is `0`.
+    /// `44` on X devices, `20` on usual.
     @available(iOS 13.0, *)
     open var statusBarHeight: CGFloat? {
         UIApplication.shared
