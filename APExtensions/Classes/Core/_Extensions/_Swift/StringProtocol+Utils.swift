@@ -354,3 +354,14 @@ public extension StringProtocol {
         NSRange(location: 0, length: count)
     }
 }
+
+// ******************************* MARK: - Other
+
+public extension StringProtocol {
+    
+    /// Pads string from start.
+    /// https://stackoverflow.com/a/51212518/4124265
+    func paddingFromStart<T>(toLength newLength: Int, withPad padString: T, startingAt padIndex: Int) -> String where T : StringProtocol {
+        String(String(reversed()).padding(toLength: newLength, withPad: padString, startingAt: padIndex).reversed())
+    }
+}
