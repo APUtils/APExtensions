@@ -112,6 +112,12 @@ public extension Date {
             return self
         }
     }
+    
+    func components(timeZone: TimeZone) -> DateComponents {
+        Calendar
+            .make(timeZone: timeZone)
+            .dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone, .calendar], from: self)
+    }
 }
 
 // ******************************* MARK: - String Representation
