@@ -12,4 +12,12 @@ public extension Calendar {
     
     /// Gregorian calendar
     static let gregorian: Calendar = Calendar(identifier: .gregorian)
+    
+    /// Make `Calendar` for provided `timeZone`
+    static func make(timeZone: TimeZone) -> Calendar {
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
+        
+        return calendar
+    }
 }
