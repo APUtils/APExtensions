@@ -21,7 +21,7 @@ public extension UILabel {
                 return .init(backgroundColor: backgroundColor,
                       visibility: visibility)
             } else {
-                let visible = text != nil
+                let visible = text != nil && text != "" && text != " "
                 return .init(backgroundColor: backgroundColor,
                              visibility: visible ? .visible : .hidden)
             }
