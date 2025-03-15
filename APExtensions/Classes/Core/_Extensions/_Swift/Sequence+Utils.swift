@@ -20,6 +20,16 @@ public extension Sequence {
     }
 }
 
+// ******************************* MARK: - To
+
+public extension Sequence where Element: Hashable {
+    
+    /// Transforms `self` to `Set`.
+    func toSet() -> Set<Element> {
+        Set(self)
+    }
+}
+
 // ******************************* MARK: - Splitting
 
 public extension Sequence {
