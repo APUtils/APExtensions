@@ -46,6 +46,10 @@ public extension String {
         append(string, separator: " ")
     }
     
+    mutating func appendWithBar(_ string: String?) {
+        append(string, separator: " | ")
+    }
+    
     mutating func appendWithComma(_ string: String?) {
         append(string, separator: ", ")
     }
