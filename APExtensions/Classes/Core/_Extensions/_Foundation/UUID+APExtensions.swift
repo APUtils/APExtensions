@@ -18,6 +18,15 @@ public extension UUID {
         self == Self.zero
     }
     
+    /// Returns `nil` if `self` is zero
+    var nonZero: UUID? {
+        if isZero {
+            nil
+        } else {
+            self
+        }
+    }
+    
     /// Returns `uuidString` without hyphens
     var uuidStringWithoutHyphens: String {
         uuidString.replacingOccurrences(of: "-", with: "")
