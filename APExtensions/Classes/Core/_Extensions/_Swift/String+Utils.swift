@@ -53,6 +53,10 @@ public extension String {
     mutating func appendWithComma(_ string: String?) {
         append(string, separator: ", ")
     }
+
+    mutating func appendWithSemicolon(_ string: String?) {
+        append(string, separator: "; ")
+    }
     
     mutating func append(_ string: String?, separator: String) {
         guard let string = string, !string.isEmpty else { return }
