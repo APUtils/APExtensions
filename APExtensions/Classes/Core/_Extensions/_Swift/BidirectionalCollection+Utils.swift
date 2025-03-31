@@ -6,6 +6,19 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+// ******************************* MARK: - As
+
+public extension BidirectionalCollection {
+    
+    /// When there is only one element, returns that element
+    var asSingular: Element? {
+        guard count == 1 else { return nil }
+        return first
+    }
+}
+
+// ******************************* MARK: - Index
+
 public extension BidirectionalCollection {
     
     /// Second index
