@@ -65,8 +65,16 @@ extension UIDevice.BatteryState: @retroactive CustomStringConvertible {
 public extension UIDevice {
     
     /// Current device is a simulator
-    static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
+#if targetEnvironment(simulator)
+    static let isSimulator: Bool = true
+#else
+    static let isSimulator: Bool = false
+#endif
     
     /// Current device is a real device
-    static let isReal: Bool = TARGET_OS_SIMULATOR == 0
+#if targetEnvironment(simulator)
+    static let isReal: Bool = false
+#else
+    static let isReal: Bool = true
+#endif
 }

@@ -15,7 +15,11 @@ import UIKit
 public extension Constants {
     
     /// Is running on simulator?
-    static let isSimulator: Bool = TARGET_OS_SIMULATOR != 0
+#if targetEnvironment(simulator)
+    static let isSimulator: Bool = true
+#else
+    static let isSimulator: Bool = false
+#endif
     
     /// Is it an iPhone device?
     static let isIPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
