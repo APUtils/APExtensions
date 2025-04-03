@@ -19,7 +19,7 @@ extension UIView {
         }
         set {
             // For some reason, it may resolve to wrong color mode by default so using `applicationResolvedColor`
-            layer.borderColor = newValue?.applicationResolvedColor(view: self).cgColor
+            layer.borderColor = newValue?._applicationResolvedColor(view: self).cgColor
         }
     }
     
@@ -72,7 +72,7 @@ extension UIView {
         }
         set {
             // For some reason, it may resolve to wrong color mode by default so using `applicationResolvedColor`
-            layer.shadowColor = newValue?.applicationResolvedColor(view: self).cgColor
+            layer.shadowColor = newValue?._applicationResolvedColor(view: self).cgColor
         }
     }
     
