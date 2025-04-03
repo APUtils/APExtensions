@@ -1,14 +1,15 @@
 {
+  "originHash" : "d8e6db4d97ae0601cb31ed754886b4c356f759c1cc04c33ce9b8e7b0c5cd7572",
   "pins" : [
     {
       "identity" : "routablelogger",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/anton-plebanovich/RoutableLogger.git",
       "state" : {
-        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
-        "version" : "1.0.0"
+        "revision" : "15961a556f5e8263e5ce777836f4bdf927839ae5",
+        "version" : "1.0.1"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
