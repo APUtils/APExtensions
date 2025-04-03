@@ -77,3 +77,14 @@ public extension Error {
         _userInfo as? [AnyHashable: Any]
     }
 }
+
+public extension Error? {
+    
+    /// Example: `SKErrorDomain 0 | ASDErrorDomain 500 | AMSErrorDomain 305`
+    var segmentationString: String {
+        switch self {
+        case .none: "nil"
+        case .some(let error): error.segmentationString
+        }
+    }
+}
