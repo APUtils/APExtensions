@@ -2,8 +2,71 @@
 All notable changes to this project will be documented in this file.
 `APExtensions` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [15.0.0](https://github.com/APUtils/APExtensions/releases/tag/15.0.0)
+Released on 2025-04-01
+
+#### Added
+- Alert title and message localization
+- [BidirectionalCollection] `asSingular`
+- [Bool] `not`
+- [Calendar] `make(timeZone:)`
+- [CGRect] `isInvalidPopoverSourceRect`
+- [CharacterSet] `containsUnicodeScalars(of:)`
+- [Date] Added `asGmtLogsDate`, `asGmtLogsTimeString`, `asGmtLogsDateAndTimeString`
+- [Date] `.zero`
+- [Date] `components(timeZone:)`
+- [Error] Segmentation string
+- [Error] `asNSError`
+- [Error] `coreErrorCode`
+- [Error] `coreError`
+- [Error] `coreNSError`
+- [Error] `underlyingError`
+- [Error] `underlyingNSError`
+- [Error] `userInfo`
+- [FileManager] Return result for file manipulation operations
+- [Globals] `statusBarHeightOrLatestKnown
+- [Int] `asInt64`
+- [Locale] `.posix`
+- [NSMutableAttributedString] Return `self` for `set` methods
+- [Sequence] `toSet()`
+- [StringProtocol] `asMutableString`
+- [StringProtocol] `fullNSRange`
+- [StringProtocol] `oneLineBoundingRect(font:)`
+- [StringProtocol] `paddingFromStart(toLength:withPad:startingAt:)`
+- [StringProtocol] `toUnicodeUnescaped()`
+- [String] `appendWithBar(_:)`
+- [String] `appendWithSemicolon(_:)`
+- [TimeZone] Added `shortDescription`
+- [UIColor] `applicationResolvedColor(viewController:)`
+- [UIFont] `scalable(maximumPointSize:compatibleWith:)`
+- [UIImage] `name` from description
+- [UIStackView] `fitScreenSize`
+- [UIView] `applicationResolvedColor(view:)`
+- [UIView] `forceLayoutAndDisplay()`
+- [UUID] `isZero`
+- [UUID] `nonZero`
+- [UUID] `uuidStringWithoutHyphens`
+- [UUID] `zero`
+
+#### Changed
+- Allow to override storyboard extensions
+- Color resolution for `cgColor` usages
+- iPad invalid rectangle detection improve
+- [Bundle] Optional `extension` parameter
+- [Date] Format log dates in `POSIX` locale
+- [NSObject] `doOnce` rework into `Int` type key
+- [UILabel+VM] Visibility logic adjust
+- [UIView] Prevent values set if not changed
+- [UIWindow] `remove()` doc and logic adjust
+
+#### Fixed
+- [UIViewController] `window` infinite cycle fix
+- Xcode 16.3 build fix
+
+
 ## [14.2.0](https://github.com/APUtils/APExtensions/releases/tag/14.2.0)
-Released on 2024-03-25.
+Released on 2024-03-25
 
 #### Added
 - Added `uniqueOrderedCompactMap(_:)`
