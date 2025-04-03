@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 
 ## [15.0.0](https://github.com/APUtils/APExtensions/releases/tag/15.0.0)
-Released on 2025-04-01
+Released on `2025-04-03`
 
 #### Added
 - Alert title and message localization
