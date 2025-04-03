@@ -18,7 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 - In Xcode select `File` > `Add Packages...`
 - Copy and paste the following into the search: `https://github.com/APUtils/APExtensions`
-- **‼️Make sure `Up to Next Major Version` is selected and put `14.2.0` into the lower bound. There is a bug in Xcode, it does not select versions higher than 9.0.0 by default‼️**
+- **‼️Make sure `Up to Next Major Version` is selected and put `15.0.0` into the lower bound. There is a bug in Xcode, it does not select versions higher than 9.0.0 by default‼️**
 - Tap `Add Package`
 - Select `APExtension` to add everything and tap `Add Package`
 
@@ -28,15 +28,15 @@ APExtensions is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APExtensions', '~> 14.2'
+pod 'APExtensions', '~> 15.0'
 ```
 
 Available subspecs: `Core`, `Storyboard`, `ViewModel`. Example Podfile for subspec:
 
 ```ruby
-pod 'APExtensions/Core', '~> 14.2'
-pod 'APExtensions/Storyboard', '~> 14.2'
-pod 'APExtensions/ViewModel', '~> 14.2'
+pod 'APExtensions/Core', '~> 15.0'
+pod 'APExtensions/Storyboard', '~> 15.0'
+pod 'APExtensions/ViewModel', '~> 15.0'
 ```
 
 ## Usage
