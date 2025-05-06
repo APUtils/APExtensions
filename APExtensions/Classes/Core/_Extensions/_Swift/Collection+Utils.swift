@@ -44,20 +44,6 @@ public extension Collection {
         return array
     }
     
-    /// Groups array elements into dictionary using provided transform to determine element's key.
-    @inlinable func group<K>(_ keyTransform: (Iterator.Element) throws -> K) rethrows -> [K: [Iterator.Element]] {
-        var dictionary = [K: [Iterator.Element]]()
-        for index in indices {
-            let element = self[index]
-            let key = try keyTransform(element)
-            var array = dictionary[key] ?? []
-            array.append(element)
-            dictionary[key] = array
-        }
-        
-        return dictionary
-    }
-    
     /// Returns element from the collection or `nil` if index is out of bounds.
     subscript(optional i: Index) -> Iterator.Element? {
         indices.contains(i) ? self[i] : nil
