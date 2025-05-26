@@ -116,6 +116,11 @@ public extension StringProtocol {
         return Int(self)
     }
     
+    /// Returns `self` as `Int64`
+    var asInt64: Int64? {
+        Int64(self)
+    }
+    
     /// Returns `self` as `String`
     var asString: String {
         if let string = self as? String {
