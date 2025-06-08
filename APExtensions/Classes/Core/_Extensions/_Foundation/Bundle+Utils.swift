@@ -118,7 +118,7 @@ public extension Bundle {
     static let appVersion: Version = Version(appVersionString)
     
     /// Example: 1234
-    static let appBuildVersionString: String = main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown"
+    static let appBuildVersionString: String = main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
     
     /// Example: 1.10.0.1234
     static let appFullVersionString: String = "\(appVersionString).\(appBuildVersionString)"
