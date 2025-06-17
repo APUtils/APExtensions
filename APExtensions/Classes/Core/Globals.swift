@@ -83,10 +83,20 @@ open class Globals {
     /// `44` on X devices, `20` on usual.
     @available(iOS 13.0, *)
     open var statusBarHeight: CGFloat? {
-        UIApplication.shared
+        // Old way, application delegate
+        if let height = UIApplication.shared
             .delegate?
             .window??
             .windowScene?
+            .statusBarManager?
+            .statusBarFrame
+            .height { return height }
+        
+        // New way, window scene
+        return UIApplication.shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first?
             .statusBarManager?
             .statusBarFrame
             .height
