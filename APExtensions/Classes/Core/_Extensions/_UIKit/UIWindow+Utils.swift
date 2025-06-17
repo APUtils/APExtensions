@@ -12,20 +12,30 @@ import RoutableLogger
 public extension UIWindow {
     /// Creates new alert window with AppearanceCaptureViewController as rootViewController
     static func createAlert() -> UIWindow {
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.windowLevel = .alert
-        alertWindow.rootViewController = AppearanceCaptureViewController()
+        let window = if #available(iOS 13.0, *), let windowScene = g.windowScene {
+            UIWindow(windowScene: windowScene)
+        } else {
+            UIWindow(frame: UIScreen.main.bounds)
+        }
         
-        return alertWindow
+        window.windowLevel = .alert
+        window.rootViewController = AppearanceCaptureViewController()
+        
+        return window
     }
     
     /// Creates new normal window with AppearanceCaptureViewController as rootViewController
     static func createNormal() -> UIWindow {
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.windowLevel = .normal
-        alertWindow.rootViewController = AppearanceCaptureViewController()
+        let window = if #available(iOS 13.0, *), let windowScene = g.windowScene {
+            UIWindow(windowScene: windowScene)
+        } else {
+            UIWindow(frame: UIScreen.main.bounds)
+        }
         
-        return alertWindow
+        window.windowLevel = .normal
+        window.rootViewController = AppearanceCaptureViewController()
+        
+        return window
     }
     
     /// Removes window from windows stack.
