@@ -93,13 +93,35 @@ open class Globals {
             .height { return height }
         
         // New way, window scene
-        return UIApplication.shared
-            .connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .first?
+        return windowScene?
             .statusBarManager?
             .statusBarFrame
             .height
+    }
+    
+    open var applicationWindow: UIWindow? {
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.delegate?.window ?? sceneWindow
+        } else {
+            UIApplication.shared.delegate?.window ?? nil
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    open var sceneWindow: UIWindow? {
+        if #available(iOS 15.0, *) {
+            windowScene?.keyWindow ?? windowScene?.windows.first
+        } else {
+            windowScene?.windows.first
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    open var windowScene: UIWindowScene? {
+        UIApplication.shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first
     }
     
     /// Tob bars height for the application window.
@@ -114,11 +136,6 @@ open class Globals {
     @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes")
     open var keyWindow: UIWindow? {
         return sharedApplication.keyWindow
-    }
-    
-    /// Application's window. Crashes if nil.
-    open var appWindow: UIWindow {
-        return sharedApplication.delegate!.window!!
     }
     
     /// Is application in `active` state?

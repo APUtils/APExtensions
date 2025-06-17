@@ -56,7 +56,7 @@ public extension Constants {
     /// Returns the on screen home button height
     static let homeButtonHeight: CGFloat = {
         if #available(iOS 11.0, *) {
-            return UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
+            return g.applicationWindow?.safeAreaInsets.bottom ?? 0
         } else {
             return 0
         }

@@ -123,7 +123,7 @@ public extension UIColor {
         
         if viewController.window != nil {
             return resolvedColor(with: viewController.traitCollection)
-        } else if let window = UIApplication.shared.delegate?.window ?? nil {
+        } else if let window = g.applicationWindow {
             return resolvedColor(with: window.traitCollection)
         } else {
             return resolvedColor(with: viewController.traitCollection)
@@ -136,7 +136,7 @@ public extension UIColor {
         
         if let view, view.window != nil {
             return resolvedColor(with: view.traitCollection)
-        } else if let window = UIApplication.shared.delegate?.window ?? nil {
+        } else if let window = g.applicationWindow {
             return resolvedColor(with: window.traitCollection)
         } else if let view {
             return resolvedColor(with: view.traitCollection)
