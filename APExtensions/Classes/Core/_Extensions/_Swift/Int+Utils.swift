@@ -59,6 +59,11 @@ public extension Int {
 
 public extension Int {
     
+    /// Return absolute value of self
+    var abs: Int {
+        Swift.abs(self)
+    }
+    
     /// Makes `self` negative to the current value.
     var negative: Int {
         -self
