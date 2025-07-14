@@ -185,7 +185,7 @@ public extension Data {
         do {
             return try (self as NSData).compressed(using: algorithm) as Data
         } catch {
-            RoutableLogger.logError("Unable to compress data", data: ["data": safeString()])
+            RoutableLogger.logError("Unable to compress data", error: error, data: ["data": safeString()])
             return nil
         }
     }
@@ -194,7 +194,7 @@ public extension Data {
         do {
             return try (self as NSData).decompressed(using: algorithm) as Data
         } catch {
-            RoutableLogger.logError("Unable to decompress data", data: ["data": safeString()])
+            RoutableLogger.logError("Unable to decompress data", error: error, data: ["data": safeString()])
             return nil
         }
     }
