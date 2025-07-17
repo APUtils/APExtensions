@@ -1,23 +1,23 @@
 PODS:
-  - APExtensions (15.0.0):
-    - APExtensions/Core (= 15.0.0)
-    - APExtensions/Dispatch (= 15.0.0)
-    - APExtensions/Occupiable (= 15.0.0)
-    - APExtensions/OptionalType (= 15.0.0)
-    - APExtensions/Storyboard (= 15.0.0)
-    - APExtensions/ViewModel (= 15.0.0)
-  - APExtensions/Core (15.0.0):
+  - APExtensions (15.0.1):
+    - APExtensions/Core (= 15.0.1)
+    - APExtensions/Dispatch (= 15.0.1)
+    - APExtensions/Occupiable (= 15.0.1)
+    - APExtensions/OptionalType (= 15.0.1)
+    - APExtensions/Storyboard (= 15.0.1)
+    - APExtensions/ViewModel (= 15.0.1)
+  - APExtensions/Core (15.0.1):
     - RoutableLogger
-  - APExtensions/Dispatch (15.0.0):
+  - APExtensions/Dispatch (15.0.1):
     - RoutableLogger
-  - APExtensions/Occupiable (15.0.0)
-  - APExtensions/OptionalType (15.0.0)
-  - APExtensions/Storyboard (15.0.0):
+  - APExtensions/Occupiable (15.0.1)
+  - APExtensions/OptionalType (15.0.1)
+  - APExtensions/Storyboard (15.0.1):
     - RoutableLogger
-  - APExtensions/ViewModel (15.0.0)
+  - APExtensions/ViewModel (15.0.1)
   - Nimble (10.0.0)
   - Quick (5.0.1)
-  - RoutableLogger (12.4.0)
+  - RoutableLogger (13.0.0)
 
 DEPENDENCIES:
   - APExtensions (from `../`)
@@ -35,10 +35,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: d0692b34c786b9282e09b9cd519c58269f847c62
+  APExtensions: 1c783b402ac7100f54bc7073cf0e1621d3dcbc8d
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
+  RoutableLogger: 31ce799b16b4868c169ed68c36e25437dd0ca40e
 
 PODFILE CHECKSUM: 963030d9678de3f79f8a26e8c8f618b2eceb873d
 
