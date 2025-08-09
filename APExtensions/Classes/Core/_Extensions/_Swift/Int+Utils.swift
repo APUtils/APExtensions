@@ -27,6 +27,9 @@ public extension Int {
 
 public extension Int {
     
+    /// Returns `self` as `[Int]`
+    var asArray: [Int] { [self] }
+    
     /// Returns `self` as `Int32`
     var asInt32: Int32? { Int32(exactly: self) }
     
