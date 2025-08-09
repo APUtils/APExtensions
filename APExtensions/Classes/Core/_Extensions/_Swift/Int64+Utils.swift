@@ -28,7 +28,7 @@ public extension Int64 {
 public extension Int64 {
     
     /// Returns `self` as `Int`
-    var asInt: Int? { Int(exactly: self) }
+    var asInt: Int { Int(self) }
     
     /// Returns `self` as `UInt`
     var asUInt: UInt? { UInt(exactly: self) }
