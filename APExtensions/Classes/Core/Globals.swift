@@ -100,12 +100,14 @@ open class Globals {
     }
     
     open var windowSafeAreaInsets: UIEdgeInsets? {
-        if #available(iOS 13.0, *), let sceneWindow {
-            return sceneWindow.safeAreaInsets
+        let window: UIWindow?
+        if #available(iOS 13.0, *) {
+            window = sceneWindow ?? applicationWindow
+        } else {
+            window = applicationWindow
         }
         
-        return sharedApplication.keyWindow?.safeAreaInsets
-        ?? UIApplication.shared.delegate?.window??.safeAreaInsets
+        return window?.safeAreaInsets
     }
     
     open var applicationWindow: UIWindow? {
