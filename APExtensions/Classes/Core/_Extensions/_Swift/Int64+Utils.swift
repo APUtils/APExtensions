@@ -30,6 +30,9 @@ public extension Int64 {
     /// Returns `self` as `Int`
     var asInt: Int { Int(self) }
     
+    /// Returns `self` as `Int32`
+    var asInt32: Int32 { Int32(self) }
+    
     /// Returns `self` as `UInt`
     var asUInt: UInt? { UInt(exactly: self) }
     
