@@ -10,13 +10,16 @@ import Foundation
 
 // ******************************* MARK: - Typealiases
 
-/// Closure that takes Void and returns Void.
+/// Closure that takes `Void` and returns `Void`.
 public typealias SimpleClosure = () -> Void
 
-/// Closure that takes Bool and returns Void.
+/// Closure that takes `Bool` and returns `Void`.
 public typealias SuccessClosure = (_ success: Bool) -> Void
 
-/// Closure that takes Bool and returns Void.
+/// Closure that takes `Bool?` and returns `Void`.
+public typealias OptionalSuccessClosure = (_ success: Bool?) -> Void
+
+/// Closure that takes `Bool` and returns `Void`.
 public typealias ErrorClosure = (_ error: Error?) -> Void
 
 // ******************************* MARK: - Error
