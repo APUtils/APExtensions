@@ -27,6 +27,16 @@ public extension UIEdgeInsets {
         modify { $0.screenResized }
     }
     
+    /// Returns reversed insets
+    var reversed: UIEdgeInsets {
+        UIEdgeInsets(
+            top: -top,
+            left: -left,
+            bottom: -bottom,
+            right: -right
+        )
+    }
+    
     /// Modifies each inset using `transform`.
     /// - Parameter transform: Transform to apply for each inset.
     /// - Returns: Modified insets.
