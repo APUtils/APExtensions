@@ -102,7 +102,8 @@ public extension InstantiatableContentView where Self: UIView {
     func instantiateAndAttachContentView(insets: UIEdgeInsets = .zero, bottomPriority: UILayoutPriority = .required) {
         backgroundColor = .clear
         let contentView = instantiateContentView()
-        bounds = contentView.bounds.inset(by: insets.reversed) // Content bounds have priority
+        size = contentView.bounds.inset(by: insets.reversed).size // Content bounds have priority
+        contentView.center = bounds.center
         addSubview(contentView)
         contentView.constraintSides(to: self, insets: insets, bottomPriority: bottomPriority)
     }
