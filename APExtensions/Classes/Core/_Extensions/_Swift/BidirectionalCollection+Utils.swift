@@ -56,4 +56,16 @@ public extension BidirectionalCollection {
         guard let fourthIndex = fourthIndex else { return nil }
         return self[fourthIndex]
     }
+    
+    /// Fifth index
+    var fifthIndex: Index? {
+        guard count > 4, let fourthIndex = fourthIndex else { return nil }
+        return index(after: fourthIndex)
+    }
+    
+    /// Fourth element in a collection
+    var fifth: Element? {
+        guard let fifthIndex = fifthIndex else { return nil }
+        return self[fifthIndex]
+    }
 }
