@@ -16,7 +16,7 @@ public extension String {
         append("\n")
     }
     
-    mutating func append(valueName: String?, value: Any?, separator: String = ", ") {
+    mutating func append(valueName: String?, value: Any?, separator: String = ", ", skipEmpty: Bool = true) {
         var stringRepresentation: String
         if let value = g.unwrap(value) {
             if let value = value as? String {
@@ -31,35 +31,35 @@ public extension String {
         }
         
         if let valueName = valueName {
-            append("\(valueName):", separator: separator)
+            append("\(valueName):", separator: separator, skipEmpty: skipEmpty)
             appendWithSpace(stringRepresentation)
         } else {
-            append(stringRepresentation, separator: separator)
+            append(stringRepresentation, separator: separator, skipEmpty: skipEmpty)
         }
     }
     
-    mutating func appendWithNewLine(_ string: String?) {
-        append(string, separator: "\n")
+    mutating func appendWithNewLine(_ string: String?, skipEmpty: Bool = true) {
+        append(string, separator: "\n", skipEmpty: skipEmpty)
     }
     
-    mutating func appendWithSpace(_ string: String?) {
-        append(string, separator: " ")
+    mutating func appendWithSpace(_ string: String?, skipEmpty: Bool = true) {
+        append(string, separator: " ", skipEmpty: skipEmpty)
     }
     
-    mutating func appendWithBar(_ string: String?) {
-        append(string, separator: " | ")
+    mutating func appendWithBar(_ string: String?, skipEmpty: Bool = true) {
+        append(string, separator: " | ", skipEmpty: skipEmpty)
     }
     
-    mutating func appendWithComma(_ string: String?) {
-        append(string, separator: ", ")
+    mutating func appendWithComma(_ string: String?, skipEmpty: Bool = true) {
+        append(string, separator: ", ", skipEmpty: skipEmpty)
     }
 
-    mutating func appendWithSemicolon(_ string: String?) {
-        append(string, separator: "; ")
+    mutating func appendWithSemicolon(_ string: String?, skipEmpty: Bool = true) {
+        append(string, separator: "; ", skipEmpty: skipEmpty)
     }
     
-    mutating func append(_ string: String?, separator: String) {
-        guard let string = string, !string.isEmpty else { return }
+    mutating func append(_ string: String?, separator: String, skipEmpty: Bool = true) {
+        guard let string = string, !skipEmpty || !string.isEmpty else { return }
         
         if isEmpty {
             self.append(string)
