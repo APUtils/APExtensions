@@ -83,4 +83,8 @@ public extension Double {
         floor(self) == self
     }
     
+    func roundTo(precision: Int) -> Double {
+        let divisor = pow(10.0, Double(precision))
+        return (self * divisor).rounded() / divisor
+    }
 }
