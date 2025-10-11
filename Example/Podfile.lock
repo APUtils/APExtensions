@@ -25,7 +25,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Nimble
     - Quick
     - RoutableLogger
@@ -40,6 +40,6 @@ SPEC CHECKSUMS:
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RoutableLogger: 31ce799b16b4868c169ed68c36e25437dd0ca40e
 
-PODFILE CHECKSUM: 963030d9678de3f79f8a26e8c8f618b2eceb873d
+PODFILE CHECKSUM: af90f4ca1693a45be70240f0b6445fb5ffd13314
 
 COCOAPODS: 1.16.2
