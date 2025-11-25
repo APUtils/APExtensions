@@ -212,8 +212,11 @@ public extension Date {
 public extension Date {
     
     fileprivate static let gmtLogsDateFormatter: DateFormatter = {
-        let formatter = logsDateFormatter
+        let formatter = DateFormatter()
+        formatter.calendar = .gregorian
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .gmt
+        formatter.locale = .posix
         
         return formatter
     }()
@@ -225,8 +228,11 @@ public extension Date {
     }
     
     fileprivate static let gmtLogsTimeFormatter: DateFormatter = {
-        let formatter = logsTimeFormatter
+        let formatter = DateFormatter()
+        formatter.calendar = .gregorian
+        formatter.dateFormat = "HH:mm:ss.SSS"
         formatter.timeZone = .gmt
+        formatter.locale = .posix
         
         return formatter
     }()
@@ -238,8 +244,11 @@ public extension Date {
     }
     
     fileprivate static let gmtLogsDateAndTimeFormatter: DateFormatter = {
-        let formatter = logsDateAndTimeFormatter
+        let formatter = DateFormatter()
+        formatter.calendar = .gregorian
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         formatter.timeZone = .gmt
+        formatter.locale = .posix
         
         return formatter
     }()
