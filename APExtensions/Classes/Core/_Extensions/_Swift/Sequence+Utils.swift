@@ -24,9 +24,13 @@ public extension Sequence {
 
 public extension Sequence where Element: Hashable {
     
-    /// Transforms `self` to `Set`.
-    func toSet() -> Set<Element> {
-        Set(self)
+    /// Returns `self` as `Set`.
+    var asSet: Set<Element> {
+        if let array = self as? Set<Element> {
+            return array
+        } else {
+            return Set(self)
+        }
     }
 }
 
