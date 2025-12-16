@@ -55,6 +55,17 @@ public extension Error {
             segmentationStringComponents.append("\(underlyingError._domain) \(underlyingError._code)")
         }
         
+        if #available(iOS 14.5, *) {
+            if let underlyingErrors = coreError.underlyingErrors {
+                var components: [String] = []
+                for underlyingError in underlyingErrors {
+                    components.append("{\(underlyingError.segmentationString)}")
+                }
+                
+                segmentationStringComponents.append(components.joined(separator: " + "))
+            }
+        }
+        
         return segmentationStringComponents.joined(separator: " | ")
     }
     
