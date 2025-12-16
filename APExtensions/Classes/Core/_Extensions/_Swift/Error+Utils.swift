@@ -66,6 +66,11 @@ public extension Error {
         userInfo?[NSUnderlyingErrorKey] as? Error
     }
     
+    @available(iOS 14.5, *)
+    var underlyingErrors: [Error]? {
+        userInfo?[NSMultipleUnderlyingErrorsKey] as? [Error]
+    }
+    
     var userInfo: [AnyHashable: Any]? {
         _userInfo as? [AnyHashable: Any]
     }
