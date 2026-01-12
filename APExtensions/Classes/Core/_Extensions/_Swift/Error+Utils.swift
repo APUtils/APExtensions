@@ -69,6 +69,28 @@ public extension Error {
         return segmentationStringComponents.joined(separator: " | ")
     }
     
+    /// Collects and return all underlying errors
+    var allUnderlyingErrors: [Error] {
+        var allUnderlyingErrors: [Error] = []
+        var _underlyingError = underlyingError
+        while let underlyingError = _underlyingError {
+            allUnderlyingErrors.append(underlyingError)
+            
+            if let underlyingError = underlyingError.underlyingError {
+                _underlyingError = underlyingError
+                
+            } else if #available(iOS 14.5, *), let underlyingErrors = underlyingError.underlyingErrors {
+                underlyingErrors.forEach { allUnderlyingErrors.append(contentsOf: $0.allUnderlyingErrors) }
+                _underlyingError = nil
+                
+            } else {
+                _underlyingError = nil
+            }
+        }
+        
+        return allUnderlyingErrors
+    }
+    
     var underlyingNSError: NSError? {
         userInfo?[NSUnderlyingErrorKey] as? NSError
     }
