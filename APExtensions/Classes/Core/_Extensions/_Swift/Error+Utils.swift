@@ -173,6 +173,10 @@ public extension Error {
                 // Something is wrong with certificate for the ISP that user uses. We should be able to retry that if he switch a Wi-Fi or maybe cell tower.
             case NSURLErrorServerCertificateUntrusted: return true
                 
+                // Error Domain=NSURLErrorDomain Code=-1205 "The server “api.divtools.com” did not accept the certificate." UserInfo={_kCFStreamErrorCodeKey=-9832, NSUnderlyingError=0x1138f5500 {Error Domain=kCFErrorDomainCFNetwork Code=-1205 "(null)" UserInfo={_kCFStreamPropertySSLClientCertificateState=0, _kCFNetworkCFStreamSSLErrorOriginalValue=-9832, _kCFStreamErrorDomainKey=3, _kCFStreamErrorCodeKey=-9832, _NSURLErrorNWPathKey=satisfied (Path is satisfied), viable, interface: en0[802.11], ipv4, dns, uses wifi, LQM: moderate}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <F509D431-047B-4153-8C04-6FC69B8C51B8>.<1>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n "LocalDataTask <F509D431-047B-4153-8C04-6FC69B8C51B8>.<1>"\n), NSLocalizedDescription=The server “api.divtools.com” did not accept the certificate., NSErrorFailingURLStringKey=https://api.divtools.com/version-v2/ios, NSErrorFailingURLKey=https://api.divtools.com/version-v2/ios, _kCFStreamErrorDomainKey=3}
+                // [ChatGPT] Happens during the TLS handshake, specifically at the moment when the server requests a client certificate and then rejects the one your app provides.
+            case NSURLErrorClientCertificateRejected: return true
+                
             default: return false
             }
             
