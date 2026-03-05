@@ -55,8 +55,9 @@ public extension NSMutableAttributedString {
     @discardableResult
     func set(aligment: NSTextAlignment? = nil,
              headIndent: CGFloat? = nil,
-             lineSpacing: CGFloat? = nil,
              lineHeightMultiple: CGFloat? = nil,
+             lineSpacing: CGFloat? = nil,
+             paragraphSpacing: CGFloat? = nil,
              for text: String? = nil) -> Self {
         
         let range: NSRange
@@ -74,8 +75,9 @@ public extension NSMutableAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         if let aligment = aligment { paragraphStyle.alignment = aligment }
         if let headIndent = headIndent { paragraphStyle.headIndent = headIndent }
-        if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
         if let lineHeightMultiple = lineHeightMultiple { paragraphStyle.lineHeightMultiple = lineHeightMultiple }
+        if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
+        if let paragraphSpacing = paragraphSpacing { paragraphStyle.paragraphSpacing = paragraphSpacing }
         
         addAttribute(.paragraphStyle, value: paragraphStyle, range: range)
         
