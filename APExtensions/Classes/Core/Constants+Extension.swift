@@ -52,13 +52,4 @@ public extension Constants {
     /// Top bars height
     @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Please use g.topBarsHeight instead")
     static let topBarsHeight: CGFloat = statusBarHeight + navigationBarHeight
-    
-    /// Returns the on screen home button height
-    static let homeButtonHeight: CGFloat = {
-        if #available(iOS 11.0, *) {
-            return g.applicationWindow?.safeAreaInsets.bottom ?? 0
-        } else {
-            return 0
-        }
-    }()
 }

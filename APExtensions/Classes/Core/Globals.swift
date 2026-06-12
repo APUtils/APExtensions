@@ -110,6 +110,19 @@ open class Globals {
         return window?.safeAreaInsets
     }
     
+    /// Returns the on screen home button height.
+    /// Returns `0` if there is no scene or app window set.
+    open var homeButtonHeight: CGFloat {
+        let window: UIWindow?
+        if #available(iOS 13.0, *) {
+            window = sceneWindow ?? applicationWindow
+        } else {
+            window = applicationWindow
+        }
+        
+        return window?.safeAreaInsets.bottom ?? 0
+    }
+    
     open var applicationWindow: UIWindow? {
         if #available(iOS 13.0, *) {
             UIApplication.shared.delegate?.window ?? sceneWindow
