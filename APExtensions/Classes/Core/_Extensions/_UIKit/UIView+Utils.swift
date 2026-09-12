@@ -97,6 +97,7 @@ public extension UIView {
     func makeRound() {
         let cornerRadius = min(width, height) / 2
         if layer.cornerRadius != cornerRadius {
+            if #available(iOS 13.0, *) { layer.cornerCurve = .circular }
             layer.cornerRadius = cornerRadius
         }
     }
