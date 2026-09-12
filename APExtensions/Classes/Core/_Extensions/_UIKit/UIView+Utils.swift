@@ -93,8 +93,9 @@ public extension UIView {
 // ******************************* MARK: - Utils
 
 public extension UIView {
+    
     /// Makes corner radius euqal to half of width or height
-    func makeRound() {
+    func makeCircular() {
         let cornerRadius = min(width, height) / 2
         if layer.cornerRadius != cornerRadius {
             if #available(iOS 13.0, *) { layer.cornerCurve = .circular }
