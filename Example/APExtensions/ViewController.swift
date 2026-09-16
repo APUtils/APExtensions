@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         attributedText.setStrikethrough(text: "g Strikethrough T")
         debugLabel.attributedText = attributedText
         
-        print(c.homeButtonHeight)
+        print(g.homeButtonHeight)
         
 //        doOnce(key: "viewDidLoad") {
 //            print("asd")
