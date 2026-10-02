@@ -54,7 +54,9 @@ open class AlertController: UIAlertController {
             appearanceCaptureViewController?.customPreferredStatusBarStyle = preferredStatusBarStyle
         }
         
-        if let popover = popoverPresentationController {
+        // iPad only. iOS 26 anchors an action sheet to its source on iPhone too, and one without a source
+        // stays an ordinary sheet with its cancel button there.
+        if UIDevice.current.userInterfaceIdiom == .pad, let popover = popoverPresentationController {
             // Prevent crash by targeting bottom of the screen
             if popover.sourceView == nil && popover.sourceRect.isInvalidPopoverSourceRect {
                 if AlertController.presentationStyle == .window, let alertWindow = alertWindow {
